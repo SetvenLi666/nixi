@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MainViewSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="157667a6fff"/>
+	<e:Group id="group" width="852" height="1136" y="0" x="0">
+		<e:Group id="group_1" width="852" height="1136" horizontalCenter="0" verticalCenter="0">
+			<e:Image horizontalCenter="0" verticalCenter="0" source="far_png"/>
+			<e:Image id="cloud_1" source="cloud_png" y="5" horizontalCenter="0"/>
+			<e:Image id="cloud_2" source="cloud_png" y="0" right="-900"/>
+		</e:Group>
+		<e:Group id="group_2" width="852" height="1136" horizontalCenter="0" verticalCenter="0">
+			<e:Image id="river_1" source="river_png" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image id="river_2" source="river_png" y="0" right="-900"/>
+		</e:Group>
+		<e:Group id="group_3" width="852" height="1136" horizontalCenter="0" verticalCenter="0" touchEnabled="false">
+			<e:Image source="four_bg_png" horizontalCenter="0" verticalCenter="0" touchEnabled="false"/>
+			<e:Group id="rankComp" width="518" height="497" x="290" y="1">
+				<e:Image source="paihang_png" x="0" y="0"/>
+				<e:Image source="paihang_bar_png" x="205" y="199"/>
+				<e:Image id="pk_light" source="main_pk_light_png" x="317" y="204" anchorOffsetX="144" anchorOffsetY="144"/>
+				<e:Image id="pk_hole" source="main_pk_hole_png" x="315" y="205" anchorOffsetX="30" anchorOffsetY="30"/>
+				<e:Image source="main_pk_text_png" x="294" y="184"/>
+			</e:Group>
+		</e:Group>
+		<e:Group id="group_4" width="852" height="1136" horizontalCenter="0" verticalCenter="0" touchEnabled="false">
+			<e:Image source="three_bg_png" horizontalCenter="0" verticalCenter="0" touchEnabled="false"/>
+			<e:Image source="tree_png" y="167" x="523" touchEnabled="false"/>
+			<e:Group id="companyComp" width="359" height="429" x="-19" y="182">
+				<e:Image source="company_png" x="0" y="0"/>
+				<e:Image source="company_bar_png" x="168" y="319"/>
+			</e:Group>
+			<e:Component id="coffeeComp" x="433" y="287" skinName="CoffeeCompSkin"/>
+			<e:Image source="coffee_grass_png" y="533" x="415" touchEnabled="false"/>
+			<e:Image source="san_png" y="536" x="448" touchEnabled="false"/>
+			<e:Group id="group_huodong" width="369" height="295" x="110" y="31">
+				<e:Image id="huodong" source="huodong_png" y="0" x="0"/>
+				<e:Image source="huodong_bar_png" x="105" y="234" touchEnabled="false"/>
+			</e:Group>
+		</e:Group>
+		<e:Group id="group_5" width="852" height="1136" horizontalCenter="0" verticalCenter="0" touchEnabled="false">
+			<e:Image source="two_bg_png" verticalCenter="0" horizontalCenter="0" touchEnabled="false"/>
+			<e:Component id="homeComp" x="36" y="584" skinName="HomeCompSkin"/>
+			<e:Component id="mailComp" x="273" y="500" scaleX="1" scaleY="1" skinName="MailCompSkin"/>
+			<e:Image source="grass_png" y="811" x="-53" touchEnabled="false"/>
+			<e:Image source="zhalan_png" y="921" x="-10" touchEnabled="false"/>
+			<e:Component id="shopComp" x="373" y="576" skinName="ShopCompSkin"/>
+			<e:Image source="blank_nor_png" y="692" x="786" touchEnabled="false"/>
+		</e:Group>
+		<e:Group id="group_6" width="852" horizontalCenter="0" height="1136" verticalCenter="0" touchEnabled="false">
+			<e:Image source="road_png" horizontalCenter="0" verticalCenter="0" touchEnabled="false"/>
+			<e:Component id="storyComp" x="379" y="912" skinName="StoryCompSkin"/>
+			<e:Component id="vipStoryComp" x="88" y="855" skinName="VipStoryCompSkin"/>
+		</e:Group>
+		<e:Group id="group_7" width="852" horizontalCenter="0" height="1136" verticalCenter="0" touchEnabled="false">
+			<e:Image source="near_png" touchEnabled="false" x="-22" y="-4"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

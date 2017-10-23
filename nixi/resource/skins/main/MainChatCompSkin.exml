@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MainChatCompSkin" width="346" height="272" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image right="0" verticalCenter="0" source="newmain_ui_json.main_chat_bg"/>
+	<e:Scroller id="scroller" width="294" height="245" x="34" y="12" anchorOffsetX="0" anchorOffsetY="0" touchEnabled="false">
+		<e:List id="list" anchorOffsetX="0"/>
+	</e:Scroller>
+</e:Skin>

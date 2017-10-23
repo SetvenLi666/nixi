@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="NicknameSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="852" height="1136">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Image source="nickname_box_png" horizontalCenter="0" touchEnabled="false" x="-62" y="370" scaleX="1" scaleY="1"/>
+		<e:Image source="nickname_input_bg_png" y="445" scaleX="1" scaleY="1" horizontalCenter="0"/>
+		<e:EditableText id="nameInput" width="300" height="56" text="" y="445" touchEnabled="true" multiline="false" verticalAlign="middle" textAlign="left" anchorOffsetX="0" textColor="0xb5b4b4" scaleX="1" scaleY="1" horizontalCenter="0"/>
+		<e:Image id="btnConfirm" y="575" touchEnabled="true" source="nickname_btn_ok_png" anchorOffsetX="55.5" anchorOffsetY="23.5" scaleX="1" scaleY="1" horizontalCenter="0"/>
+	</e:Group>
+</e:Skin>

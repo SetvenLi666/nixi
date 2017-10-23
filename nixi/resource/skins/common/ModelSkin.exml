@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ModelSkin" width="1500" height="2100" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="layer_10" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image id="layer_30" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image id="layer_39" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_40" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_41" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_50" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_60" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_69" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_70" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_71" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_72" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_73" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_79" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_80" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_81" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_82" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_100" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_129" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_130" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_132" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image id="layer_139" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_140" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_200" horizontalCenter="0" verticalCenter="0" source="gj_man_png"/>
+	<e:Image id="layer_201" horizontalCenter="0" top="0"/>
+	<e:Image id="shower_blink" horizontalCenter="0" source="shower_blink_1_png" top="0"/>
+	<e:Image horizontalCenter="0" x="10" source="30000_png" top="0"/>
+	<e:Image horizontalCenter="0" x="20" source="40000_png" top="0"/>
+	<e:Image id="layer_300" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_305" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_310" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_311" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_312" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_335" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_336" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_350" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_352" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_359" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_360" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_369" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_370" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_378" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_379" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_380" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_385" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_390" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_400" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_401" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_403" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_404" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_405" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_406" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_410" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_411" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_412" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_413" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_4133" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_414" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_415" horizontalCenter="0" source="gl_gebo_png" top="0"/>
+	<e:Image id="layer_4166" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_416" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_417" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_418" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_419" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image id="layer_420" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_421" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_422" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_423" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_424" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_430" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_439" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_440" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_441" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_449" horizontalCenter="0" bottom="0"/>
+	<e:Image id="layer_450" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_451" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_460" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image id="layer_499" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_500" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image id="layer_510" horizontalCenter="0" verticalCenter="0"/>
+</e:Skin>

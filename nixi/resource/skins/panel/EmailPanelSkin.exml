@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="EmailPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Rect fillColor="0x000000" fillAlpha="0.8" left="0" right="0" top="0" bottom="0"/>
+		<e:Image id="bg" horizontalCenter="0" verticalCenter="0" source="panel_ui_json.ac_panel_bg"/>
+		<e:Group id="tip" width="200" height="200" y="495" horizontalCenter="0" visible="false">
+			<e:Image horizontalCenter="0" source="newmain_ui_json.main_niudan_pkq" x="412" scaleX="1" scaleY="1" verticalCenter="0"/>
+			<e:Label text="暂无邮件~" y="172" scaleX="1" scaleY="1" horizontalCenter="0" size="22"/>
+		</e:Group>
+		<e:Scroller width="520" height="690" y="205" horizontalCenter="0">
+			<e:List id="mail_list" y="0" horizontalCenter="0"/>
+			
+		</e:Scroller>
+	</e:Group>
+</e:Skin>

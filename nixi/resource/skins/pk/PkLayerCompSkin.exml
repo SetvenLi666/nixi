@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PkLayerCompSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Image id="btn_back" y="1039" left="-6" source="common_back_png"/>
+		<e:Group width="238" height="25" horizontalCenter="0" bottom="0">
+			<e:Image source="pk_text_tip_png" x="0" y="0"/>
+			<e:Label id="leftTime" text="7" y="3" size="18" textColor="0xff3378" textAlign="center" horizontalCenter="82.44"/>
+		</e:Group>
+		<e:Image id="left_circle" y="497.5" anchorOffsetX="126" anchorOffsetY="126" source="pk_icon_circle_png" horizontalCenter="-190"/>
+		<e:Image id="right_circle" y="497.5" anchorOffsetX="126" anchorOffsetY="126" source="pk_icon_circle_png" horizontalCenter="190"/>
+		<e:Image y="392.5" source="pk_icon_bg_png" horizontalCenter="-190"/>
+		<e:Image y="392.5" source="pk_icon_bg_png" horizontalCenter="190"/>
+		<e:Image id="selfMask" y="392.5" source="pk_icon_bg_png" horizontalCenter="-190"/>
+		<e:Image id="otherMask" y="392.5" source="pk_icon_bg_png" horizontalCenter="190"/>
+		<ns1:Model id="shower_self" y="195" scaleX="0.6" scaleY="0.6" skinName="ModelSkin" horizontalCenter="-180" locked="true"/>
+		<ns1:Model id="shower_other" y="195" scaleX="0.6" scaleY="0.6" skinName="ModelSkin" horizontalCenter="200" locked="true"/>
+		<e:Group id="refreshComp" width="113" height="50" y="570" horizontalCenter="195" visible="false">
+			<e:Image x="0" y="0" source="pk_btn_ex_png"/>
+			<e:Label id="refreshTimes" text="0/3" y="22.46" size="20" textAlign="center" verticalAlign="middle" textColor="0xff3e79" horizontalCenter="0" bold="true"/>
+			<e:Label text="换一个" y="4.1" size="20" textColor="0xff3e79" horizontalCenter="0" anchorOffsetY="0" bold="true"/>
+		</e:Group>
+		<e:Group width="212" height="130" y="672" horizontalCenter="-190">
+			<e:Image y="0" x="0" scaleX="1" scaleY="1" source="pk_info_bg_png"/>
+			<e:Label id="selfNickname" text="昵称" y="6" size="24" textAlign="center" verticalAlign="middle" x="16"/>
+			<e:Label id="selfCollected" text="????" x="145" y="49.5" size="24" textAlign="left" verticalAlign="middle" textColor="0xad5574" height="24"/>
+			<e:Label id="selfScore" text="????" x="145" y="82.5" size="24" textAlign="left" verticalAlign="middle" anchorOffsetY="0" height="24" textColor="0xad5574" width="54"/>
+			<e:Image id="selfPhaseImg" source="base_lv1_png" y="-46" left="0"/>
+		</e:Group>
+		<e:Group width="212" height="130" y="672" horizontalCenter="190">
+			<e:Image y="0" x="0" scaleX="1" scaleY="1" source="pk_info_bg_png"/>
+			<e:Label id="otherNickname" text="?????" y="6" size="24" textAlign="center" verticalAlign="middle" x="16"/>
+			<e:Label id="otherCollected" text="????" x="145" y="48.5" size="24" textAlign="left" verticalAlign="middle" textColor="0xad5574" width="54" height="24"/>
+			<e:Label id="otherScore" text="????" x="145" y="82.5" size="24" textAlign="left" verticalAlign="middle" textColor="0xad5574" width="54" height="24"/>
+			<e:Image id="otherPhaseImg" source="base_lv1_png" y="-46" left="0"/>
+		</e:Group>
+		<e:Group width="212" height="183" y="154" horizontalCenter="0">
+			<e:Image x="0" y="0" scaleX="1" scaleY="1" source="pk_theme_bg_png"/>
+			<e:Image id="tag_1" source="clothes_tags_json.tag_102" scaleX="1.2" scaleY="1.2" y="57" horizontalCenter="-40"/>
+			<e:Image id="tag_2" source="clothes_tags_json.tag_103" y="57" scaleX="1.2" scaleY="1.2" horizontalCenter="40"/>
+		</e:Group>
+		<e:Image y="811.73" horizontalCenter="190" source="pk_pipei_tip_png"/>
+		<e:Image id="starLight" y="540" anchorOffsetX="65" anchorOffsetY="66.5" horizontalCenter="0" touchEnabled="false" source="pk_ac_star_png"/>
+		<e:Image id="ant_pk" y="540" anchorOffsetY="22" anchorOffsetX="38.5" horizontalCenter="0" source="pk_txt_duijue_png"/>
+		<e:Group id="startGroup" width="161" height="161" y="955" anchorOffsetX="80.5" anchorOffsetY="80.5" horizontalCenter="0" visible="false">
+			<e:Image id="btn_changed" y="0" horizontalCenter="0" source="pk_btn_start_png" x="0" scaleX="1" scaleY="1"/>
+			<e:Group id="costGroup" y="27" horizontalCenter="0" width="100" height="40" visible="false">
+				<e:Label id="startCost" text="10" size="24" textColor="0xffffff" y="9.08" textAlign="right" x="19.69" width="27" strokeColor="0xe2245d" stroke="2"/>
+				<e:Image source="base_diam_png" y="5.06" scaleY="0.8" scaleX="0.8" x="48.82"/>
+			</e:Group>
+			<e:Label id="curTimes" text="0/10" y="110.56" size="24" horizontalCenter="0" strokeColor="0xe2245d" stroke="2"/>
+		</e:Group>
+		<e:Image id="btn_change" y="941" source="pk_btn_hz_png" anchorOffsetX="55.5" anchorOffsetY="23.5" horizontalCenter="-220" visible="false"/>
+		<e:Group id="buffComp" width="165" height="35" y="1049" horizontalCenter="0" visible="false">
+			<e:Image y="0" x="0" scaleX="1" scaleY="1" source="pk_buff_bg_png"/>
+			<e:Label id="plusLabel" text="" size="24" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0" textAlign="center" verticalAlign="middle" bold="true" textColor="0xff3e79"/>
+		</e:Group>
+		<e:Group id="btn_buff" y="943" anchorOffsetX="55.5" anchorOffsetY="35.5" horizontalCenter="220" visible="false">
+			<e:Image anchorOffsetX="55.5" anchorOffsetY="23.5" source="pk_btn_zf_png" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="-10.5"/>
+			<e:Image x="1.85" y="44.18" source="pk_btn_zf_cost_png"/>
+		</e:Group>
+		<e:Image id="btn_prepare" source="pk_btn_zb_png" y="955" horizontalCenter="0" anchorOffsetX="99" anchorOffsetY="99.5"/>
+		<e:Group id="listGroup" width="157" height="136" bottom="0" right="0" anchorOffsetX="78.5" anchorOffsetY="68">
+			<e:Image y="-1" scaleX="1" scaleY="1" horizontalCenter="0" source="pk_hg_bg_png"/>
+			<e:Label id="myRank" text="未上榜" verticalAlign="middle" textAlign="center" horizontalCenter="0.5" size="20" bold="true" textColor="0xff3378" verticalCenter="41" strokeColor="0xffffff" stroke="1"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

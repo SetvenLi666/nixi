@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="RewardBoxSkin" width="221" height="403" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="box_0,box_1,box_2" >
+	<e:Image source="ac_daily_pkq_png" horizontalCenter="0" verticalCenter="-40"/>
+	<e:Image id="boxImg" horizontalCenter="0" verticalCenter="65" source="ac_daily_box1_png" source.box_2="ac_daily_box2_png" source.box_1="ac_daily_box1_png" anchorOffsetX.box_2="62" anchorOffsetY.box_2="56.5"/>
+	<e:Image id="light" includeIn="box_2" scaleX="1" scaleY="1" width="400" height="400" anchorOffsetX="200" anchorOffsetY="200" horizontalCenter="0" source="ac_daily_light_png" y="163" visible="false"/>
+	<e:Component id="iconComp" includeIn="box_2" skinName="IconCompSkin" anchorOffsetX="59" anchorOffsetY="59.5" horizontalCenter="0" y="162.5" visible="false"/>
+</e:Skin>

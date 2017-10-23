@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PieceLabelSkin" width="282" height="38" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="exchange_tiao_png" x="0" y="0"/>
+	<e:Label text="当前碎片数量:" size="22" width="142" x="44" y="8"/>
+	<e:Label id="count" text="100" x="186" size="22" textAlign="left" y="8"/>
+</e:Skin>

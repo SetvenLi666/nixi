@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TaskUnlockPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Group id="unlockGroup" width="462" height="441" horizontalCenter="0" verticalCenter="0" anchorOffsetX="231" anchorOffsetY="220.5">
+			<e:Image source="task_unlock_bg_png" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image source="task_icon_xt_png" horizontalCenter="0" y="105"/>
+			<e:Image source="task_text_bg_bar_png" y="245.01" horizontalCenter="0"/>
+			<e:Label id="textlab" text="标签" y="252" horizontalCenter="0"/>
+			<e:Image id="btn_back" source="task_btn_back_png" y="355" horizontalCenter="-100" anchorOffsetX="55.5" anchorOffsetY="23.5"/>
+			<e:Image id="btn_go" source="task_btn_go_png" y="355" horizontalCenter="100" anchorOffsetX="55.5" anchorOffsetY="23.5"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

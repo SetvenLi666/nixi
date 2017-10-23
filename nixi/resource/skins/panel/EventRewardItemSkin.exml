@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="EventRewardItemSkin" width="94" height="95" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="state_0,state_1,state_2" >
+	<e:Image source="my_plate_0_png" x="0" y="0" source.state_1="my_plate_1_png" source.state_2="my_plate_2_png"/>
+	<e:Image id="icon" source="base_json.gj_coin" horizontalCenter="0" y="17"/>
+	<e:Label id="count" text="1000" y="56" size="14" horizontalCenter="0" textAlign="center" bold="true" textColor="0xde4daa" width="32" height="14"/>
+</e:Skin>

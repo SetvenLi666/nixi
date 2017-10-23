@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GashaponButtonSkin" width="104" height="59" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="icon" width="104" height="59" x="0" y="0" source=""/>
+	<e:Label id="label" text="免费" size="20" horizontalCenter="0" verticalCenter="0"/>
+	<e:Label id="costLabel" text="20" size="12" scaleX="1" scaleY="1" right="24" bottom="7"/>
+	<e:Image id="dia_image" source="gashapon_gold_png" bottom="7" right="13"/>
+</e:Skin>

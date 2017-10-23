@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MainButtonBarSkin" width="96" height="804" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="btn_qd" source="main_qiandao_png" y="0" x="7"/>
+	<e:Image id="btn_hz" width="96" height="96" source="main_huanzhuang_png" y="116" x="0"/>
+	<e:Image id="btn_tl" source="btn_energylargess_png" y="237" x="7"/>
+	<e:Image id="btn_cj" source="btn_gashapon_png" y="356" x="7"/>
+	<e:Image id="btn_cz" source="btn_purchaseachievement_png" y="474" x="7"/>
+	<e:Image id="btn_ld" source="lingdang_png" x="0" bottom="0"/>
+	<e:Image id="btn_zk" source="main_month_png" y="593" x="7"/>
+</e:Skin>

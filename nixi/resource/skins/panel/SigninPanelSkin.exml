@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SigninPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="1581eeeaa81"/>
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Rect fillAlpha="0.8" left="0" right="0" top="0" bottom="0"/>
+		<e:Image id="bg" horizontalCenter="0" verticalCenter="0" source="ac_res_json.ac_signin_panel"/>
+		<e:Image source="ac_res_json.ac_signin_role" horizontalCenter="-108" verticalCenter="-60.5"/>
+		<ns1:SignItemComp id="item_7" y="751.94" skinName="SignItemSkin" horizontalCenter="179.48000000000002"/>
+		<ns1:SignItemComp id="item_6" y="661.97" skinName="SignItemSkin" horizontalCenter="85.7"/>
+		<ns1:SignItemComp id="item_5" y="572" skinName="SignItemSkin" scaleX="1" scaleY="1" horizontalCenter="179.48000000000002"/>
+		<ns1:SignItemComp id="item_4" y="483" skinName="SignItemSkin" horizontalCenter="85.7"/>
+		<ns1:SignItemComp id="item_3" y="393" skinName="SignItemSkin" horizontalCenter="179.48000000000002"/>
+		<ns1:SignItemComp id="item_2" y="303.25" skinName="SignItemSkin" horizontalCenter="85.7"/>
+		<ns1:SignItemComp id="item_1" y="213.5" skinName="SignItemSkin" horizontalCenter="179.48000000000002"/>
+		<e:Image y="218.48" horizontalCenter="64.5" source="ac_res_json.ac_signin_text"/>
+		<e:Image y="886.6" horizontalCenter="0.5" source="panel_ui_json.ac_signin_text2"/>
+	</e:Group>
+</e:Skin>

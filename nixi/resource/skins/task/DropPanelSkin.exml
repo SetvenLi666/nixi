@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DropPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group id="group" width="852" height="1136" x="0" y="0">
+		<ns1:DropComp id="dropComp" skinName="DropCompSkin" horizontalCenter="0" verticalCenter="0"/>
+	</e:Group>
+</e:Skin>

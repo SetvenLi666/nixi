@@ -1,0 +1,9 @@
+<e:Skin class="skins.TextInputSkin" minHeight="40" minWidth="300"
+        states="normal,disabled,normalWithPrompt,disabledWithPrompt" xmlns:e="http://ns.egret.com/eui" height="519">
+    <e:Image width="100%" height="100%" scale9Grid="1,3,8,8"  source="note_panel_png"/>
+    <e:Rect height="357" width="380" fillColor="0xffffff"  y="73" x="42" fillAlpha="0"/>
+    <e:EditableText id="textDisplay" textColor="0x000000"
+                    textColor.disabled="0xff0000" width="379" height="354" size="20"  x="42" y="75"/>
+    <e:Label id="promptDisplay" textColor="0xa9a9a9" width="381" height="116"
+             size="20" touchEnabled="false" includeIn="normalWithPrompt,disabledWithPrompt"  x="43" y="156"/>
+</e:Skin>

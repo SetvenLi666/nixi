@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TaskTitleCompSkin" width="528" height="212" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="task_title_bar_png" x="0" y="0"/>
+	<e:Image source="task_rat_iconBg_png" x="16" y="21"/>
+	<e:Image x="25" y="27" source="icon30511_png"/>
+	<e:Image source="task_rat_namebar_png" x="44" y="130"/>
+	<e:Image source="task_rat_coin_png" x="58" y="130" scaleX="0.6" scaleY="0.6"/>
+	<e:Label text="999" x="80" y="134" size="18" textColor="0x505050" height="18" width="62" textAlign="center"/>
+	<e:Image source="task_ui_json.task_tip_flag" x="201" y="86"/>
+	<e:Label text="本关五星通关奖励" x="234" y="106" size="20" textColor="0x505050" strokeColor="0x9f877b" stroke="0.8"/>
+	<e:Image id="btn_start" source="dressUI_json.dress_btn_start" x="386" y="139"/>
+</e:Skin>

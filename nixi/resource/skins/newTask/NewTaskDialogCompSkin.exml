@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="NewTaskDialogCompSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group id="container" width="852" height="1136" x="0" y="0">
+		<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0" x="0" y="0" scaleX="1" scaleY="1">
+			<e:Rect fillAlpha="0.5" left="0" right="0" top="0" bottom="0" fillColor="0xffffff"/>
+			<ns1:Model id="model" y="-120" horizontalCenter="-205" scaleY="0.9" scaleX="0.9" skinName="ModelSkin" visible="false"/>
+			<e:Group width="852" height="1136" horizontalCenter="-175" verticalCenter="0">
+			<e:Image id="player1" horizontalCenter="0" verticalCenter="0" source=""/>
+			</e:Group>
+			<e:Group width="852" height="1136" horizontalCenter="175" verticalCenter="0">
+			<e:Image id="player2" horizontalCenter="0" verticalCenter="0" source=""/>
+			</e:Group>
+			<e:Group width="852" height="1136" horizontalCenter="0" verticalCenter="0">
+			<e:Image id="player3" horizontalCenter="0" verticalCenter="0"/>
+			</e:Group>
+			<e:Group id="dialogGroup" width="528" height="256" horizontalCenter="0" x="162" y="775" scaleX="1" scaleY="1" visible="false">
+			<e:Image id="compBg" x="0" bottom="0" y="9" scaleX="1" scaleY="1" source="task_ui_json.task_dia_bg"/>
+			<e:Label id="nickname" text="苏橙" x="35" y="23" size="24" height="24" width="96" textAlign="center" scaleX="1" scaleY="1"/>
+			<e:Image id="btn_play" x="355" top="0" y="0" scaleX="1" scaleY="1" source="task_ui_json.task_dia_play"/>
+			<e:Image id="btn_fast" x="445" top="0" y="0" scaleX="1" scaleY="1" source="task_ui_json.task_dia_fast"/>
+			<e:Rect id="touchRect" width="503" height="175" x="12" y="69" fillAlpha="0" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1"/>
+			<e:Label id="contentText" text="" y="80" size="26" textColor="0x505050" textAlign="left" anchorOffsetX="0" width="432" anchorOffsetY="0" height="105" horizontalCenter="0" touchEnabled="false" lineSpacing="3" x="48" scaleX="1" scaleY="1" bold="true"/>
+			<e:Image id="img_arrow" x="465" y="208" touchEnabled="false" scaleX="1" scaleY="1" source="task_ui_json.task_dia_click" visible="false"/>
+			<e:Image id="btn_hz" x="386" y="186" scaleX="1" scaleY="1" source="task_ui_json.task_dia_change" visible="false"/>
+			<e:Image id="play_selected" source="story_btn_selected_png" x="357" top="0" y="0" scaleX="1" scaleY="1" visible="false"/>
+			<e:Image id="fast_selected" source="story_btn_selected_png" x="447" top="0" y="0" scaleX="1" scaleY="1" visible="false"/>
+			</e:Group>
+			<e:Group id="titleGroup" width="528" height="212" y="810" horizontalCenter="0">
+				<e:Image source="task_title_bar_png" x="0" y="0" scaleX="1" scaleY="1"/>
+				<ns1:RewardItemComp id="rewardComp" x="18" y="28" skinName="RewardItemSkin" anchorOffsetX="0" anchorOffsetY="0"/>
+				<e:Image id="flagImg" source="task_flag_yihuode_png" x="138.09" y="39.54" visible="false"/>
+				<e:Label id="taskTitle" text="任务标题" x="225" y="42" textColor="0x643814"/>
+				<e:Image source="task_ui_json.task_tip_flag" x="201" y="86" scaleX="1" scaleY="1"/>
+				<e:Label text="本关五星通关奖励" x="234" y="106" size="20" strokeColor="0x9F877B" stroke="0.8" scaleX="1" scaleY="1" textColor="0x643814"/>
+				<e:Image id="btn_start" source="dressUI_json.dress_btn_start" x="390" y="143" scaleX="1" scaleY="1"/>
+				<e:Image source="task_bar_tili_png" x="405" y="117"/>
+			</e:Group>
+			<e:Image id="btn_back" source="common_back_png" y="1039" left="-6"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

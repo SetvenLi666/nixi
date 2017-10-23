@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TaskSubtitleSkin" states="init,playing,idle,stoped" width="640" height="264" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<w:Config id="158047420fb"/>
+	<e:Image y="50" source="dialog_panel_json.qj_di" horizontalCenter="0"/>
+	<e:Label id="lblSubtitle" text="" x="73" y="105" width="495" height="128" size="24" bold="true" lineSpacing="10" textColor="0x503F44"/>
+	<e:Group excludeFrom="init" width="142" height="57" x="63" y="19">
+		<e:Image source="dialog_panel_json.qj_namekuang" x="0" y="0"/>
+		<e:Label text="{dialog.name}" x="13" y="13" width="116" height="28" size="28" verticalAlign="middle" textAlign="center"/>
+	</e:Group>
+	<e:Image id="btnHistory" source="dialog_panel_json.qj_huikan" x="380" y="0"/>
+	<e:ToggleButton id="btnFastPlay" label="" x="497" y="0">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="dialog_panel_json.qj_kuaijin1" source.down="dialog_panel_json.qj_kuaijin2"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:ToggleButton>
+</e:Skin>

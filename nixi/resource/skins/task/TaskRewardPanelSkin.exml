@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TaskRewardPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="group" width="852" height="1136" x="0" y="0">
+		<ns1:TaskRewardComp id="rewardComp" skinName="TaskRewardCompSKin" horizontalCenter="0" verticalCenter="0"/>
+	</e:Group>
+</e:Skin>

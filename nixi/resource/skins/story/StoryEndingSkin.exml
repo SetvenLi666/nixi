@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="flowers" height="274" y="250" left="0" right="0">
+		<e:Image source="story_ending_json.qj_hua1" x="-100" y="119"/>
+		<e:Image source="story_ending_json.qj_hua1" x="-100" y="150"/>
+		<e:Image source="story_ending_json.qj_hua2" x="-100" y="65"/>
+		<e:Image source="story_ending_json.qj_hua2" x="-100" y="11"/>
+		<e:Image source="story_ending_json.qj_hua3" x="-100" y="18"/>
+		<e:Image source="story_ending_json.qj_hua3" x="-100" y="145"/>
+		<e:Image source="story_ending_json.qj_hua4" x="-100" y="63"/>
+		<e:Image source="story_ending_json.qj_hua4" x="-100" y="3"/>
+		<e:Image source="story_ending_json.qj_hua5" x="-100" y="143"/>
+		<e:Image source="story_ending_json.qj_hua5" x="-100" y="167"/>
+		<e:Image source="story_ending_json.qj_hua6" x="-100" y="30"/>
+		<e:Image source="story_ending_json.qj_hua6" x="-100" y="158"/>
+	</e:Group>
+	<e:Group id="lights" height="274" y="250" left="0" right="0">
+		<e:Image source="story_ending_json.qj_xian1" x="-10" y="65" anchorOffsetX="147"/>
+		<e:Image source="story_ending_json.qj_xian11" x="-10" y="46" anchorOffsetX="147"/>
+		<e:Image source="story_ending_json.qj_xian2" x="-10" y="116" anchorOffsetX="312"/>
+		<e:Image source="story_ending_json.qj_xian22" x="-10" y="172" anchorOffsetX="312"/>
+		<e:Image source="story_ending_json.qj_xian3" x="-10" y="143" anchorOffsetX="484"/>
+		<e:Image source="story_ending_json.qj_xian33" x="-10" y="237" anchorOffsetX="484"/>
+	</e:Group>
+	<e:Group id="pass" width="600" height="200" anchorOffsetX="300" anchorOffsetY="100" y="-100" x="426">
+		<e:Image x="88" y="61" source="story_ending_json.qj_wan"/>
+		<e:Image x="285" y="64" source="story_ending_json.qj_cheng"/>
+		<e:Image x="615" y="79" source="story_ending_json.qj_zhang"/>
+		<e:Image x="421" y="82" source="story_ending_json.qj_jie"/>
+		<e:layout>
+			<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle"/>
+		</e:layout>
+	</e:Group>
+	<e:Group id="achievement" anchorOffsetX="204" anchorOffsetY="73.5" y="-100" x="426">
+		<e:Image source="story_ending_json.qj_jiejukuang" horizontalCenter="0"/>
+		<e:Label id="label" text="获得成就六字" y="66" width="258" height="60" verticalAlign="middle" textAlign="center" size="32" bold="true" textColor="0x503c3d" horizontalCenter="0"/>
+	</e:Group>
+</e:Skin>

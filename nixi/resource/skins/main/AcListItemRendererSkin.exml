@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="AcListItemRendererSkin" width="300" height="131" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image x="0" y="0" source="newmain_ui_json.main_ac_black"/>
+	<e:Image id="icon" x="0" y="0" source="newmain_ui_json.main_ac_kuang"/>
+	<e:Image x="0" y="0" source="newmain_ui_json.main_ac_label"/>
+</e:Skin>

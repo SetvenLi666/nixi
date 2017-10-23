@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PhaseBarSkin" width="505" height="30" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="base_json.base_phase" left="0" verticalCenter="0"/>
+	<e:ProgressBar id="phaseBar" x="25" y="15" skinName="PhaseProgressBarSkin"/>
+	<e:Label id="phase" text="1" x="10" size="20" textColor="0xd47173" textAlign="center" verticalCenter="1"/>
+</e:Skin>

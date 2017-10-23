@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="StrangerListRendererSkin" width="288" height="114" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="up,down"  width.down="288">
+	<e:Image id="bg" source="frd_item_bg_png" right="4" bottom="22"/>
+	<e:Image includeIn="down" source="frd_item_pkq_png" bottom="10" x="-15"/>
+	<e:Label id="nickname" text="昵称能有几个字" size="20" textAlign="left" verticalAlign="middle" textColor="0xffffff" bottom="67" x="138" x.down="138"/>
+	<e:Image id="flag" source="frd_item_flag_png" right="131" bottom="31.25" source.down="frd_item_flag_png"/>
+	<e:Label id="clothes_count" text="1000" size="18" textAlign="left" verticalAlign="middle" textColor="0x505050" bottom="32.25" x="236"/>
+	<e:ToggleButton id="add_tog" label="" includeIn="down" right="7" bottom="1">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="frd_btn_add_png" source.down="frd_btn_add_png" source.disabled="frd_btn_added_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:ToggleButton>
+	<e:Label text="服装收集" size="18" textColor="0x505050" right="58" bottom="32.25"/>
+	<e:Image source="frd_icon_png" bottom="13.5" x.down="40" x="40"/>
+	<e:Image source="frd_icon_bg_png" bottom="12.5" x.down="40" x="40"/>
+</e:Skin>

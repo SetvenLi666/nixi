@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ButtonItemCompSkin" width="106" height="145" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="item_bg" source="main_yule_bg_png" horizontalCenter="0" top="0"/>
+	<e:Image id="tween" source="main_yule_1_png" horizontalCenter="0" top="0"/>
+	<e:Image id="item_lab" source="main_lab_yule_png" horizontalCenter="0" bottom="0"/>
+</e:Skin>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ShowerSkin" width="1500" height="2100" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="house_shadow_png" horizontalCenter="-80" verticalCenter="475" visible="false"/>
+	<e:Image source="house_shadow_png" horizontalCenter="-80" verticalCenter="475" visible="false"/>
+	<e:Image source="{dresson.maozi2}" horizontalCenter="0" verticalCenter="0" x="426" y="568"/>
+	<e:Image id="tuihuan" horizontalCenter="0" verticalCenter="0" source="{dresson.tuihuan2}"/>
+	<e:Image source="{dresson.toufa2}" horizontalCenter="0" verticalCenter="0" x="426" y="568"/>
+	<e:Image source="{dresson.waitao2}" horizontalCenter="0" verticalCenter="0" x="426" y="568"/>
+	<e:Image source="{dresson.bao2}" horizontalCenter="0" verticalCenter="0" x="426" y="568"/>
+	<e:Image source="{dresson.xianglian2}" horizontalCenter="0" verticalCenter="0" x="426" y="568"/>
+	<e:Image source="{dresson.shangyi2}" horizontalCenter="0" verticalCenter="0" x="426" y="568"/>
+	<e:Image source="{dresson.kuzi2}" horizontalCenter="0" verticalCenter="0" x="426" y="568"/>
+	<e:Image source="gj_man_png" horizontalCenter="0" verticalCenter="0" x="-24" y="0"/>
+	<e:Image id="shower_blink" horizontalCenter="0" verticalCenter="0" source="shower_blink_1_png"/>
+	<e:Image horizontalCenter="0" verticalCenter="0" x="-24" y="0" source="{dresson.zhuangrong}" visible="false"/>
+	<e:Image source="{dresson.wazi}" horizontalCenter="0" verticalCenter="0" x="426" y="568"/>
+	<e:Image source="{dresson.jiaolian}" horizontalCenter="0" verticalCenter="0" x="426" y="568"/>
+	<e:Image id="kuzi" source="{dresson.kuzi}" horizontalCenter="0" verticalCenter="0" x="426" y="568"/>
+	<e:Image source="{dresson.tuihuan}" horizontalCenter="0" verticalCenter="0" x="426" y="568"/>
+	<e:Image source="{dresson.xiezi}" horizontalCenter="0" verticalCenter="0" x="426" y="568"/>
+	<e:Image source="{dresson.bao3}" horizontalCenter="0" verticalCenter="0" x="426" y="568"/>
+	<e:Image source="{dresson.shouhuan}" horizontalCenter="0" verticalCenter="0" x="426" y="568"/>
+	<e:Image id="shangyi" source="{dresson.shangyi}" horizontalCenter="0" verticalCenter="0" x="426" y="568"/>
+	<e:Image source="{dresson.xianglian}" horizontalCenter="0" verticalCenter="0" x="426" y="568"/>
+	<e:Image source="{dresson.yaodai}" horizontalCenter="0" verticalCenter="0" x="426" y="568"/>
+	<e:Image source="{dresson.waitao}" horizontalCenter="0" verticalCenter="0" x="426" y="568"/>
+	<e:Image source="{dresson.bao}" horizontalCenter="0" verticalCenter="0" x="426" y="568"/>
+	<e:Image source="{dresson.xiongzhen}" horizontalCenter="0" verticalCenter="0" x="426" y="568"/>
+	<e:Image source="{dresson.yanjing}" horizontalCenter="0" verticalCenter="0" x="426" y="568"/>
+	<e:Image source="{dresson.toufa}" horizontalCenter="0" verticalCenter="0" x="426" y="568"/>
+	<e:Image source="{dresson.erhuan}" horizontalCenter="0" verticalCenter="0" x="426" y="568"/>
+	<e:Image source="{dresson.maozi}" horizontalCenter="0" verticalCenter="0" x="426" y="568"/>
+</e:Skin>

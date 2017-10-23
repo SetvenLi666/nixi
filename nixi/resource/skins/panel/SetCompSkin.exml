@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SetCompSkin" width="406" height="340" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="set_panel_png" x="0" y="0"/>
+	<e:Image source="nnr_bar_png" x="49" y="87"/>
+	<e:EditableText id="editText" width="212" height="24" text="" x="57" y="100" textColor="0x000000" size="24" prompt="请输入新昵称" promptColor="0x7d7a7a" scaleX="1" scaleY="1"/>
+	<e:Button id="btn_newName" label="首次免费" x="290" scaleX="1" scaleY="1" width="102" height="57" y="81">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="nnr_commit_png" source.down="nnr_commit_png" source.disabled="nnr_commit_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Image x="79" y="215" source="set_effect_off_png"/>
+	<e:Image x="247" y="215" source="set_music_off_png"/>
+	<e:Image source="relogin_png" x="268" y="285" visible="false"/>
+	<e:Image id="btn_gift" source="set_gift_png" y="273" x="155"/>
+	<e:Label id="sid" text="" x="90" y="43" size="18" textColor="0xe0839d" textAlign="left" verticalAlign="middle"/>
+</e:Skin>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="StrangerComp" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<ns1:Model id="model" y="-55" skinName="ModelSkin" scaleY="0.6" scaleX="0.6" x="-109"/>
+		<e:Image id="btn_refresh" y="602" left="30" source="stg_btn_refresh_png"/>
+		<e:Image id="btn_find" y="723" left="30" source="stg_btn_find_png"/>
+		<e:Image id="btn_note" y="843" left="30" source="frd_btn_not_png"/>
+		<e:Image id="btn_back" y="1039" left="-6" source="common_back_png"/>
+		<e:Group width="263" height="962" y="130" right="-7">
+			<e:Image source="frd_panel_bg_png" x="0" y="0" scaleX="1" scaleY="1"/>
+			<e:Scroller id="scroller" width="292" height="889" y="60" scaleX="1" scaleY="1" anchorOffsetY="0" right="4">
+				<e:List id="list"/>
+			</e:Scroller>
+			<e:Label text="陌生人" y="17.99" horizontalCenter="0" size="24" textColor="0xf4236a"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

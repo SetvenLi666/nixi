@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ThirdPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Rect fillAlpha="0.8" left="0" right="0" top="0" bottom="0"/>
+		<e:Image id="bg" horizontalCenter="0" verticalCenter="0" source="ac_res_json.ac_30_panel"/>
+		<e:Image source="ac_res_json.ac_30_role" horizontalCenter="-118" verticalCenter="-32.5"/>
+		<ns1:SignItemComp id="item_1" xmlns:ns1="*" y="299.99" skinName="SignItemSkin" horizontalCenter="8"/>
+		<ns1:SignItemComp id="item_2" xmlns:ns1="*" y="299.99" skinName="SignItemSkin" horizontalCenter="180.65999999999997"/>
+		<ns1:SignItemComp id="item_3" xmlns:ns1="*" y="396.34" skinName="SignItemSkin" horizontalCenter="94"/>
+		<ns1:SignItemComp id="item_4" xmlns:ns1="*" y="492" skinName="SignItemSkin" horizontalCenter="8"/>
+		<ns1:SignItemComp id="item_5" xmlns:ns1="*" y="492" skinName="SignItemSkin" horizontalCenter="180.65999999999997"/>
+		<ns1:SignItemComp id="item_6" xmlns:ns1="*" y="589" skinName="SignItemSkin" horizontalCenter="94"/>
+		<ns1:SignItemComp id="item_7" xmlns:ns1="*" y="686.01" skinName="SignItemSkin" horizontalCenter="180.65999999999997"/>
+		<ns1:SignItemComp id="item_8" y="686.01" skinName="SignItemSkin" horizontalCenter="8"/>
+		<e:Image y="215.32" horizontalCenter="94.5" source="ac_res_json.ac_30_text"/>
+		<e:Image id="btn_rev" y="862.92" horizontalCenter="94.5" source="shopUI_json.shop_ui_buy"/>
+	</e:Group>
+</e:Skin>

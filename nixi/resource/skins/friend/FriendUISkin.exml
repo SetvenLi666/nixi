@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="FriendUISkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group id="group" width="852" height="1136" horizontalCenter="0" verticalCenter="0">
+		<ns1:ChatComp id="chatComp" y="206.99" skinName="ChatCompSkin" left="0"/>
+		<e:Image id="btn_back" y="1039" source="common_back_png" left="-6"/>
+		<e:Group id="btn_message" width="106" height="106" y="1025" right="370">
+			<e:Image y="0" source="social_m_msg_png" x="0" scaleX="1" scaleY="1"/>
+			<e:Image id="tip_msg" source="newmain_ui_json.main_mail_tip" anchorOffsetX="18.5" anchorOffsetY="19" x="87.5" y="19" visible="false"/>
+		</e:Group>
+		<e:Group id="btn_note" width="106" height="106" y="1025" right="250">
+			<e:Image y="0" source="social_m_not_png" x="0" scaleX="1" scaleY="1"/>
+			<e:Image id="tip_note" source="newmain_ui_json.main_mail_tip" anchorOffsetX="18.5" anchorOffsetY="19" x="87.5" y="19" visible="false"/>
+		</e:Group>
+		<e:Image id="btn_friend" y="1025" source="social_m_frd_png" right="130"/>
+		<e:Image id="btn_stranger" y="1025" source="social_m_stg_png" right="10"/>
+		<e:Image id="btn_rank" y="1020" source="social_m_rnk_png" x="720" visible="false"/>
+		<e:Image id="btn_chat" source="qipao_png" y="840.67" left="17" visible="false"/>
+	</e:Group>
+</e:Skin>

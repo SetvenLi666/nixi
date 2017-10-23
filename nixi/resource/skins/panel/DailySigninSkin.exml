@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DailySigninSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Rect id="rectMask" left="0" right="0" top="0" bottom="0" fillAlpha="1" visible="false"/>
+		<e:Image horizontalCenter="0" y="5.55" source="ac_daily_bg_png"/>
+		<e:Image y="164.76" horizontalCenter="0" source="ac_dialy_title_png"/>
+		<e:Image y="300" horizontalCenter="0" source="ac_daily_text_png"/>
+		<e:Group width="116" height="151.73" y="771.27" scaleX="1" scaleY="1" horizontalCenter="0" anchorOffsetY="0">
+			<e:Image y="30.08" horizontalCenter="0" x="99" scaleX="1" scaleY="1" source="ac_daily_iconBg_png"/>
+			<e:Image y="0.58" source="ac_daily_best_png" scaleX="1" scaleY="1" horizontalCenter="-1.5"/>
+			<e:Image source="ac_daily_icon_diam_png" y="56.56" horizontalCenter="-1"/>
+			<e:Label text="100" y="114.16" textAlign="right" size="24" scaleX="1" scaleY="1" textColor="0xfa357a" height="24" width="67" right="10"/>
+		</e:Group>
+		<e:Component id="boxComp" y="413.52" skinName="RewardBoxSkin" horizontalCenter="0"/>
+	</e:Group>
+</e:Skin>

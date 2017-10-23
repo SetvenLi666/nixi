@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TaskRatingSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="157bc39532e"/>
+	<e:Group id="container" verticalCenter="0" horizontalCenter="0">
+		<e:Image id="bg" horizontalCenter="0" verticalCenter="0" source="shop_bg_png"/>
+		<e:Image id="ac_star" source="task_ac_json.task_main_ac_star_1" anchorOffsetX="280" anchorOffsetY="280" x="450" y="568"/>
+		<e:Image source="task_ac_json.task_main_star_white" horizontalCenter="0" verticalCenter="0"/>
+		<e:Image id="pkq_bg" source="task_ac_json.task_main_pkq_1" horizontalCenter="0" verticalCenter="0" x="10" y="10"/>
+		<ns1:Model id="model" horizontalCenter="0" verticalCenter="160" scaleY="0.8" scaleX="0.8"/>
+		<e:Image source="task_rat_json.task_rat_o_star1" horizontalCenter="189.33000000000004" verticalCenter="57.5"/>
+		<e:Image source="task_rat_json.task_rat_o_star2" horizontalCenter="212.66999999999996" verticalCenter="-3.5"/>
+		<e:Image source="task_rat_json.task_rat_o_star3" horizontalCenter="220" verticalCenter="-83.67000000000002"/>
+		<e:Image source="task_rat_json.task_rat_o_star4" horizontalCenter="214.33000000000004" verticalCenter="-169.48000000000002"/>
+		<e:Image source="task_rat_json.task_rat_o_star5" horizontalCenter="200.66999999999996" verticalCenter="-266.17"/>
+		<e:Image id="star1" source="task_rat_json.task_rat_l_star1" horizontalCenter="190" verticalCenter="58.5" anchorOffsetX="21" anchorOffsetY="21.5" alpha="0"/>
+		<e:Image id="star2" source="task_rat_json.task_rat_l_star2" horizontalCenter="213.66999999999996" verticalCenter="-1.169999999999959" anchorOffsetX="21" anchorOffsetY="21.5" alpha="0"/>
+		<e:Image id="star3" source="task_rat_json.task_rat_l_star3" horizontalCenter="222.33000000000004" verticalCenter="-85.67000000000002" anchorOffsetX="31" anchorOffsetY="31" alpha="0"/>
+		<e:Image id="star4" source="task_rat_json.task_rat_l_star4" verticalCenter="-168.17000000000002" horizontalCenter="216.66999999999996" anchorOffsetX="36" anchorOffsetY="35.5" alpha="0"/>
+		<e:Image id="star5" source="task_rat_json.task_rat_l_star5" horizontalCenter="203.66999999999996" verticalCenter="-264.83" anchorOffsetX="42" anchorOffsetY="41.5" alpha="0"/>
+	</e:Group>
+	<e:Group id="titlePanel" horizontalCenter="0" top="80" width="549" height="205" y="-1">
+		<e:Image horizontalCenter="0" verticalCenter="-3" source="task_rat_title_png"/>
+	</e:Group>
+	<e:Group id="ratingPanel" y="521" anchorOffsetX="274.5" anchorOffsetY="191" horizontalCenter="0" width="549" height="191" visible="false">
+		<e:Image source="task_rat_json.task_rat_bar" horizontalCenter="0" verticalCenter="0"/>
+		<e:Image id="btnTake" y="133.25" source="task_rat_json.task_rat_rev" x="425"/>
+		<e:Image x="308.97" y="87.85" scaleX="0.5" scaleY="0.5" source="task_rat_json.task_rat_coin"/>
+		<e:Label text="{data.coin}" x="329.97" y="83.85" textColor="0x4D2B2B" size="26" textAlign="left" verticalAlign="middle"/>
+		<ns1:RewardItemComp id="rewardComp" x="12.42" y="7.82" skinName="RewardItemSkin"/>
+		<e:Label text="5 x" x="35.92" y="167.76" size="18" textColor="0x643814"/>
+		<e:Image source="shopUI_json.shop_ui_star" x="65.92" y="159.76"/>
+		<e:Label text="可获得" x="97.92" y="168.76" size="18" textColor="0x643814"/>
+		<e:Image x="212.3" y="31.03" source="task_rat_json.task_rat_jiangli"/>
+		<e:Label text="整套穿搭更容易获得满星哦!" x="200.75" y="167.24" size="18" textColor="0x643814"/>
+	</e:Group>
+</e:Skin>

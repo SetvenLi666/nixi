@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ChatItemRendererSkin" width="496" height="70" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Label id="nicknameLabel" text="" textColor="0x5b94db" size="22" textAlign="left" left="5" top="4"/>
+	<ns1:ChatTextComp id="textComp" skinName="ChatTextSkin" left="8" anchorOffsetX="0" width="480" top="27"/>
+</e:Skin>

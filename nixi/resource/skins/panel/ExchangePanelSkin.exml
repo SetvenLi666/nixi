@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ExchangePanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<ns1:ExchangeComp id="exchangeComp" skinName="ExchangeCompSkin" horizontalCenter="0" verticalCenter="0"/>
+	</e:Group>
+</e:Skin>

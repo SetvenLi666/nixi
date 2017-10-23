@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="BaseCompSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="container" width="852" x="0" height="1136" y="0" touchEnabled="false">
+		<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0" x="0" y="0" scaleX="1" scaleY="1" touchEnabled="false">
+			<e:Group width="605" height="96" anchorOffsetX="0" top="10" y="10" scaleX="1" scaleY="1" horizontalCenter="0">
+			<e:Image source="base_bg_bar_png" top="0" right="0" anchorOffsetX="0" width="549"/>
+			<e:Image source="base_nickname_png" top="8" x="75"/>
+				<e:Label id="nickname_lab" text="游客8A79B858" x="130" y="18.67" size="22" width="170" textAlign="left" textColor="0xffffff" bold="true"/>
+			<e:Group id="energyGroup" height="40" scaleX="1" scaleY="1" right="8" width="282" top="8">
+				<e:Image source="base_pg_bar_png" horizontalCenter="0" verticalCenter="0"/>
+				<e:Image source="base_energy_png" left="5" verticalCenter="0"/>
+				<e:Image source="base_plus_png" right="5" verticalCenter="0"/>
+				<e:ProgressBar id="progressBar" skinName="EnergyProgressBarSkin" verticalCenter="0" horizontalCenter="0"/>
+				<e:Label id="energy_lab" text="80/80" size="22" textColor="0x494646" horizontalCenter="0" verticalCenter="0" textAlign="center" bold="true"/>
+			</e:Group>
+			<e:Group id="diamGroup" width="200" height="40" scaleX="1" scaleY="1" bottom="5" x="132">
+				<e:Image source="base_diam_png" left="0" verticalCenter="0"/>
+				<e:Image source="base_plus_png" verticalCenter="0" right="0"/>
+				<e:Label id="diam_lab" text="999999" textColor="0x494646" size="24" width="107" verticalCenter="0" horizontalCenter="0" textAlign="center" bold="true"/>
+			</e:Group>
+			<e:Group id="coinGroup" width="200" height="40" scaleX="1" scaleY="1" bottom="5" x="365">
+				<e:Image source="base_coin_png" verticalCenter="0" left="0"/>
+				<e:Image source="base_plus_png" verticalCenter="0" right="0"/>
+				<e:Label id="coin_lab" text="999999" width="109" horizontalCenter="0" verticalCenter="0" textAlign="center" size="24" textColor="0x494646" bold="true"/>
+			</e:Group>
+			<e:Group id="playerGroup" width="142" height="127" scaleX="1" scaleY="1" left="0" top="0">
+				<e:Image source="base_playerIcon_png" top="0" horizontalCenter="0" x="291" y="0" scaleX="1" scaleY="1"/>
+				<e:Image top="0" horizontalCenter="0" source="base_iconBg_png"/>
+				<e:Image id="playerLv" source="base_lv1_png" bottom="0" horizontalCenter="0"/>
+			</e:Group>
+			</e:Group>
+		</e:Group>
+	</e:Group>
+</e:Skin>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="NewTaskSceneSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group id="container" width="852" x="0" height="1136" y="0" touchEnabled="false">
+		<e:Image source="shop_bg_png" horizontalCenter="0" verticalCenter="0"/>
+		<e:Group id="group" scaleX="1" scaleY="1" width="852" horizontalCenter="0" height="1136" verticalCenter="0" touchEnabled="false">
+			<e:Image id="btn_left" source="task_btn_left_png" horizontalCenter="-285" verticalCenter="0" x="95" y="536" scaleX="1" scaleY="1"/>
+			<e:Image id="btn_right" source="task_btn_right_png" horizontalCenter="285" verticalCenter="0" x="705" y="536" scaleX="1" scaleY="1"/>
+			<e:Image id="btn_back" source="common_back_png" y="1039" left="-6" x="-6" scaleX="1" scaleY="1"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

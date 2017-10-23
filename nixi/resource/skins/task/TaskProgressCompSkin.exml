@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TaskProgressCompSkin" width="599" height="65" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:ProgressBar id="progressBar" skinName="TaskProgressBarSkin" verticalCenter="0" x="31"/>
+	<e:Component id="box_1" x="166" skinName="BoxOneSkin" verticalCenter="0"/>
+	<e:Component id="box_2" x="347" skinName="BoxTwoSkin" verticalCenter="0"/>
+	<e:Component id="box_3" x="532" skinName="BoxThreeSkin" verticalCenter="0"/>
+	<e:Image id="light" source="company_json.progress_star" x="13" verticalCenter="0" touchEnabled="false"/>
+</e:Skin>

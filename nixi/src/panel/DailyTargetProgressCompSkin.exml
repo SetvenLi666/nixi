@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DailyTargetProgressCompSkin" width="543" height="90" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:ProgressBar id="pgBar" y="35" skinName="DailyTargetPgBar" horizontalCenter="0.5"/>
+	<e:Group id="tgGroup1" width="22" height="28" x="75" bottom="0" anchorOffsetX="11">
+		<e:Image source="panel_dt_pg_flag_png" horizontalCenter="0" verticalCenter="0"/>
+		<e:Label id="target1" text="2" anchorOffsetX="0" width="20" height="20" size="20" textColor="0xfa497d" y="8" horizontalCenter="0" textAlign="center"/>
+	</e:Group>
+	<e:Group id="tgGroup2" width="22" height="28" x="262" bottom="0" anchorOffsetX="11">
+		<e:Image source="panel_dt_pg_flag_png" horizontalCenter="0" verticalCenter="0"/>
+		<e:Label id="target2" text="2" anchorOffsetX="0" width="20" height="20" size="20" textColor="0xFA497D" y="8" horizontalCenter="0" textAlign="center"/>
+	</e:Group>
+	<e:Group id="tgGroup3" width="22" height="28" x="460" bottom="0" anchorOffsetX="11">
+		<e:Image source="panel_dt_pg_flag_png" horizontalCenter="0" verticalCenter="0"/>
+		<e:Label id="target3" text="2" anchorOffsetX="0" width="20" height="20" size="20" textColor="0xFA497D" y="8" horizontalCenter="0" textAlign="center"/>
+	</e:Group>
+	<e:Group id="group1" width="66" height="65" x="88" verticalCenter="0" anchorOffsetX="33" anchorOffsetY="32.5">
+		<e:Image id="ac1" source="panel_dt_ac_png" horizontalCenter="0" verticalCenter="0" anchorOffsetX="46" anchorOffsetY="45" visible="false"/>
+		<e:Group id="boxGroup1" width="66" height="65" horizontalCenter="0" verticalCenter="0" anchorOffsetX="33" anchorOffsetY="32.5">
+			<e:Image id="boxBg1" scaleX="1" scaleY="1" source="task_pg_box1_1_png" horizontalCenter="0" verticalCenter="0"/>
+			<e:Group width="66" height="22" y="23" horizontalCenter="0" x="0" scaleX="1" scaleY="1">
+				<e:Label id="countLab1" text="1000" x="-2" y="7" size="18" strokeColor="0xffffff" stroke="1" textColor="0x7d0b61" bold="true"/>
+				<e:Image id="typeImg1" source="base_coin_png" x="26" y="6" scaleY="0.6" scaleX="0.6"/>
+				<e:layout>
+				<e:HorizontalLayout gap="0" horizontalAlign="center" verticalAlign="middle"/>
+				</e:layout>
+			</e:Group>
+		</e:Group>
+	</e:Group>
+	<e:Group id="group2" width="66" height="65" x="282" verticalCenter="0" anchorOffsetX="33" anchorOffsetY="32.5">
+		<e:Image id="ac2" source="panel_dt_ac_png" horizontalCenter="0" verticalCenter="0" anchorOffsetX="46" anchorOffsetY="45" visible="false"/>
+		<e:Group id="boxGroup2" width="66" height="65" horizontalCenter="0" verticalCenter="0" anchorOffsetX="33" anchorOffsetY="32.5">
+		<e:Image id="boxBg2" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0" source="task_pg_box2_1_png"/>
+		<e:Group width="66" height="22" y="23" horizontalCenter="0">
+			<e:Label id="countLab2" text="1000" x="-2" y="7" size="18" strokeColor="0xFFFFFF" stroke="1" bold="true" textColor="0x7d0b61"/>
+			<e:Image id="typeImg2" source="base_coin_png" x="26" y="6" scaleY="0.6" scaleX="0.6"/>
+			<e:layout>
+			<e:HorizontalLayout gap="0" horizontalAlign="center" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		</e:Group>
+	</e:Group>
+	<e:Group id="group3" width="66" height="65" x="472" verticalCenter="0" anchorOffsetX="33" anchorOffsetY="32.5">
+		<e:Image id="ac3" source="panel_dt_ac_png" horizontalCenter="0" verticalCenter="0" anchorOffsetX="46" anchorOffsetY="45" visible="false"/>
+		<e:Group id="boxGroup3" width="66" height="65" horizontalCenter="0" verticalCenter="0" anchorOffsetX="33" anchorOffsetY="32.5">
+		<e:Image id="boxBg3" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0" source="task_pg_box3_1_png"/>
+		<e:Group width="66" height="22" y="23" horizontalCenter="0">
+			<e:Label id="countLab3" text="1000" x="-2" y="7" size="18" strokeColor="0xFFFFFF" stroke="1" bold="true" textColor="0x7d0b61"/>
+			<e:Image id="typeImg3" source="base_coin_png" x="26" y="6" scaleY="0.6" scaleX="0.6"/>
+			<e:layout>
+			<e:HorizontalLayout gap="0" horizontalAlign="center" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		</e:Group>
+	</e:Group>
+</e:Skin>

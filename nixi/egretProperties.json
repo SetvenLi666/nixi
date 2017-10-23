@@ -1,0 +1,50 @@
+{
+	"native": {
+		"path_ignore": [],
+		"ios_path": "../nixi"
+	},
+	"publish": {
+		"web": 0,
+		"native": 1,
+		"path": "bin-release"
+	},
+	"egret_version": "5.0.7",
+	"modules": [
+		{
+			"name": "egret",
+			"path": "${EGRET_APP_DATA}/5.0.7"
+		},
+		{
+			"name": "eui",
+			"path": "${EGRET_APP_DATA}/5.0.7"
+		},
+		{
+			"name": "res",
+			"path": "${EGRET_APP_DATA}/5.0.7"
+		},
+		{
+			"name": "tween",
+			"path": "${EGRET_APP_DATA}/5.0.7"
+		},
+		{
+			"name": "game",
+			"path": "${EGRET_APP_DATA}/5.0.7"
+		},
+		{
+			"name": "socket",
+			"path": "${EGRET_APP_DATA}/5.0.7"
+		},
+		{
+			"name": "nest",
+			"path": "../libsrc"
+		},
+		{
+			"name": "td",
+			"path": "../td"
+		},
+		{
+			"name": "promise",
+			"path": "./promise"
+		}
+	]
+}

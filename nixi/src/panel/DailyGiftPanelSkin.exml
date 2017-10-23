@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DailyGiftPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Rect fillAlpha="0.6" left="0" right="0" top="0" bottom="0"/>
+		<e:Image id="bg" source="daily_gift_bg_1_png" horizontalCenter="0" verticalCenter="0"/>
+		<e:Group id="rewardGroup" width="445" height="160" y="535" anchorOffsetY="0" horizontalCenter="0" anchorOffsetX="0">
+			<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" horizontalAlign="center" gap="50"/>
+			</e:layout>
+		</e:Group>
+	</e:Group>
+</e:Skin>

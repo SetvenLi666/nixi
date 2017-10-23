@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="FriendListRendererSkin" width="202" height="96" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="up,down" >
+	<e:Image id="bg" x="0" y="0" source="frd_item_bg_png"/>
+	<e:Label id="nickname" text="昵称" size="20" textAlign="left" verticalAlign="middle" left="60" textColor="0xffffff" bottom="65"/>
+	<e:Image id="flag" source="frd_item_flag_png" right="123" bottom="32.5"/>
+	<e:Label id="flag_lab" text="服装收集" size="18" textColor="0x505050" bottom="32" right="51"/>
+	<e:Label id="clothes_count" text="1000" size="18" textAlign="left" verticalAlign="middle" textColor="0x505050" bottom="32" right="6"/>
+	<e:Image id="num_lef" source="num_0_png" x="13" y="29" visible="false"/>
+	<e:Image id="num_mid" source="num_0_png" x="21" y="29" visible="false"/>
+	<e:Image id="num_rig" source="num_0_png" x="31" y="29" visible="false"/>
+	<e:ToggleButton id="send_tog" label="" includeIn="down" right="0" bottom="1">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="frd_btn_send_png" source.down="frd_btn_send_png" source.disabled="frd_btn_sended_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:ToggleButton>
+</e:Skin>

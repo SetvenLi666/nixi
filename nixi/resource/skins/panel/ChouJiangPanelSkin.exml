@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ChouJiangPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.2"/>
+		<e:Image id="bg" source="gashapon_bg_png" horizontalCenter="0" verticalCenter="0"/>
+		<ns1:Shower id="shower" y="151.00000000000003" skinName="ShowerSkin" scaleX="0.6" scaleY="0.6" horizontalCenter="49.6" x="220.00000000000003"/>
+		<ns1:GashaponButton id="btn_one" y="818" skinName="GashaponButtonSkin" horizontalCenter="-120"/>
+		<ns1:GashaponButton id="btn_ten" y="816" skinName="GashaponButtonSkin" horizontalCenter="120"/>
+		<e:Image id="btn_right" source="gj_jiantou_png" y="490" horizontalCenter="135"/>
+		<e:Image id="btn_left" source="gj_jiantou_png" y="490" scaleX="-1" horizontalCenter="-140"/>
+		<e:Image id="time_bg" source="gashapon_di2_png" y="883" horizontalCenter="-117.5"/>
+		<e:Label id="time_label" text="免费倒计时00:00" y="887" size="12" horizontalCenter="-117.5"/>
+		<e:Image id="shopImage" source="gashapon_label1_png" y="357" horizontalCenter="-213"/>
+		<e:Image id="textImage" source="gashapon_label2_png" y="467" horizontalCenter="-214"/>
+		<e:Component y="213" skinName="ExchangeButtonSkin" horizontalCenter="209" visible="false"/>
+		<e:Component id="pieceComp" y="836" skinName="PieceLabelSkin" horizontalCenter="106" visible="false"/>
+		<e:Image source="gashapon_di3_png" y="801" horizontalCenter="0"/>
+		<e:Label id="indexLabel" text="1/3" y="803" size="20" textColor="0xeb6457" horizontalCenter="0" textAlign="center"/>
+		<e:Image id="btn_chg" source="main_huanzhuang_png" y="203" horizontalCenter="213"/>
+	</e:Group>
+	<w:Config id="15828aa0b2e"/>
+</e:Skin>

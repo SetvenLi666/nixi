@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="NewSignPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Rect fillAlpha="0.2" right="0" top="0" bottom="0" left="0"/>
+		<e:Image id="bg" source="newSignin_dikuang_png" verticalCenter="0" horizontalCenter="0"/>
+		<e:Group width="66" height="318" y="205" horizontalCenter="229">
+			<e:Image source="newSignin_tishi_png" x="0" y="0"/>
+			<e:Label id="leftDays" text="0" x="23.34" y="219.33" size="26" textColor="0xdc45a0" bold="true" width="20" textAlign="center"/>
+		</e:Group>
+		<ns1:Shower id="shower" y="204.34" skinName="ShowerSkin" scaleX="0.6" scaleY="0.6" horizontalCenter="180" locked="true"/>
+		<e:Image id="btn_right" source="gj_jiantou_png" horizontalCenter="247" verticalCenter="0"/>
+		<e:Image id="btn_left" source="gj_jiantou_png" verticalCenter="0" scaleX="-1" horizontalCenter="-247"/>
+		<e:Label id="curDay" text="第1天" y="253" size="24" textColor="0xdc45a0" bold="true" horizontalCenter="0" width="100" textAlign="center"/>
+		<e:Button id="btn_receive" label="" y="840" horizontalCenter="0">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="newSignin_lingqu_png" source.down="newSignin_lingqu_png" source.disabled="newSignin_linqu2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+	</e:Group>
+</e:Skin>

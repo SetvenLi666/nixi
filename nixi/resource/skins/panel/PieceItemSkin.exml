@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PieceItemSkin" width="120" height="145" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="enable,disable" >
+	<e:Image source="exchange_di_png" y="9" horizontalCenter="0"/>
+	<e:Image id="icon" source="icon31011_png" x="13" y="9" width="94" height="95" scaleX="1" scaleY="1"/>
+	<e:Component id="btnComp" x="22" y="89" skinName="ButtonExchange" currentState.enable="up" currentState.disable="down" touchEnabled.disable="false" touchChildren.disable="false"/>
+	<e:Image source="exchange_yi_png" x="51" y="64" includeIn="disable"/>
+</e:Skin>

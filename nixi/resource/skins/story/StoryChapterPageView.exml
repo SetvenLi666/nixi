@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="container" width="852" height="1136">
+		<e:Image id="bg" source="common_bg_png" horizontalCenter="" verticalCenter=""/>
+		<e:Group id="content" width="852" height="1136" horizontalCenter="0" verticalCenter="0">
+			<e:Image id="role" source="" y="0" horizontalCenter=""/>
+			<e:Image id="head" source="" y="0" horizontalCenter=""/>
+			<e:Scroller id="scroller" width="520" height="220" y="780" horizontalCenter="">
+				<e:Group horizontalCenter="0"/>
+			</e:Scroller>
+			<e:Image id="leftBtn" source="gj_jiantou_png" scaleX="-1" y="849" horizontalCenter="-280"/>
+			<e:Image id="rightBtn" source="gj_jiantou_png" y="849" horizontalCenter="280"/>
+			<e:Image id="returnBtn" source="common_json.btn_goback2" bottom="40" horizontalCenter="-219"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

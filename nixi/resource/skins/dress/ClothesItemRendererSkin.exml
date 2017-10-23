@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="ClothesItemRendererSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="168" height="160"   states="up,down" >
+	<w:Config id="1586b4cb65f"/>
+	<e:Image id="iconBg" source="shopUI_json.shop_item_bg_1" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image id="iconImage" y="0" source="icon10011_png" left="0"/>
+	<e:Image id="label_1" width="39" height="23" y="107" right="0" source=""/>
+	<e:Image id="label_2" width="39" height="23" y="85" right="0" source=""/>
+	<e:Image id="label_3" width="39" height="23" y="62" right="0" source=""/>
+	<e:Image id="label_4" width="39" height="23" y="38" right="0" source=""/>
+	<e:Image width="132" height="27" y="134" horizontalCenter="0" source="dressUI_json.dress_lab_bg"/>
+	<e:Label id="label_name" text="{data.name}" y="138" size="18" textColor="0x282828" width="108" height="18" textAlign="center" verticalAlign="middle" horizontalCenter="0"/>
+	<e:Image id="flagImage" width="31" height="32" y="7" includeIn="down" source="frd_item_flag_png"/>
+</e:Skin>

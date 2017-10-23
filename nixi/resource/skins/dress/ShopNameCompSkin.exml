@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ShopNameCompSkin" width="209" height="68" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="state_1,state_2,state_3,state_4,state_5" >
+	<e:Image source="shopUI_json.shop_ui_kuang1" y="0" scaleX="1" scaleY="1" x="1.52"/>
+	<e:Label id="clothes_name" text="衣服名字" y="7" textAlign="center" size="24" horizontalCenter="0" textColor="0x623544"/>
+	<e:Image source="shopUI_json.shop_ui_star" includeIn="state_5" y="38" horizontalCenter="-56.5"/>
+	<e:Image source="shopUI_json.shop_ui_star" includeIn="state_5" y="38" horizontalCenter="-28.5"/>
+	<e:Image source="shopUI_json.shop_ui_star" includeIn="state_5" y="38" horizontalCenter="0"/>
+	<e:Image source="shopUI_json.shop_ui_star" includeIn="state_5" y="38" horizontalCenter="28.5"/>
+	<e:Image source="shopUI_json.shop_ui_star" includeIn="state_5" y="38" horizontalCenter="56.5"/>
+	<e:Image source="shopUI_json.shop_ui_star" includeIn="state_4" y="38" horizontalCenter="-42.5"/>
+	<e:Image source="shopUI_json.shop_ui_star" includeIn="state_4" y="38" horizontalCenter="-14.5"/>
+	<e:Image source="shopUI_json.shop_ui_star" includeIn="state_4" y="38" horizontalCenter="14.5"/>
+	<e:Image source="shopUI_json.shop_ui_star" includeIn="state_4" y="38" horizontalCenter="42.5"/>
+	<e:Image source="shopUI_json.shop_ui_star" includeIn="state_3" y="38" horizontalCenter="-28.5"/>
+	<e:Image source="shopUI_json.shop_ui_star" includeIn="state_3" y="38" horizontalCenter="0"/>
+	<e:Image source="shopUI_json.shop_ui_star" includeIn="state_3" y="38" horizontalCenter="28.5"/>
+	<e:Image source="shopUI_json.shop_ui_star" includeIn="state_2" y="38" horizontalCenter="-14"/>
+	<e:Image source="shopUI_json.shop_ui_star" includeIn="state_2" y="38" horizontalCenter="14"/>
+	<e:Image source="shopUI_json.shop_ui_star" includeIn="state_1" y="38" horizontalCenter="0"/>
+</e:Skin>

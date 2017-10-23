@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="CountDownSkin" width="72" height="21" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="base_timekuang_png" x="0" y="0"/>
+	<e:Label id="timeLabel" text="6:00" y="4" size="14" textColor="0xffffff" textAlign="center" horizontalCenter="0"/>
+</e:Skin>

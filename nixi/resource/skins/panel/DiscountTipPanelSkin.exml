@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DiscountTipPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Rect fillAlpha="0.2" left="0" right="0" top="0" bottom="0"/>
+		<e:Image source="discount_tip_png" horizontalCenter="0" verticalCenter="0"/>
+		<e:Image id="btn_yes" source="discount_yes_png" y="664.495" horizontalCenter="-90"/>
+		<e:Image id="btn_no" source="discount_no_png" y="664.495" horizontalCenter="90"/>
+		<e:Label text="衣服等级高于当前等级,\n是否继续购买?" y="545.28" size="22" textColor="0x8e6573" textAlign="center" horizontalCenter="0" height="44" anchorOffsetY="0"/>
+	</e:Group>
+</e:Skin>

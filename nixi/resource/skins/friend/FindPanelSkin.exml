@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="FindPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Image source="find_kuang_png" horizontalCenter="0" verticalCenter="0"/>
+		<e:Image id="btn_find" y="625" source="btn_find_png" horizontalCenter="100.5"/>
+		<e:Image id="btn_back" y="625" source="btn_no_png" horizontalCenter="-99.5"/>
+		<e:EditableText id="nickname" width="324" height="40" text="" y="546" size="26" textAlign="left" verticalAlign="middle" horizontalCenter="-3" prompt="请输入玩家昵称" promptColor="0xb0abad" anchorOffsetX="0" anchorOffsetY="0" textColor="0x000000"/>
+	</e:Group>
+</e:Skin>

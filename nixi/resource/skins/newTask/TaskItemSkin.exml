@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TaskItemSkin" width="134" height="128" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="state_0,state_1,state_2,state_3,state_4,state_5" >
+	<e:Image id="item_bg" horizontalCenter="0" top="0" source="task_ui_json.task_item_bg_1"/>
+	<e:Image id="num_center" y="33" horizontalCenter="0" source="task_ui_json.task_num_0" visible="false"/>
+	<e:Image id="num_right" y="33" horizontalCenter="18" source="task_ui_json.task_num_8" visible="false"/>
+	<e:Image id="num_left" source="task_ui2_json.task_num_1" y="33" horizontalCenter="-18" visible="false"/>
+	<e:Image id="item_lock" horizontalCenter="0" top="0" source="task_ui_json.task_item_lock"/>
+	<e:Image horizontalCenter="0" bottom="0" source="task_ui_json.task_item_stars_bar"/>
+	<e:Image includeIn="state_1,state_2,state_3,state_4,state_5" y="64" x="-1" source="task_ui_json.task_item_star_1"/>
+	<e:Image includeIn="state_2,state_3,state_4,state_5" x="22" y="82" source="task_ui_json.task_item_star_2"/>
+	<e:Image includeIn="state_3,state_4,state_5" x="49" y="88" source="task_ui_json.task_item_star_3"/>
+	<e:Image includeIn="state_4,state_5" x="85" y="82" y.state_5="82" source="task_ui_json.task_item_star_4"/>
+	<e:Image includeIn="state_5" x="105" y="63" source="task_ui_json.task_item_star_5"/>
+</e:Skin>

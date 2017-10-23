@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PkResultPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="group" width="852" height="1136" horizontalCenter="0" verticalCenter="0">
+		<e:Image horizontalCenter="0" verticalCenter="0" source="pk_blance_panel_png"/>
+		<e:Label id="myMatch" text="99999" y="390" size="26" textAlign="center" verticalAlign="middle" horizontalCenter="-80" textColor="0xff3378"/>
+		<e:Label id="otherMatch" text="99999" y="390" size="26" verticalAlign="middle" textAlign="center" horizontalCenter="80" textColor="0xff3378"/>
+		<e:Label id="myPuplar" text="99999" y="484" size="26" verticalAlign="middle" textAlign="center" horizontalCenter="-80" textColor="0xff3378"/>
+		<e:Label id="otherPuplar" text="99999" y="484" size="26" horizontalCenter="80" textColor="0xff3378"/>
+		<e:Label id="myCharm" text="99999" y="576" size="26" textAlign="center" verticalAlign="middle" horizontalCenter="-80" textColor="0xff3378"/>
+		<e:Label id="otherCharm" text="99999" y="576" size="26" horizontalCenter="80" verticalAlign="middle" textAlign="center" textColor="0xff3378"/>
+		<e:Label id="myLuck" text="99999" y="668" size="26" verticalAlign="middle" textAlign="center" horizontalCenter="-80" textColor="0xff3378"/>
+		<e:Label id="otherLuck" text="99999" y="668" textAlign="center" verticalAlign="middle" size="26" horizontalCenter="80" textColor="0xff3378"/>
+		<e:Label id="myTotal" text="99999" y="762" textAlign="center" verticalAlign="middle" horizontalCenter="-80" textColor="0xff3378"/>
+		<e:Label id="otherTotal" text="99999" y="762" textAlign="center" verticalAlign="middle" horizontalCenter="80" textColor="0xff3378"/>
+	</e:Group>
+</e:Skin>

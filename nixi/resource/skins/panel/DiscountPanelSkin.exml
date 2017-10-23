@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DiscountPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.2"/>
+		<e:Image id="image_bg" source="discount_bg_png" horizontalCenter="0" verticalCenter="0"/>
+		<ns1:Shower id="shower" y="150" skinName="ShowerSkin" scaleX="0.6" scaleY="0.6" horizontalCenter="50" locked="true"/>
+		<e:Component id="buttonComp" y="790" skinName="ButtonDiscountSkin" horizontalCenter="0"/>
+		<e:Image id="btn_dress" source="try_png" y="790" horizontalCenter="0" visible="false"/>
+		<e:Image source="common_json.prompt" scaleX="0.5" scaleY="0.5" y="895.99" horizontalCenter="0"/>
+		<e:Label text="请注意是否已经拥有" y="903.99" textColor="0x840f13" size="22" textAlign="center" horizontalCenter="0"/>
+		<e:Group width="89" height="86" y="795" horizontalCenter="220">
+			<e:Image source="blue_png" y="0" scaleX="1" scaleY="1" x="0"/>
+			<e:Label text="倒计时" y="19" size="20" scaleX="1" scaleY="1" right="7"/>
+			<e:Label id="leftTime" text="00:00:00" y="47" size="16" height="16" textAlign="right" scaleX="1" scaleY="1" right="7"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

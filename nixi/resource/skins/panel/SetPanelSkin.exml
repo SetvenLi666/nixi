@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SetPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Group id="setComp" width="567" height="500" horizontalCenter="0" verticalCenter="0">
+			<e:Image source="set_panel_bg_png" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image source="base_playerIcon_png" x="95" y="140" anchorOffsetX="54" anchorOffsetY="54"/>
+			<e:Image source="base_iconBg_png" x="95" y="140" anchorOffsetX="54" anchorOffsetY="54"/>
+			<e:Image source="set_kuang_1_png" x="249.53" y="80.55"/>
+			<e:Image source="set_kuang_1_png" x="249.53" y="152.96"/>
+			<e:Image id="btn_copy" source="set_btn_copy_png" x="436.415" y="84.56"/>
+			<e:Image id="btn_reset" source="set_btn_reset_png" x="436.415" y="155.94"/>
+			<e:Image source="set_kuang_2_png" x="105.4" y="267.03"/>
+			<e:Image id="btn_ex" source="set_btn_duihuan_png" x="413.55" y="271.07"/>
+			<e:Label id="label_id" text="" x="257" y="90" textColor="0x000000" bold="true" size="24" height="26" width="166" textAlign="center" verticalAlign="middle"/>
+			<e:EditableText id="edit_nickname" width="166" height="26" text="" x="257" y="163" size="24" textColor="0x000000" textAlign="center" bold="true" promptColor="0xaea2a2" verticalAlign="middle"/>
+			<e:EditableText id="edit_code" width="256" height="26" text="" x="121.78" y="277.1" size="24" textAlign="center" bold="true" textColor="0x000000" verticalAlign="middle"/>
+		</e:Group>
+	</e:Group>
+	<w:Config id="15852817310"/>
+</e:Skin>

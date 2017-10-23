@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TaskTipSkin" width="134" height="83" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image x="0" y="0" source="dressUI_json.dress_task_tip"/>
+	<e:Image id="tag_1" x="7" y="33.75" scaleX="1.2" scaleY="1.2" source=""/>
+	<e:Image id="tag_2" x="67.6" y="33.75" scaleX="1.2" scaleY="1.2" source=""/>
+	<e:Image id="tag_3" x="129" y="33.75" scaleX="1.2" scaleY="1.2" source="" visible="false"/>
+	<e:Image id="filterImage" source="dressUI_json.dress_task_filter" y="59" x="59"/>
+	<e:Image id="filteredImage" source="dressUI_json.dress_task_filtered" x="59" y="59" visible="false"/>
+</e:Skin>

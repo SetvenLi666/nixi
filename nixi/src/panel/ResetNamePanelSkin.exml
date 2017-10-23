@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ResetNamePanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Group width="567" height="253" horizontalCenter="0" verticalCenter="0">
+			<e:Image source="set_panel2_bg_png" x="0" y="0"/>
+			<e:Label id="content" text="" anchorOffsetX="0" width="388.78" anchorOffsetY="0" height="81.52" y="76.19" horizontalCenter="0" textColor="0x623544" bold="true" textAlign="center"/>
+			<e:Image id="btn_sure" source="btn_yes_png" y="182.03" horizontalCenter="110"/>
+			<e:Image id="btn_cancel" source="btn_no_png" y="182.03" horizontalCenter="-110"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

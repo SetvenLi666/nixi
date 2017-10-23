@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="StoryPlayerSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="157d63b6766"/>
+	<e:Image id="bg" source="common_bg_png" horizontalCenter="0" verticalCenter="0"/>
+	<e:Group id="player1" width="900" height="1136" y="0" horizontalCenter="-185">
+		<e:Image id="body1" source="" horizontalCenter="0"/>
+		<e:Image id="head1" source="" horizontalCenter="0"/>
+	</e:Group>
+	<e:Group id="player2" width="900" height="1136" y="0" horizontalCenter="185">
+		<e:Image id="body2" source="" horizontalCenter="0"/>
+		<e:Image id="head2" source="" horizontalCenter="0"/>
+	</e:Group>
+</e:Skin>

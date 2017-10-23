@@ -1,0 +1,23 @@
+{"mc":{
+	"/Users/mac/Desktop/tagflag":{
+		"frameRate":12,
+		"frames":[
+			
+			{
+			"res":"7D171385",
+			"x":0,
+			"y":0,
+			"duration":3
+			},
+			{
+			"res":"3CCFA1D3",
+			"x":0,
+			"y":0,
+			"duration":3
+			}
+			]
+}},
+	"res":{
+		"7D171385":{"x":1,"y":1,"w":34,"h":33},
+		"3CCFA1D3":{"x":1,"y":36,"w":34,"h":33}
+	}}

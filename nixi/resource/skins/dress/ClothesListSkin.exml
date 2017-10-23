@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="ClothesListSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="852" height="1136"  >
+	<w:Config id="158194fbd8b"/>
+	<e:Group id="group" width="852" x="0" height="1136" y="0">
+		<e:Group id="group_2" width="852" height="1136" horizontalCenter="0" verticalCenter="0">
+			<ns1:Model id="model" x="-24" y="-35" skinName="ModelSkin" scaleX="0.6" scaleY="0.6"/>
+			<e:Image right="0" bottom="0" source="dressUI_json.dress_list_bg"/>
+			<e:Button id="icon_shangyi" y="188" right="168">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="dressUI_json.dress_icon_sy_bg" source.down="dressUI_json.dress_icon_sy_bg" source.disabled="dressUI_json.dress_icon_selected"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button id="icon_kuzi" y="289.5" right="168">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="dressUI_json.dress_icon_kz_bg" source.down="dressUI_json.dress_icon_kz_bg" source.disabled="dressUI_json.dress_icon_selected"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button id="icon_waitao" y="390.5" right="168">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="dressUI_json.dress_icon_wt_bg" source.down="dressUI_json.dress_icon_wt_bg" source.disabled="dressUI_json.dress_icon_selected"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button id="icon_xiezi" y="491.5" right="168">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="dressUI_json.dress_icon_xz_bg" source.down="dressUI_json.dress_icon_xz_bg" source.disabled="dressUI_json.dress_icon_selected"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button id="icon_texiao" y="592.5" right="168">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="dressUI_json.dress_icon_tx_bg" source.down="dressUI_json.dress_icon_tx_bg" source.disabled="dressUI_json.dress_icon_selected"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button id="icon_toufa" y="693.5" right="168">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="dressUI_json.dress_icon_tf_bg" source.down="dressUI_json.dress_icon_tf_bg" source.disabled="dressUI_json.dress_icon_selected"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button id="icon_shipin" y="794.5" right="168">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="dressUI_json.dress_icon_sp_bg" source.down="dressUI_json.dress_icon_sp_bg" source.disabled="dressUI_json.dress_icon_selected"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button id="icon_zhuangrong" label="" y="895" right="168">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="dressUI_json.dress_icon_zr_bg" source.down="dressUI_json.dress_icon_zr_bg" source.disabled="dressUI_json.dress_icon_selected"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Image y="197.58" touchEnabled="false" source="dressUI_json.dress_icon_sy" right="170"/>
+			<e:Image y="298.5" touchEnabled="false" source="dressUI_json.dress_icon_kz" right="170"/>
+			<e:Image y="399.5" touchEnabled="false" source="dressUI_json.dress_icon_wt" right="170"/>
+			<e:Image y="500.5" touchEnabled="false" source="dressUI_json.dress_icon_xz" right="170"/>
+			<e:Image y="601.5" touchEnabled="false" source="dressUI_json.dress_icon_tx" right="170"/>
+			<e:Image y="702.5" touchEnabled="false" source="dressUI_json.dress_icon_tf" right="170"/>
+			<e:Image y="803.5" touchEnabled="false" source="dressUI_json.dress_icon_sp" right="170"/>
+			<e:Image y="904" touchEnabled="false" source="dressUI_json.dress_icon_zr" right="170"/>
+			<e:Image id="back_img" y="1039" left="-6" source="common_back_png"/>
+			<e:Scroller id="scroller" width="168" height="860" y="188.06" anchorOffsetY="0" anchorOffsetX="0" right="2">
+			<e:List id="iconList">
+				<e:layout>
+				<e:VerticalLayout gap="0"/>
+				</e:layout>
+			</e:List>
+			</e:Scroller>
+			<e:Image id="listTip" source="dressUI_json.dress_list_def" y="225" right="16" visible="false"/>
+			<e:Image source="dressUI_json.dress_list_di" y="1048" right="0"/>
+			<e:Image id="btn_buy" y="1040" source="dressui_json.gj_buy" x="341" visible="false"/>
+			<e:Image id="btn_save" y="1064" source="dressUI_json.dress_btn_save" right="25"/>
+			<ns1:TaskTipComp id="tipComp" y="160" skinName="TaskTipSkin" left="30" visible="false"/>
+			<e:Image id="btn_shop" source="dressUI_json.dress_btn_sdj" y="1024" right="185"/>
+			<e:Image id="btn_takeoff" y="285" left="30" source="dressUI_json.dress_takeoff"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ShareDeskPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Group width="567" height="381" horizontalCenter="0" verticalCenter="0">
+			<e:Image id="bg" source="panel_bar_bg_png" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image id="titleImg" source="panel_title_share_png" x="13.55" y="12.55"/>
+			<e:Image id="textImg" y="72.48000000000002" horizontalCenter="0" x="23" scaleX="1" scaleY="1" source="panel_text_share_png"/>
+			<e:Group id="iconGroup" width="522.73" height="185" y="111.12" anchorOffsetX="0" horizontalCenter="0" anchorOffsetY="0">
+				<e:layout>
+					<e:HorizontalLayout gap="50" horizontalAlign="center" verticalAlign="middle"/>
+				</e:layout>
+			</e:Group>
+			<e:Image id="btnImg" y="335" horizontalCenter="0" anchorOffsetX="56.5" anchorOffsetY="25" source="panel_btn_share_png"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="StorySkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<ns1:StoryPlayer id="player" touchChildren="false" touchEnabled="false" horizontalCenter="0" verticalCenter="0" x="426" y="568" scaleX="1" scaleY="1"/>
+		<e:Rect id="touchRect" width="900" height="1136" fillAlpha="0.1" fillColor="0xbfb210" horizontalCenter="0" verticalCenter="0" touchEnabled="true" x="-24" y="0" scaleX="1" scaleY="1"/>
+		<ns1:SubtitlePanel id="subtitle" touchChildren="true" touchEnabled="false" y="766" horizontalCenter="0" x="426" scaleX="1" scaleY="1"/>
+		<ns1:HistoryLog id="history" horizontalCenter="0" y="110" x="426" scaleX="1" scaleY="1"/>
+		<ns1:StoryChoices id="choices" horizontalCenter="0" verticalCenter="0" x="426" y="568" scaleX="1" scaleY="1"/>
+		<ns1:StoryEndings id="ending" horizontalCenter="0" verticalCenter="0" x="426" y="568" scaleX="1" scaleY="1"/>
+		<e:Image id="btnGoback" y="1039" left="-6" source="common_back_png" x="-6" scaleX="1" scaleY="1"/>
+		<e:Image source="story_red_bar_png" y="1" horizontalCenter="0"/>
+		<e:Label id="titleLab" text="第一章" y="6.99" size="24" horizontalCenter="0" textAlign="center"/>
+	</e:Group>
+</e:Skin>

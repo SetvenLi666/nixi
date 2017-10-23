@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TimeBackCompSkin" width="180" height="176" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="story_tb_star_png" anchorOffsetX="90" anchorOffsetY="88" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image source="story_tb_text_png" horizontalCenter="0" verticalCenter="0" anchorOffsetX="31.5" anchorOffsetY="34"/>
+	<e:Image id="img_effect" source="story_tb_effect_png" anchorOffsetX="102.5" anchorOffsetY="102.5" x="90.5" y="88.5"/>
+	<e:Image source="story_tb_diam_png" x="92" y="117"/>
+	<e:Label text="10" x="66" y="117" size="22"/>
+</e:Skin>

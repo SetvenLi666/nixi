@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="Test" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="group1" y="430" x="112">
+		<e:Image id="bar1" source="story_select_bg_png" y="0" horizontalCenter="0"/>
+		<e:Label id="label1" text="标签，那就这样吧" width="365" height="42" verticalAlign="middle" textAlign="center" touchEnabled="false" horizontalCenter="8" size="24" textColor="0x505050" anchorOffsetX="0" y="17"/>
+	</e:Group>
+	<e:Group id="group2" y="532" x="112">
+		<e:Image id="bar2" y="0" source="story_select_bg_png" horizontalCenter="0"/>
+		<e:Label id="label2" text="标签，那就这样吧" y="17" width="365" height="42" verticalAlign="middle" textAlign="center" touchEnabled="false" horizontalCenter="8" size="24" textColor="0x505050"/>
+	</e:Group>
+	<e:Group id="group3" y="635" x="112">
+		<e:Image id="bar3" y="0" source="story_select_bg_png" horizontalCenter="0"/>
+		<e:Label id="label3" text="标签，那就这样吧" y="17" width="365" height="42" verticalAlign="middle" textAlign="center" touchEnabled="false" size="24" textColor="0x505050" horizontalCenter="8"/>
+	</e:Group>
+</e:Skin>

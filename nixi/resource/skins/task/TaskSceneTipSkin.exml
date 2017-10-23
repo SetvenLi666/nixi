@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TaskSceneTipSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="state_1,state_2"  width="246" height="81" width.state_2="156" height.state_2="155" width.state_1="246" height.state_1="81">
+	<e:Image source="gj_renwukuang1_png" includeIn="state_1" x="0" y="0"/>
+	<e:Image id="tag_1" includeIn="state_1" y="44" x="47" source=""/>
+	<e:Image id="tag_2" includeIn="state_1" y="44.5" x="104" source=""/>
+	<e:Image id="tag_3" includeIn="state_1" y="45" x="161" source=""/>
+	<e:Image source="gj_renwukuang2_png" includeIn="state_2" x="0" y="0"/>
+	<e:Label text="五星几率获得:" includeIn="state_2" y="27" size="14" textColor="0x000000" textAlign="center" horizontalCenter="0"/>
+	<e:Image id="icon" includeIn="state_2" y="33" anchorOffsetX="0" width="92" anchorOffsetY="0" height="96" horizontalCenter="0" source=""/>
+	<e:Label id="clothes_name" text="" includeIn="state_2" y="132" size="14" textColor="0xc25a0b" textAlign="center" horizontalCenter="0" verticalAlign="middle"/>
+</e:Skin>

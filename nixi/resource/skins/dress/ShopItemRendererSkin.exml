@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ShopItemRendererSkin" width="160" height="160" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="up,down" >
+	<e:Image id="item_bg" source="shopUI_json.shop_item_bg_1" x="0" y="0"/>
+	<e:Image id="item_icon" x="0" y="0" source=""/>
+	<e:Image id="item_selected" source="shopUI_json.shop_ui_selected" x="0" y="0" includeIn="down"/>
+	<e:Image id="cost_bg" y="110" horizontalCenter="0" source="dressUI_json.dress_lab_bg"/>
+	<e:Image id="price_type" source="shopUI_json.shop_ui_coin2" x="52" y="111"/>
+	<e:Label id="price_lab" text="9999" x="75" y="114" size="16" textColor="0x623544" textAlign="center" width="36" bold="true"/>
+	<e:Image id="item_lock" source="shop_item_lock_png" horizontalCenter="0" verticalCenter="0"/>
+</e:Skin>

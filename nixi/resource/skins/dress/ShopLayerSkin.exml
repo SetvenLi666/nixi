@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ShopLayerSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group id="group1" width="852" x="0" height="1136" y="0">
+		<e:Group id="group2" width="852" height="1136" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0">
+			<e:Image source="shop_bg_png" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image source="shop_scene_bg_png" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image id="curIcon" source="show20011_png" y="147.19" horizontalCenter="0"/>
+			<e:Component id="nameComp" y="147" skinName="ShopNameCompSkin" horizontalCenter="191.5"/>
+			<e:Group width="218" height="165" y="255" horizontalCenter="191">
+			<e:Image source="shopUI_json.shop_ui_kuang3" y="0" scaleX="1" scaleY="1" x="0"/>
+			<e:Image id="tag_1" x="6.24" y="5.03" source=""/>
+			<e:Image id="tag_2" x="72" y="5.03" source=""/>
+				<e:Image id="tag_3" source="" x="137" y="5.03"/>
+			<e:Label id="clothes_des" text="衣服描述巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉" x="9" y="44.76" anchorOffsetX="0" width="202" anchorOffsetY="0" height="115" size="18" textAlign="left" textColor="0x623544"/>
+			</e:Group>
+			<e:Group id="buyGroup" width="200" height="100" y="442" anchorOffsetY="0" horizontalCenter="187">
+			<e:Label text="价格:" size="18" x="53" y="11" textColor="0xffffff" bold="true"/>
+			<e:Label id="curPrice" text="1250" size="18" x="95" height="18" width="63" textAlign="center" y="11" textColor="0xffffff" bold="true"/>
+			<e:Image id="curPriceType" source="shopUI_json.shop_ui_diam1" y="1.09" right="0"/>
+				<e:Image id="btn_buy" source="shopUI_json.shop_ui_buy" scaleX="1" scaleY="1" horizontalCenter="0" bottom="0"/>
+			</e:Group>
+			<e:Image id="imgRare" y="470" horizontalCenter="195" source="shopUI_json.shop_ui_xiyou" visible="false"/>
+			<e:Image id="img_tip" source="shop_lock_tip_png" y="470" horizontalCenter="195" visible="false"/>
+			<e:Group width="852" height="588.22" anchorOffsetY="0" y="547.78" horizontalCenter="0">
+			<e:Group width="640" height="158" horizontalCenter="0" top="0" anchorOffsetY="0">
+				<e:Image source="shopUI_json.shop_di" y="70" scaleX="1" scaleY="1" horizontalCenter="0"/>
+				<e:Button id="btn_shangyi" label="" x="-1" y="99">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="shopUI_json.shop_l_sy" source.down="shopUI_json.shop_l_sy" source.disabled="shopUI_json.shop_l_selected"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+				</e:Button>
+				<e:Button id="btn_kuzi" label="" x="79" y="90">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="shopUI_json.shop_l_kz" source.down="shopUI_json.shop_l_kz" source.disabled="shopUI_json.shop_l_selected"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+				</e:Button>
+				<e:Button id="btn_waitao" label="" x="159" y="77">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="shopUI_json.shop_l_wt" source.down="shopUI_json.shop_l_wt" source.disabled="shopUI_json.shop_l_selected"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+				</e:Button>
+				<e:Button id="btn_xiezi" label="" x="239" y="66">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="shopUI_json.shop_l_xz" source.down="shopUI_json.shop_l_xz" source.disabled="shopUI_json.shop_l_selected"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+				</e:Button>
+				<e:Button id="btn_texiao" label="" x="319" y="54">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="shopUI_json.shop_l_tx" source.down="shopUI_json.shop_l_tx" source.disabled="shopUI_json.shop_l_selected"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+				</e:Button>
+				<e:Button id="btn_toufa" label="" x="399" y="43">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="shopUI_json.shop_l_tf" source.down="shopUI_json.shop_l_tf" source.disabled="shopUI_json.shop_l_selected"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+				</e:Button>
+				<e:Button id="btn_shipin" label="" x="479" y="33">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="shopUI_json.shop_l_sp" source.down="shopUI_json.shop_l_sp" source.disabled="shopUI_json.shop_l_selected"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+				</e:Button>
+				<e:Button id="btn_zhuangrong" label="" x="559" y="21">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="shopUI_json.shop_l_zr" source.down="shopUI_json.shop_l_zr" source.disabled="shopUI_json.shop_l_selected"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+				</e:Button>
+				<e:Image source="dressUI_json.dress_icon_sy" x="14" y="98" touchEnabled="false"/>
+				<e:Image source="dressUI_json.dress_icon_kz" x="93" y="90" touchEnabled="false"/>
+				<e:Image source="dressUI_json.dress_icon_wt" x="173" y="76" touchEnabled="false"/>
+				<e:Image source="dressUI_json.dress_icon_xz" x="253" y="65" touchEnabled="false"/>
+				<e:Image source="dressUI_json.dress_icon_tx" x="332" y="53" touchEnabled="false"/>
+				<e:Image source="dressUI_json.dress_icon_tf" x="413" y="41" touchEnabled="false"/>
+				<e:Image source="dressUI_json.dress_icon_sp" x="493" y="33" touchEnabled="false"/>
+				<e:Image source="dressUI_json.dress_icon_zr" x="573" y="21" touchEnabled="false"/>
+			</e:Group>
+			<e:Button id="btn_all" label="全部" y="157" horizontalCenter="-240">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="shopUI_json.shop_btn_up" source.down="shopUI_json.shop_btn_down" source.disabled="shopUI_json.shop_btn_down"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button id="btn_coin" label="" y="157" horizontalCenter="-80">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="shopUI_json.shop_btn_up" source.down="shopUI_json.shop_btn_down" source.disabled="shopUI_json.shop_btn_down"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button id="btn_diam" label="" y="157" horizontalCenter="80">
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="shopUI_json.shop_btn_up" source.down="shopUI_json.shop_btn_down" source.disabled="shopUI_json.shop_btn_down"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:Button>
+			<e:Button id="btn_xiyou" label="" y="157" horizontalCenter="240">
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="shopUI_json.shop_btn_up" source.down="shopUI_json.shop_btn_down" source.disabled="shopUI_json.shop_btn_down"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:Button>
+			<e:Image source="shopUI_json.shop_ui_coin1" y="160.82" horizontalCenter="-80" touchEnabled="false"/>
+			<e:Image source="shopUI_json.shop_ui_diam1" y="160.94" horizontalCenter="80" touchEnabled="false"/>
+			<e:Image source="shopUI_json.shop_ui_xiyou" y="162.94" horizontalCenter="240" touchEnabled="false"/>
+			<e:Scroller id="scroller" width="640" height="385" anchorOffsetX="0" horizontalCenter="0" anchorOffsetY="0" y="202.26999999999998">
+				<e:List id="iconList">
+				<e:layout>
+					<e:TileLayout horizontalGap="0" verticalGap="0"/>
+				</e:layout>
+				</e:List>
+			</e:Scroller>
+			</e:Group>
+			<ns1:TaskTipComp id="tipComp" y="160" skinName="TaskTipSkin" horizontalCenter="-252" visible="false"/>
+			<e:Image id="btn_back" source="common_back_png" y="1039" left="-7"/>
+			<e:Image id="btn_yichu" y="1039" right="-7" source="shop_btn_yichu_png"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

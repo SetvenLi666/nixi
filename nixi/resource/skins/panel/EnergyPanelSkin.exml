@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="EnergyPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Rect fillAlpha="0.8" left="0" right="0" top="0" bottom="0"/>
+		<e:Image id="bg" horizontalCenter="0" verticalCenter="0" source="panel_ui_json.ac_panel_bg"/>
+		<e:Image source="ac_panel_tl_png" horizontalCenter="0" verticalCenter="-50"/>
+		<e:Image id="btn_energy" y="845" horizontalCenter="0" source="panel_ui_json.ac_panel_rev"/>
+	</e:Group>
+</e:Skin>

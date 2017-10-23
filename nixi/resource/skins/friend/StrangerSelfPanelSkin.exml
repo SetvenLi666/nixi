@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="StrangerSelfPanelSkin" width="275" height="124" xmlns:e="http://ns.egret.com/eui" states="up,down" >
+	<e:Image id="bg_nor" source="self_bg_nor_png" y="0" x="0" visible.down="false"/>
+	<e:Image id="bg_sel" source="self_bg_sel_png" x="0" y="0" visible.up="false"/>
+	<e:Label id="nickname" text="昵称左对齐" x="95" y="26" textColor="0x000000" size="22" textAlign="left" verticalAlign="middle" size.down="24" y.down="25" x.down="65" touchEnabled.down="false" touchEnabled="false"/>
+	<e:Label text="收集度" x="127" y="69" size="18" size.down="20" y.down="70" x.down="108" touchEnabled.down="false" touchEnabled="false"/>
+	<e:Label id="clothes_count" text="1000" x="201" y="69" size="18" size.down="20" y.down="70" x.down="198" touchEnabled.down="false" touchEnabled="false"/>
+</e:Skin>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="DressBaseCompSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="852" height="1136">
+	<w:Config id="157c19a9457"/>
+	<e:Group id="container" width="852" height="1136" y="0" x="0" touchEnabled="false">
+		<e:Group id="group_2" width="852" height="1136" horizontalCenter="0" verticalCenter="0" touchEnabled="false">
+			<e:Component id="nameComp" y="6" scaleX="1" scaleY="1" left="3" skinName="NameCompSkin"/>
+			<e:Group width="501" right="0" top="0">
+				<e:Component id="coinComp" x="1082.0000000000002" y="311.00000000000006" scaleX="1" scaleY="1" skinName="CoinCompSkin"/>
+				<e:Component id="diamComp" x="1178.0000000000002" y="241" scaleX="1" scaleY="1" skinName="DiamCompSkin"/>
+				<e:Component id="debrisComp" x="1154" y="285" scaleX="1" scaleY="1" skinName="DebrisCompSkin"/>
+				<e:layout>
+				<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" gap="5"/>
+				</e:layout>
+			</e:Group>
+			<ns1:PhaseComp y="30" scaleX="1" scaleY="1" skinName="PhaseBarSkin" right="10"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

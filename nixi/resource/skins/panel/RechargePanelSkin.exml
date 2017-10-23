@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="RechargePanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="15823b6ac24"/>
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Rect fillAlpha="0.8" left="0" right="0" top="0" bottom="0"/>
+		<e:Image id="bg" horizontalCenter="0" verticalCenter="0" source="panel_ui_json.ac_panel_bg"/>
+		<ns1:Model id="shower" y="80" horizontalCenter="0" scaleY="0.43" scaleX="0.43" skinName="ModelSkin"/>
+		<e:Image id="btn_right" y="500" horizontalCenter="235" source="recharge_btn_left_png"/>
+		<e:Image id="btn_left" y="500" scaleX="1" horizontalCenter="-235" source="recharge_btn_right_png"/>
+		<e:Image id="btn_image" y="815" horizontalCenter="160" source="recharge_chongzhi_png"/>
+		<e:Image source="recharge_lj_cz_png" y="833.86" horizontalCenter="-188.22"/>
+		<e:Image source="recharge_yuan_png" y="833.86" horizontalCenter="-73.80000000000001"/>
+		<e:Image source="recharge_text_zs_png" y="873" horizontalCenter="-148.5"/>
+		<e:Image source="recharge_cur_cz_png" y="872" horizontalCenter="116.82999999999993"/>
+		<e:Image source="recharge_yuan_png" y="874" horizontalCenter="246.51999999999998"/>
+		<e:Label id="label_1" text="0" y="838.13" textColor="0xff3478" size="22" strokeColor="0xffffff" height="22" width="54" horizontalCenter="-113.43" textAlign="center" stroke="0.8"/>
+		<e:Label id="label_2" text="0" y="876.1" size="22" textColor="0xff3478" width="54" height="22" horizontalCenter="205.89999999999998" textAlign="center" strokeColor="0xffffff" stroke="0.8"/>
+	</e:Group>
+</e:Skin>

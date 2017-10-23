@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="EventItemSkin" width="573" height="301" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Image source="my_plane_png" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image id="btnStart" source="my_btn_1_png" top="0" horizontalCenter="0"/>
+	<e:Label id="energyTip" text="每次消耗 6" x="469" y="71" size="14" textAlign="center" height="14"/>
+	<e:Image source="base_json.gj_xin" x="540" y="69" scaleX="0.6" scaleY="0.6"/>
+	<e:Label text="/1000" x="506" y="106" textColor="0xe68c2e" size="16"/>
+	<e:Label id="starsCount" text="123" x="469" y="106" size="16" textColor="0xe68c2e" width="36" height="16" textAlign="right"/>
+	<e:ProgressBar id="progressBar" y="134" skinName="EventProgressBarSkin" horizontalCenter="0"/>
+	<ns1:EventRewardItem id="itemComp1" x="29" y="195" skinName="EventRewardItemSkin"/>
+	<ns1:EventRewardItem id="itemComp2" x="172" y="195" skinName="EventRewardItemSkin"/>
+	<ns1:EventRewardItem id="itemComp3" x="316" y="195" skinName="EventRewardItemSkin"/>
+	<ns1:EventRewardItem id="itemComp4" x="459" y="195" skinName="EventRewardItemSkin"/>
+	<e:Label id="starLv1" text="1000" x="58" y="155" size="14" textColor="0x55467c" textAlign="center" bold="true" width="32" height="14"/>
+	<e:Image source="my_star_png" x="91" y="154"/>
+	<e:Label id="starLv2" text="1000" x="202" y="155" size="14" bold="true" textAlign="center" textColor="0x55467c"/>
+	<e:Image source="my_star_png" x="235" y="154"/>
+	<e:Label id="starLv3" text="1000" x="345" y="155" size="14" bold="true" textAlign="center" textColor="0x55467C"/>
+	<e:Image source="my_star_png" x="379" y="154"/>
+	<e:Label id="starLv4" text="1000" x="488" y="155" size="14" bold="true" textAlign="center" textColor="0x55467C"/>
+	<e:Image source="my_star_png" x="523" y="154"/>
+	<e:Group id="maskGroup" horizontalCenter="0" verticalCenter="0" locked="true" visible="false">
+		<e:Image source="my_mask_png" y="0"/>
+		<e:Label id="maskTip" text="标签" size="24" horizontalCenter="0" verticalCenter="0" textAlign="center"/>
+	</e:Group>
+</e:Skin>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="NewProgressbarCompSkin" width="76" height="616" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:ProgressBar id="pgBar" skinName="TaskProgressBarSkin" direction="btt" horizontalCenter="0" verticalCenter="0"/>
+	<e:Group id="boxComp1" width="55" height="58" y="467" horizontalCenter="0" anchorOffsetX="27.5" anchorOffsetY="29">
+		<e:Image id="boxImg1" source="task_pg_box1_1_png" horizontalCenter="0" x="13" scaleX="1" scaleY="1" verticalCenter="0"/>
+		<e:Group width="55" height="58" horizontalCenter="0" verticalCenter="0">
+			<e:Label id="label1" text="999" y="1" size="18" textColor="0xff357a" strokeColor="0xffffff" stroke="2" textAlign="center" right="22" x="6" scaleX="1" scaleY="1"/>
+			<e:Image source="task_ui_json.task_item_star_3" y="18" scaleX="0.6" scaleY="0.6" horizontalCenter="12" x="28"/>
+			<e:layout>
+				<e:HorizontalLayout gap="0" horizontalAlign="center" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		<e:Image id="tip1" source="newmain_ui_json.main_mail_tip" x="51" y="11" scaleX="0.8" scaleY="0.8" anchorOffsetX="18.5" anchorOffsetY="19" visible="false"/>
+	</e:Group>
+	<e:Group id="boxComp2" width="55" height="58" horizontalCenter="0" y="279" anchorOffsetX="27.5" anchorOffsetY="29">
+		<e:Image id="boxImg2" source="task_pg_box2_1_png" horizontalCenter="0" x="47" scaleX="1" scaleY="1" verticalCenter="0"/>
+		<e:Group width="55" height="58" horizontalCenter="0" verticalCenter="0" x="0" y="29" scaleX="1" scaleY="1">
+			<e:Label id="label2" text="999" y="1" size="18" textColor="0xFF357A" strokeColor="0xFFFFFF" stroke="2" textAlign="center" x="12" scaleX="1" scaleY="1"/>
+			<e:Image source="task_ui_json.task_item_star_3" y="18" scaleX="0.6" scaleY="0.6" horizontalCenter="12" x="28"/>
+			<e:layout>
+				<e:HorizontalLayout gap="0" horizontalAlign="center" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		<e:Image source="newmain_ui_json.main_mail_tip" x="51" y="11" scaleX="0.8" scaleY="0.8" anchorOffsetX="18.5" anchorOffsetY="19" id="tip2" visible="false"/>
+	</e:Group>
+	<e:Group id="boxComp3" width="55" height="58" horizontalCenter="0" y="99" anchorOffsetX="27.5" anchorOffsetY="29">
+		<e:Image id="boxImg3" source="task_pg_box3_1_png" horizontalCenter="0" x="53" scaleX="1" scaleY="1" verticalCenter="0"/>
+		<e:Group width="55" height="58" horizontalCenter="0" verticalCenter="0" x="0" y="209" scaleX="1" scaleY="1">
+			<e:Label id="label3" text="999" y="1" size="18" textColor="0xFF357A" strokeColor="0xFFFFFF" stroke="2" textAlign="center" right="22" x="6" scaleX="1" scaleY="1"/>
+			<e:Image source="task_ui_json.task_item_star_3" y="18" scaleX="0.6" scaleY="0.6" horizontalCenter="12" x="28"/>
+			<e:layout>
+				<e:HorizontalLayout gap="0" horizontalAlign="center" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		<e:Image id="tip3" source="newmain_ui_json.main_mail_tip" x="51" y="11" scaleX="0.8" scaleY="0.8" anchorOffsetX="18.5" anchorOffsetY="19" visible="false"/>
+	</e:Group>
+</e:Skin>

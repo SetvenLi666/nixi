@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SignItemSkin" width="160" height="160" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="unuse,canuse,used" >
+	<e:Image id="itemBg" x="0" y="0" source="panel_ui_json.ac_signin_iconBg"/>
+	<e:Image id="icon" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image source="dressUI_json.dress_lab_bg" y="99" horizontalCenter="0"/>
+	<e:Label id="clothes_name" text="衣服名字啊" y="103" textAlign="center" size="16" textColor="0x723a59" horizontalCenter="0"/>
+	<e:Image id="btn_rev" scaleX="1" scaleY="1" horizontalCenter="0" y="129" visible.unuse="false" visible.used="false" source="panel_ui_json.ac_signin_btn1"/>
+	<e:Image y="129" includeIn="used" horizontalCenter="0" source="panel_ui_json.ac_signin_btn2"/>
+</e:Skin>

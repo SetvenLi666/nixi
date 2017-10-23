@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="NewRankSelfCompSkin" width="202" height="76" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"   states="up,down"  height.down="76">
+	<e:Image id="bg" y="0" x.down="0" x.up="0" x="0" source="rank_item_bg_self_png"/>
+	<e:Label id="nickname" text="昵称左对齐" size="20" textAlign="left" verticalAlign="middle" touchEnabled="false" textColor="0xffffff" left="60" top="11"/>
+	<e:Image id="flag" source="rank_flag_other_png" right="123" top="44"/>
+	<e:Label id="value" text="1000" size="18" touchEnabled="false" textAlign="left" verticalAlign="middle" textColor="0x505050" right="6" top="46"/>
+	<e:Image id="num_lef" source="num_0_png" x="13" verticalCenter="0.5" visible="false"/>
+	<e:Image id="num_mid" source="num_0_png" x="20" verticalCenter="0.5" visible="false"/>
+	<e:Image id="num_rig" source="num_0_png" x="27" verticalCenter="0.5" visible="false"/>
+	<e:Label id="flag_lab" text="服装收集" size="18" textColor="0x505050" right="51" top="46" height="18"/>
+</e:Skin>

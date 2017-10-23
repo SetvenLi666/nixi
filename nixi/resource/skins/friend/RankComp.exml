@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="RankComp" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<ns1:Shower id="shower" horizontalCenter="0" verticalCenter="0"/>
+		<e:Image id="btn_note" source="btn_zhitiao_png" y="831" left="30"/>
+		<e:Image id="btn_back" source="common_json.btn_goback2" y="1039" left="30"/>
+		<e:Scroller width="275" height="806" y="138" right="0">
+			<e:List id="list"/>
+		</e:Scroller>
+		<ns1:RankSelfPanelComp id="selfComp" y="996" skinName="RankSelfPanelSkin" right="0"/>
+		<e:Image source="qj_shangkuang_png" y="55" horizontalCenter="0"/>
+		<e:Label text="排行榜" y="69.5" horizontalCenter="0"/>
+	</e:Group>
+</e:Skin>

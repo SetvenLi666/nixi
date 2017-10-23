@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DiamCompSkin" width="160" height="50" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="base_json.base_bar" right="0" verticalCenter="0"/>
+	<e:Image y="7" left="0" source="base_json.gj_gold"/>
+	<e:Label id="label" text="123456" textColor="0x000000" size="18" textAlign="left" verticalCenter="0.5" x="39"/>
+</e:Skin>

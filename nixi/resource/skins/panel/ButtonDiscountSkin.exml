@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ButtonDiscountSkin" width="187" height="100" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="yellow_png" x="0" y="0"/>
+	<e:Label text="全部获得" y="20" size="20" textColor="0x925c5c" horizontalCenter="0" bold="true"/>
+	<e:Label id="lab_discount" text="6.6折" y="11" size="15" textColor="0xf7fa0d" textAlign="center" bold="true" height="20" x="6" width="40"/>
+	<e:Label id="lab_oldPrice" text="1234" x="12" y="56" size="20" textColor="0xf37b7c" textAlign="center" bold="true" width="45" height="20"/>
+	<e:Image source="base_json.gj_gold" x="58" y="54" scaleX="0.7" scaleY="0.7"/>
+	<e:Image source="red_png" x="93" y="38"/>
+	<e:Label id="lab_newPrice" text="1234" x="97" y="54" size="20" textColor="0xf7fb0d" bold="true" width="45" textAlign="center" height="20"/>
+	<e:Image source="base_json.gj_gold" x="142" y="51" scaleX="0.7" scaleY="0.7"/>
+	<e:Image source="xx_png" x="17" y="54"/>
+</e:Skin>

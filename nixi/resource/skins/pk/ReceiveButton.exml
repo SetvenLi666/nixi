@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ReceiveButton" width="198" height="199" xmlns:e="http://ns.egret.com/eui" states="state_1,state_2,state_3">
+	<e:Image x="0" y="0" source="pk_btn_lingqu_png"/>
+	<e:Label text="标签" y="132" size="24" textAlign="center" verticalAlign="middle" text.state_3="5分" y.state_3="130" text.state_1="10分10" x.state_1="44" y.state_1="130" text.state_2="3分" y.state_2="130" bold="true" anchorOffsetY="0" height="30" textColor="0xffffff" horizontalCenter.state_2="0" horizontalCenter.state_3="0"/>
+	<e:Image includeIn="state_1" x="126" y="129" scaleX="0.8" scaleY="0.8" source="base_diam_png"/>
+</e:Skin>

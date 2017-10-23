@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="RankSelfPanelSkin" width="275" height="124" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="up,down" >
+	<e:Image id="bg_nor" source="self_bg_nor_png" y="0" visible.down="false"/>
+	<e:Image id="bg_sel" source="self_bg_sel_png" x="0" y="0" visible.up="false"/>
+	<e:Label id="nickname" text="昵称左对齐" x="95" y="26" textColor="0x000000" size="22" textAlign="left" verticalAlign="middle" size.down="24" x.down="65" y.down="25" touchEnabled.down="false" touchEnabled.up="false"/>
+	<e:Label text="收集度" x="127" y="69" size="18" size.down="20" y.down="70" x.down="108" touchEnabled.down="false" touchEnabled.up="false" text.up="服装收集" text.down="服装收集"/>
+	<e:Label id="clothes_count" text="1000" x="201" y="69" size="18" size.down="20" y.down="70" x.down="200" touchEnabled.down="false" touchEnabled.up="false" x.up="208"/>
+	<e:Image id="num_lef" source="num_0_png" x="23" verticalCenter="0.5" x.up="51" visible="false"/>
+	<e:Image id="num_mid" source="num_0_png" x="30" verticalCenter="0" x.up="58" visible="false"/>
+	<e:Image id="num_rig" source="num_0_png" x="41" verticalCenter="0" x.up="69" visible="false"/>
+</e:Skin>

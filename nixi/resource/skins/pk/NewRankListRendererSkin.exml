@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="NewRankListRendererSkin" width="202" height="96" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="up,down" >
+	<e:Image id="bg" source="rank_item_bg_other_png" bottom="20" right="-1"/>
+	<e:Label id="nickname" text="昵称" size="20" textAlign="left" verticalAlign="middle" textColor="0xffffff" bottom="65" left="60"/>
+	<e:Image id="flag" source="rank_flag_other_png" bottom="32.5" right="123"/>
+	<e:Label id="value" text="1000" size="18" textAlign="left" verticalAlign="middle" textColor="0x505050" bottom="32" right="6"/>
+	<e:Image id="num_lef" source="num_0_png" bottom="51" right="176" visible="false"/>
+	<e:Image id="num_mid" source="num_0_png" bottom="51" right="168" visible="false"/>
+	<e:Image id="num_rig" source="num_0_png" bottom="51" right="158" visible="false"/>
+	<e:ToggleButton id="btn_add" label="" includeIn="down" bottom="1" right="0">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="frd_btn_add_png" source.down="frd_btn_add_png" source.disabled="frd_btn_added_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:ToggleButton>
+	<e:Label id="flag_lab" text="服装收集" size="18" textColor="0x505050" bottom="32" right="51"/>
+</e:Skin>

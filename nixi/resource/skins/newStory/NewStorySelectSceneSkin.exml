@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="NewStorySelectSceneSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="container" width="852" x="0" height="1136" y="0">
+		<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+			<e:Image source="shop_bg_png" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image source="story_ui_json.story_sel_title" y="146" horizontalCenter="0"/>
+			<e:Group width="588" height="196" y="256" horizontalCenter="0">
+				<e:Image source="story_ui_json.story_sel_xtsy" horizontalCenter="0" verticalCenter="0"/>
+				<e:Label id="tip_lab" text="已攻略至第一章" y="140" size="24" textColor="0xff3378" strokeColor="0xffffff" stroke="2" textAlign="right" right="150"/>
+				<e:Image id="btn_begin" source="story_ui_json.story_sel_begin" right="18" bottom="21" anchorOffsetX="56.5" anchorOffsetY="25"/>
+			</e:Group>
+			<e:Group id="groupYellow" width="191" height="597" y="455" horizontalCenter="-198.5">
+				<e:Image source="story_ui_json.story_sel_yellow" horizontalCenter="0" verticalCenter="0"/>
+				<e:Image source="story_ui_json.story_sel_role_dcx" horizontalCenter="0" verticalCenter="0"/>
+				<e:Image source="story_ui_json.story_sel_name_dcx" right="18" bottom="22"/>
+			</e:Group>
+			<e:Group id="groupRed" width="191" height="597" y="455" horizontalCenter="0">
+				<e:Image horizontalCenter="0" verticalCenter="0" source="story_ui_json.story_sel_red"/>
+				<e:Image horizontalCenter="0" verticalCenter="0" source="story_ui_json.story_sel_role_ycf"/>
+				<e:Image right="18" bottom="22" source="story_ui_json.story_sel_name_ycf"/>
+			</e:Group>
+			<e:Group id="groupBlue" width="191" height="597" y="455" horizontalCenter="198.5">
+				<e:Image horizontalCenter="0" verticalCenter="0" source="story_ui_json.story_sel_blue"/>
+				<e:Image horizontalCenter="0" verticalCenter="0" source="story_ui_json.story_sel_role_yc"/>
+				<e:Image right="18" bottom="22" source="story_ui_json.story_sel_name_yc"/>
+			</e:Group>
+			<e:Image id="btn_back" source="common_back_png" y="1050" left="-6"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

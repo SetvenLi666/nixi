@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SixPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Rect fillAlpha="0.8" left="0" right="0" top="0" bottom="0"/>
+		<e:Image id="bg" horizontalCenter="0" verticalCenter="0" source="ac_res_json.ac_6_panel"/>
+		<e:Image source="ac_res_json.ac_6_role" horizontalCenter="-110" verticalCenter="-41.5"/>
+		<ns1:SignItemComp id="item_1" y="294.66" skinName="SignItemSkin" horizontalCenter="83.66499999999996"/>
+		<ns1:SignItemComp id="item_2" y="393.32" skinName="SignItemSkin" horizontalCenter="181.01"/>
+		<ns1:SignItemComp id="item_3" y="491" skinName="SignItemSkin" horizontalCenter="83.66499999999996"/>
+		<ns1:SignItemComp id="item_4" y="590" skinName="SignItemSkin" horizontalCenter="181.01"/>
+		<ns1:SignItemComp id="item_5" y="687" skinName="SignItemSkin" horizontalCenter="83.66499999999996"/>
+		<e:Image y="215.02" horizontalCenter="84.5" source="ac_res_json.ac_6_text"/>
+		<e:Image id="btn_rev" y="853.32" horizontalCenter="94.17000000000007" source="shopUI_json.shop_ui_buy"/>
+	</e:Group>
+</e:Skin>

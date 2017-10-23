@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="RankListRendererSkin" width="275" height="124" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="up,down" >
+	<e:Image id="bg_nor" source="first_bg_nor_png" width="275" x="0" height="124" y="0" visible.down="false"/>
+	<e:Image id="bg_sel" source="first_bg_sel_png" x="0" y="0" visible.up="false"/>
+	<e:Label id="nickname" text="昵称左对齐" x="95" y="28" size="22" textColor="0x000000" textAlign="left" verticalAlign="middle" size.down="24" x.down="65" y.down="25" x.up="95"/>
+	<e:Label text="收集度" x="127" y="69" size="18" size.down="20" x.down="108" y.down="70" text.down="服装收集" text.up="服装收集"/>
+	<e:Label id="clothes_count" text="1000" x="204" y="69" textAlign="center" verticalAlign="middle" size="18" size.down="20" x.down="200" y.down="70" x.up="208" textAlign.down="left" textAlign.up="left"/>
+	<e:ToggleButton id="add_tog" label="" x="187" y="88" visible.up="false">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="addFriend_png" source.down="addFriend_png" source.disabled="add_finish_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:ToggleButton>
+	<e:Image id="num_lef" source="num_0_png" x="23" verticalCenter="0" verticalCenter.up="0.5" x.up="51" visible="false"/>
+	<e:Image id="num_mid" source="num_0_png" x="30" verticalCenter="0.5" verticalCenter.up="0.5" x.up="58" visible="false"/>
+	<e:Image id="num_rig" source="num_0_png" x="41" verticalCenter="0.5" verticalCenter.up="0.5" x.up="69" visible="false"/>
+</e:Skin>

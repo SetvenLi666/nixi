@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="AnimationTenPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.2"/>
+		<e:Image source="gashapon_kuang2_png" horizontalCenter="0" verticalCenter="0"/>
+		<e:Image source="gashapon_title2_png" y="310" horizontalCenter="0"/>
+	</e:Group>
+	<w:Config id="1583da7b47b"/>
+</e:Skin>

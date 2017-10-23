@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DropCompSkin" width="432" height="420" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="gashapon_kuang_png" horizontalCenter="0" bottom="0"/>
+	<e:Image source="gashapon_title2_png" horizontalCenter="0" top="0"/>
+	<e:Image id="icon" source="" y="146" horizontalCenter="0" anchorOffsetX="0" width="175" anchorOffsetY="0" height="185"/>
+	<e:Label id="clothes_name" text="" y="349" size="20" textColor="0xdb5742" textAlign="center" verticalAlign="middle" horizontalCenter="0"/>
+</e:Skin>

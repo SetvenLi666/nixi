@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DailyTargetItemRendererSkin" width="543" height="52" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="bg" source="panel_dt_itembg_1_png" horizontalCenter="0" verticalCenter="0"/>
+	<e:Label id="taskText" text="" x="12" anchorOffsetX="0" width="245" size="30" verticalCenter="0" textColor="0x8d5672" height="30" bold="true"/>
+	<e:Group width="138" height="45" x="260" verticalCenter="0">
+		<e:Image id="typeImg" source="panel_dt_bar_coin_png" verticalCenter="0" y="33" scaleX="1" scaleY="1" horizontalCenter="0"/>
+		<e:Label id="rewText" text="Label" x="48" y="8" anchorOffsetX="0" width="80" textAlign="center" textColor="0xbf2267" verticalAlign="middle" bold="true"/>
+	</e:Group>
+	<e:Group id="btnGroup" width="111" height="47" x="480" verticalCenter="0" anchorOffsetX="55.5" anchorOffsetY="23.5">
+		<e:Image id="btnImg" source="panel_dt_btn_1_png" verticalCenter="2" y="22" scaleX="1" scaleY="1" horizontalCenter="0"/>
+		<e:Label id="pgText" text="0/0" horizontalCenter="0" verticalCenter="0" textColor="0x623544" visible="false"/>
+	</e:Group>
+</e:Skin>

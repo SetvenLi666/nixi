@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TaskUpgradePanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Rect left="0" right="0" fillAlpha="0.2" top="0" bottom="0"/>
+	</e:Group>
+	<e:Image source="task_upgrade_bar_png" y="330.33" horizontalCenter="-43.03999999999999"/>
+	<e:Image source="task_upgrade_title_png" y="250" horizontalCenter="0"/>
+	<e:Image id="img_lv1" source="base_lv1_png" anchorOffsetY="25" anchorOffsetX="71" y="725" x="424.67"/>
+	<e:Image id="img_lv2" source="base_lv2_png" y="639" anchorOffsetX="71" anchorOffsetY="25" x="426"/>
+	<e:Image id="img_lv3" source="base_lv3_png" y="553" anchorOffsetX="71" anchorOffsetY="25" x="426"/>
+	<e:Image id="img_lv4" source="base_lv4_png" y="466" anchorOffsetX="71" anchorOffsetY="25" x="426"/>
+	<e:Image id="img_lv5" source="base_lv5_png" y="380" anchorOffsetX="71" anchorOffsetY="25" horizontalCenter="0"/>
+</e:Skin>

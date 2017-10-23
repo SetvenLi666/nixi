@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="IconCompSkin" width="116" height="119" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="diam,coin,energy,piece" >
+	<e:Image x="0" y="0" source="ac_daily_iconBg_png" source.diam="ac_daily_iconBg_png" source.energy="ac_daily_iconBg_png" source.piece="ac_daily_iconBg_png"/>
+	<e:Image id="icon" source="ac_daily_icon_coin_png" horizontalCenter="0" verticalCenter="-5" source.energy="ac_daily_icon_tili_png" source.diam="ac_daily_icon_diam_png"/>
+	<e:Label id="count" text="100" y="84" size="24" textAlign="right" width="67" height="24" textColor="0xfa357a" right="10" visible="false"/>
+</e:Skin>

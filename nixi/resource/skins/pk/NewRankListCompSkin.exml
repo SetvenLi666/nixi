@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="NewRankListCompSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<ns1:Model id="model" y="-55" skinName="ModelSkin" scaleY="0.6" scaleX="0.6" x="-109"/>
+		<e:Image id="btn_note" y="831" left="30" source="frd_btn_not_png"/>
+		<e:Image id="btn_back" y="1039" left="-6" source="common_back_png"/>
+		<e:Group width="218" height="1014" y="125" right="-7">
+			<e:Image source="rank_panel_bg_png" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0"/>
+			<e:Scroller id="scroller" width="202" height="835" y="61" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" right="8">
+				<e:List id="list" anchorOffsetY="0" height="685"/>
+			</e:Scroller>
+			<e:Image id="btn_dp" x="15" y="9.335" source="rank_dp_sel_png"/>
+			<e:Image id="btn_pk" x="109.67" y="9.335" source="rank_jj_nor_png"/>
+			<ns1:NewRankSelfComp id="selfComp" y="915" skinName="NewRankSelfCompSkin" right="8" x="9" scaleX="1" scaleY="1"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

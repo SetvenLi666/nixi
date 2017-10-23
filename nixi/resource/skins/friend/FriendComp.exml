@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="FriendComp" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" y="0">
+		<ns1:Model id="model" y="-55" skinName="ModelSkin" scaleY="0.6" scaleX="0.6" x="-109"/>
+		<e:Group width="218" height="1014" y="126" right="-5">
+			<e:Image y="0" scaleX="1" scaleY="1" horizontalCenter="0" source="rank_panel_bg_png"/>
+			<e:Label text="好友" y="18.85" textColor="0xf4236a" size="24" scaleX="1" scaleY="1" horizontalCenter="0"/>
+			<e:Scroller width="207" height="808.33" y="62" scaleX="1" scaleY="1" horizontalCenter="2.5" anchorOffsetY="0">
+			<e:List id="list"/>
+			</e:Scroller>
+			<ns1:SelfPanelComp id="selfComp" y="894.0000000000001" skinName="SelfPanelSkin" scaleX="1" scaleY="1" horizontalCenter="2"/>
+		</e:Group>
+		<e:Image id="btn_note" y="831" left="30" source="frd_btn_not_png"/>
+		<e:Image id="btn_back" y="1039" left="-6" source="common_back_png"/>
+		<e:Label id="tip" text="还没有好友\n赶紧去陌生人里添加好友吧" y="361" size="24" textColor="0x000000" width="184" textAlign="center" right="13" visible="false"/>
+		<e:Image id="btn_stranger" y="439" right="28" source="social_m_stg_png" visible="false"/>
+	</e:Group>
+</e:Skin>

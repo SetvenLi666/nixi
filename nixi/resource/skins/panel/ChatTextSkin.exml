@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ChatTextSkin" width="237" height="40" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image anchorOffsetX="0" anchorOffsetY="0" left="0" right="0" top="0" bottom="0" source="social_chat_blue_png" scale9Grid="8,8,14,14" visible="false"/>
+	<e:Label id="textLabel" text="" anchorOffsetX="0" anchorOffsetY="0" textColor="0x000000" size="20" left="12" right="8" top="6" bottom="6" width="215" verticalAlign="middle" textAlign="left"/>
+</e:Skin>

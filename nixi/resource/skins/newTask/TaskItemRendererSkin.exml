@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TaskItemRendererSkin" width="560" height="128" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Component id="itemComp" skinName="TaskItemSkin" y="0" x="213"/>
+</e:Skin>

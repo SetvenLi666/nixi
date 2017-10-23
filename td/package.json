@@ -1,0 +1,14 @@
+{
+	"name": "egret",
+	"version": "3.1.6",
+	"modules": [
+		{
+			"name": "/Users/liwei/Documents/EgretProjects/td",
+			"description": "/Users/liwei/Documents/EgretProjects/td",
+			"files": [
+				"td.d.ts"
+			],
+			"root": "src"
+		}
+	]
+}

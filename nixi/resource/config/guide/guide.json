@@ -1,0 +1,216 @@
+[
+    {
+        "step": 1,
+        "info": [
+            {
+                "text": "欢迎(%s)来到女总的世界.\n我是剧里的后期编辑小妮.",
+                "role_png": "guide_mishu1_png",
+                "isClick": false
+            },
+            {
+                "text": "往上看~~~~~~~~~~~~\n看灰机~!\n咔咔咔~!剧里的各种自带弹幕就是本大人的杰作.",
+                "role_png": null,
+                "isClick": false
+            },
+            {
+                "text": "言归正传,让我带大家开始游戏的第一步吧.",
+                "role_png": "guide_mishu4_png",
+                "isClick": true
+            }
+        ]
+    },
+    {
+        "step": 2,
+        "info": [
+            {
+                "text": "(=@__@=)哪~!\n这里就是我们女总的日常事务啦!\n帮助女总完成日常\n会根据您的“能力”给予丰厚的奖励",
+                "role_png": "guide_mishu6_png",
+                "isClick": false
+            },
+            {
+                "text": "完美的完成日常事务\n我就会在小本本上发你一朵小红花.",
+                "role_png": null,
+                "isClick": false
+            },
+            {
+                "text": "星级达标,公司就可以升级啦.\n我们女总就有更广阔的发展空间喽~!",
+                "role_png": null,
+                "isClick": false
+            },
+            {
+                "text": "来吧~!骚年们,让我们开始.\n首先,去注册一家公司吧.\n提示：双击进入日常.",
+                "role_png": null,
+                "isClick": true
+            }
+        ]
+    },
+    {
+        "step": 3,
+        "info": [
+            {
+                "text": "欢迎(%s)来到女总的世界.\n我是剧里的后期编辑小妮.",
+                "role_png": "guide_mishu1_png"
+            },
+            {
+                "text": "往上看~~~~~~~~~~~~\n看灰机~!\n咔咔咔~!剧里的各种自带弹幕就是本大人的杰作.",
+                "role_png": null
+            },
+            {
+                "text": "言归正传,让我带大家开始游戏的第一步吧.",
+                "role_png": "guide_mishu4_png"
+            }
+        ]
+    },
+    {
+        "step": 4,
+        "info": [
+            {
+                "text": "额~!注册公司穿什么衣服好呢?\n让我看看哈.\n哦职场类的衣服啊.",
+                "role_png": "guide_mishu3_png",
+                "isClick": false
+            },
+            {
+                "text": "这里可以筛选出任务相关的衣服哦!",
+                "role_png": "guide_mishu4_png",
+                "isClick": true
+            },
+            {
+                "text": "选择符合的衣服,不至于让我们挑花眼呦~!",
+                "role_png": null,
+                "isClick": true
+            },
+            {
+                "text": "嗯嗯,不错.这两件衣服都是适合职场的衣服.\n日常任务一定会得高分的呢~!",
+                "role_png": "guide_mishu6_png",
+                "isClick": true
+            }
+        ]
+    },
+    {
+        "step": 5,
+        "info": [
+            {
+                "text": "公司正式成立了.让我们进入公司内部去参观一下吧.",
+                "role_png": "guide_mishu3_png",
+                "isClick": true
+            }
+        ]
+    },
+    {
+        "step": 6,
+        "info": [
+            {
+                "text": "哈哈!辣么多衣服,你说你都想穿出来看~!\n那我们就去服装店,看看吧~!",
+                "role_png": "guide_mishu1_png",
+                "isClick": true
+            },
+            {
+                "text": "这里也可以进入服装店哦~!",
+                "role_png": null,
+                "isClick": true
+            }
+        ]
+    },
+    {
+        "step": 7,
+        "info": [
+            {
+                "text": "欢迎(%s)来到女总的世界.\n我是剧里的后期编辑小妮.",
+                "role_png": "guide_mishu1_png"
+            },
+            {
+                "text": "往上看~~~~~~~~~~~~\n看灰机~!\n咔咔咔~!剧里的各种自带弹幕就是本大人的杰作.",
+                "role_png": null
+            },
+            {
+                "text": "言归正传,让我带大家开始游戏的第一步吧.",
+                "role_png": "guide_mishu4_png"
+            }
+        ]
+    },
+    {
+        "step": 8,
+        "info": [
+            {
+                "text": "还有辣么多好玩的地方.如果想去,就让我们继续日常,获得更多的星星吧.",
+                "role_png": "guide_mishu1_png",
+                "isClick": true
+            }
+        ]
+    },
+    {
+        "step": 9,
+        "info": [
+            {
+                "text": "初步的指导就到这里.先帮助女总继续公司日常吧.",
+                "role_png": "guide_mishu1_png",
+                "isClick": false
+            },
+            {
+                "text": "咦~!手机响了.快去接电话吧.",
+                "role_png": "guide_mishu6_png",
+                "isClick": true
+            }
+        ]
+    },
+    {
+        "step": 10,
+        "info": [
+            {
+                "text": "不错不错~!公司的第一步完成的不错.\n每次日常任务,会按照穿着的评级获得金币~!",
+                "role_png": "guide_mishu3_png",
+                "isClick": true
+            }
+        ]
+    },
+    {
+        "step": 11,
+        "info": [
+            {
+                "text": "公司的正常运转,会定期有收入啊.需要您进来领取.会获得金币呦~!",
+                "role_png": "guide_mishu3_png",
+                "isClick": true
+            }
+        ]
+    },
+    {
+        "step": 12,
+        "info": [
+            {
+                "text": "妮妮觉得,这件粉红记忆不错.我们买下来吧.",
+                "role_png": "guide_mishu1_png",
+                "isClick": true
+            },
+            {
+                "text": "钻石类的衣服,让女总处理日常事务,更有自信呦.",
+                "role_png": null,
+                "isClick": false
+            },
+            {
+                "text": "小妮偷偷的送给你一些金币.愉快的去购买几件衣服吧.",
+                "role_png": null,
+                "isClick": false
+            }
+        ]
+    },
+    {
+        "step": 13,
+        "info": [
+            {
+                "text": "当企业达到一定星级就可以开启剧情啦.",
+                "role_png": "guide_mishu6_png",
+                "isClick": true
+            }
+        ]
+    },
+    {
+        "step": 14,
+        "info": [
+            {
+                "text": "不同的选项可以获得成就,或者是通关.\n再来一次争取通关吧.",
+                "role_png": "guide_mishu6_png",
+                "isClick": false
+            }
+        ]
+    }
+]

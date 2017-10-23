@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="HomeCompSkin" width="355" height="321" xmlns:e="http://ns.egret.com/eui">
+	<e:Button label="" x="0" y="0">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="home_nor_png" source.down="home_sel_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Image source="home_bar_png" x="138" y="165" touchEnabled="false"/>
+</e:Skin>

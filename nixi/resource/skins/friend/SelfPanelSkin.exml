@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SelfPanelSkin" width="202" height="96" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"   states="up,down" >
+	<e:Image id="bg" y="0" x.up="0" x="0" source="rank_item_bg_self_png"/>
+	<e:Label id="nickname" text="昵称左对齐" size="20" textAlign="left" verticalAlign="middle" touchEnabled="false" left="60" bottom="65" textColor="0xffffff"/>
+	<e:Image id="flag" touchEnabled="false" source="frd_item_flag_png" right="123" bottom="32.5"/>
+	<e:Label text="服装收集" size="18" textColor="0x505050" right="51" bottom="32"/>
+	<e:Label id="clothes_count" text="1000" size="18" touchEnabled="false" textAlign="left" verticalAlign="middle" right="6" bottom="32" textColor="0x505050"/>
+	<e:Image id="num_lef" source="num_0_png" x="13" touchEnabled="false" y="29" visible="false"/>
+	<e:Image id="num_mid" source="num_0_png" x="21" touchEnabled="false" y="29" visible="false"/>
+	<e:Image id="num_rig" source="num_0_png" x="31" touchEnabled="false" y="29" visible="false"/>
+	<e:Label id="tili_label" text="收到体力:30/30" y="77" size="14" textColor="0x000000" touchEnabled="false" x="12"/>
+	<e:Image id="btn_get" source="frd_btn_rev_png" right="0" bottom="1" includeIn="down"/>
+</e:Skin>

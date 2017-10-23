@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ChatBarSkin" width="520" height="71" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="panel_chat_bar_png" y="0" horizontalCenter="0"/>
+	<e:Image bottom="0" left="0" source="panel_chat_bar_point_png"/>
+	<e:Label id="msgNum" text="99" size="30" textAlign="center" anchorOffsetX="0" left="6" bottom="8" textColor="0xff3378" height="30" width="34"/>
+	<e:Label id="nickname" text="" y="20" size="20" textColor="0x000000" height="20" textAlign="left" left="40"/>
+	<e:Label id="chat" text="" y="20" anchorOffsetX="0" size="20" textAlign="left" height="20" x="485" textColor="0xffffff"/>
+	<e:Rect id="chatMask" height="20" y="20" right="35"/>
+</e:Skin>
