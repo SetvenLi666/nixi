@@ -191,10 +191,6 @@
 		{
 			"keys": "rank_title_first_png,rank_panel_bg_png,rank_jj_sel_png,rank_jj_nor_png,rank_item_bg_thd_png,rank_item_bg_sed_png,rank_item_bg_other_png,rank_item_bg_first_png,rank_flag_thd_png,rank_flag_sed_png,rank_flag_other_png,rank_flag_color_png,rank_dp_sel_png,rank_dp_nor_png,rank_btn_pk_png",
 			"name": "new_rank"
-		},
-		{
-			"keys": "15669_png,15671_png,15679_png,icon70223_png,icon70233_png,show51021_png,story_btn_unlock_png,show60941_png,show70684_png,show70811_png,show71174_png,pk_btn_zf_cost_png,task_icon_jj_png,ac_page_sc_png,task_stars_reward_bg_png,task_stars_reward_tip_png,rank_item_bg_self_png,gashapon_panel_bg_png,70429_png,70859_png,70909_png,70919_png,70949_png,70979_png,70998_png,71008_png,15701_png,15709_png,icon15701_png,show15701_png,panel_cz_text_tip_png,panel_chat_bar_png,panel_chat_bar_point_png,panel_dt_bar_coin_png,panel_dt_bar_diam_png,panel_dt_bg_png,panel_dt_btn_0_png,panel_dt_btn_1_png,panel_dt_btn_2_png,panel_dt_itembg_2_png,panel_dt_itembg_1_png,panel_dt_pgbar_bg_png,panel_dt_thumb_png,panel_dt_ac_png,panel_dt_pg_flag_png,ac_res_json,story_tb_diam_png,story_tb_effect_png,story_tb_star_png,story_tb_text_png,sc_panel_lq2_png,daily_gift_bg_1_png,daily_gift_bg_2_png,newmain_ui_json,hd_panel_bg_png",
-			"name": "preload"
 		}
 	],
 	"resources": [
@@ -17526,9 +17522,54 @@
 			"subkeys": "main_ac_bg,main_ac_black,main_ac_kuang,main_ac_label,main_ac_shouchong,main_ac_star,main_bg,main_chat_bg,main_chat_blue,main_chat_inputbg,main_chat_red,main_chat_send,main_chat_yellow,main_coin_1,main_coin_30,main_coin_6,main_coin_text_1,main_coin_text_30,main_coin_text_6,main_daily_icon,main_dailytarget_ac,main_dailytarget_icon,main_dailytarget_text,main_dialy_text,main_gashapon,main_go,main_huodong_icon,main_huodong_text,main_jj_1,main_jj_2,main_jj_3,main_jj_bg,main_lab_pk,main_lab_shop,main_lab_social,main_lab_xintu,main_lab_yule,main_leiji_icon,main_leiji_text,main_libao_1,main_libao_30,main_libao_6,main_mail,main_mail_text,main_mail_tip,main_niudan_box,main_niudan_pkq,main_niudan_text,main_normal_ac,main_sd_1,main_sd_2,main_sd_3,main_sd_bg,main_selected_ac,main_share_icon,main_share_text,main_shoucang_icon,main_shoucang_text,main_shouchong_text,main_sj_1,main_sj_2,main_sj_3,main_sj_bg,main_talk_bg,main_ui_cz_bg,main_ui_cz_text,main_xt_1,main_xt_2,main_xt_3,main_xt_bg,main_yule_1,main_yule_2,main_yule_3,main_yule_bg"
 		},
 		{
-			"name": "hd_panel_bg_png",
+			"url": "game/panel/hd/hd_panel_bg.png",
 			"type": "image",
-			"url": "game/panel/hd/hd_panel_bg.png"
+			"name": "hd_panel_bg_png"
+		},
+		{
+			"url": "game/panel/hd/hd_panel_lb1.png",
+			"type": "image",
+			"name": "hd_panel_lb1_png"
+		},
+		{
+			"url": "game/panel/hd/hd_panel_lb6.png",
+			"type": "image",
+			"name": "hd_panel_lb6_png"
+		},
+		{
+			"url": "game/panel/hd/hd_panel_lb30.png",
+			"type": "image",
+			"name": "hd_panel_lb30_png"
+		},
+		{
+			"url": "game/panel/hd/hd_panel_leiji.png",
+			"type": "image",
+			"name": "hd_panel_leiji_png"
+		},
+		{
+			"url": "game/panel/hd/hd_panel_sc_cj.png",
+			"type": "image",
+			"name": "hd_panel_sc_cj_png"
+		},
+		{
+			"url": "game/panel/hd/hd_panel_sc.png",
+			"type": "image",
+			"name": "hd_panel_sc_png"
+		},
+		{
+			"url": "game/panel/hd/hd_panel_sigin7.png",
+			"type": "image",
+			"name": "hd_panel_sigin7_png"
+		},
+		{
+			"url": "game/panel/hd/hd_panel_target.png",
+			"type": "image",
+			"name": "hd_panel_target_png"
+		},
+		{
+			"url": "game/panel/hd/hd_panel_tili.png",
+			"type": "image",
+			"name": "hd_panel_tili_png"
 		}
 	]
 }

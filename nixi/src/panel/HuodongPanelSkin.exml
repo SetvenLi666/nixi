@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="HuodongPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.3"/>
 		<e:Image id="bg" source="hd_panel_bg_png" horizontalCenter="0" verticalCenter="0"/>
 		<e:Scroller width="440" height="620" horizontalCenter="0" verticalCenter="21" anchorOffsetY="0" anchorOffsetX="0">
-			<e:List id="list"/>
+			<e:List id="list">
+				<e:layout>
+					<e:VerticalLayout horizontalAlign="center" verticalAlign="middle" gap="20"/>
+				</e:layout>
+			</e:List>
 		</e:Scroller>
 	</e:Group>
 </e:Skin>

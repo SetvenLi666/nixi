@@ -85,6 +85,7 @@ class MainComp extends eui.Component {
 		CustomEventMgr.addEventListener("306", this.result_of_306, this);
 		CustomEventMgr.addEventListener("160", this.result_of_160, this);
 		CustomEventMgr.addEventListener("312", this.result_of_312, this);
+		CustomEventMgr.addEventListener("302", this.result_of_302, this);
 
 		CustomEventMgr.addEventListener("500", this.afterFetchStoryData_500, this);
 		CustomEventMgr.addEventListener("600", this.afterFetchMissionData_600, this);
@@ -159,6 +160,7 @@ class MainComp extends eui.Component {
 		CustomEventMgr.removeEventListener("306", this.result_of_306, this);
 		CustomEventMgr.removeEventListener("160", this.result_of_160, this);
 		CustomEventMgr.removeEventListener("312", this.result_of_312, this);
+		CustomEventMgr.removeEventListener("302", this.result_of_302, this);
 
 		CustomEventMgr.removeEventListener("500", this.afterFetchStoryData_500, this);
 		CustomEventMgr.removeEventListener("600", this.afterFetchMissionData_600, this);
@@ -519,7 +521,12 @@ class MainComp extends eui.Component {
 	}
 
 	private onBtnHd() {
-
+		var self = this;
+		DisplayMgr.buttonScale(this.hdGroup, function() {
+			var panel = new HuodongPanel();
+			DisplayMgr.set2Center(panel);
+			self.stage.addChild(panel);
+		});
 	}
 
 	private onBtnSc() {

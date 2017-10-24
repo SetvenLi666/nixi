@@ -5,8 +5,7 @@ class TaskRating extends eui.Component implements eui.UIComponent {
 
 		this.result = result;
 		this.rating = result["rating"];
-		// this.isLevelUp = result["levelup"];
-		this.isLevelUp = true;
+		this.isLevelUp = result["levelup"];
 		this.coin = result["coin"];
 		this.clothes = result["clothes"];
 		this.configData(this.rating, this.coin);
