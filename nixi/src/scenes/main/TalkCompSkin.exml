@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="TalkCompSkin" width="287" height="132" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Image x="0" y="0" source="newmain_ui_json.main_talk_bg"/>
-	<e:Label id="text" text="" x="36" y="10" anchorOffsetX="0" width="241" anchorOffsetY="0" height="110" size="24"/>
+	<e:Label id="text" text="" x="36" y="10" anchorOffsetX="0" width="241" anchorOffsetY="0" height="110" size="24" textColor="0x77526d"/>
 </e:Skin>

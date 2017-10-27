@@ -33,15 +33,15 @@
 			<e:Label id="otherScore" text="????" x="145" y="82.5" size="24" textAlign="left" verticalAlign="middle" textColor="0xad5574" width="54" height="24"/>
 			<e:Image id="otherPhaseImg" source="base_lv1_png" y="-46" left="0"/>
 		</e:Group>
-		<e:Group width="212" height="183" y="154" horizontalCenter="0">
+		<e:Group width="352" height="171" y="154" horizontalCenter="0">
 			<e:Image x="0" y="0" scaleX="1" scaleY="1" source="pk_theme_bg_png"/>
-			<e:Image id="tag_1" source="clothes_tags_json.tag_102" scaleX="1.2" scaleY="1.2" y="57" horizontalCenter="-40"/>
-			<e:Image id="tag_2" source="clothes_tags_json.tag_103" y="57" scaleX="1.2" scaleY="1.2" horizontalCenter="40"/>
+			<e:Image id="tag_1" scaleX="1" scaleY="1" horizontalCenter="-84.5" y="53.12" source="pk_tags_json.pk_tag_102"/>
+			<e:Image id="tag_2" y="53.12" scaleX="1" scaleY="1" horizontalCenter="85.5" source="pk_tags_json.pk_tag_103"/>
 		</e:Group>
 		<e:Image y="811.73" horizontalCenter="190" source="pk_pipei_tip_png"/>
 		<e:Image id="starLight" y="540" anchorOffsetX="65" anchorOffsetY="66.5" horizontalCenter="0" touchEnabled="false" source="pk_ac_star_png"/>
 		<e:Image id="ant_pk" y="540" anchorOffsetY="22" anchorOffsetX="38.5" horizontalCenter="0" source="pk_txt_duijue_png"/>
-		<e:Group id="startGroup" width="161" height="161" y="955" anchorOffsetX="80.5" anchorOffsetY="80.5" horizontalCenter="0" visible="false">
+		<e:Group id="startGroup" width="161" height="161" y="955" anchorOffsetX="80.5" anchorOffsetY="80.5" horizontalCenter="190" visible="false">
 			<e:Image id="btn_changed" y="0" horizontalCenter="0" source="pk_btn_start_png" x="0" scaleX="1" scaleY="1"/>
 			<e:Group id="costGroup" y="27" horizontalCenter="0" width="100" height="40" visible="false">
 				<e:Label id="startCost" text="10" size="24" textColor="0xffffff" y="9.08" textAlign="right" x="19.69" width="27" strokeColor="0xe2245d" stroke="2"/>
@@ -49,16 +49,15 @@
 			</e:Group>
 			<e:Label id="curTimes" text="0/10" y="110.56" size="24" horizontalCenter="0" strokeColor="0xe2245d" stroke="2"/>
 		</e:Group>
-		<e:Image id="btn_change" y="941" source="pk_btn_hz_png" anchorOffsetX="55.5" anchorOffsetY="23.5" horizontalCenter="-220" visible="false"/>
+		<e:Image id="btn_change" y="955" source="pk_btn_hz_png" anchorOffsetX="80.5" anchorOffsetY="80.5" horizontalCenter="-190" visible="false"/>
 		<e:Group id="buffComp" width="165" height="35" y="1049" horizontalCenter="0" visible="false">
 			<e:Image y="0" x="0" scaleX="1" scaleY="1" source="pk_buff_bg_png"/>
 			<e:Label id="plusLabel" text="" size="24" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0" textAlign="center" verticalAlign="middle" bold="true" textColor="0xff3e79"/>
 		</e:Group>
-		<e:Group id="btn_buff" y="943" anchorOffsetX="55.5" anchorOffsetY="35.5" horizontalCenter="220" visible="false">
-			<e:Image anchorOffsetX="55.5" anchorOffsetY="23.5" source="pk_btn_zf_png" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="-10.5"/>
-			<e:Image x="1.85" y="44.18" source="pk_btn_zf_cost_png"/>
+		<e:Group id="btn_buff" y="960" anchorOffsetX="50" anchorOffsetY="56" horizontalCenter="0" height="112" width="100" visible="false">
+			<e:Image source="pk_btn_zf_png" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0"/>
 		</e:Group>
-		<e:Image id="btn_prepare" source="pk_btn_zb_png" y="955" horizontalCenter="0" anchorOffsetX="99" anchorOffsetY="99.5"/>
+		<e:Image id="btn_prepare" source="pk_btn_zb_png" y="955" horizontalCenter="0" anchorOffsetX="99" anchorOffsetY="99.5" visible="false"/>
 		<e:Group id="listGroup" width="157" height="136" bottom="0" right="0" anchorOffsetX="78.5" anchorOffsetY="68">
 			<e:Image y="-1" scaleX="1" scaleY="1" horizontalCenter="0" source="pk_hg_bg_png"/>
 			<e:Label id="myRank" text="未上榜" verticalAlign="middle" textAlign="center" horizontalCenter="0.5" size="20" bold="true" textColor="0xff3378" verticalCenter="41" strokeColor="0xffffff" stroke="1"/>

@@ -136,6 +136,10 @@ class StoryEndings extends eui.Component implements  eui.UIComponent {
 
 	private reportFinished() {
 		var self = this;
+		
+		egret.setTimeout(function() {
+			StoryData.isStoryFinished = true;
+		}, self, 800)
 		// egret.setTimeout(function () {
 		// 	var event = new egret.Event("ON_STORY_FINISH", true, false, parseInt(self.index));
 		// 	self.dispatchEvent(event);

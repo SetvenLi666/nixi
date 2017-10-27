@@ -324,3 +324,7 @@ declare class TaskUnlockPanelSkin extends eui.Skin{
 }
 declare class TaskUpgradePanelSkin extends eui.Skin{
 }
+declare class RatingPopCompSkin extends eui.Skin{
+}
+declare class RatingPopProgressBarSkin extends eui.Skin{
+}

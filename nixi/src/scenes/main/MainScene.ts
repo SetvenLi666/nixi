@@ -51,6 +51,7 @@ class MainScene extends egret.DisplayObjectContainer {
 			var guidePanel = new NewGuidePanel();
 			DisplayMgr.set2Center(guidePanel);
 			this.addChild(guidePanel);
+			guidePanel.currentState = "guide_step_1_2";
 		} else if (PlayerData.guide == 6 && PlayerData.pkGuide != 1) {
 			var guidePanel = new NewGuidePanel();
 			DisplayMgr.set2Center(guidePanel);

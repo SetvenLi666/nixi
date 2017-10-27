@@ -303,32 +303,9 @@ class NewGuidePanel extends eui.Component {
 
 		tw1.to({ y: 0}, 1000);
 
-		// tw1.to({ y: endy1 }, 1000)
-		// 	.wait(300)
-		// 	.to({ y: 568 }, 500)
-		// 	.wait(300)
-		// 	.to({ y: endy1 - 200 }, 500)
-		// 	.wait(300)
-		// 	.to({ y: 568 }, 500)
-		// 	.wait(300)
-		// 	.to({ y: 0 }, 400);
-
-		// tw2.to({ y: endy2 }, 1000)
-		// 	.wait(300)
-		// 	.to({ y: 568 }, 500)
-		// 	.wait(300)
-		// 	.to({ y: endy2 + 200 }, 500)
-		// 	.wait(300)
-		// 	.to({ y: 568 }, 500)
-		// 	.wait(300)
-		// 	.to({ y: 1136 }, 400)
-		// 	.call(function () {
-		// 		CustomEventMgr.dispatchEventWith("Talk Message", false, "糟了！睡过头了");
-		// 	}, this);
-
 		tw2.to({y: 1136}, 1000)
 			.call(function () {
-				CustomEventMgr.dispatchEventWith("Talk Message", false, "糟了！睡过头了");
+				CustomEventMgr.dispatchEventWith("Talk Message", false, "糟了！睡过头了!\n得赶紧工作了~");
 			}, this);
 	}
 

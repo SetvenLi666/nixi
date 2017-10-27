@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="RatingPopCompSkin" width="574" height="126" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="rating_pop_bg_png" x="0" y="0"/>
+	<e:Image source="rating_pop_text_tip_png" y="14" horizontalCenter="0.5"/>
+	<e:Label id="num_label" text="50" x="412" y="19" textColor="0x840630" size="24" bold="true" height="24" width="41" textAlign="center"/>
+	<e:Image source="rating_pop_star_png" x="451" y="9"/>
+	<e:Image id="flag1" source="base_lv1_png" x="7" y="52"/>
+	<e:Image id="flag2" source="base_lv2_png" x="428" y="52"/>
+	<e:ProgressBar id="pgBar" x="155" y="74" skinName="RatingPopProgressBarSkin"/>
+	<e:Group id="flagGroup" height="58" x="155" y="67" width="41" anchorOffsetX="20.5">
+		<e:Image source="rating_pop_star_png" horizontalCenter="0.5" verticalCenter="-10"/>
+		<e:Label id="curNum_label" text="300" size="20" textColor="0x840630" bold="true" width="41" textAlign="center" verticalAlign="bottom" horizontalCenter="0" verticalCenter="18"/>
+		<e:layout>
+			<e:BasicLayout/>
+		</e:layout>
+	</e:Group>
+</e:Skin>

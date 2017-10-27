@@ -52,6 +52,8 @@ class PkAnimLayerComp extends eui.Component {
 		CustomEventMgr.addEventListener("Update Self Score", this.updateSelfScore, this);
 		CustomEventMgr.addEventListener("Update Other Score", this.updateOtherScore, this);
 
+		CustomEventMgr.addEventListener("827", this.result_of_827, this);
+
 		var self = this;
 		egret.setTimeout(function () {
 			self.playAnimation();
@@ -64,8 +66,10 @@ class PkAnimLayerComp extends eui.Component {
 		CustomEventMgr.removeEventListener("Update Self Score", this.updateSelfScore, this);
 		CustomEventMgr.removeEventListener("Update Other Score", this.updateOtherScore, this);
 
+		CustomEventMgr.removeEventListener("827", this.result_of_827, this);
+
 		this.btn_receive.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnReceive, this);
-		
+
 		egret.Tween.removeAllTweens();
 	}
 
@@ -104,9 +108,18 @@ class PkAnimLayerComp extends eui.Component {
 		DisplayMgr.buttonScale(this.btn_receive, function () {
 			Prompt.showPrompt(self.stage, "领取成功~");
 			egret.setTimeout(function () {
-				SceneMgr.gotoPK();
-			}, self, 1000);
+				// SceneMgr.gotoPK();
+
+				NetLoading.showLoading();
+				var request = HttpProtocolMgr.competition_prepare_827();
+				HttpMgr.postRequest(request);
+			}, self, 800);
 		});
+	}
+
+	private result_of_827() {
+		NetLoading.removeLoading();
+		SceneMgr.gotoPK();
 	}
 
 	private playAnimation() {

@@ -41,7 +41,7 @@
 			"name": "exchange"
 		},
 		{
-			"keys": "pk_10_png,pk_20_png,pk_30_png,pk_40_png,pk_50_png,pk_bg_png,pk_huangguan12_png,pk_huangguan22_png,pk_huangguan32_png,pk_huangguan42_png,pk_huangguan5_png,pk_huangguan6_png,pk_txt_duijue_png,pk_tip_bg_png,pk_theme_bg_png,pk_text_tip_png,pk_rule_bg_png,pk_pipei_tip_png,pk_info_bg_png,pk_icon_circle_png,pk_icon_bg_png,pk_hg_bg_png,pk_btn_zf_png,pk_btn_zb_png,pk_btn_start_png,pk_btn_hz_png,pk_btn_ex_png,pk_ac_star_png,pk_ac_snow_png,pk_vct_stars_png,pk_vct_pkq_png,pk_txt_balance_png,pk_score_bg_png,pk_result_vct_png,pk_result_pj_png,pk_result_def_png,pk_player_shadow_png,pk_player_icon_png,pk_player_bg_png,pk_name_bg_png,pk_line_png,pk_def_pkq_png,pk_circle_xy_png,pk_circle_rq_png,pk_circle_ml_png,pk_circle_dp_png,pk_buff_bg_png,pk_btn_lingqu_png,pk_blance_panel_png,shop_bg_png",
+			"keys": "pk_10_png,pk_20_png,pk_30_png,pk_40_png,pk_50_png,pk_bg_png,pk_huangguan12_png,pk_huangguan22_png,pk_huangguan32_png,pk_huangguan42_png,pk_huangguan5_png,pk_huangguan6_png,pk_txt_duijue_png,pk_tip_bg_png,pk_theme_bg_png,pk_text_tip_png,pk_rule_bg_png,pk_pipei_tip_png,pk_info_bg_png,pk_icon_circle_png,pk_icon_bg_png,pk_hg_bg_png,pk_btn_zf_png,pk_btn_zb_png,pk_btn_start_png,pk_btn_hz_png,pk_btn_ex_png,pk_ac_star_png,pk_ac_snow_png,pk_vct_stars_png,pk_vct_pkq_png,pk_txt_balance_png,pk_score_bg_png,pk_result_vct_png,pk_result_pj_png,pk_result_def_png,pk_player_shadow_png,pk_player_icon_png,pk_player_bg_png,pk_name_bg_png,pk_line_png,pk_def_pkq_png,pk_circle_xy_png,pk_circle_rq_png,pk_circle_ml_png,pk_circle_dp_png,pk_buff_bg_png,pk_btn_lingqu_png,pk_blance_panel_png,shop_bg_png,pk_tags_json",
 			"name": "pk"
 		},
 		{
@@ -65,7 +65,7 @@
 			"name": "story_select"
 		},
 		{
-			"keys": "task_rat_bar_png,task_rat_coin_png,task_rat_coin2_png,task_rat_jiangli_png,task_rat_l_star1_png,task_rat_l_star2_png,task_rat_l_star3_png,task_rat_l_star4_png,task_rat_l_star5_png,task_rat_namebar_png,task_rat_o_star1_png,task_rat_o_star2_png,task_rat_o_star3_png,task_rat_o_star4_png,task_rat_o_star5_png,task_rat_pkq_png,task_rat_rev_png,task_rat_title_png,task_rat_json,task_rewader_bg_png",
+			"keys": "task_rat_bar_png,task_rat_coin_png,task_rat_coin2_png,task_rat_jiangli_png,task_rat_l_star1_png,task_rat_l_star2_png,task_rat_l_star3_png,task_rat_l_star4_png,task_rat_l_star5_png,task_rat_namebar_png,task_rat_o_star1_png,task_rat_o_star2_png,task_rat_o_star3_png,task_rat_o_star4_png,task_rat_o_star5_png,task_rat_pkq_png,task_rat_rev_png,task_rat_title_png,task_rat_json,task_rewader_bg_png,rating_pop_text_tip_png,rating_pop_star_png,rating_pop_pkq_png,rating_pop_bg_png,rating_pop_bar_thumb_png,rating_pop_bar_bg_png",
 			"name": "newTask_rating"
 		},
 		{
@@ -191,6 +191,10 @@
 		{
 			"keys": "rank_title_first_png,rank_panel_bg_png,rank_jj_sel_png,rank_jj_nor_png,rank_item_bg_thd_png,rank_item_bg_sed_png,rank_item_bg_other_png,rank_item_bg_first_png,rank_flag_thd_png,rank_flag_sed_png,rank_flag_other_png,rank_flag_color_png,rank_dp_sel_png,rank_dp_nor_png,rank_btn_pk_png",
 			"name": "new_rank"
+		},
+		{
+			"keys": "pk_tags_json",
+			"name": "preload"
 		}
 	],
 	"resources": [
@@ -17516,12 +17520,6 @@
 			"name": "daily_gift_bg_2_png"
 		},
 		{
-			"url": "game/main/newMain/newmain_ui.json",
-			"type": "sheet",
-			"name": "newmain_ui_json",
-			"subkeys": "main_ac_bg,main_ac_black,main_ac_kuang,main_ac_label,main_ac_shouchong,main_ac_star,main_bg,main_chat_bg,main_chat_blue,main_chat_inputbg,main_chat_red,main_chat_send,main_chat_yellow,main_coin_1,main_coin_30,main_coin_6,main_coin_text_1,main_coin_text_30,main_coin_text_6,main_daily_icon,main_dailytarget_ac,main_dailytarget_icon,main_dailytarget_text,main_dialy_text,main_gashapon,main_go,main_huodong_icon,main_huodong_text,main_jj_1,main_jj_2,main_jj_3,main_jj_bg,main_lab_pk,main_lab_shop,main_lab_social,main_lab_xintu,main_lab_yule,main_leiji_icon,main_leiji_text,main_libao_1,main_libao_30,main_libao_6,main_mail,main_mail_text,main_mail_tip,main_niudan_box,main_niudan_pkq,main_niudan_text,main_normal_ac,main_sd_1,main_sd_2,main_sd_3,main_sd_bg,main_selected_ac,main_share_icon,main_share_text,main_shoucang_icon,main_shoucang_text,main_shouchong_text,main_sj_1,main_sj_2,main_sj_3,main_sj_bg,main_talk_bg,main_ui_cz_bg,main_ui_cz_text,main_xt_1,main_xt_2,main_xt_3,main_xt_bg,main_yule_1,main_yule_2,main_yule_3,main_yule_bg"
-		},
-		{
 			"url": "game/panel/hd/hd_panel_bg.png",
 			"type": "image",
 			"name": "hd_panel_bg_png"
@@ -17570,6 +17568,48 @@
 			"url": "game/panel/hd/hd_panel_tili.png",
 			"type": "image",
 			"name": "hd_panel_tili_png"
+		},
+		{
+			"url": "game/main/newMain/newmain_ui.json",
+			"type": "sheet",
+			"name": "newmain_ui_json",
+			"subkeys": "main_ac_bg,main_ac_black,main_ac_kuang,main_ac_label,main_ac_shouchong,main_ac_star,main_bg,main_chat_bg,main_chat_blue,main_chat_inputbg,main_chat_red,main_chat_send,main_chat_yellow,main_coin_1,main_coin_30,main_coin_6,main_coin_text_1,main_coin_text_30,main_coin_text_6,main_daily_icon,main_dailytarget_ac,main_dailytarget_icon,main_dailytarget_text,main_dialy_text,main_gashapon,main_go,main_huodong_icon,main_huodong_text,main_jj_1,main_jj_2,main_jj_3,main_jj_bg,main_lab_pk,main_lab_shop,main_lab_social,main_lab_xintu,main_lab_yule,main_leiji_icon,main_leiji_text,main_libao_1,main_libao_30,main_libao_6,main_mail,main_mail_text,main_mail_tip,main_niudan_box,main_niudan_pkq,main_niudan_text,main_normal_ac,main_sd_1,main_sd_2,main_sd_3,main_sd_bg,main_selected_ac,main_share_icon,main_share_text,main_shoucang_icon,main_shoucang_text,main_shouchong_text,main_sj_1,main_sj_2,main_sj_3,main_sj_bg,main_talk_bg,main_ui_cz_bg,main_ui_cz_text,main_xt_1,main_xt_2,main_xt_3,main_xt_bg,main_yule_1,main_yule_2,main_yule_3,main_yule_bg"
+		},
+		{
+			"url": "game/newTask/rating/rating_pop_bar_bg.png",
+			"type": "image",
+			"name": "rating_pop_bar_bg_png"
+		},
+		{
+			"url": "game/newTask/rating/rating_pop_bar_thumb.png",
+			"type": "image",
+			"name": "rating_pop_bar_thumb_png"
+		},
+		{
+			"url": "game/newTask/rating/rating_pop_bg.png",
+			"type": "image",
+			"name": "rating_pop_bg_png"
+		},
+		{
+			"url": "game/newTask/rating/rating_pop_pkq.png",
+			"type": "image",
+			"name": "rating_pop_pkq_png"
+		},
+		{
+			"url": "game/newTask/rating/rating_pop_star.png",
+			"type": "image",
+			"name": "rating_pop_star_png"
+		},
+		{
+			"url": "game/newTask/rating/rating_pop_text_tip.png",
+			"type": "image",
+			"name": "rating_pop_text_tip_png"
+		},
+		{
+			"url": "game/pk/pk1/pk_tags.json",
+			"type": "sheet",
+			"name": "pk_tags_json",
+			"subkeys": "pk_tag_101,pk_tag_102,pk_tag_103,pk_tag_104,pk_tag_105,pk_tag_106,pk_tag_107,pk_tag_108,pk_tag_109,pk_tag_110,pk_tag_111,pk_tag_112,pk_tag_113,pk_tag_114,pk_tag_115,pk_tag_116,pk_tag_117,pk_tag_118,pk_tag_119,pk_tag_120,pk_tag_121,pk_tag_122,pk_tag_123,pk_tag_124,pk_tag_125,pk_tag_126,pk_tag_127,pk_tag_130,pk_tag_131,pk_tag_132,pk_tag_133,pk_tag_134"
 		}
 	]
 }

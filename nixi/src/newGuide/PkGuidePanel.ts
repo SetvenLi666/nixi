@@ -60,7 +60,8 @@ class PkGuidePanel extends eui.Component{
 
 	private onGroup() {
 		if(this.currentState == "pkGuide_step_3") {
-			this.currentState = "pkGuide_step_4";
+			// this.currentState = "pkGuide_step_4";
+			this.currentState = "pkGuide_step_5";
 		}else if(this.currentState == "pkGuide_step_5") {
 			if(this.isActive) {
 				this.currentState = "pkGuide_step_6";

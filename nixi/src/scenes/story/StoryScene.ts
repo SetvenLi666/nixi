@@ -214,6 +214,11 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 			this.updatePlay();
 			console.log("tap tap tap");
 		}
+
+		if(this.playPhase == StoryPlayPhase.end && StoryData.isStoryFinished) {
+			console.log("..........");
+			SceneMgr.gotoNewStoryScene();
+		}
 	}
 
 	private onHistoryLog(evt: egret.Event) {
@@ -225,7 +230,7 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 		var self = this;
 
 		DisplayMgr.buttonScale(self.btnGoback, function () {
-			if (self.couldExit === true) {
+			if (self.couldExit == true) {
 				// SceneMgr.gotoStoryChapterScene(parseInt(self.storyIndex));
 				SceneMgr.gotoNewStoryScene()
 			}
@@ -314,7 +319,7 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 		NetLoading.removeLoading();
 		var self = this;
 
-		if(self.timeback) {
+		if (self.timeback) {
 			self.timeback.parent.removeChild(self.timeback);
 			self.timeback = null;
 		}
@@ -322,7 +327,7 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 		self.playPhase = StoryPlayPhase.idle;
 		self.playState = StoryPlayState.normal;
 		self.subtitle.touchChildren = true;
-		self.couldExit = false;
+		self.couldExit = true;
 
 		self.ending.backAnimation();
 		egret.setTimeout(function () {

@@ -71,14 +71,14 @@ class PkLayerComp extends eui.Component {
 		this.startAllAnimation();
 
 		this.btn_back.addEventListener(egret.TouchEvent.TOUCH_TAP, this.goback, this);
-		this.btn_prepare.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onPrepare, this);
+		// this.btn_prepare.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onPrepare, this);
 		this.btn_change.addEventListener(egret.TouchEvent.TOUCH_TAP, this.changeClothes, this);
 		this.startGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.changeOver, this);
 		this.btn_buff.addEventListener(egret.TouchEvent.TOUCH_TAP, this.buffCallback, this);
 		this.refreshComp.addEventListener(egret.TouchEvent.TOUCH_TAP, this.refreshOpponent, this);
 		this.listGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onListGroup, this);
 
-		CustomEventMgr.addEventListener("827", this.result_of_827, this);
+		// CustomEventMgr.addEventListener("827", this.result_of_827, this);
 		CustomEventMgr.addEventListener("823", this.result_of_823, this);
 		CustomEventMgr.addEventListener("821", this.result_of_821, this);
 		CustomEventMgr.addEventListener("825", this.result_of_825, this);
@@ -87,7 +87,7 @@ class PkLayerComp extends eui.Component {
 		CustomEventMgr.addEventListener("300", this.afterRankListData_300, this);
 		CustomEventMgr.addEventListener("806", this.afterFriendListData_806, this);
 
-		if(PlayerData.pkGuide == 1) {
+		if (PlayerData.pkGuide == 1) {
 			var pkguide = new PkGuidePanel();
 			DisplayMgr.set2Center(pkguide);
 			this.stage.addChild(pkguide);
@@ -95,7 +95,7 @@ class PkLayerComp extends eui.Component {
 			pkguide.playAnimation();
 			CustomEventMgr.addEventListener("PkGuide_Step_4", this.onPrepare, this);
 			CustomEventMgr.addEventListener("PkGuide_Step_6", this.changeClothes, this);
-		}else if(PlayerData.pkGuide == 2) {
+		} else if (PlayerData.pkGuide == 2) {
 			var pkguide = new PkGuidePanel();
 			DisplayMgr.set2Center(pkguide);
 			this.stage.addChild(pkguide);
@@ -108,7 +108,7 @@ class PkLayerComp extends eui.Component {
 
 	private onExit() {
 		this.removeEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit, this);
-		CustomEventMgr.removeEventListener("827", this.result_of_827, this);
+		// CustomEventMgr.removeEventListener("827", this.result_of_827, this);
 		CustomEventMgr.removeEventListener("823", this.result_of_823, this);
 		CustomEventMgr.removeEventListener("821", this.result_of_821, this);
 		CustomEventMgr.removeEventListener("825", this.result_of_825, this);
@@ -125,10 +125,10 @@ class PkLayerComp extends eui.Component {
 		this.refreshComp.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.refreshOpponent, this);
 		this.listGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onListGroup, this);
 
-		if(PlayerData.pkGuide == 1) {
+		if (PlayerData.pkGuide == 1) {
 			CustomEventMgr.removeEventListener("PkGuide_Step_4", this.onPrepare, this);
 			CustomEventMgr.removeEventListener("PkGuide_Step_6", this.changeClothes, this);
-		}else if(PlayerData.pkGuide == 2) {
+		} else if (PlayerData.pkGuide == 2) {
 			CustomEventMgr.removeEventListener("PkGuide_Step_8", this.buffCallback, this);
 			CustomEventMgr.removeEventListener("PkGuide_Step_11", this.changeOver, this);
 		}
@@ -144,9 +144,11 @@ class PkLayerComp extends eui.Component {
 			this.myRank.text = "" + CompetitionData.selfRank;
 		}
 
-		if(CompetitionData.isPrepare) {
-			this.updateView();
-		}
+		// if (CompetitionData.isPrepare) {
+		// 	this.updateView();
+		// }
+
+		this.updateView();
 
 		//自己
 		this.selfNickname.text = ShowData.nickname;
@@ -156,24 +158,10 @@ class PkLayerComp extends eui.Component {
 
 		//主题
 		if (CompetitionData.theme.tags.length > 0) {
-			this.tag_1.source = "clothes_tags_json.tag_" + CompetitionData.theme.tags[0];
-			this.tag_2.source = "clothes_tags_json.tag_" + CompetitionData.theme.tags[1];
+			this.tag_1.source = "pk_tags_json.pk_tag_" + CompetitionData.theme.tags[0];
+			this.tag_2.source = "pk_tags_json.pk_tag_" + CompetitionData.theme.tags[1];
 		}
 
-		//开始
-		// if (CompetitionData.self.startTimes < CompetitionData.theme.startFreeCount) {
-		// 	this.pkTimes.text = CompetitionData.self.startTimes + "/" + CompetitionData.theme.startFreeCount;
-		// } else {
-		// 	this.pkTimes.text = "" + CompetitionData.self.startCost;
-		// 	var goldSpr = new eui.Image("pk_gold_png");
-		// 	goldSpr.scaleX = 0.8;
-		// 	goldSpr.scaleY = 0.8;
-		// 	goldSpr.x = this.startComp.width / 2 + this.pkTimes.width / 2 + 5;
-		// 	goldSpr.y = 62;
-		// 	this.startComp.addChild(goldSpr);
-		// }
-
-		//结束时间
 		this.leftTime.text = "" + (CompetitionData.theme.day + 1);
 	}
 
@@ -196,7 +184,7 @@ class PkLayerComp extends eui.Component {
 	}
 
 	private onListGroup() {
-		DisplayMgr.buttonScale(this.listGroup, function() {
+		DisplayMgr.buttonScale(this.listGroup, function () {
 			NetLoading.showLoading();
 			var request: egret.URLRequest = HttpProtocolMgr.competition_info_820(!CompetitionData.hasInitRankInfo());
 			HttpMgr.postRequest(request);
@@ -206,13 +194,16 @@ class PkLayerComp extends eui.Component {
 	private onPrepare() {
 		var self = this;
 		DisplayMgr.buttonScale(this.startGroup, function () {
-			if (CompetitionData.self.startTimes >= CompetitionData.theme.startLimit) {
-				Prompt.showPrompt(self.stage, "今日PK次数已达上限!");
-			} else {
-				NetLoading.showLoading();
-				var request = HttpProtocolMgr.competition_prepare_827();
-				HttpMgr.postRequest(request);
-			}
+			// if (CompetitionData.self.startTimes >= CompetitionData.theme.startLimit) {
+			// 	Prompt.showPrompt(self.stage, "今日PK次数已达上限!");
+			// } else {
+			// 	NetLoading.showLoading();
+			// 	var request = HttpProtocolMgr.competition_prepare_827();
+			// 	HttpMgr.postRequest(request);
+			// }
+			NetLoading.showLoading();
+			var request = HttpProtocolMgr.competition_prepare_827();
+			HttpMgr.postRequest(request);
 		});
 	}
 
@@ -334,10 +325,10 @@ class PkLayerComp extends eui.Component {
 		this.startGroup.visible = true;
 		this.curTimes.text = CompetitionData.self.startTimes + "/10";
 
-		if(CompetitionData.self.startCost > 0) {
+		if (CompetitionData.self.startCost > 0) {
 			this.startCost.text = CompetitionData.self.startCost + "";
 			this.costGroup.visible = true;
-		}else {
+		} else {
 			this.costGroup.visible = false;
 		}
 

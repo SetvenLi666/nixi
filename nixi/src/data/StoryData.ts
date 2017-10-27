@@ -72,6 +72,8 @@ class StoryData {
     private static _selectedTag: number = null;
     private static _selectedBg: string | egret.Texture = null;
 
+    private static _isStoryFinished: boolean = false;
+
     public static set selectedTag (value: number) {
         this._selectedTag = value;
     }
@@ -85,5 +87,13 @@ class StoryData {
     }
     public static get selectedBg () {
         return this._selectedBg;
+    }
+
+    public static set isStoryFinished(value: boolean) {
+        this._isStoryFinished = value;
+    }
+
+    public static get isStoryFinished() {
+        return this._isStoryFinished;
     }
 }

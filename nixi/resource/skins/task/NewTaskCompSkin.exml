@@ -12,6 +12,6 @@
 		<e:Image source="task_upgrade_box_png" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0"/>
 		<e:Label id="upgradeTip" text="0/0" y="62.56" size="20" textColor="0xFF357A" horizontalCenter="0" strokeColor="0xFFFFFF" stroke="2"/>
 		</e:Group>
-		<e:Image source="task_pg_star_png" y="783.06" right="36"/>
+		<e:Image source="task_pg_star_png" y="783.06" right="21"/>
 	</e:Group>
 </e:Skin>

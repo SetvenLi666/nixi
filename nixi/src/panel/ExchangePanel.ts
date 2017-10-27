@@ -24,7 +24,7 @@ class ExchangePanel extends eui.Component {
 			}
 
 			this.exchangeComp.tip.text = "今日已兑换" + PurchaseData.coin_times + "/" + PurchaseData.coin_limit + "次";
-		} else if (this.type = "energy") {
+		} else if (this.type == "energy") {
 			if (PurchaseData.energy_times >= PurchaseData.energy_limit) {
 				this.exchangeComp.title.text = "已达今日体力兑换次数上限~";
 			} else {
@@ -32,6 +32,9 @@ class ExchangePanel extends eui.Component {
 			}
 
 			this.exchangeComp.tip.text = "今日已兑换" + PurchaseData.energy_times + "/" + PurchaseData.energy_limit + "次";
+		} else if (this.type == "pay") {
+			this.exchangeComp.title.text = "钻石余额不足!";
+			this.exchangeComp.tip.text = "是否充值?";
 		}
 
 		this.exchangeComp.btn_cancel.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onCancel, this);
@@ -62,23 +65,41 @@ class ExchangePanel extends eui.Component {
 			if (PurchaseData.coin_times >= PurchaseData.coin_limit) {
 				Prompt.showPrompt(this.stage, "今日金币兑换次数已达上限");
 			} else {
-				NetLoading.showLoading();
-				var request = HttpProtocolMgr.exchange_coin_103();
-				HttpMgr.postRequest(request);
+				if (PlayerData.diam < PurchaseData.coin_cost) {
+					var energyPanel = new ExchangePanel("pay");
+					DisplayMgr.set2Center(energyPanel);
+					this.stage.addChild(energyPanel);
+					this.closePanel();
+				} else {
+					NetLoading.showLoading();
+					var request = HttpProtocolMgr.exchange_coin_103();
+					HttpMgr.postRequest(request);
+				}
 			}
 		} else if (this.type == "energy") {
-			if (PlayerData.energy >= 100) {
+			if (PlayerData.energy >= 80) {
 				Prompt.showPrompt(this.stage, "体力已满");
 			} else {
 				if (PurchaseData.energy_times >= PurchaseData.energy_limit) {
 					Prompt.showPrompt(this.stage, "今日体力兑换次数已达上限");
 				} else {
-					NetLoading.showLoading();
-					var request = HttpProtocolMgr.buy_energy_101();
-					HttpMgr.postRequest(request);
+					if (PlayerData.diam < PurchaseData.energy_cost) {
+						var energyPanel = new ExchangePanel("pay");
+						DisplayMgr.set2Center(energyPanel);
+						this.stage.addChild(energyPanel);
+						this.closePanel();
+					} else {
+						NetLoading.showLoading();
+						var request = HttpProtocolMgr.buy_energy_101();
+						HttpMgr.postRequest(request);
+					}
 				}
 			}
 
+		} else if (this.type == "pay") {
+			NetLoading.showLoading();
+			var request = HttpProtocolMgr.all_products_100();
+			HttpMgr.postRequest(request);
 		}
 	}
 

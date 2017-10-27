@@ -6,7 +6,7 @@ class MainComp extends eui.Component {
 	public mailTip: eui.Image;
 	public niudanGroup: eui.Group;
 	public scGroup: eui.Image;
-	public sc_bg: eui.Image;
+	// public sc_bg: eui.Image;
 	public sc_icon: eui.Image;
 	public sc_text: eui.Image;
 	public lbGroup: eui.Group;
@@ -14,9 +14,9 @@ class MainComp extends eui.Component {
 	public libao_ac: eui.Image;
 	public libao_text: eui.Image;
 	public shareGroup: eui.Group;
-	public share_ac: eui.Image;
+	// public share_ac: eui.Image;
 	public collGroup: eui.Group;
-	public coll_ac: eui.Image;
+	// public coll_ac: eui.Image;
 	public niudan_ac: eui.Image;
 	public leijiGroup: eui.Group;
 	public dtGroup: eui.Group;
@@ -100,6 +100,7 @@ class MainComp extends eui.Component {
 		CustomEventMgr.addEventListener("910", this.result_of_910, this);
 
 		CustomEventMgr.addEventListener("820", this.result_of_820, this);
+		CustomEventMgr.addEventListener("827", this.result_of_827, this);
 		CustomEventMgr.addEventListener("630", this.result_of_630, this);
 
 		CustomEventMgr.addEventListener("Update Libao View", this.updateLibaoView, this);
@@ -115,15 +116,14 @@ class MainComp extends eui.Component {
 			this.stage.addChild(guidePanel);
 			guidePanel.currentState = "guide_step_2_100";
 			guidePanel.playAnimation();
-			// this.onBtnGo();
 			CustomEventMgr.addEventListener("Guide_Step_2_100", this.onYlComp, this);
 		} else if (PlayerData.guide == 5) {
 			var guidePanel = new NewGuidePanel();
 			DisplayMgr.set2Center(guidePanel);
 			this.stage.addChild(guidePanel);
 			guidePanel.currentState = "guide_step_5_100";
+			guidePanel.acGroup.x = 0;
 			guidePanel.playAnimation();
-			// this.onBtnGo();
 			CustomEventMgr.addEventListener("Guide_Step_5_100", this.onXtComp, this);
 		} else if (PlayerData.guide == 6) {
 			CustomEventMgr.addEventListener("Guide_Step_6", this.onBtnGashapon, this);
@@ -134,9 +134,9 @@ class MainComp extends eui.Component {
 			DisplayMgr.set2Center(pkguide);
 			this.stage.addChild(pkguide);
 			pkguide.currentState = "pkGuide_step_2";
+			pkguide.acGroup.x = this.jj_comp.x = this.group.width * 0.88;
 			pkguide.stopAnimation();
 			this.jj_comp["imgLock"].visible = true;
-			// this.onBtnGo();
 			CustomEventMgr.addEventListener("PkGuide_Step_2", this.onJjComp, this);
 			egret.setTimeout(function() {
 				var tw_lock = egret.Tween.get(self.jj_comp["imgLock"]);
@@ -175,6 +175,7 @@ class MainComp extends eui.Component {
 		CustomEventMgr.removeEventListener("910", this.result_of_910, this);
 
 		CustomEventMgr.removeEventListener("820", this.result_of_820, this);
+		CustomEventMgr.removeEventListener("827", this.result_of_827, this);
 		CustomEventMgr.removeEventListener("630", this.result_of_630, this);
 
 		CustomEventMgr.removeEventListener("Update Libao View", this.updateLibaoView, this);
@@ -225,22 +226,6 @@ class MainComp extends eui.Component {
 			egret.Tween.removeTweens(this.mailTip);
 		}
 
-		// this.btnGo.x = -7;
-		// this.btnBack.x = -7;
-		// this.btnBack.y = this.group.height;
-
-		// this.niudanGroup.x = -15;
-		// this.shareGroup.x = this.group.width * 0.02;
-		// this.collGroup.x = this.group.width * 0.02;
-		// this.lbGroup.x = this.group.width * 0.02;
-		// this.leijiGroup.x = this.group.width * 0.02;
-
-		// this.scGroup.x = this.group.width - this.scGroup.width;
-		// this.mailGroup.x = this.group.width - this.scGroup.width / 2 - this.mailGroup.width / 2;
-		// this.acComp.x = this.group.width - this.acComp.width;
-		// this.mChatComp.x = this.group.width - this.mChatComp.width;
-		// this.dtGroup.x = this.group.width - this.scGroup.width / 2 - this.dtGroup.width / 2;
-
 		this.sj_comp.x = this.group.width * 0.12;
 		this.xt_comp.x = this.group.width * 0.28;
 		this.yl_comp.x = this.group.width * 0.50;
@@ -266,15 +251,14 @@ class MainComp extends eui.Component {
 		this.sd_comp.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onSdComp, this);
 		this.jj_comp.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onJjComp, this);
 
+		this.playCompAnimation();
+
 		if (PlayerData.guide == 0) {
 			var n = Math.floor(Math.random() * 3) + 4;
 			this.timer = new egret.Timer(n * 1000, 0);
 			this.timer.addEventListener(egret.TimerEvent.TIMER, this.createTalkComp, this);
 			this.timer.start();
 		}
-
-		// var tw_btn_go = egret.Tween.get(this.btnGo, { loop: true });
-		// tw_btn_go.to({ scaleX: 1.05, scaleY: 1.05 }, 300).to({ scaleX: 1, scaleY: 1 }, 300);
 
 		var tw_td_ac = egret.Tween.get(this.td_ac, { loop: true });
 		tw_td_ac.to({ scaleX: 1.2, scaleY: 1.2 }, 300).to({ scaleX: 1, scaleY: 1 }, 300);
@@ -285,18 +269,18 @@ class MainComp extends eui.Component {
 			.to({ rotation: -10 }, 800).wait(Math.floor(Math.random() * 2) * (Math.floor(Math.random() * 5)) * 1000)
 			.to({ rotation: 0 }, 800).wait(Math.floor(Math.random() * 2) * (Math.floor(Math.random() * 5)) * 1000);
 
-		var tw_sc = egret.Tween.get(this.sc_bg, { loop: true });
-		tw_sc.to({ rotation: 180, alpha: 0 }, 2000)
-			.to({ rotation: 360, alpha: 1 }, 2000);
+		// var tw_sc = egret.Tween.get(this.sc_bg, { loop: true });
+		// tw_sc.to({ rotation: 180, alpha: 0 }, 2000)
+		// 	.to({ rotation: 360, alpha: 1 }, 2000);
 
 		var tw_coin = egret.Tween.get(this.libao_ac, { loop: true });
 		tw_coin.to({ rotation: 360 }, 4500);
 
-		var tw_share = egret.Tween.get(this.share_ac, { loop: true });
-		tw_share.to({ rotation: 360 }, 2000);
+		// var tw_share = egret.Tween.get(this.share_ac, { loop: true });
+		// tw_share.to({ rotation: 360 }, 2000);
 
-		var tw_coll = egret.Tween.get(this.coll_ac, { loop: true });
-		tw_coll.to({ rotation: 360 }, 2000);
+		// var tw_coll = egret.Tween.get(this.coll_ac, { loop: true });
+		// tw_coll.to({ rotation: 360 }, 2000);
 
 		var tw_sj = egret.Tween.get(this.sj_comp["tween"], { loop: true });
 		tw_sj.to({ scaleX: 1.1, scaleY: 1.1 }, 600)
@@ -325,12 +309,12 @@ class MainComp extends eui.Component {
 	}
 
 	private createTalkComp() {
-		var textArr = ["点我看看！", "去聊聊天认识新朋友吧！", "技痒难耐，来一场竞技如何？", "想知道更多故事细节么？看看星途去", "要当大明星么？行动起来从去娱乐圈接通告开始。", "竞技胜利一次就有10钻石，还不快去！"]
+		var textArr = ["去聊聊天认识新朋友吧！", "技痒难耐，来一场竞技如何？", "想知道更多故事细节么？看看星途去", "要当大明星么？行动起来从去娱乐圈接通告开始。", "竞技胜利一次就有10钻石，还不快去！"]
 		var text = textArr[Math.floor(Math.random() * textArr.length)];
 
 		var comp = new TalkComp(text);
-		comp.x = this.group.width * 0.54;
-		comp.y = 420;
+		comp.x = (this.group.width - comp.width) / 2;
+		comp.y = 550;
 		this.group.addChild(comp);
 		this.timer.delay = (Math.floor(Math.random() * 5) + 12) * 1000;
 	}
@@ -369,11 +353,6 @@ class MainComp extends eui.Component {
 	}
 
 	private updateScView() {
-		// this.sc_icon.source = "newmain_ui_json.main_daily_icon";
-		// this.sc_text.source = "newmain_ui_json.main_dialy_text";
-		// this.sc_icon.source = "newmain_ui_json.main_ui_cz_bg";
-		// this.sc_text.source = "newmain_ui_json.main_ui_cz_text";
-		// this.sc_text.source = "newmain_ui_json.main_shouchong_text"
 
 		if(ShareData.isFirstPay == false || ShareData.firstpay_normal_times == 0 || ShareData.firstpay_lottery_times == 0) {
 			this.sc_icon.source = "newmain_ui_json.main_ui_cz_bg";
@@ -387,71 +366,13 @@ class MainComp extends eui.Component {
 		}
 	}
 
-	// private onBtnGo() {
-	// 	this.isShowUI = false;
-	// 	this.touchRect.touchEnabled = false;
-
-	// 	var self = this;
-	// 	DisplayMgr.buttonScale(this.btnGo, function () {
-	// 		var tw_ga = egret.Tween.get(self.niudanGroup);
-	// 		tw_ga.to({ x: - self.niudanGroup.width }, self.hideTime);
-
-	// 		var tw_sh = egret.Tween.get(self.shareGroup);
-	// 		tw_sh.to({ x: -self.shareGroup.width }, self.hideTime);
-
-	// 		var tw_desk = egret.Tween.get(self.collGroup);
-	// 		tw_desk.to({ x: -self.collGroup.width }, self.hideTime);
-
-	// 		var tw_lb = egret.Tween.get(self.lbGroup);
-	// 		tw_lb.to({ x: -self.lbGroup.width }, self.hideTime);
-
-	// 		var tw_lj = egret.Tween.get(self.leijiGroup);
-	// 		tw_lj.to({ x: -self.leijiGroup.width }, self.hideTime);
-
-	// 		var tw_daily = egret.Tween.get(self.scGroup);
-	// 		tw_daily.to({ x: self.group.width + self.scGroup.width }, self.hideTime);
-
-	// 		var tw_ml = egret.Tween.get(self.mailGroup);
-	// 		tw_ml.to({ x: self.group.width + self.mailGroup.width }, self.hideTime);
-
-	// 		var tw_dt = egret.Tween.get(self.dtGroup);
-	// 		tw_dt.to({ x: self.group.width + self.dtGroup.width }, self.hideTime);
-
-	// 		var tw_go = egret.Tween.get(self.btnGo);
-	// 		tw_go.to({ x: - self.btnGo.width }, self.hideTime);
-
-	// 		var tw_ac = egret.Tween.get(self.acComp);
-	// 		tw_ac.to({ x: self.group.width + self.acComp.width }, self.hideTime);
-
-	// 		var tw_mc = egret.Tween.get(self.mChatComp);
-	// 		tw_mc.to({ x: self.group.width + self.mChatComp.width }, self.hideTime);
-
-	// 		egret.setTimeout(self.showButton, self, 500);
-	// 	});
-	// }
-
-	// private onBtnBack() {
-	// 	var self = this;
-	// 	DisplayMgr.buttonScale(this.btnBack, function () {
-	// 		var tw_bk = egret.Tween.get(self.btnBack);
-	// 		tw_bk.to({ y: self.group.height }, 200);
-
-	// 		egret.setTimeout(function () {
-	// 			var tw_sj = egret.Tween.get(self.sj_comp);
-	// 			tw_sj.to({ y: 1136 }, self.hideTime, egret.Ease.backIn);
-	// 			var tw_xt = egret.Tween.get(self.xt_comp);
-	// 			tw_xt.to({ y: 1286 }, self.hideTime, egret.Ease.backIn);
-	// 			var tw_yl = egret.Tween.get(self.yl_comp);
-	// 			tw_yl.to({ y: 1356 }, self.hideTime, egret.Ease.backIn);
-	// 			var tw_sd = egret.Tween.get(self.sd_comp);
-	// 			tw_sd.to({ y: 1286 }, self.hideTime, egret.Ease.backIn);
-	// 			var tw_jj = egret.Tween.get(self.jj_comp);
-	// 			tw_jj.to({ y: 1136 }, self.hideTime, egret.Ease.backIn);
-
-	// 			egret.setTimeout(self.showUI, self, 500);
-	// 		}, this, 200);
-	// 	});
-	// }
+	private playCompAnimation() {
+		egret.Tween.get(this.sj_comp).to({y: 770}, 800, egret.Ease.backOut);
+		egret.Tween.get(this.xt_comp).to({y: 930}, 1000, egret.Ease.backOut);
+		egret.Tween.get(this.yl_comp).to({y: 975}, 600, egret.Ease.backOut);
+		egret.Tween.get(this.sd_comp).to({y: 930}, 1000, egret.Ease.backOut);
+		egret.Tween.get(this.jj_comp).to({y: 770}, 800, egret.Ease.backOut);
+	}
 
 	private onBtnGashapon() {
 		DisplayMgr.buttonScale(this.niudanGroup, function () {
@@ -562,26 +483,6 @@ class MainComp extends eui.Component {
 		// this.onBtnGo();
 	}
 
-	// private showButton() {
-	// 	var tw_sj = egret.Tween.get(this.sj_comp);
-	// 	tw_sj.to({ y: 595 }, 1000, egret.Ease.backOut);
-	// 	var tw_xt = egret.Tween.get(this.xt_comp);
-	// 	tw_xt.to({ y: 745 }, 1200, egret.Ease.backOut);
-	// 	var tw_yl = egret.Tween.get(this.yl_comp);
-	// 	tw_yl.to({ y: 810 }, 1500, egret.Ease.backOut);
-	// 	var tw_sd = egret.Tween.get(this.sd_comp);
-	// 	tw_sd.to({ y: 745 }, 1200, egret.Ease.backOut);
-	// 	var tw_jj = egret.Tween.get(this.jj_comp);
-	// 	tw_jj.to({ y: 595 }, 1000, egret.Ease.backOut);
-
-
-	// 	var self = this;
-	// 	egret.setTimeout(function () {
-	// 		var tw_bk = egret.Tween.get(self.btnBack);
-	// 		tw_bk.to({ y: self.group.height - self.btnBack.height }, 200);
-	// 	}, this, 200);
-	// }
-
 	private showUI() {
 		var tw_ga = egret.Tween.get(this.niudanGroup);
 		tw_ga.to({ x: -15 }, this.hideTime);
@@ -606,14 +507,6 @@ class MainComp extends eui.Component {
 
 		var tw_dt = egret.Tween.get(this.dtGroup);
 		tw_dt.to({ x: this.group.width - this.scGroup.width / 2 - this.dtGroup.width / 2 }, this.hideTime);
-
-		// var tw_go = egret.Tween.get(this.btnGo);
-		// tw_go.to({ x: -7 }, this.hideTime);
-		// var tw_ac = egret.Tween.get(this.acComp);
-		// tw_ac.to({ x: this.group.width - this.acComp.width }, this.hideTime);
-		// var tw_mc = egret.Tween.get(this.mChatComp);
-		// tw_mc.to({ x: this.group.width - this.mChatComp.width }, this.hideTime);
-		// var tw_ac = egret.Tween.get(this.acComp);
 
 		var self = this;
 		egret.setTimeout(function () {
@@ -780,6 +673,13 @@ class MainComp extends eui.Component {
 	}
 
 	private result_of_820(evt: egret.Event) {
+		// NetLoading.removeLoading();
+		// SceneMgr.gotoPK();
+		var request = HttpProtocolMgr.competition_prepare_827();
+		HttpMgr.postRequest(request);
+	}
+
+	private result_of_827() {
 		NetLoading.removeLoading();
 		SceneMgr.gotoPK();
 	}
@@ -841,8 +741,8 @@ class MainComp extends eui.Component {
 	//-----------guide----------
 	private playGuideTalk(evt: egret.Event) {
 		var comp = new TalkComp(evt.data);
-		comp.x = this.group.width * 0.57;
-		comp.y = 420;
+		comp.x = (this.group.width - comp.width) / 2;
+		comp.y = 550;
 		this.group.addChild(comp);
 	}
 }

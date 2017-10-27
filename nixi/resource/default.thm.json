@@ -166,6 +166,8 @@
     "src/scenes/newTask/PkUnlockPanelSkin.exml",
     "src/scenes/newTask/TaskTitleCompSkin.exml",
     "src/scenes/newTask/TaskUnlockPanelSkin.exml",
-    "src/scenes/newTask/TaskUpgradePanelSkin.exml"
+    "src/scenes/newTask/TaskUpgradePanelSkin.exml",
+    "src/scenes/task/RatingPopProgressBarSkin.exml",
+    "src/scenes/task/RatingPopCompSkin.exml"
   ]
 }

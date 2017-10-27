@@ -44,7 +44,8 @@ class TaskRating extends eui.Component implements eui.UIComponent {
 
 		var baseComp = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy);
 		this.addChildAt(baseComp, 1);
-		if(this.isLevelUp) {
+
+		if (this.isLevelUp) {
 			var lastLv = PlayerData.phase - 1 < 1 ? 1 : PlayerData.phase - 1;
 			baseComp.setPlayerLvIcon(lastLv);
 		}
@@ -121,9 +122,19 @@ class TaskRating extends eui.Component implements eui.UIComponent {
 		}
 
 		var self = this;
+
+		var data = TaskData.totalMissionData();
+		var taskPhase = parseInt(data[TaskData.curTaskID - 1]["phase"]);//当前任务等级
+		if (taskPhase == PlayerData.phase && PlayerData.phase != 5) {
+			var popPanel = new RatingPopComp(taskPhase, this.rating);
+			popPanel.x = (self.ratingPanel.width - popPanel.width) / 2;
+			popPanel.y = -popPanel.height;
+			popPanel.name = "popPanel";
+			self.ratingPanel.addChild(popPanel);
+		}
+
 		self.ratingPanel.visible = true;
 		var viewWidth = Math.min(DisplayMgr.stageW, ConstData.Conf.MaskWidth);
-
 
 		self.isShowRewards = false;
 		self.bg.touchEnabled = false;
@@ -132,12 +143,55 @@ class TaskRating extends eui.Component implements eui.UIComponent {
 		self.ratingPanel.cacheAsBitmap = true;
 		egret.Tween.get(this.ratingPanel)
 			.set({ scaleX: 1.5, scaleY: 1.5, y: self.height * 0.35 })
-			.to({ scaleX: 1, scaleY: 1, y: self.height - 50 }, 2000, egret.Ease.backOut)
+			.to({ scaleX: 1, scaleY: 1, y: self.height - 50 }, 1000, egret.Ease.backOut)
 			.call(function () {
-				self.btnTake.visible = true;
-				self.bg.touchEnabled = true;
+				// popPanel.playAnimation();
+				// self.btnTake.visible = true;
+				// self.bg.touchEnabled = true;
+				if(taskPhase == PlayerData.phase && PlayerData.phase != 5) {
+					self.starsAnimation();
+				}else {
+					self.btnTake.visible = true;
+					self.bg.touchEnabled = true;
+				}
 			});
 	}
+
+	private starsAnimation() {
+		var self = this;
+		for (var i = 1; i <= self.rating; i++) {
+			egret.setTimeout(function () {
+				var star = new eui.Image();
+				var p_star = <eui.Image>(self["star" + Number(this)]);
+				star.source = p_star.source;
+				star.anchorOffsetX = star.width / 2;
+				star.anchorOffsetY = star.height / 2;
+				star.x = p_star.localToGlobal().x;
+				star.y = p_star.localToGlobal().y;
+				self.addChild(star);
+				var tw = egret.Tween.get(star);
+				tw.to({ alpha: 0.5, scaleX: 0.5, scaleY: 0.5, x: self.width / 2, y: 800 }, 500)
+					.call(function() {
+						if(p_star == <eui.Image>self["star1"]) {
+							var popPanel = <RatingPopComp>(self.ratingPanel.getChildByName("popPanel"));
+							if(popPanel) {
+								popPanel.playAnimation();
+							}
+						}
+						self.removeChild(star);
+						star = null;
+					}, self);
+
+				if (Number(this) >= self.rating) {
+					self.btnTake.visible = true;
+					self.bg.touchEnabled = true;
+				}
+			}, i, 300 * i);
+		}
+
+
+	}
+
 
 	private whenExit() {
 		this.removeEventListener(egret.Event.REMOVED_FROM_STAGE, this.whenExit, this);

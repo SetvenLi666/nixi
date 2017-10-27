@@ -210,6 +210,7 @@ class NewStoryScene extends eui.Component {
 		NetLoading.removeLoading();
 		CustomEventMgr.dispatchEventWith("Update Player Info", false);
 		StoryData.selectedTag = null;
+		StoryData.isStoryFinished = false;
 		SceneMgr.gotoStoryScene(this.storyData[this.storyIndex]["index"], this.storyData[this.storyIndex]["file"]);
 	}
 
