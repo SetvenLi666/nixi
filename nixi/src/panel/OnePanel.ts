@@ -38,7 +38,7 @@ class OnePanel extends eui.Component {
 	}
 
 	private initSignView() {
-		var arr:number[] = WanbaData.libao_1["clothes"];
+		var arr: number[] = WanbaData.libao_1["clothes"];
 		var len = arr.length;
 		for (var i = 0; i < len; i++) {
 			var id: number = arr[i];
@@ -70,8 +70,8 @@ class OnePanel extends eui.Component {
 
 	private onBtnRev() {
 		var self = this;
-		DisplayMgr.buttonScale(this.btn_rev, function() {
-			if(WanbaData.packageData.indexOf("libao_1") != -1) {
+		DisplayMgr.buttonScale(this.btn_rev, function () {
+			if (WanbaData.packageData.indexOf("libao_1") != -1) {
 				Prompt.showPrompt(self.stage, "已购买该礼包，请勿重复购买!");
 				return;
 			}
@@ -111,7 +111,10 @@ class OnePanel extends eui.Component {
 		console.log(loader.data);
 		var obj: {} = JSON.parse(loader.data);
 
-		if(obj && obj["code"] == 1004) {
+		// WanbaData.updatePackageData(obj["buy_libao_list"]);
+		// CustomEventMgr.dispatchEventWith("Update Libao View", false);
+
+		if (obj && obj["code"] == 1004) {
 			window["popPayTips"]({
 				defaultScore: obj["need_score"],
 				appid: window["OPEN_DATA"].appid

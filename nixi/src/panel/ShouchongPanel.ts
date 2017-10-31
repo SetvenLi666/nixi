@@ -259,7 +259,16 @@ function __paySuccess() {
 		needCancelBtn: false,
 		okBtnText: "确认",
 		cancelBtnText: ""
+	}, function(data) {
+		console.log(data);
 	});
+
+	if(window["OPEN_DATA"] && window["OPEN_DATA"].platform == 2 && window["OPEN_DATA"].qua["app"] == "SQ") {
+		console.log("支付成功！！！");
+		var tip = new IosPayTipPanel();
+		DisplayMgr.set2Center(tip);
+		egret.MainContext.instance.stage.addChild(tip);
+	}
 }
 
 

@@ -298,6 +298,8 @@ declare class HuodongPanelRendererSkin extends eui.Skin{
 }
 declare class HuodongPanelSkin extends eui.Skin{
 }
+declare class IosPayTipPanelSkin extends eui.Skin{
+}
 declare class ResetNamePanelSkin extends eui.Skin{
 }
 declare class RewardItemSkin extends eui.Skin{

@@ -99,6 +99,9 @@ class ThirtyPanel extends eui.Component {
 		console.log(loader.data);
 		var obj: {} = JSON.parse(loader.data);
 
+		// WanbaData.updatePackageData(obj["buy_libao_list"]);
+		// CustomEventMgr.dispatchEventWith("Update Libao View", false);
+
 		if(obj && obj["code"] == 1004) {
 			window["popPayTips"]({
 				defaultScore: obj["need_score"],

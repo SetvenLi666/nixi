@@ -7,10 +7,11 @@ class RechargePanel extends eui.Component {
 
 	public btn_left: eui.Image;
 	public btn_right: eui.Image;
-	public shower: Model;
+	// public shower: Model;
 	private curIndex: number = 1;
 	private counts: number;
 	// private flagIndex: number;
+	private showImage: eui.Image;
 
 	public constructor() {
 		super();
@@ -59,28 +60,31 @@ class RechargePanel extends eui.Component {
 		this.label_1.text = RechargeData.template[this.curIndex.toString()]["goal"];
 		this.label_2.text = RechargeData.achievement["total"];
 
-		this.dressClothes();
+		this.bg.source = "recharge_bg_" + this.curIndex + "_png";
+		this.showImage.source = "recharge_shower_" + this.curIndex + "_png";
+
+		// this.dressClothes();
 	}
 
-	private dressClothes() {
-		// var arr:{}[] = this["arr" + this.curIndex];
-		var arr:number[] = RechargeData.template[this.curIndex.toString()]["clothes"];
-		var len = arr.length;
-		for (var i = 0; i < len; i++) {
-			var id: number = arr[i];
-			var part: string = Math.floor(id / 10000) + "";
-			var sub_part: string;
-			var tempData = ClothesData.clothesTemplateData(part, id.toString());
-			if (part == "7") {
-				sub_part = tempData["sub_part"];
-			} else {
-				sub_part = tempData["part"];
-			}
+	// private dressClothes() {
+	// 	// var arr:{}[] = this["arr" + this.curIndex];
+	// 	var arr:number[] = RechargeData.template[this.curIndex.toString()]["clothes"];
+	// 	var len = arr.length;
+	// 	for (var i = 0; i < len; i++) {
+	// 		var id: number = arr[i];
+	// 		var part: string = Math.floor(id / 10000) + "";
+	// 		var sub_part: string;
+	// 		var tempData = ClothesData.clothesTemplateData(part, id.toString());
+	// 		if (part == "7") {
+	// 			sub_part = tempData["sub_part"];
+	// 		} else {
+	// 			sub_part = tempData["part"];
+	// 		}
 
-			// this.shower.dressItem(sub_part, id);
-			this.shower.dressItemOfSuit(sub_part, id);
-		}
-	}
+	// 		// this.shower.dressItem(sub_part, id);
+	// 		this.shower.dressItemOfSuit(sub_part, id);
+	// 	}
+	// }
 
 	private onLeft() {
 		this.curIndex -= 1;
@@ -119,6 +123,8 @@ class RechargePanel extends eui.Component {
 	}
 
 	private updateView() {
+		this.bg.source = "recharge_bg_" + this.curIndex + "_png";
+		this.showImage.source = "recharge_shower_" + this.curIndex + "_png";
 
 		this.label_1.text = RechargeData.template[this.curIndex.toString()]["goal"];
 		this.label_2.text = RechargeData.achievement["total"];
@@ -129,8 +135,8 @@ class RechargePanel extends eui.Component {
 			this.btn_image.source = "recharge_lingqu_png";
 		}
 
-		this.shower.takeOffAllClothes2();
-		this.dressClothes();
+		// this.shower.takeOffAllClothes2();
+		// this.dressClothes();
 	}
 
 	private onButton() {

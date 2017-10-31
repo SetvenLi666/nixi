@@ -157,6 +157,7 @@
     "src/panel/DailyTargetPanelSkin.exml",
     "src/panel/HuodongPanelRendererSkin.exml",
     "src/panel/HuodongPanelSkin.exml",
+    "src/panel/IosPayTipPanelSkin.exml",
     "src/panel/ResetNamePanelSkin.exml",
     "src/panel/ScPanelSkin.exml",
     "src/panel/StarsRewardPanelSkin.exml",

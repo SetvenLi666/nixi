@@ -27,6 +27,11 @@ class HuodongPanel extends eui.Component {
 			{ name: "leiji", source: "hd_panel_leiji_png" },
 			{ name: "dt", source: "hd_panel_target_png" }
 		];
+
+		if(window["OPEN_DATA"] && window["OPEN_DATA"].platform == 2) {
+			sourceData.splice(4, 1);
+		}
+
 		this.data = new eui.ArrayCollection(sourceData);
 		this.list.dataProvider = this.data;
 		this.list.itemRenderer = HuodongPanelRenderer;

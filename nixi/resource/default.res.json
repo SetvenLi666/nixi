@@ -193,7 +193,7 @@
 			"name": "new_rank"
 		},
 		{
-			"keys": "pk_tags_json",
+			"keys": "pk_tags_json,recharge_shower_1_png,recharge_shower_2_png,recharge_shower_3_png,recharge_shower_4_png,recharge_bg_1_png,recharge_bg_2_png,recharge_bg_3_png,recharge_bg_4_png,recharge_text_1_png,recharge_text_2_png,ios_pay_tip_png",
 			"name": "preload"
 		}
 	],
@@ -17610,6 +17610,61 @@
 			"type": "sheet",
 			"name": "pk_tags_json",
 			"subkeys": "pk_tag_101,pk_tag_102,pk_tag_103,pk_tag_104,pk_tag_105,pk_tag_106,pk_tag_107,pk_tag_108,pk_tag_109,pk_tag_110,pk_tag_111,pk_tag_112,pk_tag_113,pk_tag_114,pk_tag_115,pk_tag_116,pk_tag_117,pk_tag_118,pk_tag_119,pk_tag_120,pk_tag_121,pk_tag_122,pk_tag_123,pk_tag_124,pk_tag_125,pk_tag_126,pk_tag_127,pk_tag_130,pk_tag_131,pk_tag_132,pk_tag_133,pk_tag_134"
+		},
+		{
+			"name": "recharge_shower_1_png",
+			"type": "image",
+			"url": "game/panel/totalRecharge/recharge_shower_1.png"
+		},
+		{
+			"name": "recharge_shower_2_png",
+			"type": "image",
+			"url": "game/panel/totalRecharge/recharge_shower_2.png"
+		},
+		{
+			"name": "recharge_shower_3_png",
+			"type": "image",
+			"url": "game/panel/totalRecharge/recharge_shower_3.png"
+		},
+		{
+			"name": "recharge_shower_4_png",
+			"type": "image",
+			"url": "game/panel/totalRecharge/recharge_shower_4.png"
+		},
+		{
+			"name": "recharge_bg_1_png",
+			"type": "image",
+			"url": "game/panel/totalRecharge/recharge_bg_1.png"
+		},
+		{
+			"name": "recharge_bg_2_png",
+			"type": "image",
+			"url": "game/panel/totalRecharge/recharge_bg_2.png"
+		},
+		{
+			"name": "recharge_bg_3_png",
+			"type": "image",
+			"url": "game/panel/totalRecharge/recharge_bg_3.png"
+		},
+		{
+			"name": "recharge_bg_4_png",
+			"type": "image",
+			"url": "game/panel/totalRecharge/recharge_bg_4.png"
+		},
+		{
+			"name": "recharge_text_1_png",
+			"type": "image",
+			"url": "game/panel/totalRecharge/recharge_text_1.png"
+		},
+		{
+			"name": "recharge_text_2_png",
+			"type": "image",
+			"url": "game/panel/totalRecharge/recharge_text_2.png"
+		},
+		{
+			"name": "ios_pay_tip_png",
+			"type": "image",
+			"url": "game/main/ios_pay_tip.png"
 		}
 	]
 }
