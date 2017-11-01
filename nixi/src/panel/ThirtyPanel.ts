@@ -102,7 +102,35 @@ class ThirtyPanel extends eui.Component {
 		// WanbaData.updatePackageData(obj["buy_libao_list"]);
 		// CustomEventMgr.dispatchEventWith("Update Libao View", false);
 
-		if(obj && obj["code"] == 1004) {
+		// if(obj && obj["code"] == 1004) {
+		// 	window["popPayTips"]({
+		// 		defaultScore: obj["need_score"],
+		// 		appid: window["OPEN_DATA"].appid
+		// 	});
+		// }
+
+		if (obj && obj["result"] == "SUCCESS") {
+			//余额足够，无二次请求
+			if (obj["product_id"]) {
+				if (obj["product_id"] == "libao_1" || obj["product_id"] == "libao_2" || obj["product_id"] == "libao_3") {
+					WanbaData.updatePackageData(obj["buy_libao_list"]);
+					CustomEventMgr.dispatchEventWith("Update Libao View", false);
+				}
+			}
+			DataMgr.checkNews();
+
+			window["mqq"].ui.showDialog({
+				title: "提示",
+				text: "支付成功!请前往邮箱领取物品!",
+				needOkBtn: true,
+				needCancelBtn: false,
+				okBtnText: "确认",
+				cancelBtnText: ""
+			}, function (data) {
+				console.log(data);
+			});
+
+		} else if (obj && obj["result"] == "FAIL" && obj["code"] == 1004) {
 			window["popPayTips"]({
 				defaultScore: obj["need_score"],
 				appid: window["OPEN_DATA"].appid

@@ -69,17 +69,25 @@ class MainScene extends egret.DisplayObjectContainer {
 		if (r != null && ShareData.isShowGift) {
 			var gift_id = decodeURI(r[2]);
 			ShareData.isShowGift = false;
-			if (ShareData.can_take_gift) {
-				//发送礼包请求
-				NetLoading.showLoading();
-				var request = HttpProtocolMgr.take_daily_gift_reward_169(gift_id);
-				HttpMgr.postRequest(request);
-			} else {
-				egret.setTimeout(function () {
-					var giftPanel = new DailyGiftPanel("2", gift_id);
-					DisplayMgr.set2Center(giftPanel);
-					this.stage.addChild(giftPanel);
-				}, this, 500);
+			if (gift_id == "101") { //新手礼包
+				if (ShareData.can_take_once_gift) {
+					NetLoading.showLoading();
+					var request = HttpProtocolMgr.take_daily_gift_reward_169(gift_id);
+					HttpMgr.postRequest(request);
+				}
+			} else { //每日礼包
+				if (ShareData.can_take_gift) {
+					//发送礼包请求
+					NetLoading.showLoading();
+					var request = HttpProtocolMgr.take_daily_gift_reward_169(gift_id);
+					HttpMgr.postRequest(request);
+				} else {
+					egret.setTimeout(function () {
+						var giftPanel = new DailyGiftPanel("2", gift_id);
+						DisplayMgr.set2Center(giftPanel);
+						this.stage.addChild(giftPanel);
+					}, this, 500);
+				}
 			}
 		}
 	}

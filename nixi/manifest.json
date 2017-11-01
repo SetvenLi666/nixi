@@ -12,7 +12,7 @@
 		"promise/promise.js"
 	],
 	"game": [
-		"bin-debug/panel/IosPayTipPanel.js",
+		"bin-debug/panel/InvitePanel.js",
 		"bin-debug/AssetAdapter.js",
 		"bin-debug/Quwanwan.js",
 		"bin-debug/ThemeAdapter.js",
@@ -102,6 +102,7 @@
 		"bin-debug/panel/GiftPanel.js",
 		"bin-debug/panel/HuodongPanel.js",
 		"bin-debug/Main.js",
+		"bin-debug/panel/IosPayTipPanel.js",
 		"bin-debug/panel/MothCardPanel.js",
 		"bin-debug/panel/NewSignPanel.js",
 		"bin-debug/panel/OnePanel.js",

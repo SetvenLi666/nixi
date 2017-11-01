@@ -126,9 +126,9 @@ class ShouchongPanel extends eui.Component {
 			this.img_x2_6.visible = true;
 		}
 
-		if(!this.img_x2_1.visible && !this.img_x2_2.visible && !this.img_x2_3.visible && !this.img_x2_4.visible && !this.img_x2_5.visible && !this.img_x2_2.visible && !this.img_x2_6.visible) {
+		if (!this.img_x2_1.visible && !this.img_x2_2.visible && !this.img_x2_3.visible && !this.img_x2_4.visible && !this.img_x2_5.visible && !this.img_x2_2.visible && !this.img_x2_6.visible) {
 			this.tipImg.visible = false;
-		}else {
+		} else {
 			this.tipImg.visible = true;
 		}
 	}
@@ -205,7 +205,28 @@ class ShouchongPanel extends eui.Component {
 		console.log(loader.data);
 		var obj: {} = JSON.parse(loader.data);
 
-		if (obj && obj["code"] == 1004) {
+		if (obj && obj["result"] == "SUCCESS") {
+			//余额足够，无二次请求
+			// if (obj["product_id"]) {
+			// 	if (obj["product_id"] == "libao_1" || obj["product_id"] == "libao_2" || obj["product_id"] == "libao_3") {
+			// 		WanbaData.updatePackageData(obj["buy_libao_list"]);
+			// 		CustomEventMgr.dispatchEventWith("Update Libao View", false);
+			// 	}
+			// }
+			DataMgr.checkNews();
+
+			window["mqq"].ui.showDialog({
+				title: "提示",
+				text: "支付成功!请前往邮箱领取物品!",
+				needOkBtn: true,
+				needCancelBtn: false,
+				okBtnText: "确认",
+				cancelBtnText: ""
+			}, function (data) {
+				console.log(data);
+			});
+
+		} else if (obj && obj["result"] == "FAIL" && obj["code"] == 1004) {
 			window["popPayTips"]({
 				defaultScore: obj["need_score"],
 				appid: window["OPEN_DATA"].appid
@@ -240,8 +261,8 @@ function __paySuccess() {
 		console.log(loader.data);
 		var obj: {} = JSON.parse(loader.data);
 
-		if(obj["product_id"]) {
-			if(obj["product_id"] == "libao_1" || obj["product_id"] == "libao_2" || obj["product_id"] == "libao_3") {
+		if (obj["product_id"]) {
+			if (obj["product_id"] == "libao_1" || obj["product_id"] == "libao_2" || obj["product_id"] == "libao_3") {
 				WanbaData.updatePackageData(obj["buy_libao_list"]);
 				CustomEventMgr.dispatchEventWith("Update Libao View", false);
 			}
@@ -259,16 +280,16 @@ function __paySuccess() {
 		needCancelBtn: false,
 		okBtnText: "确认",
 		cancelBtnText: ""
-	}, function(data) {
+	}, function (data) {
 		console.log(data);
 	});
 
-	if(window["OPEN_DATA"] && window["OPEN_DATA"].platform == 2 && window["OPEN_DATA"].qua["app"] == "SQ") {
-		console.log("支付成功！！！");
-		var tip = new IosPayTipPanel();
-		DisplayMgr.set2Center(tip);
-		egret.MainContext.instance.stage.addChild(tip);
-	}
+	// if (window["OPEN_DATA"] && window["OPEN_DATA"].platform == 2 && window["OPEN_DATA"].qua["app"] == "SQ") {
+	// 	console.log("支付成功！！！");
+	// 	var tip = new IosPayTipPanel();
+	// 	DisplayMgr.set2Center(tip);
+	// 	egret.MainContext.instance.stage.addChild(tip);
+	// }
 }
 
 

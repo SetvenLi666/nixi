@@ -17,7 +17,8 @@ class ShareData {
 	private static _firstpay_normal_times: number = 0;
 	private static _firstpay_lottery_times: number = 0;
 
-	private static _can_take_gift: boolean = false; //玩吧礼包领取状态true可领取，false不可领取
+	private static _can_take_gift: boolean = false; //玩吧每日礼包领取状态true可领取，false不可领取
+	private static _can_take_once_gift: boolean = false; //玩吧新手礼包领取状态
 	private static _isShowGift: boolean = true;     //是否弹出礼包
 	private static _gift_reward_list: {} = {
 		"1": { diam: 10},
@@ -27,6 +28,7 @@ class ShareData {
 		"5": { diam: 10, coin: 300 },
 		"6": { diam: 10, tili: 60 },
 		"7": { diam: 10, tili: 60 },
+		"101": {diam: 100}
 	};
 
 	public static update(obj: {}) {
@@ -55,6 +57,7 @@ class ShareData {
 		this._firstpay_lottery_times = obj["firstpay_lottery_times"];
 
 		this._can_take_gift = obj["can_take_gift"];
+		this._can_take_once_gift = obj["can_take_once_gift"];
 	}
 
 	public static get shortcutTimes(): number {
@@ -115,6 +118,10 @@ class ShareData {
 
 	public static get can_take_gift(): boolean {
 		return this._can_take_gift;
+	}
+
+	public static get can_take_once_gift(): boolean {
+		return this._can_take_once_gift;
 	}
 
 	public static get isShowGift(): boolean {

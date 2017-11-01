@@ -18,7 +18,12 @@ class DailyGiftPanel extends eui.Component {
 	private addStage() {
 		this.group.width = Math.min(DisplayMgr.stageW, 852);
 
-		this.bg.source = "daily_gift_bg_" + this.type + "_png"
+		if(this.id == "101") {
+			this.bg.source = "daily_gift_bg_" + this.id + "_png"
+		}else {
+			this.bg.source = "daily_gift_bg_" + this.type + "_png";
+		}
+		
 
 		var item: {} = ShareData.giftList[this.id];
 		for(var i in item) {

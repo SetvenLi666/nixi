@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="InvitePanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.2"/>
+		<e:Image id="bg" source="invite_panel_bg_png" horizontalCenter="0" verticalCenter="0"/>
+		<e:Image source="invite_title_bg_png" y="271" horizontalCenter="0"/>
+		<e:Image source="invite_text_tip_png" y="448.3" horizontalCenter="0.5"/>
+		<e:Image source="invite_text_names_png" y="500" horizontalCenter="0"/>
+		<e:Scroller width="430" height="340" y="564.85" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="-0.5">
+			<e:List id="list">
+				<e:layout>
+					<e:TileLayout orientation="columns"/>
+				</e:layout>
+			</e:List>
+		</e:Scroller>
+	</e:Group>
+</e:Skin>

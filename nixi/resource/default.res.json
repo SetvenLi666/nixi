@@ -193,7 +193,7 @@
 			"name": "new_rank"
 		},
 		{
-			"keys": "pk_tags_json,recharge_shower_1_png,recharge_shower_2_png,recharge_shower_3_png,recharge_shower_4_png,recharge_bg_1_png,recharge_bg_2_png,recharge_bg_3_png,recharge_bg_4_png,recharge_text_1_png,recharge_text_2_png,ios_pay_tip_png",
+			"keys": "pk_tags_json,recharge_shower_1_png,recharge_shower_2_png,recharge_shower_3_png,recharge_shower_4_png,recharge_bg_1_png,recharge_bg_2_png,recharge_bg_3_png,recharge_bg_4_png,recharge_text_1_png,recharge_text_2_png,ios_pay_tip_png,invite_diam_png,invite_flag_finish_png,invite_item_bg_png,invite_panel_bg_png,invite_player_icon_png,invite_rev_1_png,invite_rev_2_png,invite_text_five_png,invite_text_names_png,invite_text_tip_png,invite_title_bg_png,invite_num_0_png,invite_num_1_png,invite_num_2_png,invite_num_3_png,invite_num_4_png,invite_num_5_png,invite_num_6_png,invite_num_7_png,invite_num_8_png,invite_num_9_png,invite_lefttime_text_png,invite_progress_text_png,daily_gift_bg_101_png",
 			"name": "preload"
 		}
 	],
@@ -17665,6 +17665,126 @@
 			"name": "ios_pay_tip_png",
 			"type": "image",
 			"url": "game/main/ios_pay_tip.png"
+		},
+		{
+			"name": "invite_diam_png",
+			"type": "image",
+			"url": "game/panel/invite/invite_diam.png"
+		},
+		{
+			"name": "invite_flag_finish_png",
+			"type": "image",
+			"url": "game/panel/invite/invite_flag_finish.png"
+		},
+		{
+			"name": "invite_item_bg_png",
+			"type": "image",
+			"url": "game/panel/invite/invite_item_bg.png"
+		},
+		{
+			"name": "invite_panel_bg_png",
+			"type": "image",
+			"url": "game/panel/invite/invite_panel_bg.png"
+		},
+		{
+			"name": "invite_player_icon_png",
+			"type": "image",
+			"url": "game/panel/invite/invite_player_icon.png"
+		},
+		{
+			"name": "invite_rev_1_png",
+			"type": "image",
+			"url": "game/panel/invite/invite_rev_1.png"
+		},
+		{
+			"name": "invite_rev_2_png",
+			"type": "image",
+			"url": "game/panel/invite/invite_rev_2.png"
+		},
+		{
+			"name": "invite_text_five_png",
+			"type": "image",
+			"url": "game/panel/invite/invite_text_five.png"
+		},
+		{
+			"name": "invite_text_names_png",
+			"type": "image",
+			"url": "game/panel/invite/invite_text_names.png"
+		},
+		{
+			"name": "invite_text_tip_png",
+			"type": "image",
+			"url": "game/panel/invite/invite_text_tip.png"
+		},
+		{
+			"name": "invite_title_bg_png",
+			"type": "image",
+			"url": "game/panel/invite/invite_title_bg.png"
+		},
+		{
+			"name": "invite_num_0_png",
+			"type": "image",
+			"url": "game/panel/invite/invite_num_0.png"
+		},
+		{
+			"name": "invite_num_1_png",
+			"type": "image",
+			"url": "game/panel/invite/invite_num_1.png"
+		},
+		{
+			"name": "invite_num_2_png",
+			"type": "image",
+			"url": "game/panel/invite/invite_num_2.png"
+		},
+		{
+			"name": "invite_num_3_png",
+			"type": "image",
+			"url": "game/panel/invite/invite_num_3.png"
+		},
+		{
+			"name": "invite_num_4_png",
+			"type": "image",
+			"url": "game/panel/invite/invite_num_4.png"
+		},
+		{
+			"name": "invite_num_5_png",
+			"type": "image",
+			"url": "game/panel/invite/invite_num_5.png"
+		},
+		{
+			"name": "invite_num_6_png",
+			"type": "image",
+			"url": "game/panel/invite/invite_num_6.png"
+		},
+		{
+			"name": "invite_num_7_png",
+			"type": "image",
+			"url": "game/panel/invite/invite_num_7.png"
+		},
+		{
+			"name": "invite_num_8_png",
+			"type": "image",
+			"url": "game/panel/invite/invite_num_8.png"
+		},
+		{
+			"name": "invite_num_9_png",
+			"type": "image",
+			"url": "game/panel/invite/invite_num_9.png"
+		},
+		{
+			"name": "invite_lefttime_text_png",
+			"type": "image",
+			"url": "game/panel/invite/invite_lefttime_text.png"
+		},
+		{
+			"name": "invite_progress_text_png",
+			"type": "image",
+			"url": "game/panel/invite/invite_progress_text.png"
+		},
+		{
+			"name": "daily_gift_bg_101_png",
+			"type": "image",
+			"url": "game/panel/dailyGift/daily_gift_bg_101.png"
 		}
 	]
 }
