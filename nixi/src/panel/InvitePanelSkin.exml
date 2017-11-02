@@ -6,12 +6,16 @@
 		<e:Image source="invite_title_bg_png" y="271" horizontalCenter="0"/>
 		<e:Image source="invite_text_tip_png" y="448.3" horizontalCenter="0.5"/>
 		<e:Image source="invite_text_names_png" y="500" horizontalCenter="0"/>
-		<e:Scroller width="430" height="340" y="564.85" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="-0.5">
+		<e:Scroller width="430" height="340" y="560" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="-0.5">
 			<e:List id="list">
 				<e:layout>
-					<e:TileLayout orientation="columns"/>
+					<e:TileLayout horizontalAlign="center" horizontalGap="10" verticalGap="10"/>
 				</e:layout>
 			</e:List>
 		</e:Scroller>
+		<e:Image source="invite_progress_text_png" y="286.67" horizontalCenter="106.5"/>
+		<e:Label text="Label" x="569" y="285" size="24"/>
+		<e:Image source="invite_lefttime_text_png" x="414.68" y="416"/>
+		<e:Label text="Label" x="554.67" y="406.67"/>
 	</e:Group>
 </e:Skin>

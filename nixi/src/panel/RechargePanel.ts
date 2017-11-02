@@ -60,7 +60,6 @@ class RechargePanel extends eui.Component {
 		this.label_1.text = RechargeData.template[this.curIndex.toString()]["goal"];
 		this.label_2.text = RechargeData.achievement["total"];
 
-		this.bg.source = "recharge_bg_" + this.curIndex + "_png";
 		this.showImage.source = "recharge_shower_" + this.curIndex + "_png";
 
 		// this.dressClothes();
@@ -123,7 +122,6 @@ class RechargePanel extends eui.Component {
 	}
 
 	private updateView() {
-		this.bg.source = "recharge_bg_" + this.curIndex + "_png";
 		this.showImage.source = "recharge_shower_" + this.curIndex + "_png";
 
 		this.label_1.text = RechargeData.template[this.curIndex.toString()]["goal"];

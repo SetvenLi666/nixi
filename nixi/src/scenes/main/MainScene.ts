@@ -32,6 +32,7 @@ class MainScene extends egret.DisplayObjectContainer {
 		if (PlayerData.guide == 0) {
 			if (NewsData.dailySignin == 1) {
 				//每日登陆礼盒
+				ShareData.isShowScPop = true;
 				var panel = new DailySigninPanel();
 				DisplayMgr.set2Center(panel);
 				this.stage.addChild(panel);

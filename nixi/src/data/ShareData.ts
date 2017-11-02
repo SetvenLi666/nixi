@@ -17,6 +17,8 @@ class ShareData {
 	private static _firstpay_normal_times: number = 0;
 	private static _firstpay_lottery_times: number = 0;
 
+	private static _isShowScPop: boolean = false;
+
 	private static _can_take_gift: boolean = false; //玩吧每日礼包领取状态true可领取，false不可领取
 	private static _can_take_once_gift: boolean = false; //玩吧新手礼包领取状态
 	private static _isShowGift: boolean = true;     //是否弹出礼包
@@ -134,5 +136,13 @@ class ShareData {
 
 	public static get giftList(): {} {
 		return this._gift_reward_list;
+	}
+
+	public static get isShowScPop(): boolean {
+		return this._isShowScPop;
+	}
+
+	public static set isShowScPop(value: boolean) {
+		this._isShowScPop = value;
 	}
 }

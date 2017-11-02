@@ -3,14 +3,14 @@
 	<w:Config id="15823b6ac24"/>
 	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
 		<e:Rect fillAlpha="0.8" left="0" right="0" top="0" bottom="0"/>
-		<e:Image id="bg" source="recharge_bg_1_png" horizontalCenter="0" verticalCenter="0"/>
-		<e:Image id="showImage" source="recharge_shower_1_png" horizontalCenter="0" verticalCenter="-27"/>
-		<e:Image source="recharge_text_1_png" y="882.68" horizontalCenter="149"/>
-		<e:Image source="recharge_text_2_png" y="843.68" horizontalCenter="-155.5"/>
+		<e:Image id="bg" horizontalCenter="0" verticalCenter="0" source="panel_ui_json.ac_panel_bg" visible="false"/>
+		<e:Image id="showImage" source="recharge_shower_1_png" horizontalCenter="0" verticalCenter="11"/>
+		<e:Image source="recharge_text_1_png" y="861" horizontalCenter="149.5"/>
+		<e:Image source="recharge_text_2_png" y="822" horizontalCenter="-155"/>
 		<e:Image id="btn_right" y="500" horizontalCenter="235" source="recharge_btn_left_png"/>
 		<e:Image id="btn_left" y="500" scaleX="1" horizontalCenter="-235" source="recharge_btn_right_png"/>
-		<e:Image id="btn_image" y="828.68" horizontalCenter="160.5" source="recharge_chongzhi_png"/>
-		<e:Label id="label_1" text="0" y="851.81" textColor="0xff3478" size="22" strokeColor="0xffffff" height="22" width="54" horizontalCenter="-113" textAlign="center" stroke="1"/>
-		<e:Label id="label_2" text="0" y="888.26" size="22" textColor="0xff3478" width="54" height="22" horizontalCenter="206" textAlign="center" strokeColor="0xffffff" stroke="1"/>
+		<e:Image id="btn_image" y="807.44" horizontalCenter="160.5" source="recharge_chongzhi_png"/>
+		<e:Label id="label_1" text="0" y="826.04" textColor="0xff3478" size="22" strokeColor="0xffffff" height="22" width="54" horizontalCenter="-115" textAlign="center" stroke="1"/>
+		<e:Label id="label_2" text="0" y="865.46" size="22" textColor="0xff3478" width="54" height="22" horizontalCenter="206" textAlign="center" strokeColor="0xffffff" stroke="1"/>
 	</e:Group>
 </e:Skin>

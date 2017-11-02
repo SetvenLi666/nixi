@@ -21,6 +21,7 @@ class MainComp extends eui.Component {
 	public leijiGroup: eui.Group;
 	public dtGroup: eui.Group;
 	public hdGroup: eui.Group;
+	public yqGroup: eui.Group;
 
 	public td_ac: eui.Image;
 
@@ -78,6 +79,7 @@ class MainComp extends eui.Component {
 		this.lbGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnLb, this);
 		this.scGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnSc, this);
 		this.dtGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnDt, this);
+		this.yqGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnYq, this);
 
 		this.touchRect.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouchRect, this);
 
@@ -445,6 +447,15 @@ class MainComp extends eui.Component {
 		var self = this;
 		DisplayMgr.buttonScale(this.hdGroup, function() {
 			var panel = new HuodongPanel();
+			DisplayMgr.set2Center(panel);
+			self.stage.addChild(panel);
+		});
+	}
+
+	private onBtnYq() {
+		var self = this;
+		DisplayMgr.buttonScale(this.yqGroup, function() {
+			var panel = new InvitePanel();
 			DisplayMgr.set2Center(panel);
 			self.stage.addChild(panel);
 		});

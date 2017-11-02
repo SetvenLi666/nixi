@@ -102,7 +102,8 @@ class SigninPanel extends eui.Component {
 			// }
 			if(ShareData.isFirstPay && ShareData.firstpay_normal_times == 1 && ShareData.firstpay_lottery_times == 1 && ShareData.isDailyPay && ShareData.dailypay_normal_times == 1 && ShareData.dailypay_lottery_times == 1) {
 
-			}else {
+			}else if(ShareData.isShowScPop){
+				ShareData.isShowScPop = false;
 				var onePanel = new ScPanel();
 				DisplayMgr.set2Center(onePanel);
 				this.stage.addChild(onePanel);
