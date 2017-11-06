@@ -18,7 +18,7 @@ class DailyGiftPanel extends eui.Component {
 	private addStage() {
 		this.group.width = Math.min(DisplayMgr.stageW, 852);
 
-		if(this.id == "101") {
+		if(this.id == "101" || this.id == "201") {
 			this.bg.source = "daily_gift_bg_" + this.id + "_png"
 		}else {
 			this.bg.source = "daily_gift_bg_" + this.type + "_png";

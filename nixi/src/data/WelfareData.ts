@@ -3,6 +3,8 @@ class WelfareData {
 	private static _items: {}[] = [];
 	private static _statis: {} = null;
 
+	private static _isBtnReq: boolean = false;
+
 	public static updateWelfareData(obj: {}) {
 		if(obj != null) {
 			var items: {} = obj["items"];
@@ -26,5 +28,13 @@ class WelfareData {
 
 	public static get itemsObj(): {} {
 		return this._itemsObj;
+	}
+
+	public static get isBtnReq(): boolean {
+		return this._isBtnReq;
+	}
+
+	public static set isBtnReq(value: boolean) {
+		this._isBtnReq = value;
 	}
 }

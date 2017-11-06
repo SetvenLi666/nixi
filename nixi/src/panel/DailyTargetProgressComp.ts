@@ -172,6 +172,7 @@ class DailyTargetProgressComp extends eui.Component {
 	private result_of_633(evt: egret.Event) {
 		NetLoading.removeLoading();
 		CustomEventMgr.dispatchEventWith("Update Player Info", false);
+		CustomEventMgr.dispatchEventWith("CheckOut DT Status", false);
 		// Prompt.showPrompt(this.stage, "领取成功!");
 		this.updateView();
 		var reward: {} = {

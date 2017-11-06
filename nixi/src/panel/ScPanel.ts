@@ -24,11 +24,13 @@ class ScPanel extends eui.Component {
 		this.btn_lq2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onLq2, this);
 
 		CustomEventMgr.addEventListener("170", this.result_of_170, this);
+		CustomEventMgr.addEventListener("Update SC View", this.updateView, this);
 	}
 
 	private onExit() {
 		this.removeEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit,  this);
 		CustomEventMgr.removeEventListener("170", this.result_of_170, this);
+		CustomEventMgr.removeEventListener("Update SC View", this.updateView, this);
 	}
 
 	private updateView() {

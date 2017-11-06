@@ -143,6 +143,10 @@ class GashaponPanel extends eui.Component {
 	private result_of_309(evt: egret.Event) {
 		this.touchEnabled = false;
 		CustomEventMgr.dispatchEventWith("Update Player Info", false);
+		
+		var request = HttpProtocolMgr.take_welfare_data_630();
+		HttpMgr.postRequest(request);
+
 		NetLoading.removeLoading();
 		// this.result_10 = evt.data;
 		// this.AnimationTenTimes();

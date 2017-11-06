@@ -31,6 +31,7 @@ class DailyTargetPanel extends eui.Component {
 	private result_of_631(evt: egret.Event) {
 		NetLoading.removeLoading();
 		CustomEventMgr.dispatchEventWith("Update Player Info", false);
+		CustomEventMgr.dispatchEventWith("CheckOut DT Status", false);
 		this.pgComp.updateView();
 		this.list.dataProvider = new eui.ArrayCollection(WelfareData.items);
 		
@@ -54,6 +55,7 @@ class DailyTargetPanel extends eui.Component {
 
 	private closePanel() {
 		if(this.parent) {
+			WelfareData.isBtnReq = false;
 			this.parent.removeChild(this);
 		}
 	}

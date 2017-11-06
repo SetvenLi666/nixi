@@ -213,6 +213,10 @@ class ShouchongPanel extends eui.Component {
 			// 		CustomEventMgr.dispatchEventWith("Update Libao View", false);
 			// 	}
 			// }
+			if (obj["h5wanba"]) {
+				ShareData.update(obj["h5wanba"]);
+				CustomEventMgr.dispatchEventWith("Update SC View", false);
+			}
 			DataMgr.checkNews();
 
 			window["mqq"].ui.showDialog({
@@ -268,6 +272,10 @@ function __paySuccess() {
 			}
 		}
 
+		if (obj["h5wanba"]) {
+			ShareData.update(obj["h5wanba"]);
+			CustomEventMgr.dispatchEventWith("Update SC View", false);
+		}
 		DataMgr.checkNews();
 
 	}, null);

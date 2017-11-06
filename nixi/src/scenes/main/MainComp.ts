@@ -24,6 +24,7 @@ class MainComp extends eui.Component {
 	public yqGroup: eui.Group;
 
 	public td_ac: eui.Image;
+	public dt_tip: eui.Image;
 
 	public touchRect: eui.Rect;
 	private isShowUI: boolean = true;
@@ -61,7 +62,7 @@ class MainComp extends eui.Component {
 
 		this.container.width = DisplayMgr.stageW;
 		this.group.width = Math.min(DisplayMgr.stageW, 852);
-		
+
 		var self = this;
 
 		this.initView();
@@ -107,7 +108,12 @@ class MainComp extends eui.Component {
 
 		CustomEventMgr.addEventListener("Update Libao View", this.updateLibaoView, this);
 		CustomEventMgr.addEventListener("Update Sc View", this.updateScView, this);
+		CustomEventMgr.addEventListener("CheckOut DT Status", this.checkDailyTargetStates, this);
 
+		//获取每日任务数据
+		var request = HttpProtocolMgr.take_welfare_data_630();
+		HttpMgr.postRequest(request);
+		//============
 		if (PlayerData.guide == 1) {
 			CustomEventMgr.addEventListener("Talk Message", this.playGuideTalk, this);
 			CustomEventMgr.addEventListener("Guide_Step_1_1", this.onTouchRect, this);
@@ -131,7 +137,7 @@ class MainComp extends eui.Component {
 			CustomEventMgr.addEventListener("Guide_Step_6", this.onBtnGashapon, this);
 		}
 
-		if(PlayerData.pkGuide == 1) {
+		if (PlayerData.pkGuide == 1) {
 			var pkguide = new PkGuidePanel();
 			DisplayMgr.set2Center(pkguide);
 			this.stage.addChild(pkguide);
@@ -140,17 +146,17 @@ class MainComp extends eui.Component {
 			pkguide.stopAnimation();
 			this.jj_comp["imgLock"].visible = true;
 			CustomEventMgr.addEventListener("PkGuide_Step_2", this.onJjComp, this);
-			egret.setTimeout(function() {
+			egret.setTimeout(function () {
 				var tw_lock = egret.Tween.get(self.jj_comp["imgLock"]);
-				tw_lock.to({alpha: 0}, 500)
-					.to({alpha: 1}, 500)
-					.to({alpha: 0}, 500)
-					.to({alpha: 1}, 500)
-					.to({alpha: 0}, 500)
-					.call(function() {
+				tw_lock.to({ alpha: 0 }, 500)
+					.to({ alpha: 1 }, 500)
+					.to({ alpha: 0 }, 500)
+					.to({ alpha: 1 }, 500)
+					.to({ alpha: 0 }, 500)
+					.call(function () {
 						CustomEventMgr.dispatchEventWith("Play PkGuide Animation", false);
 					}, self);
-			} , this, 1000);
+			}, this, 1000);
 		}
 	}
 
@@ -182,6 +188,7 @@ class MainComp extends eui.Component {
 
 		CustomEventMgr.removeEventListener("Update Libao View", this.updateLibaoView, this);
 		CustomEventMgr.removeEventListener("Update Sc View", this.updateScView, this);
+		CustomEventMgr.removeEventListener("CheckOut DT Status", this.checkDailyTargetStates, this);
 
 		CustomEventMgr.removeEventListener("Talk Message", this.playGuideTalk, this);
 		CustomEventMgr.removeEventListener("Guide_Step_1_1", this.onTouchRect, this);
@@ -212,7 +219,7 @@ class MainComp extends eui.Component {
 		this.sd_comp.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onSdComp, this);
 		this.jj_comp.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onJjComp, this);
 
-		if(PlayerData.pkGuide == 1) {
+		if (PlayerData.pkGuide == 1) {
 			CustomEventMgr.removeEventListener("PkGuide_Step_2", this.onJjComp, this);
 		}
 	}
@@ -220,10 +227,10 @@ class MainComp extends eui.Component {
 	private initView() {
 		if (NewsData.mail > 0) {
 			this.mailTip.visible = true;
-			var tw_tip = egret.Tween.get(this.mailTip, {loop: true});
-			tw_tip.to({scaleX: 1.05, scaleY: 1.05}, 300)
-				.to({scaleX: 1, scaleY: 1}, 300);
-		}else {
+			var tw_tip = egret.Tween.get(this.mailTip, { loop: true });
+			tw_tip.to({ scaleX: 1.05, scaleY: 1.05 }, 300)
+				.to({ scaleX: 1, scaleY: 1 }, 300);
+		} else {
 			this.mailTip.visible = false;
 			egret.Tween.removeTweens(this.mailTip);
 		}
@@ -241,9 +248,9 @@ class MainComp extends eui.Component {
 
 		this.model.dress(ClothesData.ondressCache, ClothesData.ornamentsCache);
 
-		if(PlayerData.mission <= 6) {
+		if (PlayerData.mission <= 6) {
 			this.jj_comp["imgLock"].visible = true;
-		}else {
+		} else {
 			this.jj_comp["imgLock"].visible = false;
 		}
 
@@ -356,24 +363,24 @@ class MainComp extends eui.Component {
 
 	private updateScView() {
 
-		if(ShareData.isFirstPay == false || ShareData.firstpay_normal_times == 0 || ShareData.firstpay_lottery_times == 0) {
+		if (ShareData.isFirstPay == false || ShareData.firstpay_normal_times == 0 || ShareData.firstpay_lottery_times == 0) {
 			this.sc_icon.source = "newmain_ui_json.main_ui_cz_bg";
 			this.sc_text.source = "newmain_ui_json.main_shouchong_text";
-		}else if(ShareData.isDailyPay == false || ShareData.dailypay_normal_times == 0 || ShareData.dailypay_lottery_times == 0) {
+		} else if (ShareData.isDailyPay == false || ShareData.dailypay_normal_times == 0 || ShareData.dailypay_lottery_times == 0) {
 			this.sc_icon.source = "newmain_ui_json.main_daily_icon";
 			this.sc_text.source = "newmain_ui_json.main_dialy_text";
-		}else {
+		} else {
 			this.sc_icon.source = "newmain_ui_json.main_ui_cz_bg";
 			this.sc_text.source = "newmain_ui_json.main_ui_cz_text";
 		}
 	}
 
 	private playCompAnimation() {
-		egret.Tween.get(this.sj_comp).to({y: 770}, 800, egret.Ease.backOut);
-		egret.Tween.get(this.xt_comp).to({y: 930}, 1000, egret.Ease.backOut);
-		egret.Tween.get(this.yl_comp).to({y: 975}, 600, egret.Ease.backOut);
-		egret.Tween.get(this.sd_comp).to({y: 930}, 1000, egret.Ease.backOut);
-		egret.Tween.get(this.jj_comp).to({y: 770}, 800, egret.Ease.backOut);
+		egret.Tween.get(this.sj_comp).to({ y: 770 }, 800, egret.Ease.backOut);
+		egret.Tween.get(this.xt_comp).to({ y: 930 }, 1000, egret.Ease.backOut);
+		egret.Tween.get(this.yl_comp).to({ y: 975 }, 600, egret.Ease.backOut);
+		egret.Tween.get(this.sd_comp).to({ y: 930 }, 1000, egret.Ease.backOut);
+		egret.Tween.get(this.jj_comp).to({ y: 770 }, 800, egret.Ease.backOut);
 	}
 
 	private onBtnGashapon() {
@@ -445,7 +452,7 @@ class MainComp extends eui.Component {
 
 	private onBtnHd() {
 		var self = this;
-		DisplayMgr.buttonScale(this.hdGroup, function() {
+		DisplayMgr.buttonScale(this.hdGroup, function () {
 			var panel = new HuodongPanel();
 			DisplayMgr.set2Center(panel);
 			self.stage.addChild(panel);
@@ -454,7 +461,7 @@ class MainComp extends eui.Component {
 
 	private onBtnYq() {
 		var self = this;
-		DisplayMgr.buttonScale(this.yqGroup, function() {
+		DisplayMgr.buttonScale(this.yqGroup, function () {
 			var panel = new InvitePanel();
 			DisplayMgr.set2Center(panel);
 			self.stage.addChild(panel);
@@ -468,12 +475,12 @@ class MainComp extends eui.Component {
 			// var request = HttpProtocolMgr.all_products_100();
 			// HttpMgr.postRequest(request);
 
-			if(ShareData.isFirstPay && ShareData.firstpay_normal_times == 1 && ShareData.firstpay_lottery_times == 1 && ShareData.isDailyPay && ShareData.dailypay_normal_times == 1 && ShareData.dailypay_lottery_times == 1) {
+			if (ShareData.isFirstPay && ShareData.firstpay_normal_times == 1 && ShareData.firstpay_lottery_times == 1 && ShareData.isDailyPay && ShareData.dailypay_normal_times == 1 && ShareData.dailypay_lottery_times == 1) {
 				//
 				NetLoading.showLoading();
 				var request = HttpProtocolMgr.all_products_100();
 				HttpMgr.postRequest(request);
-			}else {
+			} else {
 				var onePanel = new ScPanel();
 				DisplayMgr.set2Center(onePanel);
 				self.stage.addChild(onePanel);
@@ -482,6 +489,7 @@ class MainComp extends eui.Component {
 	}
 
 	private onBtnDt() {
+		WelfareData.isBtnReq = true;
 		var self = this;
 		DisplayMgr.buttonScale(this.dtGroup, function () {
 			NetLoading.showLoading();
@@ -573,7 +581,7 @@ class MainComp extends eui.Component {
 	private onJjComp() {
 		var self = this;
 		DisplayMgr.buttonScale(this.jj_comp, function () {
-			if(PlayerData.mission <= 6) {
+			if (PlayerData.mission <= 6) {
 				Prompt.showPrompt(self.stage, "完成娱乐圈任务6之后解锁");
 				return;
 			}
@@ -677,10 +685,47 @@ class MainComp extends eui.Component {
 	}
 
 	private result_of_630() {
-		NetLoading.removeLoading();
-		var panel = new DailyTargetPanel();
-		DisplayMgr.set2Center(panel);
-		egret.MainContext.instance.stage.addChild(panel);
+		if (WelfareData.isBtnReq) {
+			NetLoading.removeLoading();
+			var panel = new DailyTargetPanel();
+			DisplayMgr.set2Center(panel);
+			egret.MainContext.instance.stage.addChild(panel);
+		}else {
+			this.checkDailyTargetStates();
+		}
+	}
+
+	private checkDailyTargetStates() {
+		var items = WelfareData.items;
+		var item_len = items.length;
+		var statics = WelfareData.statis;
+
+		for (var i = 0; i < item_len; i++) {
+			if (items[i]["status"] == 1) {
+				this.showDailyTargetTip();
+				return;
+			}
+		}
+
+		for (var p in statics) {
+			if (statics[p]["status"] == 1) {
+				this.showDailyTargetTip();
+				return;
+			}
+		}
+
+		this.hideDailyTargetTip();
+	}
+
+	private showDailyTargetTip() {
+		this.dt_tip.visible = true;
+		var tw_tip = egret.Tween.get(this.dt_tip, { loop: true });
+		tw_tip.to({ scaleX: 1.05, scaleY: 1.05 }, 300);
+	}
+
+	private hideDailyTargetTip() {
+		this.dt_tip.visible = false;
+		egret.Tween.removeTweens(this.dt_tip);
 	}
 
 	private result_of_820(evt: egret.Event) {
@@ -740,9 +785,9 @@ class MainComp extends eui.Component {
 	private result_of_910() {
 		if (NewsData.mail > 0) {
 			this.mailTip.visible = true;
-			var tw_tip = egret.Tween.get(this.mailTip, {loop: true});
-			tw_tip.to({scaleX: 1.05, scaleY: 1.05}, 300)
-				.to({scaleX: 1, scaleY: 1}, 300);
+			var tw_tip = egret.Tween.get(this.mailTip, { loop: true });
+			tw_tip.to({ scaleX: 1.05, scaleY: 1.05 }, 300)
+				.to({ scaleX: 1, scaleY: 1 }, 300);
 		} else {
 			this.mailTip.visible = false;
 			egret.Tween.removeTweens(this.mailTip);

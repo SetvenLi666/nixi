@@ -35,12 +35,13 @@
 				<e:Image source="newmain_ui_json.main_dailytarget_icon" horizontalCenter="0" verticalCenter="0"/>
 				<e:Image id="td_ac" source="newmain_ui_json.main_dailytarget_ac" y="49.67" anchorOffsetX="25" anchorOffsetY="23.5" x="59"/>
 				<e:Image source="newmain_ui_json.main_dailytarget_text" y="72" scaleX="1" scaleY="1" horizontalCenter="0"/>
+				<e:Image id="dt_tip" source="newmain_ui_json.main_mail_tip" x="83.68" y="23.52" anchorOffsetX="18.5" anchorOffsetY="19" visible="false"/>
 			</e:Group>
 			<e:Group id="hdGroup" width="110" height="110" y="430" right="7">
 				<e:Image source="newmain_ui_json.main_huodong_icon" horizontalCenter="0" verticalCenter="0"/>
 				<e:Image source="newmain_ui_json.main_huodong_text" y="75" horizontalCenter="0"/>
 			</e:Group>
-			<e:Group id="yqGroup" width="110" height="110" y="543" right="7">
+			<e:Group id="yqGroup" width="110" height="110" y="543" right="7" visible="false">
 				<e:Image source="newmain_ui_json.main_invite_icon" horizontalCenter="0" verticalCenter="0"/>
 				<e:Image source="newmain_ui_json.main_invite_text" y="72" scaleX="1" scaleY="1" horizontalCenter="0"/>
 			</e:Group>

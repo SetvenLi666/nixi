@@ -76,6 +76,12 @@ class MainScene extends egret.DisplayObjectContainer {
 					var request = HttpProtocolMgr.take_daily_gift_reward_169(gift_id);
 					HttpMgr.postRequest(request);
 				}
+			} else if(gift_id == "201") {
+				if(ShareData.can_take_zhuanshu_gift) {
+					NetLoading.showLoading();
+					var request = HttpProtocolMgr.take_daily_gift_reward_169(gift_id);
+					HttpMgr.postRequest(request);
+				}
 			} else { //每日礼包
 				if (ShareData.can_take_gift) {
 					//发送礼包请求
