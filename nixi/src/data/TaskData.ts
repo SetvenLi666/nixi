@@ -55,7 +55,7 @@ class TaskData {
 
     //获取当前公司等级的任务数据
     public static curMissionofPhase(phase: number):{}[] {
-        phase = phase > 2 ? 2 : phase; //开放任务等级限制
+        phase = phase > 3 ? 3 : phase; //开放任务等级限制
         if(this["_mdata_" + phase].length == 0) {
             this["_mdata_" + phase] = RES.getRes("mission_" + phase + "_json");
             this["_datalen_" + phase] = this["_mdata_" + phase].length;
@@ -64,7 +64,7 @@ class TaskData {
     }
 
     public static curCountsofMission(phase: number): number {
-        phase = phase > 2 ? 2 : phase; //任务等级限制
+        phase = phase > 3 ? 3 : phase; //任务等级限制
         if(this["_datalen_" + phase].length == 0) {
             this["_mdata_" + phase] = RES.getRes("mission_" + phase + "_json");
             this["_datalen_" + phase] = this["_mdata_" + phase].length;

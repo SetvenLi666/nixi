@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="InviteItemRendererSkin" width="128" height="191" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="state_0,state_1,state_2" >
+<e:Skin class="InviteItemRendererSkin" width="128" height="191" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="state_0,state_2,state_1" >
 	<e:Image source="invite_item_bg_png" x="0" y="0"/>
 	<e:Group id="indexGroup" width="96" height="26" y="2" anchorOffsetY="0" horizontalCenter="-1">
 		<e:layout>
 			<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" gap="0"/>
 		</e:layout>
 	</e:Group>
-	<e:Image id="player_icon" source="invite_player_icon_png" y="31" horizontalCenter="-1" includeIn="state_1,state_2"/>
-	<e:Image source="invite_rev_1_png" includeIn="state_1" x="26" y="149"/>
-	<e:Image source="invite_flag_finish_png" includeIn="state_1" y="50" horizontalCenter="-1"/>
-	<e:Image source="invite_diam_png" x="28" y="147" includeIn="state_0,state_2"/>
-	<e:Image source="invite_text_five_png" x="77" y="150" includeIn="state_0,state_2"/>
-	<e:Image source="invite_rev_2_png" includeIn="state_2" x="32" y="31"/>
+	<e:Image id="player_icon" source="invite_player_icon_png" y="31" horizontalCenter="-1" includeIn="state_2,state_1"/>
+	<e:Image source="invite_rev_1_png" includeIn="state_2" x="26" y="149"/>
+	<e:Image source="invite_flag_finish_png" includeIn="state_2" y="50" horizontalCenter="-1"/>
+	<e:Image source="invite_diam_png" x="28" y="147" includeIn="state_0,state_1"/>
+	<e:Image source="invite_text_five_png" x="77" y="150" includeIn="state_0,state_1"/>
+	<e:Image source="invite_rev_2_png" includeIn="state_1" x="32" y="31"/>
 </e:Skin>

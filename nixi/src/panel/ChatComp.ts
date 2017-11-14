@@ -24,8 +24,16 @@ class ChatComp extends eui.Component {
 		CustomEventMgr.addEventListener("UPDATE_SCROLLER_VIEW", this.updateView, this);
 		CustomEventMgr.addEventListener("831", this.resutl_of_831, this);
 
-		this.noticeText.text = ChatData.notice;
-		
+		// this.noticeText.text = ChatData.notice;
+		if (ChatData.lastNotice) {
+			this.noticeText.textFlow = <Array<egret.ITextElement>>[
+				{ text: ChatData.lastNotice["name"] + ":\n", style: { textColor: 0xdc143c } },
+				{ text: "        " + ChatData.lastNotice["chat"], style: { textColor: 0x000000 } }
+			];
+		}else {
+			this.noticeText.text = ChatData.notice;
+		}
+
 		// this.timer = new egret.Timer(1000, 10);
 		// this.timer.addEventListener(egret.TimerEvent.TIMER, this.timerFunc, this);
 		// this.timer.addEventListener(egret.TimerEvent.TIMER_COMPLETE, this.timerComplete, this);
@@ -47,16 +55,24 @@ class ChatComp extends eui.Component {
 		CustomEventMgr.removeEventListener("831", this.resutl_of_831, this);
 	}
 
-	private updateView() {
+	private updateView(evt: egret.Event) {
 		this.scroller.validateNow();
 		this.scroller.viewport.scrollV = this.scroller.viewport.contentHeight - this.scroller.viewport.height;
-		
+
 		if (this.list.contentHeight < 490) {
 			this.scroller.touchEnabled = false;
 			this.scroller.touchChildren = false;
-		}else {
+		} else {
 			this.scroller.touchEnabled = true;
 			this.scroller.touchChildren = true;
+		}
+
+		if (evt.data["channel"] && evt.data["channel"] == 1) {
+			// this.noticeText.text = evt.data["name"] + ": " + evt.data["chat"];
+			this.noticeText.textFlow = <Array<egret.ITextElement>>[
+				{ text: evt.data["name"] + ":\n", style: { textColor: 0xdc143c } },
+				{ text: "        " + evt.data["chat"], style: { textColor: 0x000000 } }
+			];
 		}
 	}
 
@@ -74,13 +90,13 @@ class ChatComp extends eui.Component {
 		if (this.editText.text == "") {
 			Prompt.showPrompt(this.stage, "发送内容不可为空!");
 		} else {
-			if(IllegalWords.is_learnWords(this.editText.text)) {
+			if (IllegalWords.is_learnWords(this.editText.text)) {
 				Prompt.showPrompt(this.stage, "输入内容包含敏感字");
-			}else {
+			} else {
 				// WebSocketMagr.send(this.editText.text);
 				// this.editText.text = "";
-				
-				if(ChatData.isChatOk) {
+
+				if (ChatData.isChatOk) {
 					WebSocketMagr.send(this.editText.text, 0);
 					this.editText.text = "";
 
@@ -102,11 +118,11 @@ class ChatComp extends eui.Component {
 		// var new_delta = delta_time + (now_time - last_time);
 		// var new_delta = (now_time - last_time) >= 10000 ? 0 : delta_time + (now_time - last_time);
 		var new_delta: number = 0;
-		if(now_time - last_time >= 10000) {
+		if (now_time - last_time >= 10000) {
 			new_delta = 0;
 			ChatData.chatCount = 0;
 			ChatData.deltaTime = 0;
-		}else {
+		} else {
 			new_delta = delta_time + (now_time - last_time);
 		}
 		// ChatData.deltaTime = new_delta;
@@ -114,18 +130,18 @@ class ChatComp extends eui.Component {
 
 		// var newChatCount = ChatData.chatCount + 1;
 
-		if(ChatData.chatCount + 1 >= 3) {
-			if(new_delta < 10000) {
+		if (ChatData.chatCount + 1 >= 3) {
+			if (new_delta < 10000) {
 				//禁言10秒
 				ChatData.isChatOk = false;
 				// this.timer.start();
 				ChatData.timer.start();
 			}
-			
+
 			ChatData.chatCount = 0;
 			ChatData.deltaTime = 0;
-		}else {
-			ChatData.chatCount ++;
+		} else {
+			ChatData.chatCount++;
 			ChatData.deltaTime = new_delta;
 			ChatData.lastChatTime = CommonFunc.curTimeStamp();
 		}
@@ -148,9 +164,9 @@ class ChatComp extends eui.Component {
 		if (this.editText.text == "") {
 
 		} else {
-			if(IllegalWords.is_learnWords(this.editText.text)) {
+			if (IllegalWords.is_learnWords(this.editText.text)) {
 				Prompt.showPrompt(this.stage, "输入内容包含敏感字");
-			}else {
+			} else {
 				var request = HttpProtocolMgr.before_send_shout_831();
 				HttpMgr.postRequest(request);
 			}
@@ -195,9 +211,9 @@ class ChatItemRenderer extends eui.ItemRenderer {
 		this.nicknameLabel.text = this.data["name"] + ":";
 		this.textComp.textLabel.text = this.data["chat"];
 
-		if(this.data["channel"] && this.data["channel"] == 1) {
+		if (this.data["channel"] && this.data["channel"] == 1) {
 			this.nicknameLabel.textColor = 0xdc143c;
-		}else {
+		} else {
 			this.nicknameLabel.textColor = 0x5b94db;
 		}
 

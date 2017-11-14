@@ -13,6 +13,8 @@ class ChatData {
 	public static timer: egret.Timer = new egret.Timer(1000, 10);          //禁言倒计时
 	public static isChatOk: boolean = true;
 
+	public static _lastNotice: {} = null;
+
 	public static updateMsgArray(obj: {}) {
 		if (!obj["reply"]) {
 			this.msgArray.addItem(obj);
@@ -26,6 +28,11 @@ class ChatData {
 				}
 				this.num -= 100;
 			}
+
+			if(obj["channel"] == 1) {
+				this._lastNotice = obj;
+			}
+
 			CustomEventMgr.dispatchEventWith("UPDATE_SCROLLER_VIEW", false, obj);
 		}
 	}
@@ -60,5 +67,9 @@ class ChatData {
 
 	public static set notice(text: string) {
 		this._notice = text;
+	}
+
+	public static get lastNotice(): {} {
+		return this._lastNotice;
 	}
 }

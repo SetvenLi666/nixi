@@ -10,7 +10,7 @@ class ScPanel extends eui.Component {
 
 		this.skinName = "ScPanelSkin";
 		this.addEventListener(egret.Event.ADDED_TO_STAGE, this.addStage, this);
-		this.addEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit,  this);
+		this.addEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit, this);
 	}
 
 	private addStage() {
@@ -25,44 +25,51 @@ class ScPanel extends eui.Component {
 
 		CustomEventMgr.addEventListener("170", this.result_of_170, this);
 		CustomEventMgr.addEventListener("Update SC View", this.updateView, this);
+
+		this.group2.scaleX = 0;
+		this.group2.scaleY = 0;
+		this.touchEnabled = false;
+		this.touchChildren = false;
+		var tw = egret.Tween.get(this.group2);
+		tw.to({ scaleX: 1, scaleY: 1 }, 500, egret.Ease.backOut).call(function () {
+			this.touchEnabled = true;
+			this.touchChildren = true;
+		}, this);
 	}
 
 	private onExit() {
-		this.removeEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit,  this);
+		this.removeEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit, this);
 		CustomEventMgr.removeEventListener("170", this.result_of_170, this);
 		CustomEventMgr.removeEventListener("Update SC View", this.updateView, this);
+		egret.Tween.removeTweens(this.group2);
 	}
 
 	private updateView() {
-		if((ShareData.isFirstPay && ShareData.firstpay_lottery_times == 0) || (ShareData.isDailyPay && ShareData.dailypay_lottery_times == 0)) {
+		if ((ShareData.isDailyPay && ShareData.dailypay_lottery_times == 0)) {
 			this.btn_lq1.source = "sc_panel_lq_png";
 			this.btn_lq1.touchEnabled = true;
-		}else {
+		} else {
 			this.btn_lq1.source = "sc_panel_lq2_png";
 			this.btn_lq1.touchEnabled = false;
 		}
 
-		if((ShareData.isFirstPay && ShareData.firstpay_normal_times == 0) || (ShareData.isDailyPay && ShareData.dailypay_normal_times == 0)) {
+		if ((ShareData.isDailyPay && ShareData.dailypay_normal_times == 0)) {
 			this.btn_lq2.source = "sc_panel_lq_png";
 			this.btn_lq2.touchEnabled = true;
-		}else {
+		} else {
 			this.btn_lq2.source = "sc_panel_lq2_png";
 			this.btn_lq2.touchEnabled = false;
 		}
 
-		if(ShareData.isFirstPay && ShareData.firstpay_normal_times == 1 && ShareData.firstpay_lottery_times == 1 && ShareData.isDailyPay && ShareData.dailypay_normal_times == 1 && ShareData.dailypay_lottery_times == 1) {
+		if (ShareData.isDailyPay && ShareData.dailypay_normal_times == 1 && ShareData.dailypay_lottery_times == 1) {
 			return;
 		}
 
-		if(ShareData.isFirstPay && (ShareData.firstpay_normal_times == 0 || ShareData.firstpay_lottery_times == 0)) {
+		if (ShareData.isDailyPay && (ShareData.dailypay_normal_times == 0 || ShareData.dailypay_lottery_times == 0)) {
 			this.btn_cz.visible = false;
 			this.btn_lq1.visible = true;
 			this.btn_lq2.visible = true;
-		}else if(ShareData.isDailyPay && (ShareData.dailypay_normal_times == 0 || ShareData.dailypay_lottery_times == 0)) {
-			this.btn_cz.visible = false;
-			this.btn_lq1.visible = true;
-			this.btn_lq2.visible = true;
-		}else {
+		} else {
 			this.btn_cz.visible = true;
 			this.btn_lq1.visible = false;
 			this.btn_lq2.visible = false;
@@ -71,25 +78,26 @@ class ScPanel extends eui.Component {
 
 	private onCz() {
 		var self = this;
-		DisplayMgr.buttonScale(this.btn_cz, function() {
+		DisplayMgr.buttonScale(this.btn_cz, function () {
 			NetLoading.showLoading();
 			var request = HttpProtocolMgr.all_products_100();
 			HttpMgr.postRequest(request);
+			self.closePanel();
 		});
 	}
 
 	private onLq1() {
 		var self = this;
-		DisplayMgr.buttonScale(this.btn_lq1, function() {
-			if(ShareData.isFirstPay && ShareData.firstpay_lottery_times == 0) {
+		DisplayMgr.buttonScale(this.btn_lq1, function () {
+			if (ShareData.isFirstPay && ShareData.firstpay_lottery_times == 0) {
 				NetLoading.showLoading();
 				var request: egret.URLRequest = HttpProtocolMgr.take_daily_recharge_170("firstpay_lottery");
 				HttpMgr.postRequest(request);
-			}else if(ShareData.isDailyPay && ShareData.dailypay_lottery_times == 0) {
+			} else if (ShareData.isDailyPay && ShareData.dailypay_lottery_times == 0) {
 				NetLoading.showLoading();
 				var request: egret.URLRequest = HttpProtocolMgr.take_daily_recharge_170("dailypay_lottery");
 				HttpMgr.postRequest(request);
-			}else {
+			} else {
 				Prompt.showPrompt(self.stage, "该奖励已领取~");
 			}
 		});
@@ -97,16 +105,12 @@ class ScPanel extends eui.Component {
 
 	private onLq2() {
 		var self = this;
-		DisplayMgr.buttonScale(this.btn_lq2, function() {
-			if(ShareData.isFirstPay && ShareData.firstpay_normal_times == 0) {
-				NetLoading.showLoading();
-				var request: egret.URLRequest = HttpProtocolMgr.take_daily_recharge_170("firstpay_normal");
-				HttpMgr.postRequest(request);
-			}else if(ShareData.isDailyPay && ShareData.dailypay_normal_times == 0) {
+		DisplayMgr.buttonScale(this.btn_lq2, function () {
+			if (ShareData.isDailyPay && ShareData.dailypay_normal_times == 0) {
 				NetLoading.showLoading();
 				var request: egret.URLRequest = HttpProtocolMgr.take_daily_recharge_170("dailypay_normal");
 				HttpMgr.postRequest(request);
-			}else {
+			} else {
 				Prompt.showPrompt(self.stage, "该奖励已领取~");
 			}
 		});
@@ -115,15 +119,15 @@ class ScPanel extends eui.Component {
 	private result_of_170(evt: egret.Event) {
 		NetLoading.removeLoading();
 		var reward: {}[] = [];
-		if(evt.data.diam) {
-			reward.push({type: "diam", num: evt.data.diam});
-		}else {
+		if (evt.data.diam) {
+			reward.push({ type: "diam", num: evt.data.diam });
+		} else {
 			reward = evt.data;
 		}
 		this.playRewardAnimation(reward);
-		
+
 		CustomEventMgr.dispatchEventWith("Update Player Info", false);
-		
+
 		this.updateView();
 		//更新首冲视图
 		CustomEventMgr.dispatchEventWith("Update Sc View", false);
@@ -143,7 +147,7 @@ class ScPanel extends eui.Component {
 	}
 
 	private closePanel() {
-		if(this.parent) {
+		if (this.parent) {
 			this.parent.removeChild(this);
 		}
 	}

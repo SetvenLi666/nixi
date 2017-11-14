@@ -222,14 +222,14 @@ class HttpMgr {
         else if (701 === cid) {
             if (content["player"]) {
                 PlayerData.update(content["player"]);
-                if(content["purchase"]) {
+                if (content["purchase"]) {
                     PurchaseData.update(content["purchase"]);
                 }
                 EnergyCD.updateEnergyCD();
                 extraData = {};
                 extraData.info = content["info"];
                 extraData.reward = content["reward"];
-                if(content["h5wanba"]) {
+                if (content["h5wanba"]) {
                     ShareData.update(content["h5wanba"]);
                 }
                 // extraData = content["info"];
@@ -284,24 +284,24 @@ class HttpMgr {
             ClothesData.updateUserClohtes(content["clothes"]);
             EventData.update_user_data(content["mystery"]);
 
-            if(content["id"]) {
+            if (content["id"]) {
                 extraData = content["id"];
-            }else {
+            } else {
                 extraData = content["category"];
             }
         }
 
-        else if(630 === cid) {
+        else if (630 === cid) {
             WelfareData.updateWelfareData(content["welfare"]);
         }
 
-        else if(631 === cid) {
+        else if (631 === cid) {
             WelfareData.updateWelfareData(content["welfare"]);
             PlayerData.update(content["player"]);
             extraData = content["id"];
         }
 
-        else if(633 === cid) {
+        else if (633 === cid) {
             WelfareData.updateWelfareData(content["welfare"]);
             PlayerData.update(content["player"]);
             extraData = content["id"];
@@ -484,33 +484,38 @@ class HttpMgr {
             extraData = content["result"];
         }
 
-        else if(175 === cid) {
+        else if (175 === cid) {
             ShareData.update(content["h5wanba"]);
             extraData = content["type"];
             Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮件领取奖励");
         }
 
-        else if(174 === cid) {
+        else if (174 === cid) {
             PlayerData.update(content["player"]);
         }
 
-        else if(172 === cid) {
+        else if (172 === cid) {
             ClientMapData.updateClientMapData(content);
         }
 
-        else if(170 === cid) {
+        else if (170 === cid) {
+            ClothesData.updateUserClohtes(content["clothes"]);
+            PlayerData.update(content["player"]);
+            ShareData.update(content["h5wanba"]);
+            if(content["type"] == "firstpay_lottery") {
+                extraData = content["reward"];
+            }else {
+                extraData = content["result"];
+            }
+        }
+
+        else if (169 === cid) {
             PlayerData.update(content["player"]);
             ShareData.update(content["h5wanba"]);
             extraData = content["result"];
         }
 
-        else if(169 === cid) {
-            PlayerData.update(content["player"]);
-            ShareData.update(content["h5wanba"]);
-            extraData = content["result"];
-        }
-
-        else if(168 === cid) {
+        else if (168 === cid) {
             PlayerData.update(content["player"]);
         }
 
@@ -523,6 +528,24 @@ class HttpMgr {
 
         else if (160 === cid) {
             DiscountData.config(content);
+        }
+
+        else if (164 === cid) {
+            PlayerData.update(content["player"]);
+            InviteData.updateInviteData(content["invite"]);
+        }
+
+        else if (165 === cid) {
+            InviteData.updateInviteData(content["invite"]);
+        }
+
+        else if (166 === cid) {
+            console.log("invite success");
+        }
+
+        else if (167 === cid) {
+            PlayerData.update(content["player"]);
+            InviteData.updateInviteData(content["invite"]);
         }
 
         else if (157 === cid) {
@@ -556,7 +579,7 @@ class HttpMgr {
             PurchaseData.update(content["purchase"]);
         }
 
-        else if(104 === cid) {
+        else if (104 === cid) {
             WanbaData.initPackageData(content);
         }
 

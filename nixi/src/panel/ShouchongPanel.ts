@@ -215,7 +215,16 @@ class ShouchongPanel extends eui.Component {
 			// }
 			if (obj["h5wanba"]) {
 				ShareData.update(obj["h5wanba"]);
-				CustomEventMgr.dispatchEventWith("Update SC View", false);
+				if ((ShareData.isFirstPay && (ShareData.firstpay_lottery_times == 0))) {
+					var panel = new FirstPayPanel();
+					DisplayMgr.set2Center(panel);
+					egret.MainContext.instance.stage.addChild(panel);
+				} else if ((ShareData.isDailyPay && (ShareData.dailypay_lottery_times == 0 || ShareData.dailypay_normal_times == 0))) {
+					var onePanel = new ScPanel();
+					DisplayMgr.set2Center(onePanel);
+					egret.MainContext.instance.stage.addChild(onePanel);
+				}
+				// CustomEventMgr.dispatchEventWith("Update SC View", false);
 			}
 			DataMgr.checkNews();
 
@@ -274,7 +283,16 @@ function __paySuccess() {
 
 		if (obj["h5wanba"]) {
 			ShareData.update(obj["h5wanba"]);
-			CustomEventMgr.dispatchEventWith("Update SC View", false);
+			if ((ShareData.isFirstPay && (ShareData.firstpay_lottery_times == 0))) {
+				var panel = new FirstPayPanel();
+				DisplayMgr.set2Center(panel);
+				egret.MainContext.instance.stage.addChild(panel);
+			} else if ((ShareData.isDailyPay && (ShareData.dailypay_lottery_times == 0 || ShareData.dailypay_normal_times == 0))) {
+				var onePanel = new ScPanel();
+				DisplayMgr.set2Center(onePanel);
+				egret.MainContext.instance.stage.addChild(onePanel);
+			}
+			// CustomEventMgr.dispatchEventWith("Update SC View", false);
 		}
 		DataMgr.checkNews();
 

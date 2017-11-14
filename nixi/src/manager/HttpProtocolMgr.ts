@@ -457,6 +457,31 @@ class HttpProtocolMgr {
         return this.newRequest("168", "");
     }
 
+    static take_invite_reward_167(rank: number): egret.URLRequest {
+        var data = {};
+        data["rank"] = rank;
+        return this.newRequest("167", JSON.stringify(data));
+    }
+
+    static post_inviter_sid_166(sid: string): egret.URLRequest {
+        var data = {};
+        data["inviter_sid"] = sid;
+        data["figureurl"] = "";
+        return this.newRequest("166", JSON.stringify(data));
+    }
+
+    static take_invite_info_165(): egret.URLRequest {
+        var data = {};
+        data["extra"] = CommonFunc.curTimeStamp();
+        return this.newRequest("165", JSON.stringify(data));
+    }
+
+    static take_invite_share_reward_164(): egret.URLRequest {
+        var data = {};
+        data["extra"] = CommonFunc.curTimeStamp();
+        return this.newRequest("164", JSON.stringify(data));
+    }
+
     static flash_sale_buying_161() {
         var data = {};
         data["id"] = CommonFunc.curTimeStamp();

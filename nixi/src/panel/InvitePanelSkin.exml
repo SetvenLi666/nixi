@@ -14,8 +14,9 @@
 			</e:List>
 		</e:Scroller>
 		<e:Image source="invite_progress_text_png" y="286.67" horizontalCenter="106.5"/>
-		<e:Label text="Label" x="569" y="285" size="24"/>
-		<e:Image source="invite_lefttime_text_png" x="414.68" y="416"/>
-		<e:Label text="Label" x="554.67" y="406.67"/>
+		<e:Label id="curTimes" text="0/3" y="292.04" size="22" textColor="0xef4556" horizontalCenter="162" textAlign="center" width="40" height="22"/>
+		<e:Image source="invite_lefttime_text_png" y="416" horizontalCenter="53.5"/>
+		<e:Label id="nextShareTime" text="00:00:00" y="416.75" size="22" textColor="0xef4556" horizontalCenter="163" width="100" textAlign="center" height="22"/>
+		<e:Image id="btn_share" source="invite_btn_share_png" y="365" anchorOffsetX="48.5" anchorOffsetY="49.5" horizontalCenter="136.5"/>
 	</e:Group>
 </e:Skin>

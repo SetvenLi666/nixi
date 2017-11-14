@@ -19,6 +19,8 @@ class NewTaskComp extends eui.Component {
 			this.index = index;
 		}else if(phase == 2) {
 			this.index = index - 20;
+		}else if(phase == 3) {
+			this.index = index - 52;
 		}
 		
 		this.addEventListener(egret.Event.ADDED_TO_STAGE, this.addStage, this);
@@ -44,6 +46,7 @@ class NewTaskComp extends eui.Component {
 				itemsArr.push(item["taskID"]);
 			}
 		}
+		
 		this.upgradeTip.text = PlayerData.phaseRating(this.phase) + "/" + TaskData.totalMissionData()[parseInt(itemsArr[itemsArr.length - 1]) - 1]["upgrade"];
 		
 		itemsArr.reverse();

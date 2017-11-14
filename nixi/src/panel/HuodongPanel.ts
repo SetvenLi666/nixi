@@ -75,7 +75,7 @@ class HuodongPanelRenderer extends eui.ItemRenderer {
 		var self = this;
 		switch (this.data.name) {
 			case "sc_cj":
-				if (ShareData.isFirstPay && ShareData.firstpay_normal_times == 1 && ShareData.firstpay_lottery_times == 1 && ShareData.isDailyPay && ShareData.dailypay_normal_times == 1 && ShareData.dailypay_lottery_times == 1) {
+				if (ShareData.isFirstPay && ShareData.firstpay_lottery_times == 1 && ShareData.isDailyPay && ShareData.dailypay_normal_times == 1 && ShareData.dailypay_lottery_times == 1) {
 					//
 					NetLoading.showLoading();
 					var request = HttpProtocolMgr.all_products_100();
@@ -133,6 +133,7 @@ class HuodongPanelRenderer extends eui.ItemRenderer {
 				break;
 			case "dt":
 				NetLoading.showLoading();
+				WelfareData.isBtnReq = true;
 				var request = HttpProtocolMgr.take_welfare_data_630();
 				HttpMgr.postRequest(request);
 				break;

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="FirstPayPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Rect fillAlpha="0.8" left="0" right="0" top="0" bottom="0"/>
+		<e:Image id="bg" source="ac_res_json.ac_first_panel" horizontalCenter="0" verticalCenter="0"/>
+		<e:Image source="first_pay_role_png" horizontalCenter="-134" verticalCenter="-34.5"/>
+		<ns1:SignItemComp id="item_1" y="323.74" skinName="SignItemSkin" horizontalCenter="8"/>
+		<ns1:SignItemComp id="item_2" y="325.07" skinName="SignItemSkin" horizontalCenter="181"/>
+		<ns1:SignItemComp id="item_3" y="410.09" skinName="SignItemSkin" horizontalCenter="94"/>
+		<ns1:SignItemComp id="item_4" y="495.75" skinName="SignItemSkin" horizontalCenter="8"/>
+		<ns1:SignItemComp id="item_5" y="497.08" skinName="SignItemSkin" horizontalCenter="181"/>
+		<ns1:SignItemComp id="item_6" y="582.75" skinName="SignItemSkin" horizontalCenter="94"/>
+		<ns1:SignItemComp id="item_7" y="668.43" skinName="SignItemSkin" horizontalCenter="8"/>
+		<ns1:SignItemComp id="item_8" y="669.76" skinName="SignItemSkin" horizontalCenter="181"/>
+		<e:Image source="ac_res_json.ac_first_text" y="218.5" horizontalCenter="98"/>
+		<e:Image id="btn_rec" horizontalCenter="98" source="recharge_chongzhi_png" anchorOffsetX="55.5" anchorOffsetY="23.5" y="871.5"/>
+	</e:Group>
+</e:Skin>

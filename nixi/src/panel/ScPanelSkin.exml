@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="ScPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
-		<e:Group id="group2" width="462" height="454" horizontalCenter="0" verticalCenter="0">
+		<e:Group id="group2" width="462" height="454" horizontalCenter="0" verticalCenter="0" anchorOffsetX="231" anchorOffsetY="227">
 			<e:Image source="sc_panel_bg_png" horizontalCenter="0" verticalCenter="0"/>
 			<e:Image id="btn_cz" source="sc_panel_cz_png" y="373.5" horizontalCenter="0" anchorOffsetX="72" anchorOffsetY="33.5"/>
 			<e:Image id="btn_lq1" source="sc_panel_lq_png" y="379.5" horizontalCenter="-82" anchorOffsetX="55.5" anchorOffsetY="23.5" visible="false"/>

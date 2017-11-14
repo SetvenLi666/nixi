@@ -105,6 +105,7 @@ class MainComp extends eui.Component {
 		CustomEventMgr.addEventListener("820", this.result_of_820, this);
 		CustomEventMgr.addEventListener("827", this.result_of_827, this);
 		CustomEventMgr.addEventListener("630", this.result_of_630, this);
+		CustomEventMgr.addEventListener("165", this.reuslt_of_165, this);
 
 		CustomEventMgr.addEventListener("Update Libao View", this.updateLibaoView, this);
 		CustomEventMgr.addEventListener("Update Sc View", this.updateScView, this);
@@ -185,6 +186,7 @@ class MainComp extends eui.Component {
 		CustomEventMgr.removeEventListener("820", this.result_of_820, this);
 		CustomEventMgr.removeEventListener("827", this.result_of_827, this);
 		CustomEventMgr.removeEventListener("630", this.result_of_630, this);
+		CustomEventMgr.removeEventListener("165", this.reuslt_of_165, this);
 
 		CustomEventMgr.removeEventListener("Update Libao View", this.updateLibaoView, this);
 		CustomEventMgr.removeEventListener("Update Sc View", this.updateScView, this);
@@ -363,7 +365,7 @@ class MainComp extends eui.Component {
 
 	private updateScView() {
 
-		if (ShareData.isFirstPay == false || ShareData.firstpay_normal_times == 0 || ShareData.firstpay_lottery_times == 0) {
+		if (ShareData.isFirstPay == false || ShareData.firstpay_lottery_times == 0) {
 			this.sc_icon.source = "newmain_ui_json.main_ui_cz_bg";
 			this.sc_text.source = "newmain_ui_json.main_shouchong_text";
 		} else if (ShareData.isDailyPay == false || ShareData.dailypay_normal_times == 0 || ShareData.dailypay_lottery_times == 0) {
@@ -462,9 +464,9 @@ class MainComp extends eui.Component {
 	private onBtnYq() {
 		var self = this;
 		DisplayMgr.buttonScale(this.yqGroup, function () {
-			var panel = new InvitePanel();
-			DisplayMgr.set2Center(panel);
-			self.stage.addChild(panel);
+			NetLoading.showLoading();
+			var request = HttpProtocolMgr.take_invite_info_165();
+			HttpMgr.postRequest(request);
 		});
 	}
 
@@ -475,12 +477,16 @@ class MainComp extends eui.Component {
 			// var request = HttpProtocolMgr.all_products_100();
 			// HttpMgr.postRequest(request);
 
-			if (ShareData.isFirstPay && ShareData.firstpay_normal_times == 1 && ShareData.firstpay_lottery_times == 1 && ShareData.isDailyPay && ShareData.dailypay_normal_times == 1 && ShareData.dailypay_lottery_times == 1) {
+			if (ShareData.isFirstPay && ShareData.firstpay_lottery_times == 1 && ShareData.isDailyPay && ShareData.dailypay_normal_times == 1 && ShareData.dailypay_lottery_times == 1) {
 				//
 				NetLoading.showLoading();
 				var request = HttpProtocolMgr.all_products_100();
 				HttpMgr.postRequest(request);
-			} else {
+			} else if((ShareData.isFirstPay == false) || (ShareData.isFirstPay && ShareData.firstpay_lottery_times == 0)) {
+				var panel = new FirstPayPanel();
+				DisplayMgr.set2Center(panel);
+				self.stage.addChild(panel);
+			}else {
 				var onePanel = new ScPanel();
 				DisplayMgr.set2Center(onePanel);
 				self.stage.addChild(onePanel);
@@ -655,6 +661,13 @@ class MainComp extends eui.Component {
 		HttpMgr.postRequest(request);
 	}
 
+	private reuslt_of_165() {
+		NetLoading.removeLoading();
+		var panel = new InvitePanel();
+		DisplayMgr.set2Center(panel);
+		this.stage.addChild(panel);
+	}
+
 	private afterFetchStoryData_500(evt: egret.Event) {
 		if (EventData.isEventReq) {
 			return;
@@ -690,7 +703,7 @@ class MainComp extends eui.Component {
 			var panel = new DailyTargetPanel();
 			DisplayMgr.set2Center(panel);
 			egret.MainContext.instance.stage.addChild(panel);
-		}else {
+		} else {
 			this.checkDailyTargetStates();
 		}
 	}

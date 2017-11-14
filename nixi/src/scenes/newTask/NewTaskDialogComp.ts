@@ -50,6 +50,7 @@ class NewTaskDialogComp extends eui.Component {
 		this.mask = mask;
 
 		this.taskid = id;
+		this.curPhase = parseInt(TaskData.totalMissionData()[this.taskid - 1]["phase"]);
 		this.addEventListener(egret.Event.ADDED_TO_STAGE, this.addStage, this);
 		this.addEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit, this);
 	}
@@ -137,8 +138,9 @@ class NewTaskDialogComp extends eui.Component {
 			this.flagImg.visible = true;
 		}
 
-		this.talkData = TaskData.curMissionofPhase(PlayerData.phase);
-		var len = TaskData.curCountsofMission(PlayerData.phase);
+		this.talkData = TaskData.curMissionofPhase(this.curPhase);
+		var len = TaskData.curCountsofMission(this.curPhase);
+		
 		for (var i = 0; i < len; i++) {
 			if (parseInt(this.talkData[i]["sign"]) == this.taskid) {
 				this.curIndex = i;

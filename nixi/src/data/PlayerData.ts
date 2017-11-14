@@ -52,8 +52,8 @@ class PlayerData {
             this._energy = obj["energy"];
             this._coin = obj["coin"];
             this._diam = obj["diam"];
-            this._mission = obj["mission"] > 52 ? 52 : obj["mission"];
-            this._phase = obj["phase"] > 2 ? 2 : obj["phase"];
+            this._mission = obj["mission"] > 89 ? 89 : obj["mission"];
+            this._phase = obj["phase"] > 3 ? 3 : obj["phase"];
             this._left = obj["left"];
             // this._guide = obj["guide"];
             this._guide = 0;

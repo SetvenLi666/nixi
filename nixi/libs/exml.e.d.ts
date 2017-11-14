@@ -294,6 +294,8 @@ declare class DailyTargetPgBar extends eui.Skin{
 }
 declare class DailyTargetProgressCompSkin extends eui.Skin{
 }
+declare class FirstPayPanelSkin extends eui.Skin{
+}
 declare class HuodongPanelRendererSkin extends eui.Skin{
 }
 declare class HuodongPanelSkin extends eui.Skin{

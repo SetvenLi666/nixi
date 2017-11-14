@@ -10,7 +10,7 @@ class NewTaskScene extends eui.Component {
 
 	public btn_left: eui.Image;
 	public btn_right: eui.Image;
-	private pageCount: number = 2;
+	private pageCount: number = 3;
 
 	private taskIndex: number = 1;
 
@@ -24,8 +24,8 @@ class NewTaskScene extends eui.Component {
 		this.mask = mask;
 		
 		//开放任务等级限制
-		this.phase = phase > 2 ? 2 : phase;
-		this.taskIndex = index > 52 ? 52 : index;
+		this.phase = phase > 3 ? 3 : phase;
+		this.taskIndex = index > 89 ? 89 : index;
 
 		this.addEventListener(egret.Event.ADDED_TO_STAGE, this.addStage, this);
 		this.addEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit, this);
@@ -108,13 +108,16 @@ class NewTaskScene extends eui.Component {
 	}
 
 	private updateView() {
-		if(this.phase == 1) {
+		if(this.phase <= 1) {
 			this.btn_right.visible = false;
 			this.btn_left.visible = true;
 			this.btn_left.touchEnabled = true;
-		}
-
-		if(this.phase == this.pageCount) {
+		}else if(this.phase > 1 && this.phase < this.pageCount) {
+			this.btn_right.visible = true;
+			this.btn_left.visible = true;
+			this.btn_right.touchEnabled = true;
+			this.btn_left.touchEnabled = true;
+		}else if(this.phase >= this.pageCount) {
 			this.btn_left.visible = false;
 			this.btn_right.visible = true;
 			this.btn_right.touchEnabled = true;

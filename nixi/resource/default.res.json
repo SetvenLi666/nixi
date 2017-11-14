@@ -25,7 +25,7 @@
 			"name": "story_act"
 		},
 		{
-			"keys": "clothes_tags_json,clothes_flag_png,mission_json,task_ac_json,task_unlock_bg_png,task_ui_json,task_title_bar_png,task_text_bg_bar_png,task_reward_icon_png,task_reward_bg_png,task_rat_iconBg_png,task_name_bar_png,task_icon_xt_png,task_flag_yihuode_png,task_btn_go_png,task_btn_back_png,task_bar_tili_png,task_upgrade_box_png,task_pg_thumb_png,task_pg_star_png,task_pg_box3_2_png,task_pg_box3_1_png,task_pg_box2_2_png,task_pg_box2_1_png,task_pg_box1_2_png,task_pg_box1_1_png,task_pg_bg_png,mission_1_json,mission_2_json,shop_bg_png",
+			"keys": "clothes_tags_json,clothes_flag_png,mission_json,task_ac_json,task_unlock_bg_png,task_ui_json,task_title_bar_png,task_text_bg_bar_png,task_reward_icon_png,task_reward_bg_png,task_rat_iconBg_png,task_name_bar_png,task_icon_xt_png,task_flag_yihuode_png,task_btn_go_png,task_btn_back_png,task_bar_tili_png,task_upgrade_box_png,task_pg_thumb_png,task_pg_star_png,task_pg_box3_2_png,task_pg_box3_1_png,task_pg_box2_2_png,task_pg_box2_1_png,task_pg_box1_2_png,task_pg_box1_1_png,task_pg_bg_png,mission_1_json,mission_2_json,shop_bg_png,mission_3_json",
 			"name": "task"
 		},
 		{
@@ -193,7 +193,7 @@
 			"name": "new_rank"
 		},
 		{
-			"keys": "ac_res_json,daily_gift_bg_201_png",
+			"keys": "ac_res_json,daily_gift_bg_201_png,invite_btn_share_png,mission_3_json,first_pay_role_png",
 			"name": "preload"
 		}
 	],
@@ -17752,9 +17752,24 @@
 			"subkeys": "ac_1_item_bg,ac_1_panel,ac_1_role,ac_1_text,ac_30_item_bg,ac_30_panel,ac_30_role,ac_30_text,ac_6_item_bg,ac_6_panel,ac_6_role,ac_6_text,ac_first_item_bg,ac_first_panel,ac_first_text,ac_signin_item_bg,ac_signin_panel,ac_signin_role,ac_signin_text,recharge_shower_1,recharge_shower_2,recharge_shower_3,recharge_shower_4"
 		},
 		{
-			"name": "daily_gift_bg_201_png",
+			"url": "game/panel/dailyGift/daily_gift_bg_201.png",
 			"type": "image",
-			"url": "game/panel/dailyGift/daily_gift_bg_201.png"
+			"name": "daily_gift_bg_201_png"
+		},
+		{
+			"url": "game/panel/invite/invite_btn_share.png",
+			"type": "image",
+			"name": "invite_btn_share_png"
+		},
+		{
+			"url": "config/mission/mission_3.json",
+			"type": "json",
+			"name": "mission_3_json"
+		},
+		{
+			"name": "first_pay_role_png",
+			"type": "image",
+			"url": "game/main/ac/first_pay_role.png"
 		}
 	]
 }

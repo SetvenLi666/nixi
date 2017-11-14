@@ -155,6 +155,7 @@
     "src/panel/DailyTargetPgBar.exml",
     "src/panel/DailyTargetProgressCompSkin.exml",
     "src/panel/DailyTargetPanelSkin.exml",
+    "src/panel/FirstPayPanelSkin.exml",
     "src/panel/HuodongPanelRendererSkin.exml",
     "src/panel/HuodongPanelSkin.exml",
     "src/panel/InviteItemRendererSkin.exml",

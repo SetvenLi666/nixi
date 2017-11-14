@@ -100,9 +100,14 @@ class SigninPanel extends eui.Component {
 			// 	DisplayMgr.set2Center(panel);
 			// 	this.stage.addChild(panel);
 			// }
-			if(ShareData.isFirstPay && ShareData.firstpay_normal_times == 1 && ShareData.firstpay_lottery_times == 1 && ShareData.isDailyPay && ShareData.dailypay_normal_times == 1 && ShareData.dailypay_lottery_times == 1) {
+			if (ShareData.isFirstPay && ShareData.firstpay_lottery_times == 1 && ShareData.isDailyPay && ShareData.dailypay_normal_times == 1 && ShareData.dailypay_lottery_times == 1) {
 
-			}else if(ShareData.isShowScPop){
+			} else if (((ShareData.isFirstPay && ShareData.firstpay_lottery_times == 0) || ShareData.isFirstPay == false) && ShareData.isShowScPop) {
+				ShareData.isShowScPop = false;
+				var panel = new FirstPayPanel();
+				DisplayMgr.set2Center(panel);
+				this.stage.addChild(panel);
+			} else if (ShareData.isShowScPop) {
 				ShareData.isShowScPop = false;
 				var onePanel = new ScPanel();
 				DisplayMgr.set2Center(onePanel);

@@ -10,19 +10,19 @@ namespace ConstData {
         get StoryTextFlashInterval(): number { return 30; },  //100 ----> 30;
 
         //玩吧地址
-        get LoginAddr(): string { return "https://nixi-wanba-game.mzplay1.cn:9765/account";},
+        // get LoginAddr(): string { return "https://nixi-wanba-game.mzplay1.cn:9765/account";},
 
         get WanbaLoginAddr(): string { return "https://nixi-wanba-game.mzplay1.cn:9765/h5wanba/login"}, //玩吧登陆地址
 
-        get WanbaOrderAddr(): string {return "https://nixi-wanba-game.mzplay1.cn:9765/h5wanba/order"},  //玩吧订单请求地址
+        // get WanbaOrderAddr(): string {return "https://nixi-wanba-game.mzplay1.cn:9765/h5wanba/order"},  //玩吧订单请求地址
 
         get webSocketAdd() : string { return "wss://nixi-wanba-game.mzplay1.cn:20168/chator"},
 
         // get channel() : number { return 0;},   //白包
 
         //测试服地址
-        // get LoginAddr(): string { return "https://nixi-debug-game.mzplay1.cn:9765/account";},
-        // get WanbaOrderAddr(): string {return "https://nixi-debug-game.mzplay1.cn:9765/h5wanba/order"}, 
+        get LoginAddr(): string { return "https://nixi-debug-game.mzplay1.cn:9765/account";},
+        get WanbaOrderAddr(): string {return "https://nixi-debug-game.mzplay1.cn:9765/h5wanba/order"}, 
 
         get channel() : number { return 601;},   //逆袭玩吧
 
