@@ -23,8 +23,7 @@ class InvitePanel extends eui.Component {
 		this.group.width = Math.min(DisplayMgr.stageW, 852);
 		this.group.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
 
-		// this.shareLeftTime = InviteData.curLeftShareTime;
-		this.shareLeftTime = 1000;
+		this.shareLeftTime = InviteData.curLeftShareTime;
 		this.timer = new egret.Timer(1000, this.shareLeftTime);
 		this.timer.addEventListener(egret.TimerEvent.TIMER, this.onTimerCallback, this);
 
@@ -87,11 +86,10 @@ class InvitePanel extends eui.Component {
 						window["mqq"].ui.showTips({
 							text: "分享成功！"
 						});
-						if (1) {
-							NetLoading.showLoading();
-							var request = HttpProtocolMgr.take_invite_share_reward_164();
-							HttpMgr.postRequest(request);
-						}
+
+						NetLoading.showLoading();
+						var request = HttpProtocolMgr.take_invite_share_reward_164();
+						HttpMgr.postRequest(request);
 					} else if (result["retCode"] == 1) {
 						window["mqq"].ui.showTips({
 							text: "分享取消！"
@@ -130,12 +128,15 @@ class InvitePanel extends eui.Component {
 		var reward: {}[] = [];
 		reward.push({ type: "diam", num: 10 });
 		this.playRewardAnimation(reward);
+		this.updateView();
 	}
 
 	private playRewardAnimation(reward: {}[]) {
 		var panel = new CommonRewardPanel(reward);
 		DisplayMgr.set2Center(panel);
 		this.stage.addChild(panel);
+
+		CustomEventMgr.dispatchEventWith("Update Player Info", false);
 	}
 
 	private onTouch(evt: egret.TouchEvent) {
@@ -181,30 +182,15 @@ class InviteItemRenderer extends eui.ItemRenderer {
 		}
 
 		this.currentState = "state_" + this.data.state;
-		if(this.currentState == "state_1") {
+		if (this.currentState == "state_1") {
 			this.touchEnabled = true;
 			this.touchChildren = true;
-		}else {
+		} else {
 			this.touchEnabled = false;
 			this.touchChildren = false;
 		}
 
-		// this.player_icon
-		// var imgLoader = new egret.ImageLoader();
-		// imgLoader.once(egret.Event.COMPLETE, this.imgLoaderHandler, this);
-		// imgLoader.load("https://bbs.egret.com/uc_server/avatar.php?uid=280&size=middle");
-		// var self = this;
-		// RES.getResByUrl("https://bbs.egret.com/uc_server/avatar.php?uid=280&size=middle", function(data) {
-		// 	console.log(data);
-		// 	self.player_icon.bitmapData = data;
-		// }, this);
-	}
-
-	private imgLoaderHandler(evt: egret.Event) {
-		var loader: egret.ImageLoader = evt.currentTarget;
-		var bmd: egret.BitmapData = loader.data;
-		// var bmp: egret.Bitmap = new egret.Bitmap(bmd);
-		this.player_icon.bitmapData = loader.data;
+		this.player_icon.source = this.data.icon;
 	}
 
 	private onTouch() {

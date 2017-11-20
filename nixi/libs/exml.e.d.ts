@@ -282,6 +282,8 @@ declare class StoryRewardPanelSkin extends eui.Skin{
 }
 declare class TimeBackCompSkin extends eui.Skin{
 }
+declare class ChatCommonPanelSkin extends eui.Skin{
+}
 declare class CommonRewardPanelSkin extends eui.Skin{
 }
 declare class DailyGiftPanelSkin extends eui.Skin{
@@ -305,6 +307,8 @@ declare class InviteItemRendererSkin extends eui.Skin{
 declare class InvitePanelSkin extends eui.Skin{
 }
 declare class IosPayTipPanelSkin extends eui.Skin{
+}
+declare class NewSharePanelSkin extends eui.Skin{
 }
 declare class ResetNamePanelSkin extends eui.Skin{
 }

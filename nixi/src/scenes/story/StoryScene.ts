@@ -215,8 +215,12 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 			console.log("tap tap tap");
 		}
 
-		if(this.playPhase == StoryPlayPhase.end && StoryData.isStoryFinished) {
+		if (this.playPhase == StoryPlayPhase.end && StoryData.isStoryFinished) {
 			console.log("..........");
+			//敬请期待==========
+			if (this.storyIndex == "29") {
+				StoryData.isShowLastTip = true;
+			}
 			SceneMgr.gotoNewStoryScene();
 		}
 	}
@@ -232,6 +236,10 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 		DisplayMgr.buttonScale(self.btnGoback, function () {
 			if (self.couldExit == true) {
 				// SceneMgr.gotoStoryChapterScene(parseInt(self.storyIndex));
+				if (self.storyIndex == "29") {
+					StoryData.isShowLastTip = true;
+				}
+
 				SceneMgr.gotoNewStoryScene()
 			}
 		});
@@ -242,6 +250,9 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 
 		} else {
 			// SceneMgr.gotoStoryChapterScene(evt.data);
+			if (this.storyIndex == "29") {
+				StoryData.isShowLastTip = true;
+			}
 			SceneMgr.gotoNewStoryScene();
 		}
 	}

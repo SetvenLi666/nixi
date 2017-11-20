@@ -486,8 +486,8 @@ class HttpMgr {
 
         else if (175 === cid) {
             ShareData.update(content["h5wanba"]);
-            extraData = content["type"];
-            Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮件领取奖励");
+            PlayerData.update(content["player"]);
+            extraData = {reward: content["reward"], type: content["type"]};
         }
 
         else if (174 === cid) {

@@ -46,7 +46,8 @@ class NewStoryScene extends eui.Component {
 		for(var i in StoryData.completedStory) {
 			var item: string[] = StoryData.completedStory[i];
 			if(item && item.indexOf("-1") != -1) {
-				this.curPageIndex = parseInt(i);
+				// this.curPageIndex = parseInt(i);
+				this.curPageIndex = Math.min(parseInt(i), 28);  //目前只有29章剧情
 			}
 		}
 		console.log(this.curPageIndex);
@@ -63,6 +64,12 @@ class NewStoryScene extends eui.Component {
 		this.startX = this.curPageIndex * this.pageWidth;
 
 		this.onMove();
+
+		//敬请期待
+		if(StoryData.isShowLastTip && StoryData.completedStory["29"] && StoryData.completedStory["29"].indexOf("-1") != -1) {
+			StoryData.isShowLastTip = false;
+			Prompt.showPrompt(this.stage, "后续剧情正在制作中，敬请期待!");
+		}
 
 		this.scroller.addEventListener(eui.UIEvent.CHANGE_START, this.onChangeStart, this);
 		this.scroller.addEventListener(eui.UIEvent.CHANGE_END, this.onChangeEnd, this);

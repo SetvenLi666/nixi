@@ -128,6 +128,12 @@ class HttpProtocolMgr {
         var data: {} = {};
         data["other"] = other_id;
         data["type"] = type;
+        data["openid"] = window["OPEN_DATA"].openid;
+        data["openkey"] = window["OPEN_DATA"].openkey;
+        data["platform"] = window["OPEN_DATA"].platform;
+        data["friend_list"] = LoginData.friend_list;
+        data["userip"] = LoginData.userip;
+        data["qua"] = window["OPEN_DATA"].qua.meybeQua;
         return this.newRequest("803", JSON.stringify(data));
     }
 
@@ -466,7 +472,7 @@ class HttpProtocolMgr {
     static post_inviter_sid_166(sid: string): egret.URLRequest {
         var data = {};
         data["inviter_sid"] = sid;
-        data["figureurl"] = "";
+        data["figureurl"] = LoginData.playerFigureurl;
         return this.newRequest("166", JSON.stringify(data));
     }
 

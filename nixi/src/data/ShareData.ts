@@ -19,6 +19,8 @@ class ShareData {
 
 	private static _isShowScPop: boolean = false;
 
+	public static isShowNewShare: boolean = true;
+
 	private static _can_take_gift: boolean = false; //玩吧每日礼包领取状态true可领取，false不可领取
 	private static _can_take_once_gift: boolean = false; //玩吧新手礼包领取状态
 	private static _can_take_zhuanshu_gift: boolean = false; //QQ空间专属礼包领取状态

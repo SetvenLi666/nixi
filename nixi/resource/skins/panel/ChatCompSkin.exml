@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="ChatCompSkin" width="520" height="794" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Image y="0" source="social_chat_bg_png" right="0"/>
-	<e:Scroller id="scroller" width="500" height="620" y="90" anchorOffsetY="0" anchorOffsetX="0" right="12">
+	<e:Scroller id="scroller" width="500" height="630" y="79.39" anchorOffsetY="0" anchorOffsetX="0" right="12">
 		<e:List id="list" anchorOffsetX="0" width="500" x="13" y="0"/>
 	</e:Scroller>
 	<e:Image source="social_chat_note_bg_png" right="9" y="6.97"/>
-	<e:Label id="noticeText" text="" y="11.49" textColor="0x000000" size="18" anchorOffsetY="0" height="71" anchorOffsetX="0" width="408" right="46.639999999999986"/>
+	<e:Label id="noticeText" text="" y="11.49" textColor="0x000000" size="18" anchorOffsetY="0" height="60" anchorOffsetX="0" width="408" right="23.64"/>
 	<e:Image id="btn_close" y="4.29" source="social_chat_close_png" right="6" visible="false"/>
 	<e:Image y="727.17" source="social_chat_input_bg_png" right="155"/>
 	<e:Image id="btn_send" y="723" source="social_chat_send_nor_png" right="150"/>

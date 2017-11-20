@@ -9,6 +9,7 @@ class GashaponPanel extends eui.Component {
 	public tenGroup: eui.Group;
 	public label_2: eui.Label;
 	public timeCD: eui.Label;
+	public freeText: eui.Image;
 
 	private freeTime: number;
 	private hour: number;
@@ -19,6 +20,8 @@ class GashaponPanel extends eui.Component {
 
 	private acTimer: egret.Timer;
 	private result_10: {}[];
+
+	private isGuideDesk: boolean = false;
 
 	public constructor() {
 		super();
@@ -48,6 +51,7 @@ class GashaponPanel extends eui.Component {
 		this.timer.addEventListener(egret.TimerEvent.TIMER, this.onTimerCallback, this);
 
 		if(PlayerData.guide == 6) {
+			this.isGuideDesk = true;
 			var guidePanel = new NewGuidePanel();
 			DisplayMgr.set2Center(guidePanel);
 			this.stage.addChild(guidePanel);
@@ -104,6 +108,8 @@ class GashaponPanel extends eui.Component {
 			this.label_1.visible = false;
 			this.freeDiam.visible = false;
 			this.timeCD.text = "每日免费抽一次";
+			this.timeCD.visible = false;
+			this.freeText.visible = true;
 		}else {
 			//60钻
 			this.freeImg.source = "gashapon_btn_one_png";
@@ -122,6 +128,9 @@ class GashaponPanel extends eui.Component {
 			} else if (this.second > 0) {
 				this.timeCD.text = "免费倒计时" + "00:" + (this.second < 10 ? "0" + this.second : this.second);
 			}
+
+			this.timeCD.visible = true;
+			this.freeText.visible = false;
 		}
 	}
 
@@ -197,6 +206,12 @@ class GashaponPanel extends eui.Component {
 
 	private closePanel() {
 		if (this.parent) {
+			if(this.isGuideDesk) {
+				var panel = new ShareDeskPanel("desk");
+				DisplayMgr.set2Center(panel);
+				this.stage.addChild(panel);
+				panel.isCanbeClose = false;
+			}
 			this.parent.removeChild(this);
 		}
 	}

@@ -49,31 +49,31 @@ class NewProgressbarComp extends eui.Component {
 		this.pgBar.minimum = 0;
 		this.pgBar.value = totalRating;
 
-		if(CofferData.has_taken_reward(this.itemArr[0]["id"])) {
+		if (CofferData.has_taken_reward(this.itemArr[0]["id"])) {
 			this.boxImg1.source = "task_pg_box1_2_png";
-		}else if(this.pgBar.value >= this.itemArr[0]["goal"]) {
+		} else if (this.pgBar.value >= this.itemArr[0]["goal"]) {
 			this.tip1.visible = true;
-			var tw_tip1 = egret.Tween.get(this.tip1, {loop: true});
-			tw_tip1.to({scaleX: 1.1, scaleY: 1.1}, 300)
-				.to({scaleX: 1, scaleY: 1}, 300);
+			var tw_tip1 = egret.Tween.get(this.tip1, { loop: true });
+			tw_tip1.to({ scaleX: 1.1, scaleY: 1.1 }, 300)
+				.to({ scaleX: 1, scaleY: 1 }, 300);
 		}
 
-		if(CofferData.has_taken_reward(this.itemArr[1]["id"])) {
+		if (CofferData.has_taken_reward(this.itemArr[1]["id"])) {
 			this.boxImg2.source = "task_pg_box2_2_png";
-		}else if(this.pgBar.value >= this.itemArr[1]["goal"]) {
+		} else if (this.pgBar.value >= this.itemArr[1]["goal"]) {
 			this.tip2.visible = true;
-			var tw_tip2 = egret.Tween.get(this.tip2, {loop: true});
-			tw_tip2.to({scaleX: 1.1, scaleY: 1.1}, 300)
-				.to({scaleX: 1, scaleY: 1}, 300);
+			var tw_tip2 = egret.Tween.get(this.tip2, { loop: true });
+			tw_tip2.to({ scaleX: 1.1, scaleY: 1.1 }, 300)
+				.to({ scaleX: 1, scaleY: 1 }, 300);
 		}
 
-		if(CofferData.has_taken_reward(this.itemArr[2]["id"])) {
+		if (CofferData.has_taken_reward(this.itemArr[2]["id"])) {
 			this.boxImg3.source = "task_pg_box3_2_png";
-		}else if(this.pgBar.value >= this.itemArr[2]["goal"]) {
+		} else if (this.pgBar.value >= this.itemArr[2]["goal"]) {
 			this.tip3.visible = true;
-			var tw_tip3 = egret.Tween.get(this.tip3, {loop: true});
-			tw_tip3.to({scaleX: 1.1, scaleY: 1.1}, 300)
-				.to({scaleX: 1, scaleY: 1}, 300);
+			var tw_tip3 = egret.Tween.get(this.tip3, { loop: true });
+			tw_tip3.to({ scaleX: 1.1, scaleY: 1.1 }, 300)
+				.to({ scaleX: 1, scaleY: 1 }, 300);
 		}
 
 		this.label1.text = this.itemArr[0]["goal"];
@@ -94,14 +94,14 @@ class NewProgressbarComp extends eui.Component {
 				DisplayMgr.buttonScale(this.boxComp1, function () {
 					self.curId = self.itemArr[0]["id"];
 
-					if(CofferData.has_taken_reward(self.itemArr[0]["id"])) {
+					if (CofferData.has_taken_reward(self.itemArr[0]["id"])) {
 						Prompt.showPrompt(self.stage, "奖励已经领取过了~");
-					}else if(self.pgBar.value < self.itemArr[0]["goal"]) {
+					} else if (self.pgBar.value < self.itemArr[0]["goal"]) {
 						// Prompt.showPrompt(self.stage, "领取条件未达到~");
 						var panel = new StarsRewardPanel(self.itemArr[0]);
 						DisplayMgr.set2Center(panel);
 						self.stage.addChild(panel);
-					}else {
+					} else {
 						NetLoading.showLoading();
 						var request = HttpProtocolMgr.take_company_reward_205(self.curId);
 						HttpMgr.postRequest(request);
@@ -112,14 +112,14 @@ class NewProgressbarComp extends eui.Component {
 				DisplayMgr.buttonScale(this.boxComp2, function () {
 					self.curId = self.itemArr[1]["id"];
 
-					if(CofferData.has_taken_reward(self.itemArr[1]["id"])) {
+					if (CofferData.has_taken_reward(self.itemArr[1]["id"])) {
 						Prompt.showPrompt(self.stage, "奖励已经领取过了~");
-					}else if(self.pgBar.value < self.itemArr[1]["goal"]) {
+					} else if (self.pgBar.value < self.itemArr[1]["goal"]) {
 						// Prompt.showPrompt(self.stage, "领取条件未达到~");
 						var panel = new StarsRewardPanel(self.itemArr[1]);
 						DisplayMgr.set2Center(panel);
 						self.stage.addChild(panel);
-					}else {
+					} else {
 						NetLoading.showLoading();
 						var request = HttpProtocolMgr.take_company_reward_205(self.curId);
 						HttpMgr.postRequest(request);
@@ -130,14 +130,14 @@ class NewProgressbarComp extends eui.Component {
 				DisplayMgr.buttonScale(this.boxComp3, function () {
 					self.curId = self.itemArr[2]["id"];
 
-					if(CofferData.has_taken_reward(self.itemArr[2]["id"])) {
+					if (CofferData.has_taken_reward(self.itemArr[2]["id"])) {
 						Prompt.showPrompt(self.stage, "奖励已经领取过了~");
-					}else if(self.pgBar.value < self.itemArr[2]["goal"]) {
+					} else if (self.pgBar.value < self.itemArr[2]["goal"]) {
 						// Prompt.showPrompt(self.stage, "领取条件未达到~");
 						var panel = new StarsRewardPanel(self.itemArr[2]);
 						DisplayMgr.set2Center(panel);
 						self.stage.addChild(panel);
-					}else {
+					} else {
 						NetLoading.showLoading();
 						var request = HttpProtocolMgr.take_company_reward_205(self.curId);
 						HttpMgr.postRequest(request);
@@ -149,13 +149,13 @@ class NewProgressbarComp extends eui.Component {
 
 	private result_of_205() {
 		NetLoading.removeLoading();
-		if(this.curId == "1") {
+		if (this.curId == "1" || this.curId == "4" || this.curId == "7" || this.curId == "10" || this.curId == "13") {
 			this.tip1.visible = false;
 			egret.Tween.removeTweens(this.tip1);
-		}else if(this.curId == "2") {
+		} else if (this.curId == "2" || this.curId == "5" || this.curId == "8" || this.curId == "11" || this.curId == "14") {
 			this.tip2.visible = false;
 			egret.Tween.removeTweens(this.tip2);
-		}else if(this.curId == "3") {
+		} else if (this.curId == "3" || this.curId == "6" || this.curId == "9" || this.curId == "12" || this.curId == "15") {
 			this.tip3.visible = false;
 			egret.Tween.removeTweens(this.tip3);
 		}

@@ -29,6 +29,9 @@ class NewStorySelectScene extends eui.Component {
 		this.baseComp = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy);
         this.addChild(this.baseComp);
 
+		var index = Math.min(StoryData.getCompleteStoryArr().length, 28);
+		this.tip_lab.text = "已攻略至第" + StoryData.getHanziText(index + 1) + "章";
+
 		this.btn_begin.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBegin, this);
 		this.btn_back.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBack, this);
 

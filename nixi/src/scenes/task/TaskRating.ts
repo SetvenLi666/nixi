@@ -148,9 +148,9 @@ class TaskRating extends eui.Component implements eui.UIComponent {
 				// popPanel.playAnimation();
 				// self.btnTake.visible = true;
 				// self.bg.touchEnabled = true;
-				if(taskPhase == PlayerData.phase && PlayerData.phase != 5) {
+				if (taskPhase == PlayerData.phase && PlayerData.phase != 5) {
 					self.starsAnimation();
-				}else {
+				} else {
 					self.btnTake.visible = true;
 					self.bg.touchEnabled = true;
 				}
@@ -171,10 +171,10 @@ class TaskRating extends eui.Component implements eui.UIComponent {
 				self.addChild(star);
 				var tw = egret.Tween.get(star);
 				tw.to({ alpha: 0.5, scaleX: 0.5, scaleY: 0.5, x: self.width / 2, y: 800 }, 500)
-					.call(function() {
-						if(p_star == <eui.Image>self["star1"]) {
+					.call(function () {
+						if (p_star == <eui.Image>self["star1"]) {
 							var popPanel = <RatingPopComp>(self.ratingPanel.getChildByName("popPanel"));
-							if(popPanel) {
+							if (popPanel) {
 								popPanel.playAnimation();
 							}
 						}
@@ -271,20 +271,29 @@ class TaskRating extends eui.Component implements eui.UIComponent {
 			DisplayMgr.set2Center(panel);
 			this.stage.addChild(panel);
 		} else {
-			if (this.isLevelUp) {
-				this.playLevelUpAnimation();
-			} else {
-				egret.setTimeout(function () {
-					SceneMgr.gotoTaskScene(PlayerData.phase, PlayerData.mission);
-				}, this, 500);
-			}
+			// if (this.isLevelUp) {
+			// 	this.playLevelUpAnimation();
+			// } else {
+			// 	egret.setTimeout(function () {
+			// 		SceneMgr.gotoTaskScene(PlayerData.phase, PlayerData.mission);
+			// 	}, this, 500);
+			// }
+			this.checkScene();
 		}
 	}
 
 	private checkScene() {
-		egret.setTimeout(function () {
-			SceneMgr.gotoTaskScene(PlayerData.phase, PlayerData.mission);
-		}, this, 500);
+		if (this.isLevelUp) {
+			this.isLevelUp = false;
+			this.playLevelUpAnimation();
+		} else {
+			egret.setTimeout(function () {
+				SceneMgr.gotoTaskScene(PlayerData.phase, PlayerData.mission);
+			}, this, 500);
+		}
+		// egret.setTimeout(function () {
+		// 	SceneMgr.gotoTaskScene(PlayerData.phase, PlayerData.mission);
+		// }, this, 500);
 	}
 
 	private playLevelUpAnimation() {

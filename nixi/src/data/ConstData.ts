@@ -27,6 +27,8 @@ namespace ConstData {
         get channel() : number { return 601;},   //逆袭玩吧
 
         get version() : string { return "version-20170322"; },      //版本     
+
+        // get whiteList() : string[] {return ["8A79B852", "8A79B69C", "8A79B656"]; },
     }
 
     // export const CustomEvtName = {

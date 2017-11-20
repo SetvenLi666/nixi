@@ -141,13 +141,13 @@ class LoginScene extends eui.Component {
 		}
 
 		//是否为被邀请玩家
-		// var reg = new RegExp("(^|&)" + "isid" + "=([^&]*)(&|$)");
-		// var r = window.location.search.substr(1).match(reg);
-		// if(r != null) {
-		// 	var sid = decodeURI(r[2]);
-		// 	var request = HttpProtocolMgr.post_inviter_sid_166(sid);
-		// 	HttpMgr.postRequest(request);
-		// }
+		var reg = new RegExp("(^|&)" + "isid" + "=([^&]*)(&|$)");
+		var r = window.location.search.substr(1).match(reg);
+		if(r != null) {
+			var sid = decodeURI(r[2]);
+			var request = HttpProtocolMgr.post_inviter_sid_166(sid);
+			HttpMgr.postRequest(request);
+		}
 
 		NetLoading.removeLoading();
 

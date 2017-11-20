@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ChatCommonPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Group id="comp" width="524" height="544" horizontalCenter="0" verticalCenter="0">
+			<e:Image source="chat_common_bg_png" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image source="social_chat_note_bg_png" y="8" horizontalCenter="0"/>
+			<e:Label id="noticeText" text="" x="92" y="8" width="384" height="60" size="18" textColor="0x000000"/>
+			<e:Scroller id="scroller" width="485" height="392" y="79.36" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="-3.5">
+				<e:List id="list">
+					<e:layout>
+						<e:VerticalLayout/>
+					</e:layout>
+				</e:List>
+			</e:Scroller>
+			<e:Image y="481.71" source="social_chat_input_bg_png" right="155"/>
+			<e:Image id="btn_send" y="477.54" source="social_chat_send_nor_png" right="150"/>
+			<e:Image id="btn_send2" y="477.21" source="social_chat_send_vip_png" right="20"/>
+			<e:EditableText id="editText" width="290" height="30" text="" y="487.54" size="24" textColor="0x000000" anchorOffsetY="0" anchorOffsetX="0" verticalAlign="middle" prompt="最多输入40汉字" promptColor="0xA2A2A2" right="204"/>
+			<e:Image id="btn_close" source="social_chat_close_png" x="474" y="8"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

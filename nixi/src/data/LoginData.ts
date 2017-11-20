@@ -28,6 +28,9 @@ class LoginData {
 
     public static configWanbaUUID(data: {}) {
         this._uuid = data["uid"];
+        this._userip = data["userip"];
+        this._friend_list = data["friend_list"];
+        this._figureurl = data["figureurl"];
     }
 
     public static update(obj: Object) {
@@ -41,9 +44,24 @@ class LoginData {
         egret.localStorage.setItem("UUID", this._uuid);
     }
 
+    public static get playerFigureurl(): string {
+        return this._figureurl;
+    }
+
+    public static get friend_list(): string[] {
+        return this._friend_list;
+    }
+
+    public static get userip(): string {
+        return this._userip;
+    }
+
     // Inner --------------------------------------------------
     private static _uuid: string = "";
     private static _gameAddr: string = "";
     private static _sid: string = "";
     private static _skey: string = "";
+    private static _userip: string = "";
+    private static _friend_list: string[] = [];
+    private static _figureurl: string = "";
 }

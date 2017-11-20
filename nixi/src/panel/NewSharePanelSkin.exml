@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="NewSharePanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Group width="567" height="381" horizontalCenter="0" verticalCenter="0">
+			<e:Image id="bg" source="panel_bar_bg_png" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image source="panel_title_share_png" y="14.08" horizontalCenter="-186"/>
+			<e:Image id="roleImg" source="newshare_role_big_1_png" y="62" horizontalCenter="-18"/>
+			<ns1:RewardItemComp id="item" y="141" skinName="RewardItemSkin" horizontalCenter="0"/>
+			<e:Image id="btn_dis" source="newshare_btn_dis_png" y="313" horizontalCenter="-120"/>
+			<e:Image id="btn_share" source="newshare_btn_share_png" y="313" horizontalCenter="120"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

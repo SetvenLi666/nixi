@@ -1,12 +1,10 @@
 class MainComp extends eui.Component {
 	public container: eui.Group;
 	public group: eui.Group;
-	// public btnGo: eui.Image;
 	public mailGroup: eui.Group;
 	public mailTip: eui.Image;
 	public niudanGroup: eui.Group;
 	public scGroup: eui.Image;
-	// public sc_bg: eui.Image;
 	public sc_icon: eui.Image;
 	public sc_text: eui.Image;
 	public lbGroup: eui.Group;
@@ -14,14 +12,20 @@ class MainComp extends eui.Component {
 	public libao_ac: eui.Image;
 	public libao_text: eui.Image;
 	public shareGroup: eui.Group;
-	// public share_ac: eui.Image;
 	public collGroup: eui.Group;
-	// public coll_ac: eui.Image;
 	public niudan_ac: eui.Image;
 	public leijiGroup: eui.Group;
 	public dtGroup: eui.Group;
 	public hdGroup: eui.Group;
 	public yqGroup: eui.Group;
+
+	public newShareGroup: eui.Group;
+	public newShareText: eui.Image;
+	public newShare: eui.Image;
+	public textMask: eui.Rect;
+	private shareIndex: number;
+	// private curTextIndex: number;
+	// private timer2: egret.Timer;
 
 	public td_ac: eui.Image;
 	public dt_tip: eui.Image;
@@ -29,18 +33,12 @@ class MainComp extends eui.Component {
 	public touchRect: eui.Rect;
 	private isShowUI: boolean = true;
 
-	// public btnBack: eui.Image;
-
 	public sj_comp: eui.Component;
 	public xt_comp: eui.Component;
 	public yl_comp: eui.Component;
 	public sd_comp: eui.Component;
 	public jj_comp: eui.Component;
 
-	// public acComp: AcComp;
-	// public mChatComp: MainChatComp;
-
-	// public shower: Shower;
 	public model: Model;
 
 	private hideTime: number = 500;
@@ -67,11 +65,8 @@ class MainComp extends eui.Component {
 
 		this.initView();
 
-		// this.btnGo.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnGo, this);
-		// this.btnBack.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnBack, this);
 		this.niudanGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnGashapon, this);
 		this.mailGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onMailTap, this);
-		// this.mChatComp.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onChatComp, this);
 		this.hdGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnHd, this);
 
 		this.shareGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
@@ -81,6 +76,8 @@ class MainComp extends eui.Component {
 		this.scGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnSc, this);
 		this.dtGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnDt, this);
 		this.yqGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnYq, this);
+
+		this.newShare.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
 
 		this.touchRect.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouchRect, this);
 
@@ -98,6 +95,8 @@ class MainComp extends eui.Component {
 		CustomEventMgr.addEventListener("704", this.afterHomeInfo_704, this);
 		CustomEventMgr.addEventListener("700", this.afterFetchMailData_700, this);
 
+		CustomEventMgr.addEventListener("175", this.result_of_175, this);
+
 		CustomEventMgr.addEventListener("104", this.afterTakePackageInfo_104, this);
 
 		CustomEventMgr.addEventListener("910", this.result_of_910, this);
@@ -110,6 +109,7 @@ class MainComp extends eui.Component {
 		CustomEventMgr.addEventListener("Update Libao View", this.updateLibaoView, this);
 		CustomEventMgr.addEventListener("Update Sc View", this.updateScView, this);
 		CustomEventMgr.addEventListener("CheckOut DT Status", this.checkDailyTargetStates, this);
+		CustomEventMgr.addEventListener("Update New Share", this.updateNewShare, this);
 
 		//获取每日任务数据
 		var request = HttpProtocolMgr.take_welfare_data_630();
@@ -165,6 +165,15 @@ class MainComp extends eui.Component {
 		this.removeEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit, this);
 		egret.Tween.removeAllTweens();
 
+		if (this.timer) {
+			this.timer.stop();
+			this.timer = null;
+		}
+		// if (this.timer2) {
+		// 	this.timer2.stop();
+		// 	this.timer2 = null;
+		// }
+
 		CustomEventMgr.removeEventListener("304", this.result_of_304, this);
 		CustomEventMgr.removeEventListener("306", this.result_of_306, this);
 		CustomEventMgr.removeEventListener("160", this.result_of_160, this);
@@ -178,6 +187,8 @@ class MainComp extends eui.Component {
 		CustomEventMgr.removeEventListener("200", this.afterCoffersInfo_200, this);
 		CustomEventMgr.removeEventListener("704", this.afterHomeInfo_704, this);
 		CustomEventMgr.removeEventListener("700", this.afterFetchMailData_700, this);
+
+		CustomEventMgr.removeEventListener("175", this.result_of_175, this);
 
 		CustomEventMgr.removeEventListener("104", this.afterTakePackageInfo_104, this);
 
@@ -199,11 +210,8 @@ class MainComp extends eui.Component {
 		CustomEventMgr.removeEventListener("Guide_Step_2_100", this.onYlComp, this);
 		CustomEventMgr.removeEventListener("Guide_Step_5_100", this.onXtComp, this);
 
-		// this.btnGo.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnGo, this);
-		// this.btnBack.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnBack, this);
 		this.niudanGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnGashapon, this);
 		this.mailGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onMailTap, this);
-		// this.mChatComp.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onChatComp, this);
 
 		this.shareGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
 		this.collGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onDesk, this);
@@ -236,6 +244,27 @@ class MainComp extends eui.Component {
 			this.mailTip.visible = false;
 			egret.Tween.removeTweens(this.mailTip);
 		}
+
+		this.shareIndex = Math.floor(Math.random() * 3) + 1;
+		// this.curTextIndex = this.shareIndex;
+		this.newShare.source = "newshare_role_" + this.shareIndex + "_png";
+		this.newShareText.source = "newshare_text_" + this.shareIndex + "_png";
+		this.newShareText.mask = this.textMask;
+		this.newShareAnimationFirst();
+		this.newShareGroup.visible = ShareData.isShowNewShare;
+
+		// if (this.newShareGroup.visible) {
+		// 	this.timer2 = new egret.Timer(0, 0);
+		// 	this.timer2.addEventListener(egret.TimerEvent.TIMER, this.timer2Callback, this);
+		// 	this.timer2.start();
+		// }
+
+		//邀请
+		// if (ConstData.Conf.whiteList.indexOf(LoginData.sid) != -1 || window["OPEN_DATA"].openid == "aaaa") {
+		// 	this.yqGroup.visible = true;
+		// } else {
+		// 	this.yqGroup.visible = false;
+		// }
 
 		this.sj_comp.x = this.group.width * 0.12;
 		this.xt_comp.x = this.group.width * 0.28;
@@ -280,18 +309,8 @@ class MainComp extends eui.Component {
 			.to({ rotation: -10 }, 800).wait(Math.floor(Math.random() * 2) * (Math.floor(Math.random() * 5)) * 1000)
 			.to({ rotation: 0 }, 800).wait(Math.floor(Math.random() * 2) * (Math.floor(Math.random() * 5)) * 1000);
 
-		// var tw_sc = egret.Tween.get(this.sc_bg, { loop: true });
-		// tw_sc.to({ rotation: 180, alpha: 0 }, 2000)
-		// 	.to({ rotation: 360, alpha: 1 }, 2000);
-
 		var tw_coin = egret.Tween.get(this.libao_ac, { loop: true });
 		tw_coin.to({ rotation: 360 }, 4500);
-
-		// var tw_share = egret.Tween.get(this.share_ac, { loop: true });
-		// tw_share.to({ rotation: 360 }, 2000);
-
-		// var tw_coll = egret.Tween.get(this.coll_ac, { loop: true });
-		// tw_coll.to({ rotation: 360 }, 2000);
 
 		var tw_sj = egret.Tween.get(this.sj_comp["tween"], { loop: true });
 		tw_sj.to({ scaleX: 1.1, scaleY: 1.1 }, 600)
@@ -385,6 +404,32 @@ class MainComp extends eui.Component {
 		egret.Tween.get(this.jj_comp).to({ y: 770 }, 800, egret.Ease.backOut);
 	}
 
+	// private timer2Callback(evt: egret.TimerEvent) {
+	// 	if (this.timer2.currentCount == 1) {
+	// 		this.newShareAnimationFirst();
+	// 	} else {
+	// 		this.newShareAnimation();
+	// 	}
+
+	// 	this.timer2.delay = (Math.floor(Math.random() * 5) + 15) * 1000;
+	// }
+
+	private newShareAnimationFirst() {
+		var tw = egret.Tween.get(this.newShareText);
+		tw.to({ x: 74 }, 1500);
+	}
+
+	// private newShareAnimation() {
+	// 	var arr = [1, 2, 3];
+	// 	arr.splice(arr.indexOf(this.curTextIndex), 1);
+	// 	var index = arr[Math.floor(Math.random() * 2)];
+	// 	this.curTextIndex = index;
+	// 	var tw = egret.Tween.get(this.newShareText);
+	// 	tw.to({ x: -103 }, 1000)
+	// 		.to({ source: "newshare_text_" + index + "_png" })
+	// 		.to({ x: 74 }, 1500);
+	// }
+
 	private onBtnGashapon() {
 		DisplayMgr.buttonScale(this.niudanGroup, function () {
 			NetLoading.showLoading();
@@ -414,8 +459,8 @@ class MainComp extends eui.Component {
 
 	private onShare() {
 		var self = this;
-		DisplayMgr.buttonScale(this.shareGroup, function () {
-			var panel = new ShareDeskPanel("share");
+		DisplayMgr.buttonScale(this.newShare, function () {
+			var panel = new NewSharePanel(self.shareIndex);
 			DisplayMgr.set2Center(panel);
 			self.stage.addChild(panel);
 		});
@@ -482,11 +527,11 @@ class MainComp extends eui.Component {
 				NetLoading.showLoading();
 				var request = HttpProtocolMgr.all_products_100();
 				HttpMgr.postRequest(request);
-			} else if((ShareData.isFirstPay == false) || (ShareData.isFirstPay && ShareData.firstpay_lottery_times == 0)) {
+			} else if ((ShareData.isFirstPay == false) || (ShareData.isFirstPay && ShareData.firstpay_lottery_times == 0)) {
 				var panel = new FirstPayPanel();
 				DisplayMgr.set2Center(panel);
 				self.stage.addChild(panel);
-			}else {
+			} else {
 				var onePanel = new ScPanel();
 				DisplayMgr.set2Center(onePanel);
 				self.stage.addChild(onePanel);
@@ -666,6 +711,33 @@ class MainComp extends eui.Component {
 		var panel = new InvitePanel();
 		DisplayMgr.set2Center(panel);
 		this.stage.addChild(panel);
+	}
+
+	private result_of_175(evt: egret.Event) {
+		if (evt.data.type == "do_share_reward") {
+			ShareData.isShowNewShare = false;
+			this.newShareGroup.visible = ShareData.isShowNewShare;
+		}
+
+		var data: {} = evt.data.reward;
+		var reward: {}[] = [];
+		for (var i in data) {
+			var item = { type: i, num: data[i] };
+			reward.push(item);
+		}
+		this.playRewardAnimation(reward);
+	}
+
+	private playRewardAnimation(reward: {}[]) {
+		var panel = new CommonRewardPanel(reward);
+		DisplayMgr.set2Center(panel);
+		this.stage.addChild(panel);
+
+		CustomEventMgr.dispatchEventWith("Update Player Info", false);
+	}
+
+	private updateNewShare() {
+		this.newShareGroup.visible = ShareData.isShowNewShare;
 	}
 
 	private afterFetchStoryData_500(evt: egret.Event) {

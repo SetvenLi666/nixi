@@ -32,7 +32,7 @@ class StoryData {
         console.log("StoryData::updateCompletedStory()");
         console.log(obj);
 
-        if (obj !== null) {
+        if (obj != null) {
             this._completedStory = obj;
         }
     }
@@ -46,6 +46,15 @@ class StoryData {
 
     public static has_init_story() {
         return !(this._completedStory == null);
+    }
+
+    public static getCompleteStoryArr(): {}[] {
+        var rtn: {}[] = [];
+        for(var i in this._completedStory) {
+            rtn.push(this._completedStory[i]);
+        }
+
+        return rtn;
     }
 
     public static getHanziText(num: number): string {
@@ -69,6 +78,8 @@ class StoryData {
     //     1: 1,
 
     // }
+    private static _isShowLastTip: boolean = false;
+
     private static _selectedTag: number = null;
     private static _selectedBg: string | egret.Texture = null;
 
@@ -95,5 +106,13 @@ class StoryData {
 
     public static get isStoryFinished() {
         return this._isStoryFinished;
+    }
+
+    public static get isShowLastTip() {
+        return this._isShowLastTip;
+    }
+
+    public static set isShowLastTip(value: boolean) {
+        this._isShowLastTip = value;
     }
 }

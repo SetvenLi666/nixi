@@ -3,20 +3,21 @@
 	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
 		<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.8"/>
 		<e:Image id="bg" horizontalCenter="0" verticalCenter="0" source="gashapon_panel_bg_png"/>
-		<e:Image source="gashapon_img_pkq_png" y="229" horizontalCenter="0" visible="false"/>
-		<e:Group id="freeGroup" width="149" height="149" y="790.38" horizontalCenter="-139.5" anchorOffsetX="74.5" anchorOffsetY="74.5">
+		<e:Image source="gashapon_flag_png" y="826" horizontalCenter="50.5"/>
+		<e:Group id="freeGroup" width="151" height="156" y="790.38" horizontalCenter="-139.5" anchorOffsetX="75.5" anchorOffsetY="78">
 			<e:Image id="freeImg" source="gashapon_btn_free_png" x="0" y="0" scaleX="1" scaleY="1"/>
 			<e:Image id="freeTip" source="gashapon_img_daily_png" y="15" right="0"/>
 			<e:Label id="label_1" text="60" y="97" size="34" right="75" bold="true"/>
 			<e:Image id="freeDiam" source="base_diam_png" y="93" horizontalCenter="22"/>
 		</e:Group>
-		<e:Group id="tenGroup" width="149" height="149" y="790.38" horizontalCenter="140.5" anchorOffsetX="74.5" anchorOffsetY="74.5">
+		<e:Group id="tenGroup" width="151" height="157" y="790.38" horizontalCenter="140.5" anchorOffsetX="75.5" anchorOffsetY="78.5">
 			<e:Image source="gashapon_btn_ten_png" x="0" y="0"/>
 			<e:Image source="gashapon_img_tuijian_png" y="15" right="0"/>
 			<e:Label id="label_2" text="500" y="97" size="32" right="75" bold="true"/>
 			<e:Image source="base_diam_png" y="93" horizontalCenter="22"/>
 		</e:Group>
-		<e:Label id="timeCD" text="每日一次" y="889.38" size="18" strokeColor="0xffffff" stroke="0.5" horizontalCenter="-140" textColor="0xfa357a"/>
-		<e:Label text="每抽10次必出高级衣饰" y="889.38" size="18" strokeColor="0xFFFFFF" stroke="0.5" horizontalCenter="140.5" textColor="0xfa357a"/>
+		<e:Label id="timeCD" text="每日一次" y="892" size="18" strokeColor="0xffffff" stroke="0.5" horizontalCenter="-140" textColor="0xfa357a"/>
+		<e:Image id="freeText" source="gashapon_text_1_png" y="892" horizontalCenter="-137.5"/>
+		<e:Image source="gashapon_text_2_png" y="881" horizontalCenter="132.5"/>
 	</e:Group>
 </e:Skin>

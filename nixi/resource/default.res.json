@@ -49,7 +49,7 @@
 			"name": "shop"
 		},
 		{
-			"keys": "social_chat_bg_png,social_chat_blue_png,social_chat_close_png,social_chat_fans_png,social_chat_input_bg_png,social_chat_note_bg_png,social_chat_red_png,social_chat_send_nor_png,social_chat_send_vip_png,social_chat_world_png,social_chat_yellow_png,social_m_frd_png,social_m_msg_png,social_m_not_png,social_m_rnk_png,social_m_stg_png",
+			"keys": "social_chat_bg_png,social_chat_blue_png,social_chat_close_png,social_chat_fans_png,social_chat_input_bg_png,social_chat_note_bg_png,social_chat_red_png,social_chat_send_nor_png,social_chat_world_png,social_chat_yellow_png,social_m_frd_png,social_m_msg_png,social_m_not_png,social_m_rnk_png,social_m_stg_png",
 			"name": "friend"
 		},
 		{
@@ -193,8 +193,8 @@
 			"name": "new_rank"
 		},
 		{
-			"keys": "ac_res_json,daily_gift_bg_201_png,invite_btn_share_png,mission_3_json,first_pay_role_png",
-			"name": "preload"
+			"name": "preload",
+			"keys": "social_chat_send_vip_png,chat_common_bg_png,gashapon_flag_png,gashapon_text_1_png,gashapon_text_2_png"
 		}
 	],
 	"resources": [
@@ -775,11 +775,6 @@
 			"url": "game/social/social_chat_send_nor.png",
 			"type": "image",
 			"name": "social_chat_send_nor_png"
-		},
-		{
-			"url": "game/social/social_chat_send_vip.png",
-			"type": "image",
-			"name": "social_chat_send_vip_png"
 		},
 		{
 			"url": "game/social/social_chat_world.png",
@@ -17767,9 +17762,94 @@
 			"name": "mission_3_json"
 		},
 		{
-			"name": "first_pay_role_png",
+			"url": "game/main/ac/first_pay_role.png",
 			"type": "image",
-			"url": "game/main/ac/first_pay_role.png"
+			"name": "first_pay_role_png"
+		},
+		{
+			"url": "game/panel/shareDesk/newshare_role_1.png",
+			"type": "image",
+			"name": "newshare_role_1_png"
+		},
+		{
+			"url": "game/panel/shareDesk/newshare_role_2.png",
+			"type": "image",
+			"name": "newshare_role_2_png"
+		},
+		{
+			"url": "game/panel/shareDesk/newshare_role_3.png",
+			"type": "image",
+			"name": "newshare_role_3_png"
+		},
+		{
+			"url": "game/panel/shareDesk/newshare_text_1.png",
+			"type": "image",
+			"name": "newshare_text_1_png"
+		},
+		{
+			"url": "game/panel/shareDesk/newshare_text_2.png",
+			"type": "image",
+			"name": "newshare_text_2_png"
+		},
+		{
+			"url": "game/panel/shareDesk/newshare_text_3.png",
+			"type": "image",
+			"name": "newshare_text_3_png"
+		},
+		{
+			"url": "game/panel/shareDesk/newshare_btn_dis.png",
+			"type": "image",
+			"name": "newshare_btn_dis_png"
+		},
+		{
+			"url": "game/panel/shareDesk/newshare_btn_share.png",
+			"type": "image",
+			"name": "newshare_btn_share_png"
+		},
+		{
+			"url": "game/panel/shareDesk/newshare_role_big_1.png",
+			"type": "image",
+			"name": "newshare_role_big_1_png"
+		},
+		{
+			"url": "game/panel/shareDesk/newshare_role_big_2.png",
+			"type": "image",
+			"name": "newshare_role_big_2_png"
+		},
+		{
+			"url": "game/panel/shareDesk/newshare_role_big_3.png",
+			"type": "image",
+			"name": "newshare_role_big_3_png"
+		},
+		{
+			"url": "game/panel/invite/invite_kuang.png",
+			"type": "image",
+			"name": "invite_kuang_png"
+		},
+		{
+			"name": "social_chat_send_vip_png",
+			"type": "image",
+			"url": "game/social/social_chat_send_vip.png"
+		},
+		{
+			"name": "chat_common_bg_png",
+			"type": "image",
+			"url": "game/panel/chat/chat_common_bg.png"
+		},
+		{
+			"name": "gashapon_flag_png",
+			"type": "image",
+			"url": "game/panel/gashapon/new/gashapon_flag.png"
+		},
+		{
+			"name": "gashapon_text_1_png",
+			"type": "image",
+			"url": "game/panel/gashapon/new/gashapon_text_1.png"
+		},
+		{
+			"name": "gashapon_text_2_png",
+			"type": "image",
+			"url": "game/panel/gashapon/new/gashapon_text_2.png"
 		}
 	]
 }

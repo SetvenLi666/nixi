@@ -9,6 +9,8 @@ class ShareDeskPanel extends eui.Component {
 	private type: string;
 	private reward: {} = {};
 
+	public isCanbeClose: boolean = true;
+
 	public constructor(type: string) {
 		super();
 
@@ -76,8 +78,6 @@ class ShareDeskPanel extends eui.Component {
 						if (ShareData.shareTimes == 0) {
 							var request = HttpProtocolMgr.take_share_reward_175("do_share_reward");
 							HttpMgr.postRequest(request);
-
-							DataMgr.checkNews();
 						}
 					} else if (result["retCode"] == 1) {
 						window["mqq"].ui.showTips({
@@ -95,13 +95,13 @@ class ShareDeskPanel extends eui.Component {
 						if (result["result"] == 0 && ShareData.shortcutTimes == 0) {
 							var request = HttpProtocolMgr.take_share_reward_175("shortcut_reward");
 							HttpMgr.postRequest(request);
-
-							DataMgr.checkNews();
 						}
 					}
 				});
 			}
 		});
+
+		this.isCanbeClose = true;
 	}
 
 	private touchTap(evt: egret.TouchEvent) {
@@ -112,7 +112,7 @@ class ShareDeskPanel extends eui.Component {
 	}
 
 	private closePanel() {
-		if (this.parent) {
+		if (this.parent && this.isCanbeClose) {
 			this.parent.removeChild(this);
 		}
 	}
