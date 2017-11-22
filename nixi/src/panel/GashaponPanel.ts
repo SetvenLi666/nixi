@@ -21,7 +21,7 @@ class GashaponPanel extends eui.Component {
 	private acTimer: egret.Timer;
 	private result_10: {}[];
 
-	private isGuideDesk: boolean = false;
+	// private isGuideDesk: boolean = false;
 
 	public constructor() {
 		super();
@@ -51,7 +51,7 @@ class GashaponPanel extends eui.Component {
 		this.timer.addEventListener(egret.TimerEvent.TIMER, this.onTimerCallback, this);
 
 		if(PlayerData.guide == 6) {
-			this.isGuideDesk = true;
+			// this.isGuideDesk = true;
 			var guidePanel = new NewGuidePanel();
 			DisplayMgr.set2Center(guidePanel);
 			this.stage.addChild(guidePanel);
@@ -206,12 +206,12 @@ class GashaponPanel extends eui.Component {
 
 	private closePanel() {
 		if (this.parent) {
-			if(this.isGuideDesk) {
-				var panel = new ShareDeskPanel("desk");
-				DisplayMgr.set2Center(panel);
-				this.stage.addChild(panel);
-				panel.isCanbeClose = false;
-			}
+			// if(this.isGuideDesk) {
+			// 	var panel = new ShareDeskPanel("desk");
+			// 	DisplayMgr.set2Center(panel);
+			// 	this.stage.addChild(panel);
+			// 	panel.isCanbeClose = false;
+			// }
 			this.parent.removeChild(this);
 		}
 	}

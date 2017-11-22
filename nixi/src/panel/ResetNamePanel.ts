@@ -31,10 +31,29 @@ class ResetNamePanel extends eui.Component {
 
 	private onSure() {
 		var self = this;
+		var newName = self.newName;
 		DisplayMgr.buttonScale(this.btn_sure, function () {
-			NetLoading.showLoading();
-			var request: egret.URLRequest = HttpProtocolMgr.reset_nickname_907(self.newName);
-			HttpMgr.postRequest(request);
+			if (newName == "") {
+				Prompt.showPrompt(self.stage, "请输入新昵称");
+			} else {
+				for (var i = 0; i < newName.length; i++) {
+					var s = newName[i]
+					if (/[a-zA-Z0-9]/g.test(s) || /^[\u4e00-\u9fa5]+$/i.test(s)) {
+						//数字及英文字母             //中文
+					} else {
+						Prompt.showPrompt(self.stage, "仅限汉字,英文字母及数字");
+						return;
+					}
+				}
+
+				if (IllegalWords.is_learnWords(newName)) {
+					Prompt.showPrompt(self.stage, "输入内容包含敏感字");
+				} else {
+					NetLoading.showLoading();
+					var request: egret.URLRequest = HttpProtocolMgr.reset_nickname_907(newName);
+					HttpMgr.postRequest(request);
+				}
+			}
 		});
 	}
 
@@ -53,7 +72,7 @@ class ResetNamePanel extends eui.Component {
 	}
 
 	private closePanel() {
-		if(this.parent) {
+		if (this.parent) {
 			this.parent.removeChild(this);
 		}
 	}

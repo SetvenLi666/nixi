@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="NewGuidePanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="guide_step_1,guide_step_1_2,guide_step_2,guide_step_2_1,guide_step_2_2,guide_step_2_3,guide_step_2_4,guide_step_2_5,guide_step_2_6,guide_step_2_7,guide_step_2_8,guide_step_2_9,guide_step_2_10,guide_step_2_11,guide_step_2_12,guide_step_2_13,guide_step_2_14,guide_step_2_15,guide_step_2_16,guide_step_2_17,guide_step_2_18,guide_step_5,guide_step_5_1,guide_step_5_2,guide_step_5_3,guide_step_5_4,guide_step_5_5,guide_step_6,guide_step_6_1,guide_step_2_100,guide_step_5_100,guide_step_2_25,guide_step_2_26,guide_step_2_27,guide_step_2_28,guide_step_2_19,guide_step_2_20,guide_step_2_21,guide_step_2_22,guide_step_6_10,guide_step_2_30,guide_step_5_10,guide_step_6_11,guide_step_6_12,guide_step_6_13,guide_step_6_14,guide_step_6_15,guide_step_6_16,guide_step_6_17,guide_step_6_18" >
 	<e:Group id="group" width="852" horizontalCenter="0" verticalCenter="0" height="1136">
-		<e:Group width="484" height="284" includeIn="guide_step_2_26" y="420" horizontalCenter="-126">
+		<e:Group width="484" height="284" includeIn="guide_step_2_26" y="420" horizontalCenter="-105">
 			<e:Image source="newguide_bar_bg_png" x="0" y="0"/>
 			<e:Label text="全套衣饰才可以获得五星好评哦！\n切记！！！" x="22.42" y="66.03" anchorOffsetX="0" width="440.3" anchorOffsetY="0" height="173.94" textColor="0x7d1f3f" size="26"/>
 		</e:Group>

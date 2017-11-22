@@ -9,7 +9,7 @@ class ShareDeskPanel extends eui.Component {
 	private type: string;
 	private reward: {} = {};
 
-	public isCanbeClose: boolean = true;
+	// public isCanbeClose: boolean = true;
 
 	public constructor(type: string) {
 		super();
@@ -101,7 +101,7 @@ class ShareDeskPanel extends eui.Component {
 			}
 		});
 
-		this.isCanbeClose = true;
+		// this.isCanbeClose = true;
 	}
 
 	private touchTap(evt: egret.TouchEvent) {
@@ -112,7 +112,7 @@ class ShareDeskPanel extends eui.Component {
 	}
 
 	private closePanel() {
-		if (this.parent && this.isCanbeClose) {
+		if (this.parent) {
 			this.parent.removeChild(this);
 		}
 	}
