@@ -88,11 +88,11 @@ class LoginScene extends eui.Component {
 
 	private afterGameLogin_902(evt: egret.Event) {
 		console.log("afterGameLogin_902");
-		TDGA.Account({
-			accountId: LoginData.uuid,
-			level: 1,
-			accountName: ShowData.nickname
-		});
+		// TDGA.Account({
+		// 	accountId: LoginData.uuid,
+		// 	level: 1,
+		// 	accountName: ShowData.nickname
+		// });
 		ClothesData.initTemplate(RES.getRes("clothes_json"));
 		ConfigData.initConfig(RES.getRes("mission_json"));
 
@@ -131,7 +131,7 @@ class LoginScene extends eui.Component {
 	}
 
 	private afterSaveNickname_904() {
-		TDGA.Account.setAccountName(ShowData.nickname);
+		// TDGA.Account.setAccountName(ShowData.nickname);
 
 		if(window["reportRegister"]) {
 			window["reportRegister"]();//玩吧数据上报（注册）

@@ -54,6 +54,7 @@ class Main extends egret.DisplayObjectContainer {
 
         // initialize the Resource loading library
         //初始化Resource资源加载库
+        RES.setMaxLoadingThread(8); //设置最大并发加载线程数量
         RES.addEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
         RES.loadConfig("resource/default.res.json", "resource/");
     }

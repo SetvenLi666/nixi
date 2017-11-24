@@ -33,7 +33,7 @@ class ClothesListComp extends eui.Component {
     private curIndex: number = -1;
 
     private back_img: eui.Image;
-    private btn_buy: eui.Image;
+    // private btn_buy: eui.Image;
     private btn_save: eui.Image;
     private btn_shop: eui.Image;
 
@@ -82,7 +82,7 @@ class ClothesListComp extends eui.Component {
         this.icon_def.enabled = false;
 
         this.back_img.addEventListener(egret.TouchEvent.TOUCH_TAP, this.goBack, this);
-        this.btn_buy.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBuy, this);
+        // this.btn_buy.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBuy, this);
         this.btn_save.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onSave, this);
         this.btn_shop.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShop, this);
 
@@ -108,9 +108,10 @@ class ClothesListComp extends eui.Component {
             if (this.tag2) {
                 this.tipComp.tag_2.source = "clothes_tags_json.tag_" + this.tag2;
             }
-            if (this.tag3) {
-                this.tipComp.tag_3.source = "clothes_tags_json.tag_" + this.tag3;
-            }
+
+            // if (this.tag3) {
+            //     this.tipComp.tag_3.source = "clothes_tags_json.tag_" + this.tag3;
+            // }
 
             this.tipComp.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onFilter, this);
         }
@@ -143,7 +144,7 @@ class ClothesListComp extends eui.Component {
         this.removeEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit, this);
 
         this.back_img.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.goBack, this);
-        this.btn_buy.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBuy, this);
+        // this.btn_buy.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBuy, this);
         this.btn_save.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onSave, this);
         this.btn_shop.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onShop, this);
 
@@ -475,9 +476,9 @@ class ClothesListComp extends eui.Component {
         SceneMgr.gotoTaskScene(PlayerData.phase, PlayerData.mission);
     }
 
-    private onBuy() {
-        var self = this;
-        DisplayMgr.buttonScale(this.btn_buy, function () {
+    // private onBuy() {
+    //     var self = this;
+    //     DisplayMgr.buttonScale(this.btn_buy, function () {
             // if (self.hasHuodongClothes().length != 0) {
             //     Prompt.showPrompt(self.stage, "所选衣饰中包含非卖品!");
             //     //送回非卖品
@@ -515,17 +516,17 @@ class ClothesListComp extends eui.Component {
             //     return;
             // }
 
-            NetLoading.showLoading();
-            var request: egret.URLRequest;
-            if (true === self.isTaskIn && self.taskID == "pk") {
-                request = HttpProtocolMgr.save_competition_dress_405(ClothesData.ondressCache, ClothesData.ornamentsCache);
-            } else {
-                request = HttpProtocolMgr.new_save_dressed_403(ClothesData.ondressCache, ClothesData.ornamentsCache);
-            }
+    //         NetLoading.showLoading();
+    //         var request: egret.URLRequest;
+    //         if (true === self.isTaskIn && self.taskID == "pk") {
+    //             request = HttpProtocolMgr.save_competition_dress_405(ClothesData.ondressCache, ClothesData.ornamentsCache);
+    //         } else {
+    //             request = HttpProtocolMgr.new_save_dressed_403(ClothesData.ondressCache, ClothesData.ornamentsCache);
+    //         }
 
-            HttpMgr.postRequest(request);
-        });
-    }
+    //         HttpMgr.postRequest(request);
+    //     });
+    // }
 
     private onSave() {
         var self = this;
