@@ -210,6 +210,7 @@ class TaskRating extends eui.Component implements eui.UIComponent {
 
 	private onTapped() {
 		console.log("TaskRating::onTapped() ...");
+		SoundManager.instance().buttonSound();
 		var self = this;
 		self.bg.touchEnabled = false;
 		self.panelAnimation("coin", self.coin, "1");

@@ -67,6 +67,8 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 				self.subtitle.touchChildren = true;
 			});
 
+		SoundManager.instance().startBgSound("story");
+
 		CustomEventMgr.addEventListener("503", self.afterCommitStory_503, self);
 		CustomEventMgr.addEventListener("905", self.after_data_of_905, self);
 		CustomEventMgr.addEventListener("168", self.result_of_168, this);
@@ -117,6 +119,8 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 			egret.clearInterval(this.fastSchedule);
 			this.fastSchedule = 0;
 		}
+
+		SoundManager.instance().destroyStartSound();
 	}
 
 	private onChoosed(evt: egret.Event) {

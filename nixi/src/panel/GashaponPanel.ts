@@ -84,6 +84,7 @@ class GashaponPanel extends eui.Component {
 
 	private onFreeGroup() {
 		DisplayMgr.buttonScale(this.freeGroup, function() {
+			SoundManager.instance().buttonSound();
 			NetLoading.showLoading();
 			var request: egret.URLRequest = HttpProtocolMgr.single_lottery_307();
 			HttpMgr.postRequest(request);
@@ -92,6 +93,7 @@ class GashaponPanel extends eui.Component {
 
 	private onTenGroup() {
 		DisplayMgr.buttonScale(this.tenGroup, function() {
+			SoundManager.instance().buttonSound();
 			NetLoading.showLoading();
 			var request: egret.URLRequest = HttpProtocolMgr.multiply_lottery_309();
 			HttpMgr.postRequest(request);

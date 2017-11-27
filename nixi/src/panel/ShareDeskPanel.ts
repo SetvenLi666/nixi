@@ -62,6 +62,7 @@ class ShareDeskPanel extends eui.Component {
 		var self = this;
 		DisplayMgr.buttonScale(this.btnImg, function () {
 			//分享，发送桌面
+			SoundManager.instance().buttonSound();
 			if (self.type == "share") {
 				window["mqq"].ui.shareMessage({
 					title: '逆袭之星途闪耀',

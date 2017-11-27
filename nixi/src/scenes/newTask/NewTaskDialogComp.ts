@@ -219,6 +219,7 @@ class NewTaskDialogComp extends eui.Component {
 	private onButtonPlay() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_play, function () {
+			SoundManager.instance().buttonSound();
 			if (self.isAutoPlay) {
 				self.isAutoPlay = false;
 				self.isFastPlay = false;
@@ -377,6 +378,7 @@ class NewTaskDialogComp extends eui.Component {
 	private onButtonBack() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_back, function () {
+			SoundManager.instance().buttonSound();
 			if (self.parent) {
 				self.parent.removeChild(self);
 			}

@@ -72,6 +72,7 @@ class HuodongPanelRenderer extends eui.ItemRenderer {
 	}
 
 	private onTouch() {
+		SoundManager.instance().buttonSound();
 		var self = this;
 		switch (this.data.name) {
 			case "sc_cj":

@@ -183,6 +183,7 @@ class NewStoryScene extends eui.Component {
 	private onLeft() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_left, function () {
+			SoundManager.instance().buttonSound("flip");
 			self.curPageIndex--;
 			self.onMove();
 		});
@@ -191,6 +192,7 @@ class NewStoryScene extends eui.Component {
 	private onRight() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_right, function () {
+			SoundManager.instance().buttonSound("flip");
 			self.curPageIndex++;
 			self.onMove();
 		});
@@ -198,6 +200,7 @@ class NewStoryScene extends eui.Component {
 
 	private onBack() {
 		DisplayMgr.buttonScale(this.btn_back, function () {
+			SoundManager.instance().buttonSound();
 			SceneMgr.gotoNewStorySelectScene();
 		});
 	}
@@ -338,6 +341,7 @@ class StoryChapterCompRenderer extends eui.ItemRenderer {
 	private onStart() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_start, function () {
+			SoundManager.instance().buttonSound();
 			// if (TaskData.userData()[self.data["unlock"]] == null) {
 			// 	//未解锁
 			// 	Prompt.showPrompt(self.stage, "亲!本次章节未解锁");
@@ -367,6 +371,7 @@ class StoryChapterCompRenderer extends eui.ItemRenderer {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_unlock, function() {
 			// SceneMgr.gotoTaskScene(parseInt(self.data["phase"]), parseInt(self.data["unlock"]));
+			SoundManager.instance().buttonSound();
 			SceneMgr.gotoTaskScene(PlayerData.phase, PlayerData.mission);
 		});
 	}

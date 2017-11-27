@@ -185,6 +185,7 @@ class ClothesListComp extends eui.Component {
     private onTakeoff() {
         var self = this;
         DisplayMgr.buttonScale(this.btn_takeoff, function () {
+            SoundManager.instance().buttonSound();
             self.model.takeOffAllClothes();
             ClothesData.ondressCache = { "1": 10000, "2": 20000, "3": 30000, "4": 40000, "5": 50000, "6": 60000, "8": 80000, "9": 90000, "10": 100000 };
             ClothesData.ornamentsCache = {
@@ -201,6 +202,7 @@ class ClothesListComp extends eui.Component {
     }
 
     private onFilter() {
+        SoundManager.instance().buttonSound();
         if (!this.isFilter) {
             this.isFilter = true;
             this.tipComp.filterImage.visible = false;
@@ -450,6 +452,7 @@ class ClothesListComp extends eui.Component {
     private goBack() {
         var self = this;
         DisplayMgr.buttonScale(this.back_img, function () {
+            SoundManager.instance().buttonSound();
             ClothesData.setClothesCache(ShowData.dresses, ShowData.ornaments);
             if (TaskData.gameTask) {
                 NetLoading.showLoading();
@@ -514,7 +517,7 @@ class ClothesListComp extends eui.Component {
 
             //     return;
             // }
-
+            SoundManager.instance().buttonSound();
             NetLoading.showLoading();
             var request: egret.URLRequest;
             if (true === self.isTaskIn && self.taskID == "pk") {
@@ -566,7 +569,7 @@ class ClothesListComp extends eui.Component {
 
             //     return;
             // }
-
+            SoundManager.instance().buttonSound();
             NetLoading.showLoading();
             var request: egret.URLRequest;
             if (true === self.isTaskIn && self.taskID == "pk") {
@@ -630,6 +633,7 @@ class ClothesListComp extends eui.Component {
     private onShop() {
         var self = this;
         DisplayMgr.buttonScale(this.btn_shop, function () {
+            SoundManager.instance().buttonSound();
             if (self.isTaskIn) {
                 SceneMgr.gotoShopScene(self.taskID, self.tag1, self.tag2, self.tag3);
             } else {

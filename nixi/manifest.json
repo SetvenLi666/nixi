@@ -72,6 +72,7 @@
 		"bin-debug/manager/HttpMgr.js",
 		"bin-debug/manager/HttpProtocolMgr.js",
 		"bin-debug/manager/SceneMgr.js",
+		"bin-debug/manager/SoundManager.js",
 		"bin-debug/manager/WebSocketMagr.js",
 		"bin-debug/newGuide/NewGuidePanel.js",
 		"bin-debug/newGuide/PkGuidePanel.js",

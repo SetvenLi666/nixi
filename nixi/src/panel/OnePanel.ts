@@ -71,6 +71,7 @@ class OnePanel extends eui.Component {
 	private onBtnRev() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_rev, function () {
+			SoundManager.instance().buttonSound();
 			if (WanbaData.packageData.indexOf("libao_1") != -1) {
 				Prompt.showPrompt(self.stage, "已购买该礼包，请勿重复购买!");
 				return;

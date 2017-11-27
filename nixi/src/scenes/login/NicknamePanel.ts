@@ -25,6 +25,7 @@ class NicknamePanel extends eui.Component implements eui.UIComponent {
 		var self = this;
 		var btn: egret.DisplayObject = evt.target;
 		DisplayMgr.buttonScale(btn, function () {
+			SoundManager.instance().buttonSound();
 			for (var i = 0; i < self.nameInput.text.length; i++) {
 				var s = self.nameInput.text[i]
 				if (/[a-zA-Z0-9]/g.test(s) || /^[\u4e00-\u9fa5]+$/i.test(s)) {

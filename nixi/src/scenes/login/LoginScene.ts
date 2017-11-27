@@ -16,6 +16,8 @@ class LoginScene extends eui.Component {
 
 	// Event && Callback -----------------------------------
 	private whenEnter() {
+		SoundManager.instance().startBgSound("load");
+		
 		this.removeEventListener(egret.Event.ADDED_TO_STAGE, this.whenEnter, this);
 		this.group.width = Math.min(DisplayMgr.stageW, 852);
 		this.version.text = ConstData.Conf.version;
@@ -46,12 +48,16 @@ class LoginScene extends eui.Component {
 		this.login.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onLogin, this);
 		egret.Tween.removeAllTweens();
 		RES.destroyRes("login");
+		SoundManager.instance().destroyStartSound();
 	}
 
 	private onLogin(evt: egret.TouchEvent) {
 		var self = this;
 		var btn: egret.DisplayObject = evt.target;
 		DisplayMgr.buttonScale(btn, function () {
+			//按钮声音
+			SoundManager.instance().buttonSound();
+
 			if (LoginData.uuid == "") {
 				Prompt.showPrompt(self.stage, "参数错误");
 			} else {
@@ -133,17 +139,17 @@ class LoginScene extends eui.Component {
 	private afterSaveNickname_904() {
 		TDGA.Account.setAccountName(ShowData.nickname);
 
-		if(window["reportRegister"]) {
+		if (window["reportRegister"]) {
 			window["reportRegister"]();//玩吧数据上报（注册）
 		}
-		if(window["reportLogin"]) {
+		if (window["reportLogin"]) {
 			window["reportLogin"]();//(登陆)
 		}
 
 		//是否为被邀请玩家
 		var reg = new RegExp("(^|&)" + "isid" + "=([^&]*)(&|$)");
 		var r = window.location.search.substr(1).match(reg);
-		if(r != null) {
+		if (r != null) {
 			var sid = decodeURI(r[2]);
 			var request = HttpProtocolMgr.post_inviter_sid_166(sid);
 			HttpMgr.postRequest(request);
