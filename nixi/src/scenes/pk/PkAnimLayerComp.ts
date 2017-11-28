@@ -106,6 +106,7 @@ class PkAnimLayerComp extends eui.Component {
 	private onBtnReceive() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_receive, function () {
+			SoundManager.instance().buttonSound();
 			Prompt.showPrompt(self.stage, "领取成功~");
 			egret.setTimeout(function () {
 				// SceneMgr.gotoPK();

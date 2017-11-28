@@ -109,6 +109,7 @@ class NewTaskDialogComp extends eui.Component {
 	}
 
 	private onStart() {
+		SoundManager.instance().buttonSound();
 		if (this.titleGroup.parent) {
 			this.titleGroup.parent.removeChild(this.titleGroup);
 		}
@@ -306,6 +307,7 @@ class NewTaskDialogComp extends eui.Component {
 	private onButtonFast() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_fast, function () {
+			SoundManager.instance().buttonSound();
 			if (self.isFastPlay) {
 				self.isFastPlay = false;
 				self.isAutoPlay = false;
@@ -325,6 +327,7 @@ class NewTaskDialogComp extends eui.Component {
 		//开始任务
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_hz, function () {
+			SoundManager.instance().buttonSound();
 			if (PlayerData.energy < 6) {
 				Prompt.showPrompt(self.stage, "体力不足");
 				return;

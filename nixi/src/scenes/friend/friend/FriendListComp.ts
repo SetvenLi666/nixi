@@ -74,13 +74,14 @@ class FriendListComp extends eui.Component {
 	}
 
 	private onStranger() {
+		SoundManager.instance().buttonSound();
 		NetLoading.showLoading();
 		var request: egret.URLRequest = HttpProtocolMgr.strangerListData_802();
 		HttpMgr.postRequest(request);
 	}
 
 	private onSelected(evt: eui.ItemTapEvent) {
-		egret.log("on selected !");
+		SoundManager.instance().buttonSound();
 		if (this.curSelected != evt.itemIndex) {
 			this.curSelected = evt.itemIndex;
 			this.model.x = -this.group.width;
@@ -124,12 +125,13 @@ class FriendListComp extends eui.Component {
 
 	private goBack() {
 		DisplayMgr.buttonScale(this.btn_back, function () {
+			SoundManager.instance().buttonSound();
 			SceneMgr.gotoMainFriend();
 		});
 	}
 
 	private onSelf() {
-		egret.log("on self comp");
+		SoundManager.instance().buttonSound();
 		if (this.list.selectedIndex == -1) {
 
 		} else {
@@ -145,6 +147,7 @@ class FriendListComp extends eui.Component {
 	}
 
 	private onGet() {
+		SoundManager.instance().buttonSound();
 		if(SocialData.energy_could_take <= 0) {
 			Prompt.showPrompt(this.stage, "暂无可领取体力!");
 		}else {
@@ -220,7 +223,7 @@ class FriendListRenderer extends eui.ItemRenderer {
 	}
 
 	private onChange(evt: eui.UIEvent) {
-		egret.log(this.data);
+		SoundManager.instance().buttonSound();
 		if (LoginData.sid == this.data) {
 			Prompt.showPrompt(egret.MainContext.instance.stage, "不能给自己送体力");
 		} else {

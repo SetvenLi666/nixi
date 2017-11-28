@@ -63,6 +63,7 @@ class NotePanelComp extends eui.Component {
 
 
 	private onSend() {
+		SoundManager.instance().buttonSound();
 		if(this.textDisplay.text == "") {
 			Prompt.showPrompt(this.stage, "发送内容不能为空!");
 		}else {

@@ -36,6 +36,7 @@ class MessageUILayer extends eui.Component {
 
 	private goBack() {
 		DisplayMgr.buttonScale(this.btn_back, function () {
+			SoundManager.instance().buttonSound();
 			SceneMgr.gotoMainFriend();
 		});
 	}

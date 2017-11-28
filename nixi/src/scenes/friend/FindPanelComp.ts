@@ -39,13 +39,14 @@ class FindPanelComp extends eui.Component {
 	}
 
 	private onFind() {
+		SoundManager.instance().buttonSound();
 		NetLoading.showLoading();
 		var request: egret.URLRequest = HttpProtocolMgr.search_other_801(this.nickname.text);
 		HttpMgr.postRequest(request);
 	}
 
 	private onBack() {
-		egret.log("on back");
+		SoundManager.instance().buttonSound();
 		this.closePanel();
 	}
 

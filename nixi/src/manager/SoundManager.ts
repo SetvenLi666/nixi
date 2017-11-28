@@ -57,6 +57,7 @@ class SoundManager {
 	private _storySoundBg: egret.Sound = null;
 	private _soundChannel: egret.SoundChannel = null;
 	private _curBgSoundType: string = "";
+	private _timeOutkey: number = null;
 	public startBgSound(type: string) {
 		var self = this;
 		var delay: number = 5000;
@@ -92,7 +93,7 @@ class SoundManager {
 			}, this);
 			loader.load(new egret.URLRequest(url));
 		} else {
-			egret.setTimeout(function () {
+			this._timeOutkey = egret.setTimeout(function () {
 				this._soundChannel = sound.play(0, 1);
 				this._soundChannel.addEventListener(egret.Event.SOUND_COMPLETE, self.bgSoundComplete, self);
 			}, this, delay);
@@ -100,6 +101,9 @@ class SoundManager {
 	}
 
 	private bgSoundComplete() {
+		if(this._timeOutkey) {
+			egret.clearTimeout(this._timeOutkey);
+		}
 		this.startBgSound(this._curBgSoundType);
 	}
 

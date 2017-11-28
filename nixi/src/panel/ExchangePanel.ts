@@ -57,10 +57,12 @@ class ExchangePanel extends eui.Component {
 	}
 
 	private onCancel() {
+		SoundManager.instance().buttonSound();
 		this.closePanel();
 	}
 
 	private onConfirm() {
+		SoundManager.instance().buttonSound();
 		if (this.type == "coin") {
 			if (PurchaseData.coin_times >= PurchaseData.coin_limit) {
 				Prompt.showPrompt(this.stage, "今日金币兑换次数已达上限");

@@ -138,12 +138,14 @@ class SubtitlePanel extends eui.Component implements  eui.UIComponent {
 	}
 
 	private onFastPlay(evt: egret.TouchEvent) {
+		SoundManager.instance().buttonSound();
 		var btn: eui.CheckBox = evt.target;
 		this.dispatchEvent(new egret.Event("ON_FAST_PLAY", true, true, btn.selected));
 		this.cbAutoPlay.selected = false;
 	}
 
 	private onAutoPlay(evt: egret.TouchEvent) {
+		SoundManager.instance().buttonSound();
 		var btn: eui.CheckBox = evt.target;
 		this.dispatchEvent(new egret.Event("ON_AUTO_PLAY", true, true, btn.selected));
 		this.cbFastPlay.selected = false;
@@ -152,6 +154,7 @@ class SubtitlePanel extends eui.Component implements  eui.UIComponent {
 	private onBtnLog(evt: Event) {
 		var self = this;
 		DisplayMgr.buttonScale(evt.target, function () {
+			SoundManager.instance().buttonSound();
 			self.dispatchEvent(new egret.Event("ON_HISTORY", true));
 		})
 	}

@@ -137,6 +137,7 @@ class ShouchongPanel extends eui.Component {
 		var self = this;
 		var target = evt.target;
 		DisplayMgr.buttonScale(evt.target, function () {
+			SoundManager.instance().buttonSound();
 			var data: {} = null;
 			switch (target) {
 				case self.btn_icon1:

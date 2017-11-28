@@ -231,6 +231,7 @@ class ClothesListComp extends eui.Component {
 
     private onSelected(e: eui.ItemTapEvent) {
         console.log(e.item.id);
+        SoundManager.instance().buttonSound();
         var data: {} = {};
 
         var part = Math.floor(parseInt(e.item.id) / 10000).toString();
@@ -362,6 +363,7 @@ class ClothesListComp extends eui.Component {
     }
 
     private touchHandle(evt: egret.TouchEvent) {
+        SoundManager.instance().buttonSound();
         this.icon_def.currentState = "up";
         this.icon_def.enabled = true;
         var target: eui.Button = evt.target;

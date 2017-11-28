@@ -24,14 +24,6 @@ class FriendUILayer extends eui.Component {
 		this.removeEventListener(egret.Event.ADDED_TO_STAGE, this.addStage, this);
 		this.group.width = Math.min(DisplayMgr.stageW, 852);
 
-		// var btnWidth = this.btn_friend.width;
-		// var padding = (this.group.width - btnWidth * 5) / 6;
-		// this.btn_message.x = padding;
-		// this.btn_note.x = btnWidth + padding * 2;
-		// this.btn_friend.x = btnWidth * 2 + padding * 3;
-		// this.btn_stranger.x = btnWidth * 3 + padding * 4;
-		// this.btn_rank.x = btnWidth * 4 + padding * 5;
-
 		if(NewsData.paper > 0) {
 			this.tip_note.visible = true;
 			var tw_note = egret.Tween.get(this.tip_note, {loop: true});
@@ -89,32 +81,36 @@ class FriendUILayer extends eui.Component {
 	}
 
 	private onMessage() {
-		NetLoading.showLoading();
 		DisplayMgr.buttonScale(this.btn_message, function () {
+		SoundManager.instance().buttonSound();
+			NetLoading.showLoading();
 			var request: egret.URLRequest = HttpProtocolMgr.all_messages_804();
 			HttpMgr.postRequest(request);
 		});
 	}
 
 	private onNote() {
-		NetLoading.showLoading();
 		DisplayMgr.buttonScale(this.btn_note, function () {
+			SoundManager.instance().buttonSound();
+			NetLoading.showLoading();
 			var request: egret.URLRequest = HttpProtocolMgr.all_paper_808();
 			HttpMgr.postRequest(request);
 		});
 	}
 
 	private onFriend() {
-		NetLoading.showLoading();
 		DisplayMgr.buttonScale(this.btn_friend, function () {
+			SoundManager.instance().buttonSound();
+			NetLoading.showLoading();
 			var request: egret.URLRequest = HttpProtocolMgr.friendListData_806();
 			HttpMgr.postRequest(request);
 		});
 	}
 
 	private onStranger() {
-		NetLoading.showLoading();
 		DisplayMgr.buttonScale(this.btn_stranger, function () {
+			SoundManager.instance().buttonSound();
+			NetLoading.showLoading();
 			var request: egret.URLRequest = HttpProtocolMgr.strangerListData_802();
 			HttpMgr.postRequest(request);
 		});
@@ -122,6 +118,7 @@ class FriendUILayer extends eui.Component {
 
 	private onRank() {
 		DisplayMgr.buttonScale(this.btn_rank, function () {
+			SoundManager.instance().buttonSound();
 			NetLoading.showLoading();
 			var request: egret.URLRequest = HttpProtocolMgr.competition_info_820(!CompetitionData.hasInitRankInfo());
 			HttpMgr.postRequest(request);
@@ -135,6 +132,7 @@ class FriendUILayer extends eui.Component {
 
 	private goBack() {
 		DisplayMgr.buttonScale(this.btn_back, function () {
+			SoundManager.instance().buttonSound();
 			SceneMgr.gotoMainScene();
 		});
 	}

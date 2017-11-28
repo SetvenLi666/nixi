@@ -50,6 +50,7 @@ class TaskUnlockPanel extends eui.Component {
 	private onBack() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_back, function () {
+			SoundManager.instance().buttonSound();
 			CustomEventMgr.dispatchEventWith("Check Scene", false);
 			self.closePanel();
 		});
@@ -57,6 +58,7 @@ class TaskUnlockPanel extends eui.Component {
 
 	private onGo() {
 		DisplayMgr.buttonScale(this.btn_go, function () {
+			SoundManager.instance().buttonSound();
 			SceneMgr.gotoNewStoryScene();
 		});
 	}

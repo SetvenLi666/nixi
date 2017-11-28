@@ -79,6 +79,7 @@ class ScPanel extends eui.Component {
 	private onCz() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_cz, function () {
+			SoundManager.instance().buttonSound();
 			NetLoading.showLoading();
 			var request = HttpProtocolMgr.all_products_100();
 			HttpMgr.postRequest(request);
@@ -89,6 +90,7 @@ class ScPanel extends eui.Component {
 	private onLq1() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_lq1, function () {
+			SoundManager.instance().buttonSound();
 			if (ShareData.isFirstPay && ShareData.firstpay_lottery_times == 0) {
 				NetLoading.showLoading();
 				var request: egret.URLRequest = HttpProtocolMgr.take_daily_recharge_170("firstpay_lottery");
@@ -106,6 +108,7 @@ class ScPanel extends eui.Component {
 	private onLq2() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_lq2, function () {
+			SoundManager.instance().buttonSound();
 			if (ShareData.isDailyPay && ShareData.dailypay_normal_times == 0) {
 				NetLoading.showLoading();
 				var request: egret.URLRequest = HttpProtocolMgr.take_daily_recharge_170("dailypay_normal");
