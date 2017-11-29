@@ -2,10 +2,11 @@
 <e:Skin class="CommonRewardPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
 		<e:Group id="rewardGroup" width="462" height="441" horizontalCenter="0" anchorOffsetX="231" anchorOffsetY="220.5" y="570">
-		<e:Image horizontalCenter="0" verticalCenter="0" source="panel_ui_json.ac_reward_bg"/>
+		<e:Image id="bg" horizontalCenter="0" verticalCenter="0" source="panel_ui_json.ac_reward_bg"/>
 		<e:Image y="140" horizontalCenter="0" source="panel_ui_json.ac_icon_bg"/>
 		<e:Image id="icon" horizontalCenter="0" y="140" source="panel_ui_json.ac_reward_coin"/>
 		<e:Label id="count" text="999" y="270.8" size="20" x="265" textColor="0x494646" bold="true"/>
+			<e:Image id="flag" source="reward_pop_flag_1_png" anchorOffsetX="77" anchorOffsetY="60" x="139" y="138" alpha="0" visible="false"/>
 		</e:Group>
 	</e:Group>
 </e:Skin>

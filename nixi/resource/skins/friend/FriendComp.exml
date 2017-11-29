@@ -10,6 +10,11 @@
 			</e:Scroller>
 			<ns1:SelfPanelComp id="selfComp" y="894.0000000000001" skinName="SelfPanelSkin" scaleX="1" scaleY="1" horizontalCenter="2"/>
 		</e:Group>
+		<e:Group id="revGroup" width="62" height="69" y="721" left="30">
+			<e:Image source="frd_btn_revEng_png" y="0" scaleX="1" scaleY="1" x="0"/>
+			<e:Image source="frd_btn_rev_text_bg_png" y="27" horizontalCenter="0"/>
+			<e:Label id="revText" text="0/30" y="25" size="20" horizontalCenter="0" textAlign="center" textColor="0x000000" bold="true" strokeColor="0xffffff"/>
+		</e:Group>
 		<e:Image id="btn_note" y="831" left="30" source="frd_btn_not_png"/>
 		<e:Image id="btn_back" y="1039" left="-6" source="common_back_png"/>
 		<e:Label id="tip" text="还没有好友\n赶紧去陌生人里添加好友吧" y="361" size="24" textColor="0x000000" width="184" textAlign="center" right="13" visible="false"/>

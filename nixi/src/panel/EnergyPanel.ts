@@ -17,16 +17,13 @@ class EnergyPanel extends eui.Component {
 
 		this.group.width = Math.min(DisplayMgr.stageW, 852);
 		this.group.addEventListener(egret.TouchEvent.TOUCH_TAP, this.touchTap, this);
-		this.btn_energy.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onEnergyBtn, this);
-
-		CustomEventMgr.addEventListener("301", this.result_of_301, this);
+		this.btn_energy.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onEnergyBtn, this);		
 	}
 
 	private onExit() {
 		this.removeEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit, this);
 		this.group.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.touchTap, this);
 		this.btn_energy.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onEnergyBtn, this);
-		CustomEventMgr.removeEventListener("301", this.result_of_301, this);
 	}
 
 	private onEnergyBtn() {
@@ -50,11 +47,5 @@ class EnergyPanel extends eui.Component {
 		if (this.parent) {
 			this.parent.removeChild(this);
 		}
-	}
-
-	private result_of_301(evt: egret.Event) {
-		NetLoading.removeLoading();
-		CustomEventMgr.dispatchEventWith("Update Player Info", false);
-		Prompt.showPrompt(this.stage, "成功领取" + evt.data + "体力");
 	}
 }

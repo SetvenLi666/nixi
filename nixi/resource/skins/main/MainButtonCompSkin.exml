@@ -8,7 +8,7 @@
 			<e:Group id="niudanGroup" width="183" height="175" y="145" anchorOffsetY="0" left="-15">
 				<e:Image id="niudan_ac" anchorOffsetX="91.5" anchorOffsetY="104.5" x="91.5" y="104.5" source="newmain_ui_json.main_niudan_pkq"/>
 				<e:Image y="85" horizontalCenter="0" source="newmain_ui_json.main_niudan_box"/>
-				<e:Image x="64" y="146" source="newmain_ui_json.main_niudan_text"/>
+				<e:Image y="146" source="newmain_ui_json.main_niudan_text" horizontalCenter="0"/>
 			</e:Group>
 			<e:Group id="scGroup" width="110" height="110" y="195" right="7">
 				<e:Image id="sc_icon" y="24.33" horizontalCenter="0" source="newmain_ui_json.main_ui_cz_bg"/>
@@ -40,6 +40,7 @@
 			<e:Group id="hdGroup" width="110" height="110" y="430" right="7">
 				<e:Image source="newmain_ui_json.main_huodong_icon" horizontalCenter="0" verticalCenter="0"/>
 				<e:Image source="newmain_ui_json.main_huodong_text" y="75" horizontalCenter="0"/>
+				<e:Image id="hd_tip" source="newmain_ui_json.main_mail_tip" x="83" y="23" anchorOffsetX="18.5" anchorOffsetY="19" visible="false"/>
 			</e:Group>
 			<e:Group id="yqGroup" width="110" height="110" y="543" right="7">
 				<e:Image source="newmain_ui_json.main_invite_icon" horizontalCenter="0" verticalCenter="0"/>

@@ -9,6 +9,8 @@ class FriendListComp extends eui.Component {
 	// private shower: Shower;
 	private model: Model;
 	private curSelected: number;
+	private revGroup: eui.Group;
+	private revText: eui.Label;
 
 	public constructor() {
 		super();
@@ -26,8 +28,11 @@ class FriendListComp extends eui.Component {
 		this.selfComp.clothes_count.text = "" + ShowData.collected;
 		this.selfComp.tili_label.text = "收到体力: " + SocialData.energy_could_take + "/30";
 
+		this.revText.text = SocialData.energy_could_take + "/30";
+
 		this.btn_back.addEventListener(egret.TouchEvent.TOUCH_TAP, this.goBack, this);
 		this.btn_note.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onNote, this);
+		this.revGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onGet, this);
 		this.selfComp.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onSelf, this);
 		this.selfComp.btn_get.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onGet, this);
 		this.btn_stranger.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onStranger, this);
@@ -68,6 +73,7 @@ class FriendListComp extends eui.Component {
 		this.list.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this.onSelected, this);
 		this.btn_back.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.goBack, this);
 		this.btn_note.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onNote, this);
+		this.revGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onGet, this);
 		this.selfComp.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onSelf, this);
 		this.selfComp.btn_get.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onGet, this);
 		this.btn_stranger.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onStranger, this);
@@ -166,6 +172,7 @@ class FriendListComp extends eui.Component {
 
 	private result_of_807() {
 		console.log("get tili success");
+		this.revText.text = SocialData.energy_could_take + "/30";
 		this.selfComp.tili_label.text = "收到体力: " + SocialData.energy_could_take + "/30";
 		CustomEventMgr.dispatchEventWith("Update Player Info", false);
 		NetLoading.removeLoading();

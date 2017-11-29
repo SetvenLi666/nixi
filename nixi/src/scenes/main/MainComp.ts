@@ -30,6 +30,8 @@ class MainComp extends eui.Component {
 	public td_ac: eui.Image;
 	public dt_tip: eui.Image;
 
+	public hd_tip: eui.Image;
+
 	public touchRect: eui.Rect;
 	private isShowUI: boolean = true;
 
@@ -86,6 +88,7 @@ class MainComp extends eui.Component {
 		CustomEventMgr.addEventListener("160", this.result_of_160, this);
 		CustomEventMgr.addEventListener("312", this.result_of_312, this);
 		CustomEventMgr.addEventListener("302", this.result_of_302, this);
+		CustomEventMgr.addEventListener("301", this.result_of_301, this);
 
 		CustomEventMgr.addEventListener("500", this.afterFetchStoryData_500, this);
 		CustomEventMgr.addEventListener("600", this.afterFetchMissionData_600, this);
@@ -179,6 +182,7 @@ class MainComp extends eui.Component {
 		CustomEventMgr.removeEventListener("160", this.result_of_160, this);
 		CustomEventMgr.removeEventListener("312", this.result_of_312, this);
 		CustomEventMgr.removeEventListener("302", this.result_of_302, this);
+		CustomEventMgr.removeEventListener("301", this.result_of_301, this);
 
 		CustomEventMgr.removeEventListener("500", this.afterFetchStoryData_500, this);
 		CustomEventMgr.removeEventListener("600", this.afterFetchMissionData_600, this);
@@ -876,6 +880,26 @@ class MainComp extends eui.Component {
 		} else {
 			this.mailTip.visible = false;
 			egret.Tween.removeTweens(this.mailTip);
+		}
+
+		if(NewsData.energy1 == 1 || NewsData.energy2 == 1) {
+			this.hd_tip.visible = true;
+			var tw_hd_tip = egret.Tween.get(this.hd_tip, { loop: true });
+			tw_hd_tip.to({ scaleX: 1.05, scaleY: 1.05 }, 300)
+				.to({ scaleX: 1, scaleY: 1 }, 300);
+		}else {
+			this.hd_tip.visible = false;
+			egret.Tween.removeTweens(this.hd_tip);
+		}
+	}
+
+	private result_of_301(evt: egret.Event) {
+		NetLoading.removeLoading();
+		CustomEventMgr.dispatchEventWith("Update Player Info", false);
+		Prompt.showPrompt(this.stage, "成功领取" + evt.data + "体力");
+		if(this.hd_tip.visible) {
+			this.hd_tip.visible = false;
+			egret.Tween.removeTweens(this.hd_tip);
 		}
 	}
 

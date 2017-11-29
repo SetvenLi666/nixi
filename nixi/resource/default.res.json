@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "circle_png,login_bg_png,login_logo_png,login_start_png,login_shazi_png,login_star_png,nickname_input_bg_png,nickname_box_png,nickname_btn_ok_png,loadign_star_png",
+			"keys": "circle_png,login_bg_png,login_logo_png,login_start_png,login_shazi_png,login_star_png,nickname_input_bg_png,nickname_box_png,nickname_btn_ok_png,loadign_star_png,loading_bg_png",
 			"name": "login"
 		},
 		{
@@ -193,8 +193,8 @@
 			"name": "new_rank"
 		},
 		{
-			"name": "preload",
-			"keys": "social_chat_send_vip_png,chat_common_bg_png,gashapon_flag_png,gashapon_text_1_png,gashapon_text_2_png"
+			"keys": "social_chat_send_vip_png,chat_common_bg_png,gashapon_flag_png,gashapon_text_1_png,gashapon_text_2_png,reward_pop_bg_1_png,reward_pop_bg_2_png,reward_pop_bg_3_png,reward_pop_flag_1_png,reward_pop_flag_2_png,reward_pop_flag_3_png,frd_btn_revEng_png,frd_btn_rev_text_bg_png,loading_bg_png",
+			"name": "preload"
 		}
 	],
 	"resources": [
@@ -17827,29 +17827,74 @@
 			"name": "invite_kuang_png"
 		},
 		{
-			"name": "social_chat_send_vip_png",
+			"url": "game/social/social_chat_send_vip.png",
 			"type": "image",
-			"url": "game/social/social_chat_send_vip.png"
+			"name": "social_chat_send_vip_png"
 		},
 		{
-			"name": "chat_common_bg_png",
+			"url": "game/panel/chat/chat_common_bg.png",
 			"type": "image",
-			"url": "game/panel/chat/chat_common_bg.png"
+			"name": "chat_common_bg_png"
 		},
 		{
-			"name": "gashapon_flag_png",
+			"url": "game/panel/gashapon/new/gashapon_flag.png",
 			"type": "image",
-			"url": "game/panel/gashapon/new/gashapon_flag.png"
+			"name": "gashapon_flag_png"
 		},
 		{
-			"name": "gashapon_text_1_png",
+			"url": "game/panel/gashapon/new/gashapon_text_1.png",
 			"type": "image",
-			"url": "game/panel/gashapon/new/gashapon_text_1.png"
+			"name": "gashapon_text_1_png"
 		},
 		{
-			"name": "gashapon_text_2_png",
+			"url": "game/panel/gashapon/new/gashapon_text_2.png",
 			"type": "image",
-			"url": "game/panel/gashapon/new/gashapon_text_2.png"
+			"name": "gashapon_text_2_png"
+		},
+		{
+			"url": "game/main/newMain/reward_pop_bg_1.png",
+			"type": "image",
+			"name": "reward_pop_bg_1_png"
+		},
+		{
+			"url": "game/main/newMain/reward_pop_bg_2.png",
+			"type": "image",
+			"name": "reward_pop_bg_2_png"
+		},
+		{
+			"url": "game/main/newMain/reward_pop_bg_3.png",
+			"type": "image",
+			"name": "reward_pop_bg_3_png"
+		},
+		{
+			"url": "game/main/newMain/reward_pop_flag_1.png",
+			"type": "image",
+			"name": "reward_pop_flag_1_png"
+		},
+		{
+			"url": "game/main/newMain/reward_pop_flag_2.png",
+			"type": "image",
+			"name": "reward_pop_flag_2_png"
+		},
+		{
+			"url": "game/main/newMain/reward_pop_flag_3.png",
+			"type": "image",
+			"name": "reward_pop_flag_3_png"
+		},
+		{
+			"url": "game/social/frd/frd_btn_revEng.png",
+			"type": "image",
+			"name": "frd_btn_revEng_png"
+		},
+		{
+			"url": "game/social/frd/frd_btn_rev_text_bg.png",
+			"type": "image",
+			"name": "frd_btn_rev_text_bg_png"
+		},
+		{
+			"url": "game/login/loading_bg.png",
+			"type": "image",
+			"name": "loading_bg_png"
 		}
 	]
 }
