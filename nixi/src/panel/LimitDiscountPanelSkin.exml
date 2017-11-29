@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="LimitDiscountPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Group id="group2" width="462" height="442" horizontalCenter="0" verticalCenter="0">
+			<e:Image source="tl_panel_bg_png" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image source="tl_title_6_png" y="77" horizontalCenter="0"/>
+			<e:Group width="150" height="150" x="7" y="167">
+				<e:Image source="panel_ui_json.ac_icon_bg" scaleX="0.9000000000000001" scaleY="0.9000000000000001" horizontalCenter="0" verticalCenter="0"/>
+				<e:Image scaleX="0.8" scaleY="0.8" horizontalCenter="0" verticalCenter="0" source="panel_ui_json.ac_reward_diam"/>
+				<e:Image id="diamNumImg" source="tl_num_120_png" left="70" bottom="10"/>
+			</e:Group>
+			<e:Group width="150" height="150" x="156" y="167">
+				<e:Image source="panel_ui_json.ac_icon_bg" scaleX="0.9000000000000001" scaleY="0.9000000000000001" horizontalCenter="0" verticalCenter="0"/>
+				<e:Image source="panel_ui_json.ac_reward_coin" scaleX="0.8" scaleY="0.8" horizontalCenter="0" verticalCenter="0"/>
+				<e:Image id="coinNumImg" source="tl_num_10000_png" left="78" bottom="10"/>
+			</e:Group>
+			<e:Group width="150" height="150" x="304" y="167">
+				<e:Image source="panel_ui_json.ac_icon_bg" scaleX="0.9000000000000001" scaleY="0.9000000000000001" horizontalCenter="0" verticalCenter="0"/>
+				<e:Image scaleX="0.8" scaleY="0.8" horizontalCenter="0" verticalCenter="0" source="panel_ui_json.ac_reward_tili"/>
+				<e:Image id="energyNumImg" source="tl_num_100_png" left="70" bottom="10"/>
+			</e:Group>
+			<e:Image id="btnBuy" source="tl_btn_buy_png" y="345" horizontalCenter="0.5"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

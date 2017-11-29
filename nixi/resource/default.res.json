@@ -193,7 +193,7 @@
 			"name": "new_rank"
 		},
 		{
-			"keys": "social_chat_send_vip_png,chat_common_bg_png,gashapon_flag_png,gashapon_text_1_png,gashapon_text_2_png,reward_pop_bg_1_png,reward_pop_bg_2_png,reward_pop_bg_3_png,reward_pop_flag_1_png,reward_pop_flag_2_png,reward_pop_flag_3_png,frd_btn_revEng_png,frd_btn_rev_text_bg_png,loading_bg_png",
+			"keys": "social_chat_send_vip_png,chat_common_bg_png,gashapon_flag_png,gashapon_text_1_png,gashapon_text_2_png,reward_pop_bg_1_png,reward_pop_bg_2_png,reward_pop_bg_3_png,reward_pop_flag_1_png,reward_pop_flag_2_png,reward_pop_flag_3_png,frd_btn_revEng_png,frd_btn_rev_text_bg_png,loading_bg_png,tl_num_100_png,tl_num_120_png,tl_num_300_png,tl_num_600_png,tl_num_10000_png,tl_num_30000_png,tl_panel_bg_png,tl_title_6_png,tl_title_30_png,tl_btn_buy_png",
 			"name": "preload"
 		}
 	],
@@ -17738,7 +17738,7 @@
 			"url": "game/main/newMain/newmain_ui.json",
 			"type": "sheet",
 			"name": "newmain_ui_json",
-			"subkeys": "main_ac_bg,main_ac_black,main_ac_kuang,main_ac_label,main_ac_shouchong,main_ac_star,main_bg,main_chat_bg,main_chat_blue,main_chat_inputbg,main_chat_red,main_chat_send,main_chat_yellow,main_coin_1,main_coin_30,main_coin_6,main_coin_text_1,main_coin_text_30,main_coin_text_6,main_daily_icon,main_dailytarget_ac,main_dailytarget_icon,main_dailytarget_text,main_dialy_text,main_gashapon,main_go,main_huodong_icon,main_huodong_text,main_invite_icon,main_invite_text,main_jj_1,main_jj_2,main_jj_3,main_jj_bg,main_lab_pk,main_lab_shop,main_lab_social,main_lab_xintu,main_lab_yule,main_leiji_icon,main_leiji_text,main_libao_1,main_libao_30,main_libao_6,main_mail,main_mail_text,main_mail_tip,main_niudan_box,main_niudan_pkq,main_niudan_text,main_normal_ac,main_sd_1,main_sd_2,main_sd_3,main_sd_bg,main_selected_ac,main_share_icon,main_share_text,main_shoucang_icon,main_shoucang_text,main_shouchong_text,main_sj_1,main_sj_2,main_sj_3,main_sj_bg,main_talk_bg,main_ui_cz_bg,main_ui_cz_text,main_xt_1,main_xt_2,main_xt_3,main_xt_bg,main_yule_1,main_yule_2,main_yule_3,main_yule_bg"
+			"subkeys": "main_ac_bg,main_ac_black,main_ac_kuang,main_ac_label,main_ac_shouchong,main_ac_star,main_bg,main_chat_bg,main_chat_blue,main_chat_inputbg,main_chat_red,main_chat_send,main_chat_yellow,main_coin_1,main_coin_30,main_coin_6,main_coin_text_1,main_coin_text_30,main_coin_text_6,main_daily_icon,main_dailytarget_ac,main_dailytarget_icon,main_dailytarget_text,main_dialy_text,main_gashapon,main_go,main_huodong_icon,main_huodong_text,main_invite_icon,main_invite_text,main_jj_1,main_jj_2,main_jj_3,main_jj_bg,main_lab_pk,main_lab_shop,main_lab_social,main_lab_xintu,main_lab_yule,main_leiji_icon,main_leiji_text,main_libao_1,main_libao_30,main_libao_6,main_mail,main_mail_text,main_mail_tip,main_niudan_box,main_niudan_pkq,main_niudan_text,main_normal_ac,main_sd_1,main_sd_2,main_sd_3,main_sd_bg,main_selected_ac,main_share_icon,main_share_text,main_shoucang_icon,main_shoucang_text,main_shouchong_text,main_sj_1,main_sj_2,main_sj_3,main_sj_bg,main_talk_bg,main_tl_icon,main_tl_text,main_ui_cz_bg,main_ui_cz_text,main_xt_1,main_xt_2,main_xt_3,main_xt_bg,main_yule_1,main_yule_2,main_yule_3,main_yule_bg"
 		},
 		{
 			"url": "game/main/ac/ac_res.json",
@@ -17895,6 +17895,56 @@
 			"url": "game/login/loading_bg.png",
 			"type": "image",
 			"name": "loading_bg_png"
+		},
+		{
+			"name": "tl_num_100_png",
+			"type": "image",
+			"url": "game/panel/tl/tl_num_100.png"
+		},
+		{
+			"name": "tl_num_120_png",
+			"type": "image",
+			"url": "game/panel/tl/tl_num_120.png"
+		},
+		{
+			"name": "tl_num_300_png",
+			"type": "image",
+			"url": "game/panel/tl/tl_num_300.png"
+		},
+		{
+			"name": "tl_num_600_png",
+			"type": "image",
+			"url": "game/panel/tl/tl_num_600.png"
+		},
+		{
+			"name": "tl_num_10000_png",
+			"type": "image",
+			"url": "game/panel/tl/tl_num_10000.png"
+		},
+		{
+			"name": "tl_num_30000_png",
+			"type": "image",
+			"url": "game/panel/tl/tl_num_30000.png"
+		},
+		{
+			"name": "tl_panel_bg_png",
+			"type": "image",
+			"url": "game/panel/tl/tl_panel_bg.png"
+		},
+		{
+			"name": "tl_title_6_png",
+			"type": "image",
+			"url": "game/panel/tl/tl_title_6.png"
+		},
+		{
+			"name": "tl_title_30_png",
+			"type": "image",
+			"url": "game/panel/tl/tl_title_30.png"
+		},
+		{
+			"name": "tl_btn_buy_png",
+			"type": "image",
+			"url": "game/panel/tl/tl_btn_buy.png"
 		}
 	]
 }
