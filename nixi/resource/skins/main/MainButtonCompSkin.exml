@@ -14,9 +14,13 @@
 				<e:Image id="sc_icon" y="24.33" horizontalCenter="0" source="newmain_ui_json.main_ui_cz_bg"/>
 				<e:Image id="sc_text" y="75.01" horizontalCenter="0" source="newmain_ui_json.main_ui_cz_text"/>
 			</e:Group>
-			<e:Group id="shareGroup" width="110" height="110" y="318" left="16" visible="false">
-				<e:Image horizontalCenter="0" verticalCenter="0" source="newmain_ui_json.main_share_icon"/>
-				<e:Image y="71" horizontalCenter="0" source="newmain_ui_json.main_share_text"/>
+			<e:Group id="tlGroup" width="110" height="110" y="312" left="135" visible="false">
+				<e:Image id="tl_ac" source="main_tl_ac_png" horizontalCenter="0" verticalCenter="0" anchorOffsetX="121.5" anchorOffsetY="116" touchEnabled="false"/>
+				<e:Group id="tlGroup2" width="110" height="110" horizontalCenter="0" verticalCenter="0">
+				<e:Image source="newmain_ui_json.main_tl_icon" horizontalCenter="0" verticalCenter="0" x="16" y="9" scaleX="1" scaleY="1"/>
+				<e:Image source="newmain_ui_json.main_tl_text" horizontalCenter="0" x="8" y="75" scaleX="1" scaleY="1"/>
+				<e:Label id="tlTime" text="10:00" y="52" size="22" textColor="0xff3378" textAlign="center" horizontalCenter="1"/>
+				</e:Group>
 			</e:Group>
 			<e:Group id="collGroup" width="110" height="110" y="318" left="14">
 				<e:Image horizontalCenter="0" verticalCenter="-6" source="newmain_ui_json.main_shoucang_icon"/>

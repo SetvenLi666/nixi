@@ -76,7 +76,7 @@ class InvitePanel extends eui.Component {
 			} else {
 				window["mqq"].ui.shareMessage({
 					title: '逆袭之星途闪耀',
-					desc: '逆袭成为超级巨星，霸道总裁、温柔暖男、绝色男神随你挑！',
+					desc: '“男神，你有什么技能？”……“有钱”',
 					share_type: 0,
 					share_url: window["OPEN_DATA"].shareurl + "&td_channelid=qqshare&isid=" + LoginData.sid,
 					image_url: window["OPEN_DATA"].appicon,

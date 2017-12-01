@@ -579,6 +579,10 @@ class HttpMgr {
             PurchaseData.update(content["purchase"]);
         }
 
+        else if (106 === cid) {
+            TLDiscountData.updateDiscountData(content);
+        }
+
         else if (104 === cid) {
             WanbaData.initPackageData(content);
         }

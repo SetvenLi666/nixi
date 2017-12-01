@@ -162,6 +162,7 @@
     "src/panel/InviteItemRendererSkin.exml",
     "src/panel/InvitePanelSkin.exml",
     "src/panel/IosPayTipPanelSkin.exml",
+    "src/panel/LimitDiscountPanelSkin.exml",
     "src/panel/NewSharePanelSkin.exml",
     "src/panel/ResetNamePanelSkin.exml",
     "src/panel/ScPanelSkin.exml",

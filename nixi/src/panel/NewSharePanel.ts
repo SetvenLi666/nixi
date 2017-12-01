@@ -41,34 +41,9 @@ class NewSharePanel extends eui.Component {
 	private btnCallback() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_share, function () {
-			// window["mqq"].ui.shareMessage({
-			// 	title: '逆袭之星途闪耀',
-			// 	desc: '逆袭成为超级巨星，霸道总裁、温柔暖男、绝色男神随你挑！',
-			// 	share_type: 0,
-			// 	share_url: window["OPEN_DATA"].shareurl + "&td_channelid=qqshare",
-			// 	image_url: window["OPEN_DATA"].appicon,
-			// 	back: true
-			// }, function (result) {
-			// 	if (result["retCode"] == 0) {
-			// 		window["mqq"].ui.showTips({
-			// 			text: "分享成功！"
-			// 		});
-			// 		if (ShareData.shareTimes == 0) {
-			// 			var request = HttpProtocolMgr.take_share_reward_175("do_share_reward");
-			// 			HttpMgr.postRequest(request);
-			// 		}
-			// 		ShareData.isShowNewShare = false;
-			// 		CustomEventMgr.dispatchEventWith("Update New Share", false);
-			// 	} else if (result["retCode"] == 1) {
-			// 		window["mqq"].ui.showTips({
-			// 			text: "分享取消！"
-			// 		});
-			// 	}
-			// });
-
 			window["mqq"].ui.shareMessage({
 				title: '逆袭之星途闪耀',
-				desc: '逆袭成为超级巨星，霸道总裁、温柔暖男、绝色男神随你挑！',
+				desc: '“男神，你有什么技能？”……“有钱”',
 				share_type: 0,
 				share_url: window["OPEN_DATA"].shareurl + "&td_channelid=qqshare",
 				image_url: window["OPEN_DATA"].appicon,

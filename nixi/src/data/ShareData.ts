@@ -154,4 +154,24 @@ class ShareData {
 	public static set isShowScPop(value: boolean) {
 		this._isShowScPop = value;
 	}
+
+	public static get shareDesc(): string {
+		var descList: string[] = [
+			"“你最怕什么？”“那种突然而又不负责任的喜欢。”",
+			"洗澡的时候有人突然闯进来……肿木办……",
+			"世界之大，总有一款男神适合你",
+			"细腰和翘臀哪个对男生更诱惑？",
+			"惊！女生最喜欢的三类男神原来是这样",
+			"一个她与三个他的故事，辣眼慎入",
+			"当别人说你丑时，如何怒怼回去？",
+			"“男神，你有什么技能？”……“有钱”",
+			"只要这样打扮，一定有人来撩……",
+			"明星成长记，请注意睡姿……",
+			"你的衣服出卖了你自己，尤其是内衣",
+			"有人@你，你的单身故事已被曝光啦！",
+			"这一瞬间，我觉得他“们”超爱我！"
+		];
+
+		return descList[Math.floor(Math.random() * 13) + 1]
+	}
 }

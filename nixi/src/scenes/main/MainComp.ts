@@ -11,7 +11,7 @@ class MainComp extends eui.Component {
 	public libao_icon: eui.Image;
 	public libao_ac: eui.Image;
 	public libao_text: eui.Image;
-	public shareGroup: eui.Group;
+	// public shareGroup: eui.Group;
 	public collGroup: eui.Group;
 	public niudan_ac: eui.Image;
 	public leijiGroup: eui.Group;
@@ -29,6 +29,11 @@ class MainComp extends eui.Component {
 
 	public td_ac: eui.Image;
 	public dt_tip: eui.Image;
+
+	public tl_ac: eui.Image;
+	public tlGroup: eui.Group;
+	public tlGroup2: eui.Group;
+	public tlTime: eui.Label;
 
 	public hd_tip: eui.Image;
 
@@ -71,13 +76,14 @@ class MainComp extends eui.Component {
 		this.mailGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onMailTap, this);
 		this.hdGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnHd, this);
 
-		this.shareGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
 		this.collGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onDesk, this);
 		this.leijiGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnLj, this);
 		this.lbGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnLb, this);
 		this.scGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnSc, this);
 		this.dtGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnDt, this);
 		this.yqGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnYq, this);
+
+		this.tlGroup2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnTl, this);
 
 		this.newShare.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
 
@@ -89,6 +95,7 @@ class MainComp extends eui.Component {
 		CustomEventMgr.addEventListener("312", this.result_of_312, this);
 		CustomEventMgr.addEventListener("302", this.result_of_302, this);
 		CustomEventMgr.addEventListener("301", this.result_of_301, this);
+		CustomEventMgr.addEventListener("106", this.result_of_106, this);
 
 		CustomEventMgr.addEventListener("500", this.afterFetchStoryData_500, this);
 		CustomEventMgr.addEventListener("600", this.afterFetchMissionData_600, this);
@@ -113,6 +120,9 @@ class MainComp extends eui.Component {
 		CustomEventMgr.addEventListener("Update Sc View", this.updateScView, this);
 		CustomEventMgr.addEventListener("CheckOut DT Status", this.checkDailyTargetStates, this);
 		CustomEventMgr.addEventListener("Update New Share", this.updateNewShare, this);
+
+		CustomEventMgr.addEventListener("Update TL View", this.updateDlView, this);
+		CustomEventMgr.addEventListener("Hide TL", this.hideDlView, this);
 
 		//获取每日任务数据
 		var request = HttpProtocolMgr.take_welfare_data_630();
@@ -183,6 +193,7 @@ class MainComp extends eui.Component {
 		CustomEventMgr.removeEventListener("312", this.result_of_312, this);
 		CustomEventMgr.removeEventListener("302", this.result_of_302, this);
 		CustomEventMgr.removeEventListener("301", this.result_of_301, this);
+		CustomEventMgr.removeEventListener("106", this.result_of_106, this);
 
 		CustomEventMgr.removeEventListener("500", this.afterFetchStoryData_500, this);
 		CustomEventMgr.removeEventListener("600", this.afterFetchMissionData_600, this);
@@ -207,6 +218,8 @@ class MainComp extends eui.Component {
 		CustomEventMgr.removeEventListener("Update Sc View", this.updateScView, this);
 		CustomEventMgr.removeEventListener("CheckOut DT Status", this.checkDailyTargetStates, this);
 
+
+
 		CustomEventMgr.removeEventListener("Talk Message", this.playGuideTalk, this);
 		CustomEventMgr.removeEventListener("Guide_Step_1_1", this.onTouchRect, this);
 		CustomEventMgr.removeEventListener("Guide_Step_1_2", this.onYlComp, this);
@@ -217,13 +230,14 @@ class MainComp extends eui.Component {
 		this.niudanGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnGashapon, this);
 		this.mailGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onMailTap, this);
 
-		this.shareGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
 		this.collGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onDesk, this);
 		this.leijiGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnLj, this);
 		this.lbGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnLb, this);
 		this.scGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnSc, this);
 		this.dtGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnDt, this);
 		this.hdGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnHd, this);
+
+		this.tlGroup2.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnTl, this);
 
 		this.touchRect.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouchRect, this);
 
@@ -257,11 +271,7 @@ class MainComp extends eui.Component {
 		this.newShareAnimationFirst();
 		this.newShareGroup.visible = ShareData.isShowNewShare;
 
-		// if (this.newShareGroup.visible) {
-		// 	this.timer2 = new egret.Timer(0, 0);
-		// 	this.timer2.addEventListener(egret.TimerEvent.TIMER, this.timer2Callback, this);
-		// 	this.timer2.start();
-		// }
+		this.checkoutTlDiscount();
 
 		//邀请
 		// if (ConstData.Conf.whiteList.indexOf(LoginData.sid) != -1 || window["OPEN_DATA"].openid == "aaaa") {
@@ -400,6 +410,31 @@ class MainComp extends eui.Component {
 		}
 	}
 
+	private checkoutTlDiscount() {
+		if (TLDiscountData.leftTime <= 0) {
+			if (Math.floor(Math.random() * 2) == 1) {
+				var type: number = 6;
+				var rand = Math.floor(Math.random() * 2);
+				if (rand == 0) {
+					type = 6;
+				} else {
+					type = 30;
+				}
+				console.log(type);
+				var request = HttpProtocolMgr.take_timelimitDiscount_info_106(type);
+				HttpMgr.postRequest(request);
+			}
+		} else {
+			this.updateDlView();
+			this.tlGroup.visible = true;
+			var tw_tl_ac = egret.Tween.get(this.tl_ac, { loop: true });
+			tw_tl_ac.to({ rotation: 360 }, 10000);
+			var tw_tl_ac2 = egret.Tween.get(this.tl_ac, { loop: true });
+			tw_tl_ac2.to({ alpha: 0 }, 300)
+				.to({ alpha: 1 }, 300);
+		}
+	}
+
 	private playCompAnimation() {
 		egret.Tween.get(this.sj_comp).to({ y: 770 }, 800, egret.Ease.backOut);
 		egret.Tween.get(this.xt_comp).to({ y: 930 }, 1000, egret.Ease.backOut);
@@ -408,31 +443,10 @@ class MainComp extends eui.Component {
 		egret.Tween.get(this.jj_comp).to({ y: 770 }, 800, egret.Ease.backOut);
 	}
 
-	// private timer2Callback(evt: egret.TimerEvent) {
-	// 	if (this.timer2.currentCount == 1) {
-	// 		this.newShareAnimationFirst();
-	// 	} else {
-	// 		this.newShareAnimation();
-	// 	}
-
-	// 	this.timer2.delay = (Math.floor(Math.random() * 5) + 15) * 1000;
-	// }
-
 	private newShareAnimationFirst() {
 		var tw = egret.Tween.get(this.newShareText);
 		tw.to({ x: 74 }, 1500);
 	}
-
-	// private newShareAnimation() {
-	// 	var arr = [1, 2, 3];
-	// 	arr.splice(arr.indexOf(this.curTextIndex), 1);
-	// 	var index = arr[Math.floor(Math.random() * 2)];
-	// 	this.curTextIndex = index;
-	// 	var tw = egret.Tween.get(this.newShareText);
-	// 	tw.to({ x: -103 }, 1000)
-	// 		.to({ source: "newshare_text_" + index + "_png" })
-	// 		.to({ x: 74 }, 1500);
-	// }
 
 	private onBtnGashapon() {
 		DisplayMgr.buttonScale(this.niudanGroup, function () {
@@ -553,6 +567,15 @@ class MainComp extends eui.Component {
 		});
 	}
 
+	private onBtnTl() {
+		var self = this;
+		DisplayMgr.buttonScale(this.tlGroup2, function () {
+			var panel = new LimitDiscountPanel(TLDiscountData.type);
+			DisplayMgr.set2Center(panel);
+			self.stage.addChild(panel);
+		});
+	}
+
 	private onTouchRect() {
 		// this.onBtnGo();
 	}
@@ -560,9 +583,6 @@ class MainComp extends eui.Component {
 	private showUI() {
 		var tw_ga = egret.Tween.get(this.niudanGroup);
 		tw_ga.to({ x: -15 }, this.hideTime);
-
-		var tw_sh = egret.Tween.get(this.shareGroup);
-		tw_sh.to({ x: this.group.width * 0.02 }, this.hideTime);
 
 		var tw_desk = egret.Tween.get(this.collGroup);
 		tw_desk.to({ x: this.group.width * 0.02 }, this.hideTime);
@@ -668,6 +688,26 @@ class MainComp extends eui.Component {
 
 		DisplayMgr.set2Center(panel);
 		this.stage.addChild(panel);
+	}
+
+	private result_of_106() {
+		this.tlGroup.visible = true;
+		var tw_tl_ac = egret.Tween.get(this.tl_ac, { loop: true });
+		tw_tl_ac.to({ rotation: 360 }, 10000);
+		var tw_tl_ac2 = egret.Tween.get(this.tl_ac, { loop: true });
+		tw_tl_ac2.to({ alpha: 0 }, 300)
+			.to({ alpha: 1 }, 300);
+	}
+
+	private updateDlView() {
+		var leftTime = TLDiscountData.leftTime;
+		var min = Math.floor(leftTime / 60);
+		var sec = leftTime - min * 60;
+		this.tlTime.text = (min < 10 ? "0" + min : min) + ":" + (sec < 10 ? "0" + sec : sec);
+	}
+
+	private hideDlView() {
+		this.tlGroup.visible = false;
 	}
 
 	private result_of_302(evt: egret.Event) {
@@ -882,12 +922,12 @@ class MainComp extends eui.Component {
 			egret.Tween.removeTweens(this.mailTip);
 		}
 
-		if(NewsData.energy1 == 1 || NewsData.energy2 == 1) {
+		if (NewsData.energy1 == 1 || NewsData.energy2 == 1) {
 			this.hd_tip.visible = true;
 			var tw_hd_tip = egret.Tween.get(this.hd_tip, { loop: true });
 			tw_hd_tip.to({ scaleX: 1.05, scaleY: 1.05 }, 300)
 				.to({ scaleX: 1, scaleY: 1 }, 300);
-		}else {
+		} else {
 			this.hd_tip.visible = false;
 			egret.Tween.removeTweens(this.hd_tip);
 		}
@@ -897,7 +937,7 @@ class MainComp extends eui.Component {
 		NetLoading.removeLoading();
 		CustomEventMgr.dispatchEventWith("Update Player Info", false);
 		Prompt.showPrompt(this.stage, "成功领取" + evt.data + "体力");
-		if(this.hd_tip.visible) {
+		if (this.hd_tip.visible) {
 			this.hd_tip.visible = false;
 			egret.Tween.removeTweens(this.hd_tip);
 		}
