@@ -129,12 +129,14 @@ class SubtitlePanel extends eui.Component implements  eui.UIComponent {
 		this.cbFastPlay.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onFastPlay, this);
 		this.cbAutoPlay.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onAutoPlay, this);
 		this.btnLog.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnLog, this);
+		this.btnShare.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
 	}
 
 	private whenExit() {
 		this.cbFastPlay.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onFastPlay, this);
 		this.cbAutoPlay.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onAutoPlay, this);
 		this.btnLog.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnLog, this);
+		this.btnShare.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
 	}
 
 	private onFastPlay(evt: egret.TouchEvent) {
@@ -156,10 +158,17 @@ class SubtitlePanel extends eui.Component implements  eui.UIComponent {
 		})
 	}
 
+	private onShare() {
+		DisplayMgr.buttonScale(this.btnShare, function() {
+			console.log("story share");
+			ShareData.share("story");
+		});
+	}
+
 	// Inner --------------------------------------------------
-	private cbFastPlay: eui.CheckBox;
-	private cbAutoPlay: eui.CheckBox;
-	private btnLog: eui.Button;
+	public cbFastPlay: eui.CheckBox;
+	public cbAutoPlay: eui.CheckBox;
+	public btnLog: eui.Button;
 	private namePlate: eui.Group;
 	private lblName: eui.Label;
 	private lblSubtitle: eui.Label;
@@ -170,4 +179,6 @@ class SubtitlePanel extends eui.Component implements  eui.UIComponent {
 
 	private playCompleteCallback: Function;
 	private playCompleteHandler: Object;
+
+	public btnShare: eui.Image;
 }

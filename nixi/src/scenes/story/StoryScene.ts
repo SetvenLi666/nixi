@@ -337,7 +337,10 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 
 		self.playPhase = StoryPlayPhase.idle;
 		self.playState = StoryPlayState.normal;
-		self.subtitle.touchChildren = true;
+		self.subtitle.cbAutoPlay.touchEnabled = true;
+		self.subtitle.cbFastPlay.touchEnabled = true;
+		self.subtitle.btnLog.touchEnabled = true;
+		self.subtitle.btnShare.visible = false;
 		self.couldExit = true;
 
 		self.ending.backAnimation();
@@ -443,7 +446,12 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 		}
 		else if ("-1" === next) { // 完通
 			this.playPhase = StoryPlayPhase.end;
-			this.subtitle.touchChildren = false;
+			// this.subtitle.touchChildren = false;
+			this.subtitle.cbAutoPlay.touchEnabled = false;
+			this.subtitle.cbFastPlay.touchEnabled = false;
+			this.subtitle.btnLog.touchEnabled = false;
+			this.subtitle.btnShare.visible = true;
+			this.subtitle.btnShare.touchEnabled = true;
 			this.couldExit = false;
 
 			this.ending.showEnding(true, "", this.storyIndex);
@@ -454,7 +462,12 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 		}
 		else if ("-2" === next) { // 成就
 			this.playPhase = StoryPlayPhase.end;
-			this.subtitle.touchChildren = false;
+			// this.subtitle.touchChildren = false;
+			this.subtitle.cbAutoPlay.touchEnabled = false;
+			this.subtitle.cbFastPlay.touchEnabled = false;
+			this.subtitle.btnLog.touchEnabled = false;
+			this.subtitle.btnShare.visible = true;
+			this.subtitle.btnShare.touchEnabled = true;
 			this.couldExit = false;
 
 			var temp = plot["said"].split(" ");		// 显示用

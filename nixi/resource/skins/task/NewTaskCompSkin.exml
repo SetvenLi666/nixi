@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="NewTaskCompSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui">
+<e:Skin class="NewTaskCompSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Group id="group" width="852" height="1136" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0" touchEnabled="true">
 		<e:Image id="ac_star" source="task_ac_json.task_main_ac_star_1" anchorOffsetX="280" anchorOffsetY="280" x="426" y="568"/>
 		<e:Image source="task_ac_json.task_main_star_white" horizontalCenter="0" verticalCenter="0"/>
@@ -13,5 +13,12 @@
 		<e:Label id="upgradeTip" text="0/0" y="62.56" size="20" textColor="0xFF357A" horizontalCenter="0" strokeColor="0xFFFFFF" stroke="2"/>
 		</e:Group>
 		<e:Image source="task_pg_star_png" y="783.06" right="21"/>
+		<e:Group height="40" y="117" right="114">
+			<e:Label id="tipLabel" text="Label" y="82" size="24" textColor="0xff3378" right="116" x="165" scaleX="1" scaleY="1"/>
+			<e:Image source="task_ui_json.task_item_star_3" x="120" y="44"/>
+			<e:layout>
+			<e:HorizontalLayout verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
 	</e:Group>
 </e:Skin>

@@ -10,7 +10,8 @@ class NewTaskScene extends eui.Component {
 
 	public btn_left: eui.Image;
 	public btn_right: eui.Image;
-	private pageCount: number = 3;
+	// private pageCount: number = 3;
+	private pageCount: number = 1;
 
 	private taskIndex: number = 1;
 
@@ -22,10 +23,11 @@ class NewTaskScene extends eui.Component {
 		var mask = DisplayMgr.createSceneMask();
 		this.addChild(mask);
 		this.mask = mask;
-		
+
 		//开放任务等级限制
 		this.phase = phase > 3 ? 3 : phase;
 		this.taskIndex = index > 89 ? 89 : index;
+		this.pageCount = PlayerData.phase;
 
 		this.addEventListener(egret.Event.ADDED_TO_STAGE, this.addStage, this);
 		this.addEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit, this);
@@ -44,34 +46,34 @@ class NewTaskScene extends eui.Component {
 		this.btn_right.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onRight, this);
 		CustomEventMgr.addEventListener("Show DialogComp", this.showDialog, this);
 
-		if(PlayerData.guide == 2) {
+		if (PlayerData.guide == 2) {
 			var guidePanel = new NewGuidePanel();
 			DisplayMgr.set2Center(guidePanel);
 			this.stage.addChild(guidePanel);
 		}
 
 		console.log(ClientMapData.taskGuide);
-		if(ClientMapData.taskGuide == 2 && (PlayerData.guide == 6 || PlayerData.guide == 0)) {
+		if (ClientMapData.taskGuide == 2 && (PlayerData.guide == 6 || PlayerData.guide == 0)) {
 			var guidePanel = new NewGuidePanel();
 			DisplayMgr.set2Center(guidePanel);
 			this.stage.addChild(guidePanel);
 
-			if(PlayerData.guide == 6) {
+			if (PlayerData.guide == 6) {
 				guidePanel.currentState = "guide_step_6_14";
-			}else if(PlayerData.guide == 0) {
+			} else if (PlayerData.guide == 0) {
 				guidePanel.currentState = "guide_step_6_16";
 			}
-			
+
 			guidePanel.playAnimation();
 			CustomEventMgr.addEventListener("Guide_Step_6_16", this.guide_step_6_16, this);
-		}else if(ClientMapData.taskGuide == 3 && (PlayerData.guide == 6 || PlayerData.guide == 0)) {
+		} else if (ClientMapData.taskGuide == 3 && (PlayerData.guide == 6 || PlayerData.guide == 0)) {
 			var guidePanel = new NewGuidePanel();
 			DisplayMgr.set2Center(guidePanel);
 			this.stage.addChild(guidePanel);
 			guidePanel.currentState = "guide_step_6_17";
 			guidePanel.playAnimation();
 			CustomEventMgr.addEventListener("Guide_Step_6_17", this.guide_step_6_17, this);
-		}else if(ClientMapData.taskGuide == 4 && (PlayerData.guide == 6 || PlayerData.guide == 0)) {
+		} else if (ClientMapData.taskGuide == 4 && (PlayerData.guide == 6 || PlayerData.guide == 0)) {
 			var guidePanel = new NewGuidePanel();
 			DisplayMgr.set2Center(guidePanel);
 			this.stage.addChild(guidePanel);
@@ -102,25 +104,44 @@ class NewTaskScene extends eui.Component {
 		this.container.setChildIndex(this.taskComp, 1);
 
 		this.baseComp = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy);
-        this.addChild(this.baseComp);
+		this.addChild(this.baseComp);
 
 		this.updateView();
 	}
 
 	private updateView() {
-		if(this.phase <= 1) {
+		// if(this.phase <= 1) {
+		// 	this.btn_right.visible = false;
+		// 	this.btn_left.visible = true;
+		// 	this.btn_left.touchEnabled = true;
+		// }else if(this.phase > 1 && this.phase < this.pageCount) {
+		// 	this.btn_right.visible = true;
+		// 	this.btn_left.visible = true;
+		// 	this.btn_right.touchEnabled = true;
+		// 	this.btn_left.touchEnabled = true;
+		// }else if(this.phase >= this.pageCount) {
+		// 	this.btn_left.visible = false;
+		// 	this.btn_right.visible = true;
+		// 	this.btn_right.touchEnabled = true;
+		// }
+		if (this.pageCount == 1) {
 			this.btn_right.visible = false;
-			this.btn_left.visible = true;
-			this.btn_left.touchEnabled = true;
-		}else if(this.phase > 1 && this.phase < this.pageCount) {
-			this.btn_right.visible = true;
-			this.btn_left.visible = true;
-			this.btn_right.touchEnabled = true;
-			this.btn_left.touchEnabled = true;
-		}else if(this.phase >= this.pageCount) {
 			this.btn_left.visible = false;
-			this.btn_right.visible = true;
-			this.btn_right.touchEnabled = true;
+		} else if (this.pageCount > 1) {
+			if (this.phase == 1) {
+				this.btn_right.visible = false;
+				this.btn_left.visible = true;
+				this.btn_left.touchEnabled = true;
+			}else if(this.phase == this.pageCount) {
+				this.btn_right.visible = true;
+				this.btn_left.visible = false;
+				this.btn_right.touchEnabled = true;
+			}else if(this.phase > 1 && this.phase < this.pageCount) {
+				this.btn_right.visible = true;
+				this.btn_left.visible = true;
+				this.btn_right.touchEnabled = true;
+				this.btn_left.touchEnabled = true;
+			}
 		}
 	}
 
@@ -131,7 +152,7 @@ class NewTaskScene extends eui.Component {
 
 	private onLeft() {
 		var self = this;
-		DisplayMgr.buttonScale(this.btn_left, function() {
+		DisplayMgr.buttonScale(this.btn_left, function () {
 			self.btn_left.touchEnabled = false;
 			self.btn_right.touchEnabled = false;
 			self.phase += 1;
@@ -141,9 +162,9 @@ class NewTaskScene extends eui.Component {
 			self.container.addChild(newComp);
 			self.container.setChildIndex(newComp, 1);
 			var tw = egret.Tween.get(self.taskComp);
-			tw.to({x: (DisplayMgr.stageW - self.taskComp.width) / 2 + self.taskComp.width}, 500);
+			tw.to({ x: (DisplayMgr.stageW - self.taskComp.width) / 2 + self.taskComp.width }, 500);
 			var tw2 = egret.Tween.get(newComp);
-			tw2.to({x: (DisplayMgr.stageW - self.taskComp.width) / 2}, 500).call(function() {
+			tw2.to({ x: (DisplayMgr.stageW - self.taskComp.width) / 2 }, 500).call(function () {
 				self.container.removeChild(self.taskComp);
 				self.taskComp = newComp;
 				self.updateView();
@@ -153,7 +174,7 @@ class NewTaskScene extends eui.Component {
 
 	private onRight() {
 		var self = this;
-		DisplayMgr.buttonScale(this.btn_left, function() {
+		DisplayMgr.buttonScale(this.btn_right, function () {
 			self.btn_left.touchEnabled = false;
 			self.btn_right.touchEnabled = false;
 			self.phase -= 1;
@@ -163,9 +184,9 @@ class NewTaskScene extends eui.Component {
 			self.container.setChildIndex(newComp, 1);
 
 			var tw = egret.Tween.get(self.taskComp);
-			tw.to({x: (DisplayMgr.stageW - self.taskComp.width) / 2 - self.taskComp.width}, 500);
+			tw.to({ x: (DisplayMgr.stageW - self.taskComp.width) / 2 - self.taskComp.width }, 500);
 			var tw2 = egret.Tween.get(newComp);
-			tw2.to({x: (DisplayMgr.stageW - self.taskComp.width) / 2}, 500).call(function() {
+			tw2.to({ x: (DisplayMgr.stageW - self.taskComp.width) / 2 }, 500).call(function () {
 				self.container.removeChild(self.taskComp);
 				self.taskComp = newComp;
 				self.updateView();
@@ -269,7 +290,7 @@ class TaskItemRenderer extends eui.ItemRenderer {
 	private onTap() {
 		//当前任务id
 		var taskid = parseInt(this.data);
-		if(PlayerData.phase < parseInt(TaskData.totalMissionData()[taskid - 1]["phase"])) {
+		if (PlayerData.phase < parseInt(TaskData.totalMissionData()[taskid - 1]["phase"])) {
 			Prompt.showPrompt(this.stage, "角色等级不足!");
 			return;
 		}

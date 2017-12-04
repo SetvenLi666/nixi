@@ -180,6 +180,8 @@ class ChatItemRenderer extends eui.ItemRenderer {
 
 	protected createChildren() {
 		super.createChildren();
+
+		this.nicknameLabel.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
 	}
 
 	protected dataChanged() {
@@ -209,6 +211,12 @@ class ChatItemRenderer extends eui.ItemRenderer {
 		label.size = 20;
 		label.height = 20;
 		return label.width;
+	}
+
+	private onTouch() {
+		var panel = new FindPanelComp(this.data.name);
+		DisplayMgr.set2Center(panel);
+		this.stage.addChild(panel);
 	}
 }
 

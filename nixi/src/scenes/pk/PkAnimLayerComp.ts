@@ -33,6 +33,7 @@ class PkAnimLayerComp extends eui.Component {
 	private othertotalScore: number = 0;
 
 	public btn_receive: eui.Component;
+	public btnShare: eui.Image;
 
 	public constructor() {
 		super();
@@ -48,6 +49,7 @@ class PkAnimLayerComp extends eui.Component {
 
 		this.initView();
 		this.btn_receive.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnReceive, this);
+		this.btnShare.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
 		CustomEventMgr.addEventListener("Update PK View", this.updateView, this);
 		CustomEventMgr.addEventListener("Update Self Score", this.updateSelfScore, this);
 		CustomEventMgr.addEventListener("Update Other Score", this.updateOtherScore, this);
@@ -69,6 +71,7 @@ class PkAnimLayerComp extends eui.Component {
 		CustomEventMgr.removeEventListener("827", this.result_of_827, this);
 
 		this.btn_receive.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnReceive, this);
+		this.btnShare.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
 
 		egret.Tween.removeAllTweens();
 	}
@@ -114,6 +117,12 @@ class PkAnimLayerComp extends eui.Component {
 				var request = HttpProtocolMgr.competition_prepare_827();
 				HttpMgr.postRequest(request);
 			}, self, 800);
+		});
+	}
+
+	private onShare() {
+		DisplayMgr.buttonScale(this.btnShare, function() {
+			ShareData.share("pk");
 		});
 	}
 
@@ -308,6 +317,8 @@ class PkAnimLayerComp extends eui.Component {
 		this.balanceComp.y = 344;
 		this.btn_receive.currentState = "state_" + evt.data;
 		this.btn_receive.visible = true;
+
+		this.btnShare.visible = true;
 
 		if (evt.data == 1) {
 			this.titleImage.source = "pk_result_vct_png";

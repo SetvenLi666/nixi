@@ -30,6 +30,8 @@ class MainComp extends eui.Component {
 	public td_ac: eui.Image;
 	public dt_tip: eui.Image;
 
+	public tomoGroup: eui.Group;
+
 	public tl_ac: eui.Image;
 	public tlGroup: eui.Group;
 	public tlGroup2: eui.Group;
@@ -88,6 +90,8 @@ class MainComp extends eui.Component {
 		this.newShare.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
 
 		this.touchRect.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouchRect, this);
+
+		this.tomoGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTomoGroup, this);
 
 		CustomEventMgr.addEventListener("304", this.result_of_304, this);
 		CustomEventMgr.addEventListener("306", this.result_of_306, this);
@@ -218,7 +222,10 @@ class MainComp extends eui.Component {
 		CustomEventMgr.removeEventListener("Update Sc View", this.updateScView, this);
 		CustomEventMgr.removeEventListener("CheckOut DT Status", this.checkDailyTargetStates, this);
 
+		CustomEventMgr.removeEventListener("Update New Share", this.updateNewShare, this);
 
+		CustomEventMgr.removeEventListener("Update TL View", this.updateDlView, this);
+		CustomEventMgr.removeEventListener("Hide TL", this.hideDlView, this);
 
 		CustomEventMgr.removeEventListener("Talk Message", this.playGuideTalk, this);
 		CustomEventMgr.removeEventListener("Guide_Step_1_1", this.onTouchRect, this);
@@ -240,6 +247,7 @@ class MainComp extends eui.Component {
 		this.tlGroup2.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnTl, this);
 
 		this.touchRect.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouchRect, this);
+		this.tomoGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTomoGroup, this);
 
 		this.sj_comp.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onSjComp, this);
 		this.xt_comp.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onXtComp, this);
@@ -290,6 +298,8 @@ class MainComp extends eui.Component {
 		this.updateLibaoView();
 		//更新首冲视图
 		this.updateScView();
+
+		this.updateNewShare();
 
 		this.model.dress(ClothesData.ondressCache, ClothesData.ornamentsCache);
 
@@ -667,6 +677,10 @@ class MainComp extends eui.Component {
 		});
 	}
 
+	private onTomoGroup() {
+		Prompt.showPrompt(this.stage, "明日登录抽取最高100钻和稀有套装!");
+	}
+
 	private afterTakePackageInfo_104() {
 		NetLoading.removeLoading();
 		var panel: eui.Component = null;
@@ -781,7 +795,12 @@ class MainComp extends eui.Component {
 	}
 
 	private updateNewShare() {
-		this.newShareGroup.visible = ShareData.isShowNewShare;
+		// this.newShareGroup.visible = ShareData.isShowNewShare;
+		if(ShareData.shareTimes != 0) {
+			this.newShareGroup.visible = false;
+		}else {
+			this.newShareGroup.visible = true;
+		}
 	}
 
 	private afterFetchStoryData_500(evt: egret.Event) {

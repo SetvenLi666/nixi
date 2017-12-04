@@ -6,6 +6,7 @@ class NewTaskComp extends eui.Component {
 	public list: eui.List;
 	public pgComp: NewProgressbarComp;
 	public upgradeTip: eui.Label;
+	public tipLabel: eui.Label;
 
 	private phase: number = 1;
 	private index: number = 1;
@@ -48,7 +49,8 @@ class NewTaskComp extends eui.Component {
 		}
 		
 		this.upgradeTip.text = PlayerData.phaseRating(this.phase) + "/" + TaskData.totalMissionData()[parseInt(itemsArr[itemsArr.length - 1]) - 1]["upgrade"];
-		
+		this.tipLabel.text = "距离升级还差 " + (parseInt(TaskData.totalMissionData()[parseInt(itemsArr[itemsArr.length - 1]) - 1]["upgrade"]) - PlayerData.phaseRating(this.phase));
+
 		itemsArr.reverse();
 		this.list.dataProvider = new eui.ArrayCollection(itemsArr);
 		this.list.itemRenderer = TaskItemRenderer;

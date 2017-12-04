@@ -3,10 +3,12 @@ class FindPanelComp extends eui.Component {
 	public btn_find: eui.Image;
 	public btn_back: eui.Image;
 	public nickname: eui.EditableText;
+	private curName: string = null;
 
-	public constructor() {
+	public constructor(name?: string) {
 		super();
 
+		this.curName = name;
 		this.skinName = "FindPanelSkin";
 		this.addEventListener(egret.Event.ADDED_TO_STAGE, this.addStage, this);
 		this.addEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit, this);
@@ -18,24 +20,15 @@ class FindPanelComp extends eui.Component {
 		this.btn_find.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onFind, this);
 		this.btn_back.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBack, this);
 
+		if(this.curName) {
+			this.nickname.text = this.curName;
+		}
+
 		CustomEventMgr.addEventListener("801", this.search_success_801, this);
 	}
 
 	private onExit() {
 		CustomEventMgr.removeEventListener("801", this.search_success_801, this);
-	}
-
-	private onFocusIn() {
-		egret.log("focus in");
-	}
-
-	private onFocusOut() {
-		egret.log("focus out");
-	}
-
-	private onChange() {
-		egret.log("on change");
-		
 	}
 
 	private onFind() {

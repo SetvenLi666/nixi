@@ -54,5 +54,6 @@
 			<e:Label id="otherBuff" text="标签" size="20" verticalAlign="middle" textAlign="center" horizontalCenter="0" verticalCenter="0" bold="true" textColor="0xff3378"/>
 		</e:Group>
 		<e:Component id="btn_receive" y="850" skinName="ReceiveButton" horizontalCenter="0" anchorOffsetX="99" anchorOffsetY="99.5" visible="false"/>
+		<e:Image id="btnShare" source="panel_btn_share_png" y="985" horizontalCenter="0" visible="false"/>
 	</e:Group>
 </e:Skin>

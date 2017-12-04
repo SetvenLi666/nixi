@@ -26,19 +26,19 @@ class ShareData {
 	private static _can_take_zhuanshu_gift: boolean = false; //QQ空间专属礼包领取状态
 	private static _isShowGift: boolean = true;     //是否弹出礼包
 	private static _gift_reward_list: {} = {
-		"1": { diam: 10},
-		"2": { diam: 10},
+		"1": { diam: 10 },
+		"2": { diam: 10 },
 		"3": { coin: 300 },
 		"4": { coin: 300 },
 		"5": { diam: 10, coin: 300 },
 		"6": { diam: 10, tili: 60 },
 		"7": { diam: 10, tili: 60 },
-		"101": {diam: 100},
-		"201": {diam: 50}
+		"101": { diam: 100 },
+		"201": { diam: 50 }
 	};
 
 	public static update(obj: {}) {
-		if(obj == null) {
+		if (obj == null) {
 			console.log("sharedata is null !");
 			return;
 		}
@@ -173,5 +173,26 @@ class ShareData {
 		];
 
 		return descList[Math.floor(Math.random() * 13) + 1]
+	}
+
+	public static share(type: string) {
+		window["mqq"].ui.shareMessage({
+			title: '逆袭之星途闪耀',
+			desc: '“男神，你有什么技能？”……“有钱”',
+			share_type: 0,
+			share_url: window["OPEN_DATA"].shareurl + "&td_channelid=qqshare",
+			image_url: window["OPEN_DATA"].appicon,
+			back: true
+		}, function (result) {
+			if (result["retCode"] == 0) {
+				window["mqq"].ui.showTips({
+					text: "分享成功！"
+				});
+			} else if (result["retCode"] == 1) {
+				window["mqq"].ui.showTips({
+					text: "分享取消！"
+				});
+			}
+		});
 	}
 }
