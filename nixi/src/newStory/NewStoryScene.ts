@@ -41,11 +41,11 @@ class NewStoryScene extends eui.Component {
 		this.container.width = DisplayMgr.stageW;
 		this.group.width = Math.min(DisplayMgr.stageW, 852);
 		this.baseComp = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy);
-        this.addChild(this.baseComp);
+		this.addChild(this.baseComp);
 
-		for(var i in StoryData.completedStory) {
+		for (var i in StoryData.completedStory) {
 			var item: string[] = StoryData.completedStory[i];
-			if(item && item.indexOf("-1") != -1) {
+			if (item && item.indexOf("-1") != -1) {
 				// this.curPageIndex = parseInt(i);
 				this.curPageIndex = Math.min(parseInt(i), 28);  //目前只有29章剧情
 			}
@@ -66,7 +66,7 @@ class NewStoryScene extends eui.Component {
 		this.onMove();
 
 		//敬请期待
-		if(StoryData.isShowLastTip && StoryData.completedStory["29"] && StoryData.completedStory["29"].indexOf("-1") != -1) {
+		if (StoryData.isShowLastTip && StoryData.completedStory["29"] && StoryData.completedStory["29"].indexOf("-1") != -1) {
 			StoryData.isShowLastTip = false;
 			Prompt.showPrompt(this.stage, "后续剧情正在制作中，敬请期待!");
 		}
@@ -90,9 +90,9 @@ class NewStoryScene extends eui.Component {
 			guidePanel.currentState = "guide_step_5_4";
 			guidePanel.playAnimation();
 			CustomEventMgr.addEventListener("Guide_Step_5_4", this.guide_step_5_4, this);
-		}else if(PlayerData.guide == 6) {
-			if(ClientMapData.taskGuide != null) {
-				if(ClientMapData.taskGuide == 0) {
+		} else if (PlayerData.guide == 6) {
+			if (ClientMapData.taskGuide != null) {
+				if (ClientMapData.taskGuide == 0) {
 					return;
 				}
 			}
@@ -113,7 +113,7 @@ class NewStoryScene extends eui.Component {
 			CustomEventMgr.removeEventListener("Guide_Step_5_4", this.guide_step_5_4, this);
 		}
 
-		if(PlayerData.guide == 6) {
+		if (PlayerData.guide == 6) {
 			CustomEventMgr.removeEventListener("Guide_Step_6_13", this.guide_step_6_13, this);
 		}
 	}
@@ -207,10 +207,18 @@ class NewStoryScene extends eui.Component {
 	}
 
 	private onStartStory(evt: egret.Event) {
-		this.storyIndex = evt.data;
-		NetLoading.showLoading();
-		var request: egret.URLRequest = HttpProtocolMgr.startStory_501(this.storyData[this.storyIndex]["index"]);
-		HttpMgr.postRequest(request);
+		if (PlayerData.energy < 6) {
+			var panel = new ExchangePanel("energy");
+			DisplayMgr.set2Center(panel);
+			this.stage.addChild(panel);
+			Prompt.showPrompt(this.stage, "体力不足!");
+			return;
+		} else {
+			this.storyIndex = evt.data;
+			NetLoading.showLoading();
+			var request: egret.URLRequest = HttpProtocolMgr.startStory_501(this.storyData[this.storyIndex]["index"]);
+			HttpMgr.postRequest(request);
+		}
 	}
 
 	private afterStartStory_501(evt: egret.Event) {
@@ -263,10 +271,10 @@ class StoryChapterCompRenderer extends eui.ItemRenderer {
 			this.end_1.text = endingArr[0]["name"];
 			if (compStory && compStory.indexOf(endingArr[0]["id"]) != -1) {
 				this.end_1.textColor = 0x167dfd;
-			}else {
+			} else {
 				this.end_1.textColor = 0x969797;
 			}
-		}else {
+		} else {
 			this.end_1.text = "";
 		}
 
@@ -274,10 +282,10 @@ class StoryChapterCompRenderer extends eui.ItemRenderer {
 			this.end_2.text = endingArr[1]["name"];
 			if (compStory && compStory.indexOf(endingArr[1]["id"]) != -1) {
 				this.end_2.textColor = 0x167dfd;
-			}else {
+			} else {
 				this.end_2.textColor = 0x969797;
 			}
-		}else {
+		} else {
 			this.end_2.text = "";
 		}
 
@@ -286,15 +294,15 @@ class StoryChapterCompRenderer extends eui.ItemRenderer {
 		if (TaskData.userData()[this.data["unlock"]] == null) {
 			//未解锁
 			var phaseName = "小助理";
-			if(this.data["phase"] == "1") {
+			if (this.data["phase"] == "1") {
 				phaseName = "小助理";
-			}else if(this.data["phase"] == "2") {
+			} else if (this.data["phase"] == "2") {
 				phaseName = "练习生";
-			}else if(this.data["phase"] == "3") {
+			} else if (this.data["phase"] == "3") {
 				phaseName = "小演员";
-			}else if(this.data["phase"] == "4") {
+			} else if (this.data["phase"] == "4") {
 				phaseName = "小花旦";
-			}else if(this.data["phase"] == "5") {
+			} else if (this.data["phase"] == "5") {
 				phaseName = "大明星";
 			}
 			this.lab_lock.text = "解锁条件  " + phaseName + "任务" + this.data["unlock"];
@@ -365,7 +373,7 @@ class StoryChapterCompRenderer extends eui.ItemRenderer {
 
 	private onUnlock() {
 		var self = this;
-		DisplayMgr.buttonScale(this.btn_unlock, function() {
+		DisplayMgr.buttonScale(this.btn_unlock, function () {
 			// SceneMgr.gotoTaskScene(parseInt(self.data["phase"]), parseInt(self.data["unlock"]));
 			SceneMgr.gotoTaskScene(PlayerData.phase, PlayerData.mission);
 		});

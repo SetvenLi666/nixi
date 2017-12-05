@@ -325,7 +325,10 @@ class NewTaskDialogComp extends eui.Component {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_hz, function () {
 			if (PlayerData.energy < 6) {
-				Prompt.showPrompt(self.stage, "体力不足");
+				var panel = new ExchangePanel("energy");
+				DisplayMgr.set2Center(panel);
+				self.stage.addChild(panel);
+				Prompt.showPrompt(self.stage, "体力不足!");
 				return;
 			}
 

@@ -300,6 +300,20 @@ class ShopLayer extends eui.Component {
                 return;
             }
 
+            if(self.curItem["type"] == "1" && PlayerData.coin < parseInt(self.curItem["cost"])) {
+                var panel = new ExchangePanel("coin");
+                DisplayMgr.set2Center(panel);
+                self.stage.addChild(panel);
+                Prompt.showPrompt(self.stage, "金币不足!");
+                return;
+            }else if(self.curItem["type"] == "2" && PlayerData.diam < parseInt(self.curItem["cost"])) {
+                var panel = new ExchangePanel("pay");
+                DisplayMgr.set2Center(panel);
+                self.stage.addChild(panel);
+                Prompt.showPrompt(self.stage, "钻石不足!");
+                return;
+            }
+
             var id = self.curItem["id"];
             var ondress = CommonFunc.simpleCloneObj(ClothesData.ondressCache);
             var ornaments = CommonFunc.simpleCloneObj(ClothesData.ornamentsCache);

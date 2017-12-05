@@ -110,20 +110,6 @@ class NewTaskScene extends eui.Component {
 	}
 
 	private updateView() {
-		// if(this.phase <= 1) {
-		// 	this.btn_right.visible = false;
-		// 	this.btn_left.visible = true;
-		// 	this.btn_left.touchEnabled = true;
-		// }else if(this.phase > 1 && this.phase < this.pageCount) {
-		// 	this.btn_right.visible = true;
-		// 	this.btn_left.visible = true;
-		// 	this.btn_right.touchEnabled = true;
-		// 	this.btn_left.touchEnabled = true;
-		// }else if(this.phase >= this.pageCount) {
-		// 	this.btn_left.visible = false;
-		// 	this.btn_right.visible = true;
-		// 	this.btn_right.touchEnabled = true;
-		// }
 		if (this.pageCount == 1) {
 			this.btn_right.visible = false;
 			this.btn_left.visible = false;
@@ -132,11 +118,11 @@ class NewTaskScene extends eui.Component {
 				this.btn_right.visible = false;
 				this.btn_left.visible = true;
 				this.btn_left.touchEnabled = true;
-			}else if(this.phase == this.pageCount) {
+			} else if (this.phase == this.pageCount) {
 				this.btn_right.visible = true;
 				this.btn_left.visible = false;
 				this.btn_right.touchEnabled = true;
-			}else if(this.phase > 1 && this.phase < this.pageCount) {
+			} else if (this.phase > 1 && this.phase < this.pageCount) {
 				this.btn_right.visible = true;
 				this.btn_left.visible = true;
 				this.btn_right.touchEnabled = true;
@@ -152,46 +138,42 @@ class NewTaskScene extends eui.Component {
 
 	private onLeft() {
 		var self = this;
-		DisplayMgr.buttonScale(this.btn_left, function () {
-			self.btn_left.touchEnabled = false;
-			self.btn_right.touchEnabled = false;
-			self.phase += 1;
-
-			var newComp = new NewTaskComp(self.phase, 1);
-			newComp.x = (DisplayMgr.stageW - self.taskComp.width) / 2 - self.taskComp.width;
-			self.container.addChild(newComp);
-			self.container.setChildIndex(newComp, 1);
-			var tw = egret.Tween.get(self.taskComp);
-			tw.to({ x: (DisplayMgr.stageW - self.taskComp.width) / 2 + self.taskComp.width }, 500);
-			var tw2 = egret.Tween.get(newComp);
-			tw2.to({ x: (DisplayMgr.stageW - self.taskComp.width) / 2 }, 500).call(function () {
-				self.container.removeChild(self.taskComp);
-				self.taskComp = newComp;
-				self.updateView();
-			}, this);
-		});
+		self.btn_left.touchEnabled = false;
+		self.btn_right.touchEnabled = false;
+		self.phase += 1;
+		console.log(self.btn_left.touchEnabled);
+		var newComp = new NewTaskComp(self.phase, 1);
+		newComp.x = (DisplayMgr.stageW - self.taskComp.width) / 2 - self.taskComp.width;
+		self.container.addChild(newComp);
+		self.container.setChildIndex(newComp, 1);
+		var tw = egret.Tween.get(self.taskComp);
+		tw.to({ x: (DisplayMgr.stageW - self.taskComp.width) / 2 + self.taskComp.width }, 500);
+		var tw2 = egret.Tween.get(newComp);
+		tw2.to({ x: (DisplayMgr.stageW - self.taskComp.width) / 2 }, 500).call(function () {
+			self.container.removeChild(self.taskComp);
+			self.taskComp = newComp;
+			self.updateView();
+		}, this);
 	}
 
 	private onRight() {
 		var self = this;
-		DisplayMgr.buttonScale(this.btn_right, function () {
-			self.btn_left.touchEnabled = false;
-			self.btn_right.touchEnabled = false;
-			self.phase -= 1;
-			var newComp = new NewTaskComp(self.phase, 1);
-			newComp.x = (DisplayMgr.stageW - self.taskComp.width) / 2 + self.taskComp.width
-			self.container.addChild(newComp);
-			self.container.setChildIndex(newComp, 1);
+		self.btn_left.touchEnabled = false;
+		self.btn_right.touchEnabled = false;
+		self.phase -= 1;
+		var newComp = new NewTaskComp(self.phase, 1);
+		newComp.x = (DisplayMgr.stageW - self.taskComp.width) / 2 + self.taskComp.width
+		self.container.addChild(newComp);
+		self.container.setChildIndex(newComp, 1);
 
-			var tw = egret.Tween.get(self.taskComp);
-			tw.to({ x: (DisplayMgr.stageW - self.taskComp.width) / 2 - self.taskComp.width }, 500);
-			var tw2 = egret.Tween.get(newComp);
-			tw2.to({ x: (DisplayMgr.stageW - self.taskComp.width) / 2 }, 500).call(function () {
-				self.container.removeChild(self.taskComp);
-				self.taskComp = newComp;
-				self.updateView();
-			}, this);
-		});
+		var tw = egret.Tween.get(self.taskComp);
+		tw.to({ x: (DisplayMgr.stageW - self.taskComp.width) / 2 - self.taskComp.width }, 500);
+		var tw2 = egret.Tween.get(newComp);
+		tw2.to({ x: (DisplayMgr.stageW - self.taskComp.width) / 2 }, 500).call(function () {
+			self.container.removeChild(self.taskComp);
+			self.taskComp = newComp;
+			self.updateView();
+		}, this);
 	}
 
 	private onBack() {

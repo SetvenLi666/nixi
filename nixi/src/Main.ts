@@ -206,7 +206,7 @@ class Main extends egret.DisplayObjectContainer {
         window["mqq"].ui.setOnShareHandler(function (type) {
             window["mqq"].ui.shareMessage({
                 title: '逆袭之星途闪耀',
-                desc: '逆袭成为超级巨星，霸道总裁、温柔暖男、绝色男神随你挑！',
+                desc: '嫁入豪门还是成为豪门？你怎么选',
                 share_type: type,
                 share_url: window["OPEN_DATA"].shareurl,
                 image_url: window["OPEN_DATA"].appicon,

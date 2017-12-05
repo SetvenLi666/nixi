@@ -262,12 +262,25 @@ class MainComp extends eui.Component {
 
 	private initView() {
 		if (NewsData.mail > 0) {
+			var tw_mailGroup = egret.Tween.get(this.mailGroup, {loop: true});
+			tw_mailGroup
+			.to({rotation: 8}, 100)
+			.to({rotation: 0}, 100)
+			.to({rotation: -8}, 100)
+			.to({rotation: 0}, 100)
+			.to({rotation: 8}, 100)
+			.to({rotation: 0}, 100)
+			.to({rotation: -8}, 100)
+			.to({rotation: 0}, 100)
+			.wait(2000);
+
 			this.mailTip.visible = true;
 			var tw_tip = egret.Tween.get(this.mailTip, { loop: true });
 			tw_tip.to({ scaleX: 1.05, scaleY: 1.05 }, 300)
 				.to({ scaleX: 1, scaleY: 1 }, 300);
 		} else {
 			this.mailTip.visible = false;
+			egret.Tween.removeTweens(this.mailGroup);
 			egret.Tween.removeTweens(this.mailTip);
 		}
 
@@ -795,12 +808,12 @@ class MainComp extends eui.Component {
 	}
 
 	private updateNewShare() {
-		// this.newShareGroup.visible = ShareData.isShowNewShare;
-		if(ShareData.shareTimes != 0) {
-			this.newShareGroup.visible = false;
-		}else {
-			this.newShareGroup.visible = true;
-		}
+		this.newShareGroup.visible = ShareData.isShowNewShare;
+		// if(ShareData.shareTimes != 0) {
+		// 	this.newShareGroup.visible = false;
+		// }else {
+		// 	this.newShareGroup.visible = true;
+		// }
 	}
 
 	private afterFetchStoryData_500(evt: egret.Event) {
@@ -923,6 +936,8 @@ class MainComp extends eui.Component {
 	}
 
 	private afterFetchMailData_700() {
+		egret.Tween.removeTweens(this.mailGroup);
+		egret.Tween.removeTweens(this.mailTip);
 		this.mailTip.visible = false;
 		NetLoading.removeLoading();
 		var panel = new EmailPanel();
@@ -932,12 +947,25 @@ class MainComp extends eui.Component {
 
 	private result_of_910() {
 		if (NewsData.mail > 0) {
+			var tw_mailGroup = egret.Tween.get(this.mailGroup, {loop: true});
+			tw_mailGroup
+			.to({rotation: 8}, 150)
+			.to({rotation: 0}, 150)
+			.to({rotation: -8}, 150)
+			.to({rotation: 0}, 150)
+			.to({rotation: 8}, 150)
+			.to({rotation: 0}, 150)
+			.to({rotation: -8}, 150)
+			.to({rotation: 0}, 150)
+			.wait(2000);
+
 			this.mailTip.visible = true;
 			var tw_tip = egret.Tween.get(this.mailTip, { loop: true });
 			tw_tip.to({ scaleX: 1.05, scaleY: 1.05 }, 300)
 				.to({ scaleX: 1, scaleY: 1 }, 300);
 		} else {
 			this.mailTip.visible = false;
+			egret.Tween.removeTweens(this.mailGroup);
 			egret.Tween.removeTweens(this.mailTip);
 		}
 

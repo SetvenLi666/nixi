@@ -13,7 +13,8 @@
 		<e:Label id="upgradeTip" text="0/0" y="62.56" size="20" textColor="0xFF357A" horizontalCenter="0" strokeColor="0xFFFFFF" stroke="2"/>
 		</e:Group>
 		<e:Image source="task_pg_star_png" y="783.06" right="21"/>
-		<e:Group height="40" y="117" right="114">
+		<e:Group id="tipGroup" height="40" y="100" horizontalCenter="-30.5">
+			<e:Image source="task_stars_tip_png" x="-406" y="-43" scaleX="1" scaleY="1"/>
 			<e:Label id="tipLabel" text="Label" y="82" size="24" textColor="0xff3378" right="116" x="165" scaleX="1" scaleY="1"/>
 			<e:Image source="task_ui_json.task_item_star_3" x="120" y="44"/>
 			<e:layout>
