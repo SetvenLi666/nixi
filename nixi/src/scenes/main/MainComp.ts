@@ -74,6 +74,8 @@ class MainComp extends eui.Component {
 
 		this.initView();
 
+		// this.checkAllClothes();
+
 		this.niudanGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnGashapon, this);
 		this.mailGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onMailTap, this);
 		this.hdGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnHd, this);
@@ -176,6 +178,25 @@ class MainComp extends eui.Component {
 					}, self);
 			}, this, 1000);
 		}
+	}
+
+	private checkAllClothes() {
+		var info: {} = {};
+		var arr = ClothesData.allClothesArray();
+		var len = arr.length;
+		for(var i = 0; i < len; i++) {
+			var item = arr[i];
+			if(item["serial"] != "" && item["serial"] != "0") {
+				if(info[item["serial"]] == null) {
+					info[item["serial"]] = [];
+					info[item["serial"]].push(item["id"]);
+				}else {
+					info[item["serial"]].push(item["id"]);
+				}
+			}
+		}
+
+		console.log(info);
 	}
 
 	private onExit() {

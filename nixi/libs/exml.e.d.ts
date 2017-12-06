@@ -322,6 +322,8 @@ declare class StarsRewardPanelSkin extends eui.Skin{
 }
 declare class ThirdPanelSkin extends eui.Skin{
 }
+declare class DeleteFriendPanelSkin extends eui.Skin{
+}
 declare class OpenPanelSkin extends eui.Skin{
 }
 declare class TalkCompSkin extends eui.Skin{

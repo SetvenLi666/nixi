@@ -168,6 +168,7 @@
     "src/panel/ScPanelSkin.exml",
     "src/panel/StarsRewardPanelSkin.exml",
     "src/panel/ThirdPanelSkin.exml",
+    "src/scenes/friend/friend/DeleteFriendPanelSkin.exml",
     "src/scenes/login/OpenPanelSkin.exml",
     "src/scenes/main/TalkCompSkin.exml",
     "src/scenes/newTask/PkUnlockPanelSkin.exml",

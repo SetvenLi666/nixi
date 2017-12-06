@@ -153,6 +153,11 @@ class HttpMgr {
             CompetitionData.createRanklist(content["ranklist"]);
         }
 
+        else if (813 === cid) {
+            SocialData.update(content["social"]);
+            FriendData.update(content["friends"]);
+        }
+
         else if (811 === cid) {
             PaperData.delete_paper(content["id"]);
         }
@@ -180,6 +185,11 @@ class HttpMgr {
         else if (805 === cid) {
             SocialData.update(content["social"]);
             MessageData.update(content["messages"]);
+        }
+
+        else if (803 === cid) {
+            SocialData.update(content["social"]);
+            extraData = content["type"];
         }
 
         else if (804 === cid) {

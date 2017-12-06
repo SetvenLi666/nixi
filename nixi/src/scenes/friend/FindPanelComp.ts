@@ -50,6 +50,7 @@ class FindPanelComp extends eui.Component {
 
 	private search_success_801() {
 		NetLoading.removeLoading();
-		Prompt.showPrompt(egret.MainContext.instance.stage, "好友请求发送成功");
+		Prompt.showPrompt(egret.MainContext.instance.stage, "好友添加成功");
+		this.closePanel();
 	}
 }

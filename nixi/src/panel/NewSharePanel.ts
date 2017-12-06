@@ -43,7 +43,7 @@ class NewSharePanel extends eui.Component {
 		DisplayMgr.buttonScale(this.btn_share, function () {
 			window["mqq"].ui.shareMessage({
 				title: '逆袭之星途闪耀',
-				desc: '嫁入豪门还是成为豪门？你怎么选',
+				desc: '有人@你，你的单身故事已被曝光啦！',
 				share_type: 0,
 				share_url: window["OPEN_DATA"].shareurl + "&td_channelid=qqshare",
 				image_url: window["OPEN_DATA"].appicon,

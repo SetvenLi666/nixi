@@ -2,6 +2,7 @@ class FriendListComp extends eui.Component {
 	private group: eui.Group;
 	private btn_back: eui.Image;
 	private btn_note: eui.Image;
+	private btn_delete: eui.Image;
 	private list: eui.List;
 	private selfComp: SelfPanelComp;
 	private tip: eui.Label;
@@ -32,6 +33,7 @@ class FriendListComp extends eui.Component {
 
 		this.btn_back.addEventListener(egret.TouchEvent.TOUCH_TAP, this.goBack, this);
 		this.btn_note.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onNote, this);
+		this.btn_delete.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onDelete, this);
 		this.revGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onGet, this);
 		this.selfComp.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onSelf, this);
 		this.selfComp.btn_get.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onGet, this);
@@ -62,6 +64,7 @@ class FriendListComp extends eui.Component {
 		CustomEventMgr.addEventListener("802", this.afterFetchStrangerData_802, this);
 		CustomEventMgr.addEventListener("803", this.afterSendMessage_803, this);
 		CustomEventMgr.addEventListener("807", this.result_of_807, this);
+		CustomEventMgr.addEventListener("Delete Friend", this.afterDeleteFriend, this);
 	}
 
 	private onExit() {
@@ -69,10 +72,12 @@ class FriendListComp extends eui.Component {
 		CustomEventMgr.removeEventListener("803", this.afterSendMessage_803, this);
 		CustomEventMgr.removeEventListener("807", this.result_of_807, this);
 		CustomEventMgr.removeEventListener("802", this.afterFetchStrangerData_802, this);
+		CustomEventMgr.removeEventListener("Delete Friend", this.afterDeleteFriend, this);
 
 		this.list.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this.onSelected, this);
 		this.btn_back.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.goBack, this);
 		this.btn_note.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onNote, this);
+		this.btn_delete.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onDelete, this);
 		this.revGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onGet, this);
 		this.selfComp.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onSelf, this);
 		this.selfComp.btn_get.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onGet, this);
@@ -128,6 +133,21 @@ class FriendListComp extends eui.Component {
 
 	}
 
+	private onDelete() {
+		var self = this;
+		DisplayMgr.buttonScale(this.btn_delete, function() {
+			if(self.list.selectedIndex == -1) {
+				Prompt.showPrompt(egret.MainContext.instance.stage, "不可以删除自己哟~");
+			}else {
+				var id: string = FriendData.friendsList[self.list.selectedIndex];
+				var nickname: string = FriendData.friendsObj[id]["nickname"];
+				var panel = new DeleteFriendPanel(id, nickname);
+				DisplayMgr.set2Center(panel);
+				self.stage.addChild(panel);
+			}
+		});
+	}
+
 	private goBack() {
 		DisplayMgr.buttonScale(this.btn_back, function () {
 			SceneMgr.gotoMainFriend();
@@ -176,6 +196,24 @@ class FriendListComp extends eui.Component {
 		this.selfComp.tili_label.text = "收到体力: " + SocialData.energy_could_take + "/30";
 		CustomEventMgr.dispatchEventWith("Update Player Info", false);
 		NetLoading.removeLoading();
+	}
+
+	private afterDeleteFriend() {
+		Prompt.showPrompt(this.stage, "好友已删除!");
+		this.list.dataProvider = new eui.ArrayCollection(FriendData.friendsList);
+		this.list.dataProviderRefreshed();
+		this.list.selectedIndex = 0;
+
+		if (FriendData.friendsList.length == 0) {
+			this.model.dress(ClothesData.ondressCache, ClothesData.ornamentsCache);
+			this.selfComp.currentState = "down";
+			this.selfComp.touchEnabled = false;
+			this.list.selectedIndex = -1;
+			this.tip.visible = true;
+			this.btn_stranger.visible = true;
+		} else {
+			this.model.dressClothesOfSuit(FriendData.friendsObj[FriendData.friendsList[0]]["ondress"], FriendData.friendsObj[FriendData.friendsList[0]]["ornaments"]);
+		}
 	}
 }
 

@@ -12,7 +12,7 @@
 		"promise/promise.js"
 	],
 	"game": [
-		"bin-debug/panel/HuodongPanel.js",
+		"bin-debug/panel/InvitePanel.js",
 		"bin-debug/AssetAdapter.js",
 		"bin-debug/Quwanwan.js",
 		"bin-debug/ThemeAdapter.js",
@@ -104,8 +104,8 @@
 		"bin-debug/panel/GashaponPanel.js",
 		"bin-debug/panel/GashaponRewardComp.js",
 		"bin-debug/panel/GiftPanel.js",
+		"bin-debug/panel/HuodongPanel.js",
 		"bin-debug/Main.js",
-		"bin-debug/panel/InvitePanel.js",
 		"bin-debug/panel/IosPayTipPanel.js",
 		"bin-debug/panel/LimitDiscountPanel.js",
 		"bin-debug/panel/MothCardPanel.js",
@@ -139,6 +139,7 @@
 		"bin-debug/scenes/friend/FriendMainScene.js",
 		"bin-debug/scenes/friend/FriendUILayer.js",
 		"bin-debug/scenes/friend/NotePanelComp.js",
+		"bin-debug/scenes/friend/friend/DeleteFriendPanel.js",
 		"bin-debug/scenes/friend/friend/FriendListComp.js",
 		"bin-debug/scenes/friend/friend/FriendScene.js",
 		"bin-debug/scenes/friend/friend/SelfPanelComp.js",

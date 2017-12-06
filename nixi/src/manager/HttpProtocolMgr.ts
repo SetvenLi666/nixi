@@ -84,6 +84,12 @@ class HttpProtocolMgr {
         return this.newRequest("820", JSON.stringify(data));
     }
 
+    static delete_friend_813(id: string): egret.URLRequest {
+        var data: {} = {};
+        data["other"] = id;
+        return this.newRequest("813", JSON.stringify(data));
+    }
+
     static delete_paper_811(id: string): egret.URLRequest  {
         var data: {} = {};
         data["id"] = id;

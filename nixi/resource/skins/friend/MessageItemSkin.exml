@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="MessageItemSkin" width="522" height="275" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+<e:Skin class="MessageItemSkin" width="522" height="275" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="state_1,state_2,state_3" >
 	<e:Image y="0" source="msg_item_bg_png" horizontalCenter="0"/>
 	<e:Label id="title" text="1. 8A79B666的好友请求" x="35" y="10" size="26" textColor="0x626087" textAlign="left"/>
 	<e:Label id="content" text="" y="42" width="408" height="99" size="24" textColor="0x626087" verticalAlign="justify" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="0"/>
-	<e:Image id="btn_delete" y="160" horizontalCenter="-120" source="msg_btn_delete_png" visible="false"/>
-	<e:Image id="btn_agree" y="160" horizontalCenter="120" source="msg_btn_agree_png" visible="false"/>
+	<e:Image id="btn_agree" y="160" horizontalCenter="-120" includeIn="state_1,state_2" source="btn_find_png"/>
 	<e:Image id="btn_delete2" y="160" horizontalCenter="120" source="msg_btn_delete_png"/>
 </e:Skin>

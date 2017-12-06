@@ -139,7 +139,7 @@ class StrangerListComp extends eui.Component {
 		var flag = TaskData.taskFlag4;
 		flag += 1;
 		TaskData.taskFlag4 = Math.min(flag, 5);
-		Prompt.showPrompt(egret.MainContext.instance.stage, "好友请求发送成功");
+		Prompt.showPrompt(egret.MainContext.instance.stage, "好友添加成功");
 	}
 
 	private afterData_605() {
