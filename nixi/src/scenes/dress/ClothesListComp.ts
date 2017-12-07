@@ -38,6 +38,8 @@ class ClothesListComp extends eui.Component {
     private btn_shop: eui.Image;
 
     private tipComp: TaskTipComp;
+    private btn_perfectTip: eui.Image;
+    private tipData: {} = null;
     private tag1: string = null;
     private tag2: string = null;
     private tag3: string = null;
@@ -104,13 +106,20 @@ class ClothesListComp extends eui.Component {
                 this.btn_save.source = "dressUI_json.dress_btn_start";
             }
             this.tipComp.visible = true;
+
             this.tipComp.tag_1.source = "clothes_tags_json.tag_" + this.tag1;
             if (this.tag2) {
                 this.tipComp.tag_2.source = "clothes_tags_json.tag_" + this.tag2;
             }
-            // if (this.tag3) {
-            //     this.tipComp.tag_3.source = "clothes_tags_json.tag_" + this.tag3;
-            // }
+
+            var tipdata: {} = RES.getRes("task_perfect_tip_json");
+            if (tipdata[this.taskID]["clothes"].length == 0) {
+                this.btn_perfectTip.visible = false;
+            } else {
+                this.btn_perfectTip.visible = true;
+                this.tipData = tipdata;
+                this.btn_perfectTip.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onPerfectTip, this);
+            }
 
             this.tipComp.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onFilter, this);
         }
@@ -122,6 +131,7 @@ class ClothesListComp extends eui.Component {
         CustomEventMgr.addEventListener("605", this.afterData_605, this);
 
         CustomEventMgr.addEventListener("Update Clothes Status", this.dressDown, this);
+        CustomEventMgr.addEventListener("Dress Suit", this.onDressSuit, this);
 
         if (PlayerData.guide != 0) {
             CustomEventMgr.addEventListener("Guide_Step_2_6", this.onShop, this);
@@ -156,15 +166,17 @@ class ClothesListComp extends eui.Component {
         this.icon_xiezi.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.touchHandle, this);
         this.icon_texiao.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.touchHandle, this);
         this.icon_shipin.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.touchHandle, this);
-        this.icon_zhuangrong.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.touchHandle, this);  
+        this.icon_zhuangrong.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.touchHandle, this);
 
         this.btn_takeoff.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTakeoff, this);
         this.tipComp.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onFilter, this);
+        this.btn_perfectTip.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onPerfectTip, this);
 
         CustomEventMgr.removeEventListener("403", this.after_save_dress_403, this);
         CustomEventMgr.removeEventListener("405", this.after_save_dress_403, this);
         CustomEventMgr.removeEventListener("605", this.afterData_605, this);
         CustomEventMgr.removeEventListener("Update Clothes Status", this.dressDown, this);
+        CustomEventMgr.removeEventListener("Dress Suit", this.onDressSuit, this);
 
         CustomEventMgr.removeEventListener("172", this.after_clientdata_172, this);
 
@@ -192,6 +204,31 @@ class ClothesListComp extends eui.Component {
             };
             self.iconList.selectedIndices = [];
         });
+    }
+
+    private onDressSuit(data: string[]) {
+        this.model.takeOffAllClothes();
+        ClothesData.ondressCache = { "1": 10000, "2": 20000, "3": 30000, "4": 40000, "5": 50000, "6": 60000, "8": 80000, "9": 90000, "10": 100000 };
+        ClothesData.ornamentsCache = {
+            "11": 70000, "12": 70000, "13": 70000, "14": 70000, "15": 70000, "16": 70000, "17": 70000, "18": 70000, "19": 70000, "20": 70000, "21": 70000, "22": 70000, "23": 70000
+        };
+        this.iconList.selectedIndices = [];
+
+        this.dressItems(data);
+    }
+
+    private dressItems(arr: string[]) {
+        var len = arr.length;
+        for (var i = 0; i < len; i++) {
+            var item = ClothesData.clothesTemplateData(arr[i][0], arr[i]);
+            if (item["part"] != "7") {
+               ClothesData.ondressCache[item["part"]] = parseInt(arr[i]);
+            } else {
+                ClothesData.ornamentsCache[item["sub_part"]] = parseInt(arr[i]);
+            }
+        }
+        this.model.dress(ClothesData.ondressCache, ClothesData.ornamentsCache);
+        this.iconList.selectedIndices = this.currentListSelectedIndex(this.curPart);
     }
 
     private dressDown() {
@@ -227,6 +264,15 @@ class ClothesListComp extends eui.Component {
         this.iconList.selectedIndices = this.currentListSelectedIndex(this.curPart);
     }
 
+    private onPerfectTip() {
+        var self = this;
+        DisplayMgr.buttonScale(this.btn_perfectTip, function () {
+            var panel = new TaskPerfectTipPanel(self.tipData[self.taskID]["clothes"]);
+            DisplayMgr.set2Center(panel);
+            self.stage.addChild(panel);
+        });
+    }
+
     private onSelected(e: eui.ItemTapEvent) {
         console.log(e.item.id);
         var data: {} = {};
@@ -258,9 +304,9 @@ class ClothesListComp extends eui.Component {
                 if (ClothesData.ondressCache["8"] == 80000) {
                     flagIndex = -1;
                 } else {
-                    if(e.item.id == ClothesData.ondressCache["8"]) {
+                    if (e.item.id == ClothesData.ondressCache["8"]) {
                         flagIndex = e.itemIndex;
-                    }else {
+                    } else {
                         flagIndex = -1;
                     }
                 }
@@ -289,15 +335,15 @@ class ClothesListComp extends eui.Component {
 
             } else {
                 // 穿
-                if(part == "8" && e.item.id != ClothesData.ondressCache["8"]) {
+                if (part == "8" && e.item.id != ClothesData.ondressCache["8"]) {
                     var index_len = this.iconList.selectedIndices.length;
-                    for(var z = index_len - 1; z >= 0; z--) {
+                    for (var z = index_len - 1; z >= 0; z--) {
                         var clothesitem = this.iconList.dataProvider["source"][this.iconList.selectedIndices[z]];
-                        if(clothesitem["id"] == ClothesData.ondressCache["8"]) {
+                        if (clothesitem["id"] == ClothesData.ondressCache["8"]) {
                             this.iconList.selectedIndices.splice(z, 1);
                         }
                     }
-                }else {
+                } else {
                     this.iconList.selectedIndices.push(e.itemIndex);
                 }
 
@@ -405,7 +451,6 @@ class ClothesListComp extends eui.Component {
             }
         } else {
             clothesData = ClothesData.ownedClothesTemplatesOfPart(this.curPart);
-            // var clothesData = ClothesData.displayClothesTemplatesOfPart(this.curPart);
         }
         if (clothesData.length == 0) {
             this.listTip.visible = true;
@@ -474,58 +519,6 @@ class ClothesListComp extends eui.Component {
         NetLoading.removeLoading();
         SceneMgr.gotoTaskScene(PlayerData.phase, PlayerData.mission);
     }
-
-    // private onBuy() {
-    //     var self = this;
-    //     DisplayMgr.buttonScale(this.btn_buy, function () {
-            // if (self.hasHuodongClothes().length != 0) {
-            //     Prompt.showPrompt(self.stage, "所选衣饰中包含非卖品!");
-            //     //送回非卖品
-            //     var arr = self.hasHuodongClothes();
-            //     var len = arr.length;
-            //     for (var i = 0; i < len; i++) {
-            //         var id = arr[i];
-            //         var data = {};
-            //         if (Math.floor(id / 10000) != 7) {
-            //             data = {
-            //                 "id": parseInt(Math.floor(id / 10000) + "0000"),
-            //                 "sub_part": Math.floor(id / 10000).toString()
-            //             };
-            //             ClothesData.ondressCache[data["sub_part"]] = data["id"];
-            //             EventMgr.inst.dispatchEventWith(CustomEvents.ChangeClothes, false, data);
-            //         } else {
-            //             data = {
-            //                 "id": 70000,
-            //                 "sub_part": ClothesData.clothesTemplateData("7", id.toString())["sub_part"]
-            //             };
-            //             ClothesData.ornamentsCache[data["sub_part"]] = data["id"];
-            //             EventMgr.inst.dispatchEventWith(CustomEvents.ChangeClothes, false, data);
-            //         }
-
-            //         var selectedArr = self.iconList.selectedIndices;
-            //         var len2 = selectedArr.length;
-            //         for (var j = len2 - 1; j >= 0; j--) {
-            //             if (self.iconList.dataProvider["source"][selectedArr[j]]["id"] == id.toString()) {
-            //                 selectedArr.splice(j, 1);
-            //                 self.iconList.selectedIndices = selectedArr;
-            //             }
-            //         }
-            //     }
-
-            //     return;
-            // }
-
-    //         NetLoading.showLoading();
-    //         var request: egret.URLRequest;
-    //         if (true === self.isTaskIn && self.taskID == "pk") {
-    //             request = HttpProtocolMgr.save_competition_dress_405(ClothesData.ondressCache, ClothesData.ornamentsCache);
-    //         } else {
-    //             request = HttpProtocolMgr.new_save_dressed_403(ClothesData.ondressCache, ClothesData.ornamentsCache);
-    //         }
-
-    //         HttpMgr.postRequest(request);
-    //     });
-    // }
 
     private onSave() {
         var self = this;
@@ -639,6 +632,36 @@ class ClothesListComp extends eui.Component {
     }
 
     private after_save_dress_403() {
+        if (TaskData.isBuyOf403) {
+            //购买衣服
+            TaskData.isBuyOf403 = false;
+            NetLoading.removeLoading();
+            CustomEventMgr.dispatchEventWith("Update Player Info", false);
+            Prompt.showPrompt(this.stage, "购买成功~!");
+            CustomEventMgr.dispatchEventWith("Update Total Price", false);
+
+            var clothesData: {}[];
+            if (this.isTaskIn && this.isFilter) {
+                if (this.curPart == "1" || this.curPart == "9") {
+                    clothesData = ClothesData.ownedClothesTemplatesOfPart(this.curPart);
+                } else {
+                    clothesData = ClothesData.allOwnClothesByLabel(this.curPart, this.tag1, this.tag2, this.tag3);
+                }
+            } else {
+                clothesData = ClothesData.ownedClothesTemplatesOfPart(this.curPart);
+            }
+            if (clothesData.length == 0) {
+                this.listTip.visible = true;
+            } else {
+                this.listTip.visible = false;
+            }
+
+            this.iconList.dataProvider = new eui.ArrayCollection(clothesData);
+            this.iconList.dataProviderRefreshed();
+
+            return;
+        }
+
         if (true === this.isTaskIn && this.taskID != "pk") {
 
             if (ClothesData.ondressCache["6"] == 60000) {
@@ -654,19 +677,19 @@ class ClothesListComp extends eui.Component {
                 CustomEventMgr.dispatchEventWith("Update Player Info", false);
                 Prompt.showPrompt(this.stage, "喂喂喂~!你是不是忘记穿裤子了");
             } else {
-                if(this.taskID == "1" && ClientMapData.taskGuide && TaskData.userData()["1"] == null) {
+                if (this.taskID == "1" && ClientMapData.taskGuide && TaskData.userData()["1"] == null) {
                     var request = HttpProtocolMgr.update_clientmap_172("set", "taskGuide", 2);
                     HttpMgr.postRequest(request);
-                }else if(this.taskID == "2" && ClientMapData.taskGuide && TaskData.userData()["2"] == null) {
+                } else if (this.taskID == "2" && ClientMapData.taskGuide && TaskData.userData()["2"] == null) {
                     var request = HttpProtocolMgr.update_clientmap_172("set", "taskGuide", 3);
                     HttpMgr.postRequest(request);
-                }else if(this.taskID == "3" && ClientMapData.taskGuide && TaskData.userData()["3"] == null) {
+                } else if (this.taskID == "3" && ClientMapData.taskGuide && TaskData.userData()["3"] == null) {
                     var request = HttpProtocolMgr.update_clientmap_172("set", "taskGuide", 4);
                     HttpMgr.postRequest(request);
-                }else if(this.taskID == "4" && ClientMapData.taskGuide && TaskData.userData()["4"] == null) {
+                } else if (this.taskID == "4" && ClientMapData.taskGuide && TaskData.userData()["4"] == null) {
                     var request = HttpProtocolMgr.update_clientmap_172("set", "taskGuide", 0);
                     HttpMgr.postRequest(request);
-                }else {
+                } else {
                     var request: egret.URLRequest = HttpProtocolMgr.commit_mission_603(this.taskID);
                     HttpMgr.postRequest(request);
                 }

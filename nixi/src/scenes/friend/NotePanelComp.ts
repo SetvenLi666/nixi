@@ -3,6 +3,7 @@ class NotePanelComp extends eui.Component {
 	public note_image: eui.Image;
 	public title: eui.Label;
 	public btn_send: eui.Image;
+	public btn_cancel: eui.Image;
 	public textDisplay: eui.EditableText;
 	public inputTip: eui.Label;
 	public curWordNum: eui.Label;
@@ -29,7 +30,8 @@ class NotePanelComp extends eui.Component {
 		this.textDisplay.addEventListener(egret.Event.CHANGE, this.onChange, this);
 
 		this.btn_send.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onSend, this);
-		this.group.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
+		this.btn_cancel.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onCancel, this);
+		// this.group.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
 
 		CustomEventMgr.addEventListener("809", this.afterSendNote, this);
 	}
@@ -74,6 +76,10 @@ class NotePanelComp extends eui.Component {
 				HttpMgr.postRequest(request);
 			}
 		}
+	}
+
+	private onCancel() {
+		this.closePanel();
 	}
 
 	private onTouch(evt: egret.TouchEvent) {

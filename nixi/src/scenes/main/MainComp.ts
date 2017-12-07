@@ -181,22 +181,28 @@ class MainComp extends eui.Component {
 	}
 
 	private checkAllClothes() {
-		var info: {} = {};
 		var arr = ClothesData.allClothesArray();
 		var len = arr.length;
-		for(var i = 0; i < len; i++) {
-			var item = arr[i];
-			if(item["serial"] != "" && item["serial"] != "0") {
-				if(info[item["serial"]] == null) {
-					info[item["serial"]] = [];
-					info[item["serial"]].push(item["id"]);
-				}else {
-					info[item["serial"]].push(item["id"]);
+		var end_data: {} = {};
+		var taskdata: {}[] = RES.getRes("task_serial_json");
+		var len2 = taskdata.length;
+		for (var j = 0; j < len2; j++) {
+			var taskitem = taskdata[j];
+			var itemdata: {} = {
+				"task_id": taskitem["task_id"],
+				"serial": taskitem["serial"],
+				"clothes": []
+			};
+
+			for (var i = 0; i < len; i++) {
+				var item = arr[i];
+				if (item["serial"] == taskitem["serial"]) {
+					itemdata["clothes"].push(item["id"]);
 				}
 			}
-		}
 
-		console.log(info);
+			end_data[taskitem["task_id"]] = itemdata;
+		}
 	}
 
 	private onExit() {
@@ -283,17 +289,17 @@ class MainComp extends eui.Component {
 
 	private initView() {
 		if (NewsData.mail > 0) {
-			var tw_mailGroup = egret.Tween.get(this.mailGroup, {loop: true});
+			var tw_mailGroup = egret.Tween.get(this.mailGroup, { loop: true });
 			tw_mailGroup
-			.to({rotation: 8}, 100)
-			.to({rotation: 0}, 100)
-			.to({rotation: -8}, 100)
-			.to({rotation: 0}, 100)
-			.to({rotation: 8}, 100)
-			.to({rotation: 0}, 100)
-			.to({rotation: -8}, 100)
-			.to({rotation: 0}, 100)
-			.wait(2000);
+				.to({ rotation: 8 }, 100)
+				.to({ rotation: 0 }, 100)
+				.to({ rotation: -8 }, 100)
+				.to({ rotation: 0 }, 100)
+				.to({ rotation: 8 }, 100)
+				.to({ rotation: 0 }, 100)
+				.to({ rotation: -8 }, 100)
+				.to({ rotation: 0 }, 100)
+				.wait(2000);
 
 			this.mailTip.visible = true;
 			var tw_tip = egret.Tween.get(this.mailTip, { loop: true });
@@ -968,17 +974,17 @@ class MainComp extends eui.Component {
 
 	private result_of_910() {
 		if (NewsData.mail > 0) {
-			var tw_mailGroup = egret.Tween.get(this.mailGroup, {loop: true});
+			var tw_mailGroup = egret.Tween.get(this.mailGroup, { loop: true });
 			tw_mailGroup
-			.to({rotation: 8}, 150)
-			.to({rotation: 0}, 150)
-			.to({rotation: -8}, 150)
-			.to({rotation: 0}, 150)
-			.to({rotation: 8}, 150)
-			.to({rotation: 0}, 150)
-			.to({rotation: -8}, 150)
-			.to({rotation: 0}, 150)
-			.wait(2000);
+				.to({ rotation: 8 }, 150)
+				.to({ rotation: 0 }, 150)
+				.to({ rotation: -8 }, 150)
+				.to({ rotation: 0 }, 150)
+				.to({ rotation: 8 }, 150)
+				.to({ rotation: 0 }, 150)
+				.to({ rotation: -8 }, 150)
+				.to({ rotation: 0 }, 150)
+				.wait(2000);
 
 			this.mailTip.visible = true;
 			var tw_tip = egret.Tween.get(this.mailTip, { loop: true });

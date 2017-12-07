@@ -168,6 +168,8 @@
     "src/panel/ScPanelSkin.exml",
     "src/panel/StarsRewardPanelSkin.exml",
     "src/panel/ThirdPanelSkin.exml",
+    "src/scenes/dress/PerfectTipItemSkin.exml",
+    "src/scenes/dress/TaskPerfectTipPanelSkin.exml",
     "src/scenes/friend/friend/DeleteFriendPanelSkin.exml",
     "src/scenes/login/OpenPanelSkin.exml",
     "src/scenes/main/TalkCompSkin.exml",

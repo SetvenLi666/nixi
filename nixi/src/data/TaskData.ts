@@ -93,6 +93,8 @@ class TaskData {
 
     public static curTaskID: number = 1;
 
+    public static isBuyOf403: boolean = false; //true为403购买衣服, false为403协议保存衣服
+
     private static _totalData: {}[] = [];
     private static _mdata_1: {}[] = [];
     private static _mdata_2: {}[] = [];

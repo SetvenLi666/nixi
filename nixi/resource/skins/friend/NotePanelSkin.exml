@@ -8,6 +8,7 @@
 		<e:Label id="title" text="" y="392.78" textColor="0x000000" size="24" horizontalCenter="-12" width="384" textAlign="left" height="24"/>
 		<e:EditableText id="textDisplay" textColor="0x000000" width="398" height="271" size="24" y="430.78" textAlign="left" verticalAlign="top" multiline="true" horizontalCenter="0" text="" anchorOffsetX="0" anchorOffsetY="0"/>
 		<e:Label id="inputTip" text="请输入..." y="430.25" textColor="0x808080" size="24" horizontalCenter="-152.5"/>
-		<e:Image id="btn_send" y="703.23" horizontalCenter="0" source="bnt_send_png"/>
+		<e:Image id="btn_send" y="703" source="bnt_send_png" horizontalCenter="80.5"/>
+		<e:Image id="btn_cancel" source="btn_no_png" y="703" horizontalCenter="-79.5"/>
 	</e:Group>
 </e:Skin>

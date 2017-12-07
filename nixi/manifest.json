@@ -134,6 +134,7 @@
 		"bin-debug/scenes/dress/EventMgr.js",
 		"bin-debug/scenes/dress/ShopLayer.js",
 		"bin-debug/scenes/dress/ShopScene.js",
+		"bin-debug/scenes/dress/TaskPerfectTipPanel.js",
 		"bin-debug/scenes/dress/TaskTipComp.js",
 		"bin-debug/scenes/friend/FindPanelComp.js",
 		"bin-debug/scenes/friend/FriendMainScene.js",
