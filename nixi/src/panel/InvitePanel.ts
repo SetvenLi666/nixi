@@ -4,7 +4,9 @@ class InvitePanel extends eui.Component {
 	public list: eui.List;
 	public curTimes: eui.Label;
 	public nextShareTime: eui.Label;
-	public btn_share: eui.Image;
+	public btn_share: eui.Group;
+	public btn_receive: eui.Image;
+	public curInviteNum: eui.Label;
 
 	private dataSource: eui.ArrayCollection;
 
@@ -30,6 +32,15 @@ class InvitePanel extends eui.Component {
 		this.curTimes.text = InviteData.curTimes + "/3";
 		this.nextShareTime.text = this.formatShareTime(this.shareLeftTime);
 
+		this.curInviteNum.text = InviteData.inviteCount + "/20";
+
+		if(InviteData.reward_state == 1 || InviteData.reward_state == 2) {
+			this.btn_receive.source = "invite_btn_buy_png";
+		}else if(InviteData.reward_state == 3) {
+			this.btn_receive.source = "invite_state_yilinqu_png";
+			this.btn_receive.touchEnabled = false;
+		}
+
 		if (this.shareLeftTime > 0) {
 			this.timer.start();
 		}
@@ -43,14 +54,17 @@ class InvitePanel extends eui.Component {
 			.to({ scaleX: 1, scaleY: 1 }, 500);
 
 		this.btn_share.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
+		this.btn_receive.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onReceive, this);
 
 		CustomEventMgr.addEventListener("167", this.result_of_167, this);
 		CustomEventMgr.addEventListener("164", this.result_of_164, this);
+		CustomEventMgr.addEventListener("108", this.result_of_108, this);
 	}
 
 	private onExit() {
 		CustomEventMgr.removeEventListener("167", this.result_of_167, this);
 		CustomEventMgr.removeEventListener("164", this.result_of_164, this);
+		CustomEventMgr.removeEventListener("108", this.result_of_108, this);
 		this.timer.stop();
 		this.timer = null;
 		egret.Tween.removeTweens(this.btn_share);
@@ -64,6 +78,13 @@ class InvitePanel extends eui.Component {
 		if (this.shareLeftTime > 0) {
 			this.timer.start();
 		}
+	}
+
+	private onReceive() {
+		DisplayMgr.buttonScale(this.btn_receive, function() {
+			var request = HttpProtocolMgr.take_invite_clothes_reward_108();
+			HttpMgr.postRequest(request);
+		});
 	}
 
 	private onShare() {
@@ -129,6 +150,28 @@ class InvitePanel extends eui.Component {
 		reward.push({ type: "diam", num: 10 });
 		this.playRewardAnimation(reward);
 		this.updateView();
+	}
+
+	private result_of_108(evt: egret.Event) {
+		NetLoading.removeLoading();
+		var new_reward: {}[] = [];
+		var reward: number[] = reward = evt.data["clothes"];
+		var count = reward.length;
+		for(var i = 0; i < count; i++) {
+			var item: {} = {
+				type: "clothes",
+				num: reward[i]
+			}
+			new_reward.push(item);
+		}
+		this.playRewardAnimation(new_reward);
+
+		if(InviteData.reward_state == 1 || InviteData.reward_state == 2) {
+			this.btn_receive.source = "invite_btn_buy_png";
+		}else if(InviteData.reward_state == 3) {
+			this.btn_receive.source = "invite_state_yilinqu_png";
+			this.btn_receive.touchEnabled = false;
+		}
 	}
 
 	private playRewardAnimation(reward: {}[]) {

@@ -193,7 +193,7 @@
 			"name": "new_rank"
 		},
 		{
-			"keys": "social_chat_send_vip_png,chat_common_bg_png,gashapon_flag_png,gashapon_text_1_png,gashapon_text_2_png,reward_pop_bg_1_png,reward_pop_bg_2_png,reward_pop_bg_3_png,reward_pop_flag_1_png,reward_pop_flag_2_png,reward_pop_flag_3_png,frd_btn_revEng_png,frd_btn_rev_text_bg_png,loading_bg_png,tl_num_100_png,tl_num_120_png,tl_num_300_png,tl_num_600_png,tl_num_10000_png,tl_num_30000_png,tl_panel_bg_png,tl_title_6_png,tl_title_30_png,tl_btn_buy_png,main_tl_ac_png,main_tomo_icon_png,main_tomo_text_png,social_chat_tip_png,task_stars_tip_png,lingqu_btn_png,share_btn_png,msg_btn_give_png",
+			"keys": "social_chat_send_vip_png,chat_common_bg_png,gashapon_flag_png,gashapon_text_1_png,gashapon_text_2_png,reward_pop_bg_1_png,reward_pop_bg_2_png,reward_pop_bg_3_png,reward_pop_flag_1_png,reward_pop_flag_2_png,reward_pop_flag_3_png,frd_btn_revEng_png,frd_btn_rev_text_bg_png,loading_bg_png,tl_num_100_png,tl_num_120_png,tl_num_300_png,tl_num_600_png,tl_num_10000_png,tl_num_30000_png,tl_panel_bg_png,tl_title_6_png,tl_title_30_png,tl_btn_buy_png,main_tl_ac_png,main_tomo_icon_png,main_tomo_text_png,social_chat_tip_png,task_stars_tip_png,lingqu_btn_png,share_btn_png,msg_btn_give_png,invite_btn_buy_png,invite_state_yilinqu_png",
 			"name": "preload"
 		}
 	],
@@ -17985,6 +17985,16 @@
 			"name": "msg_btn_give_png",
 			"type": "image",
 			"url": "game/social/msg/msg_btn_give.png"
+		},
+		{
+			"name": "invite_btn_buy_png",
+			"type": "image",
+			"url": "game/panel/invite/invite_btn_buy.png"
+		},
+		{
+			"name": "invite_state_yilinqu_png",
+			"type": "image",
+			"url": "game/panel/invite/invite_state_yilinqu.png"
 		}
 	]
 }

@@ -7,6 +7,8 @@ class InviteItem {
 class InviteData {
 	private static _curTimes: number = 0;
 	private static _curLeftShareTime: number = 0;
+	private static _reward_state: number = 1;
+	private static _inviteCount: number = 0;
 
 	private static _inviteList: InviteItem[] = (function(){
 		var list: InviteItem[] = [];
@@ -20,9 +22,12 @@ class InviteData {
 		if(obj) {
 			this._curTimes = obj["share_times"];
 			this._curLeftShareTime = obj["next_share"];
+			this._reward_state = obj["reward_state"];
 			// this._inviteList = obj["invite_list"];
 			var listdata: {}[] = obj["invite_list"];
+			
 			var len = Math.min(listdata.length, 45);
+			this._inviteCount = len;
 			for(var i = 0; i < len; i++) {
 				this._inviteList[i].icon = listdata[i]["figureurl"];
 				this._inviteList[i].state = listdata[i]["draw"];
@@ -41,6 +46,14 @@ class InviteData {
 
 	public static get inviteList(): {}[] {
 		return this._inviteList;
+	}
+
+	public static get reward_state(): number {
+		return this._reward_state;
+	}
+
+	public static get inviteCount(): number {
+		return this._inviteCount;
 	}
 }
 

@@ -589,6 +589,11 @@ class HttpMgr {
             PurchaseData.update(content["purchase"]);
         }
 
+        else if (108 === cid) {
+            InviteData.updateInviteData(content["invite"]);
+            extraData = content["reward"];
+        }
+
         else if (106 === cid) {
             TLDiscountData.updateDiscountData(content);
         }
