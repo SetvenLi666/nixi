@@ -48,6 +48,7 @@ class MonthCardPanel extends eui.Component {
 	private onBuy() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_buy, function () {
+			console.log(PurchaseData.MonthCards["status"]);
 			if (PurchaseData.MonthCards["status"] == 0) {
 				//支付购买
 				self.onPay();
@@ -86,7 +87,7 @@ class MonthCardPanel extends eui.Component {
 			"&openkey=" + window["OPEN_DATA"].openkey + "&platform=" + window["OPEN_DATA"].platform;
 		urlRequest.data = urlData;
 		var urlLoader = new egret.URLLoader();
-		urlLoader.addEventListener(egret.Event.COMPLETE, this.onLoadComplete, self);
+		urlLoader.addEventListener(egret.Event.COMPLETE, this.onLoadComplete, this);
 		urlLoader.load(urlRequest);
 	}
 
