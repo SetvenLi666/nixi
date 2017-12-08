@@ -113,18 +113,21 @@ class ClothesListComp extends eui.Component {
             }
 
             var tipdata: {} = RES.getRes("task_perfect_tip_json");
-            if (tipdata[this.taskID]["clothes"].length == 0) {
-                this.btn_perfectTip.visible = false;
-            } else {
-                this.btn_perfectTip.visible = true;
-                var tw_tip = egret.Tween.get(this.btn_perfectTip, {loop: true});
-                tw_tip.to({scaleX: 1.2, scaleY: 1.2}, 300)
-                    .to({scaleX: 1, scaleY: 1}, 300);
-                this.tipData = tipdata;
-                this.btn_perfectTip.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onPerfectTip, this);
-            }
 
-            this.tipComp.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onFilter, this);
+            if (this.taskID != "pk") {
+                if (tipdata[this.taskID]["clothes"].length == 0) {
+                    this.btn_perfectTip.visible = false;
+                } else {
+                    this.btn_perfectTip.visible = true;
+                    var tw_tip = egret.Tween.get(this.btn_perfectTip, { loop: true });
+                    tw_tip.to({ scaleX: 1.1, scaleY: 1.1 }, 300)
+                        .to({ scaleX: 1, scaleY: 1 }, 300);
+                    this.tipData = tipdata;
+                    this.btn_perfectTip.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onPerfectTip, this);
+                }
+
+                this.tipComp.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onFilter, this);
+            }
         }
 
         this.btn_takeoff.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTakeoff, this);
@@ -270,9 +273,13 @@ class ClothesListComp extends eui.Component {
     private onPerfectTip() {
         var self = this;
         DisplayMgr.buttonScale(this.btn_perfectTip, function () {
-            var panel = new TaskPerfectTipPanel(self.tipData[self.taskID]["clothes"]);
-            DisplayMgr.set2Center(panel);
-            self.stage.addChild(panel);
+            if (PurchaseData.MonthCards["status"] == 0) {
+                Prompt.showPrompt(self.stage, " 开通月卡即可使用此功能");
+            } else {
+                var panel = new TaskPerfectTipPanel(self.tipData[self.taskID]["clothes"]);
+                DisplayMgr.set2Center(panel);
+                self.stage.addChild(panel);
+            }
         });
     }
 

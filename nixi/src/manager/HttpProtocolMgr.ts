@@ -506,7 +506,7 @@ class HttpProtocolMgr {
 
     static take_monthly_card2_daily_reward_157() {
         var data = {};
-        data["id"] = 3; 
+        // data["id"] = 3; 
         data["extra"] = CommonFunc.curTimeStamp();
         return this.newRequest("157", JSON.stringify(data));
     }
@@ -530,6 +530,12 @@ class HttpProtocolMgr {
         data["product_id"] = product_id;
         data["extra"] = CommonFunc.curTimeStamp();
         return this.newRequest("121", JSON.stringify(data));
+    }
+
+    static take_invite_clothes_reward_108() {
+        var data = {};
+        data["extra"] = CommonFunc.curTimeStamp();
+        return this.newRequest("108", JSON.stringify(data));
     }
 
     static take_timelimitDiscount_info_106(type: number) {

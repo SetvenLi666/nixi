@@ -273,6 +273,8 @@ function __paySuccess() {
 				CustomEventMgr.dispatchEventWith("Update Libao View", false);
 			}else if(obj["product_id"] == "tiegao_17" || obj["product_id"] == "tiegao_18") {
 				TLDiscountData.resetDL();
+			}else if(obj["product_id"] == "tiegao_9") {
+				Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮箱领取激活!");
 			}
 		}
 
@@ -304,13 +306,6 @@ function __paySuccess() {
 	}, function (data) {
 		console.log(data);
 	});
-
-	// if (window["OPEN_DATA"] && window["OPEN_DATA"].platform == 2 && window["OPEN_DATA"].qua["app"] == "SQ") {
-	// 	console.log("支付成功！！！");
-	// 	var tip = new IosPayTipPanel();
-	// 	DisplayMgr.set2Center(tip);
-	// 	egret.MainContext.instance.stage.addChild(tip);
-	// }
 }
 
 

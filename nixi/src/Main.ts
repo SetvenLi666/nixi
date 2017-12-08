@@ -207,7 +207,7 @@ class Main extends egret.DisplayObjectContainer {
         window["mqq"].ui.setOnShareHandler(function (type) {
             window["mqq"].ui.shareMessage({
                 title: '逆袭之星途闪耀',
-                desc: '有人@你，你的单身故事已被曝光啦！',
+                desc: '世界之大，总有一款男神适合你',
                 share_type: type,
                 share_url: window["OPEN_DATA"].shareurl,
                 image_url: window["OPEN_DATA"].appicon,

@@ -3,20 +3,21 @@
 	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
 		<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.2"/>
 		<e:Image id="bg" source="invite_panel_bg_png" horizontalCenter="0" verticalCenter="0"/>
-		<e:Image source="invite_title_bg_png" y="271" horizontalCenter="0"/>
-		<e:Image source="invite_text_tip_png" y="448.3" horizontalCenter="0.5"/>
-		<e:Image source="invite_text_names_png" y="500" horizontalCenter="0"/>
-		<e:Scroller width="430" height="340" y="560" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="-0.5">
+		<e:Image source="invite_title_bg_png" y="432" horizontalCenter="0"/>
+		<e:Image source="invite_text_names_png" y="571.67" horizontalCenter="0"/>
+		<e:Scroller width="430" height="295" y="611" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0">
 			<e:List id="list">
 				<e:layout>
 					<e:TileLayout horizontalAlign="center" horizontalGap="10" verticalGap="10"/>
 				</e:layout>
 			</e:List>
 		</e:Scroller>
-		<e:Image source="invite_progress_text_png" y="286.67" horizontalCenter="106.5"/>
-		<e:Label id="curTimes" text="0/3" y="292.04" size="22" textColor="0xef4556" horizontalCenter="162" textAlign="center" width="40" height="22"/>
-		<e:Image source="invite_lefttime_text_png" y="416" horizontalCenter="53.5"/>
-		<e:Label id="nextShareTime" text="00:00:00" y="416.75" size="22" textColor="0xef4556" horizontalCenter="163" width="100" textAlign="center" height="22"/>
-		<e:Image id="btn_share" source="invite_btn_share_png" y="365" anchorOffsetX="48.5" anchorOffsetY="49.5" horizontalCenter="136.5"/>
+		<e:Label id="nextShareTime" text="00:00:00" y="545" size="18" textColor="0xef4556" horizontalCenter="150" width="100" textAlign="center" height="18"/>
+		<e:Group id="btn_share" width="62" height="63" y="511" anchorOffsetX="31" anchorOffsetY="31.5" horizontalCenter="160">
+			<e:Image source="invite_btn_share_png" anchorOffsetX="48.5" anchorOffsetY="49.5" horizontalCenter="0" x="-35" scaleX="1" scaleY="1" verticalCenter="0"/>
+			<e:Label id="curTimes" text="0/3" y="17.34" size="20" textAlign="center" width="40" height="22" horizontalCenter="0" strokeColor="0xed3b74" stroke="3" textColor="0xffffff"/>
+		</e:Group>
+		<e:Label id="curInviteNum" text="0/20" y="541.37" size="18" textColor="0x2393fb" textAlign="center" bold="true" horizontalCenter="-126"/>
+		<e:Image id="btn_receive" source="invite_btn_buy_png" y="532" horizontalCenter="-60"/>
 	</e:Group>
 </e:Skin>

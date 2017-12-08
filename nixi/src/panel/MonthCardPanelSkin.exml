@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MonthCardPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.2"/>
+		<e:Group id="group2" horizontalCenter="0" verticalCenter="0" width="524" height="743">
+			<e:Image source="month_panel_bg_png" horizontalCenter="0" verticalCenter="0"/>
+			<e:Group id="timeGroup" width="114" height="128" y="45" horizontalCenter="190">
+				<e:Image source="month_time_bg_png" x="0" y="0"/>
+				<e:Label id="timeLabel" text="29" y="54" horizontalCenter="0" size="64" textAlign="center" verticalAlign="middle"/>
+			</e:Group>
+			<e:Image id="btn_buy" y="630.67" horizontalCenter="147.5" source="month_btn_buy_png"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

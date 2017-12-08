@@ -235,6 +235,7 @@ class HttpMgr {
                 if (content["purchase"]) {
                     PurchaseData.update(content["purchase"]);
                 }
+                ClothesData.updateUserClohtes(content["clothes"]);
                 EnergyCD.updateEnergyCD();
                 extraData = {};
                 extraData.info = content["info"];
@@ -560,6 +561,7 @@ class HttpMgr {
 
         else if (157 === cid) {
             PlayerData.update(content["player"]);
+            ClothesData.updateUserClohtes(content["clothes"]);
             EnergyCD.updateEnergyCD();
             PurchaseData.update(content["purchase"]);
             extraData = content["rewards"];
@@ -587,6 +589,12 @@ class HttpMgr {
             // this->creat_Energy_Time();
             EnergyCD.updateEnergyCD();
             PurchaseData.update(content["purchase"]);
+        }
+
+        else if (108 === cid) {
+            InviteData.updateInviteData(content["invite"]);
+            ClothesData.updateUserClohtes(content["clothes"]);
+            extraData = content["reward"];
         }
 
         else if (106 === cid) {

@@ -55,10 +55,12 @@ class EmailPanel extends eui.Component {
 
 		if (evt.data.info["oper"] == 1) {
 			this.updateMailList(evt.data.info["id"], evt.data.info["oper"]);
-			if (evt.data.reward["clothes"]) {
-				this.playRewardAnimation(evt.data.reward);
-			} else {
-				Prompt.showPrompt(egret.MainContext.instance.stage, "领取成功");
+			if (evt.data.reward) {
+				if(evt.data.reward["clothes"]) {
+					this.playRewardAnimation(evt.data.reward);
+				}else {
+					Prompt.showPrompt(egret.MainContext.instance.stage, "领取成功");
+				}
 			}
 		} else {
 			this.updateMailList(evt.data.info["id"], evt.data.info["oper"]);
