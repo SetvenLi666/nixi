@@ -34,7 +34,9 @@
 	<e:Image id="layer_312" horizontalCenter="0" bottom="0"/>
 	<e:Image id="layer_335" horizontalCenter="0" top="0"/>
 	<e:Image id="layer_336" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_340" horizontalCenter="0" top="0"/>
 	<e:Image id="layer_350" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_351" horizontalCenter="0" top="0"/>
 	<e:Image id="layer_352" horizontalCenter="0" bottom="0"/>
 	<e:Image id="layer_359" horizontalCenter="0" bottom="0"/>
 	<e:Image id="layer_360" horizontalCenter="0" bottom="0"/>
@@ -68,6 +70,7 @@
 	<e:Image id="layer_422" horizontalCenter="0" top="0"/>
 	<e:Image id="layer_423" horizontalCenter="0" top="0"/>
 	<e:Image id="layer_424" horizontalCenter="0" top="0"/>
+	<e:Image id="layer_425" horizontalCenter="0" top="0"/>
 	<e:Image id="layer_430" horizontalCenter="0" top="0"/>
 	<e:Image id="layer_439" horizontalCenter="0" top="0"/>
 	<e:Image id="layer_440" horizontalCenter="0" top="0"/>

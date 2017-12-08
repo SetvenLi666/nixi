@@ -506,7 +506,7 @@ class HttpProtocolMgr {
 
     static take_monthly_card2_daily_reward_157() {
         var data = {};
-        data["id"] = 3; 
+        // data["id"] = 3; 
         data["extra"] = CommonFunc.curTimeStamp();
         return this.newRequest("157", JSON.stringify(data));
     }

@@ -33,6 +33,12 @@ class InvitePanel extends eui.Component {
 		this.nextShareTime.text = this.formatShareTime(this.shareLeftTime);
 
 		this.curInviteNum.text = InviteData.inviteCount + "/20";
+		
+		// if(InviteData.inviteCount < 20) {
+		// 	this.btn_receive.visible = false;
+		// }else {
+		// 	this.btn_receive.visible = true;
+		// }
 
 		if(InviteData.reward_state == 1 || InviteData.reward_state == 2) {
 			this.btn_receive.source = "invite_btn_buy_png";
@@ -166,6 +172,12 @@ class InvitePanel extends eui.Component {
 		}
 		this.playRewardAnimation(new_reward);
 
+		if(InviteData.inviteCount < 20) {
+			this.btn_receive.visible = false;
+		}else {
+			this.btn_receive.visible = true;
+		}
+		
 		if(InviteData.reward_state == 1 || InviteData.reward_state == 2) {
 			this.btn_receive.source = "invite_btn_buy_png";
 		}else if(InviteData.reward_state == 3) {

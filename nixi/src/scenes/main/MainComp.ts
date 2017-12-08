@@ -30,6 +30,8 @@ class MainComp extends eui.Component {
 	public td_ac: eui.Image;
 	public dt_tip: eui.Image;
 
+	public mcGroup: eui.Group;
+
 	public tomoGroup: eui.Group;
 
 	public tl_ac: eui.Image;
@@ -86,6 +88,7 @@ class MainComp extends eui.Component {
 		this.scGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnSc, this);
 		this.dtGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnDt, this);
 		this.yqGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnYq, this);
+		this.mcGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnMc, this);
 
 		this.tlGroup2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnTl, this);
 
@@ -265,6 +268,8 @@ class MainComp extends eui.Component {
 		this.dtGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnDt, this);
 		this.hdGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnHd, this);
 
+		this.mcGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnMc, this);
+
 		this.tlGroup2.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnTl, this);
 
 		this.touchRect.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouchRect, this);
@@ -283,17 +288,17 @@ class MainComp extends eui.Component {
 
 	private initView() {
 		if (NewsData.mail > 0) {
-			var tw_mailGroup = egret.Tween.get(this.mailGroup, {loop: true});
-			tw_mailGroup
-			.to({rotation: 8}, 100)
-			.to({rotation: 0}, 100)
-			.to({rotation: -8}, 100)
-			.to({rotation: 0}, 100)
-			.to({rotation: 8}, 100)
-			.to({rotation: 0}, 100)
-			.to({rotation: -8}, 100)
-			.to({rotation: 0}, 100)
-			.wait(2000);
+			// var tw_mailGroup = egret.Tween.get(this.mailGroup, {loop: true});
+			// tw_mailGroup
+			// .to({rotation: 8}, 100)
+			// .to({rotation: 0}, 100)
+			// .to({rotation: -8}, 100)
+			// .to({rotation: 0}, 100)
+			// .to({rotation: 8}, 100)
+			// .to({rotation: 0}, 100)
+			// .to({rotation: -8}, 100)
+			// .to({rotation: 0}, 100)
+			// .wait(2000);
 
 			this.mailTip.visible = true;
 			var tw_tip = egret.Tween.get(this.mailTip, { loop: true });
@@ -617,6 +622,15 @@ class MainComp extends eui.Component {
 			var panel = new LimitDiscountPanel(TLDiscountData.type);
 			DisplayMgr.set2Center(panel);
 			self.stage.addChild(panel);
+		});
+	}
+
+	private onBtnMc() {
+		var self = this;
+		DisplayMgr.buttonScale(this.mcGroup, function() {
+			var panel = new MonthCardPanel();
+			DisplayMgr.set2Center(panel);
+			self.stage.addChild(panel); 
 		});
 	}
 
@@ -968,17 +982,17 @@ class MainComp extends eui.Component {
 
 	private result_of_910() {
 		if (NewsData.mail > 0) {
-			var tw_mailGroup = egret.Tween.get(this.mailGroup, {loop: true});
-			tw_mailGroup
-			.to({rotation: 8}, 150)
-			.to({rotation: 0}, 150)
-			.to({rotation: -8}, 150)
-			.to({rotation: 0}, 150)
-			.to({rotation: 8}, 150)
-			.to({rotation: 0}, 150)
-			.to({rotation: -8}, 150)
-			.to({rotation: 0}, 150)
-			.wait(2000);
+			// var tw_mailGroup = egret.Tween.get(this.mailGroup, {loop: true});
+			// tw_mailGroup
+			// .to({rotation: 8}, 150)
+			// .to({rotation: 0}, 150)
+			// .to({rotation: -8}, 150)
+			// .to({rotation: 0}, 150)
+			// .to({rotation: 8}, 150)
+			// .to({rotation: 0}, 150)
+			// .to({rotation: -8}, 150)
+			// .to({rotation: 0}, 150)
+			// .wait(2000);
 
 			this.mailTip.visible = true;
 			var tw_tip = egret.Tween.get(this.mailTip, { loop: true });
