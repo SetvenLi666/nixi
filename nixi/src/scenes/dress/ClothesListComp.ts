@@ -117,6 +117,9 @@ class ClothesListComp extends eui.Component {
                 this.btn_perfectTip.visible = false;
             } else {
                 this.btn_perfectTip.visible = true;
+                var tw_tip = egret.Tween.get(this.btn_perfectTip, {loop: true});
+                tw_tip.to({scaleX: 1.2, scaleY: 1.2}, 300)
+                    .to({scaleX: 1, scaleY: 1}, 300);
                 this.tipData = tipdata;
                 this.btn_perfectTip.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onPerfectTip, this);
             }
@@ -206,7 +209,7 @@ class ClothesListComp extends eui.Component {
         });
     }
 
-    private onDressSuit(data: string[]) {
+    private onDressSuit(evt: egret.Event) {
         this.model.takeOffAllClothes();
         ClothesData.ondressCache = { "1": 10000, "2": 20000, "3": 30000, "4": 40000, "5": 50000, "6": 60000, "8": 80000, "9": 90000, "10": 100000 };
         ClothesData.ornamentsCache = {
@@ -214,7 +217,7 @@ class ClothesListComp extends eui.Component {
         };
         this.iconList.selectedIndices = [];
 
-        this.dressItems(data);
+        this.dressItems(evt.data);
     }
 
     private dressItems(arr: string[]) {
@@ -222,7 +225,7 @@ class ClothesListComp extends eui.Component {
         for (var i = 0; i < len; i++) {
             var item = ClothesData.clothesTemplateData(arr[i][0], arr[i]);
             if (item["part"] != "7") {
-               ClothesData.ondressCache[item["part"]] = parseInt(arr[i]);
+                ClothesData.ondressCache[item["part"]] = parseInt(arr[i]);
             } else {
                 ClothesData.ornamentsCache[item["sub_part"]] = parseInt(arr[i]);
             }

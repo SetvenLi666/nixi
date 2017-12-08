@@ -74,7 +74,7 @@ class TaskPerfectTipPanel extends eui.Component {
 
 		var firstItem = ClothesData.clothesTemplateData(this.clothes_data[0][0], this.clothes_data[0]);
 		this.clothesName.text = firstItem["name"];
-		this.clothesDesc.text = firstItem["desc"];
+		this.clothesDesc.text = firstItem["label"];
 
 		var phase: number = parseInt(firstItem["phase"]);
 		for (var j = 0; j < phase; j++) {
@@ -97,8 +97,14 @@ class TaskPerfectTipPanel extends eui.Component {
 			if (self.isAllOwn) {
 				//一键穿搭
 				CustomEventMgr.dispatchEventWith("Dress Suit", false, self.clothes_data);
+				self.closePanel();
 			} else {
 				//一键购买
+				if(self.coinCost.text == "0" && self.diamCost.text == "0") {
+					Prompt.showPrompt(self.stage, "没有可供购买的衣服!");
+					return;
+				}
+
 				var ondress = CommonFunc.simpleCloneObj(ClothesData.ondressCache);
 				var ornaments = CommonFunc.simpleCloneObj(ClothesData.ornamentsCache);
 				var len = self.clothes_data.length;
@@ -110,6 +116,8 @@ class TaskPerfectTipPanel extends eui.Component {
 						} else {
 							ornaments[item["sub_part"]] = parseInt(self.clothes_data[i]);
 						}
+					}else {
+						//非卖品
 					}
 				}
 

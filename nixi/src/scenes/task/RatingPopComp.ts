@@ -40,7 +40,7 @@ class RatingPopComp extends eui.Component {
 		// this.pgBar.value = Math.max(PlayerData.phaseRating(this.curPhase) - this.rating, 0);
 		this.pgBar.value = 0;
 
-		this.num_label.text = "" + (this.pgBar.maximum - PlayerData.phaseRating(this.curPhase));
+		this.num_label.text = "" + Math.max((this.pgBar.maximum - PlayerData.phaseRating(this.curPhase)), 0);
 		this.curNum_label.text = "0";
 
 		// this.addEventListener(egret.Event.ENTER_FRAME, this.updateFlagGroup, this);
