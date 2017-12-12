@@ -125,9 +125,9 @@ class ClothesListComp extends eui.Component {
                     this.tipData = tipdata;
                     this.btn_perfectTip.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onPerfectTip, this);
                 }
-
-                this.tipComp.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onFilter, this);
             }
+            
+            this.tipComp.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onFilter, this);
         }
 
         this.btn_takeoff.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTakeoff, this);

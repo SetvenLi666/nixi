@@ -23,6 +23,10 @@ class NewTaskComp extends eui.Component {
 			this.index = index - 20;
 		}else if(phase == 3) {
 			this.index = index - 52;
+		}else if(phase == 4) {
+			this.index = index - 89;
+		}else if(phase == 5) {
+			this.index = index - 129;
 		}
 		
 		this.addEventListener(egret.Event.ADDED_TO_STAGE, this.addStage, this);

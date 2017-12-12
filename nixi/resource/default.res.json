@@ -25,7 +25,7 @@
 			"name": "story_act"
 		},
 		{
-			"keys": "clothes_tags_json,clothes_flag_png,mission_json,task_ac_json,task_unlock_bg_png,task_ui_json,task_title_bar_png,task_text_bg_bar_png,task_reward_icon_png,task_reward_bg_png,task_rat_iconBg_png,task_name_bar_png,task_icon_xt_png,task_flag_yihuode_png,task_btn_go_png,task_btn_back_png,task_bar_tili_png,task_upgrade_box_png,task_pg_thumb_png,task_pg_star_png,task_pg_box3_2_png,task_pg_box3_1_png,task_pg_box2_2_png,task_pg_box2_1_png,task_pg_box1_2_png,task_pg_box1_1_png,task_pg_bg_png,mission_1_json,mission_2_json,shop_bg_png,mission_3_json",
+			"keys": "clothes_tags_json,clothes_flag_png,mission_json,task_ac_json,task_unlock_bg_png,task_ui_json,task_title_bar_png,task_text_bg_bar_png,task_reward_icon_png,task_reward_bg_png,task_rat_iconBg_png,task_name_bar_png,task_icon_xt_png,task_flag_yihuode_png,task_btn_go_png,task_btn_back_png,task_bar_tili_png,task_upgrade_box_png,task_pg_thumb_png,task_pg_star_png,task_pg_box3_2_png,task_pg_box3_1_png,task_pg_box2_2_png,task_pg_box2_1_png,task_pg_box1_2_png,task_pg_box1_1_png,task_pg_bg_png,mission_1_json,mission_2_json,shop_bg_png,mission_3_json,mission_5_json,mission_4_json",
 			"name": "task"
 		},
 		{
@@ -18043,9 +18043,9 @@
 			"name": "task_perfect_tip_json"
 		},
 		{
-			"name": "dress_tasktip_feimaiping_png",
+			"url": "game/dress/taskTipPanel/dress_tasktip_feimaiping.png",
 			"type": "image",
-			"url": "game/dress/taskTipPanel/dress_tasktip_feimaiping.png"
+			"name": "dress_tasktip_feimaiping_png"
 		},
 		{
 			"url": "game/panel/invite/invite_btn_buy.png",
@@ -18318,39 +18318,49 @@
 			"name": "show71534_png"
 		},
 		{
-			"name": "month_btn_buy_png",
+			"url": "game/panel/month_card/month_btn_buy.png",
 			"type": "image",
-			"url": "game/panel/month_card/month_btn_buy.png"
+			"name": "month_btn_buy_png"
 		},
 		{
-			"name": "month_btn_lingqu_png",
+			"url": "game/panel/month_card/month_btn_lingqu.png",
 			"type": "image",
-			"url": "game/panel/month_card/month_btn_lingqu.png"
+			"name": "month_btn_lingqu_png"
 		},
 		{
-			"name": "month_panel_bg_png",
+			"url": "game/panel/month_card/month_panel_bg.png",
 			"type": "image",
-			"url": "game/panel/month_card/month_panel_bg.png"
+			"name": "month_panel_bg_png"
 		},
 		{
-			"name": "month_state_yilng_png",
+			"url": "game/panel/month_card/month_state_yilng.png",
 			"type": "image",
-			"url": "game/panel/month_card/month_state_yilng.png"
+			"name": "month_state_yilng_png"
 		},
 		{
-			"name": "month_time_bg_png",
+			"url": "game/panel/month_card/month_time_bg.png",
 			"type": "image",
-			"url": "game/panel/month_card/month_time_bg.png"
+			"name": "month_time_bg_png"
 		},
 		{
-			"name": "main_mc_icon_png",
+			"url": "game/main/newMain/main_mc_icon.png",
 			"type": "image",
-			"url": "game/main/newMain/main_mc_icon.png"
+			"name": "main_mc_icon_png"
 		},
 		{
-			"name": "main_mc_text_png",
+			"url": "game/main/newMain/main_mc_text.png",
 			"type": "image",
-			"url": "game/main/newMain/main_mc_text.png"
+			"name": "main_mc_text_png"
+		},
+		{
+			"url": "config/mission/mission_4.json",
+			"type": "json",
+			"name": "mission_4_json"
+		},
+		{
+			"url": "config/mission/mission_5.json",
+			"type": "json",
+			"name": "mission_5_json"
 		}
 	]
 }

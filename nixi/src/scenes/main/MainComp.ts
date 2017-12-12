@@ -206,6 +206,7 @@ class MainComp extends eui.Component {
 
 			end_data[taskitem["task_id"]] = itemdata;
 		}
+		egret.localStorage.setItem("end_data", JSON.stringify(end_data));
 	}
 
 	private onExit() {

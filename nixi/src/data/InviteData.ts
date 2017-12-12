@@ -10,6 +10,8 @@ class InviteData {
 	private static _reward_state: number = 1;
 	private static _inviteCount: number = 0;
 
+	public static isShowInvite: boolean = true;
+
 	private static _inviteList: InviteItem[] = (function(){
 		var list: InviteItem[] = [];
 		for(var i = 0; i < 45; i++) {

@@ -25,8 +25,8 @@ class NewTaskScene extends eui.Component {
 		this.mask = mask;
 
 		//开放任务等级限制
-		this.phase = phase > 3 ? 3 : phase;
-		this.taskIndex = index > 89 ? 89 : index;
+		this.phase = phase > 5 ? 5 : phase;
+		this.taskIndex = index > 200 ? 200 : index;
 		this.pageCount = PlayerData.phase;
 
 		this.addEventListener(egret.Event.ADDED_TO_STAGE, this.addStage, this);
@@ -238,17 +238,32 @@ class TaskItemRenderer extends eui.ItemRenderer {
 
 		this.itemComp["item_bg"].source = "task_ui_json.task_item_bg_" + (Math.floor(Math.random() * 5) + 1);
 
+		var numGroup = <eui.Group>this.itemComp["numGroup"];
+		numGroup.removeChildren();
 		if (taskid < 10) {
-			this.itemComp["num_center"].visible = true;
-			this.itemComp["num_left"].visible = false;
-			this.itemComp["num_right"].visible = false;
-			this.itemComp["num_center"].source = "task_ui_json.task_num_" + taskid;
-		} else {
-			this.itemComp["num_center"].visible = false;
-			this.itemComp["num_left"].visible = true;
-			this.itemComp["num_right"].visible = true;
-			this.itemComp["num_left"].source = "task_ui_json.task_num_" + Math.floor(taskid / 10);
-			this.itemComp["num_right"].source = "task_ui_json.task_num_" + taskid % 10;
+			// this.itemComp["num_center"].visible = true;
+			// this.itemComp["num_left"].visible = false;
+			// this.itemComp["num_right"].visible = false;
+			// this.itemComp["num_center"].source = "task_ui_json.task_num_" + taskid;
+			var num_center = new eui.Image("task_ui_json.task_num_" + taskid);
+			numGroup.addChild(num_center);
+		} else if(taskid >= 10 && taskid < 100) {
+			// this.itemComp["num_center"].visible = false;
+			// this.itemComp["num_left"].visible = true;
+			// this.itemComp["num_right"].visible = true;
+			// this.itemComp["num_left"].source = "task_ui_json.task_num_" + Math.floor(taskid / 10);
+			// this.itemComp["num_right"].source = "task_ui_json.task_num_" + taskid % 10;
+			var num_left = new eui.Image("task_ui_json.task_num_" + Math.floor(taskid / 10));
+			numGroup.addChild(num_left);
+			var num_right = new eui.Image("task_ui_json.task_num_" + taskid % 10);
+			numGroup.addChild(num_right);
+		} else if(taskid >= 100) {
+			var num_left = new eui.Image("task_ui_json.task_num_" + Math.floor(taskid / 100));
+			numGroup.addChild(num_left);
+			var num_center = new eui.Image("task_ui_json.task_num_" + (Math.floor(taskid / 10)) % 10);
+			numGroup.addChild(num_center);
+			var num_right = new eui.Image("task_ui_json.task_num_" + (taskid % 100) % 10);
+			numGroup.addChild(num_right);
 		}
 
 		if (taskid == 1) {
