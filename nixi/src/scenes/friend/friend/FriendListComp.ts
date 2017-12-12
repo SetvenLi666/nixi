@@ -101,10 +101,6 @@ class FriendListComp extends eui.Component {
 
 			this.playAnimation();
 		}
-
-		// this.shower.dress(FriendData.friendsObj[evt.item]["ondress"], FriendData.friendsObj[evt.item]["ornaments"]);
-		// this.selfComp.currentState = "up";
-		// this.selfComp.touchEnabled = true;
 	}
 
 	private playAnimation() {

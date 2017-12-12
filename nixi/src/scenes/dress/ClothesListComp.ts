@@ -114,7 +114,7 @@ class ClothesListComp extends eui.Component {
 
             var tipdata: {} = RES.getRes("task_perfect_tip_json");
 
-            if (this.taskID != "pk") {
+            if (this.taskID != "pk" && tipdata[this.taskID] ) {
                 if (tipdata[this.taskID]["clothes"].length == 0) {
                     this.btn_perfectTip.visible = false;
                 } else {
