@@ -64,7 +64,7 @@ class StrangerListComp extends eui.Component {
 	}
 
 	private onSelected(evt: eui.ItemTapEvent) {
-		egret.log("on selected");
+		SoundManager.instance().buttonSound();
 		if (this.curSelected != evt.itemIndex) {
 			this.curSelected = evt.itemIndex;
 			this.model.x = -this.group.width;
@@ -84,6 +84,7 @@ class StrangerListComp extends eui.Component {
 	private onRefresh() {
 		NetLoading.showLoading();
 		DisplayMgr.buttonScale(this.btn_refresh, function () {
+			SoundManager.instance().buttonSound();
 			var request: egret.URLRequest = HttpProtocolMgr.strangerListData_802();
 			HttpMgr.postRequest(request);
 		});
@@ -92,6 +93,7 @@ class StrangerListComp extends eui.Component {
 	private onFind() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_find, function () {
+			SoundManager.instance().buttonSound();
 			var findPanel = new FindPanelComp();
 			self.addChild(findPanel);
 		});
@@ -100,6 +102,7 @@ class StrangerListComp extends eui.Component {
 	private onNote() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_note, function () {
+			SoundManager.instance().buttonSound();
 			var id: string = StrangerData.strangerList[self.list.selectedIndex];
 			var nickname: string = StrangerData.strangerObj[id]["nickname"];
 			var notePanel = new NotePanelComp(id, nickname);
@@ -109,6 +112,7 @@ class StrangerListComp extends eui.Component {
 
 	private goBack() {
 		DisplayMgr.buttonScale(this.btn_back, function () {
+			SoundManager.instance().buttonSound();
 			if (TaskData.gameTask) {
 				NetLoading.showLoading();
 				var request = HttpProtocolMgr.commit_extra_mission_605(TaskData.taskTempID, 4, TaskData.taskFlag4);
@@ -176,6 +180,7 @@ class StrangerListRenderer extends eui.ItemRenderer {
 	}
 
 	private onChange(evt: eui.UIEvent) {
+		SoundManager.instance().buttonSound();
 		evt.target.currentState = "disabled";
 		evt.target.touchEnabled = false;
 

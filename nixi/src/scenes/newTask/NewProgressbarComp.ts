@@ -86,6 +86,7 @@ class NewProgressbarComp extends eui.Component {
 	}
 
 	private boxCallback(evt: egret.TouchEvent) {
+		SoundManager.instance().buttonSound();
 		var self = this;
 		self.curId = "";
 

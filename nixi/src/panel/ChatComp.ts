@@ -84,6 +84,7 @@ class ChatComp extends eui.Component {
 	}
 
 	private onSend() {
+		SoundManager.instance().buttonSound();
 		if (this.editText.text == "") {
 			Prompt.showPrompt(this.stage, "发送内容不可为空!");
 		} else {
@@ -136,6 +137,7 @@ class ChatComp extends eui.Component {
 	}
 
 	private onSend2() {
+		SoundManager.instance().buttonSound();
 		if (this.editText.text == "") {
 
 		} else {

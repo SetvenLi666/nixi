@@ -234,6 +234,7 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 		var self = this;
 
 		DisplayMgr.buttonScale(self.btnGoback, function () {
+			SoundManager.instance().buttonSound();
 			if (self.couldExit == true) {
 				// SceneMgr.gotoStoryChapterScene(parseInt(self.storyIndex));
 				if (self.storyIndex == "29") {
@@ -316,6 +317,7 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 		console.log(evt.target);
 		var self = this;
 		DisplayMgr.buttonScale(evt.target, function () {
+			SoundManager.instance().buttonSound();
 			if (PlayerData.diam < 10) {
 				Prompt.showPrompt(self.stage, "钻石不足！");
 			} else {

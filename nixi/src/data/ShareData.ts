@@ -176,9 +176,22 @@ class ShareData {
 	}
 
 	public static share(type: string) {
+		var desc: string = "";
+		switch(type) {
+			case "task":
+			desc = '这点小事难不倒我！';
+			break;
+			case "story":
+			desc = '我的男神，我来了！';
+			break;
+			case "pk":
+			desc = '你们这些凡人！在我的裙摆下臣服吧';
+			break;
+		}
+
 		window["mqq"].ui.shareMessage({
 			title: '逆袭之星途闪耀',
-			desc: '“男神，你有什么技能？”……“有钱”',
+			desc: desc,
 			share_type: 0,
 			share_url: window["OPEN_DATA"].shareurl + "&td_channelid=qqshare",
 			image_url: window["OPEN_DATA"].appicon,

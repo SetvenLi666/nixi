@@ -66,7 +66,7 @@ class StoryChoices extends eui.Component implements eui.UIComponent {
 	}
 
 	private onChoose(evt: egret.Event) {
-		console.log("StoryChoices::onChoose()");
+		SoundManager.instance().buttonSound();
 		var self = this;
 		var taget = evt.currentTarget;
 		var duration = 300;

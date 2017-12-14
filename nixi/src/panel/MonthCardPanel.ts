@@ -48,7 +48,7 @@ class MonthCardPanel extends eui.Component {
 	private onBuy() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_buy, function () {
-			console.log(PurchaseData.MonthCards["status"]);
+			SoundManager.instance().buttonSound();
 			if (PurchaseData.MonthCards["status"] == 0) {
 				//支付购买
 				self.onPay();

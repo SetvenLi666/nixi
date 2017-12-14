@@ -151,13 +151,25 @@ class Main extends egret.DisplayObjectContainer {
     protected startCreateScene(): void {
         //初始化依赖模块
         this.initGameDependance();
+        this.stage.addEventListener(egret.Event.ACTIVATE, this.playMusic, this);
+        this.stage.addEventListener(egret.Event.DEACTIVATE, this.pauseMusic, this);
+    }
+
+    private playMusic() {
+        console.log("play");
+        SoundManager.instance().replaySound();
+    }
+
+    private pauseMusic() {
+        console.log("pause");
+        SoundManager.instance().pauseSound();
     }
 
     private initGameDependance() {
         HttpMgr.init();
 
         window["OPEN_DATA"] = {
-            openid: "aaaa",
+            openid: "aaaaaa",
             openkey: "bbbbb",
             platform: 1,
             qua: {meybeQua: "pc"}
@@ -207,7 +219,7 @@ class Main extends egret.DisplayObjectContainer {
         window["mqq"].ui.setOnShareHandler(function (type) {
             window["mqq"].ui.shareMessage({
                 title: '逆袭之星途闪耀',
-                desc: '世界之大，总有一款男神适合你',
+                desc: '给你看个好玩的，快来！',
                 share_type: type,
                 share_url: window["OPEN_DATA"].shareurl,
                 image_url: window["OPEN_DATA"].appicon,

@@ -10,13 +10,13 @@
 				<e:Image y="85" horizontalCenter="0" source="newmain_ui_json.main_niudan_box"/>
 				<e:Image y="146" source="newmain_ui_json.main_niudan_text" horizontalCenter="0"/>
 			</e:Group>
-			<e:Group id="mcGroup" height="110" y="206" right="7" width="110">
+			<e:Group id="mcGroup" height="110" y="187" right="7" width="110">
 				<e:Image source="main_mc_icon_png" horizontalCenter="0" verticalCenter="0"/>
 				<e:Image source="main_mc_text_png" y="76" horizontalCenter="6"/>
 			</e:Group>
-			<e:Group id="scGroup" width="110" height="110" y="318" right="7">
-				<e:Image id="sc_icon" y="21" horizontalCenter="0" source="newmain_ui_json.main_ui_cz_bg"/>
-				<e:Image id="sc_text" y="75.01" horizontalCenter="0" source="newmain_ui_json.main_ui_cz_text"/>
+			<e:Group id="scGroup" width="110" height="110" y="300" right="7">
+				<e:Image id="sc_icon" y="11" horizontalCenter="0" source="newmain_ui_json.main_ui_cz_bg"/>
+				<e:Image id="sc_text" y="71.97" horizontalCenter="0.5" source="newmain_ui_json.main_ui_cz_text"/>
 			</e:Group>
 			<e:Group id="tlGroup" width="110" height="110" y="312" left="135" visible="false">
 				<e:Image id="tl_ac" source="main_tl_ac_png" horizontalCenter="0" verticalCenter="0" anchorOffsetX="121.5" anchorOffsetY="116" touchEnabled="false"/>
@@ -28,7 +28,7 @@
 			</e:Group>
 			<e:Group id="collGroup" width="110" height="110" y="318" left="14">
 				<e:Image horizontalCenter="0" verticalCenter="-6" source="newmain_ui_json.main_shoucang_icon"/>
-				<e:Image y="67.01" horizontalCenter="0" source="newmain_ui_json.main_shoucang_text"/>
+				<e:Image y="71.57" horizontalCenter="0" source="newmain_ui_json.main_shoucang_text"/>
 			</e:Group>
 			<e:Group id="leijiGroup" width="110" height="110" y="430" anchorOffsetY="0" left="11">
 				<e:Image y="10" horizontalCenter="0" source="newmain_ui_json.main_leiji_icon"/>
@@ -39,20 +39,20 @@
 				<e:Image id="libao_ac" y="55" anchorOffsetX="21" anchorOffsetY="20.5" x="53.67" source="newmain_ui_json.main_coin_1"/>
 				<e:Image id="libao_text" y="59.32" horizontalCenter="0" source="newmain_ui_json.main_coin_text_1"/>
 			</e:Group>
-			<e:Group id="dtGroup" width="110" height="110" y="430" right="7">
+			<e:Group id="dtGroup" width="110" height="110" y="410.28" right="7">
 				<e:Image source="newmain_ui_json.main_dailytarget_icon" horizontalCenter="0" verticalCenter="0"/>
 				<e:Image id="td_ac" source="newmain_ui_json.main_dailytarget_ac" y="49.67" anchorOffsetX="25" anchorOffsetY="23.5" x="59"/>
 				<e:Image source="newmain_ui_json.main_dailytarget_text" y="72" scaleX="1" scaleY="1" horizontalCenter="0"/>
 				<e:Image id="dt_tip" source="newmain_ui_json.main_mail_tip" x="83.68" y="23.52" anchorOffsetX="18.5" anchorOffsetY="19" visible="false"/>
 			</e:Group>
-			<e:Group id="hdGroup" width="110" height="110" y="543" right="7">
+			<e:Group id="hdGroup" width="110" height="110" y="522.28" right="7">
 				<e:Image source="newmain_ui_json.main_huodong_icon" horizontalCenter="0" verticalCenter="0"/>
-				<e:Image source="newmain_ui_json.main_huodong_text" y="75" horizontalCenter="0"/>
+				<e:Image source="newmain_ui_json.main_huodong_text" y="73.48" horizontalCenter="0.5"/>
 				<e:Image id="hd_tip" source="newmain_ui_json.main_mail_tip" x="83" y="23" anchorOffsetX="18.5" anchorOffsetY="19" visible="false"/>
 			</e:Group>
-			<e:Group id="yqGroup" width="110" height="110" y="643" right="7">
+			<e:Group id="yqGroup" width="110" height="110" y="636" right="7">
 				<e:Image source="newmain_ui_json.main_invite_icon" horizontalCenter="0" verticalCenter="0"/>
-				<e:Image source="newmain_ui_json.main_invite_text" y="70.48" scaleX="1" scaleY="1" horizontalCenter="0"/>
+				<e:Image source="newmain_ui_json.main_invite_text" y="72" scaleX="1" scaleY="1" horizontalCenter="0"/>
 			</e:Group>
 			<e:Group id="mailGroup" width="110" height="110" anchorOffsetX="55" anchorOffsetY="55" y="1084" right="7">
 				<e:Image scaleX="1" scaleY="1" source="newmain_ui_json.main_mail" horizontalCenter="0" verticalCenter="0"/>

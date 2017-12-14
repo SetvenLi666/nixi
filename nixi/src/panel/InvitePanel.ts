@@ -96,6 +96,7 @@ class InvitePanel extends eui.Component {
 	private onShare() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_share, function () {
+			SoundManager.instance().buttonSound();
 			if (InviteData.curTimes >= 3) {
 				Prompt.showPrompt(self.stage, "今天分享奖励都领到了哟!");
 			} else if (self.shareLeftTime > 0) {
@@ -103,7 +104,7 @@ class InvitePanel extends eui.Component {
 			} else {
 				window["mqq"].ui.shareMessage({
 					title: '逆袭之星途闪耀',
-					desc: '世界之大，总有一款男神适合你',
+					desc: '给你看个好玩的，快来！',
 					share_type: 0,
 					share_url: window["OPEN_DATA"].shareurl + "&td_channelid=qqshare&isid=" + LoginData.sid,
 					image_url: window["OPEN_DATA"].appicon,
@@ -249,6 +250,7 @@ class InviteItemRenderer extends eui.ItemRenderer {
 	}
 
 	private onTouch() {
+		SoundManager.instance().buttonSound();
 		NetLoading.showLoading();
 		var request = HttpProtocolMgr.take_invite_reward_167(this.data.rank);
 		HttpMgr.postRequest(request);

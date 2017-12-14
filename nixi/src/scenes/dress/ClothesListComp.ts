@@ -159,7 +159,6 @@ class ClothesListComp extends eui.Component {
         this.removeEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit, this);
 
         this.back_img.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.goBack, this);
-        // this.btn_buy.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBuy, this);
         this.btn_save.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onSave, this);
         this.btn_shop.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onShop, this);
 
@@ -203,6 +202,7 @@ class ClothesListComp extends eui.Component {
     private onTakeoff() {
         var self = this;
         DisplayMgr.buttonScale(this.btn_takeoff, function () {
+            SoundManager.instance().buttonSound();
             self.model.takeOffAllClothes();
             ClothesData.ondressCache = { "1": 10000, "2": 20000, "3": 30000, "4": 40000, "5": 50000, "6": 60000, "8": 80000, "9": 90000, "10": 100000 };
             ClothesData.ornamentsCache = {
@@ -244,6 +244,7 @@ class ClothesListComp extends eui.Component {
     }
 
     private onFilter() {
+        SoundManager.instance().buttonSound();
         if (!this.isFilter) {
             this.isFilter = true;
             this.tipComp.filterImage.visible = false;
@@ -285,6 +286,7 @@ class ClothesListComp extends eui.Component {
 
     private onSelected(e: eui.ItemTapEvent) {
         console.log(e.item.id);
+        SoundManager.instance().buttonSound();
         var data: {} = {};
 
         var part = Math.floor(parseInt(e.item.id) / 10000).toString();
@@ -416,6 +418,7 @@ class ClothesListComp extends eui.Component {
     }
 
     private touchHandle(evt: egret.TouchEvent) {
+        SoundManager.instance().buttonSound();
         this.icon_def.currentState = "up";
         this.icon_def.enabled = true;
         var target: eui.Button = evt.target;
@@ -505,6 +508,7 @@ class ClothesListComp extends eui.Component {
     private goBack() {
         var self = this;
         DisplayMgr.buttonScale(this.back_img, function () {
+            SoundManager.instance().buttonSound();
             ClothesData.setClothesCache(ShowData.dresses, ShowData.ornaments);
             if (TaskData.gameTask) {
                 NetLoading.showLoading();
@@ -533,43 +537,7 @@ class ClothesListComp extends eui.Component {
     private onSave() {
         var self = this;
         DisplayMgr.buttonScale(this.btn_save, function () {
-            // if (self.hasHuodongClothes().length != 0) {
-            //     Prompt.showPrompt(self.stage, "所选衣饰中包含非卖品!");
-            //     //送回非卖品
-            //     var arr = self.hasHuodongClothes();
-            //     var len = arr.length;
-            //     for (var i = 0; i < len; i++) {
-            //         var id = arr[i];
-            //         var data = {};
-            //         if (Math.floor(id / 10000) != 7) {
-            //             data = {
-            //                 "id": parseInt(Math.floor(id / 10000) + "0000"),
-            //                 "sub_part": Math.floor(id / 10000).toString()
-            //             };
-            //             ClothesData.ondressCache[data["sub_part"]] = data["id"];
-            //             EventMgr.inst.dispatchEventWith(CustomEvents.ChangeClothes, false, data);
-            //         } else {
-            //             data = {
-            //                 "id": 70000,
-            //                 "sub_part": ClothesData.clothesTemplateData("7", id.toString())["sub_part"]
-            //             };
-            //             ClothesData.ornamentsCache[data["sub_part"]] = data["id"];
-            //             EventMgr.inst.dispatchEventWith(CustomEvents.ChangeClothes, false, data);
-            //         }
-
-            //         var selectedArr = self.iconList.selectedIndices;
-            //         var len2 = selectedArr.length;
-            //         for (var j = len2 - 1; j >= 0; j--) {
-            //             if (self.iconList.dataProvider["source"][selectedArr[j]]["id"] == id.toString()) {
-            //                 selectedArr.splice(j, 1);
-            //                 self.iconList.selectedIndices = selectedArr;
-            //             }
-            //         }
-            //     }
-
-            //     return;
-            // }
-
+            SoundManager.instance().buttonSound();
             NetLoading.showLoading();
             var request: egret.URLRequest;
             if (true === self.isTaskIn && self.taskID == "pk") {
@@ -633,6 +601,7 @@ class ClothesListComp extends eui.Component {
     private onShop() {
         var self = this;
         DisplayMgr.buttonScale(this.btn_shop, function () {
+            SoundManager.instance().buttonSound();
             if (self.isTaskIn) {
                 SceneMgr.gotoShopScene(self.taskID, self.tag1, self.tag2, self.tag3);
             } else {

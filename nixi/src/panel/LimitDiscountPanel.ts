@@ -50,6 +50,8 @@ class LimitDiscountPanel extends eui.Component{
 	private onBuy() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btnBuy, function() {
+			SoundManager.instance().buttonSound();
+
 			var urlRequest = new egret.URLRequest(ConstData.Conf.WanbaOrderAddr);
 			urlRequest.method = egret.URLRequestMethod.POST;
 

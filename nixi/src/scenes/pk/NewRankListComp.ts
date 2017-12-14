@@ -103,6 +103,7 @@ class NewRankListComp extends eui.Component {
 	}
 
 	private onButtonDp() {
+		SoundManager.instance().buttonSound();
 		this.btn_dp.touchEnabled = false;
 		this.btn_pk.touchEnabled = true;
 		this.btn_dp.source = "rank_dp_sel_png";
@@ -112,6 +113,7 @@ class NewRankListComp extends eui.Component {
 	}
 
 	private onButtonPk() {
+		SoundManager.instance().buttonSound();
 		this.btn_pk.touchEnabled = false;
 		this.btn_dp.touchEnabled = true;
 		this.btn_dp.source = "rank_dp_nor_png";
@@ -246,7 +248,7 @@ class NewRankListComp extends eui.Component {
 	}
 
 	private onSelected(evt: eui.ItemTapEvent) {
-		egret.log("on selected");
+		SoundManager.instance().buttonSound();
 		if (this.curSelected != evt.itemIndex) {
 			this.curSelected = evt.itemIndex;
 			this.model.x = -this.group.width;
@@ -269,6 +271,7 @@ class NewRankListComp extends eui.Component {
 	private onNote() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_note, function () {
+			SoundManager.instance().buttonSound();
 			if (self.list.selectedIndex == -1) {
 				Prompt.showPrompt(egret.MainContext.instance.stage, "不可以给自己发纸条哦");
 			} else {
@@ -289,6 +292,7 @@ class NewRankListComp extends eui.Component {
 	private goBack() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_back, function () {
+			SoundManager.instance().buttonSound();
 			if (RankData.enterType == "pk") {
 				SceneMgr.gotoPK();
 			} else if(RankData.enterType == "social") {
@@ -298,7 +302,7 @@ class NewRankListComp extends eui.Component {
 	}
 
 	private onSelf() {
-		egret.log("on self comp");
+		SoundManager.instance().buttonSound();
 		if (this.curSelected == -1) {
 
 		} else {
@@ -393,6 +397,7 @@ class NewRankListRenderer extends eui.ItemRenderer {
 	}
 
 	private onChange(evt: eui.UIEvent) {
+		SoundManager.instance().buttonSound();
 		if(this.data.id == LoginData.sid) {
 			Prompt.showPrompt(egret.MainContext.instance.stage, "不可以添加自己为好友！");
 			return;

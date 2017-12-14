@@ -42,7 +42,6 @@ class MainComp extends eui.Component {
 	public hd_tip: eui.Image;
 
 	public touchRect: eui.Rect;
-	private isShowUI: boolean = true;
 
 	public sj_comp: eui.Component;
 	public xt_comp: eui.Component;
@@ -77,6 +76,7 @@ class MainComp extends eui.Component {
 		this.initView();
 
 		// this.checkAllClothes();
+		SoundManager.instance().startBgSound("main");
 
 		this.niudanGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnGashapon, this);
 		this.mailGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onMailTap, this);
@@ -221,6 +221,8 @@ class MainComp extends eui.Component {
 		// 	this.timer2.stop();
 		// 	this.timer2 = null;
 		// }
+
+		// SoundManager.instance().destroyStartSound();
 
 		CustomEventMgr.removeEventListener("304", this.result_of_304, this);
 		CustomEventMgr.removeEventListener("306", this.result_of_306, this);
@@ -506,6 +508,7 @@ class MainComp extends eui.Component {
 
 	private onBtnGashapon() {
 		DisplayMgr.buttonScale(this.niudanGroup, function () {
+			SoundManager.instance().buttonSound("pop");
 			NetLoading.showLoading();
 			var request: egret.URLRequest;
 			if (GashaponData.has_init_gashapon_template()) {
@@ -519,6 +522,7 @@ class MainComp extends eui.Component {
 
 	private onMailTap() {
 		DisplayMgr.buttonScale(this.mailGroup, function () {
+			SoundManager.instance().buttonSound("pop");
 			NetLoading.showLoading();
 			var request: egret.URLRequest = HttpProtocolMgr.all_mails_700();
 			HttpMgr.postRequest(request);
@@ -534,6 +538,7 @@ class MainComp extends eui.Component {
 	private onShare() {
 		var self = this;
 		DisplayMgr.buttonScale(this.newShare, function () {
+			SoundManager.instance().buttonSound("pop");
 			var panel = new NewSharePanel(self.shareIndex);
 			DisplayMgr.set2Center(panel);
 			self.stage.addChild(panel);
@@ -543,6 +548,7 @@ class MainComp extends eui.Component {
 	private onDesk() {
 		var self = this;
 		DisplayMgr.buttonScale(this.collGroup, function () {
+			SoundManager.instance().buttonSound("pop");
 			var panel = new ShareDeskPanel("desk");
 			DisplayMgr.set2Center(panel);
 			self.stage.addChild(panel);
@@ -551,6 +557,7 @@ class MainComp extends eui.Component {
 
 	private onBtnLj() {
 		DisplayMgr.buttonScale(this.leijiGroup, function () {
+			SoundManager.instance().buttonSound("pop");
 			NetLoading.showLoading();
 			var request: egret.URLRequest;
 			if (RechargeData.has_init_purchase_template()) {
@@ -565,6 +572,7 @@ class MainComp extends eui.Component {
 	private onBtnLb() {
 		var self = this;
 		DisplayMgr.buttonScale(this.lbGroup, function () {
+			SoundManager.instance().buttonSound("pop");
 			NetLoading.showLoading();
 			var request = HttpProtocolMgr.take_package_info_104();
 			HttpMgr.postRequest(request);
@@ -574,6 +582,7 @@ class MainComp extends eui.Component {
 	private onBtnHd() {
 		var self = this;
 		DisplayMgr.buttonScale(this.hdGroup, function () {
+			SoundManager.instance().buttonSound("pop");
 			var panel = new HuodongPanel();
 			DisplayMgr.set2Center(panel);
 			self.stage.addChild(panel);
@@ -583,6 +592,7 @@ class MainComp extends eui.Component {
 	private onBtnYq() {
 		var self = this;
 		DisplayMgr.buttonScale(this.yqGroup, function () {
+			SoundManager.instance().buttonSound("pop");
 			NetLoading.showLoading();
 			var request = HttpProtocolMgr.take_invite_info_165();
 			HttpMgr.postRequest(request);
@@ -595,7 +605,7 @@ class MainComp extends eui.Component {
 			// NetLoading.showLoading();
 			// var request = HttpProtocolMgr.all_products_100();
 			// HttpMgr.postRequest(request);
-
+			SoundManager.instance().buttonSound("pop");
 			if (ShareData.isFirstPay && ShareData.firstpay_lottery_times == 1 && ShareData.isDailyPay && ShareData.dailypay_normal_times == 1 && ShareData.dailypay_lottery_times == 1) {
 				//
 				NetLoading.showLoading();
@@ -617,6 +627,7 @@ class MainComp extends eui.Component {
 		WelfareData.isBtnReq = true;
 		var self = this;
 		DisplayMgr.buttonScale(this.dtGroup, function () {
+			SoundManager.instance().buttonSound("pop");
 			NetLoading.showLoading();
 			var request = HttpProtocolMgr.take_welfare_data_630();
 			HttpMgr.postRequest(request);
@@ -626,6 +637,7 @@ class MainComp extends eui.Component {
 	private onBtnTl() {
 		var self = this;
 		DisplayMgr.buttonScale(this.tlGroup2, function () {
+			SoundManager.instance().buttonSound("pop");
 			var panel = new LimitDiscountPanel(TLDiscountData.type);
 			DisplayMgr.set2Center(panel);
 			self.stage.addChild(panel);
@@ -635,6 +647,7 @@ class MainComp extends eui.Component {
 	private onBtnMc() {
 		var self = this;
 		DisplayMgr.buttonScale(this.mcGroup, function() {
+			SoundManager.instance().buttonSound("pop");
 			var panel = new MonthCardPanel();
 			DisplayMgr.set2Center(panel);
 			self.stage.addChild(panel); 
@@ -645,37 +658,9 @@ class MainComp extends eui.Component {
 		// this.onBtnGo();
 	}
 
-	private showUI() {
-		var tw_ga = egret.Tween.get(this.niudanGroup);
-		tw_ga.to({ x: -15 }, this.hideTime);
-
-		var tw_desk = egret.Tween.get(this.collGroup);
-		tw_desk.to({ x: this.group.width * 0.02 }, this.hideTime);
-
-		var tw_lb = egret.Tween.get(this.lbGroup);
-		tw_lb.to({ x: this.group.width * 0.02 }, this.hideTime);
-
-		var tw_lj = egret.Tween.get(this.leijiGroup);
-		tw_lj.to({ x: this.group.width * 0.02 }, this.hideTime);
-
-		var tw_daily = egret.Tween.get(this.scGroup);
-		tw_daily.to({ x: this.group.width - this.scGroup.width }, this.hideTime);
-
-		var tw_ml = egret.Tween.get(this.mailGroup);
-		tw_ml.to({ x: this.group.width - this.scGroup.width / 2 - this.mailGroup.width / 2 }, this.hideTime);
-
-		var tw_dt = egret.Tween.get(this.dtGroup);
-		tw_dt.to({ x: this.group.width - this.scGroup.width / 2 - this.dtGroup.width / 2 }, this.hideTime);
-
-		var self = this;
-		egret.setTimeout(function () {
-			self.isShowUI = true;
-			self.touchRect.touchEnabled = true;
-		}, this, this.hideTime);
-	}
-
 	private onSjComp() {
 		DisplayMgr.buttonScale(this.sj_comp, function () {
+			SoundManager.instance().buttonSound();
 			NetLoading.showLoading();
 			var request: egret.URLRequest = HttpProtocolMgr.social_info_800();
 			HttpMgr.postRequest(request);
@@ -684,6 +669,7 @@ class MainComp extends eui.Component {
 
 	private onXtComp() {
 		DisplayMgr.buttonScale(this.xt_comp, function () {
+			SoundManager.instance().buttonSound();
 			NetLoading.showLoading();
 			var request: egret.URLRequest = HttpProtocolMgr.fetchStoryData_500();
 			HttpMgr.postRequest(request);
@@ -692,6 +678,7 @@ class MainComp extends eui.Component {
 
 	private onYlComp() {
 		DisplayMgr.buttonScale(this.yl_comp, function () {
+			SoundManager.instance().buttonSound();
 			NetLoading.showLoading();
 			if (true === CofferData.hasInitTemplateData()) {
 				var request: egret.URLRequest = HttpProtocolMgr.cofferInfo_200(false);
@@ -707,6 +694,7 @@ class MainComp extends eui.Component {
 	private onSdComp() {
 		var self = this;
 		DisplayMgr.buttonScale(this.sd_comp, function () {
+			SoundManager.instance().buttonSound();
 			if (ClothesData.hasFetchedUserClohtes()) {
 				self.afterFetchClothesData_400(null);
 			}
@@ -721,6 +709,7 @@ class MainComp extends eui.Component {
 	private onJjComp() {
 		var self = this;
 		DisplayMgr.buttonScale(this.jj_comp, function () {
+			SoundManager.instance().buttonSound();
 			if (PlayerData.mission <= 6) {
 				Prompt.showPrompt(self.stage, "完成娱乐圈任务6之后解锁");
 				return;
@@ -873,8 +862,7 @@ class MainComp extends eui.Component {
 			}
 		} else {
 			NetLoading.removeLoading();
-			// SceneMgr.gotoStoryChapterScene();
-			// SceneMgr.gotoNewStoryScene();
+			SoundManager.instance().destroyStartSound();
 			SceneMgr.gotoNewStorySelectScene();
 		}
 	}

@@ -33,6 +33,7 @@ class ResetNamePanel extends eui.Component {
 		var self = this;
 		var newName = self.newName;
 		DisplayMgr.buttonScale(this.btn_sure, function () {
+			SoundManager.instance().buttonSound();
 			if (newName == "") {
 				Prompt.showPrompt(self.stage, "请输入新昵称");
 			} else {
@@ -60,6 +61,7 @@ class ResetNamePanel extends eui.Component {
 	private onCancel() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_cancel, function () {
+			SoundManager.instance().buttonSound();
 			self.closePanel();
 		});
 	}

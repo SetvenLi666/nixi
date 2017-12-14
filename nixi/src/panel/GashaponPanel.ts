@@ -85,6 +85,7 @@ class GashaponPanel extends eui.Component {
 	private onFreeGroup() {
 		var self = this;
 		DisplayMgr.buttonScale(this.freeGroup, function () {
+			SoundManager.instance().buttonSound();
 			if (self.freeTime == 0 || PlayerData.diam >= GashaponData.cost["single_cost"]) {
 				NetLoading.showLoading();
 				var request: egret.URLRequest = HttpProtocolMgr.single_lottery_307();
@@ -101,6 +102,7 @@ class GashaponPanel extends eui.Component {
 	private onTenGroup() {
 		var self = this;
 		DisplayMgr.buttonScale(this.tenGroup, function () {
+			SoundManager.instance().buttonSound();
 			if (PlayerData.diam >= GashaponData.cost["ten_cost"]) {
 				NetLoading.showLoading();
 				var request: egret.URLRequest = HttpProtocolMgr.multiply_lottery_309();

@@ -81,6 +81,8 @@ class NewTaskScene extends eui.Component {
 			guidePanel.playAnimation();
 			CustomEventMgr.addEventListener("Guide_Step_6_18", this.guide_step_6_18, this);
 		}
+
+		SoundManager.instance().startBgSound("main");
 	}
 
 	private onExit() {
@@ -95,6 +97,7 @@ class NewTaskScene extends eui.Component {
 		CustomEventMgr.removeEventListener("Guide_Step_6_18", this.guide_step_6_18, this);
 
 		egret.Tween.removeAllTweens();
+		// SoundManager.instance().destroyStartSound();
 	}
 
 	private initView() {
@@ -138,6 +141,7 @@ class NewTaskScene extends eui.Component {
 
 	private onLeft() {
 		var self = this;
+		SoundManager.instance().buttonSound("flip");
 		self.btn_left.touchEnabled = false;
 		self.btn_right.touchEnabled = false;
 		self.phase += 1;
@@ -158,6 +162,7 @@ class NewTaskScene extends eui.Component {
 
 	private onRight() {
 		var self = this;
+		SoundManager.instance().buttonSound("flip");
 		self.btn_left.touchEnabled = false;
 		self.btn_right.touchEnabled = false;
 		self.phase -= 1;
@@ -178,6 +183,7 @@ class NewTaskScene extends eui.Component {
 
 	private onBack() {
 		DisplayMgr.buttonScale(this.btn_back, function () {
+			SoundManager.instance().buttonSound();
 			SceneMgr.gotoMainScene();
 		});
 	}
@@ -247,7 +253,7 @@ class TaskItemRenderer extends eui.ItemRenderer {
 			// this.itemComp["num_center"].source = "task_ui_json.task_num_" + taskid;
 			var num_center = new eui.Image("task_ui_json.task_num_" + taskid);
 			numGroup.addChild(num_center);
-		} else if(taskid >= 10 && taskid < 100) {
+		} else if (taskid >= 10 && taskid < 100) {
 			// this.itemComp["num_center"].visible = false;
 			// this.itemComp["num_left"].visible = true;
 			// this.itemComp["num_right"].visible = true;
@@ -257,7 +263,7 @@ class TaskItemRenderer extends eui.ItemRenderer {
 			numGroup.addChild(num_left);
 			var num_right = new eui.Image("task_ui_json.task_num_" + taskid % 10);
 			numGroup.addChild(num_right);
-		} else if(taskid >= 100) {
+		} else if (taskid >= 100) {
 			var num_left = new eui.Image("task_ui_json.task_num_" + Math.floor(taskid / 100));
 			numGroup.addChild(num_left);
 			var num_center = new eui.Image("task_ui_json.task_num_" + (Math.floor(taskid / 10)) % 10);
@@ -286,6 +292,7 @@ class TaskItemRenderer extends eui.ItemRenderer {
 
 	private onTap() {
 		//当前任务id
+		SoundManager.instance().buttonSound();
 		var taskid = parseInt(this.data);
 		if (PlayerData.phase < parseInt(TaskData.totalMissionData()[taskid - 1]["phase"])) {
 			Prompt.showPrompt(this.stage, "角色等级不足!");

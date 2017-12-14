@@ -34,6 +34,7 @@ class NoteUILayer extends eui.Component {
 
 	private goBack() {
 		DisplayMgr.buttonScale(this.btn_back, function () {
+			SoundManager.instance().buttonSound();
 			SceneMgr.gotoMainFriend();
 		});
 	}
@@ -83,7 +84,7 @@ class NoteItemRenderer extends eui.ItemRenderer {
 	}
 
 	private onAdd() {
-		egret.log("on add");
+		SoundManager.instance().buttonSound();
 		if (FriendData.isFriend(this.data.sender)) {
 			Prompt.showPrompt(egret.MainContext.instance.stage, "对方已经是您的好友了");
 		} else {
@@ -94,13 +95,14 @@ class NoteItemRenderer extends eui.ItemRenderer {
 	}
 
 	private onDelete() {
-		egret.log("on delete");
+		SoundManager.instance().buttonSound();
 		NetLoading.showLoading();
 		var request: egret.URLRequest = HttpProtocolMgr.delete_paper_811(this.data.id);
 		HttpMgr.postRequest(request);
 	}
 
 	private onReply() {
+		SoundManager.instance().buttonSound();
 		var panel = new NotePanelComp(this.data.sender, this.data.sender_name);
 		DisplayMgr.set2Center(panel);
 		this.stage.addChild(panel);

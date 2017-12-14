@@ -37,6 +37,7 @@ class SetPanel extends eui.Component {
 
 	private onCopy() {
 		DisplayMgr.buttonScale(this.btn_copy, function () {
+			SoundManager.instance().buttonSound();
 			window["mqq"].data.setClipboard({
 				text: LoginData.sid
 			}, function (result) {
@@ -52,6 +53,7 @@ class SetPanel extends eui.Component {
 	private onReset() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_reset, function() {
+			SoundManager.instance().buttonSound();
 			var resetPanel = new ResetNamePanel(self.edit_nickname.text);
 			DisplayMgr.set2Center(resetPanel);
 			self.stage.addChild(resetPanel);
@@ -61,6 +63,7 @@ class SetPanel extends eui.Component {
 	private onEx() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_ex, function () {
+			SoundManager.instance().buttonSound();
 			var text = self.edit_code.text;
 			if (text.length < 8) {
 				Prompt.showPrompt(self.stage, "礼包码无效~");

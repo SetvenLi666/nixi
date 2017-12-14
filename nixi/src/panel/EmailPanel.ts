@@ -187,12 +187,14 @@ class EmailListRenderer extends eui.ItemRenderer {
 	}
 
 	private onDelete() {
+		SoundManager.instance().buttonSound();
 		NetLoading.showLoading();
 		var request: egret.URLRequest = HttpProtocolMgr.response_mail_701(this.data.id, 2);
 		HttpMgr.postRequest(request);
 	}
 
 	private onReceive() {
+		SoundManager.instance().buttonSound();
 		NetLoading.showLoading();
 		var request: egret.URLRequest = HttpProtocolMgr.response_mail_701(this.data.id, 1);
 		HttpMgr.postRequest(request);

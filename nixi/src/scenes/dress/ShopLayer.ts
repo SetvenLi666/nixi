@@ -283,6 +283,7 @@ class ShopLayer extends eui.Component {
     private onBuy() {
         var self = this;
         DisplayMgr.buttonScale(this.btn_buy, function () {
+            SoundManager.instance().buttonSound("buy");
             if (!self.curItem) {
                 return;
             }
@@ -466,6 +467,7 @@ class ShopLayer extends eui.Component {
     }
 
     private touchHandle(evt: egret.TouchEvent) {
+        SoundManager.instance().buttonSound();
         this.icon_def.currentState = "up";
         this.icon_def.enabled = true;
         var target: eui.Button = evt.target;
@@ -541,6 +543,7 @@ class ShopLayer extends eui.Component {
     }
 
     private touchHandle2(evt: egret.TouchEvent) {
+        SoundManager.instance().buttonSound();
         this.icon_def2.currentState = "up";
         this.icon_def2.enabled = true;
         var target: eui.Button = evt.target;
@@ -610,6 +613,7 @@ class ShopLayer extends eui.Component {
     private onBack() {
         var self = this;
         DisplayMgr.buttonScale(this.btn_back, function () {
+            SoundManager.instance().buttonSound();
             if (self.taskid) {
                 SceneMgr.gotoDressScene(self.taskid, self.tag1, self.tag2, self.tag3);
             } else {
@@ -621,6 +625,7 @@ class ShopLayer extends eui.Component {
     private onYichu() {
         var self = this;
         DisplayMgr.buttonScale(this.btn_yichu, function () {
+            SoundManager.instance().buttonSound();
             if (self.taskid) {
                 SceneMgr.gotoDressScene(self.taskid, self.tag1, self.tag2, self.tag3);
             } else {

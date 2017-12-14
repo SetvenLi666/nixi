@@ -57,8 +57,9 @@ class PkAnimLayerComp extends eui.Component {
 		CustomEventMgr.addEventListener("827", this.result_of_827, this);
 
 		var self = this;
-		egret.setTimeout(function () {
+		var timeKey = egret.setTimeout(function () {
 			self.playAnimation();
+			egret.clearTimeout(timeKey);
 		}, this, 800);
 	}
 
@@ -109,6 +110,7 @@ class PkAnimLayerComp extends eui.Component {
 	private onBtnReceive() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_receive, function () {
+			SoundManager.instance().buttonSound();
 			Prompt.showPrompt(self.stage, "领取成功~");
 			egret.setTimeout(function () {
 				// SceneMgr.gotoPK();

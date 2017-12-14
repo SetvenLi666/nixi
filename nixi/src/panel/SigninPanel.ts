@@ -127,6 +127,7 @@ class SigninPanel extends eui.Component {
 	}
 
 	private onItemTouched(evt: egret.TouchEvent) {
+		SoundManager.instance().buttonSound();
 		switch (evt.currentTarget.parent) {
 			case this.item_1:
 				this.id = "1";
