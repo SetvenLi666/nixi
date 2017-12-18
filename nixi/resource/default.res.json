@@ -18401,6 +18401,36 @@
 			"url": "game/audio/flip.wav",
 			"type": "sound",
 			"name": "flip_wav"
+		},
+		{
+			"url": "game/panel/invite/libao_btn_invite.png",
+			"type": "image",
+			"name": "libao_btn_invite_png"
+		},
+		{
+			"url": "game/panel/invite/libao_btn_lingqu.png",
+			"type": "image",
+			"name": "libao_btn_lingqu_png"
+		},
+		{
+			"url": "game/panel/invite/libao_kuang.png",
+			"type": "image",
+			"name": "libao_kuang_png"
+		},
+		{
+			"url": "game/main/newMain/main_free_text.png",
+			"type": "image",
+			"name": "main_free_text_png"
+		},
+		{
+			"url": "game/panel/invite/invite_clothes_panel_bg.png",
+			"type": "image",
+			"name": "invite_clothes_panel_bg_png"
+		},
+		{
+			"url": "game/panel/invite/invite_clothes_text.png",
+			"type": "image",
+			"name": "invite_clothes_text_png"
 		}
 	]
 }

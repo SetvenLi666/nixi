@@ -169,7 +169,7 @@ class Main extends egret.DisplayObjectContainer {
         HttpMgr.init();
 
         window["OPEN_DATA"] = {
-            openid: "aaaaaa",
+            openid: "aaaa",
             openkey: "bbbbb",
             platform: 1,
             qua: {meybeQua: "pc"}

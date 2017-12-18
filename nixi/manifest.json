@@ -106,6 +106,7 @@
 		"bin-debug/panel/GashaponRewardComp.js",
 		"bin-debug/panel/GiftPanel.js",
 		"bin-debug/panel/HuodongPanel.js",
+		"bin-debug/panel/InviteFreeRewardPanel.js",
 		"bin-debug/Main.js",
 		"bin-debug/panel/IosPayTipPanel.js",
 		"bin-debug/panel/LimitDiscountPanel.js",

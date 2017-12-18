@@ -302,6 +302,8 @@ declare class HuodongPanelRendererSkin extends eui.Skin{
 }
 declare class HuodongPanelSkin extends eui.Skin{
 }
+declare class InviteFreeRewardPanelSkin extends eui.Skin{
+}
 declare class InviteItemRendererSkin extends eui.Skin{
 }
 declare class InvitePanelSkin extends eui.Skin{

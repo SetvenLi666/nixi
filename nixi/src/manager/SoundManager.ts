@@ -14,11 +14,11 @@ class SoundManager {
 	private _flipSound: egret.Sound = null;
 
 	public buttonSound(type?: string) {
-		if (ConstData.Conf.whiteList.indexOf(LoginData.sid) != -1 || window["OPEN_DATA"].openid == "aaaa") {
+		// if (ConstData.Conf.whiteList.indexOf(LoginData.sid) != -1 || window["OPEN_DATA"].openid == "aaaa") {
 
-		} else {
-			return;
-		}
+		// } else {
+		// 	return;
+		// }
 
 		var soundType = "";
 		if (!type) {
@@ -70,11 +70,11 @@ class SoundManager {
 	private _pause_position: number = 0;
 
 	public startBgSound(type: string) {
-		if (ConstData.Conf.whiteList.indexOf(LoginData.sid) != -1 || window["OPEN_DATA"].openid == "aaaa") {
+		// if (ConstData.Conf.whiteList.indexOf(LoginData.sid) != -1 || window["OPEN_DATA"].openid == "aaaa") {
 
-		} else {
-			return;
-		}
+		// } else {
+		// 	return;
+		// }
 
 		if (type == "main" && this._soundChannel != null && !this.isLoop) {
 			console.log("main music is playing");
@@ -159,11 +159,11 @@ class SoundManager {
 	}
 
 	public destroyStartSound() {
-		if (ConstData.Conf.whiteList.indexOf(LoginData.sid) != -1 || window["OPEN_DATA"].openid == "aaaa") {
+		// if (ConstData.Conf.whiteList.indexOf(LoginData.sid) != -1 || window["OPEN_DATA"].openid == "aaaa") {
 
-		} else {
-			return;
-		}
+		// } else {
+		// 	return;
+		// }
 
 		if (this._soundChannel) {
 			this._soundChannel.stop();
@@ -173,11 +173,11 @@ class SoundManager {
 	}
 
 	public pauseSound() {
-		if (ConstData.Conf.whiteList.indexOf(LoginData.sid) != -1 || window["OPEN_DATA"].openid == "aaaa") {
+		// if (ConstData.Conf.whiteList.indexOf(LoginData.sid) != -1 || window["OPEN_DATA"].openid == "aaaa") {
 
-		} else {
-			return;
-		}
+		// } else {
+		// 	return;
+		// }
 
 		if (this._soundChannel) {
 			this._pause_position = this._soundChannel.position;
@@ -187,11 +187,11 @@ class SoundManager {
 	}
 
 	public replaySound() {
-		if (ConstData.Conf.whiteList.indexOf(LoginData.sid) != -1 || window["OPEN_DATA"].openid == "aaaa") {
+		// if (ConstData.Conf.whiteList.indexOf(LoginData.sid) != -1 || window["OPEN_DATA"].openid == "aaaa") {
 
-		} else {
-			return;
-		}
+		// } else {
+		// 	return;
+		// }
 
 		console.log(this._soundChannel);
 		if(this._soundChannel) {

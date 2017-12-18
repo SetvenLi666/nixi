@@ -424,33 +424,69 @@ class MainComp extends eui.Component {
 	private updateLibaoView() {
 		//1 = 安卓，2 = IOS
 		if (window["OPEN_DATA"] && window["OPEN_DATA"].platform == 2) {
-			if (WanbaData.packageData.indexOf("libao_2") == -1) {
+			if(WanbaData.packageData.indexOf("libao_2") == -1 && InviteData.reward3_state != 3) {
 				this.libao_icon.source = "newmain_ui_json.main_libao_6";
 				this.libao_ac.source = "newmain_ui_json.main_coin_6";
 				this.libao_text.source = "newmain_ui_json.main_coin_text_6";
-			} else if (WanbaData.packageData.indexOf("libao_3") == -1) {
+			}else if(WanbaData.packageData.indexOf("libao_3") == -1 && InviteData.reward10_state != 3) {
 				this.libao_icon.source = "newmain_ui_json.main_libao_30";
 				this.libao_ac.source = "newmain_ui_json.main_coin_30";
 				this.libao_text.source = "newmain_ui_json.main_coin_text_30";
-			} else {
+			}else if(InviteData.reward_state != 3) {
+				this.libao_icon.source = "newmain_ui_json.main_libao_1";
+				this.libao_ac.source = "newmain_ui_json.main_coin_30";
+				this.libao_text.source = "main_free_text_png";
+			}else {
 				this.lbGroup.visible = false;
 			}
+
+			// if (WanbaData.packageData.indexOf("libao_2") == -1) {
+			// 	this.libao_icon.source = "newmain_ui_json.main_libao_6";
+			// 	this.libao_ac.source = "newmain_ui_json.main_coin_6";
+			// 	this.libao_text.source = "newmain_ui_json.main_coin_text_6";
+			// } else if (WanbaData.packageData.indexOf("libao_3") == -1) {
+			// 	this.libao_icon.source = "newmain_ui_json.main_libao_30";
+			// 	this.libao_ac.source = "newmain_ui_json.main_coin_30";
+			// 	this.libao_text.source = "newmain_ui_json.main_coin_text_30";
+			// } else {
+			// 	this.lbGroup.visible = false;
+			// }
 		} else {
 			if (WanbaData.packageData.indexOf("libao_1") == -1) {
 				this.libao_icon.source = "newmain_ui_json.main_libao_1";
 				this.libao_ac.source = "newmain_ui_json.main_coin_1";
 				this.libao_text.source = "newmain_ui_json.main_coin_text_1";
-			} else if (WanbaData.packageData.indexOf("libao_2") == -1) {
+			} else if (WanbaData.packageData.indexOf("libao_2") == -1 && InviteData.reward3_state != 3) {
 				this.libao_icon.source = "newmain_ui_json.main_libao_6";
 				this.libao_ac.source = "newmain_ui_json.main_coin_6";
 				this.libao_text.source = "newmain_ui_json.main_coin_text_6";
-			} else if (WanbaData.packageData.indexOf("libao_3") == -1) {
+			} else if (WanbaData.packageData.indexOf("libao_3") == -1 && InviteData.reward10_state != 3) {
 				this.libao_icon.source = "newmain_ui_json.main_libao_30";
 				this.libao_ac.source = "newmain_ui_json.main_coin_30";
 				this.libao_text.source = "newmain_ui_json.main_coin_text_30";
+			} else  if(InviteData.reward_state != 3) {
+				this.libao_icon.source = "newmain_ui_json.main_libao_1";
+				this.libao_ac.source = "newmain_ui_json.main_coin_30";
+				this.libao_text.source = "main_free_text_png";
 			} else {
 				this.lbGroup.visible = false;
 			}
+
+			// if (WanbaData.packageData.indexOf("libao_1") == -1) {
+			// 	this.libao_icon.source = "newmain_ui_json.main_libao_1";
+			// 	this.libao_ac.source = "newmain_ui_json.main_coin_1";
+			// 	this.libao_text.source = "newmain_ui_json.main_coin_text_1";
+			// } else if (WanbaData.packageData.indexOf("libao_2") == -1) {
+			// 	this.libao_icon.source = "newmain_ui_json.main_libao_6";
+			// 	this.libao_ac.source = "newmain_ui_json.main_coin_6";
+			// 	this.libao_text.source = "newmain_ui_json.main_coin_text_6";
+			// } else if (WanbaData.packageData.indexOf("libao_3") == -1) {
+			// 	this.libao_icon.source = "newmain_ui_json.main_libao_30";
+			// 	this.libao_ac.source = "newmain_ui_json.main_coin_30";
+			// 	this.libao_text.source = "newmain_ui_json.main_coin_text_30";
+			// } else {
+			// 	this.lbGroup.visible = false;
+			// }
 		}
 	}
 
@@ -646,11 +682,11 @@ class MainComp extends eui.Component {
 
 	private onBtnMc() {
 		var self = this;
-		DisplayMgr.buttonScale(this.mcGroup, function() {
+		DisplayMgr.buttonScale(this.mcGroup, function () {
 			SoundManager.instance().buttonSound("pop");
 			var panel = new MonthCardPanel();
 			DisplayMgr.set2Center(panel);
-			self.stage.addChild(panel); 
+			self.stage.addChild(panel);
 		});
 	}
 
@@ -729,18 +765,22 @@ class MainComp extends eui.Component {
 		NetLoading.removeLoading();
 		var panel: eui.Component = null;
 		if (window["OPEN_DATA"] && window["OPEN_DATA"].platform == 2) {
-			if (WanbaData.packageData.indexOf("libao_2") == -1) {
+			if (WanbaData.packageData.indexOf("libao_2") == -1 && InviteData.reward3_state != 3) {
 				panel = new SixPanel();
-			} else if (WanbaData.packageData.indexOf("libao_3") == -1) {
+			} else if (WanbaData.packageData.indexOf("libao_3") == -1 && InviteData.reward10_state != 3) {
 				panel = new ThirtyPanel();
+			} else {
+				panel = new InviteFreeRewardPanel();
 			}
 		} else {
 			if (WanbaData.packageData.indexOf("libao_1") == -1) {
 				panel = new OnePanel();
-			} else if (WanbaData.packageData.indexOf("libao_2") == -1) {
+			} else if (WanbaData.packageData.indexOf("libao_2") == -1 && InviteData.reward3_state != 3) {
 				panel = new SixPanel();
-			} else if (WanbaData.packageData.indexOf("libao_3") == -1) {
+			} else if (WanbaData.packageData.indexOf("libao_3") == -1 && InviteData.reward10_state != 3) {
 				panel = new ThirtyPanel();
+			} else {
+				panel = new InviteFreeRewardPanel();
 			}
 		}
 

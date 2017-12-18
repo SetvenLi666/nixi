@@ -92,6 +92,9 @@ class HttpMgr {
             //分享发送桌面
             ShareData.update(content["h5wanba"]);
 
+            //邀请数据
+            InviteData.updateInviteData(content["invite"]);
+
             //每日必做
             WelfareData.updateWelfareData(content["welfare"]);
 
@@ -589,6 +592,18 @@ class HttpMgr {
             // this->creat_Energy_Time();
             EnergyCD.updateEnergyCD();
             PurchaseData.update(content["purchase"]);
+        }
+
+        else if(112 === cid) {
+            InviteData.updateInviteData(content["invite"]);
+            ClothesData.updateUserClohtes(content["clothes"]);
+            extraData = content["reward"];
+        }
+
+        else if(110 === cid) {
+            InviteData.updateInviteData(content["invite"]);
+            ClothesData.updateUserClohtes(content["clothes"]);
+            extraData = content["reward"];
         }
 
         else if (108 === cid) {

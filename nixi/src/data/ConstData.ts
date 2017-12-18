@@ -28,7 +28,7 @@ namespace ConstData {
 
         get version() : string { return "version-20170322"; },      //版本     
 
-        get whiteList() : string[] {return ["8A79B852", "8A79B69C", "8A79B656"]; },
+        // get whiteList() : string[] {return ["8A79B852", "8A79B69C", "8A79B656"]; },
     }
 
     // export const CustomEvtName = {

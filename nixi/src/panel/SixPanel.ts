@@ -11,6 +11,8 @@ class SixPanel extends eui.Component {
 
 	// public shower: Model;
 	public btn_rev: eui.Image;
+	public btn_invite: eui.Image;
+	public label_count: eui.Label;
 
 	public constructor() {
 		super();
@@ -25,15 +27,19 @@ class SixPanel extends eui.Component {
 		this.group.addEventListener(egret.TouchEvent.TOUCH_TAP, this.touchTap, this);
 
 		this.initSignView();
+
 		this.btn_rev.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnRev, this);
+		this.btn_invite.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnInvite, this);
+
+		CustomEventMgr.addEventListener("110", this.result_of_110, this);
 	}
 
 	private onExit() {
-		// CustomEventMgr.removeEventListener("303", this.afterFetchInfo_303, this);
+		CustomEventMgr.removeEventListener("110", this.result_of_110, this);
 	}
 
 	private initSignView() {
-		var arr:number[] = WanbaData.libao_2["clothes"];
+		var arr: number[] = WanbaData.libao_2["clothes"];
 		var len = arr.length;
 		for (var i = 0; i < len; i++) {
 			var id: number = arr[i];
@@ -54,6 +60,14 @@ class SixPanel extends eui.Component {
 			item.icon.source = "icon" + id + "_png";
 			item.clothes_name.text = tempData["name"];
 		}
+
+		if (InviteData.reward3_state == 1) {
+			//人数不足
+			this.btn_invite.source = "libao_btn_invite_png";
+		} else {
+			this.btn_invite.source = "libao_btn_lingqu_png";
+		}
+		this.label_count.text = InviteData.inviteCount + "/3";
 	}
 
 	private touchTap(evt: egret.TouchEvent) {
@@ -61,6 +75,64 @@ class SixPanel extends eui.Component {
 		if (!rectAngle.contains(evt.stageX, evt.stageY)) {
 			this.closePanel();
 		}
+	}
+
+	private onBtnInvite() {
+		var self = this;
+		DisplayMgr.buttonScale(this.btn_invite, function () {
+			if (InviteData.reward3_state == 1) {
+				//人数不足，打开邀请
+				NetLoading.showLoading();
+				var request = HttpProtocolMgr.take_invite_info_165();
+				HttpMgr.postRequest(request);
+				self.closePanel();
+			} else if (InviteData.reward3_state == 2) {
+				// 可以领取
+				NetLoading.showLoading();
+				var request = HttpProtocolMgr.take_free_6_reward_110();
+				HttpMgr.postRequest(request);
+			} else if (InviteData.reward3_state == 3) {
+				//已经领取
+				Prompt.showPrompt(self.stage, "奖励已经领取");
+			}
+		});
+	}
+
+	private result_of_110(evt: egret.Event) {
+		NetLoading.removeLoading();
+
+		this.playRewardAnimation(evt.data);
+
+		CustomEventMgr.dispatchEventWith("Update Libao View", false);
+	}
+
+	private playRewardAnimation(reward: {}) {
+		var new_reward: {}[] = [];
+		for (var p in reward) {
+			if (p == "clothes") {
+				var arr: number[] = reward["clothes"];
+				var len = arr.length;
+				for (var i = 0; i < len; i++) {
+					var item: {} = {
+						type: "clothes",
+						num: arr[i]
+					}
+					new_reward.push(item);
+				}
+			} else {
+				var item: {} = {
+					type: p,
+					num: reward[p]
+				}
+				new_reward.push(item);
+			}
+		}
+
+		var panel = new CommonRewardPanel(new_reward);
+		DisplayMgr.set2Center(panel);
+		this.stage.addChild(panel);
+
+		CustomEventMgr.dispatchEventWith("Update Player Info", false);
 	}
 
 	private closePanel() {
@@ -71,13 +143,13 @@ class SixPanel extends eui.Component {
 
 	private onBtnRev() {
 		var self = this;
-		DisplayMgr.buttonScale(this.btn_rev, function() {
+		DisplayMgr.buttonScale(this.btn_rev, function () {
 			SoundManager.instance().buttonSound();
-			if(WanbaData.packageData.indexOf("libao_2") != -1) {
+			if (WanbaData.packageData.indexOf("libao_2") != -1) {
 				Prompt.showPrompt(self.stage, "已购买该礼包，请勿重复购买!");
 				return;
 			}
-			
+
 			var data = WanbaData.libao_2;
 			var urlRequest = new egret.URLRequest(ConstData.Conf.WanbaOrderAddr);
 			urlRequest.method = egret.URLRequestMethod.POST;

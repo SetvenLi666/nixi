@@ -532,6 +532,18 @@ class HttpProtocolMgr {
         return this.newRequest("121", JSON.stringify(data));
     }
 
+    static take_free_30_reward_112() {
+        var data = {};
+        data["extra"] = CommonFunc.curTimeStamp();
+        return this.newRequest("112", JSON.stringify(data));
+    }
+
+    static take_free_6_reward_110() {
+        var data = {};
+        data["extra"] = CommonFunc.curTimeStamp();
+        return this.newRequest("110", JSON.stringify(data));
+    }
+
     static take_invite_clothes_reward_108() {
         var data = {};
         data["extra"] = CommonFunc.curTimeStamp();

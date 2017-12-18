@@ -159,6 +159,7 @@
     "src/panel/FirstPayPanelSkin.exml",
     "src/panel/HuodongPanelRendererSkin.exml",
     "src/panel/HuodongPanelSkin.exml",
+    "src/panel/InviteFreeRewardPanelSkin.exml",
     "src/panel/InviteItemRendererSkin.exml",
     "src/panel/InvitePanelSkin.exml",
     "src/panel/IosPayTipPanelSkin.exml",

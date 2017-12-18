@@ -33,16 +33,16 @@ class InvitePanel extends eui.Component {
 		this.nextShareTime.text = this.formatShareTime(this.shareLeftTime);
 
 		this.curInviteNum.text = InviteData.inviteCount + "/20";
-		
-		if(InviteData.inviteCount < 20) {
+
+		if (InviteData.inviteCount < 20) {
 			this.btn_receive.visible = false;
-		}else {
+		} else {
 			this.btn_receive.visible = true;
 		}
 
-		if(InviteData.reward_state == 1 || InviteData.reward_state == 2) {
+		if (InviteData.reward_state == 1 || InviteData.reward_state == 2) {
 			this.btn_receive.source = "invite_btn_buy_png";
-		}else if(InviteData.reward_state == 3) {
+		} else if (InviteData.reward_state == 3) {
 			this.btn_receive.source = "invite_state_yilinqu_png";
 			this.btn_receive.touchEnabled = false;
 		}
@@ -87,7 +87,7 @@ class InvitePanel extends eui.Component {
 	}
 
 	private onReceive() {
-		DisplayMgr.buttonScale(this.btn_receive, function() {
+		DisplayMgr.buttonScale(this.btn_receive, function () {
 			var request = HttpProtocolMgr.take_invite_clothes_reward_108();
 			HttpMgr.postRequest(request);
 		});
@@ -97,34 +97,63 @@ class InvitePanel extends eui.Component {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_share, function () {
 			SoundManager.instance().buttonSound();
-			if (InviteData.curTimes >= 3) {
-				Prompt.showPrompt(self.stage, "今天分享奖励都领到了哟!");
-			} else if (self.shareLeftTime > 0) {
-				Prompt.showPrompt(self.stage, "不要频繁分享，影响小伙伴体验!");
-			} else {
-				window["mqq"].ui.shareMessage({
-					title: '逆袭之星途闪耀',
-					desc: '给你看个好玩的，快来！',
-					share_type: 0,
-					share_url: window["OPEN_DATA"].shareurl + "&td_channelid=qqshare&isid=" + LoginData.sid,
-					image_url: window["OPEN_DATA"].appicon,
-					back: true
-				}, function (result) {
-					if (result["retCode"] == 0) {
-						window["mqq"].ui.showTips({
-							text: "分享成功！"
-						});
+			// if (InviteData.curTimes >= 3) {
+			// 	Prompt.showPrompt(self.stage, "今天分享奖励都领到了哟!");
+			// } else if (self.shareLeftTime > 0) {
+			// 	Prompt.showPrompt(self.stage, "不要频繁分享，影响小伙伴体验!");
+			// } else {
+			// 	window["mqq"].ui.shareMessage({
+			// 		title: '逆袭之星途闪耀',
+			// 		desc: '给你看个好玩的，快来！',
+			// 		share_type: 0,
+			// 		share_url: window["OPEN_DATA"].shareurl + "&td_channelid=qqshare&isid=" + LoginData.sid,
+			// 		image_url: window["OPEN_DATA"].appicon,
+			// 		back: true
+			// 	}, function (result) {
+			// 		if (result["retCode"] == 0) {
+			// 			window["mqq"].ui.showTips({
+			// 				text: "分享成功！"
+			// 			});
 
+			// 			if (InviteData.curTimes < 3 && self.shareLeftTime <= 0) {
+			// 				NetLoading.showLoading();
+			// 				var request = HttpProtocolMgr.take_invite_share_reward_164();
+			// 				HttpMgr.postRequest(request);
+			// 			}
+
+			// 		} else if (result["retCode"] == 1) {
+			// 			window["mqq"].ui.showTips({
+			// 				text: "分享取消！"
+			// 			});
+			// 		}
+			// 	});
+			// }
+
+			window["mqq"].ui.shareMessage({
+				title: '逆袭之星途闪耀',
+				desc: '给你看个好玩的，快来！',
+				share_type: 0,
+				share_url: window["OPEN_DATA"].shareurl + "&td_channelid=qqshare&isid=" + LoginData.sid,
+				image_url: window["OPEN_DATA"].appicon,
+				back: true
+			}, function (result) {
+				if (result["retCode"] == 0) {
+					window["mqq"].ui.showTips({
+						text: "分享成功！"
+					});
+
+					if (InviteData.curTimes < 3 && self.shareLeftTime <= 0) {
 						NetLoading.showLoading();
 						var request = HttpProtocolMgr.take_invite_share_reward_164();
 						HttpMgr.postRequest(request);
-					} else if (result["retCode"] == 1) {
-						window["mqq"].ui.showTips({
-							text: "分享取消！"
-						});
 					}
-				});
-			}
+
+				} else if (result["retCode"] == 1) {
+					window["mqq"].ui.showTips({
+						text: "分享取消！"
+					});
+				}
+			});
 		});
 	}
 
@@ -164,7 +193,7 @@ class InvitePanel extends eui.Component {
 		var new_reward: {}[] = [];
 		var reward: number[] = reward = evt.data["clothes"];
 		var count = reward.length;
-		for(var i = 0; i < count; i++) {
+		for (var i = 0; i < count; i++) {
 			var item: {} = {
 				type: "clothes",
 				num: reward[i]
@@ -173,15 +202,15 @@ class InvitePanel extends eui.Component {
 		}
 		this.playRewardAnimation(new_reward);
 
-		if(InviteData.inviteCount < 20) {
+		if (InviteData.inviteCount < 20) {
 			this.btn_receive.visible = false;
-		}else {
+		} else {
 			this.btn_receive.visible = true;
 		}
-		
-		if(InviteData.reward_state == 1 || InviteData.reward_state == 2) {
+
+		if (InviteData.reward_state == 1 || InviteData.reward_state == 2) {
 			this.btn_receive.source = "invite_btn_buy_png";
-		}else if(InviteData.reward_state == 3) {
+		} else if (InviteData.reward_state == 3) {
 			this.btn_receive.source = "invite_state_yilinqu_png";
 			this.btn_receive.touchEnabled = false;
 		}
