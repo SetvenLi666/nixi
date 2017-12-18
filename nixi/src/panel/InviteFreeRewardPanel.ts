@@ -1,7 +1,6 @@
 class InviteFreeRewardPanel extends eui.Component {
 	public group: eui.Group;
 	public bg: eui.Image;
-	public model: Model;
 	public item_0: SignItemComp;
 	public item_1: SignItemComp;
 	public item_2: SignItemComp;
@@ -36,7 +35,7 @@ class InviteFreeRewardPanel extends eui.Component {
 	}
 
 	private initView() {
-		var arr: number[] = [21541, 31541, 51541, 61541, 71541, 71542, 71543, 71544, 15101];
+		var arr: number[] = [21541, 31541, 51541, 61541, 71541, 71542, 71543, 71544];
 		var len = arr.length;
 		for (var i = 0; i < len; i++) {
 			var id: number = arr[i];
@@ -49,12 +48,9 @@ class InviteFreeRewardPanel extends eui.Component {
 				sub_part = tempData["part"];
 			}
 
-			this.model.dressItem(sub_part, id);
-			this.model.dressItemOfSuit(sub_part, id);
+			// this.model.dressItem(sub_part, id);
+			// this.model.dressItemOfSuit(sub_part, id);
 
-			if(i == 8) {
-				continue;
-			}
 			var item = <SignItemComp>this["item_" + i];
 			item.itemBg.source = "ac_res_json.ac_6_item_bg";
 			item.icon.source = "icon" + id + "_png";
@@ -66,7 +62,7 @@ class InviteFreeRewardPanel extends eui.Component {
 		}else {
 			this.btn_invite.source = "libao_btn_lingqu_png";
 		}
-		this.label_count.text = InviteData.inviteCount + "/20";
+		this.label_count.text = InviteData.inviteCount + "/30";
 	}
 
 	private onInvite() {

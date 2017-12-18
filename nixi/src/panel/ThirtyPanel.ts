@@ -66,7 +66,7 @@ class ThirtyPanel extends eui.Component {
 		} else {
 			this.btn_invite.source = "libao_btn_lingqu_png";
 		}
-		this.label_count.text = InviteData.inviteCount + "/10";
+		this.label_count.text = InviteData.inviteCount + "/15";
 	}
 
 	private onBtnInvite() {

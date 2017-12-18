@@ -12,12 +12,12 @@
 				</e:layout>
 			</e:List>
 		</e:Scroller>
-		<e:Label id="nextShareTime" text="00:00:00" y="545" size="18" textColor="0xef4556" horizontalCenter="150" width="100" textAlign="center" height="18"/>
+		<e:Label id="nextShareTime" text="00:00:00" y="546" size="18" textColor="0xef4556" horizontalCenter="160.5" width="85" textAlign="center" height="18"/>
 		<e:Group id="btn_share" width="62" height="63" y="511" anchorOffsetX="31" anchorOffsetY="31.5" horizontalCenter="160">
 			<e:Image source="invite_btn_share_png" anchorOffsetX="48.5" anchorOffsetY="49.5" horizontalCenter="0" x="-35" scaleX="1" scaleY="1" verticalCenter="0"/>
 			<e:Label id="curTimes" text="0/3" y="17.34" size="20" textAlign="center" width="40" height="22" horizontalCenter="0" strokeColor="0xed3b74" stroke="3" textColor="0xffffff"/>
 		</e:Group>
-		<e:Label id="curInviteNum" text="0/20" y="541.37" size="18" textColor="0x2393fb" textAlign="center" bold="true" horizontalCenter="-126"/>
+		<e:Label id="curInviteNum" text="0/30" y="541.37" size="18" textColor="0x2393fb" textAlign="center" bold="true" horizontalCenter="-126"/>
 		<e:Image id="btn_receive" source="invite_btn_buy_png" y="532" horizontalCenter="-60"/>
 	</e:Group>
 </e:Skin>

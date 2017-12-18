@@ -327,7 +327,8 @@ class MainComp extends eui.Component {
 		this.newShareAnimationFirst();
 		this.newShareGroup.visible = ShareData.isShowNewShare;
 
-		this.checkoutTlDiscount();
+		//限时礼包========
+		// this.checkoutTlDiscount();
 
 		//邀请
 		// if (ConstData.Conf.whiteList.indexOf(LoginData.sid) != -1 || window["OPEN_DATA"].openid == "aaaa") {

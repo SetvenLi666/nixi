@@ -32,9 +32,9 @@ class InvitePanel extends eui.Component {
 		this.curTimes.text = InviteData.curTimes + "/3";
 		this.nextShareTime.text = this.formatShareTime(this.shareLeftTime);
 
-		this.curInviteNum.text = InviteData.inviteCount + "/20";
+		this.curInviteNum.text = InviteData.inviteCount + "/30";
 
-		if (InviteData.inviteCount < 20) {
+		if (InviteData.inviteCount < 30) {
 			this.btn_receive.visible = false;
 		} else {
 			this.btn_receive.visible = true;
@@ -202,7 +202,7 @@ class InvitePanel extends eui.Component {
 		}
 		this.playRewardAnimation(new_reward);
 
-		if (InviteData.inviteCount < 20) {
+		if (InviteData.inviteCount < 30) {
 			this.btn_receive.visible = false;
 		} else {
 			this.btn_receive.visible = true;

@@ -67,7 +67,7 @@ class SixPanel extends eui.Component {
 		} else {
 			this.btn_invite.source = "libao_btn_lingqu_png";
 		}
-		this.label_count.text = InviteData.inviteCount + "/3";
+		this.label_count.text = InviteData.inviteCount + "/6";
 	}
 
 	private touchTap(evt: egret.TouchEvent) {

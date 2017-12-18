@@ -4,7 +4,7 @@
 		<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.2"/>
 		<e:Group width="524" height="743" horizontalCenter="0" verticalCenter="0">
 			<e:Image id="bg" source="invite_clothes_panel_bg_png" x="0" y="0"/>
-			<ns1:Model id="model" y="-106" skinName="ModelSkin" scaleX="0.42" scaleY="0.42" horizontalCenter="-144"/>
+			<e:Image source="invite_free_role_png" horizontalCenter="-145" verticalCenter="-35"/>
 			<ns1:SignItemComp id="item_0" x="163" y="143" skinName="SignItemSkin"/>
 			<ns1:SignItemComp x="353" y="143" skinName="SignItemSkin" id="item_1"/>
 			<ns1:SignItemComp y="235.69" skinName="SignItemSkin" id="item_2" horizontalCenter="75"/>
@@ -15,7 +15,7 @@
 			<ns1:SignItemComp x="353" y="512" skinName="SignItemSkin" id="item_7"/>
 			<e:Image source="invite_clothes_text_png" y="24" horizontalCenter="71.5"/>
 			<e:Image source="libao_kuang_png" y="694.52" horizontalCenter="72" x="280" scaleX="1" scaleY="1"/>
-			<e:Label id="label_count" text="0/20" y="694.52" horizontalCenter="72.5" size="22" textColor="0x00B4FF" x="319.00000000000006" scaleX="1" scaleY="1"/>
+			<e:Label id="label_count" text="0/30" y="696.04" horizontalCenter="72.5" size="22" textColor="0x00B4FF" x="319.00000000000006" scaleX="1" scaleY="1"/>
 			<e:Image id="btn_invite" source="libao_btn_invite_png" y="650.1900000000002" horizontalCenter="72.5" x="279" scaleX="1" scaleY="1"/>
 		</e:Group>
 	</e:Group>
