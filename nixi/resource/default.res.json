@@ -191,10 +191,6 @@
 		{
 			"keys": "rank_title_first_png,rank_panel_bg_png,rank_jj_sel_png,rank_jj_nor_png,rank_item_bg_thd_png,rank_item_bg_sed_png,rank_item_bg_other_png,rank_item_bg_first_png,rank_flag_thd_png,rank_flag_sed_png,rank_flag_other_png,rank_flag_color_png,rank_dp_sel_png,rank_dp_nor_png,rank_btn_pk_png",
 			"name": "new_rank"
-		},
-		{
-			"name": "preload",
-			"keys": "invite_free_role_png"
 		}
 	],
 	"resources": [
@@ -18437,9 +18433,9 @@
 			"name": "invite_clothes_text_png"
 		},
 		{
-			"name": "invite_free_role_png",
+			"url": "game/panel/invite/invite_free_role.png",
 			"type": "image",
-			"url": "game/panel/invite/invite_free_role.png"
+			"name": "invite_free_role_png"
 		}
 	]
 }
