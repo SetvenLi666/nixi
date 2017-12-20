@@ -326,6 +326,10 @@ declare class StarsRewardPanelSkin extends eui.Skin{
 }
 declare class ThirdPanelSkin extends eui.Skin{
 }
+declare class TujianItemSkin extends eui.Skin{
+}
+declare class TujianPanelSkin extends eui.Skin{
+}
 declare class PerfectTipItemSkin extends eui.Skin{
 }
 declare class TaskPerfectTipPanelSkin extends eui.Skin{

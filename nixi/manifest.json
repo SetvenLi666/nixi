@@ -131,6 +131,7 @@
 		"bin-debug/panel/SixPanel.js",
 		"bin-debug/panel/StarsRewardPanel.js",
 		"bin-debug/panel/ThirtyPanel.js",
+		"bin-debug/panel/TujianPanel.js",
 		"bin-debug/scenes/dress/ClothesListComp.js",
 		"bin-debug/scenes/dress/DressBaseComp.js",
 		"bin-debug/scenes/dress/DressScene.js",

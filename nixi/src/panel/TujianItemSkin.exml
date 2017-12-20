@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TujianItemSkin" width="160" height="160" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="state_1,state_2,state_3" >
+	<e:Image source="tujian_item_bg_png" x="0" y="0"/>
+	<e:Image id="icon" source="icon30031_png" horizontalCenter="0" verticalCenter="0"/>
+	<e:Group width="110" height="22" horizontalCenter="0" y="106" includeIn="state_1">
+		<e:Image id="costType" source="shopUI_json.shop_ui_coin2" x="22" y="-1" scaleX="1" scaleY="1"/>
+		<e:Label id="costLabel" text="9" x="48" y="2" size="16" textColor="0x623544" textAlign="center" height="16" scaleX="1" scaleY="1"/>
+		<e:layout>
+		<e:HorizontalLayout horizontalAlign="center" gap="8" verticalAlign="middle"/>
+		</e:layout>
+	</e:Group>
+	<e:Image id="btnBuy" source="dress_tasktip_btn_buy2_png" horizontalCenter="0" bottom="0"  includeIn="state_1"/>
+	<e:Image source="dress_tasktip_feimaiping_png" includeIn="state_3" y="110" horizontalCenter="0"/>
+	<e:Image source="dress_tasktip_yiyongyou_png" includeIn="state_2" y="110" horizontalCenter="0"/>
+</e:Skin>

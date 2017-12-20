@@ -94,6 +94,8 @@ class TaskPerfectTipPanel extends eui.Component {
 	private onBuy() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btnBuy, function () {
+			SoundManager.instance().buttonSound("buy");
+
 			if (self.isAllOwn) {
 				//一键穿搭
 				CustomEventMgr.dispatchEventWith("Dress Suit", false, self.clothes_data);
@@ -204,6 +206,8 @@ class PerfectTipItem extends eui.Component {
 	private onBuy() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btnBuy, function () {
+			SoundManager.instance().buttonSound("buy");
+
 			if (!self.data) {
 				return;
 			}

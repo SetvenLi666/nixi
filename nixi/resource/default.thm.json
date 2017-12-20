@@ -170,6 +170,8 @@
     "src/panel/ScPanelSkin.exml",
     "src/panel/StarsRewardPanelSkin.exml",
     "src/panel/ThirdPanelSkin.exml",
+    "src/panel/TujianItemSkin.exml",
+    "src/panel/TujianPanelSkin.exml",
     "src/scenes/dress/PerfectTipItemSkin.exml",
     "src/scenes/dress/TaskPerfectTipPanelSkin.exml",
     "src/scenes/friend/friend/DeleteFriendPanelSkin.exml",

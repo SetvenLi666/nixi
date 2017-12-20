@@ -627,13 +627,16 @@ class MainComp extends eui.Component {
 	}
 
 	private onBtnYq() {
-		var self = this;
-		DisplayMgr.buttonScale(this.yqGroup, function () {
-			SoundManager.instance().buttonSound("pop");
-			NetLoading.showLoading();
-			var request = HttpProtocolMgr.take_invite_info_165();
-			HttpMgr.postRequest(request);
-		});
+		var panel = new TujianPanel();
+		DisplayMgr.set2Center(panel);
+		this.stage.addChild(panel);
+		// var self = this;
+		// DisplayMgr.buttonScale(this.yqGroup, function () {
+		// 	SoundManager.instance().buttonSound("pop");
+		// 	NetLoading.showLoading();
+		// 	var request = HttpProtocolMgr.take_invite_info_165();
+		// 	HttpMgr.postRequest(request);
+		// });
 	}
 
 	private onBtnSc() {
