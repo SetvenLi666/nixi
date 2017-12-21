@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ShuangdanItemSkin" width="160" height="160" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="unuse,canuse,used,timeout" >
+	<e:Image source="shuangdan_item_bg_png" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image id="icon" horizontalCenter="0" verticalCenter="0" source=""/>
+	<e:Image source="dressUI_json.dress_lab_bg" y="99" horizontalCenter="0"/>
+	<e:Label id="clothes_name" text="衣服名字啊" y="103" textAlign="center" size="16" textColor="0x723A59" horizontalCenter="0"/>
+	<e:Image source="shuangdan_flag_png" includeIn="timeout" y="127" horizontalCenter="0"/>
+	<e:Image id="btn_rev" scaleX="1" scaleY="1" horizontalCenter="0" y="127" source="panel_ui_json.ac_signin_btn1" includeIn="canuse"/>
+	<e:Image y="127" includeIn="used" horizontalCenter="0" source="panel_ui_json.ac_signin_btn2" x="10"/>
+</e:Skin>

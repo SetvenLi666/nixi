@@ -380,6 +380,16 @@ class HttpMgr {
             CompetitionData.createSelfInfo(content["competition"]);
         }
 
+        else if(340 === cid) {
+            ShuangdanData.updateTemplate(content);
+        }
+
+        else if(341 === cid) {
+            PlayerData.update(content["player"]);
+            ClothesData.updateUserClohtes(content["clothes"]);
+            ShuangdanData.updateInfo(content["info"]);
+        }
+
         else if (333 === cid) {
             PlayerData.update(content["player"]);
             extraData = content["result"];

@@ -65,10 +65,9 @@
 			<e:Component id="yl_comp" y="1475" skinName="ItemYL" anchorOffsetX="53" x="426"/>
 			<e:Component id="sd_comp" y="1430" skinName="ItemSD" anchorOffsetX="53" x="596"/>
 			<e:Component id="jj_comp" y="1270" skinName="ItemJJ" anchorOffsetX="53" x="666"/>
-			<e:Group id="newShareGroup" width="110" height="110" y="643" left="11">
-				<e:Rect id="textMask" width="177" height="38" x="74" y="51" fillAlpha="1"/>
-				<e:Image id="newShareText" source="newshare_text_1_png" x="-103" y="51"/>
-				<e:Image id="newShare" source="newshare_role_1_png" horizontalCenter="0" verticalCenter="0"/>
+			<e:Group id="shuangdanGroup" width="110" height="110" y="645" left="14">
+				<e:Image source="main_shuangdan_icon_png" horizontalCenter="0" verticalCenter="-4"/>
+				<e:Image source="main_shuangdan_text_png" y="74.52" horizontalCenter="0"/>
 			</e:Group>
 			<e:Group id="tomoGroup" width="110" height="110" y="994" left="14">
 				<e:Image source="main_tomo_icon_png" horizontalCenter="0" verticalCenter="0"/>

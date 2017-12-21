@@ -320,6 +320,16 @@ class HttpProtocolMgr {
         return this.newRequest("400", "");
     }
 
+    static take_shuangdan_reward_341(id: string) {
+        var data: {} = {};
+        data["id"] = id;
+        return this.newRequest("341", JSON.stringify(data));
+    }
+
+    static take_shuangdanSign_info_340() {
+        return this.newRequest("340", "");
+    }
+
     static commit_daily_signin_323() {
         var data: {} = {};
         data["id"] = 1;
