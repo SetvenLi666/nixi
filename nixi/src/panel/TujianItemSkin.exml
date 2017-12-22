@@ -2,7 +2,8 @@
 <e:Skin class="TujianItemSkin" width="160" height="160" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="state_1,state_2,state_3" >
 	<e:Image source="tujian_item_bg_png" x="0" y="0"/>
 	<e:Image id="icon" source="icon30031_png" horizontalCenter="0" verticalCenter="0"/>
-	<e:Group width="110" height="22" horizontalCenter="0" y="106" includeIn="state_1">
+	<e:Image source="dressUI_json.dress_lab_bg" y="98" horizontalCenter="0" includeIn="state_1"/>
+	<e:Group width="110" height="22" horizontalCenter="0" y="98" includeIn="state_1">
 		<e:Image id="costType" source="shopUI_json.shop_ui_coin2" x="22" y="-1" scaleX="1" scaleY="1"/>
 		<e:Label id="costLabel" text="9" x="48" y="2" size="16" textColor="0x623544" textAlign="center" height="16" scaleX="1" scaleY="1"/>
 		<e:layout>

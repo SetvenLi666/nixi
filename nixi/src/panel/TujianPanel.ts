@@ -22,9 +22,14 @@ class TujianPanel extends eui.Component {
 
 	private isSaveClothes: boolean = false;
 
-	public constructor() {
+	private tujianData: {};
+
+	private own_count: number = 0;
+
+	public constructor(data: {}) {
 		super();
 
+		this.tujianData = data;
 		this.skinName = "TujianPanelSkin";
 		this.addEventListener(egret.Event.ADDED_TO_STAGE, this.addStage, this);
 		this.addEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit, this);
@@ -34,12 +39,10 @@ class TujianPanel extends eui.Component {
 		this.group.width = Math.min(852, DisplayMgr.stageW);
 		this.group.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTap, this);
 
-		var data: {} = RES.getRes("task_perfect_tip_json");
-		for (var p in data) {
+		for (var p in this.tujianData) {
 			this.pageCounts += 1;
 		}
-		this.clothesArr = data[this.curIndex + ""]["clothes"];
-		this.counts = this.clothesArr.length;
+		
 		this.updateView();
 
 		this.btn_buy.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBuy, this);
@@ -55,13 +58,29 @@ class TujianPanel extends eui.Component {
 	}
 
 	private updateView() {
+		this.clothesArr = this.tujianData[this.curIndex + ""]["clothes"];
+		this.counts = this.clothesArr.length;
+
+		if (this.curIndex == 1) {
+			this.btn_left.visible = false;
+			this.btn_right.visible = true;
+		} else if (this.curIndex == this.pageCounts) {
+			this.btn_left.visible = true;
+			this.btn_right.visible = false;
+		} else {
+			this.btn_left.visible = true;
+			this.btn_right.visible = true;
+		}
+
 		var price_diam: number = 0;
 		var price_coin: number = 0;
 
 		var firstItem = ClothesData.clothesTemplateData(this.clothesArr[0][0], this.clothesArr[0]);
 		this.label_name.text = firstItem["name"];
 
-		var own_num: number = 0;
+		this.own_count = 0;
+
+		this.model.dressItemOfSuit("1", 10000);
 
 		for (var i = 0; i < this.counts; i++) {
 			var id: number = parseInt(this.clothesArr[i]);
@@ -83,7 +102,7 @@ class TujianPanel extends eui.Component {
 			var item = new TujianItem();
 			item.icon.source = "icon" + id + "_png";
 			if (ClothesData.hasOwnedClohtes(id)) {
-				own_num ++;
+				this.own_count ++;
 				item.currentState = "state_2";
 			} else {
 				item.currentState = "state_1";
@@ -107,13 +126,19 @@ class TujianPanel extends eui.Component {
 		}
 
 		if(this.counts <= 4) {
-			this.itemGroup.layout = new eui.VerticalLayout();
+			var layout1 = new eui.VerticalLayout();
+			layout1.gap = 0;
+			layout1.horizontalAlign = "center";
+			layout1.verticalAlign = "center";
+			this.itemGroup.layout = layout1;
 		}else {
-			this.itemGroup.layout = new eui.TileLayout();
-
+			var layout2 = new eui.TileLayout();
+			layout2.horizontalAlign = "center";
+			layout2.verticalAlign = "center";
+			this.itemGroup.layout = layout2;
 		}
 
-		for(var j = 0; j < own_num; j++) {
+		for(var j = 0; j < this.own_count; j++) {
 			var img = <eui.Image>(this.flagGroup.getChildAt(j));
 			img.source = "tujian_flag_1_png";
 		}
@@ -122,16 +147,25 @@ class TujianPanel extends eui.Component {
 		this.label_coin.text = "" + price_coin;
 
 		if (this.isAllOwn) {
+			// this.btn_rev.visible = true;
 			this.btn_buy.source = "tujian_btn_dress_png";
 		} else {
+			// this.btn_rev.visible = false;
 			this.btn_buy.source = "tujian_btn_buy_png";
 		}
+	}
+
+	private resetView() {
+		this.model.takeOffAllClothes2();
+		this.flagGroup.removeChildren();
+		this.itemGroup.removeChildren();
+		this.updateView();
 	}
 
 	private onBuy() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_buy, function () {
-			SoundManager.instance().buttonSound("buy");
+			SoundManager.instance().buttonSound();
 
 			if (self.isAllOwn) {
 				//一键穿搭
@@ -169,6 +203,7 @@ class TujianPanel extends eui.Component {
 	}
 
 	private updatePrice() {
+		this.own_count = 0;
 		var price_diam: number = 0;
 		var price_coin: number = 0;
 		this.isAllOwn = true;
@@ -177,6 +212,7 @@ class TujianPanel extends eui.Component {
 
 			var item = <TujianItem>(this.itemGroup.getChildAt(i));
 			if (ClothesData.hasOwnedClohtes(id)) {
+				this.own_count ++;
 				item.currentState = "state_2";
 			} else {
 				item.currentState = "state_1";
@@ -198,12 +234,19 @@ class TujianPanel extends eui.Component {
 			}
 		}
 
+		for(var j = 0; j < this.own_count; j++) {
+			var img = <eui.Image>(this.flagGroup.getChildAt(j));
+			img.source = "tujian_flag_1_png";
+		}
+
 		this.label_diam.text = "" + price_diam;
 		this.label_coin.text = "" + price_coin;
 
 		if (this.isAllOwn) {
+			// this.btn_rev.visible = true;
 			this.btn_buy.source = "tujian_btn_dress_png";
 		} else {
+			// this.btn_rev.visible = false;
 			this.btn_buy.source = "tujian_btn_buy_png";
 		}
 	}
@@ -256,7 +299,7 @@ class TujianPanel extends eui.Component {
 			this.btn_right.visible = true;
 		}
 
-		this.updateView();
+		this.resetView();
 	}
 
 	private onRight() {
@@ -275,7 +318,7 @@ class TujianPanel extends eui.Component {
 			this.btn_right.visible = true;
 		}
 
-		this.updateView();
+		this.resetView();
 	}
 
 	private result_of_403() {
@@ -283,6 +326,7 @@ class TujianPanel extends eui.Component {
 		CustomEventMgr.dispatchEventWith("Update Player Info", false);
 		this.updatePrice();
 		if(this.isSaveClothes) {
+			CustomEventMgr.dispatchEventWith("Change Model Clothes");
 			Prompt.showPrompt(this.stage, "保存成功~!");
 		}else {
 			Prompt.showPrompt(this.stage, "购买成功~!");
@@ -327,7 +371,7 @@ class TujianItem extends eui.Component {
 	private onBuy() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btnBuy, function () {
-			SoundManager.instance().buttonSound("buy");
+			SoundManager.instance().buttonSound();
 
 			if (!self.data) {
 				return;

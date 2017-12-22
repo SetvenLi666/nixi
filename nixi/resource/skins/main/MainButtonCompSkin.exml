@@ -70,9 +70,9 @@
 				<e:Image id="newShareText" source="newshare_text_1_png" x="-103" y="51"/>
 				<e:Image id="newShare" source="newshare_role_1_png" horizontalCenter="0" verticalCenter="0"/>
 			</e:Group>
-			<e:Group id="tomoGroup" width="110" height="110" y="994" left="14">
-				<e:Image source="main_tomo_icon_png" horizontalCenter="0" verticalCenter="0"/>
-				<e:Image source="main_tomo_text_png" y="80" scaleX="1" scaleY="1" horizontalCenter="0"/>
+			<e:Group id="tujianGroup" width="110" height="110" y="1016" left="14">
+				<e:Image source="main_tujian_icon_png" horizontalCenter="0" verticalCenter="-2"/>
+				<e:Image source="main_tujian_text_png" y="73" horizontalCenter="0"/>
 			</e:Group>
 		</e:Group>
 	</e:Group>

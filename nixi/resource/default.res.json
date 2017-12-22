@@ -191,10 +191,6 @@
 		{
 			"keys": "rank_title_first_png,rank_panel_bg_png,rank_jj_sel_png,rank_jj_nor_png,rank_item_bg_thd_png,rank_item_bg_sed_png,rank_item_bg_other_png,rank_item_bg_first_png,rank_flag_thd_png,rank_flag_sed_png,rank_flag_other_png,rank_flag_color_png,rank_dp_sel_png,rank_dp_nor_png,rank_btn_pk_png",
 			"name": "new_rank"
-		},
-		{
-			"name": "preload",
-			"keys": "tujian_btn_buy_png,tujian_btn_dress_png,tujian_btn_left_png,tujian_btn_lingqu_png,tujian_btn_right_png,tujian_item_bg_png,tujian_panel_bg_png,tujian_price_kuang_png,tujian_title_kuang_png,tujian_flag_1_png,tujian_flag_2_png,tujian_btn_lingqu2_png,tujian_icon_diam_png,tujian_tip_text_png"
 		}
 	],
 	"resources": [
@@ -8289,11 +8285,6 @@
 			"url": "game/clothes/7shipin/70811.png",
 			"type": "image",
 			"name": "70811_png"
-		},
-		{
-			"url": "game/clothes/7shipin/70812.png",
-			"type": "image",
-			"name": "70812_png"
 		},
 		{
 			"url": "game/clothes/7shipin/70813.png",
@@ -18442,74 +18433,94 @@
 			"name": "invite_free_role_png"
 		},
 		{
-			"name": "tujian_btn_buy_png",
+			"url": "game/panel/tujian/tujian_btn_buy.png",
 			"type": "image",
-			"url": "game/panel/tujian/tujian_btn_buy.png"
+			"name": "tujian_btn_buy_png"
 		},
 		{
-			"name": "tujian_btn_dress_png",
+			"url": "game/panel/tujian/tujian_btn_dress.png",
 			"type": "image",
-			"url": "game/panel/tujian/tujian_btn_dress.png"
+			"name": "tujian_btn_dress_png"
 		},
 		{
-			"name": "tujian_btn_left_png",
+			"url": "game/panel/tujian/tujian_btn_left.png",
 			"type": "image",
-			"url": "game/panel/tujian/tujian_btn_left.png"
+			"name": "tujian_btn_left_png"
 		},
 		{
-			"name": "tujian_btn_lingqu_png",
+			"url": "game/panel/tujian/tujian_btn_lingqu.png",
 			"type": "image",
-			"url": "game/panel/tujian/tujian_btn_lingqu.png"
+			"name": "tujian_btn_lingqu_png"
 		},
 		{
-			"name": "tujian_btn_right_png",
+			"url": "game/panel/tujian/tujian_btn_right.png",
 			"type": "image",
-			"url": "game/panel/tujian/tujian_btn_right.png"
+			"name": "tujian_btn_right_png"
 		},
 		{
-			"name": "tujian_item_bg_png",
+			"url": "game/panel/tujian/tujian_item_bg.png",
 			"type": "image",
-			"url": "game/panel/tujian/tujian_item_bg.png"
+			"name": "tujian_item_bg_png"
 		},
 		{
-			"name": "tujian_panel_bg_png",
+			"url": "game/panel/tujian/tujian_panel_bg.png",
 			"type": "image",
-			"url": "game/panel/tujian/tujian_panel_bg.png"
+			"name": "tujian_panel_bg_png"
 		},
 		{
-			"name": "tujian_price_kuang_png",
+			"url": "game/panel/tujian/tujian_price_kuang.png",
 			"type": "image",
-			"url": "game/panel/tujian/tujian_price_kuang.png"
+			"name": "tujian_price_kuang_png"
 		},
 		{
-			"name": "tujian_title_kuang_png",
+			"url": "game/panel/tujian/tujian_title_kuang.png",
 			"type": "image",
-			"url": "game/panel/tujian/tujian_title_kuang.png"
+			"name": "tujian_title_kuang_png"
 		},
 		{
-			"name": "tujian_flag_1_png",
+			"url": "game/panel/tujian/tujian_flag_1.png",
 			"type": "image",
-			"url": "game/panel/tujian/tujian_flag_1.png"
+			"name": "tujian_flag_1_png"
 		},
 		{
-			"name": "tujian_flag_2_png",
+			"url": "game/panel/tujian/tujian_flag_2.png",
 			"type": "image",
-			"url": "game/panel/tujian/tujian_flag_2.png"
+			"name": "tujian_flag_2_png"
 		},
 		{
-			"name": "tujian_btn_lingqu2_png",
+			"url": "game/panel/tujian/tujian_btn_lingqu2.png",
 			"type": "image",
-			"url": "game/panel/tujian/tujian_btn_lingqu2.png"
+			"name": "tujian_btn_lingqu2_png"
 		},
 		{
-			"name": "tujian_icon_diam_png",
+			"url": "game/panel/tujian/tujian_icon_diam.png",
 			"type": "image",
-			"url": "game/panel/tujian/tujian_icon_diam.png"
+			"name": "tujian_icon_diam_png"
 		},
 		{
-			"name": "tujian_tip_text_png",
+			"url": "game/panel/tujian/tujian_tip_text.png",
 			"type": "image",
-			"url": "game/panel/tujian/tujian_tip_text.png"
+			"name": "tujian_tip_text_png"
+		},
+		{
+			"url": "game/main/newMain/main_tujian_icon.png",
+			"type": "image",
+			"name": "main_tujian_icon_png"
+		},
+		{
+			"url": "game/main/newMain/main_tujian_text.png",
+			"type": "image",
+			"name": "main_tujian_text_png"
+		},
+		{
+			"url": "config/task_serial/tujian_list.json",
+			"type": "json",
+			"name": "tujian_list_json"
+		},
+		{
+			"url": "game/clothes/7shipin/70812.png",
+			"type": "image",
+			"name": "70812_png"
 		}
 	]
 }
