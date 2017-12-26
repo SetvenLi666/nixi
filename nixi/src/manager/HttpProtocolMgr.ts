@@ -320,6 +320,16 @@ class HttpProtocolMgr {
         return this.newRequest("400", "");
     }
 
+    static take_shuangdan_reward_341(id: string) {
+        var data: {} = {};
+        data["id"] = id;
+        return this.newRequest("341", JSON.stringify(data));
+    }
+
+    static take_shuangdanSign_info_340() {
+        return this.newRequest("340", "");
+    }
+
     static commit_daily_signin_323() {
         var data: {} = {};
         data["id"] = 1;
@@ -530,6 +540,19 @@ class HttpProtocolMgr {
         data["product_id"] = product_id;
         data["extra"] = CommonFunc.curTimeStamp();
         return this.newRequest("121", JSON.stringify(data));
+    }
+
+    static take_tujian_reward_115(id: string) {
+        var data = {};
+        data["id"] = id;
+        data["extra"] = CommonFunc.curTimeStamp();
+        return this.newRequest("115", JSON.stringify(data));
+    }
+
+    static fetchTujianData_114() {
+        var data = {};
+        data["extra"] = CommonFunc.curTimeStamp();
+        return this.newRequest("114", JSON.stringify(data));
     }
 
     static take_free_30_reward_112() {

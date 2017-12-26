@@ -322,6 +322,10 @@ declare class RewardItemSkin extends eui.Skin{
 }
 declare class ScPanelSkin extends eui.Skin{
 }
+declare class ShuangdanItemSkin extends eui.Skin{
+}
+declare class ShuangdanSignPanelSkin extends eui.Skin{
+}
 declare class StarsRewardPanelSkin extends eui.Skin{
 }
 declare class ThirdPanelSkin extends eui.Skin{

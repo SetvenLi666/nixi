@@ -19,11 +19,11 @@ class MainComp extends eui.Component {
 	public hdGroup: eui.Group;
 	public yqGroup: eui.Group;
 
-	public newShareGroup: eui.Group;
-	public newShareText: eui.Image;
-	public newShare: eui.Image;
-	public textMask: eui.Rect;
-	private shareIndex: number;
+	// public newShareGroup: eui.Group;
+	// public newShareText: eui.Image;
+	// public newShare: eui.Image;
+	// public textMask: eui.Rect;
+	// private shareIndex: number;
 	// private curTextIndex: number;
 	// private timer2: egret.Timer;
 
@@ -33,6 +33,8 @@ class MainComp extends eui.Component {
 	public mcGroup: eui.Group;
 
 	public tujianGroup: eui.Group;
+
+	public shuangdanGroup: eui.Group;
 
 	public tl_ac: eui.Image;
 	public tlGroup: eui.Group;
@@ -57,8 +59,6 @@ class MainComp extends eui.Component {
 
 	private timer: egret.Timer;
 
-	private isGoShop: boolean = true;
-
 	public constructor() {
 		super();
 
@@ -77,7 +77,9 @@ class MainComp extends eui.Component {
 
 		this.initView();
 
-		this.checkAllClothes();
+		//图鉴josn生成
+		// this.checkAllClothes();
+
 		SoundManager.instance().startBgSound("main");
 
 		this.niudanGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnGashapon, this);
@@ -94,7 +96,8 @@ class MainComp extends eui.Component {
 
 		this.tlGroup2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnTl, this);
 
-		this.newShare.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
+		// this.newShare.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
+		this.shuangdanGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShuangdanGroup, this);
 
 		this.touchRect.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouchRect, this);
 
@@ -108,6 +111,8 @@ class MainComp extends eui.Component {
 		CustomEventMgr.addEventListener("301", this.result_of_301, this);
 		CustomEventMgr.addEventListener("106", this.result_of_106, this);
 
+		CustomEventMgr.addEventListener("340", this.result_of_340, this);
+
 		CustomEventMgr.addEventListener("500", this.afterFetchStoryData_500, this);
 		CustomEventMgr.addEventListener("600", this.afterFetchMissionData_600, this);
 		CustomEventMgr.addEventListener("800", this.afterSocialInfo_800, this);
@@ -116,7 +121,8 @@ class MainComp extends eui.Component {
 		CustomEventMgr.addEventListener("704", this.afterHomeInfo_704, this);
 		CustomEventMgr.addEventListener("700", this.afterFetchMailData_700, this);
 
-		CustomEventMgr.addEventListener("175", this.result_of_175, this);
+		// CustomEventMgr.addEventListener("175", this.result_of_175, this);
+		CustomEventMgr.addEventListener("114", this.afterFetchTujianData_114, this);
 
 		CustomEventMgr.addEventListener("104", this.afterTakePackageInfo_104, this);
 
@@ -130,7 +136,7 @@ class MainComp extends eui.Component {
 		CustomEventMgr.addEventListener("Update Libao View", this.updateLibaoView, this);
 		CustomEventMgr.addEventListener("Update Sc View", this.updateScView, this);
 		CustomEventMgr.addEventListener("CheckOut DT Status", this.checkDailyTargetStates, this);
-		CustomEventMgr.addEventListener("Update New Share", this.updateNewShare, this);
+		// CustomEventMgr.addEventListener("Update New Share", this.updateNewShare, this);
 
 		CustomEventMgr.addEventListener("Change Model Clothes", this.changeModelClothes, this);
 
@@ -231,9 +237,17 @@ class MainComp extends eui.Component {
 				}
 			}
 
-			if(itemdata["clothes"].length == 0) {
 
-			}else {
+			var isActive: boolean = true;
+			for (var p in end_data) {
+				if (end_data[p]["serial"] == itemdata["serial"]) {
+					isActive = false;
+				}
+			}
+
+			if (itemdata["clothes"].length == 0) {
+
+			} else if (isActive) {
 				end_data[index] = itemdata;
 				index++;
 			}
@@ -265,6 +279,8 @@ class MainComp extends eui.Component {
 		CustomEventMgr.removeEventListener("301", this.result_of_301, this);
 		CustomEventMgr.removeEventListener("106", this.result_of_106, this);
 
+		CustomEventMgr.removeEventListener("340", this.result_of_340, this);
+
 		CustomEventMgr.removeEventListener("500", this.afterFetchStoryData_500, this);
 		CustomEventMgr.removeEventListener("600", this.afterFetchMissionData_600, this);
 		CustomEventMgr.removeEventListener("800", this.afterSocialInfo_800, this);
@@ -273,9 +289,11 @@ class MainComp extends eui.Component {
 		CustomEventMgr.removeEventListener("704", this.afterHomeInfo_704, this);
 		CustomEventMgr.removeEventListener("700", this.afterFetchMailData_700, this);
 
-		CustomEventMgr.removeEventListener("175", this.result_of_175, this);
+		// CustomEventMgr.removeEventListener("175", this.result_of_175, this);
 
 		CustomEventMgr.removeEventListener("104", this.afterTakePackageInfo_104, this);
+
+		CustomEventMgr.removeEventListener("114", this.afterFetchTujianData_114, this);
 
 		CustomEventMgr.removeEventListener("910", this.result_of_910, this);
 
@@ -288,8 +306,9 @@ class MainComp extends eui.Component {
 		CustomEventMgr.removeEventListener("Update Sc View", this.updateScView, this);
 		CustomEventMgr.removeEventListener("CheckOut DT Status", this.checkDailyTargetStates, this);
 
-		CustomEventMgr.removeEventListener("Update New Share", this.updateNewShare, this);
+		// CustomEventMgr.removeEventListener("Update New Share", this.updateNewShare, this);
 		CustomEventMgr.removeEventListener("Change Model Clothes", this.changeModelClothes, this);
+
 
 		CustomEventMgr.removeEventListener("Update TL View", this.updateDlView, this);
 		CustomEventMgr.removeEventListener("Hide TL", this.hideDlView, this);
@@ -314,6 +333,8 @@ class MainComp extends eui.Component {
 		this.mcGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnMc, this);
 
 		this.tlGroup2.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnTl, this);
+
+		this.shuangdanGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onShuangdanGroup, this);
 
 		this.touchRect.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouchRect, this);
 		this.tujianGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTujianGroup, this);
@@ -353,13 +374,13 @@ class MainComp extends eui.Component {
 			egret.Tween.removeTweens(this.mailTip);
 		}
 
-		this.shareIndex = Math.floor(Math.random() * 3) + 1;
-		// this.curTextIndex = this.shareIndex;
-		this.newShare.source = "newshare_role_" + this.shareIndex + "_png";
-		this.newShareText.source = "newshare_text_" + this.shareIndex + "_png";
-		this.newShareText.mask = this.textMask;
-		this.newShareAnimationFirst();
-		this.newShareGroup.visible = ShareData.isShowNewShare;
+		// this.shareIndex = Math.floor(Math.random() * 3) + 1;
+		// // this.curTextIndex = this.shareIndex;
+		// this.newShare.source = "newshare_role_" + this.shareIndex + "_png";
+		// this.newShareText.source = "newshare_text_" + this.shareIndex + "_png";
+		// this.newShareText.mask = this.textMask;
+		// this.newShareAnimationFirst();
+		// this.newShareGroup.visible = ShareData.isShowNewShare;
 
 		//限时礼包========
 		// this.checkoutTlDiscount();
@@ -382,7 +403,7 @@ class MainComp extends eui.Component {
 		//更新首冲视图
 		this.updateScView();
 
-		this.updateNewShare();
+		// this.updateNewShare();
 
 		this.model.dress(ClothesData.ondressCache, ClothesData.ornamentsCache);
 
@@ -577,10 +598,10 @@ class MainComp extends eui.Component {
 		egret.Tween.get(this.jj_comp).to({ y: 770 }, 800, egret.Ease.backOut);
 	}
 
-	private newShareAnimationFirst() {
-		var tw = egret.Tween.get(this.newShareText);
-		tw.to({ x: 74 }, 1500);
-	}
+	// private newShareAnimationFirst() {
+	// 	var tw = egret.Tween.get(this.newShareText);
+	// 	tw.to({ x: 74 }, 1500);
+	// }
 
 	private onBtnGashapon() {
 		DisplayMgr.buttonScale(this.niudanGroup, function () {
@@ -611,15 +632,15 @@ class MainComp extends eui.Component {
 		HttpMgr.postRequest(request);
 	}
 
-	private onShare() {
-		var self = this;
-		DisplayMgr.buttonScale(this.newShare, function () {
-			SoundManager.instance().buttonSound("pop");
-			var panel = new NewSharePanel(self.shareIndex);
-			DisplayMgr.set2Center(panel);
-			self.stage.addChild(panel);
-		});
-	}
+	// private onShare() {
+	// 	var self = this;
+	// 	DisplayMgr.buttonScale(this.newShare, function () {
+	// 		SoundManager.instance().buttonSound("pop");
+	// 		var panel = new NewSharePanel(self.shareIndex);
+	// 		DisplayMgr.set2Center(panel);
+	// 		self.stage.addChild(panel);
+	// 	});
+	// }
 
 	private onDesk() {
 		var self = this;
@@ -771,7 +792,6 @@ class MainComp extends eui.Component {
 		var self = this;
 		DisplayMgr.buttonScale(this.sd_comp, function () {
 			SoundManager.instance().buttonSound();
-			self.isGoShop = true;
 			if (ClothesData.hasFetchedUserClohtes()) {
 				self.afterFetchClothesData_400(null);
 			}
@@ -802,8 +822,15 @@ class MainComp extends eui.Component {
 		var self = this;
 		DisplayMgr.buttonScale(this.tujianGroup, function () {
 			NetLoading.showLoading();
-			self.isGoShop = false;
-			var request = HttpProtocolMgr.fetchOwnClothesData_400();
+			var request = HttpProtocolMgr.fetchTujianData_114();
+			HttpMgr.postRequest(request);
+		});
+	}
+
+	private onShuangdanGroup() {
+		DisplayMgr.buttonScale(this.shuangdanGroup, function () {
+			NetLoading.showLoading();
+			var request = HttpProtocolMgr.take_shuangdanSign_info_340();
 			HttpMgr.postRequest(request);
 		});
 	}
@@ -902,20 +929,36 @@ class MainComp extends eui.Component {
 		this.stage.addChild(panel);
 	}
 
-	private result_of_175(evt: egret.Event) {
-		if (evt.data.type == "do_share_reward") {
-			ShareData.isShowNewShare = false;
-			this.newShareGroup.visible = ShareData.isShowNewShare;
-		}
-
-		var data: {} = evt.data.reward;
-		var reward: {}[] = [];
-		for (var i in data) {
-			var item = { type: i, num: data[i] };
-			reward.push(item);
-		}
-		this.playRewardAnimation(reward);
+	private result_of_340() {
+		NetLoading.removeLoading();
+		var panel = new ShuangdanSignPanel();
+		DisplayMgr.set2Center(panel);
+		this.stage.addChild(panel);
 	}
+
+	private afterFetchTujianData_114() {
+		NetLoading.removeLoading();
+		RES.getResAsync("tujian_list_json", (data, key) => {
+			var panel = new TujianPanel(data);
+			DisplayMgr.set2Center(panel);
+			this.stage.addChild(panel);
+		}, this);
+	}
+
+	// private result_of_175(evt: egret.Event) {
+	// 	if (evt.data.type == "do_share_reward") {
+	// 		ShareData.isShowNewShare = false;
+	// 		this.newShareGroup.visible = ShareData.isShowNewShare;
+	// 	}
+
+	// 	var data: {} = evt.data.reward;
+	// 	var reward: {}[] = [];
+	// 	for (var i in data) {
+	// 		var item = { type: i, num: data[i] };
+	// 		reward.push(item);
+	// 	}
+	// 	this.playRewardAnimation(reward);
+	// }
 
 	private playRewardAnimation(reward: {}[]) {
 		var panel = new CommonRewardPanel(reward);
@@ -925,14 +968,14 @@ class MainComp extends eui.Component {
 		CustomEventMgr.dispatchEventWith("Update Player Info", false);
 	}
 
-	private updateNewShare() {
-		this.newShareGroup.visible = ShareData.isShowNewShare;
-		// if(ShareData.shareTimes != 0) {
-		// 	this.newShareGroup.visible = false;
-		// }else {
-		// 	this.newShareGroup.visible = true;
-		// }
-	}
+	// private updateNewShare() {
+	// 	this.newShareGroup.visible = ShareData.isShowNewShare;
+	// 	// if(ShareData.shareTimes != 0) {
+	// 	// 	this.newShareGroup.visible = false;
+	// 	// }else {
+	// 	// 	this.newShareGroup.visible = true;
+	// 	// }
+	// }
 
 	private afterFetchStoryData_500(evt: egret.Event) {
 		if (EventData.isEventReq) {
@@ -1025,15 +1068,7 @@ class MainComp extends eui.Component {
 
 	private afterFetchClothesData_400(evt: egret.Event) {
 		NetLoading.removeLoading();
-		if (this.isGoShop) {
-			SceneMgr.gotoShopScene();
-		} else {
-			RES.getResAsync("tujian_list_json", (data, key)=>{
-				var panel = new TujianPanel(data);
-				DisplayMgr.set2Center(panel);
-				this.stage.addChild(panel);
-			}, this);
-		}
+		SceneMgr.gotoShopScene();
 	}
 
 	private afterCoffersInfo_200(evt: egret.Event) {

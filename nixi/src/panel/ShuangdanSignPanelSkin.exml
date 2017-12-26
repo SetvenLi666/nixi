@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ShuangdanSignPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.7"/>
+		<e:Group horizontalCenter="0" verticalCenter="0" width="524" height="781">
+			<e:Image id="bg" source="shuangdan_panel_bg_png" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image source="shuangdan_role_png" y="22" scaleX="1" scaleY="1" horizontalCenter="-129"/>
+			<ns1:ShuangdanItem y="561.76" skinName="ShuangdanItemSkin" id="item_6" horizontalCenter="6"/>
+			<ns1:ShuangdanItem y="561.76" skinName="ShuangdanItemSkin" id="item_7" horizontalCenter="180"/>
+			<ns1:ShuangdanItem y="463.61" skinName="ShuangdanItemSkin" id="item_5" horizontalCenter="92"/>
+			<ns1:ShuangdanItem y="362.76" skinName="ShuangdanItemSkin" id="item_3" horizontalCenter="6"/>
+			<ns1:ShuangdanItem y="362.76" skinName="ShuangdanItemSkin" id="item_4" horizontalCenter="180"/>
+			<ns1:ShuangdanItem y="265.16" skinName="ShuangdanItemSkin" id="item_2" horizontalCenter="92"/>
+			<ns1:ShuangdanItem id="item_0" y="164.4" skinName="ShuangdanItemSkin" horizontalCenter="6"/>
+			<ns1:ShuangdanItem y="164.4" skinName="ShuangdanItemSkin" id="item_1" horizontalCenter="180"/>
+			<e:Image source="shuangdan_tip_text_png" y="55.01" horizontalCenter="140"/>
+			<e:Image id="btnShare" source="newshare_btn_share_png" y="712.04" horizontalCenter="95.5"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

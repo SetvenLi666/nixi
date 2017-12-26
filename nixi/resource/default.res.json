@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "circle_png,login_bg_png,login_logo_png,login_start_png,login_shazi_png,login_star_png,nickname_input_bg_png,nickname_box_png,nickname_btn_ok_png,loadign_star_png,loading_bg_png",
+			"keys": "circle_png,login_bg_png,login_logo_png,login_start_png,login_shazi_png,login_star_png,nickname_input_bg_png,nickname_box_png,nickname_btn_ok_png,loadign_star_png,loading_bg_png,login_text_png",
 			"name": "login"
 		},
 		{
@@ -18521,6 +18521,196 @@
 			"url": "game/clothes/7shipin/70812.png",
 			"type": "image",
 			"name": "70812_png"
+		},
+		{
+			"url": "game/panel/shuangdan/shuangdan_item_bg.png",
+			"type": "image",
+			"name": "shuangdan_item_bg_png"
+		},
+		{
+			"url": "game/panel/shuangdan/shuangdan_panel_bg.png",
+			"type": "image",
+			"name": "shuangdan_panel_bg_png"
+		},
+		{
+			"url": "game/panel/shuangdan/shuangdan_role.png",
+			"type": "image",
+			"name": "shuangdan_role_png"
+		},
+		{
+			"url": "game/panel/shuangdan/shuangdan_tip_text.png",
+			"type": "image",
+			"name": "shuangdan_tip_text_png"
+		},
+		{
+			"url": "game/panel/shuangdan/shuangdan_flag.png",
+			"type": "image",
+			"name": "shuangdan_flag_png"
+		},
+		{
+			"url": "game/dress/icon/1toufa/icon15711.png",
+			"type": "image",
+			"name": "icon15711_png"
+		},
+		{
+			"url": "game/dress/icon/2waitao/icon21551.png",
+			"type": "image",
+			"name": "icon21551_png"
+		},
+		{
+			"url": "game/dress/icon/3shangyi/icon31551.png",
+			"type": "image",
+			"name": "icon31551_png"
+		},
+		{
+			"url": "game/dress/icon/5texiao/icon51551.png",
+			"type": "image",
+			"name": "icon51551_png"
+		},
+		{
+			"url": "game/dress/icon/6xiezi/icon61551.png",
+			"type": "image",
+			"name": "icon61551_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71551.png",
+			"type": "image",
+			"name": "icon71551_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71552.png",
+			"type": "image",
+			"name": "icon71552_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71553.png",
+			"type": "image",
+			"name": "icon71553_png"
+		},
+		{
+			"url": "game/dress/shop/show/1toufa/show15711.png",
+			"type": "image",
+			"name": "show15711_png"
+		},
+		{
+			"url": "game/dress/shop/show/2waitao/show21551.png",
+			"type": "image",
+			"name": "show21551_png"
+		},
+		{
+			"url": "game/dress/shop/show/3shangyi/show31551.png",
+			"type": "image",
+			"name": "show31551_png"
+		},
+		{
+			"url": "game/dress/shop/show/5texiao/show51551.png",
+			"type": "image",
+			"name": "show51551_png"
+		},
+		{
+			"url": "game/dress/shop/show/6xiezi/show61551.png",
+			"type": "image",
+			"name": "show61551_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71551.png",
+			"type": "image",
+			"name": "show71551_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71552.png",
+			"type": "image",
+			"name": "show71552_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71553.png",
+			"type": "image",
+			"name": "show71553_png"
+		},
+		{
+			"url": "game/clothes/1toufa/15711.png",
+			"type": "image",
+			"name": "15711_png"
+		},
+		{
+			"url": "game/clothes/1toufa/15719.png",
+			"type": "image",
+			"name": "15719_png"
+		},
+		{
+			"url": "game/clothes/2waitao/21551.png",
+			"type": "image",
+			"name": "21551_png"
+		},
+		{
+			"url": "game/clothes/2waitao/21558.png",
+			"type": "image",
+			"name": "21558_png"
+		},
+		{
+			"url": "game/clothes/2waitao/21559.png",
+			"type": "image",
+			"name": "21559_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/31551.png",
+			"type": "image",
+			"name": "31551_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/31558.png",
+			"type": "image",
+			"name": "31558_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/31559.png",
+			"type": "image",
+			"name": "31559_png"
+		},
+		{
+			"url": "game/clothes/5texiao/51551.png",
+			"type": "image",
+			"name": "51551_png"
+		},
+		{
+			"url": "game/clothes/5texiao/51559.png",
+			"type": "image",
+			"name": "51559_png"
+		},
+		{
+			"url": "game/clothes/6xiezi/61551.png",
+			"type": "image",
+			"name": "61551_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71551.png",
+			"type": "image",
+			"name": "71551_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71552.png",
+			"type": "image",
+			"name": "71552_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71553.png",
+			"type": "image",
+			"name": "71553_png"
+		},
+		{
+			"url": "game/main/newMain/main_shuangdan_icon.png",
+			"type": "image",
+			"name": "main_shuangdan_icon_png"
+		},
+		{
+			"url": "game/main/newMain/main_shuangdan_text.png",
+			"type": "image",
+			"name": "main_shuangdan_text_png"
+		},
+		{
+			"url": "game/login/login_text.png",
+			"type": "image",
+			"name": "login_text_png"
 		}
 	]
 }

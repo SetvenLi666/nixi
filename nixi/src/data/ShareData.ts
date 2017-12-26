@@ -187,6 +187,9 @@ class ShareData {
 			case "pk":
 			desc = '你们这些凡人！在我的裙摆下臣服吧';
 			break;
+			case "shuangdan":
+			desc = "这游戏疯了这么漂亮的衣服白送！";
+			break;
 		}
 
 		window["mqq"].ui.shareMessage({

@@ -84,6 +84,8 @@ class HttpMgr {
             ShowData.update(content["show"]);
             GashaponData.replace_gashapon_user(content["gashapon"]);
 
+            ClothesData.updateUserClohtes(content["clothes"])
+
             //触发引导
             ClientMapData.updateClientMapData(content["client_setting_map"]);
 
@@ -380,6 +382,16 @@ class HttpMgr {
             CompetitionData.createSelfInfo(content["competition"]);
         }
 
+        else if(340 === cid) {
+            ShuangdanData.updateTemplate(content);
+        }
+
+        else if(341 === cid) {
+            PlayerData.update(content["player"]);
+            ClothesData.updateUserClohtes(content["clothes"]);
+            ShuangdanData.updateInfo(content["info"]);
+        }
+
         else if (333 === cid) {
             PlayerData.update(content["player"]);
             extraData = content["result"];
@@ -592,6 +604,16 @@ class HttpMgr {
             // this->creat_Energy_Time();
             EnergyCD.updateEnergyCD();
             PurchaseData.update(content["purchase"]);
+        }
+
+        else if(115 === cid) {
+            PlayerData.update(content["player"]);
+            TujianData.update(content["tujian"]);
+            extraData = content["reward"];
+        }
+
+        else if(114 === cid) {
+            TujianData.update(content["tujian"]);
         }
 
         else if(112 === cid) {
