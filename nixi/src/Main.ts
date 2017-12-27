@@ -179,6 +179,9 @@ class Main extends egret.DisplayObjectContainer {
         SceneMgr.gotoLogin();
 
 
+        //SDK初始化
+        KJSDK.init({});
+
         // console.log(window["OPEN_DATA"]);
         // this.WanbaLogin();
         // this.WanbaShare();
