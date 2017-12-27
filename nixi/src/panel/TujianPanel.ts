@@ -97,7 +97,7 @@ class TujianPanel extends eui.Component {
 				sub_part = tempData["part"];
 			}
 
-			this.model.dressItem(sub_part, id);
+			// this.model.dressItem(sub_part, id);
 			this.model.dressItemOfSuit(sub_part, id);
 
 			var flagImg = new eui.Image("tujian_flag_2_png");
