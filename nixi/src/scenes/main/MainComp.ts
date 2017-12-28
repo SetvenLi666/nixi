@@ -19,13 +19,7 @@ class MainComp extends eui.Component {
 	public hdGroup: eui.Group;
 	public yqGroup: eui.Group;
 
-	// public newShareGroup: eui.Group;
-	// public newShareText: eui.Image;
-	// public newShare: eui.Image;
-	// public textMask: eui.Rect;
-	// private shareIndex: number;
-	// private curTextIndex: number;
-	// private timer2: egret.Timer;
+	public bg: eui.Image;
 
 	public td_ac: eui.Image;
 	public dt_tip: eui.Image;
@@ -74,6 +68,8 @@ class MainComp extends eui.Component {
 		this.group.width = Math.min(DisplayMgr.stageW, 852);
 
 		var self = this;
+
+		this.updateBg();
 
 		this.initView();
 
@@ -190,6 +186,18 @@ class MainComp extends eui.Component {
 						CustomEventMgr.dispatchEventWith("Play PkGuide Animation", false);
 					}, self);
 			}, this, 1000);
+		}
+	}
+
+	private updateBg() {
+		var time = new Date();
+		var hour = time.getHours();
+		if(hour >= 5 && hour < 11) {
+			this.bg.source = "main_bg_1_png";
+		}else if(hour >= 11 && hour < 17) {
+			this.bg.source = "main_bg_2_png";
+		}else if(hour >= 17 || hour < 5) {
+			this.bg.source = "main_bg_3_png";
 		}
 	}
 
