@@ -139,13 +139,6 @@ class LoginScene extends eui.Component {
 	private afterSaveNickname_904() {
 		TDGA.Account.setAccountName(ShowData.nickname);
 
-		if (window["reportRegister"]) {
-			window["reportRegister"]();//玩吧数据上报（注册）
-		}
-		if (window["reportLogin"]) {
-			window["reportLogin"]();//(登陆)
-		}
-
 		//是否为被邀请玩家
 		var reg = new RegExp("(^|&)" + "isid" + "=([^&]*)(&|$)");
 		var r = window.location.search.substr(1).match(reg);

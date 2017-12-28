@@ -167,85 +167,16 @@ class Main extends egret.DisplayObjectContainer {
 
     private initGameDependance() {
         HttpMgr.init();
-
-        window["OPEN_DATA"] = {
-            openid: "aaaa",
-            openkey: "bbbbb",
-            platform: 1,
-            qua: {meybeQua: "pc"}
-        }
-
-        LoginData.config_UUID();
-        SceneMgr.gotoLogin();
-
-
+        
         //SDK初始化
         KJSDK.init({});
 
-        // console.log(window["OPEN_DATA"]);
-        // this.WanbaLogin();
-        // this.WanbaShare();
+        LoginData.config_UUID();
+        SceneMgr.gotoLogin();
 
         var logo = window["logo"];
         if (logo) {
             logo.parentNode.removeChild(logo);
         }
-    }
-
-    private WanbaLogin() {
-        window["getOpenKey"](function (result) {
-            console.log(JSON.stringify(result));
-            if (result["code"] == 0) {
-
-            } else {
-                alert("获取登录态失败");
-            }
-            var urlRequest = new egret.URLRequest(ConstData.Conf.WanbaLoginAddr);
-            urlRequest.method = egret.URLRequestMethod.POST;
-            var data: string = "";
-            data = "openid=" + window["OPEN_DATA"].openid + "&openkey=" + window["OPEN_DATA"].openkey + "&platform=" + window["OPEN_DATA"].platform;
-            urlRequest.data = data;
-            var urlLoader = new egret.URLLoader();
-            urlLoader.addEventListener(egret.Event.COMPLETE, function (evt: egret.Event) {
-                var loader = <egret.URLLoader>evt.target;
-                var data: {} = JSON.parse(loader.data);
-                if (data["result"] == "SUCCESS") {
-                    LoginData.configWanbaUUID(data);
-                    SceneMgr.gotoLogin();
-                }
-            }, this);
-            urlLoader.load(urlRequest);
-        });
-    }
-
-    private WanbaShare() {
-        window["mqq"].ui.setOnShareHandler(function (type) {
-            window["mqq"].ui.shareMessage({
-                title: '逆袭之星途闪耀',
-                desc: '给你看个好玩的，快来！',
-                share_type: type,
-                share_url: window["OPEN_DATA"].shareurl,
-                image_url: window["OPEN_DATA"].appicon,
-                back: true
-            }, function (result) {
-                //result
-                if (result["retCode"] == 0) {
-                    window["mqq"].ui.showTips({
-                        text: "分享成功！"
-                    });
-
-                    if (ShareData.shareTimes == 0) {
-                        var request = HttpProtocolMgr.take_share_reward_175("do_share_reward");
-                        HttpMgr.postRequest(request);
-
-                        DataMgr.checkNews();
-                    }
-                } else if (result["retCode"] == 1) {
-                    window["mqq"].ui.showTips({
-                        text: "分享取消！"
-                    });
-                }
-            });
-        });
     }
 }
