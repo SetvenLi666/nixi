@@ -169,7 +169,7 @@ class Main extends egret.DisplayObjectContainer {
         HttpMgr.init();
         
         //SDK初始化
-        KJSDK.init({});
+        // KJSDK.init({});
 
         LoginData.config_UUID();
         SceneMgr.gotoLogin();
