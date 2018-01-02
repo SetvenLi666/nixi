@@ -76,7 +76,6 @@ var sdk = {
 		};
 		console.log(sdk.data);
 		$.post("https://nixi-weiduan-game.mzplay1.cn:9765/h5weiduan/login", sdk.data, function (info) {
-			console.log(info);
 			var result = JSON.parse(info);
 			console.log(result);
 			if (result["result"] == "SUCCESS") {

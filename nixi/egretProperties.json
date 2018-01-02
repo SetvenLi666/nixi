@@ -43,6 +43,14 @@
 			"path": "../td"
 		},
 		{
+			"name": "jquery",
+			"path": "../jquery"
+		},
+		{
+			"name": "launcher",
+			"path": "../launcher"
+		},
+		{
 			"name": "promise",
 			"path": "./promise"
 		}

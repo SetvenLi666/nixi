@@ -1,0 +1,15 @@
+{
+	"name": "jquery",
+	"version": "3.1.6",
+	"modules": [
+		{
+			"name": "jquery",
+			"description": "jquery",
+			"files": [
+				"jquery_2.0.0.js",
+				"jquery.d.ts"
+			],
+			"root": "src"
+		}
+	]
+}
