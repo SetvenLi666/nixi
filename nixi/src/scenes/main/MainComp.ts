@@ -28,8 +28,6 @@ class MainComp extends eui.Component {
 
 	public tujianGroup: eui.Group;
 
-	public shuangdanGroup: eui.Group;
-
 	public tl_ac: eui.Image;
 	public tlGroup: eui.Group;
 	public tlGroup2: eui.Group;
@@ -93,7 +91,6 @@ class MainComp extends eui.Component {
 		this.tlGroup2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnTl, this);
 
 		// this.newShare.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
-		this.shuangdanGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShuangdanGroup, this);
 
 		this.touchRect.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouchRect, this);
 
@@ -106,8 +103,6 @@ class MainComp extends eui.Component {
 		CustomEventMgr.addEventListener("302", this.result_of_302, this);
 		CustomEventMgr.addEventListener("301", this.result_of_301, this);
 		CustomEventMgr.addEventListener("106", this.result_of_106, this);
-
-		CustomEventMgr.addEventListener("340", this.result_of_340, this);
 
 		CustomEventMgr.addEventListener("500", this.afterFetchStoryData_500, this);
 		CustomEventMgr.addEventListener("600", this.afterFetchMissionData_600, this);
@@ -287,8 +282,6 @@ class MainComp extends eui.Component {
 		CustomEventMgr.removeEventListener("301", this.result_of_301, this);
 		CustomEventMgr.removeEventListener("106", this.result_of_106, this);
 
-		CustomEventMgr.removeEventListener("340", this.result_of_340, this);
-
 		CustomEventMgr.removeEventListener("500", this.afterFetchStoryData_500, this);
 		CustomEventMgr.removeEventListener("600", this.afterFetchMissionData_600, this);
 		CustomEventMgr.removeEventListener("800", this.afterSocialInfo_800, this);
@@ -342,8 +335,6 @@ class MainComp extends eui.Component {
 
 		this.tlGroup2.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnTl, this);
 
-		this.shuangdanGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onShuangdanGroup, this);
-
 		this.touchRect.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouchRect, this);
 		this.tujianGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTujianGroup, this);
 
@@ -391,7 +382,7 @@ class MainComp extends eui.Component {
 		// this.newShareGroup.visible = ShareData.isShowNewShare;
 
 		//限时礼包========
-		// this.checkoutTlDiscount();
+		this.checkoutTlDiscount();
 
 		//邀请
 		// if (ConstData.Conf.whiteList.indexOf(LoginData.sid) != -1 || window["OPEN_DATA"].openid == "aaaa") {
@@ -835,14 +826,6 @@ class MainComp extends eui.Component {
 		});
 	}
 
-	private onShuangdanGroup() {
-		DisplayMgr.buttonScale(this.shuangdanGroup, function () {
-			NetLoading.showLoading();
-			var request = HttpProtocolMgr.take_shuangdanSign_info_340();
-			HttpMgr.postRequest(request);
-		});
-	}
-
 	private afterTakePackageInfo_104() {
 		NetLoading.removeLoading();
 		var panel: eui.Component = null;
@@ -933,13 +916,6 @@ class MainComp extends eui.Component {
 	private reuslt_of_165() {
 		NetLoading.removeLoading();
 		var panel = new InvitePanel();
-		DisplayMgr.set2Center(panel);
-		this.stage.addChild(panel);
-	}
-
-	private result_of_340() {
-		NetLoading.removeLoading();
-		var panel = new ShuangdanSignPanel();
 		DisplayMgr.set2Center(panel);
 		this.stage.addChild(panel);
 	}
