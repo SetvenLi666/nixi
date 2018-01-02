@@ -13,7 +13,7 @@
 			"name": "base"
 		},
 		{
-			"keys": "clothes_tags_json,clothes_tags_b_json,dressUI_json,task_perfect_tip_json",
+			"keys": "clothes_tags_json,clothes_tags_b_json,dressUI_json,task_perfect_tip_json,phase_bg_5_png,phase_bg_4_png,phase_bg_3_png,phase_bg_2_png,phase_bg_1_png",
 			"name": "dress"
 		},
 		{
@@ -29,7 +29,7 @@
 			"name": "task"
 		},
 		{
-			"keys": "weishangbang_png,send_finish_png,refresh_png,num_9_png,num_8_png,num_7_png,num_6_png,num_5_png,num_4_png,num_3_png,num_2_png,num_1_png,num_0_png,note_panel_png,find_kuang_png,rank_bg_1_png,text_collected_nor_png,rl_text_competition_png",
+			"keys": "weishangbang_png,send_finish_png,refresh_png,num_9_png,num_8_png,num_7_png,num_6_png,num_5_png,num_4_png,num_3_png,num_2_png,num_1_png,num_0_png,note_panel_png,find_kuang_png,rank_bg_1_png,text_collected_nor_png,rl_text_competition_png,phase_bg_4_png",
 			"name": "friend_common"
 		},
 		{
@@ -49,7 +49,7 @@
 			"name": "shop"
 		},
 		{
-			"keys": "social_chat_bg_png,social_chat_blue_png,social_chat_close_png,social_chat_fans_png,social_chat_input_bg_png,social_chat_note_bg_png,social_chat_red_png,social_chat_send_nor_png,social_chat_world_png,social_chat_yellow_png,social_m_frd_png,social_m_msg_png,social_m_not_png,social_m_rnk_png,social_m_stg_png",
+			"keys": "social_chat_bg_png,social_chat_blue_png,social_chat_close_png,social_chat_input_bg_png,social_chat_note_bg_png,social_chat_send_nor_png,social_m_frd_png,social_m_msg_png,social_m_not_png,social_m_rnk_png,social_m_stg_png,social_bg_png",
 			"name": "friend"
 		},
 		{
@@ -18711,6 +18711,56 @@
 			"url": "game/login/login_text.png",
 			"type": "image",
 			"name": "login_text_png"
+		},
+		{
+			"url": "game/social/social_bg.png",
+			"type": "image",
+			"name": "social_bg_png"
+		},
+		{
+			"url": "game/social/social_friend_bg.png",
+			"type": "image",
+			"name": "social_friend_bg_png"
+		},
+		{
+			"url": "game/main/newMain/main_bg_1.png",
+			"type": "image",
+			"name": "main_bg_1_png"
+		},
+		{
+			"url": "game/main/newMain/main_bg_2.png",
+			"type": "image",
+			"name": "main_bg_2_png"
+		},
+		{
+			"url": "game/main/newMain/main_bg_3.png",
+			"type": "image",
+			"name": "main_bg_3_png"
+		},
+		{
+			"url": "game/dress/phase_bg_1.png",
+			"type": "image",
+			"name": "phase_bg_1_png"
+		},
+		{
+			"url": "game/dress/phase_bg_2.png",
+			"type": "image",
+			"name": "phase_bg_2_png"
+		},
+		{
+			"url": "game/dress/phase_bg_3.png",
+			"type": "image",
+			"name": "phase_bg_3_png"
+		},
+		{
+			"url": "game/dress/phase_bg_4.png",
+			"type": "image",
+			"name": "phase_bg_4_png"
+		},
+		{
+			"url": "game/dress/phase_bg_5.png",
+			"type": "image",
+			"name": "phase_bg_5_png"
 		}
 	]
 }

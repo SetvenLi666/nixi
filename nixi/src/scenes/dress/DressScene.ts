@@ -64,7 +64,7 @@ class DressScene extends egret.DisplayObjectContainer {
 	}
 
 	private initView() {
-		var bg = new egret.Bitmap(RES.getRes("newmain_ui_json.main_bg"));
+		var bg = new egret.Bitmap(RES.getRes("phase_bg_" + PlayerData.phase + "_png"));
 		bg.anchorOffsetX = bg.width / 2;
 		bg.anchorOffsetY = bg.height / 2;
 		bg.x = DisplayMgr.stageW / 2;
