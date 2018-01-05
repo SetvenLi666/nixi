@@ -43,6 +43,10 @@ class ShareData {
 			return;
 		}
 
+		if (obj["buy_libao_list"]) {
+			WanbaData.updatePackageData(obj["buy_libao_list"]);
+		}
+
 		this._shortcut_times = obj["shortcut_times"];
 		this._do_share_times = obj["do_share_times"];
 		this._shortcut_reward = obj["shortcut_reward"];
@@ -177,38 +181,32 @@ class ShareData {
 
 	public static share(type: string) {
 		var desc: string = "";
-		switch(type) {
+		switch (type) {
 			case "task":
-			desc = '这点小事难不倒我！';
-			break;
+				desc = '这点小事难不倒我！';
+				break;
 			case "story":
-			desc = '我的男神，我来了！';
-			break;
+				desc = '我的男神，我来了！';
+				break;
 			case "pk":
-			desc = '你们这些凡人！在我的裙摆下臣服吧';
-			break;
+				desc = '你们这些凡人！在我的裙摆下臣服吧';
+				break;
 			case "shuangdan":
-			desc = "这游戏疯了这么漂亮的衣服白送！";
-			break;
+				desc = "这游戏疯了这么漂亮的衣服白送！";
+				break;
 		}
 
-		window["mqq"].ui.shareMessage({
-			title: '逆袭之星途闪耀',
-			desc: desc,
-			share_type: 0,
-			share_url: window["OPEN_DATA"].shareurl + "&td_channelid=qqshare",
-			image_url: window["OPEN_DATA"].appicon,
-			back: true
-		}, function (result) {
-			if (result["retCode"] == 0) {
-				window["mqq"].ui.showTips({
-					text: "分享成功！"
-				});
-			} else if (result["retCode"] == 1) {
-				window["mqq"].ui.showTips({
-					text: "分享取消！"
-				});
-			}
+		var panel = new ShareGroupPanel();
+		DisplayMgr.set2Center(panel);
+		egret.MainContext.instance.stage.addChild(panel);
+
+		KJSDK.share({
+			title: "逆袭星途闪耀", //分享标题
+			desc: desc, //游戏提供分享描述
+			imgUrl: "", //分享图片链接
+			gameid: sdk.data["gameid"],//游戏id
+			shareSuccess: "shareSuccess",
+			shareCancel: "shareCancel"
 		});
 	}
 }

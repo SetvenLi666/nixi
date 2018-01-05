@@ -97,62 +97,20 @@ class InvitePanel extends eui.Component {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_share, function () {
 			SoundManager.instance().buttonSound();
-			// if (InviteData.curTimes >= 3) {
-			// 	Prompt.showPrompt(self.stage, "今天分享奖励都领到了哟!");
-			// } else if (self.shareLeftTime > 0) {
-			// 	Prompt.showPrompt(self.stage, "不要频繁分享，影响小伙伴体验!");
-			// } else {
-			// 	window["mqq"].ui.shareMessage({
-			// 		title: '逆袭之星途闪耀',
-			// 		desc: '给你看个好玩的，快来！',
-			// 		share_type: 0,
-			// 		share_url: window["OPEN_DATA"].shareurl + "&td_channelid=qqshare&isid=" + LoginData.sid,
-			// 		image_url: window["OPEN_DATA"].appicon,
-			// 		back: true
-			// 	}, function (result) {
-			// 		if (result["retCode"] == 0) {
-			// 			window["mqq"].ui.showTips({
-			// 				text: "分享成功！"
-			// 			});
 
-			// 			if (InviteData.curTimes < 3 && self.shareLeftTime <= 0) {
-			// 				NetLoading.showLoading();
-			// 				var request = HttpProtocolMgr.take_invite_share_reward_164();
-			// 				HttpMgr.postRequest(request);
-			// 			}
+			var panel = new ShareGroupPanel();
+			DisplayMgr.set2Center(panel);
+			self.stage.addChild(panel);
 
-			// 		} else if (result["retCode"] == 1) {
-			// 			window["mqq"].ui.showTips({
-			// 				text: "分享取消！"
-			// 			});
-			// 		}
-			// 	});
-			// }
+			leftTime = self.shareLeftTime;
 
-			window["mqq"].ui.shareMessage({
-				title: '逆袭之星途闪耀',
-				desc: '给你看个好玩的，快来！',
-				share_type: 0,
-				share_url: window["OPEN_DATA"].shareurl + "&td_channelid=qqshare&isid=" + LoginData.sid,
-				image_url: window["OPEN_DATA"].appicon,
-				back: true
-			}, function (result) {
-				if (result["retCode"] == 0) {
-					window["mqq"].ui.showTips({
-						text: "分享成功！"
-					});
-
-					if (InviteData.curTimes < 3 && self.shareLeftTime <= 0) {
-						NetLoading.showLoading();
-						var request = HttpProtocolMgr.take_invite_share_reward_164();
-						HttpMgr.postRequest(request);
-					}
-
-				} else if (result["retCode"] == 1) {
-					window["mqq"].ui.showTips({
-						text: "分享取消！"
-					});
-				}
+			KJSDK.share({
+				title: "逆袭星途闪耀", //分享标题
+				desc: "给你看个好玩的，快来！", //游戏提供分享描述
+				imgUrl: "", //分享图片链接
+				gameid: sdk.data["gameid"],//游戏id
+				shareSuccess: "inviteShareSuccess",
+				shareCancel: "shareCancel"
 			});
 		});
 	}
@@ -236,6 +194,25 @@ class InvitePanel extends eui.Component {
 			this.parent.removeChild(this);
 		}
 	}
+}
+
+var leftTime: number = 0;
+
+function inviteShareSuccess() {
+	console.log("邀请分享成功");
+	if (InviteData.curTimes < 3 && leftTime <= 0) {
+		NetLoading.showLoading();
+		var request = HttpProtocolMgr.take_invite_share_reward_164();
+		HttpMgr.postRequest(request);
+	}
+}
+
+function shareSuccess() {
+	console.log("分享成功");
+}
+
+function shareCancel() {
+	console.log("分享取消");
 }
 
 

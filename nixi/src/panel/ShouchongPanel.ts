@@ -184,61 +184,16 @@ class ShouchongPanel extends eui.Component {
 				virtualCurrencyAmount: data["diam"]
 			});
 
-			tdData = {
-				orderId: order_id,
-				iapId: data["id"],
-				currencyType: "CNY",
-				currencyAmount: "" + data["money"],
-				virtualCurrencyAmount: data["diam"]
-			};
+			urlData = data["id"];
 
-			urlData = "product_id=" + data["id"] + "&sid=" + LoginData.sid + "&openid=" + window["OPEN_DATA"].openid +
-				"&openkey=" + window["OPEN_DATA"].openkey + "&platform=" + window["OPEN_DATA"].platform;
-			urlRequest.data = urlData;
-			var urlLoader = new egret.URLLoader();
-			urlLoader.addEventListener(egret.Event.COMPLETE, self.onLoadComplete, self);
-			urlLoader.load(urlRequest);
+			KJSDK.pay({
+				fee: "0.1",
+				extra: LoginData.sid + "." + data["id"],
+				openid: sdk.data["openid"],
+				paySuccess: "paySuccess",
+				payFail: "payFail"
+			});
 		});
-	}
-
-	private onLoadComplete(evt: egret.Event) {
-		var loader = <egret.URLLoader>evt.target;
-		console.log(loader.data);
-		var obj: {} = JSON.parse(loader.data);
-
-		if (obj && obj["result"] == "SUCCESS") {
-			if (obj["h5wanba"]) {
-				ShareData.update(obj["h5wanba"]);
-				if ((ShareData.isFirstPay && (ShareData.firstpay_lottery_times == 0))) {
-					var panel = new FirstPayPanel();
-					DisplayMgr.set2Center(panel);
-					egret.MainContext.instance.stage.addChild(panel);
-				} else if ((ShareData.isDailyPay && (ShareData.dailypay_lottery_times == 0 || ShareData.dailypay_normal_times == 0))) {
-					var onePanel = new ScPanel();
-					DisplayMgr.set2Center(onePanel);
-					egret.MainContext.instance.stage.addChild(onePanel);
-				}
-				// CustomEventMgr.dispatchEventWith("Update SC View", false);
-			}
-			DataMgr.checkNews();
-
-			window["mqq"].ui.showDialog({
-				title: "提示",
-				text: "支付成功!请前往邮箱领取物品!",
-				needOkBtn: true,
-				needCancelBtn: false,
-				okBtnText: "确认",
-				cancelBtnText: ""
-			}, function (data) {
-				console.log(data);
-			});
-
-		} else if (obj && obj["result"] == "FAIL" && obj["code"] == 1004) {
-			window["popPayTips"]({
-				defaultScore: obj["need_score"],
-				appid: window["OPEN_DATA"].appid
-			});
-		}
 	}
 
 	private touchTap(evt: egret.TouchEvent) {
@@ -253,6 +208,17 @@ class ShouchongPanel extends eui.Component {
 			this.parent.removeChild(this);
 		}
 	}
+}
+
+function paySuccess() {
+	console.log("支付成功");
+	NetLoading.showLoading();
+	var request = HttpProtocolMgr.refresh_pay_info_116(urlData);
+	HttpMgr.postRequest(request);
+}
+
+function payFail() {
+	console.log("支付失败");
 }
 
 
@@ -272,9 +238,9 @@ function __paySuccess() {
 			if (obj["product_id"] == "libao_1" || obj["product_id"] == "libao_2" || obj["product_id"] == "libao_3") {
 				WanbaData.updatePackageData(obj["buy_libao_list"]);
 				CustomEventMgr.dispatchEventWith("Update Libao View", false);
-			}else if(obj["product_id"] == "tiegao_17" || obj["product_id"] == "tiegao_18") {
+			} else if (obj["product_id"] == "tiegao_17" || obj["product_id"] == "tiegao_18") {
 				TLDiscountData.resetDL();
-			}else if(obj["product_id"] == "tiegao_9") {
+			} else if (obj["product_id"] == "tiegao_9") {
 				Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮箱领取激活!");
 			}
 		}

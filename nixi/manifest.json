@@ -14,7 +14,7 @@
 		"promise/promise.js"
 	],
 	"game": [
-		"bin-debug/panel/InviteFreeRewardPanel.js",
+		"bin-debug/panel/InvitePanel.js",
 		"bin-debug/AssetAdapter.js",
 		"bin-debug/Main.js",
 		"bin-debug/Quwanwan.js",
@@ -111,8 +111,8 @@
 		"bin-debug/panel/GashaponRewardComp.js",
 		"bin-debug/panel/GiftPanel.js",
 		"bin-debug/panel/HuodongPanel.js",
+		"bin-debug/panel/InviteFreeRewardPanel.js",
 		"bin-debug/KJSDK.js",
-		"bin-debug/panel/InvitePanel.js",
 		"bin-debug/panel/IosPayTipPanel.js",
 		"bin-debug/panel/LimitDiscountPanel.js",
 		"bin-debug/panel/MonthCardPanel.js",
@@ -130,6 +130,7 @@
 		"bin-debug/panel/SetComp.js",
 		"bin-debug/panel/SetPanel.js",
 		"bin-debug/panel/ShareDeskPanel.js",
+		"bin-debug/panel/ShareGroupPanel.js",
 		"bin-debug/panel/ShouchongPanel.js",
 		"bin-debug/panel/ShuangdanSignPanel.js",
 		"bin-debug/panel/SigninPanel.js",

@@ -75,20 +75,30 @@ class MonthCardPanel extends eui.Component {
 			virtualCurrencyAmount: "月卡"
 		});
 
-		tdData = {
-			orderId: order_id,
-			iapId: "tiegao_9",
-			currencyType: "CNY",
-			currencyAmount: "" + 30,
-			virtualCurrencyAmount: "月卡"
-		};
+		urlData = product_id;
+		
+		KJSDK.pay({
+			fee: "0.1",
+			extra: LoginData.sid + "." + product_id,
+			openid: sdk.data["openid"],
+			paySuccess: "paySuccess",
+			payFail: "payFail"
+		});
 
-		urlData = "product_id=" + product_id+ "&sid=" + LoginData.sid + "&openid=" + window["OPEN_DATA"].openid +
-			"&openkey=" + window["OPEN_DATA"].openkey + "&platform=" + window["OPEN_DATA"].platform;
-		urlRequest.data = urlData;
-		var urlLoader = new egret.URLLoader();
-		urlLoader.addEventListener(egret.Event.COMPLETE, this.onLoadComplete, this);
-		urlLoader.load(urlRequest);
+		// tdData = {
+		// 	orderId: order_id,
+		// 	iapId: "tiegao_9",
+		// 	currencyType: "CNY",
+		// 	currencyAmount: "" + 30,
+		// 	virtualCurrencyAmount: "月卡"
+		// };
+
+		// urlData = "product_id=" + product_id+ "&sid=" + LoginData.sid + "&openid=" + window["OPEN_DATA"].openid +
+		// 	"&openkey=" + window["OPEN_DATA"].openkey + "&platform=" + window["OPEN_DATA"].platform;
+		// urlRequest.data = urlData;
+		// var urlLoader = new egret.URLLoader();
+		// urlLoader.addEventListener(egret.Event.COMPLETE, this.onLoadComplete, this);
+		// urlLoader.load(urlRequest);
 	}
 
 	private onLoadComplete(evt: egret.Event) {
@@ -97,7 +107,7 @@ class MonthCardPanel extends eui.Component {
 
 		if (obj && obj["result"] == "SUCCESS") {
 			//余额足够，无二次请求
-			
+
 			DataMgr.checkNews();
 
 			window["mqq"].ui.showDialog({

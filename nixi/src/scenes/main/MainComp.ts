@@ -351,17 +351,6 @@ class MainComp extends eui.Component {
 
 	private initView() {
 		if (NewsData.mail > 0) {
-			// var tw_mailGroup = egret.Tween.get(this.mailGroup, {loop: true});
-			// tw_mailGroup
-			// .to({rotation: 8}, 100)
-			// .to({rotation: 0}, 100)
-			// .to({rotation: -8}, 100)
-			// .to({rotation: 0}, 100)
-			// .to({rotation: 8}, 100)
-			// .to({rotation: 0}, 100)
-			// .to({rotation: -8}, 100)
-			// .to({rotation: 0}, 100)
-			// .wait(2000);
 
 			this.mailTip.visible = true;
 			var tw_tip = egret.Tween.get(this.mailTip, { loop: true });
@@ -383,13 +372,6 @@ class MainComp extends eui.Component {
 
 		//限时礼包========
 		this.checkoutTlDiscount();
-
-		//邀请
-		// if (ConstData.Conf.whiteList.indexOf(LoginData.sid) != -1 || window["OPEN_DATA"].openid == "aaaa") {
-		// 	this.yqGroup.visible = true;
-		// } else {
-		// 	this.yqGroup.visible = false;
-		// }
 
 		this.sj_comp.x = this.group.width * 0.12;
 		this.xt_comp.x = this.group.width * 0.28;

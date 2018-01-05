@@ -71,20 +71,30 @@ class LimitDiscountPanel extends eui.Component{
 				virtualCurrencyAmount: vcaString
 			});
 
-			tdData = {
-				orderId: order_id,
-				iapId: TLDiscountData.id,
-				currencyType: "CNY",
-				currencyAmount: "" + TLDiscountData.money,
-				virtualCurrencyAmount: vcaString
-			};
+			urlData = TLDiscountData.id;
 
-			urlData = "product_id=" + TLDiscountData.id + "&sid=" + LoginData.sid + "&openid=" + window["OPEN_DATA"].openid +
-				"&openkey=" + window["OPEN_DATA"].openkey + "&platform=" + window["OPEN_DATA"].platform;
-			urlRequest.data = urlData;
-			var urlLoader = new egret.URLLoader();
-			urlLoader.addEventListener(egret.Event.COMPLETE, self.onLoadComplete, self);
-			urlLoader.load(urlRequest);
+			KJSDK.pay({
+				fee: "0.1",
+				extra: LoginData.sid + "." + TLDiscountData.id,
+				openid: sdk.data["openid"],
+				paySuccess: "paySuccess",
+				payFail: "payFail"
+			});
+
+			// tdData = {
+			// 	orderId: order_id,
+			// 	iapId: TLDiscountData.id,
+			// 	currencyType: "CNY",
+			// 	currencyAmount: "" + TLDiscountData.money,
+			// 	virtualCurrencyAmount: vcaString
+			// };
+
+			// urlData = "product_id=" + TLDiscountData.id + "&sid=" + LoginData.sid + "&openid=" + window["OPEN_DATA"].openid +
+			// 	"&openkey=" + window["OPEN_DATA"].openkey + "&platform=" + window["OPEN_DATA"].platform;
+			// urlRequest.data = urlData;
+			// var urlLoader = new egret.URLLoader();
+			// urlLoader.addEventListener(egret.Event.COMPLETE, self.onLoadComplete, self);
+			// urlLoader.load(urlRequest);
 		});
 	}
 

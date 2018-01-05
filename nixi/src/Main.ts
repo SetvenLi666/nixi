@@ -167,9 +167,13 @@ class Main extends egret.DisplayObjectContainer {
 
     private initGameDependance() {
         HttpMgr.init();
-        
+
         //SDK初始化
-        // KJSDK.init({});
+        KJSDK.init({
+            "title": "逆袭之星途闪耀",
+            "desc": "给你看个好玩的，快来！",
+            "imgUrl": ""
+        });
 
         LoginData.config_UUID();
         SceneMgr.gotoLogin();

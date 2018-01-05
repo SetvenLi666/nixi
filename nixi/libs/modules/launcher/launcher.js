@@ -19,7 +19,7 @@ var sdk = {
 		var o_reg = new RegExp("(^|&)" + "openid" + "=([^&]*)(&|$)", "i");
 		var o = hrf.substr(1).match(o_reg);
 		if (o != null) {
-			_appKey = unescape(o[2]);
+			_openid = unescape(o[2]);
 		}
 
 		var g_reg = new RegExp("(^|&)" + "gameid" + "=([^&]*)(&|$)", "i");
@@ -28,7 +28,7 @@ var sdk = {
 			_gameid = unescape(g[2]);
 		}
 
-		var t_reg = new RegExp("(^|&)" + "time" + "=([^&]*)(&|$)", "i");
+		var t_reg = new RegExp("(^|&)" + "nowtime" + "=([^&]*)(&|$)", "i");
 		var t = hrf.substr(1).match(t_reg);
 		if (t != null) {
 			_nowtime = unescape(t[2])
@@ -58,7 +58,7 @@ var sdk = {
 			_invitor = unescape(i[2])
 		}
 
-		var s_reg = new RegExp("(^|&)" + "invitor" + "=([^&]*)(&|$)", "i");
+		var s_reg = new RegExp("(^|&)" + "sign" + "=([^&]*)(&|$)", "i");
 		var s = hrf.substr(1).match(s_reg);
 		if (s != null) {
 			_sign = unescape(s[2]);

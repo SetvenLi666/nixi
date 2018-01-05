@@ -168,6 +168,7 @@
     "src/panel/NewSharePanelSkin.exml",
     "src/panel/ResetNamePanelSkin.exml",
     "src/panel/ScPanelSkin.exml",
+    "src/panel/ShareGroupPanelSkin.exml",
     "src/panel/ShuangdanItemSkin.exml",
     "src/panel/ShuangdanSignPanelSkin.exml",
     "src/panel/StarsRewardPanelSkin.exml",

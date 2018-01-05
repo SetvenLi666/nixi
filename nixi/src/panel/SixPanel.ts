@@ -163,20 +163,30 @@ class SixPanel extends eui.Component {
 				virtualCurrencyAmount: "6元礼包"
 			});
 
-			tdData = {
-				orderId: order_id,
-				iapId: data["id"],
-				currencyType: "CNY",
-				currencyAmount: "" + data["money"],
-				virtualCurrencyAmount: "6元礼包"
-			};
+			urlData = "libao_2";
 
-			urlData = "product_id=" + data["id"] + "&sid=" + LoginData.sid + "&openid=" + window["OPEN_DATA"].openid +
-				"&openkey=" + window["OPEN_DATA"].openkey + "&platform=" + window["OPEN_DATA"].platform;
-			urlRequest.data = urlData;
-			var urlLoader = new egret.URLLoader();
-			urlLoader.addEventListener(egret.Event.COMPLETE, self.onLoadComplete, self);
-			urlLoader.load(urlRequest);
+			KJSDK.pay({
+				fee: "0.1",
+				extra: LoginData.sid + "." + data["id"],
+				openid: sdk.data["openid"],
+				paySuccess: "paySuccess",
+				payFail: "payFail"
+			});
+
+			// tdData = {
+			// 	orderId: order_id,
+			// 	iapId: data["id"],
+			// 	currencyType: "CNY",
+			// 	currencyAmount: "" + data["money"],
+			// 	virtualCurrencyAmount: "6元礼包"
+			// };
+
+			// urlData = "product_id=" + data["id"] + "&sid=" + LoginData.sid + "&openid=" + window["OPEN_DATA"].openid +
+			// 	"&openkey=" + window["OPEN_DATA"].openkey + "&platform=" + window["OPEN_DATA"].platform;
+			// urlRequest.data = urlData;
+			// var urlLoader = new egret.URLLoader();
+			// urlLoader.addEventListener(egret.Event.COMPLETE, self.onLoadComplete, self);
+			// urlLoader.load(urlRequest);
 		});
 	}
 
