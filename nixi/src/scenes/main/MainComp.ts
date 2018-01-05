@@ -26,8 +26,6 @@ class MainComp extends eui.Component {
 
 	public mcGroup: eui.Group;
 
-	public tujianGroup: eui.Group;
-
 	public tl_ac: eui.Image;
 	public tlGroup: eui.Group;
 	public tlGroup2: eui.Group;
@@ -93,8 +91,6 @@ class MainComp extends eui.Component {
 		// this.newShare.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
 
 		this.touchRect.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouchRect, this);
-
-		this.tujianGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTujianGroup, this);
 
 		CustomEventMgr.addEventListener("304", this.result_of_304, this);
 		CustomEventMgr.addEventListener("306", this.result_of_306, this);
@@ -336,7 +332,6 @@ class MainComp extends eui.Component {
 		this.tlGroup2.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnTl, this);
 
 		this.touchRect.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouchRect, this);
-		this.tujianGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTujianGroup, this);
 
 		this.sj_comp.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onSjComp, this);
 		this.xt_comp.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onXtComp, this);
@@ -813,15 +808,6 @@ class MainComp extends eui.Component {
 
 			NetLoading.showLoading();
 			var request: egret.URLRequest = HttpProtocolMgr.competition_info_820(!CompetitionData.hasInitRankInfo());
-			HttpMgr.postRequest(request);
-		});
-	}
-
-	private onTujianGroup() {
-		var self = this;
-		DisplayMgr.buttonScale(this.tujianGroup, function () {
-			NetLoading.showLoading();
-			var request = HttpProtocolMgr.fetchTujianData_114();
 			HttpMgr.postRequest(request);
 		});
 	}
