@@ -30,11 +30,13 @@ class OnePanel extends eui.Component {
 
 		this.initSignView();
 		this.btn_rev.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnRev, this);
+		CustomEventMgr.addEventListener("Update Libao View", this.closePanel, this);
 	}
 
 	private onExit() {
 		this.btn_rev.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnRev, this);
 		this.removeEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit, this);
+		CustomEventMgr.removeEventListener("Update Libao View", this.closePanel, this);
 	}
 
 	private initSignView() {

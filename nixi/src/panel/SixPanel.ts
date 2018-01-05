@@ -32,10 +32,12 @@ class SixPanel extends eui.Component {
 		this.btn_invite.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnInvite, this);
 
 		CustomEventMgr.addEventListener("110", this.result_of_110, this);
+		CustomEventMgr.addEventListener("Update Libao View", this.closePanel, this);
 	}
 
 	private onExit() {
 		CustomEventMgr.removeEventListener("110", this.result_of_110, this);
+		CustomEventMgr.removeEventListener("Update Libao View", this.closePanel, this);
 	}
 
 	private initSignView() {

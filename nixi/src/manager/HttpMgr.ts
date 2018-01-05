@@ -614,10 +614,14 @@ class HttpMgr {
                 if (result["product_id"] == "libao_1" || result["product_id"] == "libao_2" || result["product_id"] == "libao_3") {
                     // WanbaData.updatePackageData(result["h5wanba"]["buy_libao_list"]);
                     CustomEventMgr.dispatchEventWith("Update Libao View", false);
+                    Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮箱领取礼包!");
                 } else if (result["product_id"] == "tiegao_17" || result["product_id"] == "tiegao_18") {
                     TLDiscountData.resetDL();
+                    Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮箱领取礼包!");
                 } else if (result["product_id"] == "tiegao_9") {
                     Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮箱领取激活!");
+                } else {
+                    Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮箱领取钻石!");
                 }
             }
 
@@ -633,6 +637,7 @@ class HttpMgr {
                     egret.MainContext.instance.stage.addChild(onePanel);
                 }
             }
+
             DataMgr.checkNews();
         }
 

@@ -30,11 +30,13 @@ class ThirtyPanel extends eui.Component {
 		this.btn_rev.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnRev, this);
 		this.btn_invite.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnInvite, this);
 		CustomEventMgr.addEventListener("112", this.result_of_112, this);
+		CustomEventMgr.addEventListener("Update Libao View", this.closePanel, this);
 	}
 
 	private onExit() {
 		this.removeEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit, this);
 		CustomEventMgr.removeEventListener("112", this.result_of_112, this);
+		CustomEventMgr.removeEventListener("Update Libao View", this.closePanel, this);
 	}
 
 	private initView() {
