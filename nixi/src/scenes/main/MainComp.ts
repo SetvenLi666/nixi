@@ -11,7 +11,7 @@ class MainComp extends eui.Component {
 	public libao_icon: eui.Image;
 	public libao_ac: eui.Image;
 	public libao_text: eui.Image;
-	// public shareGroup: eui.Group;
+	public shareGroup: eui.Group;
 	public niudan_ac: eui.Image;
 	public leijiGroup: eui.Group;
 	public dtGroup: eui.Group;
@@ -35,6 +35,7 @@ class MainComp extends eui.Component {
 	public touchRect: eui.Rect;
 
 	public shareImg: eui.Image;
+	public shareText: eui.Image;
 
 	public sj_comp: eui.Component;
 	public xt_comp: eui.Component;
@@ -88,7 +89,7 @@ class MainComp extends eui.Component {
 
 		this.tlGroup2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnTl, this);
 
-		this.shareImg.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
+		this.shareGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
 
 		// this.newShare.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
 
@@ -332,7 +333,7 @@ class MainComp extends eui.Component {
 
 		this.tlGroup2.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnTl, this);
 
-		this.shareImg.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
+		this.shareGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
 
 		this.touchRect.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouchRect, this);
 
@@ -366,7 +367,6 @@ class MainComp extends eui.Component {
 		// this.newShareText.source = "newshare_text_" + this.shareIndex + "_png";
 		// this.newShareText.mask = this.textMask;
 		// this.newShareAnimationFirst();
-		// this.newShareGroup.visible = ShareData.isShowNewShare;
 
 		//限时礼包========
 		this.checkoutTlDiscount();
@@ -562,7 +562,7 @@ class MainComp extends eui.Component {
 
 	private onShare() {
 		var self = this;
-		DisplayMgr.buttonScale(this.shareImg, function () {
+		DisplayMgr.buttonScale(this.shareGroup, function () {
 			SoundManager.instance().buttonSound("pop");
 			var panel = new ShareGroupPanel();
 			DisplayMgr.set2Center(panel);
@@ -851,7 +851,9 @@ class MainComp extends eui.Component {
 	}
 
 	private updateNewShare() {
-		this.shareImg.source = "mian_share_icon_" + (Math.floor(Math.random() * 3) + 1) + "_png"
+		var index = (Math.floor(Math.random() * 3) + 1);
+		this.shareImg.source = "mian_share_icon_" + index + "_png";
+		this.shareText.source = "main_role_text_" + index + "_png";
 	}
 
 	private afterFetchStoryData_500(evt: egret.Event) {

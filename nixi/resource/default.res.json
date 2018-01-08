@@ -194,7 +194,7 @@
 		},
 		{
 			"name": "preload",
-			"keys": "mian_share_icon_1_png,mian_share_icon_2_png,mian_share_icon_3_png"
+			"keys": "mian_share_icon_1_png,mian_share_icon_2_png,mian_share_icon_3_png,main_role_text_1_png,main_role_text_2_png,main_role_text_3_png"
 		}
 	],
 	"resources": [
@@ -18780,6 +18780,21 @@
 			"name": "mian_share_icon_3_png",
 			"type": "image",
 			"url": "game/main/newMain/mian_share_icon_3.png"
+		},
+		{
+			"name": "main_role_text_1_png",
+			"type": "image",
+			"url": "game/main/newMain/main_role_text_1.png"
+		},
+		{
+			"name": "main_role_text_2_png",
+			"type": "image",
+			"url": "game/main/newMain/main_role_text_2.png"
+		},
+		{
+			"name": "main_role_text_3_png",
+			"type": "image",
+			"url": "game/main/newMain/main_role_text_3.png"
 		}
 	]
 }
