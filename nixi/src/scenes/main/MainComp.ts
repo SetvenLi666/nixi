@@ -12,7 +12,6 @@ class MainComp extends eui.Component {
 	public libao_ac: eui.Image;
 	public libao_text: eui.Image;
 	// public shareGroup: eui.Group;
-	public collGroup: eui.Group;
 	public niudan_ac: eui.Image;
 	public leijiGroup: eui.Group;
 	public dtGroup: eui.Group;
@@ -78,7 +77,6 @@ class MainComp extends eui.Component {
 		this.mailGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onMailTap, this);
 		this.hdGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnHd, this);
 
-		this.collGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onDesk, this);
 		this.leijiGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnLj, this);
 		this.lbGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnLb, this);
 		this.scGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnSc, this);
@@ -320,7 +318,6 @@ class MainComp extends eui.Component {
 		this.niudanGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnGashapon, this);
 		this.mailGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onMailTap, this);
 
-		this.collGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onDesk, this);
 		this.leijiGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnLj, this);
 		this.lbGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnLb, this);
 		this.scGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnSc, this);
@@ -613,16 +610,6 @@ class MainComp extends eui.Component {
 	// 		self.stage.addChild(panel);
 	// 	});
 	// }
-
-	private onDesk() {
-		var self = this;
-		DisplayMgr.buttonScale(this.collGroup, function () {
-			SoundManager.instance().buttonSound("pop");
-			var panel = new ShareDeskPanel("desk");
-			DisplayMgr.set2Center(panel);
-			self.stage.addChild(panel);
-		});
-	}
 
 	private onBtnLj() {
 		DisplayMgr.buttonScale(this.leijiGroup, function () {

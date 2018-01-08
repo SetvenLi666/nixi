@@ -26,10 +26,6 @@
 				<e:Label id="tlTime" text="10:00" y="52" size="22" textColor="0xff3378" textAlign="center" horizontalCenter="1"/>
 				</e:Group>
 			</e:Group>
-			<e:Group id="collGroup" width="110" height="110" y="318" left="14">
-				<e:Image horizontalCenter="0" verticalCenter="-6" source="newmain_ui_json.main_shoucang_icon"/>
-				<e:Image y="71.57" horizontalCenter="0" source="newmain_ui_json.main_shoucang_text"/>
-			</e:Group>
 			<e:Group id="leijiGroup" width="110" height="110" y="430" anchorOffsetY="0" left="11">
 				<e:Image y="10" horizontalCenter="0" source="newmain_ui_json.main_leiji_icon"/>
 				<e:Image y="65.75" horizontalCenter="0" source="newmain_ui_json.main_leiji_text"/>
