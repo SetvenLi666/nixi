@@ -585,11 +585,11 @@ class MainComp extends eui.Component {
 	}
 
 	private playCompAnimation() {
-		egret.Tween.get(this.sj_comp).to({ y: 770 }, 800, egret.Ease.backOut);
-		egret.Tween.get(this.xt_comp).to({ y: 930 }, 1000, egret.Ease.backOut);
+		egret.Tween.get(this.sj_comp).to({ y: 820 }, 750, egret.Ease.backOut);
+		egret.Tween.get(this.xt_comp).to({ y: 930 }, 900, egret.Ease.backOut);
 		egret.Tween.get(this.yl_comp).to({ y: 975 }, 600, egret.Ease.backOut);
-		egret.Tween.get(this.sd_comp).to({ y: 930 }, 1000, egret.Ease.backOut);
-		egret.Tween.get(this.jj_comp).to({ y: 770 }, 800, egret.Ease.backOut);
+		egret.Tween.get(this.sd_comp).to({ y: 930 }, 900, egret.Ease.backOut);
+		egret.Tween.get(this.jj_comp).to({ y: 820 }, 750, egret.Ease.backOut);
 	}
 
 	// private newShareAnimationFirst() {
