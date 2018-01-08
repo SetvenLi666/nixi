@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="ItemXT" width="106" height="145" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Image horizontalCenter="0" top="0" source="newmain_ui_json.main_xt_bg"/>
-	<e:Image id="tween" anchorOffsetX="53" anchorOffsetY="53" x="53" y="53" source="newmain_ui_json.main_xt_3"/>
+<e:Skin class="ItemXT" width="106" height="120" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image horizontalCenter="0" top="10" source="newmain_ui_json.main_ball_bg"/>
+	<e:Image id="tween" anchorOffsetX="44.5" anchorOffsetY="44" y="53" source="newmain_ui_json.main_xt_3" horizontalCenter="0"/>
 	<e:Image horizontalCenter="0" bottom="0" source="newmain_ui_json.main_lab_xintu"/>
 </e:Skin>

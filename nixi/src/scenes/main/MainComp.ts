@@ -34,6 +34,8 @@ class MainComp extends eui.Component {
 
 	public touchRect: eui.Rect;
 
+	public shareImg: eui.Image;
+
 	public sj_comp: eui.Component;
 	public xt_comp: eui.Component;
 	public yl_comp: eui.Component;
@@ -85,6 +87,8 @@ class MainComp extends eui.Component {
 		this.mcGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnMc, this);
 
 		this.tlGroup2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnTl, this);
+
+		this.shareImg.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
 
 		// this.newShare.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
 
@@ -328,6 +332,8 @@ class MainComp extends eui.Component {
 
 		this.tlGroup2.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnTl, this);
 
+		this.shareImg.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
+
 		this.touchRect.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouchRect, this);
 
 		this.sj_comp.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onSjComp, this);
@@ -376,7 +382,7 @@ class MainComp extends eui.Component {
 		//更新首冲视图
 		this.updateScView();
 
-		// this.updateNewShare();
+		this.updateNewShare();
 
 		this.model.dress(ClothesData.ondressCache, ClothesData.ornamentsCache);
 
@@ -451,53 +457,6 @@ class MainComp extends eui.Component {
 	}
 
 	private updateLibaoView() {
-		// if (WanbaData.packageData.indexOf("libao_2") == -1 && InviteData.reward3_state != 3) {
-		// 	this.libao_icon.source = "newmain_ui_json.main_libao_6";
-		// 	this.libao_ac.source = "newmain_ui_json.main_coin_6";
-		// 	this.libao_text.source = "newmain_ui_json.main_coin_text_6";
-		// } else if (WanbaData.packageData.indexOf("libao_3") == -1 && InviteData.reward10_state != 3) {
-		// 	this.libao_icon.source = "newmain_ui_json.main_libao_30";
-		// 	this.libao_ac.source = "newmain_ui_json.main_coin_30";
-		// 	this.libao_text.source = "newmain_ui_json.main_coin_text_30";
-		// } else if (InviteData.reward_state != 3) {
-		// 	this.libao_icon.source = "newmain_ui_json.main_libao_1";
-		// 	this.libao_ac.source = "newmain_ui_json.main_coin_30";
-		// 	this.libao_text.source = "main_free_text_png";
-		// } else {
-		// 	this.lbGroup.visible = false;
-		// }
-
-		if (WanbaData.packageData.indexOf("libao_2") == -1) {
-			this.libao_icon.source = "newmain_ui_json.main_libao_6";
-			this.libao_ac.source = "newmain_ui_json.main_coin_6";
-			this.libao_text.source = "newmain_ui_json.main_coin_text_6";
-		} else if (WanbaData.packageData.indexOf("libao_3") == -1) {
-			this.libao_icon.source = "newmain_ui_json.main_libao_30";
-			this.libao_ac.source = "newmain_ui_json.main_coin_30";
-			this.libao_text.source = "newmain_ui_json.main_coin_text_30";
-		} else {
-			this.lbGroup.visible = false;
-		}
-		// if (WanbaData.packageData.indexOf("libao_1") == -1) {
-		// 	this.libao_icon.source = "newmain_ui_json.main_libao_1";
-		// 	this.libao_ac.source = "newmain_ui_json.main_coin_1";
-		// 	this.libao_text.source = "newmain_ui_json.main_coin_text_1";
-		// } else if (WanbaData.packageData.indexOf("libao_2") == -1 && InviteData.reward3_state != 3) {
-		// 	this.libao_icon.source = "newmain_ui_json.main_libao_6";
-		// 	this.libao_ac.source = "newmain_ui_json.main_coin_6";
-		// 	this.libao_text.source = "newmain_ui_json.main_coin_text_6";
-		// } else if (WanbaData.packageData.indexOf("libao_3") == -1 && InviteData.reward10_state != 3) {
-		// 	this.libao_icon.source = "newmain_ui_json.main_libao_30";
-		// 	this.libao_ac.source = "newmain_ui_json.main_coin_30";
-		// 	this.libao_text.source = "newmain_ui_json.main_coin_text_30";
-		// } else if (InviteData.reward_state != 3) {
-		// 	this.libao_icon.source = "newmain_ui_json.main_libao_1";
-		// 	this.libao_ac.source = "newmain_ui_json.main_coin_30";
-		// 	this.libao_text.source = "main_free_text_png";
-		// } else {
-		// 	this.lbGroup.visible = false;
-		// }
-
 		if (WanbaData.packageData.indexOf("libao_1") == -1) {
 			this.libao_icon.source = "newmain_ui_json.main_libao_1";
 			this.libao_ac.source = "newmain_ui_json.main_coin_1";
@@ -560,11 +519,11 @@ class MainComp extends eui.Component {
 	}
 
 	private playCompAnimation() {
-		egret.Tween.get(this.sj_comp).to({ y: 770 }, 800, egret.Ease.backOut);
-		egret.Tween.get(this.xt_comp).to({ y: 930 }, 1000, egret.Ease.backOut);
+		egret.Tween.get(this.sj_comp).to({ y: 820 }, 750, egret.Ease.backOut);
+		egret.Tween.get(this.xt_comp).to({ y: 930 }, 900, egret.Ease.backOut);
 		egret.Tween.get(this.yl_comp).to({ y: 975 }, 600, egret.Ease.backOut);
-		egret.Tween.get(this.sd_comp).to({ y: 930 }, 1000, egret.Ease.backOut);
-		egret.Tween.get(this.jj_comp).to({ y: 770 }, 800, egret.Ease.backOut);
+		egret.Tween.get(this.sd_comp).to({ y: 930 }, 900, egret.Ease.backOut);
+		egret.Tween.get(this.jj_comp).to({ y: 820 }, 750, egret.Ease.backOut);
 	}
 
 	// private newShareAnimationFirst() {
@@ -601,15 +560,15 @@ class MainComp extends eui.Component {
 		HttpMgr.postRequest(request);
 	}
 
-	// private onShare() {
-	// 	var self = this;
-	// 	DisplayMgr.buttonScale(this.newShare, function () {
-	// 		SoundManager.instance().buttonSound("pop");
-	// 		var panel = new NewSharePanel(self.shareIndex);
-	// 		DisplayMgr.set2Center(panel);
-	// 		self.stage.addChild(panel);
-	// 	});
-	// }
+	private onShare() {
+		var self = this;
+		DisplayMgr.buttonScale(this.shareImg, function () {
+			SoundManager.instance().buttonSound("pop");
+			var panel = new ShareGroupPanel();
+			DisplayMgr.set2Center(panel);
+			self.stage.addChild(panel);
+		});
+	}
 
 	private onBtnLj() {
 		DisplayMgr.buttonScale(this.leijiGroup, function () {
@@ -780,24 +739,12 @@ class MainComp extends eui.Component {
 	private afterTakePackageInfo_104() {
 		NetLoading.removeLoading();
 		var panel: eui.Component = null;
-		if (window["OPEN_DATA"] && window["OPEN_DATA"].platform == 2) {
-			if (WanbaData.packageData.indexOf("libao_2") == -1 && InviteData.reward3_state != 3) {
-				panel = new SixPanel();
-			} else if (WanbaData.packageData.indexOf("libao_3") == -1 && InviteData.reward10_state != 3) {
-				panel = new ThirtyPanel();
-			} else {
-				panel = new InviteFreeRewardPanel();
-			}
-		} else {
-			if (WanbaData.packageData.indexOf("libao_1") == -1) {
-				panel = new OnePanel();
-			} else if (WanbaData.packageData.indexOf("libao_2") == -1 && InviteData.reward3_state != 3) {
-				panel = new SixPanel();
-			} else if (WanbaData.packageData.indexOf("libao_3") == -1 && InviteData.reward10_state != 3) {
-				panel = new ThirtyPanel();
-			} else {
-				panel = new InviteFreeRewardPanel();
-			}
+		if (WanbaData.packageData.indexOf("libao_1") == -1) {
+			panel = new OnePanel();
+		} else if (WanbaData.packageData.indexOf("libao_2") == -1) {
+			panel = new SixPanel();
+		} else if (WanbaData.packageData.indexOf("libao_3") == -1) {
+			panel = new ThirtyPanel();
 		}
 
 		DisplayMgr.set2Center(panel);
@@ -903,14 +850,9 @@ class MainComp extends eui.Component {
 		CustomEventMgr.dispatchEventWith("Update Player Info", false);
 	}
 
-	// private updateNewShare() {
-	// 	this.newShareGroup.visible = ShareData.isShowNewShare;
-	// 	// if(ShareData.shareTimes != 0) {
-	// 	// 	this.newShareGroup.visible = false;
-	// 	// }else {
-	// 	// 	this.newShareGroup.visible = true;
-	// 	// }
-	// }
+	private updateNewShare() {
+		this.shareImg.source = "mian_share_icon_" + (Math.floor(Math.random() * 3) + 1) + "_png"
+	}
 
 	private afterFetchStoryData_500(evt: egret.Event) {
 		if (EventData.isEventReq) {

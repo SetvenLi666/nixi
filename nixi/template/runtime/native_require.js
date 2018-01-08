@@ -130,6 +130,7 @@ var game_file_list = [
 	"bin-debug/panel/SetComp.js",
 	"bin-debug/panel/SetPanel.js",
 	"bin-debug/panel/ShareDeskPanel.js",
+	"bin-debug/panel/ShareGroupPanel.js",
 	"bin-debug/panel/ShouchongPanel.js",
 	"bin-debug/panel/ShuangdanSignPanel.js",
 	"bin-debug/panel/SigninPanel.js",
