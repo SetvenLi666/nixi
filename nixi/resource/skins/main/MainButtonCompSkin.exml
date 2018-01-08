@@ -35,18 +35,18 @@
 				<e:Image source="newmain_ui_json.main_text_bg" y="71.5" horizontalCenter="0"/>
 				<e:Image y="73.57" horizontalCenter="0.5" source="newmain_ui_json.main_shoucang_text"/>
 			</e:Group>
-			<e:Group id="leijiGroup" width="110" height="110" y="430" anchorOffsetY="0" left="11">
+			<e:Group id="leijiGroup" width="110" height="110" y="412" anchorOffsetY="0" right="7">
 				<e:Image y="10" horizontalCenter="0" source="newmain_ui_json.main_leiji_icon"/>
 				<e:Image source="newmain_ui_json.main_text_bg" y="63.75" horizontalCenter="0"/>
 				<e:Image y="65.75" horizontalCenter="0" source="newmain_ui_json.main_leiji_text"/>
 			</e:Group>
-			<e:Group id="lbGroup" width="110" height="98" y="543" anchorOffsetY="0" left="14">
+			<e:Group id="lbGroup" width="110" height="98" y="636" anchorOffsetY="0" right="7">
 				<e:Image id="libao_icon" horizontalCenter="0" y="12" source="newmain_ui_json.main_libao_1"/>
 				<e:Image id="libao_ac" y="55" anchorOffsetX="21" anchorOffsetY="20.5" x="53.67" source="newmain_ui_json.main_coin_1"/>
 				<e:Image source="newmain_ui_json.main_text_bg" y="58" horizontalCenter="0"/>
 				<e:Image id="libao_text" y="59.32" horizontalCenter="0" source="newmain_ui_json.main_coin_text_1"/>
 			</e:Group>
-			<e:Group id="dtGroup" width="110" height="110" y="410.28" right="7">
+			<e:Group id="dtGroup" width="110" height="110" y="431.28" left="11">
 				<e:Image source="newmain_ui_json.main_dailytarget_icon" horizontalCenter="0" verticalCenter="0"/>
 				<e:Image id="td_ac" source="newmain_ui_json.main_dailytarget_ac" y="49.67" anchorOffsetX="25" anchorOffsetY="23.5" x="59"/>
 				<e:Image source="newmain_ui_json.main_text_bg" y="70" horizontalCenter="0"/>
@@ -59,7 +59,7 @@
 				<e:Image source="newmain_ui_json.main_huodong_text" y="73.48" horizontalCenter="0.5"/>
 				<e:Image id="hd_tip" source="newmain_ui_json.main_mail_tip" x="83" y="23" anchorOffsetX="18.5" anchorOffsetY="19" visible="false"/>
 			</e:Group>
-			<e:Group id="yqGroup" width="110" height="110" y="636" right="7">
+			<e:Group id="yqGroup" width="110" height="110" y="545" left="11">
 				<e:Image source="newmain_ui_json.main_invite_icon" horizontalCenter="0" verticalCenter="0"/>
 				<e:Image source="newmain_ui_json.main_text_bg" y="71" horizontalCenter="0"/>
 				<e:Image source="newmain_ui_json.main_invite_text" y="72" scaleX="1" scaleY="1" horizontalCenter="0"/>
