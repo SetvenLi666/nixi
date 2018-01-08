@@ -482,13 +482,17 @@ class MainComp extends eui.Component {
 				this.libao_icon.source = "newmain_ui_json.main_libao_30";
 				this.libao_ac.source = "newmain_ui_json.main_coin_30";
 				this.libao_text.source = "newmain_ui_json.main_coin_text_30";
-			} else if (InviteData.reward_state != 3) {
-				this.libao_icon.source = "newmain_ui_json.main_libao_1";
-				this.libao_ac.source = "newmain_ui_json.main_coin_30";
-				this.libao_text.source = "main_free_text_png";
 			} else {
 				this.lbGroup.visible = false;
 			}
+
+			// else if (InviteData.reward_state != 3) {
+			// 	this.libao_icon.source = "newmain_ui_json.main_libao_1";
+			// 	this.libao_ac.source = "newmain_ui_json.main_coin_30";
+			// 	this.libao_text.source = "main_free_text_png";
+			// } else {
+			// 	this.lbGroup.visible = false;
+			// }
 
 			// if (WanbaData.packageData.indexOf("libao_2") == -1) {
 			// 	this.libao_icon.source = "newmain_ui_json.main_libao_6";
@@ -514,10 +518,6 @@ class MainComp extends eui.Component {
 				this.libao_icon.source = "newmain_ui_json.main_libao_30";
 				this.libao_ac.source = "newmain_ui_json.main_coin_30";
 				this.libao_text.source = "newmain_ui_json.main_coin_text_30";
-			} else if (InviteData.reward_state != 3) {
-				this.libao_icon.source = "newmain_ui_json.main_libao_1";
-				this.libao_ac.source = "newmain_ui_json.main_coin_30";
-				this.libao_text.source = "main_free_text_png";
 			} else {
 				this.lbGroup.visible = false;
 			}
@@ -820,9 +820,10 @@ class MainComp extends eui.Component {
 				panel = new SixPanel();
 			} else if (WanbaData.packageData.indexOf("libao_3") == -1 && InviteData.reward10_state != 3) {
 				panel = new ThirtyPanel();
-			} else {
-				panel = new InviteFreeRewardPanel();
-			}
+			} 
+			// else {
+			// 	panel = new InviteFreeRewardPanel();
+			// }
 		} else {
 			if (WanbaData.packageData.indexOf("libao_1") == -1) {
 				panel = new OnePanel();
@@ -830,9 +831,10 @@ class MainComp extends eui.Component {
 				panel = new SixPanel();
 			} else if (WanbaData.packageData.indexOf("libao_3") == -1 && InviteData.reward10_state != 3) {
 				panel = new ThirtyPanel();
-			} else {
-				panel = new InviteFreeRewardPanel();
-			}
+			} 
+			// else {
+			// 	panel = new InviteFreeRewardPanel();
+			// }
 		}
 
 		DisplayMgr.set2Center(panel);
