@@ -74,7 +74,7 @@ class LimitDiscountPanel extends eui.Component{
 			urlData = TLDiscountData.id;
 
 			KJSDK.pay({
-				fee: "0.1",
+				fee: TLDiscountData.money + "",
 				extra: LoginData.sid + "." + TLDiscountData.id,
 				openid: sdk.data["openid"],
 				paySuccess: "paySuccess",

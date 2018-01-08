@@ -172,7 +172,7 @@ class Main extends egret.DisplayObjectContainer {
         KJSDK.init({
             "title": "逆袭之星途闪耀",
             "desc": "给你看个好玩的，快来！",
-            "imgUrl": ""
+            "imgUrl": "https://nixi-1253886695.file.myqcloud.com/weiduan/share_icon.png"
         });
 
         LoginData.config_UUID();

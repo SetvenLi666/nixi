@@ -168,7 +168,7 @@ class SixPanel extends eui.Component {
 			urlData = "libao_2";
 
 			KJSDK.pay({
-				fee: "0.1",
+				fee: "" + data["money"],
 				extra: LoginData.sid + "." + data["id"],
 				openid: sdk.data["openid"],
 				paySuccess: "paySuccess",

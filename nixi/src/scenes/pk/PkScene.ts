@@ -10,7 +10,7 @@ class PkScene extends eui.UILayer{
 
 	private addStage() {
 		this.removeEventListener(egret.Event.ADDED_TO_STAGE, this.addStage, this);
-		var bg = new egret.Bitmap(RES.getRes("phase_bg_4_png"));
+		var bg = new egret.Bitmap(RES.getRes("shop_bg_png"));
 		bg.anchorOffsetX = bg.width / 2;
 		bg.anchorOffsetY = bg.height / 2;
 		bg.x = DisplayMgr.stageW / 2;

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="ShareGroupPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Group id="group" left="0" right="0" top="0" bottom="0">
-		<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.7"/>
-		<e:Image source="newguide_finger_png" y="0" scaleX="-1" horizontalCenter="376.5"/>
-		<e:Label text="分享到微信群或好友" y="108" anchorOffsetY="0" height="70" anchorOffsetX="0" width="155" horizontalCenter="345"/>
+	<e:Group id="group" horizontalCenter="0" verticalCenter="0" width="852" height="1136" x="0" y="0" scaleX="1" scaleY="1">
+		<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.7" x="0" y="0" scaleX="1" scaleY="1"/>
+		<e:Image source="newguide_finger_png" y="0" scaleX="-1" right="37"/>
+		<e:Label text="分享到微信群或好友" y="108" anchorOffsetY="0" height="70" anchorOffsetX="0" width="155" right="3"/>
 	</e:Group>
 </e:Skin>

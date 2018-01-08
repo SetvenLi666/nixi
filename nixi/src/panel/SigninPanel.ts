@@ -102,12 +102,12 @@ class SigninPanel extends eui.Component {
 			// }
 			if (ShareData.isFirstPay && ShareData.firstpay_lottery_times == 1 && ShareData.isDailyPay && ShareData.dailypay_normal_times == 1 && ShareData.dailypay_lottery_times == 1) {
 				//账号首冲、每日首冲都充值领取完毕，弹出邀请
-				if(InviteData.isShowInvite) {
-					InviteData.isShowInvite = false;
-					NetLoading.showLoading();
-					var request = HttpProtocolMgr.take_invite_info_165();
-					HttpMgr.postRequest(request);
-				}
+				// if(InviteData.isShowInvite) {
+				// 	InviteData.isShowInvite = false;
+				// 	NetLoading.showLoading();
+				// 	var request = HttpProtocolMgr.take_invite_info_165();
+				// 	HttpMgr.postRequest(request);
+				// }
 			} else if (((ShareData.isFirstPay && ShareData.firstpay_lottery_times == 0) || ShareData.isFirstPay == false) && ShareData.isShowScPop) {
 				//弹出账号首冲
 				ShareData.isShowScPop = false;

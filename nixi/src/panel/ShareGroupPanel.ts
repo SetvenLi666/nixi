@@ -1,4 +1,5 @@
 class ShareGroupPanel extends eui.Component{
+	// public container: eui.Group;
 	public group: eui.Group;
 
 	public constructor() {
@@ -10,6 +11,7 @@ class ShareGroupPanel extends eui.Component{
 	}
 
 	private addStage() {
+		// this.container.width = DisplayMgr.stageW;
 		this.group.width = Math.min(DisplayMgr.stageW, 852);
 		this.group.addEventListener(egret.TouchEvent.TOUCH_TAP, this.touchTap, this);
 	}

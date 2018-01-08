@@ -135,12 +135,12 @@ class FirstPayPanel extends eui.Component {
 
 	private closePanel() {
 		if (this.parent) {
-			if (InviteData.isShowInvite) {
-				InviteData.isShowInvite = false;
-				NetLoading.showLoading();
-				var request = HttpProtocolMgr.take_invite_info_165();
-				HttpMgr.postRequest(request);
-			}
+			// if (InviteData.isShowInvite) {
+			// 	InviteData.isShowInvite = false;
+			// 	NetLoading.showLoading();
+			// 	var request = HttpProtocolMgr.take_invite_info_165();
+			// 	HttpMgr.postRequest(request);
+			// }
 			this.parent.removeChild(this);
 		}
 	}

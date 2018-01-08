@@ -203,7 +203,7 @@ class ShareData {
 		KJSDK.share({
 			title: "逆袭星途闪耀", //分享标题
 			desc: desc, //游戏提供分享描述
-			imgUrl: "", //分享图片链接
+			imgUrl: "https://nixi-1253886695.file.myqcloud.com/weiduan/share_icon.png", //分享图片链接
 			gameid: sdk.data["gameid"],//游戏id
 			shareSuccess: "shareSuccess",
 			shareCancel: "shareCancel"

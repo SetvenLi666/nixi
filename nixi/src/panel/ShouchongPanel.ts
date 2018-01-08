@@ -187,7 +187,7 @@ class ShouchongPanel extends eui.Component {
 			urlData = data["id"];
 
 			KJSDK.pay({
-				fee: "0.1",
+				fee: data["money"] + "",
 				extra: LoginData.sid + "." + data["id"],
 				openid: sdk.data["openid"],
 				paySuccess: "paySuccess",

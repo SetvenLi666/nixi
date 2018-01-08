@@ -50,7 +50,7 @@
 				<e:Image source="newmain_ui_json.main_huodong_text" y="73.48" horizontalCenter="0.5"/>
 				<e:Image id="hd_tip" source="newmain_ui_json.main_mail_tip" x="83" y="23" anchorOffsetX="18.5" anchorOffsetY="19" visible="false"/>
 			</e:Group>
-			<e:Group id="yqGroup" width="110" height="110" y="636" right="7">
+			<e:Group id="yqGroup" width="110" height="110" y="636" right="7" visible="false">
 				<e:Image source="newmain_ui_json.main_invite_icon" horizontalCenter="0" verticalCenter="0"/>
 				<e:Image source="newmain_ui_json.main_invite_text" y="72" scaleX="1" scaleY="1" horizontalCenter="0"/>
 			</e:Group>
@@ -65,10 +65,6 @@
 			<e:Component id="yl_comp" y="1475" skinName="ItemYL" anchorOffsetX="53" x="426"/>
 			<e:Component id="sd_comp" y="1430" skinName="ItemSD" anchorOffsetX="53" x="596"/>
 			<e:Component id="jj_comp" y="1270" skinName="ItemJJ" anchorOffsetX="53" x="666"/>
-			<e:Group id="tujianGroup" width="110" height="110" y="1016" left="14">
-				<e:Image source="main_tujian_icon_png" horizontalCenter="0" verticalCenter="-2"/>
-				<e:Image source="main_tujian_text_png" y="73" horizontalCenter="0"/>
-			</e:Group>
 		</e:Group>
 	</e:Group>
 </e:Skin>

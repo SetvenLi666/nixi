@@ -78,7 +78,7 @@ class MonthCardPanel extends eui.Component {
 		urlData = product_id;
 		
 		KJSDK.pay({
-			fee: "0.1",
+			fee: "30",
 			extra: LoginData.sid + "." + product_id,
 			openid: sdk.data["openid"],
 			paySuccess: "paySuccess",
