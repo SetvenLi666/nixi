@@ -12,10 +12,6 @@ namespace ConstData {
         //狂鲸地址
         get LoginAddr(): string { return "https://nixi-weiduan-game.mzplay1.cn:9765/account";},
 
-        // get WanbaLoginAddr(): string { return "https://nixi-wanba-game.mzplay1.cn:9765/h5wanba/login"}, //玩吧登陆地址
-
-        // get WanbaOrderAddr(): string {return "https://nixi-wanba-game.mzplay1.cn:9765/h5wanba/order"},  //玩吧订单请求地址
-
         get webSocketAdd() : string { return "wss://nixi-weiduan-game.mzplay1.cn:20168/chator"},
 
         // get channel() : number { return 0;},   //白包
@@ -28,7 +24,6 @@ namespace ConstData {
 
         get version() : string { return "version-20170322"; },      //版本     
 
-        // get whiteList() : string[] {return ["8A79B852", "8A79B69C", "8A79B656"]; },
     }
 
     // export const CustomEvtName = {

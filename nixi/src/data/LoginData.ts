@@ -26,6 +26,10 @@ class LoginData {
         this.init();
     }
 
+    public static configKjUUID() {
+        this._uuid = window["UUID"];
+    }
+
     public static configWanbaUUID(data: {}) {
         this._uuid = data["uid"];
         this._userip = data["userip"];
