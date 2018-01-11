@@ -112,7 +112,11 @@ var game_file_list = [
 	"bin-debug/panel/GiftPanel.js",
 	"bin-debug/panel/HuodongPanel.js",
 	"bin-debug/panel/InviteFreeRewardPanel.js",
+<<<<<<< HEAD
 	"bin-debug/panel/InvitePanel.js",
+=======
+	"bin-debug/Main.js",
+>>>>>>> ceshi
 	"bin-debug/panel/IosPayTipPanel.js",
 	"bin-debug/panel/LimitDiscountPanel.js",
 	"bin-debug/panel/MonthCardPanel.js",

@@ -175,6 +175,9 @@ class Main extends egret.DisplayObjectContainer {
             "imgUrl": "https://nixi-1253886695.file.myqcloud.com/weiduan/share_icon.png"
         });
 
+        //本地调试
+        // LoginData.config_UUID();
+
         LoginData.configKjUUID();
         SceneMgr.gotoLogin();
 
