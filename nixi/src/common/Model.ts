@@ -43,6 +43,7 @@ class Model extends eui.Component {
 	public layer_380: eui.Image;
 	public layer_385: eui.Image;
 	public layer_390: eui.Image;
+	public layer_395: eui.Image;
 	public layer_400: eui.Image;
 	public layer_401: eui.Image;
 	public layer_403: eui.Image;
@@ -123,7 +124,7 @@ class Model extends eui.Component {
 		this.part_12 = [this.layer_439];
 		this.part_13 = [this.layer_39, this.layer_350, this.layer_404, this.layer_416];
 		this.part_14 = [this.layer_403];
-		this.part_15 = [this.layer_82, this.layer_201, this.layer_340, this.layer_351, this.layer_4166];
+		this.part_15 = [this.layer_82, this.layer_201, this.layer_340, this.layer_351, this.layer_395, this.layer_4166];
 		this.part_16 = [this.layer_81, this.layer_385, this.layer_401, this.layer_405];
 		this.part_17 = [this.layer_311];
 		this.part_18 = [this.layer_312];

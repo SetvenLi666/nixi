@@ -385,6 +385,9 @@ class MainComp extends eui.Component {
 		this.updateNewShare();
 
 		this.model.dress(ClothesData.ondressCache, ClothesData.ornamentsCache);
+		// console.log(ClothesData.ondressCache);
+		// console.log(ClothesData.ornamentsCache);
+		// this.model.dress(ClothesData.ondressCache, {11: 71041, 12: 70000, 13: 70000, 14: 70000, 15: 70153, 16: 70000, 17: 70000, 18: 70000, 19: 70000, 20: 70000, 21: 70632, 22: 70000, 23: 70633});
 
 		if (PlayerData.mission <= 6) {
 			this.jj_comp["imgLock"].visible = true;
