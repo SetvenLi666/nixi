@@ -186,13 +186,31 @@ class ShouchongPanel extends eui.Component {
 
 			urlData = data["id"];
 
-			KJSDK.pay({
-				fee: data["money"] + "",
-				extra: LoginData.sid + "." + data["id"],
-				openid: sdk.data["openid"],
-				paySuccess: "paySuccess",
-				payFail: "payFail"
-			});
+			urlData = "product_id=" + data["id"] + "&sid=" + LoginData.sid + "&openid=" + window["OPEN_DATA"].openid +
+				"&openkey=" + window["OPEN_DATA"].openkey + "&platform=" + window["OPEN_DATA"].platform;
+			urlRequest.data = urlData;
+			var urlLoader = new egret.URLLoader();
+			urlLoader.addEventListener(egret.Event.COMPLETE, this.onLoadComplete, this);
+			urlLoader.load(urlRequest);
+		});
+	}
+
+	private onLoadComplete(evt: egret.Event) {
+		var loader = <egret.URLLoader>evt.target;
+		var obj: {} = JSON.parse(loader.data);
+
+		kkH5sdk.callPayPage({
+			transData: obj["transData"],
+			sign: obj["sign"],
+			IframePayClose: function (res) {
+				// addLoadingElements("数据加载中...");
+				// queryOrderStatus(…);
+			},
+			error: function (res) {
+			},
+			IframePayReady: function () {
+				// removeLoadingElements();
+			}
 		});
 	}
 

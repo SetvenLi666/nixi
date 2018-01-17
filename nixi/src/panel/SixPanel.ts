@@ -167,13 +167,13 @@ class SixPanel extends eui.Component {
 
 			urlData = "libao_2";
 
-			KJSDK.pay({
-				fee: "" + data["money"],
-				extra: LoginData.sid + "." + data["id"],
-				openid: sdk.data["openid"],
-				paySuccess: "paySuccess",
-				payFail: "payFail"
-			});
+			// KJSDK.pay({
+			// 	fee: "" + data["money"],
+			// 	extra: LoginData.sid + "." + data["id"],
+			// 	openid: sdk.data["openid"],
+			// 	paySuccess: "paySuccess",
+			// 	payFail: "payFail"
+			// });
 
 			// tdData = {
 			// 	orderId: order_id,

@@ -18,9 +18,9 @@ namespace ConstData {
 
         //测试服地址
         // get LoginAddr(): string { return "https://nixi-debug-game.mzplay1.cn:9765/account";},
-        get WanbaOrderAddr(): string {return "https://nixi-debug-game.mzplay1.cn:9765/h5wanba/order"}, 
+        get WanbaOrderAddr(): string {return "https://nixi-weiduan-game.mzplay1.cn:9765/kuaikan/order"}, 
 
-        get channel() : number { return 602;},   //逆袭狂鲸
+        get channel() : number { return 603;},   //逆袭快看
 
         get version() : string { return "version-20170322"; },      //版本     
 

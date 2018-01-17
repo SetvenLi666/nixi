@@ -73,13 +73,13 @@ class LimitDiscountPanel extends eui.Component{
 
 			urlData = TLDiscountData.id;
 
-			KJSDK.pay({
-				fee: TLDiscountData.money + "",
-				extra: LoginData.sid + "." + TLDiscountData.id,
-				openid: sdk.data["openid"],
-				paySuccess: "paySuccess",
-				payFail: "payFail"
-			});
+			// KJSDK.pay({
+			// 	fee: TLDiscountData.money + "",
+			// 	extra: LoginData.sid + "." + TLDiscountData.id,
+			// 	openid: sdk.data["openid"],
+			// 	paySuccess: "paySuccess",
+			// 	payFail: "payFail"
+			// });
 
 			// tdData = {
 			// 	orderId: order_id,

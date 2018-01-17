@@ -55,8 +55,8 @@ class PlayerData {
             this._mission = obj["mission"] > 200 ? 200 : obj["mission"];
             this._phase = obj["phase"] > 5 ? 5 : obj["phase"];
             this._left = obj["left"];
-            this._guide = obj["guide"];
-            // this._guide = 0;
+            // this._guide = obj["guide"];
+            this._guide = 0;
             this._ratings = obj["rating"];
         }
     }

@@ -6,6 +6,7 @@ var sdk = {
 		// var reg = new RegExp("(^|&)" + "token" + "=([^&]*)(&|$)", "i");
 		// var r = window.location.search.substr(1).match(reg);
 		var _openid = "";
+		var _access_token = "";
 		var _gameid = "";
 		var _nowtime = "";
 		var _nickname = "";
@@ -16,10 +17,16 @@ var sdk = {
 
 		var hrf = window.location.search;
 
-		var o_reg = new RegExp("(^|&)" + "openid" + "=([^&]*)(&|$)", "i");
+		var o_reg = new RegExp("(^|&)" + "open_id" + "=([^&]*)(&|$)", "i");
 		var o = hrf.substr(1).match(o_reg);
 		if (o != null) {
 			_openid = unescape(o[2]);
+		}
+
+		var at_reg = new RegExp("(^|&)" + "access_token" + "=([^&]*)(&|$)", "i");
+		var at = hrf.substr(1).match(at_reg);
+		if (at != null) {
+			_access_token = unescape(at[2]);
 		}
 
 		var g_reg = new RegExp("(^|&)" + "gameid" + "=([^&]*)(&|$)", "i");
@@ -65,28 +72,15 @@ var sdk = {
 		}
 
 		sdk.data = {
-			openid: _openid,
-			gameid: _gameid,
-			nowtime: _nowtime,
-			portrait: _portrait,
-			nickname: _nickname,
-			gender: _gender,
-			invitor: _invitor,
-			sign: _sign
+			open_id: _openid,
+			access_token: _access_token
 		};
 		console.log(sdk.data);
-		$.post("https://nixi-weiduan-game.mzplay1.cn:9765/h5weiduan/login", sdk.data, function (info) {
+		$.post("https://nixi-weiduan-game.mzplay1.cn:9765/kuaikan/login", sdk.data, function (info) {
 			var result = JSON.parse(info);
 			console.log(result);
 			if (result["result"] == "SUCCESS") {
 				window.UUID = result["uid"];
-
-				KJSDK.init({
-					"title": "逆袭",
-					"desc": "逆袭分享描述",
-					"imgUrl": ""
-				});
-
 				egret.runEgret({renderMode:"webgl"});
 			} else {
 				console.log(result["message"]);

@@ -10,7 +10,7 @@ class ClothesData {
         "15": "shouhuan", "16": "yaodai", "17": "tuihuan", "18": "jiaolian", "19": "xiongzhen"
     };
 
-    public static clothesParts: string[] = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+    public static clothesParts: string[] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
     public static clothesSub_parts: string[] = ["11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"];
 
     // 是否初始化过用户数据
@@ -309,6 +309,16 @@ class ClothesData {
         var clothesId = null;
         for (var i = 0; i < len; i++) {
             item = data[i];
+
+            //验证衣服部位是否正确
+            // if(ClothesData.clothesParts.indexOf(item["part"]) == -1) {
+            //     alert("衣服部位出错: " + item["id"]);
+            //     return;
+            // }
+            // if(item["part"] == "7" && ClothesData.clothesSub_parts.indexOf(item["sub_part"]) == -1) {
+            //     alert("饰品部位出错: " + item["id"]);
+            //     return;
+            // }
 
             //排除sale==0的衣服
             if (item["sale"] == "0") {

@@ -168,22 +168,41 @@ class Main extends egret.DisplayObjectContainer {
     private initGameDependance() {
         HttpMgr.init();
 
-        //SDK初始化
-        KJSDK.init({
-            "title": "逆袭之星途闪耀",
-            "desc": "给你看个好玩的，快来！",
-            "imgUrl": "https://nixi-1253886695.file.myqcloud.com/weiduan/share_icon.png"
-        });
-
-        //本地调试
-        // LoginData.config_UUID();
-
-        LoginData.configKjUUID();
-        SceneMgr.gotoLogin();
+        this.kuaikanLogin();
 
         var logo = window["logo"];
         if (logo) {
             logo.parentNode.removeChild(logo);
         }
+    }
+
+    private kuaikanLogin() {
+        kkH5sdk.getUserInfo({
+            appId: 1140,
+            success: function (res) {
+                console.log("AuthorizeLogin Successed: ", JSON.stringify(res));
+
+                
+
+                kkH5sdk.callLogin({
+                    success: function (data: any) {
+                        console.log(data);
+                        console.log("success");
+                        SceneMgr.gotoLogin();
+                    },
+                    fail: function (data: any) {
+                        console.log(data);
+                        console.log("fail");
+                    }
+                });
+            },
+            fail: function (res) {
+                console.log("getUserInfo" + JSON.stringify(res));
+            }
+        });
+
+        //本地调试
+        // LoginData.config_UUID();
+        // SceneMgr.gotoLogin();
     }
 }

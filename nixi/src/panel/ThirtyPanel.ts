@@ -153,13 +153,13 @@ class ThirtyPanel extends eui.Component {
 
 			urlData = "libao_3";
 
-			KJSDK.pay({
-				fee: "" + data["money"],
-				extra: LoginData.sid + "." + data["id"],
-				openid: sdk.data["openid"],
-				paySuccess: "paySuccess",
-				payFail: "payFail"
-			});
+			// KJSDK.pay({
+			// 	fee: "" + data["money"],
+			// 	extra: LoginData.sid + "." + data["id"],
+			// 	openid: sdk.data["openid"],
+			// 	paySuccess: "paySuccess",
+			// 	payFail: "payFail"
+			// });
 
 			// tdData = {
 			// 	orderId: order_id,
