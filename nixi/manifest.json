@@ -10,7 +10,6 @@
 		"libs/modules/nest/nest.js",
 		"libs/modules/td/td.js",
 		"libs/modules/jquery/jquery.js",
-		"libs/modules/launcher/launcher.js",
 		"promise/promise.js"
 	],
 	"game": [

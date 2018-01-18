@@ -18,16 +18,13 @@ class LoginData {
         console.log("UUID2: " + uuid);
     }
 
-    public static configEgretUUID(uuid: string) {
-        this._uuid = uuid;
-    }
 
     public static config_UUID() {
         this.init();
     }
 
-    public static configKjUUID() {
-        this._uuid = window["UUID"];
+    public static configKuaikanUUID(uuid: string) {
+        this._uuid = uuid;
     }
 
     public static configWanbaUUID(data: {}) {

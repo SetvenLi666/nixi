@@ -10,19 +10,19 @@ namespace ConstData {
         get StoryTextFlashInterval(): number { return 30; },  //100 ----> 30;
 
         //狂鲸地址
-        get LoginAddr(): string { return "https://nixi-weiduan-game.mzplay1.cn:9765/account";},
+        get LoginAddr(): string { return "https://nixi-weiduan-game.mzplay1.cn:9765/account"; },
 
-        get webSocketAdd() : string { return "wss://nixi-weiduan-game.mzplay1.cn:20168/chator"},
+        get webSocketAdd(): string { return "wss://nixi-weiduan-game.mzplay1.cn:20168/chator" },
 
         // get channel() : number { return 0;},   //白包
-
+        get KuaikanLoginAddr(): string { return "https://nixi-weiduan-game.mzplay1.cn:9765/kuaikan/login" },
         //测试服地址
         // get LoginAddr(): string { return "https://nixi-debug-game.mzplay1.cn:9765/account";},
-        get WanbaOrderAddr(): string {return "https://nixi-weiduan-game.mzplay1.cn:9765/kuaikan/order"}, 
+        get WanbaOrderAddr(): string { return "https://nixi-weiduan-game.mzplay1.cn:9765/kuaikan/order" },
 
-        get channel() : number { return 603;},   //逆袭快看
+        get channel(): number { return 603; },   //逆袭快看
 
-        get version() : string { return "version-20170322"; },      //版本     
+        get version(): string { return "version-20170322"; },      //版本     
 
     }
 

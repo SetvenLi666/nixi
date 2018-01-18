@@ -169,11 +169,6 @@ class Main extends egret.DisplayObjectContainer {
         HttpMgr.init();
 
         this.kuaikanLogin();
-
-        var logo = window["logo"];
-        if (logo) {
-            logo.parentNode.removeChild(logo);
-        }
     }
 
     private kuaikanLogin() {
@@ -181,23 +176,40 @@ class Main extends egret.DisplayObjectContainer {
             appId: 1140,
             success: function (res) {
                 console.log("AuthorizeLogin Successed: ", JSON.stringify(res));
+                var obj = JSON.stringify(res);
 
-                
-
-                kkH5sdk.callLogin({
-                    success: function (data: any) {
-                        console.log(data);
-                        console.log("success");
-                        SceneMgr.gotoLogin();
-                    },
-                    fail: function (data: any) {
-                        console.log(data);
-                        console.log("fail");
+                var urlRequest = new egret.URLRequest(ConstData.Conf.KuaikanLoginAddr);
+                urlRequest.method = egret.URLRequestMethod.POST;
+                var data: string = "";
+                data = "open_id=" + obj["openId"] + "&access_token=" + obj["access_token"];
+                urlRequest.data = data;
+                var urlLoader = new egret.URLLoader();
+                urlLoader.addEventListener(egret.Event.COMPLETE, function (evt: egret.Event) {
+                    var loader = <egret.URLLoader>evt.target;
+                    var result: {} = JSON.parse(loader.data);
+                    if (result["result"] == "SUCCESS") {
+                        LoginData.configKuaikanUUID(result["uid"]);
+                        kkH5sdk.callLogin({
+                            success: function (data: any) {
+                                console.log(data);
+                                console.log("success");
+                                SceneMgr.gotoLogin();
+                                var logo = window["logo"];
+                                if (logo) {
+                                    logo.parentNode.removeChild(logo);
+                                }
+                            },
+                            fail: function (data: any) {
+                                console.log(data);
+                                console.log("fail");
+                            }
+                        });
                     }
-                });
+                }, this);
+                urlLoader.load(urlRequest);
             },
             fail: function (res) {
-                console.log("getUserInfo" + JSON.stringify(res));
+                console.log("getUserInfo fail" + JSON.stringify(res));
             }
         });
 
