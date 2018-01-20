@@ -144,8 +144,8 @@ class TaskRating extends eui.Component implements eui.UIComponent {
 		// self.bg.touchEnabled = false;
 		self.btnTake.touchEnabled = false;
 		self.btnTake.visible = false;
-		self.btnShare.touchEnabled = false;
-		self.btnShare.visible = false;
+		// self.btnShare.touchEnabled = false;
+		// self.btnShare.visible = false;
 		self.ratingPanel.cacheAsBitmap = true;
 		egret.Tween.get(this.ratingPanel)
 			.set({ scaleX: 1.5, scaleY: 1.5, y: self.height * 0.35 })
@@ -160,8 +160,8 @@ class TaskRating extends eui.Component implements eui.UIComponent {
 					self.btnTake.visible = true;
 					// self.bg.touchEnabled = true;
 					self.btnTake.touchEnabled = true;
-					self.btnShare.visible = true;
-					self.btnShare.touchEnabled = true;
+					// self.btnShare.visible = true;
+					// self.btnShare.touchEnabled = true;
 				}
 			});
 	}
@@ -195,8 +195,8 @@ class TaskRating extends eui.Component implements eui.UIComponent {
 					self.btnTake.visible = true;
 					// self.bg.touchEnabled = true;
 					self.btnTake.touchEnabled = true;
-					self.btnShare.visible = true;
-					self.btnShare.touchEnabled = true;
+					// self.btnShare.visible = true;
+					// self.btnShare.touchEnabled = true;
 				}
 			}, i, 300 * i);
 		}

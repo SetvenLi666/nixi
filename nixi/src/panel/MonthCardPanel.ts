@@ -5,6 +5,8 @@ class MonthCardPanel extends eui.Component {
 	public timeLabel: eui.Label;
 	public btn_buy: eui.Image;
 
+	private curId: string = "";
+
 	public constructor() {
 		super();
 
@@ -61,7 +63,7 @@ class MonthCardPanel extends eui.Component {
 	}
 
 	private onPay() {
-		var urlRequest = new egret.URLRequest(ConstData.Conf.WanbaOrderAddr);
+		var urlRequest = new egret.URLRequest(ConstData.Conf.KuaikanOrderAddr);
 		urlRequest.method = egret.URLRequestMethod.POST;
 
 		var product_id: string = "tiegao_9";
@@ -73,58 +75,41 @@ class MonthCardPanel extends eui.Component {
 			currencyType: "CNY",
 			currencyAmount: "" + 30,
 			virtualCurrencyAmount: "月卡"
-		});
+		});	
 
-		urlData = product_id;
-		
-		// KJSDK.pay({
-		// 	fee: "30",
-		// 	extra: LoginData.sid + "." + product_id,
-		// 	openid: sdk.data["openid"],
-		// 	paySuccess: "paySuccess",
-		// 	payFail: "payFail"
-		// });
+		this.curId = product_id;
 
-		// tdData = {
-		// 	orderId: order_id,
-		// 	iapId: "tiegao_9",
-		// 	currencyType: "CNY",
-		// 	currencyAmount: "" + 30,
-		// 	virtualCurrencyAmount: "月卡"
-		// };
-
-		// urlData = "product_id=" + product_id+ "&sid=" + LoginData.sid + "&openid=" + window["OPEN_DATA"].openid +
-		// 	"&openkey=" + window["OPEN_DATA"].openkey + "&platform=" + window["OPEN_DATA"].platform;
-		// urlRequest.data = urlData;
-		// var urlLoader = new egret.URLLoader();
-		// urlLoader.addEventListener(egret.Event.COMPLETE, this.onLoadComplete, this);
-		// urlLoader.load(urlRequest);
+		var urlData = "product_id=" + product_id+ "&sid=" + LoginData.sid + "&uuid=" + LoginData.uuid;
+		urlRequest.data = urlData;
+		var urlLoader = new egret.URLLoader();
+		urlLoader.addEventListener(egret.Event.COMPLETE, this.onLoadComplete, this);
+		urlLoader.load(urlRequest);
 	}
 
 	private onLoadComplete(evt: egret.Event) {
 		var loader = <egret.URLLoader>evt.target;
 		var obj: {} = JSON.parse(loader.data);
+		var self = this;
 
-		if (obj && obj["result"] == "SUCCESS") {
-			//余额足够，无二次请求
-
-			DataMgr.checkNews();
-
-			window["mqq"].ui.showDialog({
-				title: "提示",
-				text: "支付成功!请前往邮箱领取激活!",
-				needOkBtn: true,
-				needCancelBtn: false,
-				okBtnText: "确认",
-				cancelBtnText: ""
-			}, function (data) {
-				console.log(data);
-			});
-
-		} else if (obj && obj["result"] == "FAIL" && obj["code"] == 1004) {
-			window["popPayTips"]({
-				defaultScore: obj["need_score"],
-				appid: window["OPEN_DATA"].appid
+		if (obj["result"] == "SUCCESS") {
+			kkH5sdk.callPayPage({
+				transData: obj["transData"],
+				sign: obj["sign"],
+				IframePayClose: function (res) {
+					// addLoadingElements("数据加载中...");
+					// queryOrderStatus(…);
+					console.log("IframePayClose");
+					console.log(res);
+					NetLoading.showLoading();
+					var request = HttpProtocolMgr.refresh_pay_info_116(self.curId);
+					HttpMgr.postRequest(request);
+				},
+				error: function (res) {
+				},
+				IframePayReady: function () {
+					// removeLoadingElements();
+					console.log("IframePayReady");
+				}
 			});
 		}
 	}

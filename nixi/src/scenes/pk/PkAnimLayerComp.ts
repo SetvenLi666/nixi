@@ -320,7 +320,7 @@ class PkAnimLayerComp extends eui.Component {
 		this.btn_receive.currentState = "state_" + evt.data;
 		this.btn_receive.visible = true;
 
-		this.btnShare.visible = true;
+		// this.btnShare.visible = true;
 
 		if (evt.data == 1) {
 			this.titleImage.source = "pk_result_vct_png";

@@ -382,7 +382,7 @@ class MainComp extends eui.Component {
 		//更新首冲视图
 		this.updateScView();
 
-		this.updateNewShare();
+		// this.updateNewShare();
 
 		this.model.dress(ClothesData.ondressCache, ClothesData.ornamentsCache);
 

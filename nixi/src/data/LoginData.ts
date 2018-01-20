@@ -23,8 +23,8 @@ class LoginData {
         this.init();
     }
 
-    public static configKuaikanUUID(uuid: string) {
-        this._uuid = uuid;
+    public static configKuaikanUUID() {
+        this._uuid = window["UUID"];
     }
 
     public static configWanbaUUID(data: {}) {

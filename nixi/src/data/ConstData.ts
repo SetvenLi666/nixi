@@ -18,7 +18,7 @@ namespace ConstData {
         get KuaikanLoginAddr(): string { return "https://nixi-weiduan-game.mzplay1.cn:9765/kuaikan/login" },
         //测试服地址
         // get LoginAddr(): string { return "https://nixi-debug-game.mzplay1.cn:9765/account";},
-        get WanbaOrderAddr(): string { return "https://nixi-weiduan-game.mzplay1.cn:9765/kuaikan/order" },
+        get KuaikanOrderAddr(): string { return "https://nixi-weiduan-game.mzplay1.cn:9765/kuaikan/order" },
 
         get channel(): number { return 603; },   //逆袭快看
 

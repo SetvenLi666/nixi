@@ -452,8 +452,8 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 			this.subtitle.cbAutoPlay.touchEnabled = false;
 			this.subtitle.cbFastPlay.touchEnabled = false;
 			this.subtitle.btnLog.touchEnabled = false;
-			this.subtitle.btnShare.visible = true;
-			this.subtitle.btnShare.touchEnabled = true;
+			// this.subtitle.btnShare.visible = true;
+			// this.subtitle.btnShare.touchEnabled = true;
 			this.couldExit = false;
 
 			this.ending.showEnding(true, "", this.storyIndex);
@@ -468,8 +468,8 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 			this.subtitle.cbAutoPlay.touchEnabled = false;
 			this.subtitle.cbFastPlay.touchEnabled = false;
 			this.subtitle.btnLog.touchEnabled = false;
-			this.subtitle.btnShare.visible = true;
-			this.subtitle.btnShare.touchEnabled = true;
+			// this.subtitle.btnShare.visible = true;
+			// this.subtitle.btnShare.touchEnabled = true;
 			this.couldExit = false;
 
 			var temp = plot["said"].split(" ");		// 显示用

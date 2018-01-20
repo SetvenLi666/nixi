@@ -111,29 +111,8 @@ class LoginScene extends eui.Component {
 			this.stage.addChild(namePanel);
 		}
 		else {
-			if (window["reportLogin"]) {
-				window["reportLogin"]();
-				console.log("report login");
-			}
-
 			SceneMgr.gotoMainScene();
 		}
-
-		// //引导页
-		// if (PlayerData.guide == 1) {
-		// 	var panel = new OpenPanel();
-		// 	DisplayMgr.set2Center(panel);
-		// 	this.stage.addChild(panel);
-		// } else {
-		// 	if ("" === ShowData.nickname) {
-		// 		var namePanel = new NicknamePanel();
-		// 		DisplayMgr.set2Center(namePanel);
-		// 		this.stage.addChild(namePanel);
-		// 	}
-		// 	else {
-		// 		SceneMgr.gotoMainScene();
-		// 	}
-		// }
 	}
 
 	private afterSaveNickname_904() {

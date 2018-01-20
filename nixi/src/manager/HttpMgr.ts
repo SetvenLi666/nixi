@@ -56,6 +56,8 @@ class HttpMgr {
                 SceneMgr.gotoLogin();
                 NetLoading.removeLoading();
                 return;
+            } else if (code == 11601) {
+                NetLoading.removeLoading();
             } else {
                 console.log("Error: - " + cid + " - " + content);
                 Prompt.showPrompt(egret.MainContext.instance.stage, <string>content);
@@ -110,7 +112,6 @@ class HttpMgr {
             ShowData.update(content["show"]);
         }
         else if (910 === cid) {
-            console.log("HttpMgr 910 callback");
             NewsData.update(content["news"]);
         }
 

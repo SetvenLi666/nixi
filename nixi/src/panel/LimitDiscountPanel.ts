@@ -9,6 +9,8 @@ class LimitDiscountPanel extends eui.Component{
 
 	private type: number = 6;
 
+	private curId: string = "";
+
 	public constructor(type: number) {
 		super();
 
@@ -52,7 +54,7 @@ class LimitDiscountPanel extends eui.Component{
 		DisplayMgr.buttonScale(this.btnBuy, function() {
 			SoundManager.instance().buttonSound();
 
-			var urlRequest = new egret.URLRequest(ConstData.Conf.WanbaOrderAddr);
+			var urlRequest = new egret.URLRequest(ConstData.Conf.KuaikanOrderAddr);
 			urlRequest.method = egret.URLRequestMethod.POST;
 
 			var vcaString = "";
@@ -71,30 +73,13 @@ class LimitDiscountPanel extends eui.Component{
 				virtualCurrencyAmount: vcaString
 			});
 
-			urlData = TLDiscountData.id;
+			self.curId = TLDiscountData.id;
 
-			// KJSDK.pay({
-			// 	fee: TLDiscountData.money + "",
-			// 	extra: LoginData.sid + "." + TLDiscountData.id,
-			// 	openid: sdk.data["openid"],
-			// 	paySuccess: "paySuccess",
-			// 	payFail: "payFail"
-			// });
-
-			// tdData = {
-			// 	orderId: order_id,
-			// 	iapId: TLDiscountData.id,
-			// 	currencyType: "CNY",
-			// 	currencyAmount: "" + TLDiscountData.money,
-			// 	virtualCurrencyAmount: vcaString
-			// };
-
-			// urlData = "product_id=" + TLDiscountData.id + "&sid=" + LoginData.sid + "&openid=" + window["OPEN_DATA"].openid +
-			// 	"&openkey=" + window["OPEN_DATA"].openkey + "&platform=" + window["OPEN_DATA"].platform;
-			// urlRequest.data = urlData;
-			// var urlLoader = new egret.URLLoader();
-			// urlLoader.addEventListener(egret.Event.COMPLETE, self.onLoadComplete, self);
-			// urlLoader.load(urlRequest);
+			var urlData = "product_id=" + TLDiscountData.id + "&sid=" + LoginData.sid + "&uuid=" + LoginData.uuid;
+			urlRequest.data = urlData;
+			var urlLoader = new egret.URLLoader();
+			urlLoader.addEventListener(egret.Event.COMPLETE, self.onLoadComplete, self);
+			urlLoader.load(urlRequest);
 		});
 	}
 
@@ -102,29 +87,27 @@ class LimitDiscountPanel extends eui.Component{
 		var loader = <egret.URLLoader>evt.target;
 		console.log(loader.data);
 		var obj: {} = JSON.parse(loader.data);
+		var self = this;
 
-		if (obj && obj["result"] == "SUCCESS") {
-			//余额足够，无二次请求
-			if (obj["product_id"] && (obj["product_id"] == "tiegao_17" || obj["product_id"] == "tiegao_18")) {
-				TLDiscountData.resetDL();
-			}
-			DataMgr.checkNews();
-
-			window["mqq"].ui.showDialog({
-				title: "提示",
-				text: "支付成功!请前往邮箱领取物品!",
-				needOkBtn: true,
-				needCancelBtn: false,
-				okBtnText: "确认",
-				cancelBtnText: ""
-			}, function (data) {
-				console.log(data);
-			});
-
-		} else if (obj && obj["result"] == "FAIL" && obj["code"] == 1004) {
-			window["popPayTips"]({
-				defaultScore: obj["need_score"],
-				appid: window["OPEN_DATA"].appid
+		if (obj["result"] == "SUCCESS") {
+			kkH5sdk.callPayPage({
+				transData: obj["transData"],
+				sign: obj["sign"],
+				IframePayClose: function (res) {
+					// addLoadingElements("数据加载中...");
+					// queryOrderStatus(…);
+					console.log("IframePayClose");
+					console.log(res);
+					NetLoading.showLoading();
+					var request = HttpProtocolMgr.refresh_pay_info_116(self.curId);
+					HttpMgr.postRequest(request);
+				},
+				error: function (res) {
+				},
+				IframePayReady: function () {
+					// removeLoadingElements();
+					console.log("IframePayReady");
+				}
 			});
 		}
 	}

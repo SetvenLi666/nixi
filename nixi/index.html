@@ -3,6 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 	<title>逆袭之星途闪耀</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -10,6 +11,7 @@
 	<meta name="screen-orientation" content="portrait" />
 	<meta name="x5-fullscreen" content="true" />
 	<meta name="360-fullscreen" content="true" />
+	
 	<style>
 		html,
 		body {
@@ -48,9 +50,9 @@
 	<script egret="lib" src="libs/modules/tween/tween.js"></script>
 	<script egret="lib" src="libs/modules/game/game.js"></script>
 	<script egret="lib" src="libs/modules/socket/socket.js"></script>
-	<script egret="lib" src="libs/modules/nest/nest.js"></script>
 	<script egret="lib" src="libs/modules/td/td.js"></script>
 	<script egret="lib" src="libs/modules/jquery/jquery.js"></script>
+	<script egret="lib" src="libs/modules/launcher/launcher.js"></script>
 	<script egret="lib" src="promise/promise.js"></script>
 	<!--modules_files_end-->
 
@@ -264,8 +266,8 @@
 	</div>
 
 	<script>
-		// sdk.init();
-		egret.runEgret({renderMode:"webgl"});
+		sdk.init();
+		// egret.runEgret({renderMode:"webgl"});
     </script>
 
 	<script>

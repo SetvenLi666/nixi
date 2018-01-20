@@ -13,6 +13,8 @@ class OnePanel extends eui.Component {
 
 	public btn_rev: eui.Image;
 
+	private curId: string = "";
+
 	// public shower: Model;
 
 	public constructor() {
@@ -80,7 +82,7 @@ class OnePanel extends eui.Component {
 			}
 
 			var data = WanbaData.libao_1;
-			var urlRequest = new egret.URLRequest(ConstData.Conf.WanbaOrderAddr);
+			var urlRequest = new egret.URLRequest(ConstData.Conf.KuaikanOrderAddr);
 			urlRequest.method = egret.URLRequestMethod.POST;
 
 			var order_id = LoginData.uuid + "-" + CommonFunc.curTimeStamp() + "-" + Math.floor(Math.random() * 10) + "" + Math.floor(Math.random() * 10);
@@ -92,30 +94,13 @@ class OnePanel extends eui.Component {
 				virtualCurrencyAmount: "1元礼包"
 			});
 
-			urlData = "libao_1";
+			self.curId = data["id"];
 
-			// KJSDK.pay({
-			// 	fee: "" + data["money"],
-			// 	extra: LoginData.sid + "." + data["id"],
-			// 	openid: sdk.data["openid"],
-			// 	paySuccess: "paySuccess",
-			// 	payFail: "payFail"
-			// });
-
-			// tdData = {
-			// 	orderId: order_id,
-			// 	iapId: data["id"],
-			// 	currencyType: "CNY",
-			// 	currencyAmount: "" + data["money"],
-			// 	virtualCurrencyAmount: "1元礼包"
-			// };
-
-			// urlData = "product_id=" + data["id"] + "&sid=" + LoginData.sid + "&openid=" + window["OPEN_DATA"].openid +
-			// 	"&openkey=" + window["OPEN_DATA"].openkey + "&platform=" + window["OPEN_DATA"].platform;
-			// urlRequest.data = urlData;
-			// var urlLoader = new egret.URLLoader();
-			// urlLoader.addEventListener(egret.Event.COMPLETE, self.onLoadComplete, self);
-			// urlLoader.load(urlRequest);
+			var urlData = "product_id=" + data["id"] + "&sid=" + LoginData.sid + "&uuid=" + LoginData.uuid;
+			urlRequest.data = urlData;
+			var urlLoader = new egret.URLLoader();
+			urlLoader.addEventListener(egret.Event.COMPLETE, self.onLoadComplete, self);
+			urlLoader.load(urlRequest);
 		});
 	}
 
@@ -123,42 +108,27 @@ class OnePanel extends eui.Component {
 		var loader = <egret.URLLoader>evt.target;
 		console.log(loader.data);
 		var obj: {} = JSON.parse(loader.data);
+		var self = this;
 
-		// WanbaData.updatePackageData(obj["buy_libao_list"]);
-		// CustomEventMgr.dispatchEventWith("Update Libao View", false);
-
-		// if (obj && obj["code"] == 1004) {
-		// 	window["popPayTips"]({
-		// 		defaultScore: obj["need_score"],
-		// 		appid: window["OPEN_DATA"].appid
-		// 	});
-		// }
-
-		if (obj && obj["result"] == "SUCCESS") {
-			//余额足够，无二次请求
-			if (obj["product_id"]) {
-				if (obj["product_id"] == "libao_1" || obj["product_id"] == "libao_2" || obj["product_id"] == "libao_3") {
-					WanbaData.updatePackageData(obj["buy_libao_list"]);
-					CustomEventMgr.dispatchEventWith("Update Libao View", false);
+		if (obj["result"] == "SUCCESS") {
+			kkH5sdk.callPayPage({
+				transData: obj["transData"],
+				sign: obj["sign"],
+				IframePayClose: function (res) {
+					// addLoadingElements("数据加载中...");
+					// queryOrderStatus(…);
+					console.log("IframePayClose");
+					console.log(res);
+					NetLoading.showLoading();
+					var request = HttpProtocolMgr.refresh_pay_info_116(self.curId);
+					HttpMgr.postRequest(request);
+				},
+				error: function (res) {
+				},
+				IframePayReady: function () {
+					// removeLoadingElements();
+					console.log("IframePayReady");
 				}
-			}
-			DataMgr.checkNews();
-
-			window["mqq"].ui.showDialog({
-				title: "提示",
-				text: "支付成功!请前往邮箱领取物品!",
-				needOkBtn: true,
-				needCancelBtn: false,
-				okBtnText: "确认",
-				cancelBtnText: ""
-			}, function (data) {
-				console.log(data);
-			});
-
-		} else if (obj && obj["result"] == "FAIL" && obj["code"] == 1004) {
-			window["popPayTips"]({
-				defaultScore: obj["need_score"],
-				appid: window["OPEN_DATA"].appid
 			});
 		}
 	}

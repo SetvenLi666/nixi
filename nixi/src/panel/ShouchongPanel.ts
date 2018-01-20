@@ -1,7 +1,3 @@
-var urlData: string = "";
-var tdData: {} = null;
-
-
 class ShouchongPanel extends eui.Component {
 	public group: eui.Group;
 	public bg: eui.Image;
@@ -29,6 +25,8 @@ class ShouchongPanel extends eui.Component {
 	public img_x2_6: eui.Image;
 
 	public tipImg: eui.Image;
+
+	private curId: string = "";
 
 	public constructor() {
 		super();
@@ -172,7 +170,7 @@ class ShouchongPanel extends eui.Component {
 					break;
 			}
 
-			var urlRequest = new egret.URLRequest(ConstData.Conf.WanbaOrderAddr);
+			var urlRequest = new egret.URLRequest(ConstData.Conf.KuaikanOrderAddr);
 			urlRequest.method = egret.URLRequestMethod.POST;
 
 			var order_id = LoginData.uuid + "-" + CommonFunc.curTimeStamp() + "-" + Math.floor(Math.random() * 10) + "" + Math.floor(Math.random() * 10);
@@ -184,13 +182,12 @@ class ShouchongPanel extends eui.Component {
 				virtualCurrencyAmount: data["diam"]
 			});
 
-			urlData = data["id"];
+			self.curId = data["id"];
 
-			urlData = "product_id=" + data["id"] + "&sid=" + LoginData.sid + "&openid=" + window["OPEN_DATA"].openid +
-				"&openkey=" + window["OPEN_DATA"].openkey + "&platform=" + window["OPEN_DATA"].platform;
+			var urlData = "product_id=" + data["id"] + "&sid=" + LoginData.sid + "&uuid=" + LoginData.uuid;
 			urlRequest.data = urlData;
 			var urlLoader = new egret.URLLoader();
-			urlLoader.addEventListener(egret.Event.COMPLETE, this.onLoadComplete, this);
+			urlLoader.addEventListener(egret.Event.COMPLETE, self.onLoadComplete, self);
 			urlLoader.load(urlRequest);
 		});
 	}
@@ -198,20 +195,30 @@ class ShouchongPanel extends eui.Component {
 	private onLoadComplete(evt: egret.Event) {
 		var loader = <egret.URLLoader>evt.target;
 		var obj: {} = JSON.parse(loader.data);
+		var self = this;
+		console.log(obj);
 
-		kkH5sdk.callPayPage({
-			transData: obj["transData"],
-			sign: obj["sign"],
-			IframePayClose: function (res) {
-				// addLoadingElements("数据加载中...");
-				// queryOrderStatus(…);
-			},
-			error: function (res) {
-			},
-			IframePayReady: function () {
-				// removeLoadingElements();
-			}
-		});
+		if (obj["result"] == "SUCCESS") {
+			kkH5sdk.callPayPage({
+				transData: obj["transData"],
+				sign: obj["sign"],
+				IframePayClose: function (res) {
+					// addLoadingElements("数据加载中...");
+					// queryOrderStatus(…);
+					console.log("IframePayClose");
+					console.log(res);
+					NetLoading.showLoading();
+					var request = HttpProtocolMgr.refresh_pay_info_116(self.curId);
+					HttpMgr.postRequest(request);
+				},
+				error: function (res) {
+				},
+				IframePayReady: function () {
+					// removeLoadingElements();
+					console.log("IframePayReady");
+				}
+			});
+		}
 	}
 
 	private touchTap(evt: egret.TouchEvent) {
@@ -226,94 +233,4 @@ class ShouchongPanel extends eui.Component {
 			this.parent.removeChild(this);
 		}
 	}
-}
-
-function paySuccess() {
-	console.log("支付成功");
-	NetLoading.showLoading();
-	var request = HttpProtocolMgr.refresh_pay_info_116(urlData);
-	HttpMgr.postRequest(request);
-}
-
-function payFail() {
-	console.log("支付失败");
-}
-
-
-function __paySuccess() {
-	TDGA.onChargeSuccess(tdData);
-
-	var urlRequest = new egret.URLRequest(ConstData.Conf.WanbaOrderAddr);
-	urlRequest.method = egret.URLRequestMethod.POST;
-	urlRequest.data = urlData;
-	var urlLoader = new egret.URLLoader();
-	urlLoader.addEventListener(egret.Event.COMPLETE, function (evt: egret.Event) {
-		var loader = <egret.URLLoader>evt.target;
-		console.log(loader.data);
-		var obj: {} = JSON.parse(loader.data);
-
-		if (obj["product_id"]) {
-			if (obj["product_id"] == "libao_1" || obj["product_id"] == "libao_2" || obj["product_id"] == "libao_3") {
-				WanbaData.updatePackageData(obj["buy_libao_list"]);
-				CustomEventMgr.dispatchEventWith("Update Libao View", false);
-			} else if (obj["product_id"] == "tiegao_17" || obj["product_id"] == "tiegao_18") {
-				TLDiscountData.resetDL();
-			} else if (obj["product_id"] == "tiegao_9") {
-				Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮箱领取激活!");
-			}
-		}
-
-		if (obj["h5wanba"]) {
-			ShareData.update(obj["h5wanba"]);
-			if ((ShareData.isFirstPay && (ShareData.firstpay_lottery_times == 0))) {
-				var panel = new FirstPayPanel();
-				DisplayMgr.set2Center(panel);
-				egret.MainContext.instance.stage.addChild(panel);
-			} else if ((ShareData.isDailyPay && (ShareData.dailypay_lottery_times == 0 || ShareData.dailypay_normal_times == 0))) {
-				var onePanel = new ScPanel();
-				DisplayMgr.set2Center(onePanel);
-				egret.MainContext.instance.stage.addChild(onePanel);
-			}
-			// CustomEventMgr.dispatchEventWith("Update SC View", false);
-		}
-		DataMgr.checkNews();
-
-	}, null);
-	urlLoader.load(urlRequest);
-
-	window["mqq"].ui.showDialog({
-		title: "提示",
-		text: "支付成功!请前往邮箱领取物品!",
-		needOkBtn: true,
-		needCancelBtn: false,
-		okBtnText: "确认",
-		cancelBtnText: ""
-	}, function (data) {
-		console.log(data);
-	});
-}
-
-
-function __payError() {
-
-	window["mqq"].ui.showDialog({
-		title: "提示",
-		text: "支付取消!",
-		needOkBtn: true,
-		needCancelBtn: false,
-		okBtnText: "确认",
-		cancelBtnText: ""
-	});
-}
-
-function __payClose() {
-
-	window["mqq"].ui.showDialog({
-		title: "提示",
-		text: "支付取消!",
-		needOkBtn: true,
-		needCancelBtn: false,
-		okBtnText: "确认",
-		cancelBtnText: ""
-	});
 }
