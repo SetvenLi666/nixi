@@ -35,40 +35,16 @@ class NewSharePanel extends eui.Component {
 		}
 
 		this.btn_share.addEventListener(egret.TouchEvent.TOUCH_TAP, this.btnCallback, this);
-		this.btn_dis.addEventListener(egret.TouchEvent.TOUCH_TAP, this.closePanel, this);
+		this.btn_dis.addEventListener(egret.TouchEvent.TOUCH_TAP, this.close, this);
 	}
 
 	private btnCallback() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_share, function () {
-			// window["mqq"].ui.shareMessage({
-			// 	title: '逆袭之星途闪耀',
-			// 	desc: '逆袭成为超级巨星，霸道总裁、温柔暖男、绝色男神随你挑！',
-			// 	share_type: 0,
-			// 	share_url: window["OPEN_DATA"].shareurl + "&td_channelid=qqshare",
-			// 	image_url: window["OPEN_DATA"].appicon,
-			// 	back: true
-			// }, function (result) {
-			// 	if (result["retCode"] == 0) {
-			// 		window["mqq"].ui.showTips({
-			// 			text: "分享成功！"
-			// 		});
-			// 		if (ShareData.shareTimes == 0) {
-			// 			var request = HttpProtocolMgr.take_share_reward_175("do_share_reward");
-			// 			HttpMgr.postRequest(request);
-			// 		}
-			// 		ShareData.isShowNewShare = false;
-			// 		CustomEventMgr.dispatchEventWith("Update New Share", false);
-			// 	} else if (result["retCode"] == 1) {
-			// 		window["mqq"].ui.showTips({
-			// 			text: "分享取消！"
-			// 		});
-			// 	}
-			// });
-
+			SoundManager.instance().buttonSound();
 			window["mqq"].ui.shareMessage({
 				title: '逆袭之星途闪耀',
-				desc: '逆袭成为超级巨星，霸道总裁、温柔暖男、绝色男神随你挑！',
+				desc: '给你看个好玩的，快来！',
 				share_type: 0,
 				share_url: window["OPEN_DATA"].shareurl + "&td_channelid=qqshare",
 				image_url: window["OPEN_DATA"].appicon,
@@ -99,6 +75,11 @@ class NewSharePanel extends eui.Component {
 		if (!rectAngle.contains(evt.stageX, evt.stageY)) {
 			this.closePanel();
 		}
+	}
+
+	private close() {
+		SoundManager.instance().buttonSound();
+		this.closePanel();
 	}
 
 	private closePanel() {

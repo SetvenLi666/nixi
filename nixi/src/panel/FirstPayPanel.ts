@@ -113,7 +113,7 @@ class FirstPayPanel extends eui.Component {
 	private playRewardAnimation(reward: number[]) {
 		var new_reward = [];
 		var count = reward.length;
-		for(var i = 0; i < count; i++) {
+		for (var i = 0; i < count; i++) {
 			var item: {} = {
 				type: "clothes",
 				num: reward[i]
@@ -135,6 +135,12 @@ class FirstPayPanel extends eui.Component {
 
 	private closePanel() {
 		if (this.parent) {
+			if (InviteData.isShowInvite) {
+				InviteData.isShowInvite = false;
+				NetLoading.showLoading();
+				var request = HttpProtocolMgr.take_invite_info_165();
+				HttpMgr.postRequest(request);
+			}
 			this.parent.removeChild(this);
 		}
 	}

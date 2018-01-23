@@ -137,6 +137,7 @@ class ShouchongPanel extends eui.Component {
 		var self = this;
 		var target = evt.target;
 		DisplayMgr.buttonScale(evt.target, function () {
+			SoundManager.instance().buttonSound();
 			var data: {} = null;
 			switch (target) {
 				case self.btn_icon1:
@@ -206,13 +207,6 @@ class ShouchongPanel extends eui.Component {
 		var obj: {} = JSON.parse(loader.data);
 
 		if (obj && obj["result"] == "SUCCESS") {
-			//余额足够，无二次请求
-			// if (obj["product_id"]) {
-			// 	if (obj["product_id"] == "libao_1" || obj["product_id"] == "libao_2" || obj["product_id"] == "libao_3") {
-			// 		WanbaData.updatePackageData(obj["buy_libao_list"]);
-			// 		CustomEventMgr.dispatchEventWith("Update Libao View", false);
-			// 	}
-			// }
 			if (obj["h5wanba"]) {
 				ShareData.update(obj["h5wanba"]);
 				if ((ShareData.isFirstPay && (ShareData.firstpay_lottery_times == 0))) {
@@ -278,6 +272,10 @@ function __paySuccess() {
 			if (obj["product_id"] == "libao_1" || obj["product_id"] == "libao_2" || obj["product_id"] == "libao_3") {
 				WanbaData.updatePackageData(obj["buy_libao_list"]);
 				CustomEventMgr.dispatchEventWith("Update Libao View", false);
+			}else if(obj["product_id"] == "tiegao_17" || obj["product_id"] == "tiegao_18") {
+				TLDiscountData.resetDL();
+			}else if(obj["product_id"] == "tiegao_9") {
+				Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮箱领取激活!");
 			}
 		}
 
@@ -309,13 +307,6 @@ function __paySuccess() {
 	}, function (data) {
 		console.log(data);
 	});
-
-	// if (window["OPEN_DATA"] && window["OPEN_DATA"].platform == 2 && window["OPEN_DATA"].qua["app"] == "SQ") {
-	// 	console.log("支付成功！！！");
-	// 	var tip = new IosPayTipPanel();
-	// 	DisplayMgr.set2Center(tip);
-	// 	egret.MainContext.instance.stage.addChild(tip);
-	// }
 }
 
 

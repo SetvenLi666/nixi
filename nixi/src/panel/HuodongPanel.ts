@@ -54,6 +54,7 @@ class HuodongPanel extends eui.Component {
 
 class HuodongPanelRenderer extends eui.ItemRenderer {
 	private imageBg: eui.Image;
+	private tip: eui.Image;
 
 	public constructor() {
 		super();
@@ -69,9 +70,20 @@ class HuodongPanelRenderer extends eui.ItemRenderer {
 
 	protected dataChanged() {
 		this.imageBg.source = this.data.source;
+
+		if(this.data.name == "tili" && (NewsData.energy1 == 1 || NewsData.energy2 == 1)) {
+			this.tip.visible = true;
+			var tw = egret.Tween.get(this.tip, {loop: true});
+			tw.to({ scaleX: 1.05, scaleY: 1.05 }, 300)
+				.to({ scaleX: 1, scaleY: 1 }, 300);
+		}else {
+			this.tip.visible = false;
+			egret.Tween.removeTweens(this.tip);
+		}
 	}
 
 	private onTouch() {
+		SoundManager.instance().buttonSound();
 		var self = this;
 		switch (this.data.name) {
 			case "sc_cj":

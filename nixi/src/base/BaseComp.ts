@@ -65,6 +65,7 @@ class BaseComp extends eui.Component {
 	private onNameClicked() {
 		var self = this;
 		DisplayMgr.buttonScale(this.playerGroup, function () {
+			SoundManager.instance().buttonSound();
 			var setPanel = new SetPanel();
 			DisplayMgr.set2Center(setPanel);
 			self.stage.addChild(setPanel);
@@ -75,6 +76,7 @@ class BaseComp extends eui.Component {
 	private onCoinClicked() {
 		var self = this;
 		DisplayMgr.buttonScale(this.coinGroup, function () {
+			SoundManager.instance().buttonSound();
 			var coinPanel = new ExchangePanel("coin");
 			DisplayMgr.set2Center(coinPanel);
 			self.stage.addChild(coinPanel);
@@ -83,6 +85,7 @@ class BaseComp extends eui.Component {
 
 	private onDiamClicked() {
 		DisplayMgr.buttonScale(this.diamGroup, function () {
+			SoundManager.instance().buttonSound();
 			NetLoading.showLoading();
 			var request: egret.URLRequest = HttpProtocolMgr.all_products_100();
 			HttpMgr.postRequest(request);
@@ -92,6 +95,7 @@ class BaseComp extends eui.Component {
 	private onEnergyClicked() {
 		var self = this;
 		DisplayMgr.buttonScale(this.energyGroup, function () {
+			SoundManager.instance().buttonSound();
 			var energyPanel = new ExchangePanel("energy");
 			DisplayMgr.set2Center(energyPanel);
 			self.stage.addChild(energyPanel);
@@ -101,6 +105,7 @@ class BaseComp extends eui.Component {
 	private onPlayerGroup() {
 		var self = this;
 		DisplayMgr.buttonScale(this.playerGroup, function() {
+			SoundManager.instance().buttonSound();
 			var panel = new SetPanel();
 			DisplayMgr.set2Center(panel);
 			self.stage.addChild(panel);

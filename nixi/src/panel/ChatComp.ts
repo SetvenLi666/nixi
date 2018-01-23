@@ -39,10 +39,10 @@ class ChatComp extends eui.Component {
 
 		this.list.dataProvider = ChatData.msg;
 		this.list.itemRenderer = ChatItemRenderer;
-		if (this.list.contentHeight < 490) {
-			this.scroller.touchEnabled = false;
-			this.scroller.touchChildren = false;
-		}
+		// if (this.list.contentHeight < 630) {
+		// 	this.scroller.touchEnabled = false;
+		// 	this.scroller.touchChildren = false;
+		// }
 		this.scroller.validateNow();
 		this.scroller.viewport.scrollV = this.scroller.viewport.contentHeight - this.scroller.viewport.height;
 	}
@@ -56,13 +56,13 @@ class ChatComp extends eui.Component {
 		this.scroller.validateNow();
 		this.scroller.viewport.scrollV = this.scroller.viewport.contentHeight - this.scroller.viewport.height;
 
-		if (this.list.contentHeight <= 630) {
-			this.scroller.touchEnabled = false;
-			this.scroller.touchChildren = false;
-		} else {
-			this.scroller.touchEnabled = true;
-			this.scroller.touchChildren = true;
-		}
+		// if (this.list.contentHeight < 630) {
+		// 	this.scroller.touchEnabled = false;
+		// 	this.scroller.touchChildren = false;
+		// } else {
+		// 	this.scroller.touchEnabled = true;
+		// 	this.scroller.touchChildren = true;
+		// }
 
 		if (evt.data["channel"] && evt.data["channel"] == 1) {
 			// this.noticeText.text = evt.data["name"] + ": " + evt.data["chat"];
@@ -84,6 +84,7 @@ class ChatComp extends eui.Component {
 	}
 
 	private onSend() {
+		SoundManager.instance().buttonSound();
 		if (this.editText.text == "") {
 			Prompt.showPrompt(this.stage, "发送内容不可为空!");
 		} else {
@@ -136,6 +137,7 @@ class ChatComp extends eui.Component {
 	}
 
 	private onSend2() {
+		SoundManager.instance().buttonSound();
 		if (this.editText.text == "") {
 
 		} else {
@@ -180,6 +182,8 @@ class ChatItemRenderer extends eui.ItemRenderer {
 
 	protected createChildren() {
 		super.createChildren();
+
+		this.nicknameLabel.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
 	}
 
 	protected dataChanged() {
@@ -209,6 +213,12 @@ class ChatItemRenderer extends eui.ItemRenderer {
 		label.size = 20;
 		label.height = 20;
 		return label.width;
+	}
+
+	private onTouch() {
+		var panel = new FindPanelComp(this.data.name);
+		DisplayMgr.set2Center(panel);
+		this.stage.addChild(panel);
 	}
 }
 

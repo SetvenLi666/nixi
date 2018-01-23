@@ -30,7 +30,7 @@ class PurchaseData {
         this._deals = obj["deals"];
 
         if(obj["cards"]) {
-            this._cards = obj["cards"];
+            this._cards = obj["cards"]["2"];
         }
     }
 

@@ -152,6 +152,18 @@ class Main extends egret.DisplayObjectContainer {
     protected startCreateScene(): void {
         //初始化依赖模块
         this.initGameDependance();
+        this.stage.addEventListener(egret.Event.ACTIVATE, this.playMusic, this);
+        this.stage.addEventListener(egret.Event.DEACTIVATE, this.pauseMusic, this);
+    }
+
+    private playMusic() {
+        console.log("play");
+        SoundManager.instance().replaySound();
+    }
+
+    private pauseMusic() {
+        console.log("pause");
+        SoundManager.instance().pauseSound();
     }
 
     private initGameDependance() {
@@ -160,7 +172,8 @@ class Main extends egret.DisplayObjectContainer {
         window["OPEN_DATA"] = {
             openid: "aaaa",
             openkey: "bbbbb",
-            platform: 1
+            platform: 1,
+            qua: {meybeQua: "pc"}
         }
 
         LoginData.config_UUID();
@@ -207,7 +220,7 @@ class Main extends egret.DisplayObjectContainer {
         window["mqq"].ui.setOnShareHandler(function (type) {
             window["mqq"].ui.shareMessage({
                 title: '逆袭之星途闪耀',
-                desc: '逆袭成为超级巨星，霸道总裁、温柔暖男、绝色男神随你挑！',
+                desc: '给你看个好玩的，快来！',
                 share_type: type,
                 share_url: window["OPEN_DATA"].shareurl,
                 image_url: window["OPEN_DATA"].appicon,

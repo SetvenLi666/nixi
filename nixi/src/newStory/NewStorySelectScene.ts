@@ -49,6 +49,8 @@ class NewStorySelectScene extends eui.Component {
 			guidePanel.playAnimation();
 			CustomEventMgr.addEventListener("Guide_Step_5_3", this.onBegin, this);
 		}
+
+		SoundManager.instance().startBgSound("story");
 	}
 
 	private onExit() {
@@ -59,11 +61,13 @@ class NewStorySelectScene extends eui.Component {
 	}
 
 	private onGroupTouch() {
+		SoundManager.instance().buttonSound();
 		Prompt.showPrompt(this.stage, "请先通关星途闪耀");
 	}
 
 	private onBegin() {
 		DisplayMgr.buttonScale(this.btn_begin, function() {
+			SoundManager.instance().buttonSound();
 			NetLoading.showLoading();
 			var request: egret.URLRequest = HttpProtocolMgr.fetchMissionData_600();
 			HttpMgr.postRequest(request);
@@ -72,6 +76,8 @@ class NewStorySelectScene extends eui.Component {
 
 	private onBack() {
 		DisplayMgr.buttonScale(this.btn_back, function() {
+			SoundManager.instance().buttonSound();
+			SoundManager.instance().destroyStartSound();
 			SceneMgr.gotoMainScene();
 		});
 	}

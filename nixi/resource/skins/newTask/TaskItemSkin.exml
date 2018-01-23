@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="TaskItemSkin" width="134" height="128" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="state_0,state_1,state_2,state_3,state_4,state_5" >
 	<e:Image id="item_bg" horizontalCenter="0" top="0" source="task_ui_json.task_item_bg_1"/>
-	<e:Image id="num_center" y="33" horizontalCenter="0" source="task_ui_json.task_num_0" visible="false"/>
-	<e:Image id="num_right" y="33" horizontalCenter="18" source="task_ui_json.task_num_8" visible="false"/>
-	<e:Image id="num_left" source="task_ui2_json.task_num_1" y="33" horizontalCenter="-18" visible="false"/>
+	<e:Group id="numGroup" width="97" height="45" y="33" horizontalCenter="0">
+		<e:layout>
+			<e:HorizontalLayout verticalAlign="middle" gap="-5" horizontalAlign="center"/>
+		</e:layout>
+	</e:Group>
 	<e:Image id="item_lock" horizontalCenter="0" top="0" source="task_ui_json.task_item_lock"/>
 	<e:Image horizontalCenter="0" bottom="0" source="task_ui_json.task_item_stars_bar"/>
 	<e:Image includeIn="state_1,state_2,state_3,state_4,state_5" y="64" x="-1" source="task_ui_json.task_item_star_1"/>

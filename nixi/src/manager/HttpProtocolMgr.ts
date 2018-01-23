@@ -84,6 +84,12 @@ class HttpProtocolMgr {
         return this.newRequest("820", JSON.stringify(data));
     }
 
+    static delete_friend_813(id: string): egret.URLRequest {
+        var data: {} = {};
+        data["other"] = id;
+        return this.newRequest("813", JSON.stringify(data));
+    }
+
     static delete_paper_811(id: string): egret.URLRequest  {
         var data: {} = {};
         data["id"] = id;
@@ -314,6 +320,16 @@ class HttpProtocolMgr {
         return this.newRequest("400", "");
     }
 
+    static take_shuangdan_reward_341(id: string) {
+        var data: {} = {};
+        data["id"] = id;
+        return this.newRequest("341", JSON.stringify(data));
+    }
+
+    static take_shuangdanSign_info_340() {
+        return this.newRequest("340", "");
+    }
+
     static commit_daily_signin_323() {
         var data: {} = {};
         data["id"] = 1;
@@ -500,7 +516,7 @@ class HttpProtocolMgr {
 
     static take_monthly_card2_daily_reward_157() {
         var data = {};
-        data["id"] = 3; 
+        // data["id"] = 3; 
         data["extra"] = CommonFunc.curTimeStamp();
         return this.newRequest("157", JSON.stringify(data));
     }
@@ -524,6 +540,43 @@ class HttpProtocolMgr {
         data["product_id"] = product_id;
         data["extra"] = CommonFunc.curTimeStamp();
         return this.newRequest("121", JSON.stringify(data));
+    }
+
+    static take_tujian_reward_115(id: string) {
+        var data = {};
+        data["id"] = id;
+        data["extra"] = CommonFunc.curTimeStamp();
+        return this.newRequest("115", JSON.stringify(data));
+    }
+
+    static fetchTujianData_114() {
+        var data = {};
+        data["extra"] = CommonFunc.curTimeStamp();
+        return this.newRequest("114", JSON.stringify(data));
+    }
+
+    static take_free_30_reward_112() {
+        var data = {};
+        data["extra"] = CommonFunc.curTimeStamp();
+        return this.newRequest("112", JSON.stringify(data));
+    }
+
+    static take_free_6_reward_110() {
+        var data = {};
+        data["extra"] = CommonFunc.curTimeStamp();
+        return this.newRequest("110", JSON.stringify(data));
+    }
+
+    static take_invite_clothes_reward_108() {
+        var data = {};
+        data["extra"] = CommonFunc.curTimeStamp();
+        return this.newRequest("108", JSON.stringify(data));
+    }
+
+    static take_timelimitDiscount_info_106(type: number) {
+        var data = {};
+        data["type"] = type;
+        return this.newRequest("106", JSON.stringify(data));
     }
 
     static take_package_info_104() {

@@ -302,11 +302,17 @@ declare class HuodongPanelRendererSkin extends eui.Skin{
 }
 declare class HuodongPanelSkin extends eui.Skin{
 }
+declare class InviteFreeRewardPanelSkin extends eui.Skin{
+}
 declare class InviteItemRendererSkin extends eui.Skin{
 }
 declare class InvitePanelSkin extends eui.Skin{
 }
 declare class IosPayTipPanelSkin extends eui.Skin{
+}
+declare class LimitDiscountPanelSkin extends eui.Skin{
+}
+declare class MonthCardPanelSkin extends eui.Skin{
 }
 declare class NewSharePanelSkin extends eui.Skin{
 }
@@ -316,9 +322,23 @@ declare class RewardItemSkin extends eui.Skin{
 }
 declare class ScPanelSkin extends eui.Skin{
 }
+declare class ShuangdanItemSkin extends eui.Skin{
+}
+declare class ShuangdanSignPanelSkin extends eui.Skin{
+}
 declare class StarsRewardPanelSkin extends eui.Skin{
 }
 declare class ThirdPanelSkin extends eui.Skin{
+}
+declare class TujianItemSkin extends eui.Skin{
+}
+declare class TujianPanelSkin extends eui.Skin{
+}
+declare class PerfectTipItemSkin extends eui.Skin{
+}
+declare class TaskPerfectTipPanelSkin extends eui.Skin{
+}
+declare class DeleteFriendPanelSkin extends eui.Skin{
 }
 declare class OpenPanelSkin extends eui.Skin{
 }

@@ -6,6 +6,8 @@ class NewTaskComp extends eui.Component {
 	public list: eui.List;
 	public pgComp: NewProgressbarComp;
 	public upgradeTip: eui.Label;
+	public tipLabel: eui.Label;
+	public tipGroup: eui.Group;
 
 	private phase: number = 1;
 	private index: number = 1;
@@ -21,6 +23,10 @@ class NewTaskComp extends eui.Component {
 			this.index = index - 20;
 		}else if(phase == 3) {
 			this.index = index - 52;
+		}else if(phase == 4) {
+			this.index = index - 89;
+		}else if(phase == 5) {
+			this.index = index - 129;
 		}
 		
 		this.addEventListener(egret.Event.ADDED_TO_STAGE, this.addStage, this);
@@ -48,7 +54,14 @@ class NewTaskComp extends eui.Component {
 		}
 		
 		this.upgradeTip.text = PlayerData.phaseRating(this.phase) + "/" + TaskData.totalMissionData()[parseInt(itemsArr[itemsArr.length - 1]) - 1]["upgrade"];
-		
+		var need_stars = (parseInt(TaskData.totalMissionData()[parseInt(itemsArr[itemsArr.length - 1]) - 1]["upgrade"]) - PlayerData.phaseRating(this.phase));
+		if(need_stars <= 0) {
+			this.tipGroup.visible = false;
+		}else {
+			this.tipGroup.visible = true;
+			this.tipLabel.text = "" + need_stars;
+		}
+
 		itemsArr.reverse();
 		this.list.dataProvider = new eui.ArrayCollection(itemsArr);
 		this.list.itemRenderer = TaskItemRenderer;

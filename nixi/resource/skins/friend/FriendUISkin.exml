@@ -15,5 +15,6 @@
 		<e:Image id="btn_stranger" y="1025" source="social_m_stg_png" right="10"/>
 		<e:Image id="btn_rank" y="1020" source="social_m_rnk_png" x="720" visible="false"/>
 		<e:Image id="btn_chat" source="qipao_png" y="840.67" left="17" visible="false"/>
+		<e:Image source="social_chat_tip_png" y="992.39" left="3"/>
 	</e:Group>
 </e:Skin>

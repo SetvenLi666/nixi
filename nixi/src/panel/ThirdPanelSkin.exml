@@ -13,6 +13,9 @@
 		<ns1:SignItemComp id="item_7" xmlns:ns1="*" y="686.01" skinName="SignItemSkin" horizontalCenter="180.65999999999997"/>
 		<ns1:SignItemComp id="item_8" y="686.01" skinName="SignItemSkin" horizontalCenter="8"/>
 		<e:Image y="215.32" horizontalCenter="94.5" source="ac_res_json.ac_30_text"/>
-		<e:Image id="btn_rev" y="862.92" horizontalCenter="94.5" source="shopUI_json.shop_ui_buy"/>
+		<e:Image source="libao_kuang_png" y="840" horizontalCenter="190"/>
+		<e:Label id="label_count" text="0/10" y="840" horizontalCenter="190" size="22" textColor="0x00B4FF"/>
+		<e:Image id="btn_invite" source="libao_btn_invite_png" y="795.67" horizontalCenter="190"/>
+		<e:Image id="btn_rev" y="870" horizontalCenter="190" source="shopUI_json.shop_ui_buy"/>
 	</e:Group>
 </e:Skin>

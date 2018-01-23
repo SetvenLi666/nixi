@@ -26,19 +26,19 @@ class ShareData {
 	private static _can_take_zhuanshu_gift: boolean = false; //QQ空间专属礼包领取状态
 	private static _isShowGift: boolean = true;     //是否弹出礼包
 	private static _gift_reward_list: {} = {
-		"1": { diam: 10},
-		"2": { diam: 10},
+		"1": { diam: 10 },
+		"2": { diam: 10 },
 		"3": { coin: 300 },
 		"4": { coin: 300 },
 		"5": { diam: 10, coin: 300 },
 		"6": { diam: 10, tili: 60 },
 		"7": { diam: 10, tili: 60 },
-		"101": {diam: 100},
-		"201": {diam: 50}
+		"101": { diam: 100 },
+		"201": { diam: 50 }
 	};
 
 	public static update(obj: {}) {
-		if(obj == null) {
+		if (obj == null) {
 			console.log("sharedata is null !");
 			return;
 		}
@@ -153,5 +153,62 @@ class ShareData {
 
 	public static set isShowScPop(value: boolean) {
 		this._isShowScPop = value;
+	}
+
+	public static get shareDesc(): string {
+		var descList: string[] = [
+			"“你最怕什么？”“那种突然而又不负责任的喜欢。”",
+			"洗澡的时候有人突然闯进来……肿木办……",
+			"世界之大，总有一款男神适合你",
+			"细腰和翘臀哪个对男生更诱惑？",
+			"惊！女生最喜欢的三类男神原来是这样",
+			"一个她与三个他的故事，辣眼慎入",
+			"当别人说你丑时，如何怒怼回去？",
+			"“男神，你有什么技能？”……“有钱”",
+			"只要这样打扮，一定有人来撩……",
+			"明星成长记，请注意睡姿……",
+			"你的衣服出卖了你自己，尤其是内衣",
+			"有人@你，你的单身故事已被曝光啦！",
+			"这一瞬间，我觉得他“们”超爱我！"
+		];
+
+		return descList[Math.floor(Math.random() * 13) + 1]
+	}
+
+	public static share(type: string) {
+		var desc: string = "";
+		switch(type) {
+			case "task":
+			desc = '这点小事难不倒我！';
+			break;
+			case "story":
+			desc = '我的男神，我来了！';
+			break;
+			case "pk":
+			desc = '你们这些凡人！在我的裙摆下臣服吧';
+			break;
+			case "shuangdan":
+			desc = "这游戏疯了这么漂亮的衣服白送！";
+			break;
+		}
+
+		window["mqq"].ui.shareMessage({
+			title: '逆袭之星途闪耀',
+			desc: desc,
+			share_type: 0,
+			share_url: window["OPEN_DATA"].shareurl + "&td_channelid=qqshare",
+			image_url: window["OPEN_DATA"].appicon,
+			back: true
+		}, function (result) {
+			if (result["retCode"] == 0) {
+				window["mqq"].ui.showTips({
+					text: "分享成功！"
+				});
+			} else if (result["retCode"] == 1) {
+				window["mqq"].ui.showTips({
+					text: "分享取消！"
+				});
+			}
+		});
 	}
 }

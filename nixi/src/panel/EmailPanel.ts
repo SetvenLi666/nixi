@@ -29,7 +29,7 @@ class EmailPanel extends eui.Component {
 		this.mail_list.itemRenderer = EmailListRenderer;
 
 		CustomEventMgr.addEventListener("701", this.result_of_701, this);
-		
+
 	}
 
 	private onExit() {
@@ -53,45 +53,53 @@ class EmailPanel extends eui.Component {
 		NetLoading.removeLoading();
 		CustomEventMgr.dispatchEventWith("Update Player Info", false);
 
-		if(evt.data.info["oper"] == 1) {
+		if (evt.data.info["oper"] == 1) {
 			this.updateMailList(evt.data.info["id"], evt.data.info["oper"]);
-			if(evt.data.reward["clothes"]) {
-				this.playRewardAnimation(evt.data.reward["clothes"]);
-			}else {
-				Prompt.showPrompt(egret.MainContext.instance.stage, "领取成功");
+			if (evt.data.reward) {
+				if(evt.data.reward["clothes"]) {
+					this.playRewardAnimation(evt.data.reward);
+				}else {
+					Prompt.showPrompt(egret.MainContext.instance.stage, "领取成功");
+				}
 			}
-		}else {
+		} else {
 			this.updateMailList(evt.data.info["id"], evt.data.info["oper"]);
 		}
 	}
 
 	private updateMailList(id: number, oper: number) {
 		var length = MailData.mailArray.length;
-		for(var i = length - 1; i >= 0; i--) {
+		for (var i = length - 1; i >= 0; i--) {
 			var obj = MailData.mailArray[i];
-			if(obj["id"] == id) {
+			if (obj["id"] == id) {
 				MailData.mailArray.splice(i, 1);
 			}
 		}
 		this.mail_list.dataProvider = new eui.ArrayCollection(MailData.mailArray);
 		this.mail_list.dataProviderRefreshed();
 
-		if(MailData.mailArray.length == 0) {
+		if (MailData.mailArray.length == 0) {
 			this.tip.visible = true;
 		}
 	}
 
-	private playRewardAnimation(reward: number[]) {
+	private playRewardAnimation(data: {}) {
 		this.reward = [];
-		this.count = reward.length;
-		for(var i = 0; i < this.count; i++) {
-			var item: {} = {
-				type: "clothes",
-				num: reward[i]
+		for (var i in data) {
+			if (i == "clothes") {
+				var leng = data["clothes"].length;
+				for (var j = 0; j < leng; j++) {
+					var item: {} = {
+						type: "clothes",
+						num: data[i][j]
+					}
+					this.reward.push(item);
+				}
+			} else {
+				var item: {} = { type: i, num: data[i] };
+				this.reward.push(item);
 			}
-			this.reward.push(item);
 		}
-
 		var panel = new CommonRewardPanel(this.reward);
 		DisplayMgr.set2Center(panel);
 		this.stage.addChild(panel);
@@ -129,9 +137,9 @@ class EmailListRenderer extends eui.ItemRenderer {
 		this.title.text = this.data["title"];
 		this.content.text = this.data["content"];
 
-		if(this.data["sender"] == "sys_order") {
+		if (this.data["sender"] == "sys_order") {
 			this.btn_delete.visible = false;
-		}else {
+		} else {
 			this.btn_delete.visible = true;
 		}
 
@@ -179,12 +187,14 @@ class EmailListRenderer extends eui.ItemRenderer {
 	}
 
 	private onDelete() {
+		SoundManager.instance().buttonSound();
 		NetLoading.showLoading();
 		var request: egret.URLRequest = HttpProtocolMgr.response_mail_701(this.data.id, 2);
 		HttpMgr.postRequest(request);
 	}
 
 	private onReceive() {
+		SoundManager.instance().buttonSound();
 		NetLoading.showLoading();
 		var request: egret.URLRequest = HttpProtocolMgr.response_mail_701(this.data.id, 1);
 		HttpMgr.postRequest(request);

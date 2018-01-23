@@ -1,11 +1,11 @@
 {
 	"groups": [
 		{
-			"keys": "circle_png,login_bg_png,login_logo_png,login_start_png,login_shazi_png,login_star_png,nickname_input_bg_png,nickname_box_png,nickname_btn_ok_png,loadign_star_png",
+			"keys": "circle_png,login_bg_png,login_logo_png,login_start_png,login_shazi_png,login_star_png,nickname_input_bg_png,nickname_box_png,nickname_btn_ok_png,loadign_star_png,loading_bg_png,login_text_png",
 			"name": "login"
 		},
 		{
-			"keys": "common_json,netloading_json,netloading_png,tapflag_png,tapflag_json,common_bg_png,btn_yes_png,btn_no_png,learn2_json,blanked_json,clothes_json,prompt_bar_png,bnt_send_png,btn_find_png,common_back_png",
+			"keys": "common_json,netloading_json,netloading_png,tapflag_png,tapflag_json,common_bg_png,btn_yes_png,btn_no_png,learn2_json,blanked_json,clothes_json,prompt_bar_png,bnt_send_png,btn_find_png,common_back_png,task_serial_json,button_wav",
 			"name": "common"
 		},
 		{
@@ -13,7 +13,7 @@
 			"name": "base"
 		},
 		{
-			"keys": "clothes_tags_json,clothes_tags_b_json,dressUI_json",
+			"keys": "clothes_tags_json,clothes_tags_b_json,dressUI_json,task_perfect_tip_json,phase_bg_5_png,phase_bg_4_png,phase_bg_3_png,phase_bg_2_png,phase_bg_1_png",
 			"name": "dress"
 		},
 		{
@@ -25,11 +25,11 @@
 			"name": "story_act"
 		},
 		{
-			"keys": "clothes_tags_json,clothes_flag_png,mission_json,task_ac_json,task_unlock_bg_png,task_ui_json,task_title_bar_png,task_text_bg_bar_png,task_reward_icon_png,task_reward_bg_png,task_rat_iconBg_png,task_name_bar_png,task_icon_xt_png,task_flag_yihuode_png,task_btn_go_png,task_btn_back_png,task_bar_tili_png,task_upgrade_box_png,task_pg_thumb_png,task_pg_star_png,task_pg_box3_2_png,task_pg_box3_1_png,task_pg_box2_2_png,task_pg_box2_1_png,task_pg_box1_2_png,task_pg_box1_1_png,task_pg_bg_png,mission_1_json,mission_2_json,shop_bg_png,mission_3_json",
+			"keys": "clothes_tags_json,clothes_flag_png,mission_json,task_ac_json,task_unlock_bg_png,task_ui_json,task_title_bar_png,task_text_bg_bar_png,task_reward_icon_png,task_reward_bg_png,task_rat_iconBg_png,task_name_bar_png,task_icon_xt_png,task_flag_yihuode_png,task_btn_go_png,task_btn_back_png,task_bar_tili_png,task_upgrade_box_png,task_pg_thumb_png,task_pg_star_png,task_pg_box3_2_png,task_pg_box3_1_png,task_pg_box2_2_png,task_pg_box2_1_png,task_pg_box1_2_png,task_pg_box1_1_png,task_pg_bg_png,mission_1_json,mission_2_json,shop_bg_png,mission_3_json,mission_5_json,mission_4_json",
 			"name": "task"
 		},
 		{
-			"keys": "weishangbang_png,send_finish_png,refresh_png,num_9_png,num_8_png,num_7_png,num_6_png,num_5_png,num_4_png,num_3_png,num_2_png,num_1_png,num_0_png,note_panel_png,find_kuang_png,rank_bg_1_png,text_collected_nor_png,rl_text_competition_png",
+			"keys": "weishangbang_png,send_finish_png,refresh_png,num_9_png,num_8_png,num_7_png,num_6_png,num_5_png,num_4_png,num_3_png,num_2_png,num_1_png,num_0_png,note_panel_png,find_kuang_png,rank_bg_1_png,text_collected_nor_png,rl_text_competition_png,phase_bg_4_png",
 			"name": "friend_common"
 		},
 		{
@@ -45,15 +45,15 @@
 			"name": "pk"
 		},
 		{
-			"keys": "shopUI_json,shop_bg_png",
+			"keys": "shopUI_json,shop_bg_png,buy_wav",
 			"name": "shop"
 		},
 		{
-			"keys": "social_chat_bg_png,social_chat_blue_png,social_chat_close_png,social_chat_fans_png,social_chat_input_bg_png,social_chat_note_bg_png,social_chat_red_png,social_chat_send_nor_png,social_chat_world_png,social_chat_yellow_png,social_m_frd_png,social_m_msg_png,social_m_not_png,social_m_rnk_png,social_m_stg_png",
+			"keys": "social_chat_bg_png,social_chat_blue_png,social_chat_close_png,social_chat_input_bg_png,social_chat_note_bg_png,social_chat_send_nor_png,social_m_frd_png,social_m_msg_png,social_m_not_png,social_m_rnk_png,social_m_stg_png,social_bg_png",
 			"name": "friend"
 		},
 		{
-			"keys": "gl_gebo_png,gj_lian_png,gj_man_png,40000_png,30000_png,10009_png,10000_png,shower_blink_4_png,shower_blink_3_png,shower_blink_2_png,shower_blink_1_png,ac_page_tl_png,ac_page_cj_png,ac_page_qd_png,panel_ui_json,newmain_ui_json,ac_res_json",
+			"keys": "gl_gebo_png,gj_lian_png,gj_man_png,40000_png,30000_png,10009_png,10000_png,shower_blink_4_png,shower_blink_3_png,shower_blink_2_png,shower_blink_1_png,ac_page_tl_png,ac_page_cj_png,ac_page_qd_png,panel_ui_json,ac_res_json,flip_wav,pop_wav,newmain_ui_json",
 			"name": "main"
 		},
 		{
@@ -191,10 +191,6 @@
 		{
 			"keys": "rank_title_first_png,rank_panel_bg_png,rank_jj_sel_png,rank_jj_nor_png,rank_item_bg_thd_png,rank_item_bg_sed_png,rank_item_bg_other_png,rank_item_bg_first_png,rank_flag_thd_png,rank_flag_sed_png,rank_flag_other_png,rank_flag_color_png,rank_dp_sel_png,rank_dp_nor_png,rank_btn_pk_png",
 			"name": "new_rank"
-		},
-		{
-			"name": "preload",
-			"keys": "social_chat_send_vip_png,chat_common_bg_png,gashapon_flag_png,gashapon_text_1_png,gashapon_text_2_png"
 		}
 	],
 	"resources": [
@@ -8291,11 +8287,6 @@
 			"name": "70811_png"
 		},
 		{
-			"url": "game/clothes/7shipin/70812.png",
-			"type": "image",
-			"name": "70812_png"
-		},
-		{
 			"url": "game/clothes/7shipin/70813.png",
 			"type": "image",
 			"name": "70813_png"
@@ -8966,11 +8957,6 @@
 			"name": "71253_png"
 		},
 		{
-			"url": "game/clothes/7shipin/71258.png",
-			"type": "image",
-			"name": "71258_png"
-		},
-		{
 			"url": "game/clothes/7shipin/71254.png",
 			"type": "image",
 			"name": "71254_png"
@@ -8999,11 +8985,6 @@
 			"url": "game/clothes/7shipin/71264.png",
 			"type": "image",
 			"name": "71264_png"
-		},
-		{
-			"url": "game/clothes/7shipin/71268.png",
-			"type": "image",
-			"name": "71268_png"
 		},
 		{
 			"url": "game/clothes/7shipin/71269.png",
@@ -14691,11 +14672,6 @@
 			"name": "icon70311_png"
 		},
 		{
-			"url": "game/dress/icon/7shipin/icon70312.png",
-			"type": "image",
-			"name": "icon70312_png"
-		},
-		{
 			"url": "game/dress/icon/7shipin/icon70321.png",
 			"type": "image",
 			"name": "icon70321_png"
@@ -17738,7 +17714,7 @@
 			"url": "game/main/newMain/newmain_ui.json",
 			"type": "sheet",
 			"name": "newmain_ui_json",
-			"subkeys": "main_ac_bg,main_ac_black,main_ac_kuang,main_ac_label,main_ac_shouchong,main_ac_star,main_bg,main_chat_bg,main_chat_blue,main_chat_inputbg,main_chat_red,main_chat_send,main_chat_yellow,main_coin_1,main_coin_30,main_coin_6,main_coin_text_1,main_coin_text_30,main_coin_text_6,main_daily_icon,main_dailytarget_ac,main_dailytarget_icon,main_dailytarget_text,main_dialy_text,main_gashapon,main_go,main_huodong_icon,main_huodong_text,main_invite_icon,main_invite_text,main_jj_1,main_jj_2,main_jj_3,main_jj_bg,main_lab_pk,main_lab_shop,main_lab_social,main_lab_xintu,main_lab_yule,main_leiji_icon,main_leiji_text,main_libao_1,main_libao_30,main_libao_6,main_mail,main_mail_text,main_mail_tip,main_niudan_box,main_niudan_pkq,main_niudan_text,main_normal_ac,main_sd_1,main_sd_2,main_sd_3,main_sd_bg,main_selected_ac,main_share_icon,main_share_text,main_shoucang_icon,main_shoucang_text,main_shouchong_text,main_sj_1,main_sj_2,main_sj_3,main_sj_bg,main_talk_bg,main_ui_cz_bg,main_ui_cz_text,main_xt_1,main_xt_2,main_xt_3,main_xt_bg,main_yule_1,main_yule_2,main_yule_3,main_yule_bg"
+			"subkeys": "main_ac_kuang,main_ball_bg,main_bg,main_chat_blue,main_chat_inputbg,main_chat_red,main_chat_send,main_chat_yellow,main_coin_1,main_coin_30,main_coin_6,main_coin_text_1,main_coin_text_30,main_coin_text_6,main_daily_icon,main_dailytarget_ac,main_dailytarget_icon,main_dailytarget_text,main_dialy_text,main_free_text,main_gashapon,main_huodong_icon,main_huodong_text,main_invite_icon,main_invite_text,main_item_di,main_jj_3,main_lab_pk,main_lab_shop,main_lab_social,main_lab_xintu,main_lab_yule,main_leiji_icon,main_leiji_text,main_libao_1,main_libao_30,main_libao_6,main_mail,main_mail_text,main_mail_tip,main_mc_icon,main_mc_text,main_niudan_box,main_niudan_pkq,main_niudan_text,main_normal_ac,main_sd_3,main_selected_ac,main_share_icon,main_share_text,main_shoucang_icon,main_shoucang_text,main_shouchong_text,main_sj_3,main_talk_bg,main_text_bg,main_tl_icon,main_tl_text,main_ui_cz_bg,main_ui_cz_text,main_xt_3,main_yule_3"
 		},
 		{
 			"url": "game/main/ac/ac_res.json",
@@ -17827,29 +17803,2724 @@
 			"name": "invite_kuang_png"
 		},
 		{
-			"name": "social_chat_send_vip_png",
+			"url": "game/social/social_chat_send_vip.png",
 			"type": "image",
-			"url": "game/social/social_chat_send_vip.png"
+			"name": "social_chat_send_vip_png"
 		},
 		{
-			"name": "chat_common_bg_png",
+			"url": "game/panel/chat/chat_common_bg.png",
 			"type": "image",
-			"url": "game/panel/chat/chat_common_bg.png"
+			"name": "chat_common_bg_png"
 		},
 		{
-			"name": "gashapon_flag_png",
+			"url": "game/panel/gashapon/new/gashapon_flag.png",
 			"type": "image",
-			"url": "game/panel/gashapon/new/gashapon_flag.png"
+			"name": "gashapon_flag_png"
 		},
 		{
-			"name": "gashapon_text_1_png",
+			"url": "game/panel/gashapon/new/gashapon_text_1.png",
 			"type": "image",
-			"url": "game/panel/gashapon/new/gashapon_text_1.png"
+			"name": "gashapon_text_1_png"
 		},
 		{
-			"name": "gashapon_text_2_png",
+			"url": "game/panel/gashapon/new/gashapon_text_2.png",
 			"type": "image",
-			"url": "game/panel/gashapon/new/gashapon_text_2.png"
+			"name": "gashapon_text_2_png"
+		},
+		{
+			"url": "game/main/newMain/reward_pop_bg_1.png",
+			"type": "image",
+			"name": "reward_pop_bg_1_png"
+		},
+		{
+			"url": "game/main/newMain/reward_pop_bg_2.png",
+			"type": "image",
+			"name": "reward_pop_bg_2_png"
+		},
+		{
+			"url": "game/main/newMain/reward_pop_bg_3.png",
+			"type": "image",
+			"name": "reward_pop_bg_3_png"
+		},
+		{
+			"url": "game/main/newMain/reward_pop_flag_1.png",
+			"type": "image",
+			"name": "reward_pop_flag_1_png"
+		},
+		{
+			"url": "game/main/newMain/reward_pop_flag_2.png",
+			"type": "image",
+			"name": "reward_pop_flag_2_png"
+		},
+		{
+			"url": "game/main/newMain/reward_pop_flag_3.png",
+			"type": "image",
+			"name": "reward_pop_flag_3_png"
+		},
+		{
+			"url": "game/social/frd/frd_btn_revEng.png",
+			"type": "image",
+			"name": "frd_btn_revEng_png"
+		},
+		{
+			"url": "game/social/frd/frd_btn_rev_text_bg.png",
+			"type": "image",
+			"name": "frd_btn_rev_text_bg_png"
+		},
+		{
+			"url": "game/login/loading_bg.png",
+			"type": "image",
+			"name": "loading_bg_png"
+		},
+		{
+			"url": "game/panel/tl/tl_num_100.png",
+			"type": "image",
+			"name": "tl_num_100_png"
+		},
+		{
+			"url": "game/panel/tl/tl_num_120.png",
+			"type": "image",
+			"name": "tl_num_120_png"
+		},
+		{
+			"url": "game/panel/tl/tl_num_300.png",
+			"type": "image",
+			"name": "tl_num_300_png"
+		},
+		{
+			"url": "game/panel/tl/tl_num_600.png",
+			"type": "image",
+			"name": "tl_num_600_png"
+		},
+		{
+			"url": "game/panel/tl/tl_num_10000.png",
+			"type": "image",
+			"name": "tl_num_10000_png"
+		},
+		{
+			"url": "game/panel/tl/tl_num_30000.png",
+			"type": "image",
+			"name": "tl_num_30000_png"
+		},
+		{
+			"url": "game/panel/tl/tl_panel_bg.png",
+			"type": "image",
+			"name": "tl_panel_bg_png"
+		},
+		{
+			"url": "game/panel/tl/tl_title_6.png",
+			"type": "image",
+			"name": "tl_title_6_png"
+		},
+		{
+			"url": "game/panel/tl/tl_title_30.png",
+			"type": "image",
+			"name": "tl_title_30_png"
+		},
+		{
+			"url": "game/panel/tl/tl_btn_buy.png",
+			"type": "image",
+			"name": "tl_btn_buy_png"
+		},
+		{
+			"url": "game/main/newMain/main_tl_ac.png",
+			"type": "image",
+			"name": "main_tl_ac_png"
+		},
+		{
+			"url": "game/main/newMain/main_tomo_icon.png",
+			"type": "image",
+			"name": "main_tomo_icon_png"
+		},
+		{
+			"url": "game/main/newMain/main_tomo_text.png",
+			"type": "image",
+			"name": "main_tomo_text_png"
+		},
+		{
+			"url": "game/social/social_chat_tip.png",
+			"type": "image",
+			"name": "social_chat_tip_png"
+		},
+		{
+			"url": "game/newTask/task_stars_tip.png",
+			"type": "image",
+			"name": "task_stars_tip_png"
+		},
+		{
+			"url": "game/main/newMain/lingqu_btn.png",
+			"type": "image",
+			"name": "lingqu_btn_png"
+		},
+		{
+			"url": "game/main/newMain/share_btn.png",
+			"type": "image",
+			"name": "share_btn_png"
+		},
+		{
+			"url": "game/social/msg/msg_btn_give.png",
+			"type": "image",
+			"name": "msg_btn_give_png"
+		},
+		{
+			"url": "game/dress/taskTipPanel/dress_tasktip_bg.png",
+			"type": "image",
+			"name": "dress_tasktip_bg_png"
+		},
+		{
+			"url": "game/dress/taskTipPanel/dress_tasktip_btn_buy.png",
+			"type": "image",
+			"name": "dress_tasktip_btn_buy_png"
+		},
+		{
+			"url": "game/dress/taskTipPanel/dress_tasktip_btn_buy2.png",
+			"type": "image",
+			"name": "dress_tasktip_btn_buy2_png"
+		},
+		{
+			"url": "game/dress/taskTipPanel/dress_tasktip_btn_dress.png",
+			"type": "image",
+			"name": "dress_tasktip_btn_dress_png"
+		},
+		{
+			"url": "game/dress/taskTipPanel/dress_tasktip_cost_bg.png",
+			"type": "image",
+			"name": "dress_tasktip_cost_bg_png"
+		},
+		{
+			"url": "game/dress/taskTipPanel/dress_tasktip_item_bg.png",
+			"type": "image",
+			"name": "dress_tasktip_item_bg_png"
+		},
+		{
+			"url": "game/dress/taskTipPanel/dress_tasktip_name_bg.png",
+			"type": "image",
+			"name": "dress_tasktip_name_bg_png"
+		},
+		{
+			"url": "game/dress/taskTipPanel/dress_tasktip_text.png",
+			"type": "image",
+			"name": "dress_tasktip_text_png"
+		},
+		{
+			"url": "game/dress/taskTipPanel/dress_tasktip_yiyongyou.png",
+			"type": "image",
+			"name": "dress_tasktip_yiyongyou_png"
+		},
+		{
+			"url": "game/dress/dressui/dress_perfect_tip.png",
+			"type": "image",
+			"name": "dress_perfect_tip_png"
+		},
+		{
+			"url": "game/common/task_serial.json",
+			"type": "json",
+			"name": "task_serial_json"
+		},
+		{
+			"url": "config/task_serial/task_perfect_tip.json",
+			"type": "json",
+			"name": "task_perfect_tip_json"
+		},
+		{
+			"url": "game/dress/taskTipPanel/dress_tasktip_feimaiping.png",
+			"type": "image",
+			"name": "dress_tasktip_feimaiping_png"
+		},
+		{
+			"url": "game/panel/invite/invite_btn_buy.png",
+			"type": "image",
+			"name": "invite_btn_buy_png"
+		},
+		{
+			"url": "game/panel/invite/invite_state_yilinqu.png",
+			"type": "image",
+			"name": "invite_state_yilinqu_png"
+		},
+		{
+			"url": "game/clothes/2waitao/21541.png",
+			"type": "image",
+			"name": "21541_png"
+		},
+		{
+			"url": "game/clothes/2waitao/21549.png",
+			"type": "image",
+			"name": "21549_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/31541.png",
+			"type": "image",
+			"name": "31541_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/31549.png",
+			"type": "image",
+			"name": "31549_png"
+		},
+		{
+			"url": "game/clothes/5texiao/51541.png",
+			"type": "image",
+			"name": "51541_png"
+		},
+		{
+			"url": "game/clothes/5texiao/51549.png",
+			"type": "image",
+			"name": "51549_png"
+		},
+		{
+			"url": "game/clothes/6xiezi/61541.png",
+			"type": "image",
+			"name": "61541_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71541.png",
+			"type": "image",
+			"name": "71541_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71542.png",
+			"type": "image",
+			"name": "71542_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71543.png",
+			"type": "image",
+			"name": "71543_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71544.png",
+			"type": "image",
+			"name": "71544_png"
+		},
+		{
+			"url": "game/dress/icon/2waitao/icon21541.png",
+			"type": "image",
+			"name": "icon21541_png"
+		},
+		{
+			"url": "game/dress/icon/3shangyi/icon31541.png",
+			"type": "image",
+			"name": "icon31541_png"
+		},
+		{
+			"url": "game/dress/icon/5texiao/icon51541.png",
+			"type": "image",
+			"name": "icon51541_png"
+		},
+		{
+			"url": "game/dress/icon/6xiezi/icon61541.png",
+			"type": "image",
+			"name": "icon61541_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71541.png",
+			"type": "image",
+			"name": "icon71541_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71542.png",
+			"type": "image",
+			"name": "icon71542_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71543.png",
+			"type": "image",
+			"name": "icon71543_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71544.png",
+			"type": "image",
+			"name": "icon71544_png"
+		},
+		{
+			"url": "game/dress/shop/show/2waitao/show21541.png",
+			"type": "image",
+			"name": "show21541_png"
+		},
+		{
+			"url": "game/dress/shop/show/3shangyi/show31541.png",
+			"type": "image",
+			"name": "show31541_png"
+		},
+		{
+			"url": "game/dress/shop/show/5texiao/show51541.png",
+			"type": "image",
+			"name": "show51541_png"
+		},
+		{
+			"url": "game/dress/shop/show/6xiezi/show61541.png",
+			"type": "image",
+			"name": "show61541_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71541.png",
+			"type": "image",
+			"name": "show71541_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71542.png",
+			"type": "image",
+			"name": "show71542_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71543.png",
+			"type": "image",
+			"name": "show71543_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71544.png",
+			"type": "image",
+			"name": "show71544_png"
+		},
+		{
+			"url": "game/clothes/2waitao/21531.png",
+			"type": "image",
+			"name": "21531_png"
+		},
+		{
+			"url": "game/clothes/2waitao/21539.png",
+			"type": "image",
+			"name": "21539_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/31531.png",
+			"type": "image",
+			"name": "31531_png"
+		},
+		{
+			"url": "game/clothes/5texiao/51531.png",
+			"type": "image",
+			"name": "51531_png"
+		},
+		{
+			"url": "game/clothes/6xiezi/61531.png",
+			"type": "image",
+			"name": "61531_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71531.png",
+			"type": "image",
+			"name": "71531_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71532.png",
+			"type": "image",
+			"name": "71532_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71533.png",
+			"type": "image",
+			"name": "71533_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71534.png",
+			"type": "image",
+			"name": "71534_png"
+		},
+		{
+			"url": "game/dress/icon/2waitao/icon21531.png",
+			"type": "image",
+			"name": "icon21531_png"
+		},
+		{
+			"url": "game/dress/icon/3shangyi/icon31531.png",
+			"type": "image",
+			"name": "icon31531_png"
+		},
+		{
+			"url": "game/dress/icon/5texiao/icon51531.png",
+			"type": "image",
+			"name": "icon51531_png"
+		},
+		{
+			"url": "game/dress/icon/6xiezi/icon61531.png",
+			"type": "image",
+			"name": "icon61531_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71531.png",
+			"type": "image",
+			"name": "icon71531_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71532.png",
+			"type": "image",
+			"name": "icon71532_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71533.png",
+			"type": "image",
+			"name": "icon71533_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71534.png",
+			"type": "image",
+			"name": "icon71534_png"
+		},
+		{
+			"url": "game/dress/shop/show/2waitao/show21531.png",
+			"type": "image",
+			"name": "show21531_png"
+		},
+		{
+			"url": "game/dress/shop/show/3shangyi/show31531.png",
+			"type": "image",
+			"name": "show31531_png"
+		},
+		{
+			"url": "game/dress/shop/show/5texiao/show51531.png",
+			"type": "image",
+			"name": "show51531_png"
+		},
+		{
+			"url": "game/dress/shop/show/6xiezi/show61531.png",
+			"type": "image",
+			"name": "show61531_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71532.png",
+			"type": "image",
+			"name": "show71532_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71531.png",
+			"type": "image",
+			"name": "show71531_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71533.png",
+			"type": "image",
+			"name": "show71533_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71534.png",
+			"type": "image",
+			"name": "show71534_png"
+		},
+		{
+			"url": "game/panel/month_card/month_btn_buy.png",
+			"type": "image",
+			"name": "month_btn_buy_png"
+		},
+		{
+			"url": "game/panel/month_card/month_btn_lingqu.png",
+			"type": "image",
+			"name": "month_btn_lingqu_png"
+		},
+		{
+			"url": "game/panel/month_card/month_panel_bg.png",
+			"type": "image",
+			"name": "month_panel_bg_png"
+		},
+		{
+			"url": "game/panel/month_card/month_state_yilng.png",
+			"type": "image",
+			"name": "month_state_yilng_png"
+		},
+		{
+			"url": "game/panel/month_card/month_time_bg.png",
+			"type": "image",
+			"name": "month_time_bg_png"
+		},
+		{
+			"url": "game/main/newMain/main_mc_icon.png",
+			"type": "image",
+			"name": "main_mc_icon_png"
+		},
+		{
+			"url": "game/main/newMain/main_mc_text.png",
+			"type": "image",
+			"name": "main_mc_text_png"
+		},
+		{
+			"url": "config/mission/mission_4.json",
+			"type": "json",
+			"name": "mission_4_json"
+		},
+		{
+			"url": "config/mission/mission_5.json",
+			"type": "json",
+			"name": "mission_5_json"
+		},
+		{
+			"url": "game/audio/button.wav",
+			"type": "sound",
+			"name": "button_wav"
+		},
+		{
+			"url": "game/audio/buy.wav",
+			"type": "sound",
+			"name": "buy_wav"
+		},
+		{
+			"url": "game/audio/start_bg.mp3",
+			"type": "sound",
+			"name": "start_bg_mp3"
+		},
+		{
+			"url": "game/audio/story_bg.mp3",
+			"type": "sound",
+			"name": "story_bg_mp3"
+		},
+		{
+			"url": "game/audio/task_bg.mp3",
+			"type": "sound",
+			"name": "task_bg_mp3"
+		},
+		{
+			"url": "game/audio/main_bg.mp3",
+			"type": "sound",
+			"name": "main_bg_mp3"
+		},
+		{
+			"url": "game/audio/pop.wav",
+			"type": "sound",
+			"name": "pop_wav"
+		},
+		{
+			"url": "game/audio/flip.wav",
+			"type": "sound",
+			"name": "flip_wav"
+		},
+		{
+			"url": "game/panel/invite/libao_btn_invite.png",
+			"type": "image",
+			"name": "libao_btn_invite_png"
+		},
+		{
+			"url": "game/panel/invite/libao_btn_lingqu.png",
+			"type": "image",
+			"name": "libao_btn_lingqu_png"
+		},
+		{
+			"url": "game/panel/invite/libao_kuang.png",
+			"type": "image",
+			"name": "libao_kuang_png"
+		},
+		{
+			"url": "game/main/newMain/main_free_text.png",
+			"type": "image",
+			"name": "main_free_text_png"
+		},
+		{
+			"url": "game/panel/invite/invite_clothes_panel_bg.png",
+			"type": "image",
+			"name": "invite_clothes_panel_bg_png"
+		},
+		{
+			"url": "game/panel/invite/invite_clothes_text.png",
+			"type": "image",
+			"name": "invite_clothes_text_png"
+		},
+		{
+			"url": "game/panel/invite/invite_free_role.png",
+			"type": "image",
+			"name": "invite_free_role_png"
+		},
+		{
+			"url": "game/panel/tujian/tujian_btn_buy.png",
+			"type": "image",
+			"name": "tujian_btn_buy_png"
+		},
+		{
+			"url": "game/panel/tujian/tujian_btn_dress.png",
+			"type": "image",
+			"name": "tujian_btn_dress_png"
+		},
+		{
+			"url": "game/panel/tujian/tujian_btn_left.png",
+			"type": "image",
+			"name": "tujian_btn_left_png"
+		},
+		{
+			"url": "game/panel/tujian/tujian_btn_lingqu.png",
+			"type": "image",
+			"name": "tujian_btn_lingqu_png"
+		},
+		{
+			"url": "game/panel/tujian/tujian_btn_right.png",
+			"type": "image",
+			"name": "tujian_btn_right_png"
+		},
+		{
+			"url": "game/panel/tujian/tujian_item_bg.png",
+			"type": "image",
+			"name": "tujian_item_bg_png"
+		},
+		{
+			"url": "game/panel/tujian/tujian_panel_bg.png",
+			"type": "image",
+			"name": "tujian_panel_bg_png"
+		},
+		{
+			"url": "game/panel/tujian/tujian_price_kuang.png",
+			"type": "image",
+			"name": "tujian_price_kuang_png"
+		},
+		{
+			"url": "game/panel/tujian/tujian_title_kuang.png",
+			"type": "image",
+			"name": "tujian_title_kuang_png"
+		},
+		{
+			"url": "game/panel/tujian/tujian_flag_1.png",
+			"type": "image",
+			"name": "tujian_flag_1_png"
+		},
+		{
+			"url": "game/panel/tujian/tujian_flag_2.png",
+			"type": "image",
+			"name": "tujian_flag_2_png"
+		},
+		{
+			"url": "game/panel/tujian/tujian_btn_lingqu2.png",
+			"type": "image",
+			"name": "tujian_btn_lingqu2_png"
+		},
+		{
+			"url": "game/panel/tujian/tujian_icon_diam.png",
+			"type": "image",
+			"name": "tujian_icon_diam_png"
+		},
+		{
+			"url": "game/panel/tujian/tujian_tip_text.png",
+			"type": "image",
+			"name": "tujian_tip_text_png"
+		},
+		{
+			"url": "game/main/newMain/main_tujian_icon.png",
+			"type": "image",
+			"name": "main_tujian_icon_png"
+		},
+		{
+			"url": "game/main/newMain/main_tujian_text.png",
+			"type": "image",
+			"name": "main_tujian_text_png"
+		},
+		{
+			"url": "config/task_serial/tujian_list.json",
+			"type": "json",
+			"name": "tujian_list_json"
+		},
+		{
+			"url": "game/clothes/7shipin/70812.png",
+			"type": "image",
+			"name": "70812_png"
+		},
+		{
+			"url": "game/panel/shuangdan/shuangdan_item_bg.png",
+			"type": "image",
+			"name": "shuangdan_item_bg_png"
+		},
+		{
+			"url": "game/panel/shuangdan/shuangdan_panel_bg.png",
+			"type": "image",
+			"name": "shuangdan_panel_bg_png"
+		},
+		{
+			"url": "game/panel/shuangdan/shuangdan_role.png",
+			"type": "image",
+			"name": "shuangdan_role_png"
+		},
+		{
+			"url": "game/panel/shuangdan/shuangdan_tip_text.png",
+			"type": "image",
+			"name": "shuangdan_tip_text_png"
+		},
+		{
+			"url": "game/panel/shuangdan/shuangdan_flag.png",
+			"type": "image",
+			"name": "shuangdan_flag_png"
+		},
+		{
+			"url": "game/dress/icon/1toufa/icon15711.png",
+			"type": "image",
+			"name": "icon15711_png"
+		},
+		{
+			"url": "game/dress/icon/2waitao/icon21551.png",
+			"type": "image",
+			"name": "icon21551_png"
+		},
+		{
+			"url": "game/dress/icon/3shangyi/icon31551.png",
+			"type": "image",
+			"name": "icon31551_png"
+		},
+		{
+			"url": "game/dress/icon/5texiao/icon51551.png",
+			"type": "image",
+			"name": "icon51551_png"
+		},
+		{
+			"url": "game/dress/icon/6xiezi/icon61551.png",
+			"type": "image",
+			"name": "icon61551_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71551.png",
+			"type": "image",
+			"name": "icon71551_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71552.png",
+			"type": "image",
+			"name": "icon71552_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71553.png",
+			"type": "image",
+			"name": "icon71553_png"
+		},
+		{
+			"url": "game/dress/shop/show/1toufa/show15711.png",
+			"type": "image",
+			"name": "show15711_png"
+		},
+		{
+			"url": "game/dress/shop/show/2waitao/show21551.png",
+			"type": "image",
+			"name": "show21551_png"
+		},
+		{
+			"url": "game/dress/shop/show/3shangyi/show31551.png",
+			"type": "image",
+			"name": "show31551_png"
+		},
+		{
+			"url": "game/dress/shop/show/5texiao/show51551.png",
+			"type": "image",
+			"name": "show51551_png"
+		},
+		{
+			"url": "game/dress/shop/show/6xiezi/show61551.png",
+			"type": "image",
+			"name": "show61551_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71551.png",
+			"type": "image",
+			"name": "show71551_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71552.png",
+			"type": "image",
+			"name": "show71552_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71553.png",
+			"type": "image",
+			"name": "show71553_png"
+		},
+		{
+			"url": "game/clothes/1toufa/15711.png",
+			"type": "image",
+			"name": "15711_png"
+		},
+		{
+			"url": "game/clothes/1toufa/15719.png",
+			"type": "image",
+			"name": "15719_png"
+		},
+		{
+			"url": "game/clothes/2waitao/21551.png",
+			"type": "image",
+			"name": "21551_png"
+		},
+		{
+			"url": "game/clothes/2waitao/21558.png",
+			"type": "image",
+			"name": "21558_png"
+		},
+		{
+			"url": "game/clothes/2waitao/21559.png",
+			"type": "image",
+			"name": "21559_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/31551.png",
+			"type": "image",
+			"name": "31551_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/31558.png",
+			"type": "image",
+			"name": "31558_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/31559.png",
+			"type": "image",
+			"name": "31559_png"
+		},
+		{
+			"url": "game/clothes/5texiao/51551.png",
+			"type": "image",
+			"name": "51551_png"
+		},
+		{
+			"url": "game/clothes/5texiao/51559.png",
+			"type": "image",
+			"name": "51559_png"
+		},
+		{
+			"url": "game/clothes/6xiezi/61551.png",
+			"type": "image",
+			"name": "61551_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71551.png",
+			"type": "image",
+			"name": "71551_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71552.png",
+			"type": "image",
+			"name": "71552_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71553.png",
+			"type": "image",
+			"name": "71553_png"
+		},
+		{
+			"url": "game/main/newMain/main_shuangdan_icon.png",
+			"type": "image",
+			"name": "main_shuangdan_icon_png"
+		},
+		{
+			"url": "game/main/newMain/main_shuangdan_text.png",
+			"type": "image",
+			"name": "main_shuangdan_text_png"
+		},
+		{
+			"url": "game/login/login_text.png",
+			"type": "image",
+			"name": "login_text_png"
+		},
+		{
+			"url": "game/social/social_bg.png",
+			"type": "image",
+			"name": "social_bg_png"
+		},
+		{
+			"url": "game/social/social_friend_bg.png",
+			"type": "image",
+			"name": "social_friend_bg_png"
+		},
+		{
+			"url": "game/main/newMain/main_bg_1.png",
+			"type": "image",
+			"name": "main_bg_1_png"
+		},
+		{
+			"url": "game/main/newMain/main_bg_2.png",
+			"type": "image",
+			"name": "main_bg_2_png"
+		},
+		{
+			"url": "game/main/newMain/main_bg_3.png",
+			"type": "image",
+			"name": "main_bg_3_png"
+		},
+		{
+			"url": "game/dress/phase_bg_1.png",
+			"type": "image",
+			"name": "phase_bg_1_png"
+		},
+		{
+			"url": "game/dress/phase_bg_2.png",
+			"type": "image",
+			"name": "phase_bg_2_png"
+		},
+		{
+			"url": "game/dress/phase_bg_3.png",
+			"type": "image",
+			"name": "phase_bg_3_png"
+		},
+		{
+			"url": "game/dress/phase_bg_4.png",
+			"type": "image",
+			"name": "phase_bg_4_png"
+		},
+		{
+			"url": "game/dress/phase_bg_5.png",
+			"type": "image",
+			"name": "phase_bg_5_png"
+		},
+		{
+			"url": "game/dress/icon/2waitao/icon20161.png",
+			"type": "image",
+			"name": "icon20161_png"
+		},
+		{
+			"url": "game/dress/icon/2waitao/icon20641.png",
+			"type": "image",
+			"name": "icon20641_png"
+		},
+		{
+			"url": "game/dress/icon/2waitao/icon21051.png",
+			"type": "image",
+			"name": "icon21051_png"
+		},
+		{
+			"url": "game/dress/icon/3shangyi/icon30041.png",
+			"type": "image",
+			"name": "icon30041_png"
+		},
+		{
+			"url": "game/dress/icon/3shangyi/icon30141.png",
+			"type": "image",
+			"name": "icon30141_png"
+		},
+		{
+			"url": "game/dress/icon/3shangyi/icon30151.png",
+			"type": "image",
+			"name": "icon30151_png"
+		},
+		{
+			"url": "game/dress/icon/3shangyi/icon30161.png",
+			"type": "image",
+			"name": "icon30161_png"
+		},
+		{
+			"url": "game/dress/icon/3shangyi/icon30181.png",
+			"type": "image",
+			"name": "icon30181_png"
+		},
+		{
+			"url": "game/dress/icon/3shangyi/icon30191.png",
+			"type": "image",
+			"name": "icon30191_png"
+		},
+		{
+			"url": "game/dress/icon/3shangyi/icon30201.png",
+			"type": "image",
+			"name": "icon30201_png"
+		},
+		{
+			"url": "game/dress/icon/3shangyi/icon30311.png",
+			"type": "image",
+			"name": "icon30311_png"
+		},
+		{
+			"url": "game/dress/icon/3shangyi/icon30591.png",
+			"type": "image",
+			"name": "icon30591_png"
+		},
+		{
+			"url": "game/dress/icon/3shangyi/icon30641.png",
+			"type": "image",
+			"name": "icon30641_png"
+		},
+		{
+			"url": "game/dress/icon/3shangyi/icon31041.png",
+			"type": "image",
+			"name": "icon31041_png"
+		},
+		{
+			"url": "game/dress/icon/3shangyi/icon31051.png",
+			"type": "image",
+			"name": "icon31051_png"
+		},
+		{
+			"url": "game/dress/icon/3shangyi/icon31091.png",
+			"type": "image",
+			"name": "icon31091_png"
+		},
+		{
+			"url": "game/dress/icon/3shangyi/icon31101.png",
+			"type": "image",
+			"name": "icon31101_png"
+		},
+		{
+			"url": "game/dress/icon/3shangyi/icon31111.png",
+			"type": "image",
+			"name": "icon31111_png"
+		},
+		{
+			"url": "game/dress/icon/3shangyi/icon31131.png",
+			"type": "image",
+			"name": "icon31131_png"
+		},
+		{
+			"url": "game/dress/icon/3shangyi/icon31281.png",
+			"type": "image",
+			"name": "icon31281_png"
+		},
+		{
+			"url": "game/dress/icon/3shangyi/icon31291.png",
+			"type": "image",
+			"name": "icon31291_png"
+		},
+		{
+			"url": "game/dress/icon/4kuzi/icon41101.png",
+			"type": "image",
+			"name": "icon41101_png"
+		},
+		{
+			"url": "game/dress/icon/5texiao/icon50151.png",
+			"type": "image",
+			"name": "icon50151_png"
+		},
+		{
+			"url": "game/dress/icon/5texiao/icon50161.png",
+			"type": "image",
+			"name": "icon50161_png"
+		},
+		{
+			"url": "game/dress/icon/5texiao/icon50191.png",
+			"type": "image",
+			"name": "icon50191_png"
+		},
+		{
+			"url": "game/dress/icon/5texiao/icon50591.png",
+			"type": "image",
+			"name": "icon50591_png"
+		},
+		{
+			"url": "game/dress/icon/5texiao/icon51091.png",
+			"type": "image",
+			"name": "icon51091_png"
+		},
+		{
+			"url": "game/dress/icon/5texiao/icon51281.png",
+			"type": "image",
+			"name": "icon51281_png"
+		},
+		{
+			"url": "game/dress/icon/6xiezi/icon60041.png",
+			"type": "image",
+			"name": "icon60041_png"
+		},
+		{
+			"url": "game/dress/icon/6xiezi/icon60141.png",
+			"type": "image",
+			"name": "icon60141_png"
+		},
+		{
+			"url": "game/dress/icon/6xiezi/icon60151.png",
+			"type": "image",
+			"name": "icon60151_png"
+		},
+		{
+			"url": "game/dress/icon/6xiezi/icon60161.png",
+			"type": "image",
+			"name": "icon60161_png"
+		},
+		{
+			"url": "game/dress/icon/6xiezi/icon60181.png",
+			"type": "image",
+			"name": "icon60181_png"
+		},
+		{
+			"url": "game/dress/icon/6xiezi/icon60191.png",
+			"type": "image",
+			"name": "icon60191_png"
+		},
+		{
+			"url": "game/dress/icon/6xiezi/icon60201.png",
+			"type": "image",
+			"name": "icon60201_png"
+		},
+		{
+			"url": "game/dress/icon/6xiezi/icon60591.png",
+			"type": "image",
+			"name": "icon60591_png"
+		},
+		{
+			"url": "game/dress/icon/6xiezi/icon60641.png",
+			"type": "image",
+			"name": "icon60641_png"
+		},
+		{
+			"url": "game/dress/icon/6xiezi/icon61041.png",
+			"type": "image",
+			"name": "icon61041_png"
+		},
+		{
+			"url": "game/dress/icon/6xiezi/icon61051.png",
+			"type": "image",
+			"name": "icon61051_png"
+		},
+		{
+			"url": "game/dress/icon/6xiezi/icon61091.png",
+			"type": "image",
+			"name": "icon61091_png"
+		},
+		{
+			"url": "game/dress/icon/6xiezi/icon61101.png",
+			"type": "image",
+			"name": "icon61101_png"
+		},
+		{
+			"url": "game/dress/icon/6xiezi/icon61111.png",
+			"type": "image",
+			"name": "icon61111_png"
+		},
+		{
+			"url": "game/dress/icon/6xiezi/icon61131.png",
+			"type": "image",
+			"name": "icon61131_png"
+		},
+		{
+			"url": "game/dress/icon/6xiezi/icon61281.png",
+			"type": "image",
+			"name": "icon61281_png"
+		},
+		{
+			"url": "game/dress/icon/6xiezi/icon61291.png",
+			"type": "image",
+			"name": "icon61291_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70041.png",
+			"type": "image",
+			"name": "icon70041_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70042.png",
+			"type": "image",
+			"name": "icon70042_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70043.png",
+			"type": "image",
+			"name": "icon70043_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70141.png",
+			"type": "image",
+			"name": "icon70141_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70142.png",
+			"type": "image",
+			"name": "icon70142_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70151.png",
+			"type": "image",
+			"name": "icon70151_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70152.png",
+			"type": "image",
+			"name": "icon70152_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70153.png",
+			"type": "image",
+			"name": "icon70153_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70154.png",
+			"type": "image",
+			"name": "icon70154_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70155.png",
+			"type": "image",
+			"name": "icon70155_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70161.png",
+			"type": "image",
+			"name": "icon70161_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70162.png",
+			"type": "image",
+			"name": "icon70162_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70163.png",
+			"type": "image",
+			"name": "icon70163_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70164.png",
+			"type": "image",
+			"name": "icon70164_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70181.png",
+			"type": "image",
+			"name": "icon70181_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70182.png",
+			"type": "image",
+			"name": "icon70182_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70183.png",
+			"type": "image",
+			"name": "icon70183_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70184.png",
+			"type": "image",
+			"name": "icon70184_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70191.png",
+			"type": "image",
+			"name": "icon70191_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70192.png",
+			"type": "image",
+			"name": "icon70192_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70193.png",
+			"type": "image",
+			"name": "icon70193_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70201.png",
+			"type": "image",
+			"name": "icon70201_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70202.png",
+			"type": "image",
+			"name": "icon70202_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70203.png",
+			"type": "image",
+			"name": "icon70203_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70204.png",
+			"type": "image",
+			"name": "icon70204_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70591.png",
+			"type": "image",
+			"name": "icon70591_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70592.png",
+			"type": "image",
+			"name": "icon70592_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70593.png",
+			"type": "image",
+			"name": "icon70593_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70641.png",
+			"type": "image",
+			"name": "icon70641_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70642.png",
+			"type": "image",
+			"name": "icon70642_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70643.png",
+			"type": "image",
+			"name": "icon70643_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70644.png",
+			"type": "image",
+			"name": "icon70644_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71041.png",
+			"type": "image",
+			"name": "icon71041_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71042.png",
+			"type": "image",
+			"name": "icon71042_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71043.png",
+			"type": "image",
+			"name": "icon71043_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71044.png",
+			"type": "image",
+			"name": "icon71044_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71051.png",
+			"type": "image",
+			"name": "icon71051_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71052.png",
+			"type": "image",
+			"name": "icon71052_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71053.png",
+			"type": "image",
+			"name": "icon71053_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71054.png",
+			"type": "image",
+			"name": "icon71054_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71091.png",
+			"type": "image",
+			"name": "icon71091_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71092.png",
+			"type": "image",
+			"name": "icon71092_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71093.png",
+			"type": "image",
+			"name": "icon71093_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71094.png",
+			"type": "image",
+			"name": "icon71094_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71101.png",
+			"type": "image",
+			"name": "icon71101_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71102.png",
+			"type": "image",
+			"name": "icon71102_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71103.png",
+			"type": "image",
+			"name": "icon71103_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71104.png",
+			"type": "image",
+			"name": "icon71104_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71105.png",
+			"type": "image",
+			"name": "icon71105_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71111.png",
+			"type": "image",
+			"name": "icon71111_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71112.png",
+			"type": "image",
+			"name": "icon71112_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71131.png",
+			"type": "image",
+			"name": "icon71131_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71132.png",
+			"type": "image",
+			"name": "icon71132_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71133.png",
+			"type": "image",
+			"name": "icon71133_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71134.png",
+			"type": "image",
+			"name": "icon71134_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71281.png",
+			"type": "image",
+			"name": "icon71281_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71282.png",
+			"type": "image",
+			"name": "icon71282_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71291.png",
+			"type": "image",
+			"name": "icon71291_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71292.png",
+			"type": "image",
+			"name": "icon71292_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71293.png",
+			"type": "image",
+			"name": "icon71293_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71294.png",
+			"type": "image",
+			"name": "icon71294_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon71295.png",
+			"type": "image",
+			"name": "icon71295_png"
+		},
+		{
+			"url": "game/dress/icon/8bao/icon80641.png",
+			"type": "image",
+			"name": "icon80641_png"
+		},
+		{
+			"url": "game/dress/shop/show/2waitao/show20641.png",
+			"type": "image",
+			"name": "show20641_png"
+		},
+		{
+			"url": "game/dress/shop/show/2waitao/show20161.png",
+			"type": "image",
+			"name": "show20161_png"
+		},
+		{
+			"url": "game/dress/shop/show/2waitao/show21051.png",
+			"type": "image",
+			"name": "show21051_png"
+		},
+		{
+			"url": "game/dress/shop/show/3shangyi/show30041.png",
+			"type": "image",
+			"name": "show30041_png"
+		},
+		{
+			"url": "game/dress/shop/show/3shangyi/show30141.png",
+			"type": "image",
+			"name": "show30141_png"
+		},
+		{
+			"url": "game/dress/shop/show/3shangyi/show30151.png",
+			"type": "image",
+			"name": "show30151_png"
+		},
+		{
+			"url": "game/dress/shop/show/3shangyi/show30161.png",
+			"type": "image",
+			"name": "show30161_png"
+		},
+		{
+			"url": "game/dress/shop/show/3shangyi/show30181.png",
+			"type": "image",
+			"name": "show30181_png"
+		},
+		{
+			"url": "game/dress/shop/show/3shangyi/show30191.png",
+			"type": "image",
+			"name": "show30191_png"
+		},
+		{
+			"url": "game/dress/shop/show/3shangyi/show30201.png",
+			"type": "image",
+			"name": "show30201_png"
+		},
+		{
+			"url": "game/dress/shop/show/3shangyi/show30311.png",
+			"type": "image",
+			"name": "show30311_png"
+		},
+		{
+			"url": "game/dress/shop/show/3shangyi/show30591.png",
+			"type": "image",
+			"name": "show30591_png"
+		},
+		{
+			"url": "game/dress/shop/show/3shangyi/show30641.png",
+			"type": "image",
+			"name": "show30641_png"
+		},
+		{
+			"url": "game/dress/shop/show/3shangyi/show31041.png",
+			"type": "image",
+			"name": "show31041_png"
+		},
+		{
+			"url": "game/dress/shop/show/3shangyi/show31051.png",
+			"type": "image",
+			"name": "show31051_png"
+		},
+		{
+			"url": "game/dress/shop/show/3shangyi/show31091.png",
+			"type": "image",
+			"name": "show31091_png"
+		},
+		{
+			"url": "game/dress/shop/show/3shangyi/show31101.png",
+			"type": "image",
+			"name": "show31101_png"
+		},
+		{
+			"url": "game/dress/shop/show/3shangyi/show31111.png",
+			"type": "image",
+			"name": "show31111_png"
+		},
+		{
+			"url": "game/dress/shop/show/3shangyi/show31131.png",
+			"type": "image",
+			"name": "show31131_png"
+		},
+		{
+			"url": "game/dress/shop/show/3shangyi/show31281.png",
+			"type": "image",
+			"name": "show31281_png"
+		},
+		{
+			"url": "game/dress/shop/show/3shangyi/show31291.png",
+			"type": "image",
+			"name": "show31291_png"
+		},
+		{
+			"url": "game/dress/shop/show/4kuzi/show41101.png",
+			"type": "image",
+			"name": "show41101_png"
+		},
+		{
+			"url": "game/dress/shop/show/5texiao/show50151.png",
+			"type": "image",
+			"name": "show50151_png"
+		},
+		{
+			"url": "game/dress/shop/show/5texiao/show50161.png",
+			"type": "image",
+			"name": "show50161_png"
+		},
+		{
+			"url": "game/dress/shop/show/5texiao/show50191.png",
+			"type": "image",
+			"name": "show50191_png"
+		},
+		{
+			"url": "game/dress/shop/show/5texiao/show50591.png",
+			"type": "image",
+			"name": "show50591_png"
+		},
+		{
+			"url": "game/dress/shop/show/5texiao/show51091.png",
+			"type": "image",
+			"name": "show51091_png"
+		},
+		{
+			"url": "game/dress/shop/show/5texiao/show51281.png",
+			"type": "image",
+			"name": "show51281_png"
+		},
+		{
+			"url": "game/dress/shop/show/6xiezi/show60041.png",
+			"type": "image",
+			"name": "show60041_png"
+		},
+		{
+			"url": "game/dress/shop/show/6xiezi/show60141.png",
+			"type": "image",
+			"name": "show60141_png"
+		},
+		{
+			"url": "game/dress/shop/show/6xiezi/show60151.png",
+			"type": "image",
+			"name": "show60151_png"
+		},
+		{
+			"url": "game/dress/shop/show/6xiezi/show60161.png",
+			"type": "image",
+			"name": "show60161_png"
+		},
+		{
+			"url": "game/dress/shop/show/6xiezi/show60181.png",
+			"type": "image",
+			"name": "show60181_png"
+		},
+		{
+			"url": "game/dress/shop/show/6xiezi/show60191.png",
+			"type": "image",
+			"name": "show60191_png"
+		},
+		{
+			"url": "game/dress/shop/show/6xiezi/show60201.png",
+			"type": "image",
+			"name": "show60201_png"
+		},
+		{
+			"url": "game/dress/shop/show/6xiezi/show60591.png",
+			"type": "image",
+			"name": "show60591_png"
+		},
+		{
+			"url": "game/dress/shop/show/6xiezi/show60641.png",
+			"type": "image",
+			"name": "show60641_png"
+		},
+		{
+			"url": "game/dress/shop/show/6xiezi/show61041.png",
+			"type": "image",
+			"name": "show61041_png"
+		},
+		{
+			"url": "game/dress/shop/show/6xiezi/show61051.png",
+			"type": "image",
+			"name": "show61051_png"
+		},
+		{
+			"url": "game/dress/shop/show/6xiezi/show61091.png",
+			"type": "image",
+			"name": "show61091_png"
+		},
+		{
+			"url": "game/dress/shop/show/6xiezi/show61101.png",
+			"type": "image",
+			"name": "show61101_png"
+		},
+		{
+			"url": "game/dress/shop/show/6xiezi/show61111.png",
+			"type": "image",
+			"name": "show61111_png"
+		},
+		{
+			"url": "game/dress/shop/show/6xiezi/show61131.png",
+			"type": "image",
+			"name": "show61131_png"
+		},
+		{
+			"url": "game/dress/shop/show/6xiezi/show61281.png",
+			"type": "image",
+			"name": "show61281_png"
+		},
+		{
+			"url": "game/dress/shop/show/6xiezi/show61291.png",
+			"type": "image",
+			"name": "show61291_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70033.png",
+			"type": "image",
+			"name": "show70033_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70041.png",
+			"type": "image",
+			"name": "show70041_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70042.png",
+			"type": "image",
+			"name": "show70042_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70043.png",
+			"type": "image",
+			"name": "show70043_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70141.png",
+			"type": "image",
+			"name": "show70141_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70142.png",
+			"type": "image",
+			"name": "show70142_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70151.png",
+			"type": "image",
+			"name": "show70151_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70152.png",
+			"type": "image",
+			"name": "show70152_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70153.png",
+			"type": "image",
+			"name": "show70153_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70154.png",
+			"type": "image",
+			"name": "show70154_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70155.png",
+			"type": "image",
+			"name": "show70155_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70161.png",
+			"type": "image",
+			"name": "show70161_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70162.png",
+			"type": "image",
+			"name": "show70162_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70163.png",
+			"type": "image",
+			"name": "show70163_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70164.png",
+			"type": "image",
+			"name": "show70164_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70181.png",
+			"type": "image",
+			"name": "show70181_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70182.png",
+			"type": "image",
+			"name": "show70182_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70183.png",
+			"type": "image",
+			"name": "show70183_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70184.png",
+			"type": "image",
+			"name": "show70184_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70191.png",
+			"type": "image",
+			"name": "show70191_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70192.png",
+			"type": "image",
+			"name": "show70192_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70193.png",
+			"type": "image",
+			"name": "show70193_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70201.png",
+			"type": "image",
+			"name": "show70201_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70202.png",
+			"type": "image",
+			"name": "show70202_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70203.png",
+			"type": "image",
+			"name": "show70203_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70204.png",
+			"type": "image",
+			"name": "show70204_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70591.png",
+			"type": "image",
+			"name": "show70591_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70592.png",
+			"type": "image",
+			"name": "show70592_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70593.png",
+			"type": "image",
+			"name": "show70593_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70641.png",
+			"type": "image",
+			"name": "show70641_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70642.png",
+			"type": "image",
+			"name": "show70642_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70643.png",
+			"type": "image",
+			"name": "show70643_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71295.png",
+			"type": "image",
+			"name": "show71295_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show70644.png",
+			"type": "image",
+			"name": "show70644_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71041.png",
+			"type": "image",
+			"name": "show71041_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71042.png",
+			"type": "image",
+			"name": "show71042_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71043.png",
+			"type": "image",
+			"name": "show71043_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71044.png",
+			"type": "image",
+			"name": "show71044_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71051.png",
+			"type": "image",
+			"name": "show71051_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71052.png",
+			"type": "image",
+			"name": "show71052_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71053.png",
+			"type": "image",
+			"name": "show71053_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71054.png",
+			"type": "image",
+			"name": "show71054_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71091.png",
+			"type": "image",
+			"name": "show71091_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71092.png",
+			"type": "image",
+			"name": "show71092_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71093.png",
+			"type": "image",
+			"name": "show71093_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71094.png",
+			"type": "image",
+			"name": "show71094_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71101.png",
+			"type": "image",
+			"name": "show71101_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71102.png",
+			"type": "image",
+			"name": "show71102_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71103.png",
+			"type": "image",
+			"name": "show71103_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71104.png",
+			"type": "image",
+			"name": "show71104_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71105.png",
+			"type": "image",
+			"name": "show71105_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71111.png",
+			"type": "image",
+			"name": "show71111_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71112.png",
+			"type": "image",
+			"name": "show71112_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71131.PNG",
+			"type": "bin",
+			"name": "show71131_PNG"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71132.png",
+			"type": "image",
+			"name": "show71132_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71133.png",
+			"type": "image",
+			"name": "show71133_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71134.png",
+			"type": "image",
+			"name": "show71134_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71281.png",
+			"type": "image",
+			"name": "show71281_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71282.png",
+			"type": "image",
+			"name": "show71282_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71291.png",
+			"type": "image",
+			"name": "show71291_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71292.png",
+			"type": "image",
+			"name": "show71292_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71293.png",
+			"type": "image",
+			"name": "show71293_png"
+		},
+		{
+			"url": "game/dress/shop/show/7shipin/show71294.png",
+			"type": "image",
+			"name": "show71294_png"
+		},
+		{
+			"url": "game/dress/shop/show/8bao/show80641.png",
+			"type": "image",
+			"name": "show80641_png"
+		},
+		{
+			"url": "game/clothes/2waitao/20161.png",
+			"type": "image",
+			"name": "20161_png"
+		},
+		{
+			"url": "game/clothes/2waitao/20641.png",
+			"type": "image",
+			"name": "20641_png"
+		},
+		{
+			"url": "game/clothes/2waitao/20649.png",
+			"type": "image",
+			"name": "20649_png"
+		},
+		{
+			"url": "game/clothes/2waitao/21051.png",
+			"type": "image",
+			"name": "21051_png"
+		},
+		{
+			"url": "game/clothes/2waitao/21059.png",
+			"type": "image",
+			"name": "21059_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/30041.png",
+			"type": "image",
+			"name": "30041_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/30141.png",
+			"type": "image",
+			"name": "30141_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/30148.png",
+			"type": "image",
+			"name": "30148_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/30149.png",
+			"type": "image",
+			"name": "30149_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/30151.png",
+			"type": "image",
+			"name": "30151_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/30159.png",
+			"type": "image",
+			"name": "30159_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/30161.png",
+			"type": "image",
+			"name": "30161_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/30169.png",
+			"type": "image",
+			"name": "30169_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/30181.png",
+			"type": "image",
+			"name": "30181_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/30189.png",
+			"type": "image",
+			"name": "30189_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/30191.png",
+			"type": "image",
+			"name": "30191_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/30199.png",
+			"type": "image",
+			"name": "30199_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/30201.png",
+			"type": "image",
+			"name": "30201_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/30311.png",
+			"type": "image",
+			"name": "30311_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/30318.png",
+			"type": "image",
+			"name": "30318_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/30319.png",
+			"type": "image",
+			"name": "30319_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/30591.png",
+			"type": "image",
+			"name": "30591_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/30598.png",
+			"type": "image",
+			"name": "30598_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/30599.png",
+			"type": "image",
+			"name": "30599_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/30641.png",
+			"type": "image",
+			"name": "30641_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/31041.png",
+			"type": "image",
+			"name": "31041_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/31051.png",
+			"type": "image",
+			"name": "31051_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/31091.png",
+			"type": "image",
+			"name": "31091_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/31101.png",
+			"type": "image",
+			"name": "31101_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/31111.png",
+			"type": "image",
+			"name": "31111_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/31118.png",
+			"type": "image",
+			"name": "31118_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/31119.png",
+			"type": "image",
+			"name": "31119_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/31131.png",
+			"type": "image",
+			"name": "31131_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/31138.png",
+			"type": "image",
+			"name": "31138_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/31139.png",
+			"type": "image",
+			"name": "31139_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/31281.png",
+			"type": "image",
+			"name": "31281_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/31291.png",
+			"type": "image",
+			"name": "31291_png"
+		},
+		{
+			"url": "game/clothes/3shangyi/31299.png",
+			"type": "image",
+			"name": "31299_png"
+		},
+		{
+			"url": "game/clothes/4kuzi/41101.png",
+			"type": "image",
+			"name": "41101_png"
+		},
+		{
+			"url": "game/clothes/5texiao/50151.png",
+			"type": "image",
+			"name": "50151_png"
+		},
+		{
+			"url": "game/clothes/5texiao/50161.png",
+			"type": "image",
+			"name": "50161_png"
+		},
+		{
+			"url": "game/clothes/5texiao/50191.png",
+			"type": "image",
+			"name": "50191_png"
+		},
+		{
+			"url": "game/clothes/5texiao/50591.png",
+			"type": "image",
+			"name": "50591_png"
+		},
+		{
+			"url": "game/clothes/5texiao/51091.png",
+			"type": "image",
+			"name": "51091_png"
+		},
+		{
+			"url": "game/clothes/5texiao/51281.png",
+			"type": "image",
+			"name": "51281_png"
+		},
+		{
+			"url": "game/clothes/6xiezi/60041.png",
+			"type": "image",
+			"name": "60041_png"
+		},
+		{
+			"url": "game/clothes/6xiezi/60141.png",
+			"type": "image",
+			"name": "60141_png"
+		},
+		{
+			"url": "game/clothes/6xiezi/60151.png",
+			"type": "image",
+			"name": "60151_png"
+		},
+		{
+			"url": "game/clothes/6xiezi/60161.png",
+			"type": "image",
+			"name": "60161_png"
+		},
+		{
+			"url": "game/clothes/6xiezi/60181.png",
+			"type": "image",
+			"name": "60181_png"
+		},
+		{
+			"url": "game/clothes/6xiezi/60191.png",
+			"type": "image",
+			"name": "60191_png"
+		},
+		{
+			"url": "game/clothes/6xiezi/60201.png",
+			"type": "image",
+			"name": "60201_png"
+		},
+		{
+			"url": "game/clothes/6xiezi/60591.png",
+			"type": "image",
+			"name": "60591_png"
+		},
+		{
+			"url": "game/clothes/6xiezi/60641.png",
+			"type": "image",
+			"name": "60641_png"
+		},
+		{
+			"url": "game/clothes/6xiezi/61041.png",
+			"type": "image",
+			"name": "61041_png"
+		},
+		{
+			"url": "game/clothes/6xiezi/61051.png",
+			"type": "image",
+			"name": "61051_png"
+		},
+		{
+			"url": "game/clothes/6xiezi/61091.png",
+			"type": "image",
+			"name": "61091_png"
+		},
+		{
+			"url": "game/clothes/6xiezi/61101.png",
+			"type": "image",
+			"name": "61101_png"
+		},
+		{
+			"url": "game/clothes/6xiezi/61111.png",
+			"type": "image",
+			"name": "61111_png"
+		},
+		{
+			"url": "game/clothes/6xiezi/61131.png",
+			"type": "image",
+			"name": "61131_png"
+		},
+		{
+			"url": "game/clothes/6xiezi/61281.png",
+			"type": "image",
+			"name": "61281_png"
+		},
+		{
+			"url": "game/clothes/6xiezi/61291.png",
+			"type": "image",
+			"name": "61291_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70033.png",
+			"type": "image",
+			"name": "70033_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70041.png",
+			"type": "image",
+			"name": "70041_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70042.png",
+			"type": "image",
+			"name": "70042_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70043.png",
+			"type": "image",
+			"name": "70043_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70141.png",
+			"type": "image",
+			"name": "70141_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70142.png",
+			"type": "image",
+			"name": "70142_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70151.png",
+			"type": "image",
+			"name": "70151_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70152.png",
+			"type": "image",
+			"name": "70152_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70153.png",
+			"type": "image",
+			"name": "70153_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70154.png",
+			"type": "image",
+			"name": "70154_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70155.png",
+			"type": "image",
+			"name": "70155_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70161.png",
+			"type": "image",
+			"name": "70161_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70162.png",
+			"type": "image",
+			"name": "70162_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70163.png",
+			"type": "image",
+			"name": "70163_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70164.png",
+			"type": "image",
+			"name": "70164_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70181.png",
+			"type": "image",
+			"name": "70181_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70182.png",
+			"type": "image",
+			"name": "70182_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70183.png",
+			"type": "image",
+			"name": "70183_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70184.png",
+			"type": "image",
+			"name": "70184_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70191.png",
+			"type": "image",
+			"name": "70191_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70192.png",
+			"type": "image",
+			"name": "70192_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70193.png",
+			"type": "image",
+			"name": "70193_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70201.png",
+			"type": "image",
+			"name": "70201_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70202.png",
+			"type": "image",
+			"name": "70202_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70203.png",
+			"type": "image",
+			"name": "70203_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70204.png",
+			"type": "image",
+			"name": "70204_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70591.png",
+			"type": "image",
+			"name": "70591_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70592.png",
+			"type": "image",
+			"name": "70592_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70593.png",
+			"type": "image",
+			"name": "70593_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70599.png",
+			"type": "image",
+			"name": "70599_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70641.png",
+			"type": "image",
+			"name": "70641_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70642.png",
+			"type": "image",
+			"name": "70642_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70644.png",
+			"type": "image",
+			"name": "70644_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71042.png",
+			"type": "image",
+			"name": "71042_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71041.png",
+			"type": "image",
+			"name": "71041_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71043.png",
+			"type": "image",
+			"name": "71043_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71044.png",
+			"type": "image",
+			"name": "71044_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71051.png",
+			"type": "image",
+			"name": "71051_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71052.png",
+			"type": "image",
+			"name": "71052_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71054.png",
+			"type": "image",
+			"name": "71054_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71059.png",
+			"type": "image",
+			"name": "71059_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71091.png",
+			"type": "image",
+			"name": "71091_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71092.png",
+			"type": "image",
+			"name": "71092_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71093.png",
+			"type": "image",
+			"name": "71093_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71094.png",
+			"type": "image",
+			"name": "71094_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71101.png",
+			"type": "image",
+			"name": "71101_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71102.png",
+			"type": "image",
+			"name": "71102_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71103.png",
+			"type": "image",
+			"name": "71103_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71104.png",
+			"type": "image",
+			"name": "71104_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71105.png",
+			"type": "image",
+			"name": "71105_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71111.png",
+			"type": "image",
+			"name": "71111_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71112.png",
+			"type": "image",
+			"name": "71112_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71131.png",
+			"type": "image",
+			"name": "71131_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71132.png",
+			"type": "image",
+			"name": "71132_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71133.png",
+			"type": "image",
+			"name": "71133_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71134.png",
+			"type": "image",
+			"name": "71134_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71139.png",
+			"type": "image",
+			"name": "71139_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71281.png",
+			"type": "image",
+			"name": "71281_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71282.png",
+			"type": "image",
+			"name": "71282_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71291.png",
+			"type": "image",
+			"name": "71291_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71292.png",
+			"type": "image",
+			"name": "71292_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71293.png",
+			"type": "image",
+			"name": "71293_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71053.png",
+			"type": "image",
+			"name": "71053_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70643.png",
+			"type": "image",
+			"name": "70643_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71294.png",
+			"type": "image",
+			"name": "71294_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71295.png",
+			"type": "image",
+			"name": "71295_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71299.png",
+			"type": "image",
+			"name": "71299_png"
+		},
+		{
+			"url": "game/clothes/8bao/80641.png",
+			"type": "image",
+			"name": "80641_png"
+		},
+		{
+			"url": "game/clothes/8bao/81051.png",
+			"type": "image",
+			"name": "81051_png"
+		},
+		{
+			"url": "game/clothes/8bao/81059.png",
+			"type": "image",
+			"name": "81059_png"
+		},
+		{
+			"url": "game/dress/icon/8bao/icon81051.png",
+			"type": "image",
+			"name": "icon81051_png"
+		},
+		{
+			"url": "game/dress/shop/show/8bao/show81051.png",
+			"type": "image",
+			"name": "show81051_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70033.png",
+			"type": "image",
+			"name": "icon70033_png"
+		},
+		{
+			"url": "game/clothes/7shipin/71099.png",
+			"type": "image",
+			"name": "71099_png"
+		},
+		{
+			"url": "game/dress/icon/7shipin/icon70312.png",
+			"type": "image",
+			"name": "icon70312_png"
+		},
+		{
+			"url": "game/clothes/7shipin/70189.png",
+			"type": "image",
+			"name": "70189_png"
 		}
 	]
 }

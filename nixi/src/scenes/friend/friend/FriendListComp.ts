@@ -2,6 +2,7 @@ class FriendListComp extends eui.Component {
 	private group: eui.Group;
 	private btn_back: eui.Image;
 	private btn_note: eui.Image;
+	private btn_delete: eui.Image;
 	private list: eui.List;
 	private selfComp: SelfPanelComp;
 	private tip: eui.Label;
@@ -9,6 +10,8 @@ class FriendListComp extends eui.Component {
 	// private shower: Shower;
 	private model: Model;
 	private curSelected: number;
+	private revGroup: eui.Group;
+	private revText: eui.Label;
 
 	public constructor() {
 		super();
@@ -26,8 +29,12 @@ class FriendListComp extends eui.Component {
 		this.selfComp.clothes_count.text = "" + ShowData.collected;
 		this.selfComp.tili_label.text = "收到体力: " + SocialData.energy_could_take + "/30";
 
+		this.revText.text = SocialData.energy_could_take + "/30";
+
 		this.btn_back.addEventListener(egret.TouchEvent.TOUCH_TAP, this.goBack, this);
 		this.btn_note.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onNote, this);
+		this.btn_delete.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onDelete, this);
+		this.revGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onGet, this);
 		this.selfComp.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onSelf, this);
 		this.selfComp.btn_get.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onGet, this);
 		this.btn_stranger.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onStranger, this);
@@ -57,6 +64,7 @@ class FriendListComp extends eui.Component {
 		CustomEventMgr.addEventListener("802", this.afterFetchStrangerData_802, this);
 		CustomEventMgr.addEventListener("803", this.afterSendMessage_803, this);
 		CustomEventMgr.addEventListener("807", this.result_of_807, this);
+		CustomEventMgr.addEventListener("Delete Friend", this.afterDeleteFriend, this);
 	}
 
 	private onExit() {
@@ -64,23 +72,27 @@ class FriendListComp extends eui.Component {
 		CustomEventMgr.removeEventListener("803", this.afterSendMessage_803, this);
 		CustomEventMgr.removeEventListener("807", this.result_of_807, this);
 		CustomEventMgr.removeEventListener("802", this.afterFetchStrangerData_802, this);
+		CustomEventMgr.removeEventListener("Delete Friend", this.afterDeleteFriend, this);
 
 		this.list.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this.onSelected, this);
 		this.btn_back.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.goBack, this);
 		this.btn_note.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onNote, this);
+		this.btn_delete.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onDelete, this);
+		this.revGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onGet, this);
 		this.selfComp.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onSelf, this);
 		this.selfComp.btn_get.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onGet, this);
 		this.btn_stranger.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onStranger, this);
 	}
 
 	private onStranger() {
+		SoundManager.instance().buttonSound();
 		NetLoading.showLoading();
 		var request: egret.URLRequest = HttpProtocolMgr.strangerListData_802();
 		HttpMgr.postRequest(request);
 	}
 
 	private onSelected(evt: eui.ItemTapEvent) {
-		egret.log("on selected !");
+		SoundManager.instance().buttonSound();
 		if (this.curSelected != evt.itemIndex) {
 			this.curSelected = evt.itemIndex;
 			this.model.x = -this.group.width;
@@ -90,10 +102,6 @@ class FriendListComp extends eui.Component {
 
 			this.playAnimation();
 		}
-
-		// this.shower.dress(FriendData.friendsObj[evt.item]["ondress"], FriendData.friendsObj[evt.item]["ornaments"]);
-		// this.selfComp.currentState = "up";
-		// this.selfComp.touchEnabled = true;
 	}
 
 	private playAnimation() {
@@ -122,14 +130,30 @@ class FriendListComp extends eui.Component {
 
 	}
 
+	private onDelete() {
+		var self = this;
+		DisplayMgr.buttonScale(this.btn_delete, function() {
+			if(self.list.selectedIndex == -1) {
+				Prompt.showPrompt(egret.MainContext.instance.stage, "不可以删除自己哟~");
+			}else {
+				var id: string = FriendData.friendsList[self.list.selectedIndex];
+				var nickname: string = FriendData.friendsObj[id]["nickname"];
+				var panel = new DeleteFriendPanel(id, nickname);
+				DisplayMgr.set2Center(panel);
+				self.stage.addChild(panel);
+			}
+		});
+	}
+
 	private goBack() {
 		DisplayMgr.buttonScale(this.btn_back, function () {
+			SoundManager.instance().buttonSound();
 			SceneMgr.gotoMainFriend();
 		});
 	}
 
 	private onSelf() {
-		egret.log("on self comp");
+		SoundManager.instance().buttonSound();
 		if (this.list.selectedIndex == -1) {
 
 		} else {
@@ -145,6 +169,7 @@ class FriendListComp extends eui.Component {
 	}
 
 	private onGet() {
+		SoundManager.instance().buttonSound();
 		if(SocialData.energy_could_take <= 0) {
 			Prompt.showPrompt(this.stage, "暂无可领取体力!");
 		}else {
@@ -166,9 +191,28 @@ class FriendListComp extends eui.Component {
 
 	private result_of_807() {
 		console.log("get tili success");
+		this.revText.text = SocialData.energy_could_take + "/30";
 		this.selfComp.tili_label.text = "收到体力: " + SocialData.energy_could_take + "/30";
 		CustomEventMgr.dispatchEventWith("Update Player Info", false);
 		NetLoading.removeLoading();
+	}
+
+	private afterDeleteFriend() {
+		Prompt.showPrompt(this.stage, "好友已删除!");
+		this.list.dataProvider = new eui.ArrayCollection(FriendData.friendsList);
+		this.list.dataProviderRefreshed();
+		this.list.selectedIndex = 0;
+
+		if (FriendData.friendsList.length == 0) {
+			this.model.dress(ClothesData.ondressCache, ClothesData.ornamentsCache);
+			this.selfComp.currentState = "down";
+			this.selfComp.touchEnabled = false;
+			this.list.selectedIndex = -1;
+			this.tip.visible = true;
+			this.btn_stranger.visible = true;
+		} else {
+			this.model.dressClothesOfSuit(FriendData.friendsObj[FriendData.friendsList[0]]["ondress"], FriendData.friendsObj[FriendData.friendsList[0]]["ornaments"]);
+		}
 	}
 }
 
@@ -220,7 +264,7 @@ class FriendListRenderer extends eui.ItemRenderer {
 	}
 
 	private onChange(evt: eui.UIEvent) {
-		egret.log(this.data);
+		SoundManager.instance().buttonSound();
 		if (LoginData.sid == this.data) {
 			Prompt.showPrompt(egret.MainContext.instance.stage, "不能给自己送体力");
 		} else {

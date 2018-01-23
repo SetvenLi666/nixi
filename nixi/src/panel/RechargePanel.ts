@@ -65,27 +65,8 @@ class RechargePanel extends eui.Component {
 		// this.dressClothes();
 	}
 
-	// private dressClothes() {
-	// 	// var arr:{}[] = this["arr" + this.curIndex];
-	// 	var arr:number[] = RechargeData.template[this.curIndex.toString()]["clothes"];
-	// 	var len = arr.length;
-	// 	for (var i = 0; i < len; i++) {
-	// 		var id: number = arr[i];
-	// 		var part: string = Math.floor(id / 10000) + "";
-	// 		var sub_part: string;
-	// 		var tempData = ClothesData.clothesTemplateData(part, id.toString());
-	// 		if (part == "7") {
-	// 			sub_part = tempData["sub_part"];
-	// 		} else {
-	// 			sub_part = tempData["part"];
-	// 		}
-
-	// 		// this.shower.dressItem(sub_part, id);
-	// 		this.shower.dressItemOfSuit(sub_part, id);
-	// 	}
-	// }
-
 	private onLeft() {
+		SoundManager.instance().buttonSound("flip");
 		this.curIndex -= 1;
 		this.curIndex = this.curIndex >= 1 ? this.curIndex : 1;
 
@@ -104,6 +85,7 @@ class RechargePanel extends eui.Component {
 	}
 
 	private onRight() {
+		SoundManager.instance().buttonSound("flip");
 		this.curIndex += 1;
 		this.curIndex = this.curIndex <= this.counts ? this.curIndex : this.counts;
 
@@ -138,6 +120,7 @@ class RechargePanel extends eui.Component {
 	}
 
 	private onButton() {
+		SoundManager.instance().buttonSound();
 		if (RechargeData.achievement["total"] < RechargeData.template[this.curIndex.toString()]["goal"]) {
 			NetLoading.showLoading();
 			var request: egret.URLRequest = HttpProtocolMgr.all_products_100();

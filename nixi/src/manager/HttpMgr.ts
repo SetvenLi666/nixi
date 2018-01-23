@@ -84,6 +84,8 @@ class HttpMgr {
             ShowData.update(content["show"]);
             GashaponData.replace_gashapon_user(content["gashapon"]);
 
+            ClothesData.updateUserClohtes(content["clothes"])
+
             //触发引导
             ClientMapData.updateClientMapData(content["client_setting_map"]);
 
@@ -91,6 +93,9 @@ class HttpMgr {
             WanbaData.updatePackageData(content["h5wanba"]["buy_libao_list"])
             //分享发送桌面
             ShareData.update(content["h5wanba"]);
+
+            //邀请数据
+            InviteData.updateInviteData(content["invite"]);
 
             //每日必做
             WelfareData.updateWelfareData(content["welfare"]);
@@ -153,6 +158,11 @@ class HttpMgr {
             CompetitionData.createRanklist(content["ranklist"]);
         }
 
+        else if (813 === cid) {
+            SocialData.update(content["social"]);
+            FriendData.update(content["friends"]);
+        }
+
         else if (811 === cid) {
             PaperData.delete_paper(content["id"]);
         }
@@ -180,6 +190,11 @@ class HttpMgr {
         else if (805 === cid) {
             SocialData.update(content["social"]);
             MessageData.update(content["messages"]);
+        }
+
+        else if (803 === cid) {
+            SocialData.update(content["social"]);
+            extraData = content["type"];
         }
 
         else if (804 === cid) {
@@ -225,6 +240,7 @@ class HttpMgr {
                 if (content["purchase"]) {
                     PurchaseData.update(content["purchase"]);
                 }
+                ClothesData.updateUserClohtes(content["clothes"]);
                 EnergyCD.updateEnergyCD();
                 extraData = {};
                 extraData.info = content["info"];
@@ -364,6 +380,16 @@ class HttpMgr {
             ClothesData.updateOwnClothes(content["newclothes"]);
             GashaponData.replace_gashapon_user(content["gashapon"]);
             CompetitionData.createSelfInfo(content["competition"]);
+        }
+
+        else if(340 === cid) {
+            ShuangdanData.updateTemplate(content);
+        }
+
+        else if(341 === cid) {
+            PlayerData.update(content["player"]);
+            ClothesData.updateUserClohtes(content["clothes"]);
+            ShuangdanData.updateInfo(content["info"]);
         }
 
         else if (333 === cid) {
@@ -550,6 +576,7 @@ class HttpMgr {
 
         else if (157 === cid) {
             PlayerData.update(content["player"]);
+            ClothesData.updateUserClohtes(content["clothes"]);
             EnergyCD.updateEnergyCD();
             PurchaseData.update(content["purchase"]);
             extraData = content["rewards"];
@@ -577,6 +604,38 @@ class HttpMgr {
             // this->creat_Energy_Time();
             EnergyCD.updateEnergyCD();
             PurchaseData.update(content["purchase"]);
+        }
+
+        else if(115 === cid) {
+            PlayerData.update(content["player"]);
+            TujianData.update(content["tujian"]);
+            extraData = content["reward"];
+        }
+
+        else if(114 === cid) {
+            TujianData.update(content["tujian"]);
+        }
+
+        else if(112 === cid) {
+            InviteData.updateInviteData(content["invite"]);
+            ClothesData.updateUserClohtes(content["clothes"]);
+            extraData = content["reward"];
+        }
+
+        else if(110 === cid) {
+            InviteData.updateInviteData(content["invite"]);
+            ClothesData.updateUserClohtes(content["clothes"]);
+            extraData = content["reward"];
+        }
+
+        else if (108 === cid) {
+            InviteData.updateInviteData(content["invite"]);
+            ClothesData.updateUserClohtes(content["clothes"]);
+            extraData = content["reward"];
+        }
+
+        else if (106 === cid) {
+            TLDiscountData.updateDiscountData(content);
         }
 
         else if (104 === cid) {

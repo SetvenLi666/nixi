@@ -31,11 +31,15 @@ class TaskRating extends eui.Component implements eui.UIComponent {
 		self.titlePanel.touchEnabled = false;
 		self.titlePanel.touchChildren = false;
 
-		self.ratingPanel.touchEnabled = false;
-		self.ratingPanel.touchChildren = false;
+		// self.ratingPanel.touchEnabled = false;
+		// self.ratingPanel.touchChildren = false;
 
-		self.bg.touchEnabled = false; // 后面开启
-		self.bg.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTapped, this);
+		// self.bg.touchEnabled = false; // 后面开启
+		self.btnTake.touchEnabled = false;
+		self.btnShare.touchEnabled = false;
+		// self.bg.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTapped, this);
+		self.btnTake.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTapped, this);
+		self.btnShare.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
 
 		// Display
 		var mask = DisplayMgr.createSceneMask();
@@ -137,9 +141,11 @@ class TaskRating extends eui.Component implements eui.UIComponent {
 		var viewWidth = Math.min(DisplayMgr.stageW, ConstData.Conf.MaskWidth);
 
 		self.isShowRewards = false;
-		self.bg.touchEnabled = false;
-		// self.discountText.visible = false;
+		// self.bg.touchEnabled = false;
+		self.btnTake.touchEnabled = false;
 		self.btnTake.visible = false;
+		self.btnShare.touchEnabled = false;
+		self.btnShare.visible = false;
 		self.ratingPanel.cacheAsBitmap = true;
 		egret.Tween.get(this.ratingPanel)
 			.set({ scaleX: 1.5, scaleY: 1.5, y: self.height * 0.35 })
@@ -152,7 +158,10 @@ class TaskRating extends eui.Component implements eui.UIComponent {
 					self.starsAnimation();
 				} else {
 					self.btnTake.visible = true;
-					self.bg.touchEnabled = true;
+					// self.bg.touchEnabled = true;
+					self.btnTake.touchEnabled = true;
+					self.btnShare.visible = true;
+					self.btnShare.touchEnabled = true;
 				}
 			});
 	}
@@ -184,7 +193,10 @@ class TaskRating extends eui.Component implements eui.UIComponent {
 
 				if (Number(this) >= self.rating) {
 					self.btnTake.visible = true;
-					self.bg.touchEnabled = true;
+					// self.bg.touchEnabled = true;
+					self.btnTake.touchEnabled = true;
+					self.btnShare.visible = true;
+					self.btnShare.touchEnabled = true;
 				}
 			}, i, 300 * i);
 		}
@@ -200,7 +212,7 @@ class TaskRating extends eui.Component implements eui.UIComponent {
 
 		CustomEventMgr.removeEventListener("172", this.after_updatedata_172, this);
 
-		this.bg.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTapped, this);
+		// this.bg.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTapped, this);
 		egret.Tween.removeAllTweens();
 
 		if (PlayerData.guide == 5) {
@@ -210,9 +222,17 @@ class TaskRating extends eui.Component implements eui.UIComponent {
 
 	private onTapped() {
 		console.log("TaskRating::onTapped() ...");
+		SoundManager.instance().buttonSound();
 		var self = this;
-		self.bg.touchEnabled = false;
+		// self.bg.touchEnabled = false;
+		self.btnTake.touchEnabled = false;
 		self.panelAnimation("coin", self.coin, "1");
+	}
+
+	private onShare() {
+		DisplayMgr.buttonScale(this.btnShare, function() {
+			ShareData.share("task");
+		});
 	}
 
 	private extraRewardPanel() {
@@ -321,6 +341,7 @@ class TaskRating extends eui.Component implements eui.UIComponent {
 	private starGroup: eui.Group;
 	private bg: eui.Image;
 	private btnTake: eui.Image;
+	private btnShare: eui.Image;
 	private ac_star: eui.Image;
 	private pkq_bg: eui.Image;
 

@@ -185,6 +185,7 @@ class PkLayerComp extends eui.Component {
 
 	private onListGroup() {
 		DisplayMgr.buttonScale(this.listGroup, function () {
+			SoundManager.instance().buttonSound();
 			NetLoading.showLoading();
 			var request: egret.URLRequest = HttpProtocolMgr.competition_info_820(!CompetitionData.hasInitRankInfo());
 			HttpMgr.postRequest(request);
@@ -194,6 +195,7 @@ class PkLayerComp extends eui.Component {
 	private onPrepare() {
 		var self = this;
 		DisplayMgr.buttonScale(this.startGroup, function () {
+			SoundManager.instance().buttonSound();
 			// if (CompetitionData.self.startTimes >= CompetitionData.theme.startLimit) {
 			// 	Prompt.showPrompt(self.stage, "今日PK次数已达上限!");
 			// } else {
@@ -210,6 +212,7 @@ class PkLayerComp extends eui.Component {
 	private changeClothes() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_change, function () {
+			SoundManager.instance().buttonSound();
 			if (ClothesData.hasFetchedUserClohtes()) {
 				self.result_of_400(null);
 			}
@@ -230,6 +233,7 @@ class PkLayerComp extends eui.Component {
 		//开始pk，进入pk场景
 		var self = this;
 		DisplayMgr.buttonScale(this.startGroup, function () {
+			SoundManager.instance().buttonSound();
 			if (CompetitionData.self.startTimes >= CompetitionData.theme.startLimit) {
 				Prompt.showPrompt(self.stage, "今日PK次数已达上限!");
 			} else {
@@ -265,6 +269,7 @@ class PkLayerComp extends eui.Component {
 
 	private buffCallback() {
 		DisplayMgr.buttonScale(this.btn_buff, function () {
+			SoundManager.instance().buttonSound();
 			NetLoading.showLoading();
 			var request = HttpProtocolMgr.competition_bless_823();
 			HttpMgr.postRequest(request);
@@ -274,6 +279,7 @@ class PkLayerComp extends eui.Component {
 	private refreshOpponent() {
 		var self = this;
 		DisplayMgr.buttonScale(this.refreshComp, function () {
+			SoundManager.instance().buttonSound();
 			NetLoading.showLoading();
 			self.shower_other.visible = false;
 			var request = HttpProtocolMgr.competition_search_opponent_821();
@@ -371,6 +377,7 @@ class PkLayerComp extends eui.Component {
 	private goback() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_back, function () {
+			SoundManager.instance().buttonSound();
 			ClothesData.setClothesCache(ShowData.dresses, ShowData.ornaments);
 			SceneMgr.gotoMainScene();
 		});

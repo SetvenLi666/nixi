@@ -136,6 +136,7 @@ class DailyTargetProgressComp extends eui.Component {
 	}
 
 	private onBoxTouch(evt: egret.TouchEvent) {
+		SoundManager.instance().buttonSound();
 		var targetId: string = "";
 		switch (evt.currentTarget) {
 			case this.boxGroup1:

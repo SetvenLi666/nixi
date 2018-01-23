@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DeleteFriendPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Group width="507" height="253" horizontalCenter="0" verticalCenter="0">
+			<e:Image source="eb_panel_png" horizontalCenter="0" verticalCenter="0"/>
+			<e:Label id="title" text="删除好友" y="73" size="30" textAlign="center" horizontalCenter="0" bold="true" textColor="0x5D3A44"/>
+			<e:Label id="tip" text="哈哈哈哈" y="130" size="24" textAlign="center" horizontalCenter="0" textColor="0xD46087"/>
+			<e:Image id="btn_cancel" y="182" horizontalCenter="-100" source="btn_no_png"/>
+			<e:Image id="btn_confirm" y="182" horizontalCenter="100" source="btn_yes_png" x="10"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

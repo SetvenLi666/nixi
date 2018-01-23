@@ -11,7 +11,7 @@ class MainComp extends eui.Component {
 	public libao_icon: eui.Image;
 	public libao_ac: eui.Image;
 	public libao_text: eui.Image;
-	public shareGroup: eui.Group;
+	// public shareGroup: eui.Group;
 	public collGroup: eui.Group;
 	public niudan_ac: eui.Image;
 	public leijiGroup: eui.Group;
@@ -19,19 +19,21 @@ class MainComp extends eui.Component {
 	public hdGroup: eui.Group;
 	public yqGroup: eui.Group;
 
-	public newShareGroup: eui.Group;
-	public newShareText: eui.Image;
-	public newShare: eui.Image;
-	public textMask: eui.Rect;
-	private shareIndex: number;
-	// private curTextIndex: number;
-	// private timer2: egret.Timer;
+	public bg: eui.Image;
 
 	public td_ac: eui.Image;
 	public dt_tip: eui.Image;
 
+	public mcGroup: eui.Group;
+
+	public tl_ac: eui.Image;
+	public tlGroup: eui.Group;
+	public tlGroup2: eui.Group;
+	public tlTime: eui.Label;
+
+	public hd_tip: eui.Image;
+
 	public touchRect: eui.Rect;
-	private isShowUI: boolean = true;
 
 	public sj_comp: eui.Component;
 	public xt_comp: eui.Component;
@@ -63,21 +65,30 @@ class MainComp extends eui.Component {
 
 		var self = this;
 
+		this.updateBg();
+
 		this.initView();
+
+		//图鉴josn生成
+		// this.checkAllClothes();
+
+		SoundManager.instance().startBgSound("main");
 
 		this.niudanGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnGashapon, this);
 		this.mailGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onMailTap, this);
 		this.hdGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnHd, this);
 
-		this.shareGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
 		this.collGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onDesk, this);
 		this.leijiGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnLj, this);
 		this.lbGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnLb, this);
 		this.scGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnSc, this);
 		this.dtGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnDt, this);
 		this.yqGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnYq, this);
+		this.mcGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnMc, this);
 
-		this.newShare.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
+		this.tlGroup2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnTl, this);
+
+		// this.newShare.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
 
 		this.touchRect.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouchRect, this);
 
@@ -86,6 +97,8 @@ class MainComp extends eui.Component {
 		CustomEventMgr.addEventListener("160", this.result_of_160, this);
 		CustomEventMgr.addEventListener("312", this.result_of_312, this);
 		CustomEventMgr.addEventListener("302", this.result_of_302, this);
+		CustomEventMgr.addEventListener("301", this.result_of_301, this);
+		CustomEventMgr.addEventListener("106", this.result_of_106, this);
 
 		CustomEventMgr.addEventListener("500", this.afterFetchStoryData_500, this);
 		CustomEventMgr.addEventListener("600", this.afterFetchMissionData_600, this);
@@ -95,7 +108,8 @@ class MainComp extends eui.Component {
 		CustomEventMgr.addEventListener("704", this.afterHomeInfo_704, this);
 		CustomEventMgr.addEventListener("700", this.afterFetchMailData_700, this);
 
-		CustomEventMgr.addEventListener("175", this.result_of_175, this);
+		// CustomEventMgr.addEventListener("175", this.result_of_175, this);
+		CustomEventMgr.addEventListener("114", this.afterFetchTujianData_114, this);
 
 		CustomEventMgr.addEventListener("104", this.afterTakePackageInfo_104, this);
 
@@ -109,7 +123,12 @@ class MainComp extends eui.Component {
 		CustomEventMgr.addEventListener("Update Libao View", this.updateLibaoView, this);
 		CustomEventMgr.addEventListener("Update Sc View", this.updateScView, this);
 		CustomEventMgr.addEventListener("CheckOut DT Status", this.checkDailyTargetStates, this);
-		CustomEventMgr.addEventListener("Update New Share", this.updateNewShare, this);
+		// CustomEventMgr.addEventListener("Update New Share", this.updateNewShare, this);
+
+		CustomEventMgr.addEventListener("Change Model Clothes", this.changeModelClothes, this);
+
+		CustomEventMgr.addEventListener("Update TL View", this.updateDlView, this);
+		CustomEventMgr.addEventListener("Hide TL", this.hideDlView, this);
 
 		//获取每日任务数据
 		var request = HttpProtocolMgr.take_welfare_data_630();
@@ -161,6 +180,81 @@ class MainComp extends eui.Component {
 		}
 	}
 
+	private updateBg() {
+		var time = new Date();
+		var hour = time.getHours();
+		if(hour >= 5 && hour < 11) {
+			this.bg.source = "main_bg_1_png";
+		}else if(hour >= 11 && hour < 17) {
+			this.bg.source = "main_bg_2_png";
+		}else if(hour >= 17 || hour < 5) {
+			this.bg.source = "main_bg_3_png";
+		}
+	}
+
+	private checkAllClothes() {
+		// var arr = ClothesData.allClothesArray();
+		// var len = arr.length;
+		// var end_data: {} = {};
+		// var taskdata: {}[] = RES.getRes("task_serial_json");
+		// var len2 = taskdata.length;
+		// for (var j = 0; j < len2; j++) {
+		// 	var taskitem = taskdata[j];
+		// 	var itemdata: {} = {
+		// 		"task_id": taskitem["task_id"],
+		// 		"serial": taskitem["serial"],
+		// 		"clothes": []
+		// 	};
+
+		// 	for (var i = 0; i < len; i++) {
+		// 		var item = arr[i];
+		// 		if (item["serial"] == taskitem["serial"]) {
+		// 			itemdata["clothes"].push(item["id"]);
+		// 		}
+		// 	}
+
+		// 	end_data[taskitem["task_id"]] = itemdata;
+		// }
+		var arr = ClothesData.allClothesArray();
+		var len = arr.length;
+		var end_data: {} = {};
+		var taskdata: {}[] = RES.getRes("task_serial_json");
+		var len2 = taskdata.length;
+		var index: number = 1;
+		for (var j = 0; j < len2; j++) {
+			var taskitem = taskdata[j];
+			var itemdata: {} = {
+				"index": index,
+				"serial": taskitem["serial"],
+				"clothes": []
+			};
+
+			for (var i = 0; i < len; i++) {
+				var item = arr[i];
+				if (item["serial"] == taskitem["serial"]) {
+					itemdata["clothes"].push(item["id"]);
+				}
+			}
+
+
+			var isActive: boolean = true;
+			for (var p in end_data) {
+				if (end_data[p]["serial"] == itemdata["serial"]) {
+					isActive = false;
+				}
+			}
+
+			if (itemdata["clothes"].length == 0) {
+
+			} else if (isActive) {
+				end_data[index] = itemdata;
+				index++;
+			}
+		}
+
+		egret.localStorage.setItem("end_data", JSON.stringify(end_data));
+	}
+
 	private onExit() {
 		this.removeEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit, this);
 		egret.Tween.removeAllTweens();
@@ -174,11 +268,15 @@ class MainComp extends eui.Component {
 		// 	this.timer2 = null;
 		// }
 
+		// SoundManager.instance().destroyStartSound();
+
 		CustomEventMgr.removeEventListener("304", this.result_of_304, this);
 		CustomEventMgr.removeEventListener("306", this.result_of_306, this);
 		CustomEventMgr.removeEventListener("160", this.result_of_160, this);
 		CustomEventMgr.removeEventListener("312", this.result_of_312, this);
 		CustomEventMgr.removeEventListener("302", this.result_of_302, this);
+		CustomEventMgr.removeEventListener("301", this.result_of_301, this);
+		CustomEventMgr.removeEventListener("106", this.result_of_106, this);
 
 		CustomEventMgr.removeEventListener("500", this.afterFetchStoryData_500, this);
 		CustomEventMgr.removeEventListener("600", this.afterFetchMissionData_600, this);
@@ -188,9 +286,11 @@ class MainComp extends eui.Component {
 		CustomEventMgr.removeEventListener("704", this.afterHomeInfo_704, this);
 		CustomEventMgr.removeEventListener("700", this.afterFetchMailData_700, this);
 
-		CustomEventMgr.removeEventListener("175", this.result_of_175, this);
+		// CustomEventMgr.removeEventListener("175", this.result_of_175, this);
 
 		CustomEventMgr.removeEventListener("104", this.afterTakePackageInfo_104, this);
+
+		CustomEventMgr.removeEventListener("114", this.afterFetchTujianData_114, this);
 
 		CustomEventMgr.removeEventListener("910", this.result_of_910, this);
 
@@ -203,6 +303,13 @@ class MainComp extends eui.Component {
 		CustomEventMgr.removeEventListener("Update Sc View", this.updateScView, this);
 		CustomEventMgr.removeEventListener("CheckOut DT Status", this.checkDailyTargetStates, this);
 
+		// CustomEventMgr.removeEventListener("Update New Share", this.updateNewShare, this);
+		CustomEventMgr.removeEventListener("Change Model Clothes", this.changeModelClothes, this);
+
+
+		CustomEventMgr.removeEventListener("Update TL View", this.updateDlView, this);
+		CustomEventMgr.removeEventListener("Hide TL", this.hideDlView, this);
+
 		CustomEventMgr.removeEventListener("Talk Message", this.playGuideTalk, this);
 		CustomEventMgr.removeEventListener("Guide_Step_1_1", this.onTouchRect, this);
 		CustomEventMgr.removeEventListener("Guide_Step_1_2", this.onYlComp, this);
@@ -213,13 +320,16 @@ class MainComp extends eui.Component {
 		this.niudanGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnGashapon, this);
 		this.mailGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onMailTap, this);
 
-		this.shareGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
 		this.collGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onDesk, this);
 		this.leijiGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnLj, this);
 		this.lbGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnLb, this);
 		this.scGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnSc, this);
 		this.dtGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnDt, this);
 		this.hdGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnHd, this);
+
+		this.mcGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnMc, this);
+
+		this.tlGroup2.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnTl, this);
 
 		this.touchRect.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouchRect, this);
 
@@ -236,28 +346,38 @@ class MainComp extends eui.Component {
 
 	private initView() {
 		if (NewsData.mail > 0) {
+			// var tw_mailGroup = egret.Tween.get(this.mailGroup, {loop: true});
+			// tw_mailGroup
+			// .to({rotation: 8}, 100)
+			// .to({rotation: 0}, 100)
+			// .to({rotation: -8}, 100)
+			// .to({rotation: 0}, 100)
+			// .to({rotation: 8}, 100)
+			// .to({rotation: 0}, 100)
+			// .to({rotation: -8}, 100)
+			// .to({rotation: 0}, 100)
+			// .wait(2000);
+
 			this.mailTip.visible = true;
 			var tw_tip = egret.Tween.get(this.mailTip, { loop: true });
 			tw_tip.to({ scaleX: 1.05, scaleY: 1.05 }, 300)
 				.to({ scaleX: 1, scaleY: 1 }, 300);
 		} else {
 			this.mailTip.visible = false;
+			egret.Tween.removeTweens(this.mailGroup);
 			egret.Tween.removeTweens(this.mailTip);
 		}
 
-		this.shareIndex = Math.floor(Math.random() * 3) + 1;
-		// this.curTextIndex = this.shareIndex;
-		this.newShare.source = "newshare_role_" + this.shareIndex + "_png";
-		this.newShareText.source = "newshare_text_" + this.shareIndex + "_png";
-		this.newShareText.mask = this.textMask;
-		this.newShareAnimationFirst();
-		this.newShareGroup.visible = ShareData.isShowNewShare;
+		// this.shareIndex = Math.floor(Math.random() * 3) + 1;
+		// // this.curTextIndex = this.shareIndex;
+		// this.newShare.source = "newshare_role_" + this.shareIndex + "_png";
+		// this.newShareText.source = "newshare_text_" + this.shareIndex + "_png";
+		// this.newShareText.mask = this.textMask;
+		// this.newShareAnimationFirst();
+		// this.newShareGroup.visible = ShareData.isShowNewShare;
 
-		// if (this.newShareGroup.visible) {
-		// 	this.timer2 = new egret.Timer(0, 0);
-		// 	this.timer2.addEventListener(egret.TimerEvent.TIMER, this.timer2Callback, this);
-		// 	this.timer2.start();
-		// }
+		//限时礼包========
+		this.checkoutTlDiscount();
 
 		//邀请
 		// if (ConstData.Conf.whiteList.indexOf(LoginData.sid) != -1 || window["OPEN_DATA"].openid == "aaaa") {
@@ -276,6 +396,8 @@ class MainComp extends eui.Component {
 		this.updateLibaoView();
 		//更新首冲视图
 		this.updateScView();
+
+		// this.updateNewShare();
 
 		this.model.dress(ClothesData.ondressCache, ClothesData.ornamentsCache);
 
@@ -352,33 +474,69 @@ class MainComp extends eui.Component {
 	private updateLibaoView() {
 		//1 = 安卓，2 = IOS
 		if (window["OPEN_DATA"] && window["OPEN_DATA"].platform == 2) {
-			if (WanbaData.packageData.indexOf("libao_2") == -1) {
+			if (WanbaData.packageData.indexOf("libao_2") == -1 && InviteData.reward3_state != 3) {
 				this.libao_icon.source = "newmain_ui_json.main_libao_6";
 				this.libao_ac.source = "newmain_ui_json.main_coin_6";
 				this.libao_text.source = "newmain_ui_json.main_coin_text_6";
-			} else if (WanbaData.packageData.indexOf("libao_3") == -1) {
+			} else if (WanbaData.packageData.indexOf("libao_3") == -1 && InviteData.reward10_state != 3) {
 				this.libao_icon.source = "newmain_ui_json.main_libao_30";
 				this.libao_ac.source = "newmain_ui_json.main_coin_30";
 				this.libao_text.source = "newmain_ui_json.main_coin_text_30";
 			} else {
 				this.lbGroup.visible = false;
 			}
+
+			// else if (InviteData.reward_state != 3) {
+			// 	this.libao_icon.source = "newmain_ui_json.main_libao_1";
+			// 	this.libao_ac.source = "newmain_ui_json.main_coin_30";
+			// 	this.libao_text.source = "main_free_text_png";
+			// } else {
+			// 	this.lbGroup.visible = false;
+			// }
+
+			// if (WanbaData.packageData.indexOf("libao_2") == -1) {
+			// 	this.libao_icon.source = "newmain_ui_json.main_libao_6";
+			// 	this.libao_ac.source = "newmain_ui_json.main_coin_6";
+			// 	this.libao_text.source = "newmain_ui_json.main_coin_text_6";
+			// } else if (WanbaData.packageData.indexOf("libao_3") == -1) {
+			// 	this.libao_icon.source = "newmain_ui_json.main_libao_30";
+			// 	this.libao_ac.source = "newmain_ui_json.main_coin_30";
+			// 	this.libao_text.source = "newmain_ui_json.main_coin_text_30";
+			// } else {
+			// 	this.lbGroup.visible = false;
+			// }
 		} else {
 			if (WanbaData.packageData.indexOf("libao_1") == -1) {
 				this.libao_icon.source = "newmain_ui_json.main_libao_1";
 				this.libao_ac.source = "newmain_ui_json.main_coin_1";
 				this.libao_text.source = "newmain_ui_json.main_coin_text_1";
-			} else if (WanbaData.packageData.indexOf("libao_2") == -1) {
+			} else if (WanbaData.packageData.indexOf("libao_2") == -1 && InviteData.reward3_state != 3) {
 				this.libao_icon.source = "newmain_ui_json.main_libao_6";
 				this.libao_ac.source = "newmain_ui_json.main_coin_6";
 				this.libao_text.source = "newmain_ui_json.main_coin_text_6";
-			} else if (WanbaData.packageData.indexOf("libao_3") == -1) {
+			} else if (WanbaData.packageData.indexOf("libao_3") == -1 && InviteData.reward10_state != 3) {
 				this.libao_icon.source = "newmain_ui_json.main_libao_30";
 				this.libao_ac.source = "newmain_ui_json.main_coin_30";
 				this.libao_text.source = "newmain_ui_json.main_coin_text_30";
 			} else {
 				this.lbGroup.visible = false;
 			}
+
+			// if (WanbaData.packageData.indexOf("libao_1") == -1) {
+			// 	this.libao_icon.source = "newmain_ui_json.main_libao_1";
+			// 	this.libao_ac.source = "newmain_ui_json.main_coin_1";
+			// 	this.libao_text.source = "newmain_ui_json.main_coin_text_1";
+			// } else if (WanbaData.packageData.indexOf("libao_2") == -1) {
+			// 	this.libao_icon.source = "newmain_ui_json.main_libao_6";
+			// 	this.libao_ac.source = "newmain_ui_json.main_coin_6";
+			// 	this.libao_text.source = "newmain_ui_json.main_coin_text_6";
+			// } else if (WanbaData.packageData.indexOf("libao_3") == -1) {
+			// 	this.libao_icon.source = "newmain_ui_json.main_libao_30";
+			// 	this.libao_ac.source = "newmain_ui_json.main_coin_30";
+			// 	this.libao_text.source = "newmain_ui_json.main_coin_text_30";
+			// } else {
+			// 	this.lbGroup.visible = false;
+			// }
 		}
 	}
 
@@ -396,42 +554,52 @@ class MainComp extends eui.Component {
 		}
 	}
 
+	private changeModelClothes() {
+		this.model.takeOffAllClothes();
+		this.model.dress(ClothesData.ondressCache, ClothesData.ornamentsCache);
+	}
+
+	private checkoutTlDiscount() {
+		if (TLDiscountData.leftTime <= 0) {
+			if (Math.floor(Math.random() * 2) == 1) {
+				var type: number = 6;
+				var rand = Math.floor(Math.random() * 2);
+				if (rand == 0) {
+					type = 6;
+				} else {
+					type = 30;
+				}
+				console.log(type);
+				var request = HttpProtocolMgr.take_timelimitDiscount_info_106(type);
+				HttpMgr.postRequest(request);
+			}
+		} else {
+			this.updateDlView();
+			this.tlGroup.visible = true;
+			var tw_tl_ac = egret.Tween.get(this.tl_ac, { loop: true });
+			tw_tl_ac.to({ rotation: 360 }, 10000);
+			var tw_tl_ac2 = egret.Tween.get(this.tl_ac, { loop: true });
+			tw_tl_ac2.to({ alpha: 0 }, 300)
+				.to({ alpha: 1 }, 300);
+		}
+	}
+
 	private playCompAnimation() {
-		egret.Tween.get(this.sj_comp).to({ y: 770 }, 800, egret.Ease.backOut);
-		egret.Tween.get(this.xt_comp).to({ y: 930 }, 1000, egret.Ease.backOut);
+		egret.Tween.get(this.sj_comp).to({ y: 820 }, 750, egret.Ease.backOut);
+		egret.Tween.get(this.xt_comp).to({ y: 930 }, 900, egret.Ease.backOut);
 		egret.Tween.get(this.yl_comp).to({ y: 975 }, 600, egret.Ease.backOut);
-		egret.Tween.get(this.sd_comp).to({ y: 930 }, 1000, egret.Ease.backOut);
-		egret.Tween.get(this.jj_comp).to({ y: 770 }, 800, egret.Ease.backOut);
+		egret.Tween.get(this.sd_comp).to({ y: 930 }, 900, egret.Ease.backOut);
+		egret.Tween.get(this.jj_comp).to({ y: 820 }, 750, egret.Ease.backOut);
 	}
 
-	// private timer2Callback(evt: egret.TimerEvent) {
-	// 	if (this.timer2.currentCount == 1) {
-	// 		this.newShareAnimationFirst();
-	// 	} else {
-	// 		this.newShareAnimation();
-	// 	}
-
-	// 	this.timer2.delay = (Math.floor(Math.random() * 5) + 15) * 1000;
-	// }
-
-	private newShareAnimationFirst() {
-		var tw = egret.Tween.get(this.newShareText);
-		tw.to({ x: 74 }, 1500);
-	}
-
-	// private newShareAnimation() {
-	// 	var arr = [1, 2, 3];
-	// 	arr.splice(arr.indexOf(this.curTextIndex), 1);
-	// 	var index = arr[Math.floor(Math.random() * 2)];
-	// 	this.curTextIndex = index;
+	// private newShareAnimationFirst() {
 	// 	var tw = egret.Tween.get(this.newShareText);
-	// 	tw.to({ x: -103 }, 1000)
-	// 		.to({ source: "newshare_text_" + index + "_png" })
-	// 		.to({ x: 74 }, 1500);
+	// 	tw.to({ x: 74 }, 1500);
 	// }
 
 	private onBtnGashapon() {
 		DisplayMgr.buttonScale(this.niudanGroup, function () {
+			SoundManager.instance().buttonSound("pop");
 			NetLoading.showLoading();
 			var request: egret.URLRequest;
 			if (GashaponData.has_init_gashapon_template()) {
@@ -445,6 +613,7 @@ class MainComp extends eui.Component {
 
 	private onMailTap() {
 		DisplayMgr.buttonScale(this.mailGroup, function () {
+			SoundManager.instance().buttonSound("pop");
 			NetLoading.showLoading();
 			var request: egret.URLRequest = HttpProtocolMgr.all_mails_700();
 			HttpMgr.postRequest(request);
@@ -457,18 +626,20 @@ class MainComp extends eui.Component {
 		HttpMgr.postRequest(request);
 	}
 
-	private onShare() {
-		var self = this;
-		DisplayMgr.buttonScale(this.newShare, function () {
-			var panel = new NewSharePanel(self.shareIndex);
-			DisplayMgr.set2Center(panel);
-			self.stage.addChild(panel);
-		});
-	}
+	// private onShare() {
+	// 	var self = this;
+	// 	DisplayMgr.buttonScale(this.newShare, function () {
+	// 		SoundManager.instance().buttonSound("pop");
+	// 		var panel = new NewSharePanel(self.shareIndex);
+	// 		DisplayMgr.set2Center(panel);
+	// 		self.stage.addChild(panel);
+	// 	});
+	// }
 
 	private onDesk() {
 		var self = this;
 		DisplayMgr.buttonScale(this.collGroup, function () {
+			SoundManager.instance().buttonSound("pop");
 			var panel = new ShareDeskPanel("desk");
 			DisplayMgr.set2Center(panel);
 			self.stage.addChild(panel);
@@ -477,6 +648,7 @@ class MainComp extends eui.Component {
 
 	private onBtnLj() {
 		DisplayMgr.buttonScale(this.leijiGroup, function () {
+			SoundManager.instance().buttonSound("pop");
 			NetLoading.showLoading();
 			var request: egret.URLRequest;
 			if (RechargeData.has_init_purchase_template()) {
@@ -491,6 +663,7 @@ class MainComp extends eui.Component {
 	private onBtnLb() {
 		var self = this;
 		DisplayMgr.buttonScale(this.lbGroup, function () {
+			SoundManager.instance().buttonSound("pop");
 			NetLoading.showLoading();
 			var request = HttpProtocolMgr.take_package_info_104();
 			HttpMgr.postRequest(request);
@@ -500,6 +673,7 @@ class MainComp extends eui.Component {
 	private onBtnHd() {
 		var self = this;
 		DisplayMgr.buttonScale(this.hdGroup, function () {
+			SoundManager.instance().buttonSound("pop");
 			var panel = new HuodongPanel();
 			DisplayMgr.set2Center(panel);
 			self.stage.addChild(panel);
@@ -509,6 +683,7 @@ class MainComp extends eui.Component {
 	private onBtnYq() {
 		var self = this;
 		DisplayMgr.buttonScale(this.yqGroup, function () {
+			SoundManager.instance().buttonSound("pop");
 			NetLoading.showLoading();
 			var request = HttpProtocolMgr.take_invite_info_165();
 			HttpMgr.postRequest(request);
@@ -521,7 +696,7 @@ class MainComp extends eui.Component {
 			// NetLoading.showLoading();
 			// var request = HttpProtocolMgr.all_products_100();
 			// HttpMgr.postRequest(request);
-
+			SoundManager.instance().buttonSound("pop");
 			if (ShareData.isFirstPay && ShareData.firstpay_lottery_times == 1 && ShareData.isDailyPay && ShareData.dailypay_normal_times == 1 && ShareData.dailypay_lottery_times == 1) {
 				//
 				NetLoading.showLoading();
@@ -543,9 +718,30 @@ class MainComp extends eui.Component {
 		WelfareData.isBtnReq = true;
 		var self = this;
 		DisplayMgr.buttonScale(this.dtGroup, function () {
+			SoundManager.instance().buttonSound("pop");
 			NetLoading.showLoading();
 			var request = HttpProtocolMgr.take_welfare_data_630();
 			HttpMgr.postRequest(request);
+		});
+	}
+
+	private onBtnTl() {
+		var self = this;
+		DisplayMgr.buttonScale(this.tlGroup2, function () {
+			SoundManager.instance().buttonSound("pop");
+			var panel = new LimitDiscountPanel(TLDiscountData.type);
+			DisplayMgr.set2Center(panel);
+			self.stage.addChild(panel);
+		});
+	}
+
+	private onBtnMc() {
+		var self = this;
+		DisplayMgr.buttonScale(this.mcGroup, function () {
+			SoundManager.instance().buttonSound("pop");
+			var panel = new MonthCardPanel();
+			DisplayMgr.set2Center(panel);
+			self.stage.addChild(panel);
 		});
 	}
 
@@ -553,40 +749,9 @@ class MainComp extends eui.Component {
 		// this.onBtnGo();
 	}
 
-	private showUI() {
-		var tw_ga = egret.Tween.get(this.niudanGroup);
-		tw_ga.to({ x: -15 }, this.hideTime);
-
-		var tw_sh = egret.Tween.get(this.shareGroup);
-		tw_sh.to({ x: this.group.width * 0.02 }, this.hideTime);
-
-		var tw_desk = egret.Tween.get(this.collGroup);
-		tw_desk.to({ x: this.group.width * 0.02 }, this.hideTime);
-
-		var tw_lb = egret.Tween.get(this.lbGroup);
-		tw_lb.to({ x: this.group.width * 0.02 }, this.hideTime);
-
-		var tw_lj = egret.Tween.get(this.leijiGroup);
-		tw_lj.to({ x: this.group.width * 0.02 }, this.hideTime);
-
-		var tw_daily = egret.Tween.get(this.scGroup);
-		tw_daily.to({ x: this.group.width - this.scGroup.width }, this.hideTime);
-
-		var tw_ml = egret.Tween.get(this.mailGroup);
-		tw_ml.to({ x: this.group.width - this.scGroup.width / 2 - this.mailGroup.width / 2 }, this.hideTime);
-
-		var tw_dt = egret.Tween.get(this.dtGroup);
-		tw_dt.to({ x: this.group.width - this.scGroup.width / 2 - this.dtGroup.width / 2 }, this.hideTime);
-
-		var self = this;
-		egret.setTimeout(function () {
-			self.isShowUI = true;
-			self.touchRect.touchEnabled = true;
-		}, this, this.hideTime);
-	}
-
 	private onSjComp() {
 		DisplayMgr.buttonScale(this.sj_comp, function () {
+			SoundManager.instance().buttonSound();
 			NetLoading.showLoading();
 			var request: egret.URLRequest = HttpProtocolMgr.social_info_800();
 			HttpMgr.postRequest(request);
@@ -595,6 +760,7 @@ class MainComp extends eui.Component {
 
 	private onXtComp() {
 		DisplayMgr.buttonScale(this.xt_comp, function () {
+			SoundManager.instance().buttonSound();
 			NetLoading.showLoading();
 			var request: egret.URLRequest = HttpProtocolMgr.fetchStoryData_500();
 			HttpMgr.postRequest(request);
@@ -603,6 +769,7 @@ class MainComp extends eui.Component {
 
 	private onYlComp() {
 		DisplayMgr.buttonScale(this.yl_comp, function () {
+			SoundManager.instance().buttonSound();
 			NetLoading.showLoading();
 			if (true === CofferData.hasInitTemplateData()) {
 				var request: egret.URLRequest = HttpProtocolMgr.cofferInfo_200(false);
@@ -618,6 +785,7 @@ class MainComp extends eui.Component {
 	private onSdComp() {
 		var self = this;
 		DisplayMgr.buttonScale(this.sd_comp, function () {
+			SoundManager.instance().buttonSound();
 			if (ClothesData.hasFetchedUserClohtes()) {
 				self.afterFetchClothesData_400(null);
 			}
@@ -632,6 +800,7 @@ class MainComp extends eui.Component {
 	private onJjComp() {
 		var self = this;
 		DisplayMgr.buttonScale(this.jj_comp, function () {
+			SoundManager.instance().buttonSound();
 			if (PlayerData.mission <= 6) {
 				Prompt.showPrompt(self.stage, "完成娱乐圈任务6之后解锁");
 				return;
@@ -647,23 +816,49 @@ class MainComp extends eui.Component {
 		NetLoading.removeLoading();
 		var panel: eui.Component = null;
 		if (window["OPEN_DATA"] && window["OPEN_DATA"].platform == 2) {
-			if (WanbaData.packageData.indexOf("libao_2") == -1) {
+			if (WanbaData.packageData.indexOf("libao_2") == -1 && InviteData.reward3_state != 3) {
 				panel = new SixPanel();
-			} else if (WanbaData.packageData.indexOf("libao_3") == -1) {
+			} else if (WanbaData.packageData.indexOf("libao_3") == -1 && InviteData.reward10_state != 3) {
 				panel = new ThirtyPanel();
-			}
+			} 
+			// else {
+			// 	panel = new InviteFreeRewardPanel();
+			// }
 		} else {
 			if (WanbaData.packageData.indexOf("libao_1") == -1) {
 				panel = new OnePanel();
-			} else if (WanbaData.packageData.indexOf("libao_2") == -1) {
+			} else if (WanbaData.packageData.indexOf("libao_2") == -1 && InviteData.reward3_state != 3) {
 				panel = new SixPanel();
-			} else if (WanbaData.packageData.indexOf("libao_3") == -1) {
+			} else if (WanbaData.packageData.indexOf("libao_3") == -1 && InviteData.reward10_state != 3) {
 				panel = new ThirtyPanel();
-			}
+			} 
+			// else {
+			// 	panel = new InviteFreeRewardPanel();
+			// }
 		}
 
 		DisplayMgr.set2Center(panel);
 		this.stage.addChild(panel);
+	}
+
+	private result_of_106() {
+		this.tlGroup.visible = true;
+		var tw_tl_ac = egret.Tween.get(this.tl_ac, { loop: true });
+		tw_tl_ac.to({ rotation: 360 }, 10000);
+		var tw_tl_ac2 = egret.Tween.get(this.tl_ac, { loop: true });
+		tw_tl_ac2.to({ alpha: 0 }, 300)
+			.to({ alpha: 1 }, 300);
+	}
+
+	private updateDlView() {
+		var leftTime = TLDiscountData.leftTime;
+		var min = Math.floor(leftTime / 60);
+		var sec = leftTime - min * 60;
+		this.tlTime.text = (min < 10 ? "0" + min : min) + ":" + (sec < 10 ? "0" + sec : sec);
+	}
+
+	private hideDlView() {
+		this.tlGroup.visible = false;
 	}
 
 	private result_of_302(evt: egret.Event) {
@@ -713,20 +908,29 @@ class MainComp extends eui.Component {
 		this.stage.addChild(panel);
 	}
 
-	private result_of_175(evt: egret.Event) {
-		if (evt.data.type == "do_share_reward") {
-			ShareData.isShowNewShare = false;
-			this.newShareGroup.visible = ShareData.isShowNewShare;
-		}
-
-		var data: {} = evt.data.reward;
-		var reward: {}[] = [];
-		for (var i in data) {
-			var item = { type: i, num: data[i] };
-			reward.push(item);
-		}
-		this.playRewardAnimation(reward);
+	private afterFetchTujianData_114() {
+		NetLoading.removeLoading();
+		RES.getResAsync("tujian_list_json", (data, key) => {
+			var panel = new TujianPanel(data);
+			DisplayMgr.set2Center(panel);
+			this.stage.addChild(panel);
+		}, this);
 	}
+
+	// private result_of_175(evt: egret.Event) {
+	// 	if (evt.data.type == "do_share_reward") {
+	// 		ShareData.isShowNewShare = false;
+	// 		this.newShareGroup.visible = ShareData.isShowNewShare;
+	// 	}
+
+	// 	var data: {} = evt.data.reward;
+	// 	var reward: {}[] = [];
+	// 	for (var i in data) {
+	// 		var item = { type: i, num: data[i] };
+	// 		reward.push(item);
+	// 	}
+	// 	this.playRewardAnimation(reward);
+	// }
 
 	private playRewardAnimation(reward: {}[]) {
 		var panel = new CommonRewardPanel(reward);
@@ -736,9 +940,14 @@ class MainComp extends eui.Component {
 		CustomEventMgr.dispatchEventWith("Update Player Info", false);
 	}
 
-	private updateNewShare() {
-		this.newShareGroup.visible = ShareData.isShowNewShare;
-	}
+	// private updateNewShare() {
+	// 	this.newShareGroup.visible = ShareData.isShowNewShare;
+	// 	// if(ShareData.shareTimes != 0) {
+	// 	// 	this.newShareGroup.visible = false;
+	// 	// }else {
+	// 	// 	this.newShareGroup.visible = true;
+	// 	// }
+	// }
 
 	private afterFetchStoryData_500(evt: egret.Event) {
 		if (EventData.isEventReq) {
@@ -755,8 +964,7 @@ class MainComp extends eui.Component {
 			}
 		} else {
 			NetLoading.removeLoading();
-			// SceneMgr.gotoStoryChapterScene();
-			// SceneMgr.gotoNewStoryScene();
+			SoundManager.instance().destroyStartSound();
 			SceneMgr.gotoNewStorySelectScene();
 		}
 	}
@@ -860,6 +1068,8 @@ class MainComp extends eui.Component {
 	}
 
 	private afterFetchMailData_700() {
+		egret.Tween.removeTweens(this.mailGroup);
+		egret.Tween.removeTweens(this.mailTip);
 		this.mailTip.visible = false;
 		NetLoading.removeLoading();
 		var panel = new EmailPanel();
@@ -869,13 +1079,46 @@ class MainComp extends eui.Component {
 
 	private result_of_910() {
 		if (NewsData.mail > 0) {
+			// var tw_mailGroup = egret.Tween.get(this.mailGroup, {loop: true});
+			// tw_mailGroup
+			// .to({rotation: 8}, 150)
+			// .to({rotation: 0}, 150)
+			// .to({rotation: -8}, 150)
+			// .to({rotation: 0}, 150)
+			// .to({rotation: 8}, 150)
+			// .to({rotation: 0}, 150)
+			// .to({rotation: -8}, 150)
+			// .to({rotation: 0}, 150)
+			// .wait(2000);
+
 			this.mailTip.visible = true;
 			var tw_tip = egret.Tween.get(this.mailTip, { loop: true });
 			tw_tip.to({ scaleX: 1.05, scaleY: 1.05 }, 300)
 				.to({ scaleX: 1, scaleY: 1 }, 300);
 		} else {
 			this.mailTip.visible = false;
+			egret.Tween.removeTweens(this.mailGroup);
 			egret.Tween.removeTweens(this.mailTip);
+		}
+
+		if (NewsData.energy1 == 1 || NewsData.energy2 == 1) {
+			this.hd_tip.visible = true;
+			var tw_hd_tip = egret.Tween.get(this.hd_tip, { loop: true });
+			tw_hd_tip.to({ scaleX: 1.05, scaleY: 1.05 }, 300)
+				.to({ scaleX: 1, scaleY: 1 }, 300);
+		} else {
+			this.hd_tip.visible = false;
+			egret.Tween.removeTweens(this.hd_tip);
+		}
+	}
+
+	private result_of_301(evt: egret.Event) {
+		NetLoading.removeLoading();
+		CustomEventMgr.dispatchEventWith("Update Player Info", false);
+		Prompt.showPrompt(this.stage, "成功领取" + evt.data + "体力");
+		if (this.hd_tip.visible) {
+			this.hd_tip.visible = false;
+			egret.Tween.removeTweens(this.hd_tip);
 		}
 	}
 

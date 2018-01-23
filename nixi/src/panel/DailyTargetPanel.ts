@@ -114,6 +114,7 @@ class DailyTargetItemRenderer extends eui.ItemRenderer {
 	private onBtnGroup() {
 		var self = this;
 		DisplayMgr.buttonScale(this.btnGroup, function () {
+			SoundManager.instance().buttonSound();
 			NetLoading.showLoading();
 			var request = HttpProtocolMgr.take_welfare_reward_631(self.data.id);
 			HttpMgr.postRequest(request);

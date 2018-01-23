@@ -3,10 +3,12 @@ class FindPanelComp extends eui.Component {
 	public btn_find: eui.Image;
 	public btn_back: eui.Image;
 	public nickname: eui.EditableText;
+	private curName: string = null;
 
-	public constructor() {
+	public constructor(name?: string) {
 		super();
 
+		this.curName = name;
 		this.skinName = "FindPanelSkin";
 		this.addEventListener(egret.Event.ADDED_TO_STAGE, this.addStage, this);
 		this.addEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit, this);
@@ -18,6 +20,10 @@ class FindPanelComp extends eui.Component {
 		this.btn_find.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onFind, this);
 		this.btn_back.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBack, this);
 
+		if(this.curName) {
+			this.nickname.text = this.curName;
+		}
+
 		CustomEventMgr.addEventListener("801", this.search_success_801, this);
 	}
 
@@ -25,27 +31,15 @@ class FindPanelComp extends eui.Component {
 		CustomEventMgr.removeEventListener("801", this.search_success_801, this);
 	}
 
-	private onFocusIn() {
-		egret.log("focus in");
-	}
-
-	private onFocusOut() {
-		egret.log("focus out");
-	}
-
-	private onChange() {
-		egret.log("on change");
-		
-	}
-
 	private onFind() {
+		SoundManager.instance().buttonSound();
 		NetLoading.showLoading();
 		var request: egret.URLRequest = HttpProtocolMgr.search_other_801(this.nickname.text);
 		HttpMgr.postRequest(request);
 	}
 
 	private onBack() {
-		egret.log("on back");
+		SoundManager.instance().buttonSound();
 		this.closePanel();
 	}
 
@@ -57,6 +51,7 @@ class FindPanelComp extends eui.Component {
 
 	private search_success_801() {
 		NetLoading.removeLoading();
-		Prompt.showPrompt(egret.MainContext.instance.stage, "好友请求发送成功");
+		Prompt.showPrompt(egret.MainContext.instance.stage, "好友添加成功");
+		this.closePanel();
 	}
 }

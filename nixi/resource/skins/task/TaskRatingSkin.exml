@@ -23,7 +23,8 @@
 	</e:Group>
 	<e:Group id="ratingPanel" y="521" anchorOffsetX="274.5" anchorOffsetY="191" horizontalCenter="0" width="549" height="191" visible="false">
 		<e:Image source="task_rat_json.task_rat_bar" horizontalCenter="0" verticalCenter="0"/>
-		<e:Image id="btnTake" y="133.25" source="task_rat_json.task_rat_rev" x="425"/>
+		<e:Image id="btnShare" x="450" y="21" source="share_btn_png"/>
+		<e:Image id="btnTake" y="133.25" x="425" source="lingqu_btn_png"/>
 		<e:Image x="308.97" y="87.85" scaleX="0.5" scaleY="0.5" source="task_rat_json.task_rat_coin"/>
 		<e:Label text="{data.coin}" x="329.97" y="83.85" textColor="0x4D2B2B" size="26" textAlign="left" verticalAlign="middle"/>
 		<ns1:RewardItemComp id="rewardComp" x="12.42" y="7.82" skinName="RewardItemSkin"/>

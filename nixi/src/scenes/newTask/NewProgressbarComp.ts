@@ -86,6 +86,7 @@ class NewProgressbarComp extends eui.Component {
 	}
 
 	private boxCallback(evt: egret.TouchEvent) {
+		SoundManager.instance().buttonSound();
 		var self = this;
 		self.curId = "";
 
@@ -147,7 +148,7 @@ class NewProgressbarComp extends eui.Component {
 		}
 	}
 
-	private result_of_205() {
+	private result_of_205(evt: egret.Event) {
 		NetLoading.removeLoading();
 		if (this.curId == "1" || this.curId == "4" || this.curId == "7" || this.curId == "10" || this.curId == "13") {
 			this.tip1.visible = false;
@@ -159,7 +160,21 @@ class NewProgressbarComp extends eui.Component {
 			this.tip3.visible = false;
 			egret.Tween.removeTweens(this.tip3);
 		}
+		
+		this.playRewardAnimation(evt.data);
+	}
+
+	private playRewardAnimation(reward: {}) {
+		var new_reward: {}[] = [];
+		var item: {} = {
+			type: reward["type"],
+			num: reward["num"]
+		}
+		new_reward.push(item);
+
+		var panel = new CommonRewardPanel(new_reward);
+		DisplayMgr.set2Center(panel);
+		this.stage.addChild(panel);
 		CustomEventMgr.dispatchEventWith("Update Player Info", false);
-		Prompt.showPrompt(this.stage, "领取成功!");
 	}
 }

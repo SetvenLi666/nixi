@@ -30,7 +30,9 @@ class Model extends eui.Component {
 	public layer_312: eui.Image;
 	public layer_335: eui.Image;
 	public layer_336: eui.Image;
+	public layer_340: eui.Image;
 	public layer_350: eui.Image;
+	public layer_351: eui.Image;
 	public layer_352: eui.Image;
 	public layer_359: eui.Image;
 	public layer_360: eui.Image;
@@ -41,6 +43,7 @@ class Model extends eui.Component {
 	public layer_380: eui.Image;
 	public layer_385: eui.Image;
 	public layer_390: eui.Image;
+	public layer_395: eui.Image;
 	public layer_400: eui.Image;
 	public layer_401: eui.Image;
 	public layer_403: eui.Image;
@@ -64,6 +67,7 @@ class Model extends eui.Component {
 	public layer_422: eui.Image;
 	public layer_423: eui.Image;
 	public layer_424: eui.Image;
+	public layer_425: eui.Image;
 	public layer_430: eui.Image;
 	public layer_439: eui.Image;
 	public layer_440: eui.Image;
@@ -108,7 +112,7 @@ class Model extends eui.Component {
 		this.skinName = "ModelSkin";
 
 		this.part_1 = [this.layer_430, this.layer_50];
-		this.part_2 = [this.layer_80, this.layer_130, this.layer_380, this.layer_400, this.layer_420, this.layer_450, this.layer_414];
+		this.part_2 = [this.layer_80, this.layer_130, this.layer_380, this.layer_400, this.layer_420, this.layer_425, this.layer_450, this.layer_414];
 		this.part_3 = [this.layer_60, this.layer_79, this.layer_129, this.layer_140, this.layer_360, this.layer_370, this.layer_379, this.layer_390, this.layer_410, this.layer_418, this.layer_449, this.layer_4133];
 		this.part_4 = [this.layer_100, this.layer_139, this.layer_359, this.layer_369, this.layer_378, this.layer_417];
 		this.part_5 = [this.layer_10, this.layer_30, this.layer_132, this.layer_500, this.layer_510];
@@ -120,7 +124,7 @@ class Model extends eui.Component {
 		this.part_12 = [this.layer_439];
 		this.part_13 = [this.layer_39, this.layer_350, this.layer_404, this.layer_416];
 		this.part_14 = [this.layer_403];
-		this.part_15 = [this.layer_82, this.layer_201, this.layer_4166];
+		this.part_15 = [this.layer_82, this.layer_201, this.layer_340, this.layer_351, this.layer_395, this.layer_4166];
 		this.part_16 = [this.layer_81, this.layer_385, this.layer_401, this.layer_405];
 		this.part_17 = [this.layer_311];
 		this.part_18 = [this.layer_312];
@@ -267,7 +271,7 @@ class Model extends eui.Component {
 			} else {
 				// var kzId = ClothesData.ondressCache["4"] + "";
 				var kzId = "40000";
-				if(conflictId) {
+				if (conflictId) {
 					kzId = conflictId + "";
 				}
 				var kzItem = ClothesData.clothesTemplateData("4", kzId);
@@ -283,7 +287,7 @@ class Model extends eui.Component {
 			} else {
 				// var syId = ClothesData.ondressCache["3"] + "";
 				var syId = "30000";
-				if(conflictId) {
+				if (conflictId) {
 					syId = conflictId + "";
 				}
 				var syItem = ClothesData.clothesTemplateData("3", syId);
@@ -327,32 +331,32 @@ class Model extends eui.Component {
 	//穿多件衣服
 	public dress(dresses: Object, ornaments: Object) {
 		var part: string;
-        for (part in dresses) {
+		for (part in dresses) {
 			this.dressItem(part, dresses[part]);
-        }
+		}
 
 		var subPart: string;
 		for (subPart in ornaments) {
 			this.dressItem(subPart, ornaments[subPart]);
-        }
+		}
 	}
 
 	public dressClothesOfSuit(dresses: Object, ornaments: Object) {
 		var part: string;
 		for (part in dresses) {
-			if(part == "3") {
+			if (part == "3") {
 				this.dressItemOfSuit(part, dresses[part], dresses["4"]);
-			}else if(part == "4") {
+			} else if (part == "4") {
 				this.dressItemOfSuit(part, dresses[part], dresses["3"]);
-			}else {
+			} else {
 				this.dressItemOfSuit(part, dresses[part]);
 			}
-        }
+		}
 
 		var subPart: string;
 		for (subPart in ornaments) {
 			this.dressItem(subPart, ornaments[subPart]);
-        }
+		}
 	}
 
 	public blink() {
@@ -457,6 +461,8 @@ class Model extends eui.Component {
 				this.layer_336.source = layer1;
 			} else if (z_order1 == "416" && sub_part == "15") {
 				this.layer_4166.source = layer1;
+			} else if (z_order1 == "350" && sub_part == "15") {
+				this.layer_351.source = layer1;
 			} else if (z_order1 == "350" && sub_part == "23") {
 				this.layer_352.source = layer1;
 			} else if (z_order1 == "360" && sub_part == "4") {
