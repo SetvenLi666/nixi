@@ -63,13 +63,13 @@ class LimitDiscountPanel extends eui.Component{
 			}
 
 			var order_id = LoginData.uuid + "-" + CommonFunc.curTimeStamp() + "-" + Math.floor(Math.random() * 10) + "" + Math.floor(Math.random() * 10);
-			TDGA.onChargeRequest({
-				orderId: order_id,
-				iapId: TLDiscountData.id,
-				currencyType: "CNY",
-				currencyAmount: "" + TLDiscountData.money,
-				virtualCurrencyAmount: vcaString
-			});
+			// TDGA.onChargeRequest({
+			// 	orderId: order_id,
+			// 	iapId: TLDiscountData.id,
+			// 	currencyType: "CNY",
+			// 	currencyAmount: "" + TLDiscountData.money,
+			// 	virtualCurrencyAmount: vcaString
+			// });
 
 			tdData = {
 				orderId: order_id,

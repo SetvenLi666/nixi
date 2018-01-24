@@ -35,14 +35,6 @@
 			"path": "${EGRET_APP_DATA}/5.0.7"
 		},
 		{
-			"name": "nest",
-			"path": "../libsrc"
-		},
-		{
-			"name": "td",
-			"path": "../td"
-		},
-		{
 			"name": "promise",
 			"path": "./promise"
 		}

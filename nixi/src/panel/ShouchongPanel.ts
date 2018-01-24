@@ -172,25 +172,10 @@ class ShouchongPanel extends eui.Component {
 					break;
 			}
 
+			egret.ExternalInterface.call("login", "");
+
 			var urlRequest = new egret.URLRequest(ConstData.Conf.WanbaOrderAddr);
 			urlRequest.method = egret.URLRequestMethod.POST;
-
-			var order_id = LoginData.uuid + "-" + CommonFunc.curTimeStamp() + "-" + Math.floor(Math.random() * 10) + "" + Math.floor(Math.random() * 10);
-			TDGA.onChargeRequest({
-				orderId: order_id,
-				iapId: data["id"],
-				currencyType: "CNY",
-				currencyAmount: "" + data["money"],
-				virtualCurrencyAmount: data["diam"]
-			});
-
-			tdData = {
-				orderId: order_id,
-				iapId: data["id"],
-				currencyType: "CNY",
-				currencyAmount: "" + data["money"],
-				virtualCurrencyAmount: data["diam"]
-			};
 
 			urlData = "product_id=" + data["id"] + "&sid=" + LoginData.sid + "&openid=" + window["OPEN_DATA"].openid +
 				"&openkey=" + window["OPEN_DATA"].openkey + "&platform=" + window["OPEN_DATA"].platform;
@@ -257,7 +242,7 @@ class ShouchongPanel extends eui.Component {
 
 
 function __paySuccess() {
-	TDGA.onChargeSuccess(tdData);
+	// TDGA.onChargeSuccess(tdData);
 
 	var urlRequest = new egret.URLRequest(ConstData.Conf.WanbaOrderAddr);
 	urlRequest.method = egret.URLRequestMethod.POST;
@@ -306,30 +291,5 @@ function __paySuccess() {
 		cancelBtnText: ""
 	}, function (data) {
 		console.log(data);
-	});
-}
-
-
-function __payError() {
-
-	window["mqq"].ui.showDialog({
-		title: "提示",
-		text: "支付取消!",
-		needOkBtn: true,
-		needCancelBtn: false,
-		okBtnText: "确认",
-		cancelBtnText: ""
-	});
-}
-
-function __payClose() {
-
-	window["mqq"].ui.showDialog({
-		title: "提示",
-		text: "支付取消!",
-		needOkBtn: true,
-		needCancelBtn: false,
-		okBtnText: "确认",
-		cancelBtnText: ""
 	});
 }

@@ -82,13 +82,13 @@ class OnePanel extends eui.Component {
 			urlRequest.method = egret.URLRequestMethod.POST;
 
 			var order_id = LoginData.uuid + "-" + CommonFunc.curTimeStamp() + "-" + Math.floor(Math.random() * 10) + "" + Math.floor(Math.random() * 10);
-			TDGA.onChargeRequest({
-				orderId: order_id,
-				iapId: data["id"],
-				currencyType: "CNY",
-				currencyAmount: "" + data["money"],
-				virtualCurrencyAmount: "1元礼包"
-			});
+			// TDGA.onChargeRequest({
+			// 	orderId: order_id,
+			// 	iapId: data["id"],
+			// 	currencyType: "CNY",
+			// 	currencyAmount: "" + data["money"],
+			// 	virtualCurrencyAmount: "1元礼包"
+			// });
 
 			tdData = {
 				orderId: order_id,

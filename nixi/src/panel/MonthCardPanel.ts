@@ -67,13 +67,13 @@ class MonthCardPanel extends eui.Component {
 		var product_id: string = "tiegao_9";
 
 		var order_id = LoginData.uuid + "-" + CommonFunc.curTimeStamp() + "-" + Math.floor(Math.random() * 10) + "" + Math.floor(Math.random() * 10);
-		TDGA.onChargeRequest({
-			orderId: order_id,
-			iapId: "tiegao_9",
-			currencyType: "CNY",
-			currencyAmount: "" + 30,
-			virtualCurrencyAmount: "月卡"
-		});
+		// TDGA.onChargeRequest({
+		// 	orderId: order_id,
+		// 	iapId: "tiegao_9",
+		// 	currencyType: "CNY",
+		// 	currencyAmount: "" + 30,
+		// 	virtualCurrencyAmount: "月卡"
+		// });
 
 		tdData = {
 			orderId: order_id,

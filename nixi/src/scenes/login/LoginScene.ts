@@ -53,20 +53,22 @@ class LoginScene extends eui.Component {
 
 	private onLogin(evt: egret.TouchEvent) {
 		var self = this;
+		loginImageBtn = this.login;
 		var btn: egret.DisplayObject = evt.target;
 		DisplayMgr.buttonScale(btn, function () {
 			//按钮声音
+			btn.touchEnabled = false;
 			SoundManager.instance().buttonSound();
 
-			if (LoginData.uuid == "") {
-				Prompt.showPrompt(self.stage, "参数错误");
-			} else {
-				NetLoading.showLoading();
-				var request: egret.URLRequest = HttpProtocolMgr.easyLogin_900(ConstData.Conf.channel, LoginData.uuid);
-				HttpMgr.postRequest(request);
-			}
-
-		}, 1.01)
+			// if (LoginData.uuid == "") {
+			// 	Prompt.showPrompt(self.stage, "参数错误");
+			// } else {
+			// 	NetLoading.showLoading();
+			// 	var request: egret.URLRequest = HttpProtocolMgr.easyLogin_900(ConstData.Conf.channel, LoginData.uuid);
+			// 	HttpMgr.postRequest(request);
+			// }
+			egret.ExternalInterface.call("isLanding", "1");
+		});
 	}
 
 	private whenSaveNickname(evt: egret.Event) {
@@ -185,3 +187,5 @@ class LoginScene extends eui.Component {
 		HttpMgr.postRequest(urlreq2);
 	}
 }
+
+var loginImageBtn: eui.Image;
