@@ -172,17 +172,18 @@ class ShouchongPanel extends eui.Component {
 					break;
 			}
 
-			egret.ExternalInterface.call("login", "");
+			egret.ExternalInterface.call("setGoldSAndMondy", data["diam"] + ";" + data["money"] + "00");
+			egret.ExternalInterface.call("isGamePay", data["id"]);
 
-			var urlRequest = new egret.URLRequest(ConstData.Conf.WanbaOrderAddr);
-			urlRequest.method = egret.URLRequestMethod.POST;
+			// var urlRequest = new egret.URLRequest(ConstData.Conf.WanbaOrderAddr);
+			// urlRequest.method = egret.URLRequestMethod.POST;
 
-			urlData = "product_id=" + data["id"] + "&sid=" + LoginData.sid + "&openid=" + window["OPEN_DATA"].openid +
-				"&openkey=" + window["OPEN_DATA"].openkey + "&platform=" + window["OPEN_DATA"].platform;
-			urlRequest.data = urlData;
-			var urlLoader = new egret.URLLoader();
-			urlLoader.addEventListener(egret.Event.COMPLETE, self.onLoadComplete, self);
-			urlLoader.load(urlRequest);
+			// urlData = "product_id=" + data["id"] + "&sid=" + LoginData.sid + "&openid=" + window["OPEN_DATA"].openid +
+			// 	"&openkey=" + window["OPEN_DATA"].openkey + "&platform=" + window["OPEN_DATA"].platform;
+			// urlRequest.data = urlData;
+			// var urlLoader = new egret.URLLoader();
+			// urlLoader.addEventListener(egret.Event.COMPLETE, self.onLoadComplete, self);
+			// urlLoader.load(urlRequest);
 		});
 	}
 

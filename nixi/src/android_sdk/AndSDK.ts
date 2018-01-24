@@ -10,4 +10,14 @@ function loginSuccess(uuid: string) {
     }
 }
 
+function paySuccess(product_id: string) {
+    
+}
+
+function payFail() {
+    console.log("pay fail");
+}
+
 egret.ExternalInterface.addCallback("callLoginSuccess", loginSuccess);
+egret.ExternalInterface.addCallback("paySuccess", paySuccess);
+egret.ExternalInterface.addCallback("payFail", payFail);

@@ -113,10 +113,10 @@ class LoginScene extends eui.Component {
 			this.stage.addChild(namePanel);
 		}
 		else {
-			if (window["reportLogin"]) {
-				window["reportLogin"]();
-				console.log("report login");
-			}
+			egret.ExternalInterface.call("setPlayerName", ShowData.nickname);
+			egret.ExternalInterface.call("setPlayerLevel", PlayerData.phase + "");
+			egret.ExternalInterface.call("setPlayerGold", PlayerData.diam + "");
+			egret.ExternalInterface.call("isExtendData", "");
 
 			SceneMgr.gotoMainScene();
 		}
@@ -139,23 +139,14 @@ class LoginScene extends eui.Component {
 	}
 
 	private afterSaveNickname_904() {
-		// TDGA.Account.setAccountName(ShowData.nickname);
-
-		if (window["reportRegister"]) {
-			window["reportRegister"]();//玩吧数据上报（注册）
-		}
-		if (window["reportLogin"]) {
-			window["reportLogin"]();//(登陆)
-		}
-
 		//是否为被邀请玩家
-		var reg = new RegExp("(^|&)" + "isid" + "=([^&]*)(&|$)");
-		var r = window.location.search.substr(1).match(reg);
-		if (r != null) {
-			var sid = decodeURI(r[2]);
-			var request = HttpProtocolMgr.post_inviter_sid_166(sid);
-			HttpMgr.postRequest(request);
-		}
+		// var reg = new RegExp("(^|&)" + "isid" + "=([^&]*)(&|$)");
+		// var r = window.location.search.substr(1).match(reg);
+		// if (r != null) {
+		// 	var sid = decodeURI(r[2]);
+		// 	var request = HttpProtocolMgr.post_inviter_sid_166(sid);
+		// 	HttpMgr.postRequest(request);
+		// }
 
 		NetLoading.removeLoading();
 
@@ -164,10 +155,12 @@ class LoginScene extends eui.Component {
 			DisplayMgr.set2Center(panel);
 			this.stage.addChild(panel);
 		} else {
+			egret.ExternalInterface.call("setPlayerName", ShowData.nickname);
+			egret.ExternalInterface.call("setPlayerLevel", PlayerData.phase + "");
+			egret.ExternalInterface.call("setPlayerGold", PlayerData.diam + "");
+			egret.ExternalInterface.call("isExtendData", "1");
 			SceneMgr.gotoMainScene();
 		}
-
-		// SceneMgr.gotoMainScene();
 	}
 
 	// Inner -----------------------------------------------
