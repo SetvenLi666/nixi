@@ -211,8 +211,21 @@ class SceneMgr {
     }
 
     private static onStory(index?: number) {
-        var storyTemplate = RES.getRes("story_json");
-        var scene = new NewStoryScene(storyTemplate);
+        if(index) {
+            if(index == 1) {
+                //支线1--段总裁
+                var storyTemplate = RES.getRes("story_role_1_json");
+            }else if(index == 2) {
+
+            }else if(index == 3) {
+
+            }
+        }else {
+            //星途闪耀
+            var storyTemplate = RES.getRes("story_json");
+        }
+        // var storyTemplate = RES.getRes("story_json");
+        var scene = new NewStoryScene(storyTemplate, index);
         SceneMgr.replaceScene(scene);
     }
 

@@ -1,6 +1,9 @@
 class StoryData {
     // Export --------------------------------------------------
     public static get completedStory(): {} { return this._completedStory; }
+    public static get completedStoryLine_1(): {} {return this._completedStoryLine_1;}
+    public static get completedStoryLine_2(): {} {return this._completedStoryLine_2;}
+    public static get completedStoryLine_3(): {} {return this._completedStoryLine_3;}
     public static get completedVipStory(): {} { return this._completedVipStory;}
 
     public static formatCheckedVipTemplate(templateData: any[]): any[] {
@@ -34,6 +37,16 @@ class StoryData {
 
         if (obj != null) {
             this._completedStory = obj;
+        }
+    }
+
+    public static updateCompleteStoryLine(id: number, obj: {}) {
+        if(id == 1 && obj != null){
+            this._completedStoryLine_1 = obj;
+        }else if(id == 2 && obj != null) {
+            this._completedStoryLine_2 = obj;
+        }else if(id == 3 && obj != null) {
+            this._completedStoryLine_3 = obj;
         }
     }
 
@@ -72,6 +85,9 @@ class StoryData {
     // Inner --------------------------------------------------
     private static _completedStory: {} = null;
     private static _completedVipStory: {} = null;
+    private static _completedStoryLine_1: {} = null;
+    private static _completedStoryLine_2: {} = null;
+    private static _completedStoryLine_3: {} = null;
     private static textArr: string[] = ["0", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十"];
     // private static _completedVipStory: {} = {
     //     0: 1,

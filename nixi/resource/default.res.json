@@ -191,6 +191,10 @@
 		{
 			"keys": "rank_title_first_png,rank_panel_bg_png,rank_jj_sel_png,rank_jj_nor_png,rank_item_bg_thd_png,rank_item_bg_sed_png,rank_item_bg_other_png,rank_item_bg_first_png,rank_flag_thd_png,rank_flag_sed_png,rank_flag_other_png,rank_flag_color_png,rank_dp_sel_png,rank_dp_nor_png,rank_btn_pk_png",
 			"name": "new_rank"
+		},
+		{
+			"name": "preload",
+			"keys": "1001_json,1002_json,1003_json,1004_json,1005_json,1006_json,1007_json,1008_json,1009_json,1010_json,1011_json,1012_json,1013_json,1014_json,1015_json,story_role_1_json"
 		}
 	],
 	"resources": [
@@ -20521,6 +20525,86 @@
 			"url": "game/clothes/7shipin/70189.png",
 			"type": "image",
 			"name": "70189_png"
+		},
+		{
+			"name": "1001_json",
+			"type": "json",
+			"url": "config/story/role_1/1001.json"
+		},
+		{
+			"name": "1002_json",
+			"type": "json",
+			"url": "config/story/role_1/1002.json"
+		},
+		{
+			"name": "1003_json",
+			"type": "json",
+			"url": "config/story/role_1/1003.json"
+		},
+		{
+			"name": "1004_json",
+			"type": "json",
+			"url": "config/story/role_1/1004.json"
+		},
+		{
+			"name": "1005_json",
+			"type": "json",
+			"url": "config/story/role_1/1005.json"
+		},
+		{
+			"name": "1006_json",
+			"type": "json",
+			"url": "config/story/role_1/1006.json"
+		},
+		{
+			"name": "1007_json",
+			"type": "json",
+			"url": "config/story/role_1/1007.json"
+		},
+		{
+			"name": "1008_json",
+			"type": "json",
+			"url": "config/story/role_1/1008.json"
+		},
+		{
+			"name": "1009_json",
+			"type": "json",
+			"url": "config/story/role_1/1009.json"
+		},
+		{
+			"name": "1010_json",
+			"type": "json",
+			"url": "config/story/role_1/1010.json"
+		},
+		{
+			"name": "1011_json",
+			"type": "json",
+			"url": "config/story/role_1/1011.json"
+		},
+		{
+			"name": "1012_json",
+			"type": "json",
+			"url": "config/story/role_1/1012.json"
+		},
+		{
+			"name": "1013_json",
+			"type": "json",
+			"url": "config/story/role_1/1013.json"
+		},
+		{
+			"name": "1014_json",
+			"type": "json",
+			"url": "config/story/role_1/1014.json"
+		},
+		{
+			"name": "1015_json",
+			"type": "json",
+			"url": "config/story/role_1/1015.json"
+		},
+		{
+			"name": "story_role_1_json",
+			"type": "json",
+			"url": "config/story/role_1/story_role_1.json"
 		}
 	]
 }

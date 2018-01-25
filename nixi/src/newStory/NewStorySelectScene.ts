@@ -60,9 +60,17 @@ class NewStorySelectScene extends eui.Component {
 		}
 	}
 
-	private onGroupTouch() {
-		SoundManager.instance().buttonSound();
-		Prompt.showPrompt(this.stage, "请先通关星途闪耀");
+	private onGroupTouch(evt: egret.TouchEvent) {
+		DisplayMgr.buttonScale(evt.target, function() {
+			SoundManager.instance().buttonSound();
+			
+			if(StoryData.completedStory["29"] && StoryData.completedStory["29"].indexOf("-1") != -1) {
+				//已通关星途闪耀
+				SceneMgr.gotoNewStoryScene(1);
+			}else {
+				Prompt.showPrompt(this.stage, "请先通关星途闪耀");
+			}
+		});
 	}
 
 	private onBegin() {

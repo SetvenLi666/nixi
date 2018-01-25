@@ -24,7 +24,9 @@ class NewStoryScene extends eui.Component {
 	private startX: number = 0;
 	private movedX: number = 0;
 
-	public constructor(storyTemplate: {}[]) {
+	private storyLineIndex: number = 0;
+
+	public constructor(storyTemplate: {}[], index?: number) {
 		super();
 
 		this.skinName = "NewStorySceneSkin";
@@ -33,6 +35,7 @@ class NewStoryScene extends eui.Component {
 		this.mask = mask;
 
 		this.storyData = storyTemplate;
+		this.storyLineIndex = index;
 		this.addEventListener(egret.Event.ADDED_TO_STAGE, this.addStage, this);
 		this.addEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit, this);
 	}
@@ -43,13 +46,30 @@ class NewStoryScene extends eui.Component {
 		this.baseComp = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy);
 		this.addChild(this.baseComp);
 
-		for (var i in StoryData.completedStory) {
-			var item: string[] = StoryData.completedStory[i];
-			if (item && item.indexOf("-1") != -1) {
-				// this.curPageIndex = parseInt(i);
-				this.curPageIndex = Math.min(parseInt(i), 28);  //目前只有29章剧情
+		if (!this.storyLineIndex) {
+			for (var i in StoryData.completedStory) {
+				var item: string[] = StoryData.completedStory[i];
+				if (item && item.indexOf("-1") != -1) {
+					// this.curPageIndex = parseInt(i);
+					this.curPageIndex = Math.min(parseInt(i), 28);  //目前只有29章剧情
+				}
+			}
+		}else {
+			for (var i in StoryData.completedStory) {
+				var item: string[] = StoryData.completedStory[i];
+				if (item && item.indexOf("-1") != -1) {
+					// this.curPageIndex = parseInt(i);
+					this.curPageIndex = Math.min(parseInt(i), this.storyData.length - 1);
+				}
 			}
 		}
+		// for (var i in StoryData.completedStory) {
+		// 	var item: string[] = StoryData.completedStory[i];
+		// 	if (item && item.indexOf("-1") != -1) {
+		// 		// this.curPageIndex = parseInt(i);
+		// 		this.curPageIndex = Math.min(parseInt(i), 28);  //目前只有29章剧情
+		// 	}
+		// }
 		console.log(this.curPageIndex);
 		this.list.dataProvider = new eui.ArrayCollection(this.storyData);
 		this.list.itemRenderer = StoryChapterCompRenderer;
