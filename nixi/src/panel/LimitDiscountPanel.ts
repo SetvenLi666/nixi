@@ -57,12 +57,17 @@ class LimitDiscountPanel extends eui.Component{
 
 			var vcaString = "";
 			if(TLDiscountData.type == 6) {
-				vcaString = "6元限时礼包";
+				vcaString = "6";
 			}else if(TLDiscountData.type == 30) {
-				vcaString = "30元限时礼包";
+				vcaString = "30";
 			}
 
-			var order_id = LoginData.uuid + "-" + CommonFunc.curTimeStamp() + "-" + Math.floor(Math.random() * 10) + "" + Math.floor(Math.random() * 10);
+			curProductId = TLDiscountData.id;
+
+			egret.ExternalInterface.call("setGoldSAndMondy", 0 + ";" + vcaString + "00");
+			egret.ExternalInterface.call("isGamePay", TLDiscountData.id);
+
+			// var order_id = LoginData.uuid + "-" + CommonFunc.curTimeStamp() + "-" + Math.floor(Math.random() * 10) + "" + Math.floor(Math.random() * 10);
 			// TDGA.onChargeRequest({
 			// 	orderId: order_id,
 			// 	iapId: TLDiscountData.id,
@@ -71,20 +76,20 @@ class LimitDiscountPanel extends eui.Component{
 			// 	virtualCurrencyAmount: vcaString
 			// });
 
-			tdData = {
-				orderId: order_id,
-				iapId: TLDiscountData.id,
-				currencyType: "CNY",
-				currencyAmount: "" + TLDiscountData.money,
-				virtualCurrencyAmount: vcaString
-			};
+			// tdData = {
+			// 	orderId: order_id,
+			// 	iapId: TLDiscountData.id,
+			// 	currencyType: "CNY",
+			// 	currencyAmount: "" + TLDiscountData.money,
+			// 	virtualCurrencyAmount: vcaString
+			// };
 
-			urlData = "product_id=" + TLDiscountData.id + "&sid=" + LoginData.sid + "&openid=" + window["OPEN_DATA"].openid +
-				"&openkey=" + window["OPEN_DATA"].openkey + "&platform=" + window["OPEN_DATA"].platform;
-			urlRequest.data = urlData;
-			var urlLoader = new egret.URLLoader();
-			urlLoader.addEventListener(egret.Event.COMPLETE, self.onLoadComplete, self);
-			urlLoader.load(urlRequest);
+			// urlData = "product_id=" + TLDiscountData.id + "&sid=" + LoginData.sid + "&openid=" + window["OPEN_DATA"].openid +
+			// 	"&openkey=" + window["OPEN_DATA"].openkey + "&platform=" + window["OPEN_DATA"].platform;
+			// urlRequest.data = urlData;
+			// var urlLoader = new egret.URLLoader();
+			// urlLoader.addEventListener(egret.Event.COMPLETE, self.onLoadComplete, self);
+			// urlLoader.load(urlRequest);
 		});
 	}
 

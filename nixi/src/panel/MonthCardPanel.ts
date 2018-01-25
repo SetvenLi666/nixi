@@ -65,8 +65,12 @@ class MonthCardPanel extends eui.Component {
 		urlRequest.method = egret.URLRequestMethod.POST;
 
 		var product_id: string = "tiegao_9";
+		curProductId = product_id;
 
-		var order_id = LoginData.uuid + "-" + CommonFunc.curTimeStamp() + "-" + Math.floor(Math.random() * 10) + "" + Math.floor(Math.random() * 10);
+		egret.ExternalInterface.call("setGoldSAndMondy", 0 + ";" + 30 + "00");
+		egret.ExternalInterface.call("isGamePay", product_id);
+
+		// var order_id = LoginData.uuid + "-" + CommonFunc.curTimeStamp() + "-" + Math.floor(Math.random() * 10) + "" + Math.floor(Math.random() * 10);
 		// TDGA.onChargeRequest({
 		// 	orderId: order_id,
 		// 	iapId: "tiegao_9",
@@ -75,20 +79,20 @@ class MonthCardPanel extends eui.Component {
 		// 	virtualCurrencyAmount: "月卡"
 		// });
 
-		tdData = {
-			orderId: order_id,
-			iapId: "tiegao_9",
-			currencyType: "CNY",
-			currencyAmount: "" + 30,
-			virtualCurrencyAmount: "月卡"
-		};
+		// tdData = {
+		// 	orderId: order_id,
+		// 	iapId: "tiegao_9",
+		// 	currencyType: "CNY",
+		// 	currencyAmount: "" + 30,
+		// 	virtualCurrencyAmount: "月卡"
+		// };
 
-		urlData = "product_id=" + product_id+ "&sid=" + LoginData.sid + "&openid=" + window["OPEN_DATA"].openid +
-			"&openkey=" + window["OPEN_DATA"].openkey + "&platform=" + window["OPEN_DATA"].platform;
-		urlRequest.data = urlData;
-		var urlLoader = new egret.URLLoader();
-		urlLoader.addEventListener(egret.Event.COMPLETE, this.onLoadComplete, this);
-		urlLoader.load(urlRequest);
+		// urlData = "product_id=" + product_id+ "&sid=" + LoginData.sid + "&openid=" + window["OPEN_DATA"].openid +
+		// 	"&openkey=" + window["OPEN_DATA"].openkey + "&platform=" + window["OPEN_DATA"].platform;
+		// urlRequest.data = urlData;
+		// var urlLoader = new egret.URLLoader();
+		// urlLoader.addEventListener(egret.Event.COMPLETE, this.onLoadComplete, this);
+		// urlLoader.load(urlRequest);
 	}
 
 	private onLoadComplete(evt: egret.Event) {
@@ -97,7 +101,7 @@ class MonthCardPanel extends eui.Component {
 
 		if (obj && obj["result"] == "SUCCESS") {
 			//余额足够，无二次请求
-			
+
 			DataMgr.checkNews();
 
 			window["mqq"].ui.showDialog({

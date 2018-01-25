@@ -56,6 +56,8 @@ class HttpMgr {
                 SceneMgr.gotoLogin();
                 NetLoading.removeLoading();
                 return;
+            } else if (code == 11601) {
+                NetLoading.removeLoading();
             } else {
                 console.log("Error: - " + cid + " - " + content);
                 Prompt.showPrompt(egret.MainContext.instance.stage, <string>content);
@@ -604,6 +606,41 @@ class HttpMgr {
             // this->creat_Energy_Time();
             EnergyCD.updateEnergyCD();
             PurchaseData.update(content["purchase"]);
+        }
+
+        else if (116 === cid) {
+            NetLoading.removeLoading();
+            var result = content;
+            ShareData.update(result["h5wanba"]);
+            if (result["product_id"]) {
+                if (result["product_id"] == "libao_1" || result["product_id"] == "libao_2" || result["product_id"] == "libao_3") {
+                    // WanbaData.updatePackageData(result["h5wanba"]["buy_libao_list"]);
+                    CustomEventMgr.dispatchEventWith("Update Libao View", false);
+                    Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮箱领取礼包!");
+                } else if (result["product_id"] == "tiegao_17" || result["product_id"] == "tiegao_18") {
+                    TLDiscountData.resetDL();
+                    Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮箱领取礼包!");
+                } else if (result["product_id"] == "tiegao_9") {
+                    Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮箱领取激活!");
+                } else {
+                    Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮箱领取钻石!");
+                }
+            }
+
+            if (result["h5wanba"]) {
+                // ShareData.update(result["h5wanba"]);
+                if ((ShareData.isFirstPay && (ShareData.firstpay_lottery_times == 0))) {
+                    var panel = new FirstPayPanel();
+                    DisplayMgr.set2Center(panel);
+                    egret.MainContext.instance.stage.addChild(panel);
+                } else if ((ShareData.isDailyPay && (ShareData.dailypay_lottery_times == 0 || ShareData.dailypay_normal_times == 0))) {
+                    var onePanel = new ScPanel();
+                    DisplayMgr.set2Center(onePanel);
+                    egret.MainContext.instance.stage.addChild(onePanel);
+                }
+            }
+
+            DataMgr.checkNews();
         }
 
         else if(115 === cid) {

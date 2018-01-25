@@ -11,7 +11,9 @@ function loginSuccess(uuid: string) {
 }
 
 function paySuccess(product_id: string) {
-    
+    NetLoading.showLoading();
+    var request = HttpProtocolMgr.refresh_pay_info_116(curProductId);
+    HttpMgr.postRequest(request);
 }
 
 function payFail() {

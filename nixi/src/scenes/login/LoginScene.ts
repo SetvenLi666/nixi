@@ -60,14 +60,14 @@ class LoginScene extends eui.Component {
 			btn.touchEnabled = false;
 			SoundManager.instance().buttonSound();
 
-			// if (LoginData.uuid == "") {
-			// 	Prompt.showPrompt(self.stage, "参数错误");
-			// } else {
-			// 	NetLoading.showLoading();
-			// 	var request: egret.URLRequest = HttpProtocolMgr.easyLogin_900(ConstData.Conf.channel, LoginData.uuid);
-			// 	HttpMgr.postRequest(request);
-			// }
-			egret.ExternalInterface.call("isLanding", "1");
+			if (LoginData.uuid == "") {
+				Prompt.showPrompt(self.stage, "参数错误");
+			} else {
+				NetLoading.showLoading();
+				var request: egret.URLRequest = HttpProtocolMgr.easyLogin_900(ConstData.Conf.channel, LoginData.uuid);
+				HttpMgr.postRequest(request);
+			}
+			// egret.ExternalInterface.call("isLanding", "1");
 		});
 	}
 

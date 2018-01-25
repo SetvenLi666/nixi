@@ -1,6 +1,4 @@
-var urlData: string = "";
-var tdData: {} = null;
-
+var curProductId: string = "";
 
 class ShouchongPanel extends eui.Component {
 	public group: eui.Group;
@@ -172,6 +170,8 @@ class ShouchongPanel extends eui.Component {
 					break;
 			}
 
+			curProductId = data["id"];
+
 			egret.ExternalInterface.call("setGoldSAndMondy", data["diam"] + ";" + data["money"] + "00");
 			egret.ExternalInterface.call("isGamePay", data["id"]);
 
@@ -239,58 +239,4 @@ class ShouchongPanel extends eui.Component {
 			this.parent.removeChild(this);
 		}
 	}
-}
-
-
-function __paySuccess() {
-	// TDGA.onChargeSuccess(tdData);
-
-	var urlRequest = new egret.URLRequest(ConstData.Conf.WanbaOrderAddr);
-	urlRequest.method = egret.URLRequestMethod.POST;
-	urlRequest.data = urlData;
-	var urlLoader = new egret.URLLoader();
-	urlLoader.addEventListener(egret.Event.COMPLETE, function (evt: egret.Event) {
-		var loader = <egret.URLLoader>evt.target;
-		console.log(loader.data);
-		var obj: {} = JSON.parse(loader.data);
-
-		if (obj["product_id"]) {
-			if (obj["product_id"] == "libao_1" || obj["product_id"] == "libao_2" || obj["product_id"] == "libao_3") {
-				WanbaData.updatePackageData(obj["buy_libao_list"]);
-				CustomEventMgr.dispatchEventWith("Update Libao View", false);
-			}else if(obj["product_id"] == "tiegao_17" || obj["product_id"] == "tiegao_18") {
-				TLDiscountData.resetDL();
-			}else if(obj["product_id"] == "tiegao_9") {
-				Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮箱领取激活!");
-			}
-		}
-
-		if (obj["h5wanba"]) {
-			ShareData.update(obj["h5wanba"]);
-			if ((ShareData.isFirstPay && (ShareData.firstpay_lottery_times == 0))) {
-				var panel = new FirstPayPanel();
-				DisplayMgr.set2Center(panel);
-				egret.MainContext.instance.stage.addChild(panel);
-			} else if ((ShareData.isDailyPay && (ShareData.dailypay_lottery_times == 0 || ShareData.dailypay_normal_times == 0))) {
-				var onePanel = new ScPanel();
-				DisplayMgr.set2Center(onePanel);
-				egret.MainContext.instance.stage.addChild(onePanel);
-			}
-			// CustomEventMgr.dispatchEventWith("Update SC View", false);
-		}
-		DataMgr.checkNews();
-
-	}, null);
-	urlLoader.load(urlRequest);
-
-	window["mqq"].ui.showDialog({
-		title: "提示",
-		text: "支付成功!请前往邮箱领取物品!",
-		needOkBtn: true,
-		needCancelBtn: false,
-		okBtnText: "确认",
-		cancelBtnText: ""
-	}, function (data) {
-		console.log(data);
-	});
 }

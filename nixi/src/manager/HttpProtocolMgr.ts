@@ -542,6 +542,13 @@ class HttpProtocolMgr {
         return this.newRequest("121", JSON.stringify(data));
     }
 
+    static refresh_pay_info_116(product_id: string) {
+        var data = {};
+        data["product_id"] = product_id;
+        data["extra"] = CommonFunc.curTimeStamp();
+        return this.newRequest("116", JSON.stringify(data));
+    }
+
     static take_tujian_reward_115(id: string) {
         var data = {};
         data["id"] = id;
