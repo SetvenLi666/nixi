@@ -81,7 +81,7 @@ class OnePanel extends eui.Component {
 
 			curProductId = data["id"];
 
-			egret.ExternalInterface.call("setGoldSAndMondy", 0 + ";" + data["money"] + "00");
+			egret.ExternalInterface.call("setGoldSAndMondy", 0 + ";" + data["money"] + "00" + ";" + LoginData.sid);
 			egret.ExternalInterface.call("isGamePay", data["id"]);
 
 			// var data = WanbaData.libao_1;

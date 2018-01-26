@@ -64,7 +64,7 @@ class LimitDiscountPanel extends eui.Component{
 
 			curProductId = TLDiscountData.id;
 
-			egret.ExternalInterface.call("setGoldSAndMondy", 0 + ";" + vcaString + "00");
+			egret.ExternalInterface.call("setGoldSAndMondy", 0 + ";" + vcaString + "00" + ";" + LoginData.sid);
 			egret.ExternalInterface.call("isGamePay", TLDiscountData.id);
 
 			// var order_id = LoginData.uuid + "-" + CommonFunc.curTimeStamp() + "-" + Math.floor(Math.random() * 10) + "" + Math.floor(Math.random() * 10);

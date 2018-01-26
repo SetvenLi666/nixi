@@ -153,7 +153,7 @@ class SixPanel extends eui.Component {
 			var data = WanbaData.libao_2;
 			curProductId = data["id"];
 
-			egret.ExternalInterface.call("setGoldSAndMondy", 0 + ";" + data["money"] + "00");
+			egret.ExternalInterface.call("setGoldSAndMondy", 0 + ";" + data["money"] + "00" + ";" + LoginData.sid);
 			egret.ExternalInterface.call("isGamePay", data["id"]);
 			// var urlRequest = new egret.URLRequest(ConstData.Conf.WanbaOrderAddr);
 			// urlRequest.method = egret.URLRequestMethod.POST;

@@ -21,8 +21,10 @@ namespace ConstData {
         // get channel() : number { return 0;},   //白包
 
         //测试服地址
-        get LoginAddr(): string { return "https://nixi-debug-game.mzplay1.cn:9765/account";},
+        // get LoginAddr(): string { return "https://nixi-debug-game.mzplay1.cn:9765/account";},
         get WanbaOrderAddr(): string {return "https://nixi-debug-game.mzplay1.cn:9765/h5wanba/order"}, 
+
+        get LoginAddr(): string { return "https://nixi-weiduan-game.mzplay1.cn:9765/account";},
 
         get channel() : number { return 601;},   //逆袭玩吧
 
