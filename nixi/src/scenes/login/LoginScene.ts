@@ -67,7 +67,7 @@ class LoginScene extends eui.Component {
 				var request: egret.URLRequest = HttpProtocolMgr.easyLogin_900(ConstData.Conf.channel, LoginData.uuid);
 				HttpMgr.postRequest(request);
 			}
-			// egret.ExternalInterface.call("isLanding", "1");
+			// window['ExternalInterface']['call']("callNative", "message from JS");
 		});
 	}
 
@@ -113,10 +113,10 @@ class LoginScene extends eui.Component {
 			this.stage.addChild(namePanel);
 		}
 		else {
-			egret.ExternalInterface.call("setPlayerName", ShowData.nickname);
-			egret.ExternalInterface.call("setPlayerLevel", PlayerData.phase + "");
-			egret.ExternalInterface.call("setPlayerGold", PlayerData.diam + "");
-			egret.ExternalInterface.call("isExtendData", "");
+			// egret.ExternalInterface.call("setPlayerName", ShowData.nickname);
+			// egret.ExternalInterface.call("setPlayerLevel", PlayerData.phase + "");
+			// egret.ExternalInterface.call("setPlayerGold", PlayerData.diam + "");
+			// egret.ExternalInterface.call("isExtendData", "");
 
 			SceneMgr.gotoMainScene();
 		}
@@ -155,10 +155,13 @@ class LoginScene extends eui.Component {
 			DisplayMgr.set2Center(panel);
 			this.stage.addChild(panel);
 		} else {
-			egret.ExternalInterface.call("setPlayerName", ShowData.nickname);
-			egret.ExternalInterface.call("setPlayerLevel", PlayerData.phase + "");
-			egret.ExternalInterface.call("setPlayerGold", PlayerData.diam + "");
-			egret.ExternalInterface.call("isExtendData", "1");
+			// egret.ExternalInterface.call("setPlayerName", ShowData.nickname);
+			// egret.ExternalInterface.call("setPlayerLevel", PlayerData.phase + "");
+			// egret.ExternalInterface.call("setPlayerGold", PlayerData.diam + "");
+			// egret.ExternalInterface.call("isExtendData", "1");
+			window['ExternalInterface']['call']("callNative", "message from JS");
+			window['ExternalInterface']['call']("callNative", "message from JS");
+			window['ExternalInterface']['call']("callNative", "message from JS");
 			SceneMgr.gotoMainScene();
 		}
 	}
