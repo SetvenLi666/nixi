@@ -35,15 +35,10 @@ class SubtitlePanel extends eui.Component implements  eui.UIComponent {
 		self.timer = new egret.Timer(ConstData.Conf.StoryTextFlashInterval, len);
 		var count = 0;
 		 //注册事件侦听器
-		 console.log(self.curFullText, len);
-		 var saidText = text;
         self.timer.addEventListener(egret.TimerEvent.TIMER, function () {
-			console.log(self.curFullText);
-			console.log(saidText);
 			self.isUpdating = true;
 			count++;
 			self.lblSubtitle.text = self.curFullText.substr(0, count);
-			console.log(self.lblSubtitle.text);
 		}, self);
 
         self.timer.addEventListener(egret.TimerEvent.TIMER_COMPLETE, function () {
@@ -51,7 +46,6 @@ class SubtitlePanel extends eui.Component implements  eui.UIComponent {
 			self.isUpdating = false;
 			self.showTapFlag();
 			self.playCompleteCallback.apply(self.playCompleteHandler, []);
-			console.log(self.lblSubtitle.text);
 		}, self);
         //开始计时
         self.timer.start();
