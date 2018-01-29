@@ -27,7 +27,7 @@ class NewStorySelectScene extends eui.Component {
 		this.container.width = DisplayMgr.stageW;
 		this.group.width = Math.min(DisplayMgr.stageW, 852);
 		this.baseComp = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy);
-        this.addChild(this.baseComp);
+		this.addChild(this.baseComp);
 
 		var index = Math.min(StoryData.getCompleteStoryArr().length, 28);
 		this.tip_lab.text = "已攻略至第" + StoryData.getHanziText(index + 1) + "章";
@@ -41,7 +41,7 @@ class NewStorySelectScene extends eui.Component {
 
 		CustomEventMgr.addEventListener("600", this.afterFetchMissionData_600, this);
 
-		if(PlayerData.guide == 5) {
+		if (PlayerData.guide == 5) {
 			var guidePanel = new NewGuidePanel();
 			DisplayMgr.set2Center(guidePanel);
 			this.stage.addChild(guidePanel);
@@ -55,26 +55,43 @@ class NewStorySelectScene extends eui.Component {
 
 	private onExit() {
 		CustomEventMgr.removeEventListener("600", this.afterFetchMissionData_600, this);
-		if(PlayerData.guide == 5) {
+		if (PlayerData.guide == 5) {
 			CustomEventMgr.removeEventListener("Guide_Step_5_3", this.onBegin, this);
 		}
 	}
 
 	private onGroupTouch(evt: egret.TouchEvent) {
-		DisplayMgr.buttonScale(evt.target, function() {
-			SoundManager.instance().buttonSound();
-			
-			if(StoryData.completedStory["29"] && StoryData.completedStory["29"].indexOf("-1") != -1) {
-				//已通关星途闪耀
-				SceneMgr.gotoNewStoryScene(1);
-			}else {
-				Prompt.showPrompt(this.stage, "请先通关星途闪耀");
+		var self = this;
+		var target: eui.Group = evt.currentTarget;
+		DisplayMgr.buttonScale(target, function () {
+			SoundManager.instance().buttonSound();			
+			console.log(target);
+			switch (target) {
+				case self.groupYellow:
+					StoryData.curStoryBranch = 1;
+					break;
+				case self.groupRed:
+					// StoryData.curStoryBranch = 2;
+					Prompt.showPrompt(self.stage, "敬请期待");
+					return;
+				case self.groupBlue:
+					// StoryData.curStoryBranch = 3;
+					Prompt.showPrompt(self.stage, "敬请期待");
+					return;
 			}
+
+			SceneMgr.gotoNewStoryScene(StoryData.curStoryBranch);
+			// if(StoryData.completedStory["29"] && StoryData.completedStory["29"].indexOf("-1") != -1) {
+			// 	//已通关星途闪耀
+			// 	SceneMgr.gotoNewStoryScene(1);
+			// }else {
+			// 	Prompt.showPrompt(egret.MainContext.instance.stage, "请先通关星途闪耀");
+			// }
 		});
 	}
 
 	private onBegin() {
-		DisplayMgr.buttonScale(this.btn_begin, function() {
+		DisplayMgr.buttonScale(this.btn_begin, function () {
 			SoundManager.instance().buttonSound();
 			NetLoading.showLoading();
 			var request: egret.URLRequest = HttpProtocolMgr.fetchMissionData_600();
@@ -83,7 +100,7 @@ class NewStorySelectScene extends eui.Component {
 	}
 
 	private onBack() {
-		DisplayMgr.buttonScale(this.btn_back, function() {
+		DisplayMgr.buttonScale(this.btn_back, function () {
 			SoundManager.instance().buttonSound();
 			SoundManager.instance().destroyStartSound();
 			SceneMgr.gotoMainScene();

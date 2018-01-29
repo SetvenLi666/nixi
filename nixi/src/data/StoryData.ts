@@ -88,6 +88,7 @@ class StoryData {
     private static _completedStoryLine_1: {} = null;
     private static _completedStoryLine_2: {} = null;
     private static _completedStoryLine_3: {} = null;
+    private static _curStoryBranch: number = 0;
     private static textArr: string[] = ["0", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十"];
     // private static _completedVipStory: {} = {
     //     0: 1,
@@ -130,5 +131,13 @@ class StoryData {
 
     public static set isShowLastTip(value: boolean) {
         this._isShowLastTip = value;
+    }
+
+    public static get curStoryBranch() {
+        return this._curStoryBranch;
+    }
+
+    public static set curStoryBranch(value: number) {
+        this._curStoryBranch = value;
     }
 }

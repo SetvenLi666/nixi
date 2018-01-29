@@ -57,7 +57,7 @@
 			"name": "main"
 		},
 		{
-			"keys": "story_chapter_energy_png,story_chapter_bg_png,story_btn_start2_png,story_btn_start_png,story_btn_right_png,story_btn_left_png,story_json,story_chapt_tip_png,shop_bg_png,story_btn_unlock_png",
+			"keys": "story_chapter_energy_png,story_chapter_bg_png,story_btn_start2_png,story_btn_start_png,story_btn_right_png,story_btn_left_png,story_json,story_chapt_tip_png,shop_bg_png,story_btn_unlock_png,story_role_1_json",
 			"name": "new_story"
 		},
 		{
@@ -193,8 +193,64 @@
 			"name": "new_rank"
 		},
 		{
-			"name": "preload",
-			"keys": "1001_json,1002_json,1003_json,1004_json,1005_json,1006_json,1007_json,1008_json,1009_json,1010_json,1011_json,1012_json,1013_json,1014_json,1015_json,story_role_1_json"
+			"keys": "",
+			"name": "story_roles_1001"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_1002"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_1003"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_1004"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_1005"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_1006"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_1007"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_1008"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_1009"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_1010"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_1011"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_1012"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_1013"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_1014"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_1015"
 		}
 	],
 	"resources": [
@@ -3088,20 +3144,10 @@
 			"subkeys": "body_1001_1,head_1001_2,head_1001_3,head_1001_4,head_1001_5,head_1001_6"
 		},
 		{
-			"url": "game/story/roles/role_1001.png",
-			"type": "image",
-			"name": "role_1001_png"
-		},
-		{
 			"url": "game/story/roles/role_1002.json",
 			"type": "sheet",
 			"name": "role_1002_json",
 			"subkeys": "body_1002_1,head_1002_2,head_1002_3,head_1002_4,head_1002_5,head_1002_6"
-		},
-		{
-			"url": "game/story/roles/role_1002.png",
-			"type": "image",
-			"name": "role_1002_png"
 		},
 		{
 			"url": "game/story/roles/role_1003.json",
@@ -3110,20 +3156,10 @@
 			"subkeys": "body_1003_1,head_1003_2,head_1003_3,head_1003_4,head_1003_5,head_1003_6"
 		},
 		{
-			"url": "game/story/roles/role_1003.png",
-			"type": "image",
-			"name": "role_1003_png"
-		},
-		{
 			"url": "game/story/roles/role_1010.json",
 			"type": "sheet",
 			"name": "role_1010_json",
 			"subkeys": "body_1010_1,head_1010_2,head_1010_3,head_1010_4"
-		},
-		{
-			"url": "game/story/roles/role_1010.png",
-			"type": "image",
-			"name": "role_1010_png"
 		},
 		{
 			"url": "game/story/roles/role_1012.json",
@@ -3132,20 +3168,10 @@
 			"subkeys": "body_1012_1,head_1012_2,head_1012_3,head_1012_4"
 		},
 		{
-			"url": "game/story/roles/role_1012.png",
-			"type": "image",
-			"name": "role_1012_png"
-		},
-		{
 			"url": "game/story/roles/role_1015.json",
 			"type": "sheet",
 			"name": "role_1015_json",
 			"subkeys": "body_1015_1,body_1015_2,head_1015_2,head_1015_2_2,head_1015_2_3,head_1015_3,head_1015_4"
-		},
-		{
-			"url": "game/story/roles/role_1015.png",
-			"type": "image",
-			"name": "role_1015_png"
 		},
 		{
 			"url": "game/story/roles/role_1020.json",
@@ -3154,20 +3180,10 @@
 			"subkeys": "body_1020_1,head_1020_2,head_1020_3,head_1020_4"
 		},
 		{
-			"url": "game/story/roles/role_1020.png",
-			"type": "image",
-			"name": "role_1020_png"
-		},
-		{
 			"url": "game/story/roles/role_1021.json",
 			"type": "sheet",
 			"name": "role_1021_json",
 			"subkeys": "body_1021_1,head_1021_2,head_1021_3,head_1021_4"
-		},
-		{
-			"url": "game/story/roles/role_1021.png",
-			"type": "image",
-			"name": "role_1021_png"
 		},
 		{
 			"url": "game/story/roles/role_1024.json",
@@ -3176,20 +3192,10 @@
 			"subkeys": "body_1024_1,head_1024_2,head_1024_3,head_1024_4"
 		},
 		{
-			"url": "game/story/roles/role_1024.png",
-			"type": "image",
-			"name": "role_1024_png"
-		},
-		{
 			"url": "game/story/roles/role_1025.json",
 			"type": "sheet",
 			"name": "role_1025_json",
 			"subkeys": "body_1025_1,head_1025_2,head_1025_3,head_1025_4"
-		},
-		{
-			"url": "game/story/roles/role_1025.png",
-			"type": "image",
-			"name": "role_1025_png"
 		},
 		{
 			"url": "game/story/roles/role_1030.json",
@@ -3198,20 +3204,10 @@
 			"subkeys": "body_1030_1,head_1030_2,head_1030_3,head_1030_4"
 		},
 		{
-			"url": "game/story/roles/role_1030.png",
-			"type": "image",
-			"name": "role_1030_png"
-		},
-		{
 			"url": "game/story/roles/role_1032.json",
 			"type": "sheet",
 			"name": "role_1032_json",
 			"subkeys": "body_1032_1,head_1032_2,head_1032_3,head_1032_4"
-		},
-		{
-			"url": "game/story/roles/role_1032.png",
-			"type": "image",
-			"name": "role_1032_png"
 		},
 		{
 			"url": "game/story/roles/role_1083.json",
@@ -3220,20 +3216,10 @@
 			"subkeys": "body_1083_1,head_1083_2,head_1083_3,head_1083_4"
 		},
 		{
-			"url": "game/story/roles/role_1083.png",
-			"type": "image",
-			"name": "role_1083_png"
-		},
-		{
 			"url": "game/story/roles/role_1111.json",
 			"type": "sheet",
 			"name": "role_1111_json",
 			"subkeys": "body_1111_1,head_1111_2,head_1111_3,head_1111_4"
-		},
-		{
-			"url": "game/story/roles/role_1111.png",
-			"type": "image",
-			"name": "role_1111_png"
 		},
 		{
 			"url": "game/story/roles/role_1118.json",
@@ -3242,31 +3228,16 @@
 			"subkeys": "body_1118_1,head_1118_2,head_1118_3,head_1118_4"
 		},
 		{
-			"url": "game/story/roles/role_1118.png",
-			"type": "image",
-			"name": "role_1118_png"
-		},
-		{
 			"url": "game/story/roles/role_1122.json",
 			"type": "sheet",
 			"name": "role_1122_json",
 			"subkeys": "body_1122_1,head_1122_2,head_1122_3,head_1122_4"
 		},
 		{
-			"url": "game/story/roles/role_1122.png",
-			"type": "image",
-			"name": "role_1122_png"
-		},
-		{
 			"url": "game/story/roles/role_3012.json",
 			"type": "sheet",
 			"name": "role_3012_json",
 			"subkeys": "body_3012_1,head_3012_2,head_3012_3,head_3012_4,head_3012_6,head_3012_7"
-		},
-		{
-			"url": "game/story/roles/role_3012.png",
-			"type": "image",
-			"name": "role_3012_png"
 		},
 		{
 			"url": "game/story/roles/body_1017_1.png",
@@ -20527,84 +20498,284 @@
 			"name": "70189_png"
 		},
 		{
-			"name": "1001_json",
+			"url": "config/story/role_1/1001.json",
 			"type": "json",
-			"url": "config/story/role_1/1001.json"
+			"name": "1001_json"
 		},
 		{
-			"name": "1002_json",
+			"url": "config/story/role_1/1002.json",
 			"type": "json",
-			"url": "config/story/role_1/1002.json"
+			"name": "1002_json"
 		},
 		{
-			"name": "1003_json",
+			"url": "config/story/role_1/1003.json",
 			"type": "json",
-			"url": "config/story/role_1/1003.json"
+			"name": "1003_json"
 		},
 		{
-			"name": "1004_json",
+			"url": "config/story/role_1/1004.json",
 			"type": "json",
-			"url": "config/story/role_1/1004.json"
+			"name": "1004_json"
 		},
 		{
-			"name": "1005_json",
+			"url": "config/story/role_1/1005.json",
 			"type": "json",
-			"url": "config/story/role_1/1005.json"
+			"name": "1005_json"
 		},
 		{
-			"name": "1006_json",
+			"url": "config/story/role_1/1006.json",
 			"type": "json",
-			"url": "config/story/role_1/1006.json"
+			"name": "1006_json"
 		},
 		{
-			"name": "1007_json",
+			"url": "config/story/role_1/1007.json",
 			"type": "json",
-			"url": "config/story/role_1/1007.json"
+			"name": "1007_json"
 		},
 		{
-			"name": "1008_json",
+			"url": "config/story/role_1/1008.json",
 			"type": "json",
-			"url": "config/story/role_1/1008.json"
+			"name": "1008_json"
 		},
 		{
-			"name": "1009_json",
+			"url": "config/story/role_1/1009.json",
 			"type": "json",
-			"url": "config/story/role_1/1009.json"
+			"name": "1009_json"
 		},
 		{
-			"name": "1010_json",
+			"url": "config/story/role_1/1010.json",
 			"type": "json",
-			"url": "config/story/role_1/1010.json"
+			"name": "1010_json"
 		},
 		{
-			"name": "1011_json",
+			"url": "config/story/role_1/1011.json",
 			"type": "json",
-			"url": "config/story/role_1/1011.json"
+			"name": "1011_json"
 		},
 		{
-			"name": "1012_json",
+			"url": "config/story/role_1/1012.json",
 			"type": "json",
-			"url": "config/story/role_1/1012.json"
+			"name": "1012_json"
 		},
 		{
-			"name": "1013_json",
+			"url": "config/story/role_1/1013.json",
 			"type": "json",
-			"url": "config/story/role_1/1013.json"
+			"name": "1013_json"
 		},
 		{
-			"name": "1014_json",
+			"url": "config/story/role_1/1014.json",
 			"type": "json",
-			"url": "config/story/role_1/1014.json"
+			"name": "1014_json"
 		},
 		{
-			"name": "1015_json",
+			"url": "config/story/role_1/1015.json",
 			"type": "json",
-			"url": "config/story/role_1/1015.json"
+			"name": "1015_json"
 		},
 		{
-			"name": "story_role_1_json",
+			"url": "config/story/role_1/story_role_1.json",
 			"type": "json",
-			"url": "config/story/role_1/story_role_1.json"
+			"name": "story_role_1_json"
+		},
+		{
+			"url": "game/story/roles/body_1003_2.png",
+			"type": "image",
+			"name": "body_1003_2"
+		},
+		{
+			"url": "game/story/roles/body_101_13.png",
+			"type": "image",
+			"name": "body_101_13"
+		},
+		{
+			"url": "game/story/roles/body_101_14.png",
+			"type": "image",
+			"name": "body_101_14"
+		},
+		{
+			"url": "game/story/roles/body_101_15.png",
+			"type": "image",
+			"name": "body_101_15"
+		},
+		{
+			"url": "game/story/roles/body_101_16.png",
+			"type": "image",
+			"name": "body_101_16"
+		},
+		{
+			"url": "game/story/roles/body_101_17.png",
+			"type": "image",
+			"name": "body_101_17"
+		},
+		{
+			"url": "game/story/roles/body_1036_1.png",
+			"type": "image",
+			"name": "body_1036_1"
+		},
+		{
+			"url": "game/story/roles/body_1088_1.png",
+			"type": "image",
+			"name": "body_1088_1"
+		},
+		{
+			"url": "game/story/roles/head_1003_2_2.png",
+			"type": "image",
+			"name": "head_1003_2_2"
+		},
+		{
+			"url": "game/story/roles/head_1003_2_3.png",
+			"type": "image",
+			"name": "head_1003_2_3"
+		},
+		{
+			"url": "game/story/roles/head_1003_2_4.png",
+			"type": "image",
+			"name": "head_1003_2_4"
+		},
+		{
+			"url": "game/story/roles/head_101_13_2.png",
+			"type": "image",
+			"name": "head_101_13_2"
+		},
+		{
+			"url": "game/story/roles/head_101_13_3.png",
+			"type": "image",
+			"name": "head_101_13_3"
+		},
+		{
+			"url": "game/story/roles/head_101_13_4.png",
+			"type": "image",
+			"name": "head_101_13_4"
+		},
+		{
+			"url": "game/story/roles/head_101_13_5.png",
+			"type": "image",
+			"name": "head_101_13_5"
+		},
+		{
+			"url": "game/story/roles/head_101_14_2.png",
+			"type": "image",
+			"name": "head_101_14_2"
+		},
+		{
+			"url": "game/story/roles/head_101_14_3.png",
+			"type": "image",
+			"name": "head_101_14_3"
+		},
+		{
+			"url": "game/story/roles/head_101_14_4.png",
+			"type": "image",
+			"name": "head_101_14_4"
+		},
+		{
+			"url": "game/story/roles/head_101_14_5.png",
+			"type": "image",
+			"name": "head_101_14_5"
+		},
+		{
+			"url": "game/story/roles/head_101_15_2.png",
+			"type": "image",
+			"name": "head_101_15_2"
+		},
+		{
+			"url": "game/story/roles/head_101_15_3.png",
+			"type": "image",
+			"name": "head_101_15_3"
+		},
+		{
+			"url": "game/story/roles/head_101_15_4.png",
+			"type": "image",
+			"name": "head_101_15_4"
+		},
+		{
+			"url": "game/story/roles/head_101_15_5.png",
+			"type": "image",
+			"name": "head_101_15_5"
+		},
+		{
+			"url": "game/story/roles/head_101_16_2.png",
+			"type": "image",
+			"name": "head_101_16_2"
+		},
+		{
+			"url": "game/story/roles/head_101_16_3.png",
+			"type": "image",
+			"name": "head_101_16_3"
+		},
+		{
+			"url": "game/story/roles/head_101_16_4.png",
+			"type": "image",
+			"name": "head_101_16_4"
+		},
+		{
+			"url": "game/story/roles/head_101_16_5.png",
+			"type": "image",
+			"name": "head_101_16_5"
+		},
+		{
+			"url": "game/story/roles/head_101_17_2.png",
+			"type": "image",
+			"name": "head_101_17_2"
+		},
+		{
+			"url": "game/story/roles/head_101_17_3.png",
+			"type": "image",
+			"name": "head_101_17_3"
+		},
+		{
+			"url": "game/story/roles/head_101_17_4.png",
+			"type": "image",
+			"name": "head_101_17_4"
+		},
+		{
+			"url": "game/story/roles/head_101_17_5.png",
+			"type": "image",
+			"name": "head_101_17_5"
+		},
+		{
+			"url": "game/story/roles/head_1036_2.png",
+			"type": "image",
+			"name": "head_1036_2"
+		},
+		{
+			"url": "game/story/roles/head_1036_3.png",
+			"type": "image",
+			"name": "head_1036_3"
+		},
+		{
+			"url": "game/story/roles/head_1036_4.png",
+			"type": "image",
+			"name": "head_1036_4"
+		},
+		{
+			"url": "game/story/roles/head_1040_2.png",
+			"type": "image",
+			"name": "head_1040_2"
+		},
+		{
+			"url": "game/story/roles/head_1040_3.png",
+			"type": "image",
+			"name": "head_1040_3"
+		},
+		{
+			"url": "game/story/roles/head_1040_4.png",
+			"type": "image",
+			"name": "head_1040_4"
+		},
+		{
+			"url": "game/story/roles/head_1088_2.png",
+			"type": "image",
+			"name": "head_1088_2"
+		},
+		{
+			"url": "game/story/roles/head_1088_3.png",
+			"type": "image",
+			"name": "head_1088_3"
+		},
+		{
+			"url": "game/story/roles/head_1088_4.png",
+			"type": "image",
+			"name": "head_1088_4"
 		}
 	]
 }

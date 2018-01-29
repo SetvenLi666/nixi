@@ -1,432 +1,215 @@
 [
     {
-        "index": "1",
-        "file": "story_xtsy_1",
-        "bg": "3009_png",
-        "role": "body_101_2",
-        "head": "head_101_2",
+        "index": "1001",
+        "file": "1001",
+        "bg": "3070_png",
+        "role": "body_1021_1",
+        "head": "head_1021_1",
         "phase": "1",
         "unlock": "1",
         "ending": [
             {
-                "id": "101_1_1",
-                "name": "再见小助理"
+                "id": "1001_1_1",
+                "name": "眼见不一定为实"
             }
         ]
     },
     {
-        "index": "2",
-        "file": "story_xtsy_2",
-        "bg": "3016_png",
-        "role": "body_1024_1",
-        "head": "head_1024_3",
+        "index": "1002",
+        "file": "1002",
+        "bg": "3049_png",
+        "role": "body_1015_1",
+        "head": "head_1015_1",
         "phase": "1",
         "unlock": "4",
         "ending": [
             {
-                "id": "101_2_1",
-                "name": "贵圈真可怕"
+                "id": "1001_2_1",
+                "name": "理想导师"
             }
         ]
     },
     {
-        "index": "3",
-        "file": "story_xtsy_3",
-        "bg": "3033_png",
-        "role": "body_101_3",
-        "head": "head_101_4",
+        "index": "1003",
+        "file": "1003",
+        "bg": "3016_png",
+        "role": "body_1088_1",
+        "head": "head_1088_1",
         "phase": "1",
         "unlock": "7",
+        "ending": [
+            {
+                "id": "1001_3_1",
+                "name": "不知进退"
+            }
+        ]
+    },
+    {
+        "index": "1004",
+        "file": "1004",
+        "bg": "3017_png",
+        "role": "body_1001_1",
+        "head": "head_1001_1",
+        "phase": "1",
+        "unlock": "7",
+        "ending": [
+            {
+                "id": "1001_4_1",
+                "name": "事事讲证据"
+            }
+        ]
+    },
+    {
+        "index": "1005",
+        "file": "1005",
+        "bg": "3083_png",
+        "role": "body_1083_1",
+        "head": "head_1083_1",
+        "phase": "1",
+        "unlock": "7",
+        "ending": [
+            {
+                "id": "1001_5_1",
+                "name": "木讷迟钝"
+            }
+        ]
+    },
+    {
+        "index": "1006",
+        "file": "1006",
+        "bg": "1_png",
+        "role": "body_101_14",
+        "head": "head_101_1",
+        "phase": "1",
+        "unlock": "7",
+        "ending": [
+            {
+                "id": "1001_6_1",
+                "name": "一意孤行"
+            }
+        ]
+    },
+    {
+        "index": "1007",
+        "file": "1007",
+        "bg": "3042_png",
+        "role": "body_1001_1",
+        "head": "head_1001_1",
+        "phase": "1",
+        "unlock": "14",
         "ending": [
             
         ]
     },
     {
-        "index": "4",
-        "file": "story_xtsy_4",
-        "bg": "3067_png",
-        "role": "body_1012_1",
-        "head": "head_1012_1",
-        "phase": "1",
-        "unlock": "7",
-        "ending": [
-            {
-                "id": "101_4_1",
-                "name": "人云亦云"
-            },
-            {
-                "id": "101_4_2",
-                "name": "为人处世"
-            }
-        ]
-    },
-    {
-        "index": "5",
-        "file": "story_xtsy_5",
-        "bg": "3064_png",
-        "role": "body_1030_1",
-        "head": "head_1030_3",
-        "phase": "1",
-        "unlock": "7",
-        "ending": [
-            {
-                "id": "101_5_1",
-                "name": "人梦两空"
-            }
-        ]
-    },
-    {
-        "index": "6",
-        "file": "story_xtsy_6",
-        "bg": "3017_png",
-        "role": "body_1034_1",
-        "head": "head_1034_4",
-        "phase": "1",
-        "unlock": "7",
-        "ending": [
-            {
-                "id": "101_6_1",
-                "name": "涵养"
-            }
-        ]
-    },
-    {
-        "index": "7",
-        "file": "story_xtsy_7",
-        "bg": "3023_png",
-        "role": "body_3012_1",
-        "head": "head_3012_4",
+        "index": "1008",
+        "file": "1008",
+        "bg": "3032_png",
+        "role": "body_1082_1",
+        "head": "head_1082_1",
         "phase": "1",
         "unlock": "14",
         "ending": [
             {
-                "id": "101_7_1",
-                "name": "被遗忘"
+                "id": "1001_8_1",
+                "name": "毫无眼界"
             }
         ]
     },
     {
-        "index": "8",
-        "file": "story_xtsy_8",
-        "bg": "3017_png",
-        "role": "body_1031_1",
-        "head": "head_1031_1",
-        "phase": "1",
-        "unlock": "14",
-        "ending": [
-            {
-                "id": "101_8_1",
-                "name": "断送梦想"
-            }
-        ]
-    },
-    {
-        "index": "9",
-        "file": "story_xtsy_9",
-        "bg": "3044_png",
-        "role": "body_1015_1",
-        "head": "head_1015_1",
+        "index": "1009",
+        "file": "1009",
+        "bg": "3083_png",
+        "role": "body_101_15",
+        "head": "head_101_1",
         "phase": "1",
         "unlock": "16",
         "ending": [
             {
-                "id": "101_9_1",
-                "name": "失去"
+                "id": "1001_9_1",
+                "name": "胆小怕事"
             }
         ]
     },
     {
-        "index": "10",
-        "file": "story_xtsy_10",
-        "bg": "3050_png",
-        "role": "body_101_7",
-        "head": "head_101_4",
+        "index": "1010",
+        "file": "1010",
+        "bg": "3024_png",
+        "role": "body_1040_1",
+        "head": "head_1040_1",
         "phase": "1",
         "unlock": "20",
-        "ending": [
-            {
-                "id": "101_10_1",
-                "name": "自控很重要"
-            }
-        ]
-    },
-    {
-        "index": "11",
-        "file": "story_xtsy_11",
-        "bg": "3048_png",
-        "role": "body_1001_1",
-        "head": "head_1001_3",
-        "phase": "1",
-        "unlock": "20",
-        "ending": [
-            {
-                "id": "101_11_1",
-                "name": "操之过急"
-            }
-        ]
-    },
-    {
-        "index": "12",
-        "file": "story_xtsy_12",
-        "bg": "3001_png",
-        "role": "body_1003_1",
-        "head": "head_1003_1",
-        "phase": "2",
-        "unlock": "28",
-        "ending": [
-            {
-                "id": "101_12_1",
-                "name": "黑腹的后果"
-            }
-        ]
-    },
-    {
-        "index": "13",
-        "file": "story_xtsy_13",
-        "bg": "3077_png",
-        "role": "body_1019_1",
-        "head": "head_1019_1",
-        "phase": "2",
-        "unlock": "28",
-        "ending": [
-            {
-                "id": "101_13_1",
-                "name": "冲动"
-            }
-        ]
-    },
-    {
-        "index": "14",
-        "file": "story_xtsy_14",
-        "bg": "3016_png",
-        "role": "body_1015_1",
-        "head": "head_1015_1",
-        "phase": "2",
-        "unlock": "28",
-        "ending": [
-            {
-                "id": "101_14_1",
-                "name": "消极怠工"
-            }
-        ]
-    },
-    {
-        "index": "15",
-        "file": "story_xtsy_15",
-        "bg": "3082_png",
-        "role": "body_1020_1",
-        "head": "head_1020_1",
-        "phase": "2",
-        "unlock": "36",
-        "ending": [
-            {
-                "id": "101_15_1",
-                "name": "整容人生"
-            }
-        ]
-    },
-    {
-        "index": "16",
-        "file": "story_xtsy_16",
-        "bg": "3086_png",
-        "role": "body_1042_1",
-        "head": "head_1042_1",
-        "phase": "2",
-        "unlock": "36",
-        "ending": [
-            {
-                "id": "101_16_1",
-                "name": "没有回头路"
-            }
-        ]
-    },
-    {
-        "index": "17",
-        "file": "story_xtsy_17",
-        "bg": "3088_png",
-        "role": "body_101_6",
-        "head": "head_101_2",
-        "phase": "2",
-        "unlock": "36",
-        "ending": [
-            {
-                "id": "101_17_1",
-                "name": "泥泞沉沦"
-            }
-        ]
-    },
-    {
-        "index": "18",
-        "file": "story_xtsy_18",
-        "bg": "3071_png",
-        "role": "body_101_1",
-        "head": "head_101_2",
-        "phase": "2",
-        "unlock": "36",
-        "ending": [
-            {
-                "id": "101_18_1",
-                "name": "黑暗吞噬"
-            }
-        ]
-    },
-    {
-        "index": "19",
-        "file": "story_xtsy_19",
-        "bg": "3048_png",
-        "role": "body_1015_1",
-        "head": "head_1015_1",
-        "phase": "2",
-        "unlock": "40",
-        "ending": [
-            {
-                "id": "101_19_1",
-                "name": "冲动"
-            }
-        ]
-    },
-    {
-        "index": "20",
-        "file": "story_xtsy_20",
-        "bg": "3058_png",
-        "role": "body_101_1",
-        "head": "head_101_4",
-        "phase": "2",
-        "unlock": "40",
-        "ending": [
-            {
-                "id": "101_20_1",
-                "name": "失去机会"
-            }
-        ]
-    },
-    {
-        "index": "21",
-        "file": "story_xtsy_21",
-        "bg": "3069_png",
-        "role": "body_1021_1",
-        "head": "head_1021_1",
-        "phase": "2",
-        "unlock": "40",
-        "ending": [
-            {
-                "id": "101_21_1",
-                "name": "污点新人"
-            }
-        ]
-    },
-    {
-        "index": "22",
-        "file": "story_xtsy_22",
-        "bg": "3029_2_png",
-        "role": "body_1012_1",
-        "head": "head_1012_2",
-        "phase": "2",
-        "unlock": "40",
-        "ending": [
-
-        ]
-    },
-    {
-        "index": "23",
-        "file": "story_xtsy_23",
-        "bg": "3009_2_png",
-        "role": "body_1015_1",
-        "head": "head_1015_3",
-        "phase": "2",
-        "unlock": "46",
-        "ending": [
-            {
-                "id": "101_23_1",
-                "name": "冷漠"
-            }
-        ]
-    },
-    {
-        "index": "24",
-        "file": "story_xtsy_24",
-        "bg": "3062_png",
-        "role": "body_1039_1",
-        "head": "head_1039_1",
-        "phase": "2",
-        "unlock": "48",
-        "ending": [
-            {
-                "id": "101_24_1",
-                "name": "开除"
-            }
-        ]
-    },
-    {
-        "index": "25",
-        "file": "story_xtsy_25",
-        "bg": "3062_2_png",
-        "role": "body_1015_2",
-        "head": "head_1015_1",
-        "phase": "2",
-        "unlock": "48",
-        "ending": [
-            {
-                "id": "101_25_1",
-                "name": "雪藏"
-            }
-        ]
-    },
-    {
-        "index": "26",
-        "file": "story_xtsy_26",
-        "bg": "3041_png",
-        "role": "body_101_1",
-        "head": "head_101_2",
-        "phase": "2",
-        "unlock": "48",
-        "ending": [
-            {
-                "id": "101_26_1",
-                "name": "放弃"
-            }
-        ]
-    },
-    {
-        "index": "27",
-        "file": "story_xtsy_27",
-        "bg": "3048_png",
-        "role": "body_1001_1",
-        "head": "head_1001_1",
-        "phase": "2",
-        "unlock": "51",
-        "ending": [
-            {
-                "id": "101_27_1",
-                "name": "解聘"
-            }
-        ]
-    },
-    {
-        "index": "28",
-        "file": "story_xtsy_28",
-        "bg": "3049_png",
-        "role": "body_101_1",
-        "head": "head_101_4",
-        "phase": "2",
-        "unlock": "51",
         "ending": [
             
         ]
     },
     {
-        "index": "29",
-        "file": "story_xtsy_29",
-        "bg": "3070_png",
+        "index": "1011",
+        "file": "1011",
+        "bg": "3044_png",
+        "role": "body_1001_1",
+        "head": "head_1001_1",
+        "phase": "1",
+        "unlock": "20",
+        "ending": [
+            {
+                "id": "1001_11_1",
+                "name": "机不可失失不再来"
+            }
+        ]
+    },
+    {
+        "index": "1012",
+        "file": "1012",
+        "bg": "3007_png",
+        "role": "body_101_3",
+        "head": "head_101_3",
+        "phase": "2",
+        "unlock": "28",
+        "ending": [
+            
+        ]
+    },
+    {
+        "index": "1013",
+        "file": "1013",
+        "bg": "3083_png",
+        "role": "body_1001_1",
+        "head": "head_1001_5",
+        "phase": "2",
+        "unlock": "28",
+        "ending": [
+            {
+                "id": "1001_13_1",
+                "name": "好心办坏事"
+            }
+        ]
+    },
+    {
+        "index": "1014",
+        "file": "1014",
+        "bg": "3017_png",
         "role": "body_1083_1",
         "head": "head_1083_1",
         "phase": "2",
-        "unlock": "51",
+        "unlock": "28",
         "ending": [
             {
-                "id": "101_29_1",
-                "name": "回归平凡"
+                "id": "1001_14_1",
+                "name": "内心动摇误终身"
             }
+        ]
+    },
+    {
+        "index": "1015",
+        "file": "1015",
+        "bg": "3045_png",
+        "role": "body_1082_1",
+        "head": "head_1082_1",
+        "phase": "2",
+        "unlock": "36",
+        "ending": [
+            
         ]
     }
 ]

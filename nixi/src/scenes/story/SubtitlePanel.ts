@@ -35,10 +35,15 @@ class SubtitlePanel extends eui.Component implements  eui.UIComponent {
 		self.timer = new egret.Timer(ConstData.Conf.StoryTextFlashInterval, len);
 		var count = 0;
 		 //注册事件侦听器
+		 console.log(self.curFullText, len);
+		 var saidText = text;
         self.timer.addEventListener(egret.TimerEvent.TIMER, function () {
+			console.log(self.curFullText);
+			console.log(saidText);
 			self.isUpdating = true;
 			count++;
 			self.lblSubtitle.text = self.curFullText.substr(0, count);
+			console.log(self.lblSubtitle.text);
 		}, self);
 
         self.timer.addEventListener(egret.TimerEvent.TIMER_COMPLETE, function () {
@@ -46,6 +51,7 @@ class SubtitlePanel extends eui.Component implements  eui.UIComponent {
 			self.isUpdating = false;
 			self.showTapFlag();
 			self.playCompleteCallback.apply(self.playCompleteHandler, []);
+			console.log(self.lblSubtitle.text);
 		}, self);
         //开始计时
         self.timer.start();
@@ -64,6 +70,7 @@ class SubtitlePanel extends eui.Component implements  eui.UIComponent {
 
 		this.curFullText = text;
 		this.lblSubtitle.text = text;
+		console.log(this.lblSubtitle);
 	}
 
 	public spring() {
@@ -74,6 +81,7 @@ class SubtitlePanel extends eui.Component implements  eui.UIComponent {
 		}
 
 		this.lblSubtitle.text = this.curFullText;
+		console.log(this.curFullText);
 		this.showTapFlag();
 		this.playCompleteCallback.apply(this.playCompleteHandler, []);
 	}
@@ -125,6 +133,7 @@ class SubtitlePanel extends eui.Component implements  eui.UIComponent {
 		this.timer = null;
 		this.curFullText = "";
 		this.hideTapFlag();
+		console.log("whenenter", this.curFullText);
 
 		this.cbFastPlay.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onFastPlay, this);
 		this.cbAutoPlay.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onAutoPlay, this);
@@ -174,7 +183,7 @@ class SubtitlePanel extends eui.Component implements  eui.UIComponent {
 	public btnLog: eui.Button;
 	private namePlate: eui.Group;
 	private lblName: eui.Label;
-	private lblSubtitle: eui.Label;
+	public lblSubtitle: eui.Label;
 	private tapFlag: egret.MovieClip = null;
 	private tagImg: eui.Image;
 	private timer: egret.Timer = null;

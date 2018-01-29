@@ -54,12 +54,12 @@ class NewStoryScene extends eui.Component {
 					this.curPageIndex = Math.min(parseInt(i), 28);  //目前只有29章剧情
 				}
 			}
-		}else {
+		} else {
 			for (var i in StoryData.completedStory) {
 				var item: string[] = StoryData.completedStory[i];
 				if (item && item.indexOf("-1") != -1) {
 					// this.curPageIndex = parseInt(i);
-					this.curPageIndex = Math.min(parseInt(i), this.storyData.length - 1);
+					this.curPageIndex = Math.min(parseInt(i) - 1000, this.storyData.length - 1);
 				}
 			}
 		}
@@ -223,6 +223,7 @@ class NewStoryScene extends eui.Component {
 	private onBack() {
 		DisplayMgr.buttonScale(this.btn_back, function () {
 			SoundManager.instance().buttonSound();
+			StoryData.curStoryBranch = 0;
 			SceneMgr.gotoNewStorySelectScene();
 		});
 	}
@@ -314,58 +315,118 @@ class StoryChapterCompRenderer extends eui.ItemRenderer {
 			this.end_2.text = "";
 		}
 
+		//1001测试全部解锁
+		// this.btn_start.source = "story_btn_start_png";
+		// this.btn_start.touchEnabled = true;
 
-		//是否解锁
-		if (TaskData.userData()[this.data["unlock"]] == null) {
-			//未解锁
-			var phaseName = "小助理";
-			if (this.data["phase"] == "1") {
-				phaseName = "小助理";
-			} else if (this.data["phase"] == "2") {
-				phaseName = "练习生";
-			} else if (this.data["phase"] == "3") {
-				phaseName = "小演员";
-			} else if (this.data["phase"] == "4") {
-				phaseName = "小花旦";
-			} else if (this.data["phase"] == "5") {
-				phaseName = "大明星";
-			}
-			this.lab_lock.text = "解锁条件  " + phaseName + "任务" + this.data["unlock"];
-			this.lab_lock.visible = true;
-			this.lab_energy.visible = false;
-			this.img_energy.visible = false;
-			this.btn_start.source = "story_btn_start2_png";
-			this.btn_start.touchEnabled = false;
-			this.btn_unlock.visible = true;
+		if (StoryData.curStoryBranch != 0) {
+			this.btn_start.source = "story_btn_start_png";
+			this.btn_start.touchEnabled = true;
 		} else {
-			this.btn_unlock.visible = false;
-			var index = parseInt(this.data.index);
-			if (index != 1) {
-				var completedStory: string[] = StoryData.completedStory[(index - 1).toString()];
-				if (completedStory == null || completedStory.indexOf("-1") == -1) {
-					//未通关
-					this.lab_lock.text = "解锁条件  通关之前章节";
-					this.lab_lock.visible = true;
-					this.lab_energy.visible = false;
-					this.img_energy.visible = false;
-					this.btn_start.source = "story_btn_start2_png";
-					this.btn_start.touchEnabled = false;
+			//是否解锁
+			if (TaskData.userData()[this.data["unlock"]] == null) {
+				//未解锁
+				var phaseName = "小助理";
+				if (this.data["phase"] == "1") {
+					phaseName = "小助理";
+				} else if (this.data["phase"] == "2") {
+					phaseName = "练习生";
+				} else if (this.data["phase"] == "3") {
+					phaseName = "小演员";
+				} else if (this.data["phase"] == "4") {
+					phaseName = "小花旦";
+				} else if (this.data["phase"] == "5") {
+					phaseName = "大明星";
+				}
+				this.lab_lock.text = "解锁条件  " + phaseName + "任务" + this.data["unlock"];
+				this.lab_lock.visible = true;
+				this.lab_energy.visible = false;
+				this.img_energy.visible = false;
+				this.btn_start.source = "story_btn_start2_png";
+				this.btn_start.touchEnabled = false;
+				this.btn_unlock.visible = true;
+			} else {
+				this.btn_unlock.visible = false;
+				var index = parseInt(this.data.index);
+				if (index != 1) {
+					var completedStory: string[] = StoryData.completedStory[(index - 1).toString()];
+					if (completedStory == null || completedStory.indexOf("-1") == -1) {
+						//未通关
+						this.lab_lock.text = "解锁条件  通关之前章节";
+						this.lab_lock.visible = true;
+						this.lab_energy.visible = false;
+						this.img_energy.visible = false;
+						this.btn_start.source = "story_btn_start2_png";
+						this.btn_start.touchEnabled = false;
+					} else {
+						//前置章节通关
+						this.lab_lock.visible = false;
+						this.lab_energy.visible = true;
+						this.img_energy.visible = true;
+						this.btn_start.source = "story_btn_start_png";
+						this.btn_start.touchEnabled = true;
+					}
 				} else {
-					//前置章节通关
 					this.lab_lock.visible = false;
 					this.lab_energy.visible = true;
 					this.img_energy.visible = true;
 					this.btn_start.source = "story_btn_start_png";
 					this.btn_start.touchEnabled = true;
 				}
-			} else {
-				this.lab_lock.visible = false;
-				this.lab_energy.visible = true;
-				this.img_energy.visible = true;
-				this.btn_start.source = "story_btn_start_png";
-				this.btn_start.touchEnabled = true;
 			}
 		}
+
+		// //是否解锁
+		// if (TaskData.userData()[this.data["unlock"]] == null) {
+		// 	//未解锁
+		// 	var phaseName = "小助理";
+		// 	if (this.data["phase"] == "1") {
+		// 		phaseName = "小助理";
+		// 	} else if (this.data["phase"] == "2") {
+		// 		phaseName = "练习生";
+		// 	} else if (this.data["phase"] == "3") {
+		// 		phaseName = "小演员";
+		// 	} else if (this.data["phase"] == "4") {
+		// 		phaseName = "小花旦";
+		// 	} else if (this.data["phase"] == "5") {
+		// 		phaseName = "大明星";
+		// 	}
+		// 	this.lab_lock.text = "解锁条件  " + phaseName + "任务" + this.data["unlock"];
+		// 	this.lab_lock.visible = true;
+		// 	this.lab_energy.visible = false;
+		// 	this.img_energy.visible = false;
+		// 	this.btn_start.source = "story_btn_start2_png";
+		// 	this.btn_start.touchEnabled = false;
+		// 	this.btn_unlock.visible = true;
+		// } else {
+		// 	this.btn_unlock.visible = false;
+		// 	var index = parseInt(this.data.index);
+		// 	if (index != 1) {
+		// 		var completedStory: string[] = StoryData.completedStory[(index - 1).toString()];
+		// 		if (completedStory == null || completedStory.indexOf("-1") == -1) {
+		// 			//未通关
+		// 			this.lab_lock.text = "解锁条件  通关之前章节";
+		// 			this.lab_lock.visible = true;
+		// 			this.lab_energy.visible = false;
+		// 			this.img_energy.visible = false;
+		// 			this.btn_start.source = "story_btn_start2_png";
+		// 			this.btn_start.touchEnabled = false;
+		// 		} else {
+		// 			//前置章节通关
+		// 			this.lab_lock.visible = false;
+		// 			this.lab_energy.visible = true;
+		// 			this.img_energy.visible = true;
+		// 			this.btn_start.source = "story_btn_start_png";
+		// 			this.btn_start.touchEnabled = true;
+		// 		}
+		// 	} else {
+		// 		this.lab_lock.visible = false;
+		// 		this.lab_energy.visible = true;
+		// 		this.img_energy.visible = true;
+		// 		this.btn_start.source = "story_btn_start_png";
+		// 		this.btn_start.touchEnabled = true;
+		// 	}
+		// }
 	}
 
 	private onStart() {

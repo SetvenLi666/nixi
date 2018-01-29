@@ -241,7 +241,12 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 					StoryData.isShowLastTip = true;
 				}
 
-				SceneMgr.gotoNewStoryScene()
+				console.log(StoryData.curStoryBranch);
+				if(StoryData.curStoryBranch == 0) {
+					SceneMgr.gotoNewStoryScene()
+				}else {
+					SceneMgr.gotoNewStoryScene(StoryData.curStoryBranch);
+				}
 			}
 		});
 	}
@@ -503,7 +508,6 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 	private whenPlayerCompleted() {
 		console.log("StoryScene::whenPlayerCompleted()");
 		this.playPhase = StoryPlayPhase.subtitle;
-
 		if (this.playState === StoryPlayState.auto) {
 			this.subtitle.play(this.script[this.curPlotIndex]["name"], this.script[this.curPlotIndex]["said"]);
 		}
