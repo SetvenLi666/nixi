@@ -172,8 +172,7 @@ class ShouchongPanel extends eui.Component {
 
 			curProductId = data["id"];
 
-			egret.ExternalInterface.call("setGoldSAndMondy", data["diam"] + ";" + data["money"] + "00" + ";" + LoginData.sid);
-			egret.ExternalInterface.call("isGamePay", data["id"]);
+			window['ExternalInterface']['call']("setPayment", data["id"]);
 
 			// var urlRequest = new egret.URLRequest(ConstData.Conf.WanbaOrderAddr);
 			// urlRequest.method = egret.URLRequestMethod.POST;

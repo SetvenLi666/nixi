@@ -67,8 +67,7 @@ class MonthCardPanel extends eui.Component {
 		var product_id: string = "tiegao_9";
 		curProductId = product_id;
 
-		egret.ExternalInterface.call("setGoldSAndMondy", 0 + ";" + 30 + "00" + ";" + LoginData.sid);
-		egret.ExternalInterface.call("isGamePay", product_id);
+		window['ExternalInterface']['call']("setPayment", product_id);
 
 		// var order_id = LoginData.uuid + "-" + CommonFunc.curTimeStamp() + "-" + Math.floor(Math.random() * 10) + "" + Math.floor(Math.random() * 10);
 		// TDGA.onChargeRequest({
