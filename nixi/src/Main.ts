@@ -172,8 +172,10 @@ class Main extends egret.DisplayObjectContainer {
             openid: "aaaa",
             openkey: "bbbbb",
             platform: 1,
-            qua: {meybeQua: "pc"}
+            qua: { meybeQua: "pc" }
         }
+
+        // this.checkStoryRolesRes();
 
         LoginData.config_UUID();
         SceneMgr.gotoLogin();
@@ -244,5 +246,29 @@ class Main extends egret.DisplayObjectContainer {
                 }
             });
         });
+    }
+
+    private checkStoryRolesRes() {
+        RES.getResAsync("1015_json", function (data, key) {
+            var result: string[] = [];
+            var itemArr: {}[] = data;
+            var len = itemArr.length;
+            for (var i = 0; i < len; i++) {
+                var item: {} = itemArr[i];
+                if (item["zishi_1"] != "" && result.indexOf("body_" + item["zishi_1"]) == -1) {
+                    result.push("body_" + item["zishi_1"]);
+                }
+                if (item["head_1"] != "" && result.indexOf("head_" + item["head_1"]) == -1) {
+                    result.push("head_" + item["head_1"]);
+                }
+                if (item["zishi_2"] != "" && result.indexOf("body_" + item["zishi_2"]) == -1) {
+                    result.push("body_" + item["zishi_2"]);
+                }
+                if (item["head_2"] != "" && result.indexOf("head_" + item["head_2"]) == -1) {
+                    result.push("head_" + item["head_2"]);
+                }
+            }
+            console.log(result);
+        }, this);
     }
 }

@@ -40,7 +40,8 @@ class StoryData {
         }
     }
 
-    public static updateCompleteStoryLine(id: number, obj: {}) {
+    public static updateCompleteBranchStory(id: number, obj: {}) {
+        console.log("StoryData::updateCompleteBranchStory");
         if(id == 1 && obj != null){
             this._completedStoryLine_1 = obj;
         }else if(id == 2 && obj != null) {

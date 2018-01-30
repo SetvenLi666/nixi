@@ -40,6 +40,7 @@ class NewStorySelectScene extends eui.Component {
 		this.groupYellow.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onGroupTouch, this);
 
 		CustomEventMgr.addEventListener("600", this.afterFetchMissionData_600, this);
+		CustomEventMgr.addEventListener("502", this.afterFetchBranchStoryData_502, this);
 
 		if (PlayerData.guide == 5) {
 			var guidePanel = new NewGuidePanel();
@@ -55,6 +56,7 @@ class NewStorySelectScene extends eui.Component {
 
 	private onExit() {
 		CustomEventMgr.removeEventListener("600", this.afterFetchMissionData_600, this);
+		CustomEventMgr.removeEventListener("502", this.afterFetchBranchStoryData_502, this);
 		if (PlayerData.guide == 5) {
 			CustomEventMgr.removeEventListener("Guide_Step_5_3", this.onBegin, this);
 		}
@@ -64,11 +66,12 @@ class NewStorySelectScene extends eui.Component {
 		var self = this;
 		var target: eui.Group = evt.currentTarget;
 		DisplayMgr.buttonScale(target, function () {
-			SoundManager.instance().buttonSound();			
-			console.log(target);
+			SoundManager.instance().buttonSound();
+			var branch_id: number;		
 			switch (target) {
 				case self.groupYellow:
-					StoryData.curStoryBranch = 1;
+					// StoryData.curStoryBranch = 1;
+					branch_id = 1001;
 					break;
 				case self.groupRed:
 					// StoryData.curStoryBranch = 2;
@@ -80,7 +83,9 @@ class NewStorySelectScene extends eui.Component {
 					return;
 			}
 
-			SceneMgr.gotoNewStoryScene(StoryData.curStoryBranch);
+			SceneMgr.gotoBranchMainScene(branch_id);
+			var request = HttpProtocolMgr.fetchBranchStoryData_502(branch_id);
+			HttpMgr.postRequest(request);
 			// if(StoryData.completedStory["29"] && StoryData.completedStory["29"].indexOf("-1") != -1) {
 			// 	//已通关星途闪耀
 			// 	SceneMgr.gotoNewStoryScene(1);
@@ -110,5 +115,10 @@ class NewStorySelectScene extends eui.Component {
 	private afterFetchMissionData_600() {
 		NetLoading.removeLoading();
 		SceneMgr.gotoNewStoryScene();
+	}
+
+	private afterFetchBranchStoryData_502(evt: egret.Event) {
+		NetLoading.removeLoading();
+		SceneMgr.gotoBranchMainScene(evt.data);
 	}
 }

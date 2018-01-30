@@ -57,7 +57,7 @@
 			"name": "main"
 		},
 		{
-			"keys": "story_chapter_energy_png,story_chapter_bg_png,story_btn_start2_png,story_btn_start_png,story_btn_right_png,story_btn_left_png,story_json,story_chapt_tip_png,shop_bg_png,story_btn_unlock_png,story_role_1_json",
+			"keys": "story_chapter_energy_png,story_chapter_bg_png,story_btn_start2_png,story_btn_start_png,story_btn_right_png,story_btn_left_png,story_json,story_chapt_tip_png,shop_bg_png,story_btn_unlock_png",
 			"name": "new_story"
 		},
 		{
@@ -193,63 +193,63 @@
 			"name": "new_rank"
 		},
 		{
-			"keys": "",
+			"keys": "role_101_json,role_1083_json,body_1082_1,role_1001_json,body_1036_1,role_1015_json,role_1021_json",
 			"name": "story_roles_1001"
 		},
 		{
-			"keys": "",
+			"keys": "role_1012_json,role_101_json,role_1083_json,role_1021_json,role_1015_json,body_1040_1",
 			"name": "story_roles_1002"
 		},
 		{
-			"keys": "",
+			"keys": "role_101_json,body_1053_1,role_1015_json,body_1017_1,body_1016_1,body_101_17,head_101_17_4,body_1088_1,body_1082_1,role_1001_json",
 			"name": "story_roles_1003"
 		},
 		{
-			"keys": "",
+			"keys": "body_1082_1,role_1001_json,role_1032_json,role_101_json,role_1015_json,role_1083_json,body_1033_1,role_1020_json,role_1021_json,role_1025_json,body_1040_1",
 			"name": "story_roles_1004"
 		},
 		{
-			"keys": "",
+			"keys": "role_101_json,role_1021_json,body_1033_1,body_1039_1,role_1020_json,role_1025_json,role_1083_json,role_1001_json,role_1015_json,body_1022_1",
 			"name": "story_roles_1005"
 		},
 		{
-			"keys": "",
+			"keys": "role_1021_json,role_1083_json,role_101_json,body_1017_1,body_1053_1,body_1018_1,role_1020_json",
 			"name": "story_roles_1006"
 		},
 		{
-			"keys": "",
+			"keys": "body_1017_1,body_1088_1,body_101_14,head_101_14_3,head_1088_2,head_101_14_4,head_1088_3,body_1031_1,head_1088_4,role_101_json,role_1083_json,head_101_14_5,head_101_14_2,role_1001_json,body_1040_1,role_1020_json,role_1015_json",
 			"name": "story_roles_1007"
 		},
 		{
-			"keys": "",
+			"keys": "role_1083_json,role_101_json,role_1015_json,role_1001_json,head_1088_2,body_1082_1",
 			"name": "story_roles_1008"
 		},
 		{
-			"keys": "",
+			"keys": "body_101_15,head_101_15_5,role_1083_json,role_1001_json,body_1082_1,body_1017_1,body_1031_1,body_101_14,head_101_14_2,head_101_14_4,body_1016_1,role_101_json",
 			"name": "story_roles_1009"
 		},
 		{
-			"keys": "",
+			"keys": "role_101_json,body_1035_1,role_1001_json,body_1040_1,role_1083_json,body_1016_1,body_1026_1,body_1017_1",
 			"name": "story_roles_1010"
 		},
 		{
-			"keys": "",
+			"keys": "role_1083_json,body_1082_1,body_1048_1,role_1001_json,role_101_json,body_1018_1,body_1040_1,head_1040_2",
 			"name": "story_roles_1011"
 		},
 		{
-			"keys": "",
+			"keys": "body_1022_1,body_1082_1,role_1001_json,role_1083_json,role_101_json",
 			"name": "story_roles_1012"
 		},
 		{
-			"keys": "",
+			"keys": "body_1018_1,body_1040_1,body_1082_1,role_101_json,role_1001_json,body_1068_1",
 			"name": "story_roles_1013"
 		},
 		{
-			"keys": "",
+			"keys": "role_1083_json,role_1001_json,body_1068_1,body_1082_1,body_1033_1,body_1040_1,role_101_json",
 			"name": "story_roles_1014"
 		},
 		{
-			"keys": "",
+			"keys": "role_101_json,role_1083_json,role_1001_json,body_1048_1,body_1082_1",
 			"name": "story_roles_1015"
 		}
 	],
@@ -20573,11 +20573,6 @@
 			"name": "1015_json"
 		},
 		{
-			"url": "config/story/role_1/story_role_1.json",
-			"type": "json",
-			"name": "story_role_1_json"
-		},
-		{
 			"url": "game/story/roles/body_1003_2.png",
 			"type": "image",
 			"name": "body_1003_2"
@@ -20776,6 +20771,11 @@
 			"url": "game/story/roles/head_1088_4.png",
 			"type": "image",
 			"name": "head_1088_4"
+		},
+		{
+			"url": "config/story/role_1/story_branch_1001.json",
+			"type": "json",
+			"name": "story_branch_1001_json"
 		}
 	]
 }

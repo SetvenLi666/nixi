@@ -330,6 +330,20 @@ class HttpMgr {
             PlayerData.update(content["player"]);
             EnergyCD.updateEnergyCD();
         }
+        else if(502 === cid) {
+            StoryData.updateCompleteBranchStory(content["id"], content["story"]);
+            extraData = content["id"];
+        }
+        else if(506 === cid) {
+            PlayerData.update(content["player"]);
+            EnergyCD.updateEnergyCD();
+        }
+        else if(508 === cid) {
+            PlayerData.update(content["player"]);
+            EnergyCD.updateEnergyCD();
+            StoryData.updateCompleteBranchStory(content["id"], content["story"]);
+            extraData = content["extra"];
+        }
         else if (503 === cid) {
             PlayerData.update(content["player"]);
             EnergyCD.updateEnergyCD();
