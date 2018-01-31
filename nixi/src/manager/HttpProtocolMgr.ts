@@ -534,6 +534,15 @@ class HttpProtocolMgr {
         return this.newRequest("151", JSON.stringify(data));
     }
 
+    static checkIosOrderInfo_133(order_id: string, product_id: string, receipt: string) {
+        var data = {};
+        data["order_id"] = order_id;
+        data["product_id"] = product_id;
+        data["receipt"] = receipt;
+        data["extra"] = CommonFunc.curTimeStamp();
+        return this.newRequest("133", JSON.stringify(data));
+    }
+
     static verify_payment_results_121(order_id: string, product_id: string) {
         var data = {};
         data["order_id"] = order_id;

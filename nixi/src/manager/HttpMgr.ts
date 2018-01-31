@@ -384,11 +384,11 @@ class HttpMgr {
             CompetitionData.createSelfInfo(content["competition"]);
         }
 
-        else if(340 === cid) {
+        else if (340 === cid) {
             ShuangdanData.updateTemplate(content);
         }
 
-        else if(341 === cid) {
+        else if (341 === cid) {
             PlayerData.update(content["player"]);
             ClothesData.updateUserClohtes(content["clothes"]);
             ShuangdanData.updateInfo(content["info"]);
@@ -515,7 +515,7 @@ class HttpMgr {
         else if (175 === cid) {
             ShareData.update(content["h5wanba"]);
             PlayerData.update(content["player"]);
-            extraData = {reward: content["reward"], type: content["type"]};
+            extraData = { reward: content["reward"], type: content["type"] };
         }
 
         else if (174 === cid) {
@@ -530,9 +530,9 @@ class HttpMgr {
             ClothesData.updateUserClohtes(content["clothes"]);
             PlayerData.update(content["player"]);
             ShareData.update(content["h5wanba"]);
-            if(content["type"] == "firstpay_lottery") {
+            if (content["type"] == "firstpay_lottery") {
                 extraData = content["reward"];
-            }else {
+            } else {
                 extraData = content["result"];
             }
         }
@@ -601,6 +601,39 @@ class HttpMgr {
             extraData = content["rewards"];              //首次购买获得
         }
 
+        else if (133 === cid) {
+            NetLoading.removeLoading();
+            var result = content;
+            ShareData.update(result["h5wanba"]);
+            if (result["product_id"]) {
+                if (result["product_id"] == "libao_1" || result["product_id"] == "libao_2" || result["product_id"] == "libao_3") {
+                    // WanbaData.updatePackageData(result["h5wanba"]["buy_libao_list"]);
+                    CustomEventMgr.dispatchEventWith("Update Libao View", false);
+                    Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮箱领取礼包!");
+                } else if (result["product_id"] == "tiegao_17" || result["product_id"] == "tiegao_18") {
+                    TLDiscountData.resetDL();
+                    Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮箱领取礼包!");
+                } else if (result["product_id"] == "tiegao_9") {
+                    Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮箱领取激活!");
+                } else {
+                    Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮箱领取钻石!");
+                }
+            }
+
+            if (result["h5wanba"]) {
+                // ShareData.update(result["h5wanba"]);
+                if ((ShareData.isFirstPay && (ShareData.firstpay_lottery_times == 0))) {
+                    var panel = new FirstPayPanel();
+                    DisplayMgr.set2Center(panel);
+                    egret.MainContext.instance.stage.addChild(panel);
+                } else if ((ShareData.isDailyPay && (ShareData.dailypay_lottery_times == 0 || ShareData.dailypay_normal_times == 0))) {
+                    var onePanel = new ScPanel();
+                    DisplayMgr.set2Center(onePanel);
+                    egret.MainContext.instance.stage.addChild(onePanel);
+                }
+            }
+        }
+
         else if (121 === cid) {
             PlayerData.update(content["player"]);
             // this->creat_Energy_Time();
@@ -643,23 +676,23 @@ class HttpMgr {
             DataMgr.checkNews();
         }
 
-        else if(115 === cid) {
+        else if (115 === cid) {
             PlayerData.update(content["player"]);
             TujianData.update(content["tujian"]);
             extraData = content["reward"];
         }
 
-        else if(114 === cid) {
+        else if (114 === cid) {
             TujianData.update(content["tujian"]);
         }
 
-        else if(112 === cid) {
+        else if (112 === cid) {
             InviteData.updateInviteData(content["invite"]);
             ClothesData.updateUserClohtes(content["clothes"]);
             extraData = content["reward"];
         }
 
-        else if(110 === cid) {
+        else if (110 === cid) {
             InviteData.updateInviteData(content["invite"]);
             ClothesData.updateUserClohtes(content["clothes"]);
             extraData = content["reward"];
