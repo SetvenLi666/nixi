@@ -274,6 +274,10 @@ declare class TouchTestBg extends eui.Skin{
 }
 declare class TouchTestUpper extends eui.Skin{
 }
+declare class BranchStoryMainSceneSkin extends eui.Skin{
+}
+declare class BranchStorySceneSkin extends eui.Skin{
+}
 declare class NewGuidePanelSkin extends eui.Skin{
 }
 declare class PkGuidePanelSkin extends eui.Skin{

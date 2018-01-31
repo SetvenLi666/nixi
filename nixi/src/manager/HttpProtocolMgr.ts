@@ -260,7 +260,7 @@ class HttpProtocolMgr {
 
     static fetchBranchStoryData_502(id: number): egret.URLRequest {
         var data = {};
-        data["id"] = id;
+        data["branch_id"] = id;
         data["extra"] = CommonFunc.curTimeStamp();
         return this.newRequest("502", JSON.stringify(data));
     }

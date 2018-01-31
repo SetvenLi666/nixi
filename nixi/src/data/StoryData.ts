@@ -1,10 +1,7 @@
 class StoryData {
     // Export --------------------------------------------------
     public static get completedStory(): {} { return this._completedStory; }
-    public static get completedStoryLine_1(): {} {return this._completedStoryLine_1;}
-    public static get completedStoryLine_2(): {} {return this._completedStoryLine_2;}
-    public static get completedStoryLine_3(): {} {return this._completedStoryLine_3;}
-    public static get completedVipStory(): {} { return this._completedVipStory;}
+    public static get completedVipStory(): {} { return this._completedVipStory; }
 
     public static formatCheckedVipTemplate(templateData: any[]): any[] {
         var count = 12;
@@ -15,7 +12,7 @@ class StoryData {
         }
         return rtn;
     }
-    
+
     public static vipStoryState(storyId: string): string {
         // "story2":{ "0":1, "1":1, "2":1 }
         var data = this._completedVipStory[storyId];
@@ -42,11 +39,11 @@ class StoryData {
 
     public static updateCompleteBranchStory(id: number, obj: {}) {
         console.log("StoryData::updateCompleteBranchStory");
-        if(id == 1 && obj != null){
+        if (id == 1 && obj != null) {
             this._completedStoryLine_1 = obj;
-        }else if(id == 2 && obj != null) {
+        } else if (id == 2 && obj != null) {
             this._completedStoryLine_2 = obj;
-        }else if(id == 3 && obj != null) {
+        } else if (id == 3 && obj != null) {
             this._completedStoryLine_3 = obj;
         }
     }
@@ -64,24 +61,35 @@ class StoryData {
 
     public static getCompleteStoryArr(): {}[] {
         var rtn: {}[] = [];
-        for(var i in this._completedStory) {
+        for (var i in this._completedStory) {
             rtn.push(this._completedStory[i]);
         }
 
         return rtn;
     }
 
+    public static getBranchStoryById(id: number) {
+        switch (id) {
+            case 1001:
+                return this._completedStoryLine_1;
+            case 1002:
+                return this._completedStoryLine_2;
+            case 1003:
+                return this._completedStoryLine_3;
+        }
+    }
+
     public static getHanziText(num: number): string {
-		var text: string = "";
-		if(num <= 10) {
-			text = this.textArr[num];
-		}else if(num > 10 && num < 20) {
-			text = "十" + this.textArr[num % 10];
-		}else if(num >= 20) {
-			text = this.textArr[Math.floor(num / 10)] + "十" + (num % 10 == 0 ? "" : this.textArr[num % 10]);
-		}
-		return text;
-	}
+        var text: string = "";
+        if (num <= 10) {
+            text = this.textArr[num];
+        } else if (num > 10 && num < 20) {
+            text = "十" + this.textArr[num % 10];
+        } else if (num >= 20) {
+            text = this.textArr[Math.floor(num / 10)] + "十" + (num % 10 == 0 ? "" : this.textArr[num % 10]);
+        }
+        return text;
+    }
 
     // Inner --------------------------------------------------
     private static _completedStory: {} = null;
@@ -103,18 +111,18 @@ class StoryData {
 
     private static _isStoryFinished: boolean = false;
 
-    public static set selectedTag (value: number) {
+    public static set selectedTag(value: number) {
         this._selectedTag = value;
     }
 
-    public static get selectedTag () {
+    public static get selectedTag() {
         return this._selectedTag;
     }
 
-    public static set selectedBg (value: string | egret.Texture) {
+    public static set selectedBg(value: string | egret.Texture) {
         this._selectedBg = value;
     }
-    public static get selectedBg () {
+    public static get selectedBg() {
         return this._selectedBg;
     }
 

@@ -116,19 +116,23 @@ class SceneMgr {
 
     public static gotoBranchMainScene(id: number) {
         var resLoading: ResLoading = ResLoading.showLoading();
-        var call = new CallBackFunc().handler(SceneMgr.onBranchStory, this, [id]);
-        var merge = ["new_story"];
-        merge.push("story_branch_" + id + "_json");
-        resLoading.load(merge, call);
+        var self = this;
+        // var merge = ["new_story"];
+        // merge.push("story_branch_" + id + "_json");
+        // resLoading.load(merge, call);
+        RES.getResAsync("story_branch_" + id + "_json", function() {
+            var call = new CallBackFunc().handler(SceneMgr.onBranchStory, self, [id]);
+            resLoading.load(["new_story"], call);
+        }, self);
     }
 
-    public static gotoBranchStoryScene(strIndex: string, filename: string) {
+    public static gotoBranchStoryScene(branch_id: number, strIndex: string, filename: string) {
         var self = this;
         var resLoading: ResLoading = ResLoading.showLoading();
         console.log("start story: - " + filename);
         var filename: string = `${filename}_json`;
         RES.getResAsync(filename, function (evt) {
-            var call = new CallBackFunc().handler(SceneMgr.onBranchStoryScene, self, [strIndex, evt]);
+            var call = new CallBackFunc().handler(SceneMgr.onBranchStoryScene, self, [branch_id, strIndex, evt]);
             var merge = ["story_act"];
             merge.push("story_roles_" + strIndex);
             resLoading.mergeLoad(merge, call);
@@ -266,8 +270,8 @@ class SceneMgr {
         SceneMgr.replaceScene(scene);
     }
 
-    private static onBranchStoryScene(strIndex: string, data) {
-        var scene = new BranchStoryScene(strIndex, data);
+    private static onBranchStoryScene(branch_id, strIndex: string, data) {
+        var scene = new BranchStoryScene(branch_id, strIndex, data);
         SceneMgr.replaceScene(scene);
     }
 

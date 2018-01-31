@@ -24,9 +24,9 @@ class BranchStoryMainScene extends eui.Component{
 	private startX: number = 0;
 	private movedX: number = 0;
 
-	private storyLineIndex: number = 0;
+	private curBranchId: number;
 
-	public constructor(storyTemplate: {}[], index?: number) {
+	public constructor(storyTemplate: {}[], branch_id: number) {
 		super();
 
 		this.skinName = "BranchStoryMainSceneSkin";
@@ -35,7 +35,7 @@ class BranchStoryMainScene extends eui.Component{
 		this.mask = mask;
 
 		this.storyData = storyTemplate;
-		this.storyLineIndex = index;
+		this.curBranchId = branch_id;
 		this.addEventListener(egret.Event.ADDED_TO_STAGE, this.addStage, this);
 		this.addEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit, this);
 	}
@@ -46,30 +46,12 @@ class BranchStoryMainScene extends eui.Component{
 		this.baseComp = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy);
 		this.addChild(this.baseComp);
 
-		if (!this.storyLineIndex) {
-			for (var i in StoryData.completedStory) {
-				var item: string[] = StoryData.completedStory[i];
-				if (item && item.indexOf("-1") != -1) {
-					// this.curPageIndex = parseInt(i);
-					this.curPageIndex = Math.min(parseInt(i), 28);  //目前只有29章剧情
-				}
-			}
-		} else {
-			for (var i in StoryData.completedStory) {
-				var item: string[] = StoryData.completedStory[i];
-				if (item && item.indexOf("-1") != -1) {
-					// this.curPageIndex = parseInt(i);
-					this.curPageIndex = Math.min(parseInt(i) - 1000, this.storyData.length - 1);
-				}
+		for (var i in StoryData.getBranchStoryById(this.curBranchId)) {
+			var item: string[] = StoryData.completedStory[i];
+			if (item && item.indexOf("-1") != -1) {
+				this.curPageIndex = Math.min(parseInt(i), this.storyData.length - 1);  //目前只有29章剧情
 			}
 		}
-		// for (var i in StoryData.completedStory) {
-		// 	var item: string[] = StoryData.completedStory[i];
-		// 	if (item && item.indexOf("-1") != -1) {
-		// 		// this.curPageIndex = parseInt(i);
-		// 		this.curPageIndex = Math.min(parseInt(i), 28);  //目前只有29章剧情
-		// 	}
-		// }
 		console.log(this.curPageIndex);
 		this.list.dataProvider = new eui.ArrayCollection(this.storyData);
 		this.list.itemRenderer = BranchStoryItemRenderer;
@@ -86,10 +68,10 @@ class BranchStoryMainScene extends eui.Component{
 		this.onMove();
 
 		//敬请期待
-		if (StoryData.isShowLastTip && StoryData.completedStory["29"] && StoryData.completedStory["29"].indexOf("-1") != -1) {
-			StoryData.isShowLastTip = false;
-			Prompt.showPrompt(this.stage, "后续剧情正在制作中，敬请期待!");
-		}
+		// if (StoryData.isShowLastTip && StoryData.completedStory["29"] && StoryData.completedStory["29"].indexOf("-1") != -1) {
+		// 	StoryData.isShowLastTip = false;
+		// 	Prompt.showPrompt(this.stage, "后续剧情正在制作中，敬请期待!");
+		// }
 
 		this.scroller.addEventListener(eui.UIEvent.CHANGE_START, this.onChangeStart, this);
 		this.scroller.addEventListener(eui.UIEvent.CHANGE_END, this.onChangeEnd, this);
@@ -99,45 +81,16 @@ class BranchStoryMainScene extends eui.Component{
 		this.btn_back.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBack, this);
 		this.btn_change.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onChange, this);
 
-		CustomEventMgr.addEventListener("501", this.afterStartStory_501, this);
+		CustomEventMgr.addEventListener("506", this.afterStartBranchStory_506, this);
 
 		CustomEventMgr.addEventListener("Begin Story", this.onStartStory, this);
-
-		if (PlayerData.guide == 5) {
-			var guidePanel = new NewGuidePanel();
-			DisplayMgr.set2Center(guidePanel);
-			this.stage.addChild(guidePanel);
-			guidePanel.currentState = "guide_step_5_4";
-			guidePanel.playAnimation();
-			CustomEventMgr.addEventListener("Guide_Step_5_4", this.guide_step_5_4, this);
-		} else if (PlayerData.guide == 6) {
-			if (ClientMapData.taskGuide != null) {
-				if (ClientMapData.taskGuide == 0) {
-					return;
-				}
-			}
-			var guidePanel = new NewGuidePanel();
-			DisplayMgr.set2Center(guidePanel);
-			this.stage.addChild(guidePanel);
-			guidePanel.currentState = "guide_step_6_12";
-			guidePanel.playAnimation();
-			CustomEventMgr.addEventListener("Guide_Step_6_13", this.guide_step_6_13, this);
-		}
 
 		SoundManager.instance().startBgSound("story");
 	}
 
 	private onExit() {
-		CustomEventMgr.removeEventListener("501", this.afterStartStory_501, this);
+		CustomEventMgr.removeEventListener("506", this.afterStartBranchStory_506, this);
 		CustomEventMgr.removeEventListener("Begin Story", this.onStartStory, this);
-
-		if (PlayerData.guide == 5) {
-			CustomEventMgr.removeEventListener("Guide_Step_5_4", this.guide_step_5_4, this);
-		}
-
-		if (PlayerData.guide == 6) {
-			CustomEventMgr.removeEventListener("Guide_Step_6_13", this.guide_step_6_13, this);
-		}
 	}
 
 	private updateView() {
@@ -242,17 +195,17 @@ class BranchStoryMainScene extends eui.Component{
 		} else {
 			this.storyIndex = evt.data;
 			NetLoading.showLoading();
-			var request: egret.URLRequest = HttpProtocolMgr.startStory_501(this.storyData[this.storyIndex]["index"]);
+			var request: egret.URLRequest = HttpProtocolMgr.startBranchStory_506(this.curBranchId, this.storyData[this.storyIndex]["index"]);
 			HttpMgr.postRequest(request);
 		}
 	}
 
-	private afterStartStory_501(evt: egret.Event) {
+	private afterStartBranchStory_506(evt: egret.Event) {
 		NetLoading.removeLoading();
 		CustomEventMgr.dispatchEventWith("Update Player Info", false);
 		StoryData.selectedTag = null;
 		StoryData.isStoryFinished = false;
-		SceneMgr.gotoStoryScene(this.storyData[this.storyIndex]["index"], this.storyData[this.storyIndex]["file"]);
+		SceneMgr.gotoBranchStoryScene(this.curBranchId, this.storyData[this.storyIndex]["index"], this.storyData[this.storyIndex]["file"]);
 	}
 
 	private guide_step_5_4() {

@@ -145,6 +145,8 @@
     "resource/skins/test/TextInput.exml",
     "resource/skins/test/TouchTestBg.exml",
     "resource/skins/test/TouchTestUpper.exml",
+    "src/branchStory/BranchStoryMainSceneSkin.exml",
+    "src/branchStory/BranchStorySceneSkin.exml",
     "src/newGuide/NewGuidePanelSkin.exml",
     "src/newGuide/PkGuidePanelSkin.exml",
     "src/newStory/StoryRewardPanelSkin.exml",

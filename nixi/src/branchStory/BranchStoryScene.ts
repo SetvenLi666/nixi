@@ -1,7 +1,8 @@
 class BranchStoryScene extends eui.Component implements eui.UIComponent{
-	public constructor(storyIndex: string, script: {}[]) {
+	public constructor(branch_id: number, storyIndex: string, script: {}[]) {
 		super();
 
+		this.curBranchId = branch_id;
 		this.storyIndex = storyIndex;
 		this.script = script;
 
@@ -27,14 +28,10 @@ class BranchStoryScene extends eui.Component implements eui.UIComponent{
 		this.ending.touchEnabled = false;
 		this.ending.touchChildren = false;
 
-		this.titleLab.text = "第" + StoryData.getHanziText(parseInt(this.storyIndex)) + "章";
+		this.titleLab.text = "第" + StoryData.getHanziText(parseInt(this.storyIndex) - 1000) + "章";
 
 		this.touchRect.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTapped, this);
 		this.btnGoback.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnGoback, this);
-
-		if (PlayerData.guide == 5) {
-			this.btnGoback.touchEnabled = false;
-		}
 	}
 
 	private whenEnter() {
@@ -62,13 +59,8 @@ class BranchStoryScene extends eui.Component implements eui.UIComponent{
 				self.subtitle.touchChildren = true;
 			});
 
-		CustomEventMgr.addEventListener("503", self.afterCommitStory_503, self);
-		CustomEventMgr.addEventListener("905", self.after_data_of_905, self);
+		CustomEventMgr.addEventListener("508", self.afterCommitBranchStory_508, self);
 		CustomEventMgr.addEventListener("168", self.result_of_168, this);
-
-		if (PlayerData.guide != 0) {
-			CustomEventMgr.addEventListener("Guide_Step_6_11", self.guide_step_6_11, this);
-		}
 
 		self.addEventListener("ON_AUTO_PLAY", self.onAutoPlay, self);
 		self.addEventListener("ON_FAST_PLAY", self.onFastPlay, self);
@@ -85,13 +77,8 @@ class BranchStoryScene extends eui.Component implements eui.UIComponent{
 	private whenExit() {
 		this.removeEventListener(egret.Event.REMOVED_FROM_STAGE, this.whenExit, this);
 		var self = this;
-		CustomEventMgr.removeEventListener("503", self.afterCommitStory_503, self);
-		CustomEventMgr.removeEventListener("905", self.after_data_of_905, self);
+		CustomEventMgr.removeEventListener("508", self.afterCommitBranchStory_508, self);
 		CustomEventMgr.removeEventListener("168", self.result_of_168, this);
-
-		if (PlayerData.guide != 0) {
-			CustomEventMgr.removeEventListener("Guide_Step_6_11", self.guide_step_6_11, this);
-		}
 
 		self.removeEventListener("ON_AUTO_PLAY", self.onAutoPlay, self);
 		self.removeEventListener("ON_FAST_PLAY", self.onFastPlay, self);
@@ -258,19 +245,9 @@ class BranchStoryScene extends eui.Component implements eui.UIComponent{
 		}
 	}
 
-	private afterCommitStory_503(evt: egret.Event) {
+	private afterCommitBranchStory_508(evt: egret.Event) {
 		this.extra_reward = evt.data;
 
-		if (PlayerData.guide == 5) {
-			var request = HttpProtocolMgr.update_guide_905(6);
-			HttpMgr.postRequest(request);
-		} else {
-			NetLoading.removeLoading();
-			this.checkExtraReward();
-		}
-	}
-
-	private after_data_of_905() {
 		NetLoading.removeLoading();
 		this.checkExtraReward();
 	}
@@ -295,10 +272,6 @@ class BranchStoryScene extends eui.Component implements eui.UIComponent{
 			self.couldExit = true;
 			self.btnGoback.touchEnabled = true;
 		}, self, 500);
-	}
-
-	private guide_step_6_11() {
-		this.onBtnGoback();
 	}
 
 	private showTimeBack() {
@@ -365,6 +338,7 @@ class BranchStoryScene extends eui.Component implements eui.UIComponent{
 	private titleLab: eui.Label;
 
 	private dialogHistory: Array<egret.ITextElement>;
+	private curBranchId: number;
 	private storyIndex: string = null;
 	private script: {}[] = null;
 	private curPlotIndex: number = 0;
@@ -459,7 +433,7 @@ class BranchStoryScene extends eui.Component implements eui.UIComponent{
 			this.ending.showEnding(true, "", this.storyIndex);
 
 			NetLoading.showLoading();
-			var request: egret.URLRequest = HttpProtocolMgr.commitStory_503(this.storyIndex, "-1");
+			var request: egret.URLRequest = HttpProtocolMgr.commitBranchStory_508(this.curBranchId, this.storyIndex, "-1");
 			HttpMgr.postRequest(request);
 		}
 		else if ("-2" === next) { // 成就
@@ -476,7 +450,7 @@ class BranchStoryScene extends eui.Component implements eui.UIComponent{
 			this.ending.showEnding(false, temp[1], this.storyIndex);
 
 			NetLoading.showLoading();
-			var request: egret.URLRequest = HttpProtocolMgr.commitStory_503(this.storyIndex, plot["achievement"]);
+			var request: egret.URLRequest = HttpProtocolMgr.commitBranchStory_508(this.curBranchId, this.storyIndex, plot["achievement"]);
 			HttpMgr.postRequest(request);
 		}
 		else {
