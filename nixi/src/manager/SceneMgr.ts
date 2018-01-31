@@ -256,6 +256,7 @@ class SceneMgr {
 
     private static onBranchStory(id: number) {
         var storyTemplate = RES.getRes("story_branch_" + id + "_json");
+        console.log(storyTemplate);
         var scene = new BranchStoryMainScene(storyTemplate, id);
         SceneMgr.replaceScene(scene);
     }
