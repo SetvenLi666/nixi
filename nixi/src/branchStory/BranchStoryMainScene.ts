@@ -242,10 +242,11 @@ class BranchStoryItemRenderer extends eui.ItemRenderer {
 	}
 
 	protected dataChanged() {
-		this.lab_chapter.text = "第" + StoryData.getHanziText(parseInt(this.data["index"])) + "章";
+		this.lab_chapter.text = "第" + StoryData.getHanziText(parseInt(this.data["index"]) - 1000) + "章";
 
 		var endingArr: {}[] = this.data["ending"];
-		var compStory: string[] = StoryData.completedStory[this.data.index];
+		var branchStoryCompleteData = StoryData.getBranchStoryById(1001);
+		var compStory: string[] = branchStoryCompleteData == null ? null : branchStoryCompleteData[this.data["index"]];
 		if (endingArr[0]) {
 			this.end_1.text = endingArr[0]["name"];
 			if (compStory && compStory.indexOf(endingArr[0]["id"]) != -1) {
@@ -269,65 +270,9 @@ class BranchStoryItemRenderer extends eui.ItemRenderer {
 		}
 
 		//1001测试全部解锁
-		// this.btn_start.source = "story_btn_start_png";
-		// this.btn_start.touchEnabled = true;
+		this.btn_start.source = "story_btn_start_png";
+		this.btn_start.touchEnabled = true;
 
-		if (StoryData.curStoryBranch != 0) {
-			this.btn_start.source = "story_btn_start_png";
-			this.btn_start.touchEnabled = true;
-		} else {
-			//是否解锁
-			if (TaskData.userData()[this.data["unlock"]] == null) {
-				//未解锁
-				var phaseName = "小助理";
-				if (this.data["phase"] == "1") {
-					phaseName = "小助理";
-				} else if (this.data["phase"] == "2") {
-					phaseName = "练习生";
-				} else if (this.data["phase"] == "3") {
-					phaseName = "小演员";
-				} else if (this.data["phase"] == "4") {
-					phaseName = "小花旦";
-				} else if (this.data["phase"] == "5") {
-					phaseName = "大明星";
-				}
-				this.lab_lock.text = "解锁条件  " + phaseName + "任务" + this.data["unlock"];
-				this.lab_lock.visible = true;
-				this.lab_energy.visible = false;
-				this.img_energy.visible = false;
-				this.btn_start.source = "story_btn_start2_png";
-				this.btn_start.touchEnabled = false;
-				this.btn_unlock.visible = true;
-			} else {
-				this.btn_unlock.visible = false;
-				var index = parseInt(this.data.index);
-				if (index != 1) {
-					var completedStory: string[] = StoryData.completedStory[(index - 1).toString()];
-					if (completedStory == null || completedStory.indexOf("-1") == -1) {
-						//未通关
-						this.lab_lock.text = "解锁条件  通关之前章节";
-						this.lab_lock.visible = true;
-						this.lab_energy.visible = false;
-						this.img_energy.visible = false;
-						this.btn_start.source = "story_btn_start2_png";
-						this.btn_start.touchEnabled = false;
-					} else {
-						//前置章节通关
-						this.lab_lock.visible = false;
-						this.lab_energy.visible = true;
-						this.img_energy.visible = true;
-						this.btn_start.source = "story_btn_start_png";
-						this.btn_start.touchEnabled = true;
-					}
-				} else {
-					this.lab_lock.visible = false;
-					this.lab_energy.visible = true;
-					this.img_energy.visible = true;
-					this.btn_start.source = "story_btn_start_png";
-					this.btn_start.touchEnabled = true;
-				}
-			}
-		}
 
 		// //是否解锁
 		// if (TaskData.userData()[this.data["unlock"]] == null) {

@@ -83,7 +83,7 @@ class NewStorySelectScene extends eui.Component {
 					return;
 			}
 
-			SceneMgr.gotoBranchMainScene(branch_id);
+			// SceneMgr.gotoBranchMainScene(branch_id);
 			var request = HttpProtocolMgr.fetchBranchStoryData_502(branch_id);
 			HttpMgr.postRequest(request);
 			// if(StoryData.completedStory["29"] && StoryData.completedStory["29"].indexOf("-1") != -1) {
