@@ -604,32 +604,48 @@ class HttpMgr {
         else if (133 === cid) {
             NetLoading.removeLoading();
             var result = content;
+
+            if (content["player"]) {
+                PlayerData.update(content["player"]);
+                if (content["purchase"]) {
+                    PurchaseData.update(content["purchase"]);
+                }
+                ClothesData.updateUserClohtes(content["clothes"]);
+                EnergyCD.updateEnergyCD();
+                extraData = content["reward"];
+            }
+
             ShareData.update(result["h5wanba"]);
             if (result["product_id"]) {
                 if (result["product_id"] == "libao_1" || result["product_id"] == "libao_2" || result["product_id"] == "libao_3") {
                     // WanbaData.updatePackageData(result["h5wanba"]["buy_libao_list"]);
                     CustomEventMgr.dispatchEventWith("Update Libao View", false);
-                    Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮箱领取礼包!");
+                    // Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮箱领取礼包!");
+                    this.playRewardAnimation(extraData);
                 } else if (result["product_id"] == "tiegao_17" || result["product_id"] == "tiegao_18") {
                     TLDiscountData.resetDL();
-                    Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮箱领取礼包!");
+                    // Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮箱领取礼包!");
+                    this.playRewardAnimation(extraData);
                 } else if (result["product_id"] == "tiegao_9") {
-                    Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮箱领取激活!");
+                    // Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮箱领取激活!");
+                    this.playRewardAnimation(extraData);
                 } else {
-                    Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮箱领取钻石!");
+                    // Prompt.showPrompt(egret.MainContext.instance.stage, "请前往邮箱领取钻石!");
+                    this.playRewardAnimation(extraData);
                 }
             }
 
             if (result["h5wanba"]) {
-                // ShareData.update(result["h5wanba"]);
                 if ((ShareData.isFirstPay && (ShareData.firstpay_lottery_times == 0))) {
-                    var panel = new FirstPayPanel();
-                    DisplayMgr.set2Center(panel);
-                    egret.MainContext.instance.stage.addChild(panel);
+                    // var panel = new FirstPayPanel();
+                    // DisplayMgr.set2Center(panel);
+                    // egret.MainContext.instance.stage.addChild(panel);
+                    this.playRewardAnimation(extraData);
                 } else if ((ShareData.isDailyPay && (ShareData.dailypay_lottery_times == 0 || ShareData.dailypay_normal_times == 0))) {
-                    var onePanel = new ScPanel();
-                    DisplayMgr.set2Center(onePanel);
-                    egret.MainContext.instance.stage.addChild(onePanel);
+                    // var onePanel = new ScPanel();
+                    // DisplayMgr.set2Center(onePanel);
+                    // egret.MainContext.instance.stage.addChild(onePanel);
+                    this.playRewardAnimation(extraData);
                 }
             }
         }
@@ -731,5 +747,33 @@ class HttpMgr {
         }
 
         CustomEventMgr.dispatchEventWith(cid.toString(), false, extraData);
+    }
+
+    static playRewardAnimation(data: {}) {
+        if (data) {
+            if (data["clothes"]) {
+                var reward = [];
+                for (var i in data) {
+                    if (i == "clothes") {
+                        var leng = data["clothes"].length;
+                        for (var j = 0; j < leng; j++) {
+                            var item: {} = {
+                                type: "clothes",
+                                num: data[i][j]
+                            }
+                            reward.push(item);
+                        }
+                    } else {
+                        var item: {} = { type: i, num: data[i] };
+                        reward.push(item);
+                    }
+                }
+                var panel = new CommonRewardPanel(reward);
+                DisplayMgr.set2Center(panel);
+                egret.MainContext.instance.stage.addChild(panel);
+            } else {
+                Prompt.showPrompt(egret.MainContext.instance.stage, "领取成功");
+            }
+        }
     }
 }
