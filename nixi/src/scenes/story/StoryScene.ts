@@ -241,12 +241,7 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 					StoryData.isShowLastTip = true;
 				}
 
-				console.log(StoryData.curStoryBranch);
-				if(StoryData.curStoryBranch == 0) {
-					SceneMgr.gotoNewStoryScene()
-				}else {
-					SceneMgr.gotoNewStoryScene(StoryData.curStoryBranch);
-				}
+				SceneMgr.gotoNewStoryScene()
 			}
 		});
 	}

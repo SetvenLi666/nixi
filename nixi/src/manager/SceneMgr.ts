@@ -88,9 +88,9 @@ class SceneMgr {
         resLoading.load(["story_chapter"], call);
     }
 
-    public static gotoNewStoryScene(index?: number) {
+    public static gotoNewStoryScene() {
         var resLoading: ResLoading = ResLoading.showLoading();
-        var call = new CallBackFunc().handler(SceneMgr.onStory, this, [index]);
+        var call = new CallBackFunc().handler(SceneMgr.onStory, this, []);
         resLoading.load(["new_story"], call);
     }
 
@@ -235,28 +235,14 @@ class SceneMgr {
         SceneMgr.replaceScene(scene);
     }
 
-    private static onStory(index?: number) {
-        if (index) {
-            if (index == 1) {
-                //支线1--段总裁
-                var storyTemplate = RES.getRes("story_role_1_json");
-            } else if (index == 2) {
-
-            } else if (index == 3) {
-
-            }
-        } else {
-            //星途闪耀
-            var storyTemplate = RES.getRes("story_json");
-        }
-        // var storyTemplate = RES.getRes("story_json");
-        var scene = new NewStoryScene(storyTemplate, index);
+    private static onStory() {
+        var storyTemplate = RES.getRes("story_json");
+        var scene = new NewStoryScene(storyTemplate);
         SceneMgr.replaceScene(scene);
     }
 
     private static onBranchStory(id: number) {
         var storyTemplate = RES.getRes("story_branch_" + id + "_json");
-        console.log(storyTemplate);
         var scene = new BranchStoryMainScene(storyTemplate, id);
         SceneMgr.replaceScene(scene);
     }

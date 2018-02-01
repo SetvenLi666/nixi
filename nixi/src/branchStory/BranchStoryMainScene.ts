@@ -176,7 +176,6 @@ class BranchStoryMainScene extends eui.Component{
 	private onBack() {
 		DisplayMgr.buttonScale(this.btn_back, function () {
 			SoundManager.instance().buttonSound();
-			StoryData.curStoryBranch = 0;
 			SceneMgr.gotoNewStorySelectScene();
 		});
 	}

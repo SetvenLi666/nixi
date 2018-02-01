@@ -222,13 +222,8 @@ class BranchStoryScene extends eui.Component implements eui.UIComponent{
 				if (self.storyIndex == "29") {
 					StoryData.isShowLastTip = true;
 				}
-
-				console.log(StoryData.curStoryBranch);
-				if(StoryData.curStoryBranch == 0) {
-					SceneMgr.gotoNewStoryScene()
-				}else {
-					SceneMgr.gotoNewStoryScene(StoryData.curStoryBranch);
-				}
+				
+				SceneMgr.gotoBranchMainScene(1001);
 			}
 		});
 	}
