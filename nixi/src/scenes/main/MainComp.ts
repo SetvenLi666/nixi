@@ -72,7 +72,8 @@ class MainComp extends eui.Component {
 		//图鉴josn生成
 		// this.checkAllClothes();
 
-		SoundManager.instance().startBgSound("main");
+		// SoundManager.instance().startBgSound("main");
+		SoundManager.instance().startBgSound("story");
 
 		this.niudanGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnGashapon, this);
 		this.mailGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onMailTap, this);
@@ -964,7 +965,7 @@ class MainComp extends eui.Component {
 			}
 		} else {
 			NetLoading.removeLoading();
-			SoundManager.instance().destroyStartSound();
+			// SoundManager.instance().destroyStartSound();
 			SceneMgr.gotoNewStorySelectScene();
 		}
 	}

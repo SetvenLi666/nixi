@@ -82,7 +82,7 @@ class NewTaskScene extends eui.Component {
 			CustomEventMgr.addEventListener("Guide_Step_6_18", this.guide_step_6_18, this);
 		}
 
-		SoundManager.instance().startBgSound("main");
+		// SoundManager.instance().startBgSound("main");
 	}
 
 	private onExit() {
