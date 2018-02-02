@@ -35,10 +35,10 @@ class LoginScene extends eui.Component {
 		var tw_sha = egret.Tween.get(this.ac_sha, { loop: true });
 		tw_sha.to({ rotation: -360 }, 20000);
 
-		//===============
-		var panel = new RegisterPanel();
-		DisplayMgr.set2Center(panel);
-		this.stage.addChild(panel);
+		//===============注册============
+		// var panel = new RegisterPanel();
+		// DisplayMgr.set2Center(panel);
+		// this.stage.addChild(panel);
 	}
 
 	private whenExit() {
