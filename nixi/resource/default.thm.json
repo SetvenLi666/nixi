@@ -178,6 +178,7 @@
     "src/scenes/dress/TaskPerfectTipPanelSkin.exml",
     "src/scenes/friend/friend/DeleteFriendPanelSkin.exml",
     "src/scenes/login/OpenPanelSkin.exml",
+    "src/scenes/login/RegisterPanelSkin.exml",
     "src/scenes/main/TalkCompSkin.exml",
     "src/scenes/newTask/PkUnlockPanelSkin.exml",
     "src/scenes/newTask/TaskTitleCompSkin.exml",

@@ -12,6 +12,25 @@ class HttpProtocolMgr {
         return rtn;
     }
 
+    //账号注册
+    static registerAccount_903(account: string, password: string): egret.URLRequest {
+        var data = {};
+        data["account"] = account;
+        data["password"] = password;
+        data["channel"] = ConstData.Conf.channel;
+        // data["ver"] = ConstData.Conf.version;
+        return this.newRequest("903", JSON.stringify(data));
+    }
+
+    //账号登陆
+    static accountLogin_901(account: string, password: string): egret.URLRequest {
+        var data = {};
+        data["account"] = account;
+        data["password"] = password;
+        return this.newRequest("901", JSON.stringify(data));
+    }
+
+
     static gameLogin_902(skey: string): egret.URLRequest {
         var data = {};
         data["skey"] = skey;
@@ -619,7 +638,7 @@ class HttpProtocolMgr {
     static newRequest(cid: string, data:string): egret.URLRequest {
         // http://115.28.179.17:9765/account?sid=&cid=900&sign=7908da879675823edb2396e364248bad
         var url: string = null;
-        if ("900" === cid) {
+        if ("900" === cid || "901" === cid || "903" === cid) {
             url = ConstData.Conf.LoginAddr + "?sid=" + LoginData.sid + "&cid=" + cid + "&sign=" + this.generateSign(data);
         }
         else {

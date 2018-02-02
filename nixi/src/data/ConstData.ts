@@ -26,9 +26,9 @@ namespace ConstData {
 
         get LoginAddr(): string { return "https://nixi-weiduan-game.mzplay1.cn:9765/account";},
 
-        get channel() : number { return 601;},   //逆袭玩吧
+        get channel() : number { return 0;},   //逆袭IOS
 
-        get version() : string { return "version-20170322"; },      //版本     
+        get version() : string { return "version 1.0.0"; },      //版本     
 
         // get whiteList() : string[] {return ["8A79B852", "8A79B69C", "8A79B656"]; },
     }

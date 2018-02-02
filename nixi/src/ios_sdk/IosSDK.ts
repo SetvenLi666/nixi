@@ -30,9 +30,6 @@ function setIosOrderInfo(info: string) {
     ios_order_info = info;
 }
 
-// egret.ExternalInterface.addCallback("callLoginSuccess", loginSuccess);
-// egret.ExternalInterface.addCallback("paySuccess", paySuccess);
-// egret.ExternalInterface.addCallback("payFail", payFail);
 window['ExternalInterface']['addCallback']("callLoginSuccess", loginSuccess);
 window['ExternalInterface']['addCallback']("paySuccess", paySuccess);
 window['ExternalInterface']['addCallback']("payFail", payFail);

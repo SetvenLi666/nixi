@@ -34,6 +34,11 @@ class LoginScene extends eui.Component {
 		tw_star.to({ rotation: 360 }, 20000);
 		var tw_sha = egret.Tween.get(this.ac_sha, { loop: true });
 		tw_sha.to({ rotation: -360 }, 20000);
+
+		//===============
+		var panel = new RegisterPanel();
+		DisplayMgr.set2Center(panel);
+		this.stage.addChild(panel);
 	}
 
 	private whenExit() {
@@ -113,11 +118,6 @@ class LoginScene extends eui.Component {
 			this.stage.addChild(namePanel);
 		}
 		else {
-			// egret.ExternalInterface.call("setPlayerName", ShowData.nickname);
-			// egret.ExternalInterface.call("setPlayerLevel", PlayerData.phase + "");
-			// egret.ExternalInterface.call("setPlayerGold", PlayerData.diam + "");
-			// egret.ExternalInterface.call("isExtendData", "");
-
 			SceneMgr.gotoMainScene();
 		}
 
@@ -155,13 +155,9 @@ class LoginScene extends eui.Component {
 			DisplayMgr.set2Center(panel);
 			this.stage.addChild(panel);
 		} else {
-			// egret.ExternalInterface.call("setPlayerName", ShowData.nickname);
-			// egret.ExternalInterface.call("setPlayerLevel", PlayerData.phase + "");
-			// egret.ExternalInterface.call("setPlayerGold", PlayerData.diam + "");
-			// egret.ExternalInterface.call("isExtendData", "1");
-			window['ExternalInterface']['call']("callNative", "message from JS");
-			window['ExternalInterface']['call']("callNative", "message from JS");
-			window['ExternalInterface']['call']("callNative", "message from JS");
+			// window['ExternalInterface']['call']("callNative", "message from JS");
+			// window['ExternalInterface']['call']("callNative", "message from JS");
+			// window['ExternalInterface']['call']("callNative", "message from JS");
 			SceneMgr.gotoMainScene();
 		}
 	}

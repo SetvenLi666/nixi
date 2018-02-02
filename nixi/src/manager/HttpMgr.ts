@@ -108,6 +108,15 @@ class HttpMgr {
             EnergyCD.updateEnergyCD();
             egret.setInterval(DataMgr.checkNews, DataMgr, 60000);
         }
+        
+        else if(903 === cid) {
+            LoginData.update(content);
+        }
+
+        else if(901 === cid) {
+            LoginData.update(content);
+        }
+        
         else if (904 === cid) {
             ShowData.update(content["show"]);
         }

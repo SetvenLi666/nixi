@@ -342,6 +342,8 @@ declare class DeleteFriendPanelSkin extends eui.Skin{
 }
 declare class OpenPanelSkin extends eui.Skin{
 }
+declare class RegisterPanelSkin extends eui.Skin{
+}
 declare class TalkCompSkin extends eui.Skin{
 }
 declare class NewProgressbarCompSkin extends eui.Skin{

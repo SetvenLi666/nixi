@@ -20521,6 +20521,41 @@
 			"url": "game/clothes/7shipin/70189.png",
 			"type": "image",
 			"name": "70189_png"
+		},
+		{
+			"url": "game/login/register/register_bg_create.png",
+			"type": "image",
+			"name": "register_bg_create_png"
+		},
+		{
+			"url": "game/login/register/register_bg_input.png",
+			"type": "image",
+			"name": "register_bg_input_png"
+		},
+		{
+			"url": "game/login/register/register_bg_login.png",
+			"type": "image",
+			"name": "register_bg_login_png"
+		},
+		{
+			"url": "game/login/register/register_btn_back.png",
+			"type": "image",
+			"name": "register_btn_back_png"
+		},
+		{
+			"url": "game/login/register/register_btn_create.png",
+			"type": "image",
+			"name": "register_btn_create_png"
+		},
+		{
+			"url": "game/login/register/register_btn_login.png",
+			"type": "image",
+			"name": "register_btn_login_png"
+		},
+		{
+			"url": "game/login/register/register_btn_register.png",
+			"type": "image",
+			"name": "register_btn_register_png"
 		}
 	]
 }

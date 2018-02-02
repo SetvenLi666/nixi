@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="RegisterPanelSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+		<e:Group id="loginGroup" horizontalCenter="0" verticalCenter="0">
+			<e:Image source="register_bg_login_png" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image source="register_bg_input_png" y="30" horizontalCenter="0.5"/>
+			<e:Image source="register_bg_input_png" y="110" horizontalCenter="0.5"/>
+			<e:Image id="btn_login" source="register_btn_login_png" y="200" horizontalCenter="0"/>
+			<e:Image id="btn_register" source="register_btn_register_png" left="23" bottom="23"/>
+			<e:EditableText id="login_account" width="330" height="40" text="" y="38" anchorOffsetX="0" horizontalCenter="0.5" promptColor="0xB0ABAD" prompt="点击输入账号" verticalAlign="middle" textAlign="center" x="73" scaleX="1" scaleY="1" textColor="0x000000"/>
+			<e:EditableText id="login_password" width="330" height="40" text="" y="118" anchorOffsetX="0" horizontalCenter="0.5" promptColor="0xB0ABAD" prompt="点击输入密码" verticalAlign="middle" textAlign="center" x="73" scaleX="1" scaleY="1" textColor="0x000000" displayAsPassword="true"/>
+		</e:Group>
+		<e:Group id="registerGroup" horizontalCenter="0" verticalCenter="0" visible="false">
+			<e:Image source="register_bg_create_png" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image source="register_bg_input_png" y="28.44" horizontalCenter="2.5"/>
+			<e:Image source="register_bg_input_png" y="106" x="65"/>
+			<e:Image source="register_bg_input_png" y="183.48" horizontalCenter="2.5"/>
+			<e:Image id="btn_create" source="register_btn_create_png" y="260.96" horizontalCenter="0"/>
+			<e:Image id="btn_back" source="register_btn_back_png" left="23" bottom="23"/>
+			<e:EditableText id="register_account" width="330" height="40" text="" y="35" anchorOffsetX="0" horizontalCenter="0.5" promptColor="0xb0abad" prompt="点击输入账号" verticalAlign="middle" textAlign="center" textColor="0x000000"/>
+			<e:EditableText id="register_password1" width="330" height="40" text="" y="114" anchorOffsetX="0" horizontalCenter="0.5" promptColor="0xB0ABAD" prompt="点击输入密码" verticalAlign="middle" textAlign="center" displayAsPassword="true" textColor="0x000000"/>
+			<e:EditableText id="register_password2" width="330" height="40" text="" y="191" anchorOffsetX="0" horizontalCenter="0.5" promptColor="0xB0ABAD" prompt="点击输入密码" verticalAlign="middle" textAlign="center" displayAsPassword="true" textColor="0x000000"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>
