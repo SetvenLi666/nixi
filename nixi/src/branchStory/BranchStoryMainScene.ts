@@ -1,4 +1,4 @@
-class BranchStoryMainScene extends eui.Component{
+class BranchStoryMainScene extends eui.Component {
 	public container: eui.Group;
 	public group: eui.Group;
 
@@ -244,7 +244,7 @@ class BranchStoryItemRenderer extends eui.ItemRenderer {
 		this.lab_chapter.text = "第" + StoryData.getHanziText(parseInt(this.data["index"]) - 1000) + "章";
 
 		var endingArr: {}[] = this.data["ending"];
-		var branchStoryCompleteData = StoryData.getBranchStoryById(1001);
+		var branchStoryCompleteData = StoryData.getBranchStoryById(parseInt(this.data["index"][0] + "000"));
 		var compStory: string[] = branchStoryCompleteData == null ? null : branchStoryCompleteData[this.data["index"]];
 		if (endingArr[0]) {
 			this.end_1.text = endingArr[0]["name"];
@@ -272,6 +272,28 @@ class BranchStoryItemRenderer extends eui.ItemRenderer {
 		this.btn_start.source = "story_btn_start_png";
 		this.btn_start.touchEnabled = true;
 
+		//章节解锁条件，购买成功且若有前置章节需通关
+
+		//前置通关
+		if (this.itemIndex != 0) {
+			var completedStory = branchStoryCompleteData == null ? null : branchStoryCompleteData[parseInt(this.data["index"]) - 1];
+			if (completedStory == null || completedStory.indexOf("-1") == -1) {
+				//未通关
+				this.lab_lock.text = "解锁条件  通关之前章节";
+				this.lab_lock.visible = true;
+				this.lab_energy.visible = false;
+				this.img_energy.visible = false;
+				this.btn_start.source = "story_btn_start2_png";
+				this.btn_start.touchEnabled = false;
+			} else {
+				//前置章节通关
+				this.lab_lock.visible = false;
+				this.lab_energy.visible = true;
+				this.img_energy.visible = true;
+				this.btn_start.source = "story_btn_start_png";
+				this.btn_start.touchEnabled = true;
+			}
+		}
 
 		// //是否解锁
 		// if (TaskData.userData()[this.data["unlock"]] == null) {

@@ -198,12 +198,7 @@ class BranchStoryScene extends eui.Component implements eui.UIComponent{
 		}
 
 		if (this.playPhase == StoryPlayPhase.end && StoryData.isStoryFinished) {
-			console.log("..........");
-			//敬请期待==========
-			if (this.storyIndex == "29") {
-				StoryData.isShowLastTip = true;
-			}
-			SceneMgr.gotoNewStoryScene();
+			SceneMgr.gotoBranchMainScene(this.curBranchId);
 		}
 	}
 
@@ -218,12 +213,7 @@ class BranchStoryScene extends eui.Component implements eui.UIComponent{
 		DisplayMgr.buttonScale(self.btnGoback, function () {
 			SoundManager.instance().buttonSound();
 			if (self.couldExit == true) {
-				// SceneMgr.gotoStoryChapterScene(parseInt(self.storyIndex));
-				if (self.storyIndex == "29") {
-					StoryData.isShowLastTip = true;
-				}
-				
-				SceneMgr.gotoBranchMainScene(1001);
+				SceneMgr.gotoBranchMainScene(self.curBranchId);
 			}
 		});
 	}
@@ -232,11 +222,7 @@ class BranchStoryScene extends eui.Component implements eui.UIComponent{
 		if (PlayerData.guide == 8 || PlayerData.guide == 130) {
 
 		} else {
-			// SceneMgr.gotoStoryChapterScene(evt.data);
-			if (this.storyIndex == "29") {
-				StoryData.isShowLastTip = true;
-			}
-			SceneMgr.gotoNewStoryScene();
+			SceneMgr.gotoBranchMainScene(this.curBranchId);
 		}
 	}
 
