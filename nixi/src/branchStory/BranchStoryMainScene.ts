@@ -47,9 +47,9 @@ class BranchStoryMainScene extends eui.Component {
 		this.addChild(this.baseComp);
 
 		for (var i in StoryData.getBranchStoryById(this.curBranchId)) {
-			var item: string[] = StoryData.completedStory[i];
+			var item: string[] = StoryData.getBranchStoryById(this.curBranchId)[i];
 			if (item && item.indexOf("-1") != -1) {
-				this.curPageIndex = Math.min(parseInt(i), this.storyData.length - 1);  //目前只有29章剧情
+				this.curPageIndex = Math.min(parseInt(i) % 1000, this.storyData.length - 1);
 			}
 		}
 		console.log(this.curPageIndex);
@@ -241,7 +241,7 @@ class BranchStoryItemRenderer extends eui.ItemRenderer {
 	}
 
 	protected dataChanged() {
-		this.lab_chapter.text = "第" + StoryData.getHanziText(parseInt(this.data["index"]) - 1000) + "章";
+		this.lab_chapter.text = "第" + StoryData.getHanziText(parseInt(this.data["index"]) % 1000) + "章";
 
 		var endingArr: {}[] = this.data["ending"];
 		var branchStoryCompleteData = StoryData.getBranchStoryById(parseInt(this.data["index"][0] + "000"));

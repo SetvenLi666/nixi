@@ -21,7 +21,7 @@
 			"name": "story_chapter"
 		},
 		{
-			"keys": "story_select_bg_png,story_reward_bg_png,story_red_bar_png,story_history_panel_png,story_ending_json,story_dia_rem_png,story_dia_rem_2_png,story_dia_play_png,story_dia_play_2_png,story_dia_fast_png,story_dia_fast_2_png,story_dia_bg_png",
+			"keys": "story_select_bg_png,story_reward_bg_png,story_red_bar_png,story_history_panel_png,story_ending_json,story_dia_rem_png,story_dia_rem_2_png,story_dia_play_png,story_dia_play_2_png,story_dia_fast_png,story_dia_fast_2_png",
 			"name": "story_act"
 		},
 		{
@@ -251,6 +251,66 @@
 		{
 			"keys": "role_101_json,role_1083_json,role_1001_json,body_1048_1,body_1082_1",
 			"name": "story_roles_1015"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_2001"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_2002"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_2003"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_2004"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_2005"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_2006"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_2007"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_2008"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_2009"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_2010"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_2011"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_2012"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_2013"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_2014"
+		},
+		{
+			"keys": "",
+			"name": "story_roles_2015"
 		}
 	],
 	"resources": [
@@ -20776,6 +20836,86 @@
 			"url": "config/story/role_1/story_branch_1000.json",
 			"type": "json",
 			"name": "story_branch_1000_json"
+		},
+		{
+			"url": "config/story/role_2/2002.json",
+			"type": "json",
+			"name": "2002_json"
+		},
+		{
+			"url": "config/story/role_2/2003.json",
+			"type": "json",
+			"name": "2003_json"
+		},
+		{
+			"url": "config/story/role_2/2004.json",
+			"type": "json",
+			"name": "2004_json"
+		},
+		{
+			"url": "config/story/role_2/2005.json",
+			"type": "json",
+			"name": "2005_json"
+		},
+		{
+			"url": "config/story/role_2/2006.json",
+			"type": "json",
+			"name": "2006_json"
+		},
+		{
+			"url": "config/story/role_2/2007.json",
+			"type": "json",
+			"name": "2007_json"
+		},
+		{
+			"url": "config/story/role_2/2008.json",
+			"type": "json",
+			"name": "2008_json"
+		},
+		{
+			"url": "config/story/role_2/2009.json",
+			"type": "json",
+			"name": "2009_json"
+		},
+		{
+			"url": "config/story/role_2/2010.json",
+			"type": "json",
+			"name": "2010_json"
+		},
+		{
+			"url": "config/story/role_2/2011.json",
+			"type": "json",
+			"name": "2011_json"
+		},
+		{
+			"url": "config/story/role_2/2012.json",
+			"type": "json",
+			"name": "2012_json"
+		},
+		{
+			"url": "config/story/role_2/2013.json",
+			"type": "json",
+			"name": "2013_json"
+		},
+		{
+			"url": "config/story/role_2/2014.json",
+			"type": "json",
+			"name": "2014_json"
+		},
+		{
+			"url": "config/story/role_2/2015.json",
+			"type": "json",
+			"name": "2015_json"
+		},
+		{
+			"url": "config/story/role_2/2001.json",
+			"type": "json",
+			"name": "2001_json"
+		},
+		{
+			"url": "config/story/role_2/story_branch_2000.json",
+			"type": "json",
+			"name": "story_branch_2000_json"
 		}
 	]
 }

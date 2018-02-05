@@ -28,7 +28,7 @@ class BranchStoryScene extends eui.Component implements eui.UIComponent{
 		this.ending.touchEnabled = false;
 		this.ending.touchChildren = false;
 
-		this.titleLab.text = "第" + StoryData.getHanziText(parseInt(this.storyIndex) - 1000) + "章";
+		this.titleLab.text = "第" + StoryData.getHanziText(parseInt(this.storyIndex) % 1000) + "章";
 
 		this.touchRect.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTapped, this);
 		this.btnGoback.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnGoback, this);

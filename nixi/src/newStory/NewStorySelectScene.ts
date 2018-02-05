@@ -73,9 +73,8 @@ class NewStorySelectScene extends eui.Component {
 					branch_id = 1000;
 					break;
 				case self.groupRed:
-					// branch_id = 2000;
-					Prompt.showPrompt(self.stage, "敬请期待");
-					return;
+					branch_id = 2000;
+					break;
 				case self.groupBlue:
 					// branch_id = 3000;
 					Prompt.showPrompt(self.stage, "敬请期待");

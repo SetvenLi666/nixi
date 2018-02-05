@@ -175,7 +175,7 @@ class Main extends egret.DisplayObjectContainer {
             qua: { meybeQua: "pc" }
         }
 
-        // this.checkStoryRolesRes();
+        this.checkStoryRolesRes();
 
         LoginData.config_UUID();
         SceneMgr.gotoLogin();
@@ -249,7 +249,7 @@ class Main extends egret.DisplayObjectContainer {
     }
 
     private checkStoryRolesRes() {
-        RES.getResAsync("1015_json", function (data, key) {
+        RES.getResAsync("2001_json", function (data, key) {
             var result: string[] = [];
             var itemArr: {}[] = data;
             var len = itemArr.length;
