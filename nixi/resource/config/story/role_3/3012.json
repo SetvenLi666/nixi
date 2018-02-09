@@ -476,8 +476,8 @@
     "array_next_2" : "",
     "array_3" : "",
     "array_next_3" : "",
-    "bust" : "",
-    "animation" : ""
+    "bust" : "0",
+    "animation" : "1"
   },
   {
     "id" : "20",
@@ -932,8 +932,8 @@
     "array_next_2" : "",
     "array_3" : "",
     "array_next_3" : "",
-    "bust" : "",
-    "animation" : ""
+    "bust" : "0",
+    "animation" : "1"
   },
   {
     "id" : "39",
@@ -1666,7 +1666,7 @@
     "biaoqing_1" : "",
     "zishi_2" : "101_1",
     "head_2" : "101_1",
-    "biaoqing_2" : "74",
+    "biaoqing_2" : "",
     "said" : "原来如此。看来接戏也是一门学问啊。",
     "next" : "70",
     "achievement" : "",
@@ -1905,7 +1905,7 @@
     "head_1" : "",
     "biaoqing_1" : "",
     "zishi_2" : "1083_1",
-    "head_2" : "1083_6",
+    "head_2" : "1083_3",
     "biaoqing_2" : "",
     "said" : "（惊讶）谁接的戏？",
     "next" : "80",
@@ -1916,8 +1916,8 @@
     "array_next_2" : "",
     "array_3" : "",
     "array_next_3" : "",
-    "bust" : "",
-    "animation" : ""
+    "bust" : "0",
+    "animation" : "1"
   },
   {
     "id" : "80",
@@ -2072,8 +2072,8 @@
     "zishi_1" : "101_1",
     "head_1" : "101_2",
     "biaoqing_1" : "",
-    "zishi_2" : "1083_1",
-    "head_2" : "1083_3",
+    "zishi_2" : "",
+    "head_2" : "",
     "biaoqing_2" : "",
     "said" : "（笑）凌薇姐，我还是先把之前的合约拍完吧。",
     "next" : "87",
@@ -2093,11 +2093,11 @@
     "name" : "段凌薇",
     "nameID" : "1083",
     "states" : "2",
-    "zishi_1" : "1083_1",
-    "head_1" : "1083_1",
+    "zishi_1" : "101_1",
+    "head_1" : "101_1",
     "biaoqing_1" : "",
-    "zishi_2" : "101_1",
-    "head_2" : "101_1",
+    "zishi_2" : "1083_1",
+    "head_2" : "1083_1",
     "biaoqing_2" : "",
     "said" : "（叹气）让拉拉带你去报到吧……",
     "next" : "-1",

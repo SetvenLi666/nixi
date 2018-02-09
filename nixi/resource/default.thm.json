@@ -68,6 +68,7 @@
     "resource/skins/newStory/NewStorySceneSkin.exml",
     "resource/skins/newStory/NewStorySelectSceneSkin.exml",
     "resource/skins/newStory/StoryChapterCompSkin.exml",
+    "resource/skins/newStory/StoryChapterCompSkin2.exml",
     "src/panel/RewardItemSkin.exml",
     "resource/skins/newTask/NewTaskDialogCompSkin.exml",
     "resource/skins/newTask/TaskItemSkin.exml",

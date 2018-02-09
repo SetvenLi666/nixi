@@ -434,7 +434,7 @@
   {
     "id" : "18",
     "bg" : "keep",
-    "name" : "言楚非",
+    "name" : "",
     "nameID" : "1003",
     "states" : "1",
     "zishi_1" : "1003_1",
@@ -1350,7 +1350,7 @@
     "nameID" : "101",
     "states" : "2",
     "zishi_1" : "101_1",
-    "head_1" : "101_1",
+    "head_1" : "101_4",
     "biaoqing_1" : "",
     "zishi_2" : "",
     "biaoqing_2" : "",

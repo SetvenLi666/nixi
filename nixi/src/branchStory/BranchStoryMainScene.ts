@@ -185,7 +185,7 @@ class BranchStoryMainScene extends eui.Component {
 	}
 
 	private onStartStory(evt: egret.Event) {
-		if (PlayerData.energy < 6) {
+		if (PlayerData.energy < 15) {
 			var panel = new ExchangePanel("energy");
 			DisplayMgr.set2Center(panel);
 			this.stage.addChild(panel);
@@ -226,6 +226,7 @@ class BranchStoryItemRenderer extends eui.ItemRenderer {
 	public lab_energy: eui.Label;
 	public img_energy: eui.Image;
 	public btn_unlock: eui.Image;
+	public lab_tongguan: eui.Image;
 
 	public constructor() {
 		super();
@@ -238,6 +239,9 @@ class BranchStoryItemRenderer extends eui.ItemRenderer {
 
 		this.btn_start.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onStart, this);
 		this.btn_unlock.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onUnlock, this);
+		// 暂时关闭
+		this.btn_unlock.visible = false;
+		this.lab_tongguan.visible = false;
 	}
 
 	protected dataChanged() {
@@ -288,6 +292,7 @@ class BranchStoryItemRenderer extends eui.ItemRenderer {
 			} else {
 				//前置章节通关
 				this.lab_lock.visible = false;
+				this.lab_energy.text = "15";
 				this.lab_energy.visible = true;
 				this.img_energy.visible = true;
 				this.btn_start.source = "story_btn_start_png";
