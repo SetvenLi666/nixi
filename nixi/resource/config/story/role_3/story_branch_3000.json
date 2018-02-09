@@ -1,0 +1,222 @@
+[
+    {
+        "index": "3001",
+        "file": "3001",
+        "bg": "3018_png",
+        "role": "body_101_1",
+        "head": "head_101_2",
+        "phase": "1",
+        "unlock": "1",
+        "ending": [
+            {
+                "id": "1003_1_1",
+                "name": "眼见不一定为实"
+            }
+        ]
+    },
+    {
+        "index": "3002",
+        "file": "3002",
+        "bg": "3006_png",
+        "role": "body_1021_1",
+        "head": "head_1021_2",
+        "phase": "1",
+        "unlock": "4",
+        "ending": [
+            
+        ]
+    },
+    {
+        "index": "3003",
+        "file": "3003",
+        "bg": "3070_png",
+        "role": "body_1040_1",
+        "head": "head_1040_1",
+        "phase": "1",
+        "unlock": "7",
+        "ending": [
+            {
+                "id": "1003_3_1",
+                "name": "理想导师"
+            },
+            {
+                "id": "1003_3_2",
+                "name": "不知进退"
+            }
+        ]
+    },
+    {
+        "index": "3004",
+        "file": "3004",
+        "bg": "3016_png",
+        "role": "body_1003_1",
+        "head": "head_1003_1",
+        "phase": "1",
+        "unlock": "7",
+        "ending": [
+            
+        ]
+    },
+    {
+        "index": "3005",
+        "file": "3005",
+        "bg": "3007_2_png",
+        "role": "body_1039_1",
+        "head": "head_1039_1",
+        "phase": "1",
+        "unlock": "7",
+        "ending": [
+            {
+                "id": "1003_5_2",
+                "name": "木讷迟钝"
+            }
+        ]
+    },
+    {
+        "index": "3006",
+        "file": "3006",
+        "bg": "3083_png",
+        "role": "body_1015_1",
+        "head": "head_1015_1",
+        "phase": "1",
+        "unlock": "7",
+        "ending": [
+            
+        ]
+    },
+    {
+        "index": "3007",
+        "file": "3007",
+        "bg": "3049_png",
+        "role": "body_1083_1",
+        "head": "head_1083_1",
+        "phase": "1",
+        "unlock": "14",
+        "ending": [
+            {
+                "id": "1003_7_1",
+                "name": "一意孤行"
+            }
+        ]
+    },
+    {
+        "index": "3008",
+        "file": "3008",
+        "bg": "3010_1_png",
+        "role": "body_1088_1",
+        "head": "head_1088_2",
+        "phase": "1",
+        "unlock": "14",
+        "ending": [
+            {
+                "id": "1003_8_1",
+                "name": "维护形象很重要"
+            }
+        ]
+    },
+    {
+        "index": "3009",
+        "file": "3009",
+        "bg": "3051_png",
+        "role": "body_1019_1",
+        "head": "head_1019_1",
+        "phase": "1",
+        "unlock": "16",
+        "ending": [
+            {
+                "id": "1003_9_1",
+                "name": "毫无眼界"
+            }
+        ]
+    },
+    {
+        "index": "3010",
+        "file": "3010",
+        "bg": "1_png",
+        "role": "body_101_14",
+        "head": "head_101_14_1",
+        "phase": "1",
+        "unlock": "20",
+        "ending": [
+            {
+                "id": "1003_10_1",
+                "name": "胆小怕事"
+            }
+        ]
+    },
+    {
+        "index": "3011",
+        "file": "3011",
+        "bg": "3056_png",
+        "role": "body_1003_2",
+        "head": "head_1003_2_2",
+        "phase": "1",
+        "unlock": "20",
+        "ending": [
+            {
+                "id": "1003_11_1",
+                "name": "心不在焉误大事"
+            }
+        ]
+    },
+    {
+        "index": "3012",
+        "file": "3012",
+        "bg": "3065_png",
+        "role": "body_101_3",
+        "head": "head_101_2",
+        "phase": "2",
+        "unlock": "28",
+        "ending": [
+            {
+                "id": "1003_12_1",
+                "name": "忍一时风平浪静"
+            }
+        ]
+    },
+    {
+        "index": "3013",
+        "file": "3013",
+        "bg": "3063_png",
+        "role": "body_1010_1",
+        "head": "head_1010_1",
+        "phase": "2",
+        "unlock": "28",
+        "ending": [
+            {
+                "id": "1003_13_1",
+                "name": "尊重他人很重要"
+            }
+        ]
+    },
+    {
+        "index": "3014",
+        "file": "3014",
+        "bg": "3086_png",
+        "role": "body_1199_1",
+        "head": "head_1199_1",
+        "phase": "2",
+        "unlock": "28",
+        "ending": [
+            {
+                "id": "1003_14_1",
+                "name": "诚信守约很重要"
+            }
+        ]
+    },
+    {
+        "index": "3015",
+        "file": "3015",
+        "bg": "3073_png",
+        "role": "body_1003_1",
+        "head": "head_1003_4",
+        "phase": "2",
+        "unlock": "36",
+        "ending": [
+            {
+                "id": "1003_15_1",
+                "name": "心浮气躁"
+            }
+        ]
+    }
+]

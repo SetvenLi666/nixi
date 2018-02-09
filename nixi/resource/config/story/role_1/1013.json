@@ -26,7 +26,7 @@
   {
     "id" : "1",
     "bg" : "keep",
-    "name" : "艾  米",
+    "name" : "艾米",
     "nameID" : "1040",
     "states" : "2",
     "zishi_1" : "1018_1",
@@ -50,7 +50,7 @@
   {
     "id" : "2",
     "bg" : "keep",
-    "name" : "艾  米",
+    "name" : "艾米",
     "nameID" : "1040",
     "states" : "2",
     "zishi_1" : "",
@@ -218,7 +218,7 @@
   {
     "id" : "9",
     "bg" : "keep",
-    "name" : "苏  橙",
+    "name" : "苏橙",
     "nameID" : "101",
     "states" : "2",
     "zishi_1" : "101_3",
@@ -242,7 +242,7 @@
   {
     "id" : "10",
     "bg" : "keep",
-    "name" : "苏  橙",
+    "name" : "苏橙",
     "nameID" : "101",
     "states" : "2",
     "zishi_1" : "101_3",
@@ -266,7 +266,7 @@
   {
     "id" : "11",
     "bg" : "keep",
-    "name" : "苏  橙",
+    "name" : "苏橙",
     "nameID" : "101",
     "states" : "2",
     "zishi_1" : "101_3",
@@ -314,7 +314,7 @@
   {
     "id" : "13",
     "bg" : "keep",
-    "name" : "苏  橙",
+    "name" : "苏橙",
     "nameID" : "101",
     "states" : "2",
     "zishi_1" : "101_3",
@@ -338,7 +338,7 @@
   {
     "id" : "14",
     "bg" : "keep",
-    "name" : "苏  橙",
+    "name" : "苏橙",
     "nameID" : "101",
     "states" : "2",
     "zishi_1" : "101_3",
@@ -386,7 +386,7 @@
   {
     "id" : "16",
     "bg" : "keep",
-    "name" : "苏  橙",
+    "name" : "苏橙",
     "nameID" : "101",
     "states" : "2",
     "zishi_1" : "101_3",
@@ -434,7 +434,7 @@
   {
     "id" : "18",
     "bg" : "keep",
-    "name" : "苏  橙",
+    "name" : "苏橙",
     "nameID" : "101",
     "states" : "2",
     "zishi_1" : "101_3",
@@ -458,7 +458,7 @@
   {
     "id" : "19",
     "bg" : "keep",
-    "name" : "苏  橙",
+    "name" : "苏橙",
     "nameID" : "101",
     "states" : "2",
     "zishi_1" : "101_3",
@@ -506,7 +506,7 @@
   {
     "id" : "21",
     "bg" : "keep",
-    "name" : "苏  橙",
+    "name" : "苏橙",
     "nameID" : "101",
     "states" : "2",
     "zishi_1" : "101_3",
@@ -602,7 +602,7 @@
   {
     "id" : "25",
     "bg" : "keep",
-    "name" : "苏  橙",
+    "name" : "苏橙",
     "nameID" : "101",
     "states" : "1",
     "zishi_1" : "101_3",
@@ -746,7 +746,7 @@
   {
     "id" : "31",
     "bg" : "keep",
-    "name" : "苏  橙",
+    "name" : "苏橙",
     "nameID" : "101",
     "states" : "2",
     "zishi_1" : "",
@@ -770,7 +770,7 @@
   {
     "id" : "32",
     "bg" : "keep",
-    "name" : "苏  橙",
+    "name" : "苏橙",
     "nameID" : "101",
     "states" : "2",
     "zishi_1" : "",
@@ -794,7 +794,7 @@
   {
     "id" : "33",
     "bg" : "keep",
-    "name" : "苏  橙",
+    "name" : "苏橙",
     "nameID" : "101",
     "states" : "2",
     "zishi_1" : "",
@@ -818,7 +818,7 @@
   {
     "id" : "34",
     "bg" : "keep",
-    "name" : "苏  橙",
+    "name" : "苏橙",
     "nameID" : "101",
     "states" : "2",
     "zishi_1" : "",
@@ -842,7 +842,7 @@
   {
     "id" : "35",
     "bg" : "keep",
-    "name" : "苏  橙",
+    "name" : "苏橙",
     "nameID" : "101",
     "states" : "2",
     "zishi_1" : "",
@@ -866,7 +866,7 @@
   {
     "id" : "36",
     "bg" : "keep",
-    "name" : "苏  橙",
+    "name" : "苏橙",
     "nameID" : "101",
     "states" : "2",
     "zishi_1" : "",
@@ -938,7 +938,7 @@
   {
     "id" : "39",
     "bg" : "keep",
-    "name" : "苏  橙",
+    "name" : "苏橙",
     "nameID" : "101",
     "states" : "2",
     "zishi_1" : "101_3",
@@ -962,7 +962,7 @@
   {
     "id" : "40",
     "bg" : "keep",
-    "name" : "苏  橙",
+    "name" : "苏橙",
     "nameID" : "101",
     "states" : "2",
     "zishi_1" : "101_3",
@@ -1010,7 +1010,7 @@
   {
     "id" : "42",
     "bg" : "keep",
-    "name" : "苏  橙",
+    "name" : "苏橙",
     "nameID" : "101",
     "states" : "2",
     "zishi_1" : "101_3",

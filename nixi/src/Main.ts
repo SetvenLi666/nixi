@@ -175,7 +175,7 @@ class Main extends egret.DisplayObjectContainer {
             qua: { meybeQua: "pc" }
         }
 
-        this.checkStoryRolesRes();
+        // this.checkStoryRolesRes();
 
         LoginData.config_UUID();
         SceneMgr.gotoLogin();
