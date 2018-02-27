@@ -82,6 +82,7 @@ class BranchStoryMainScene extends eui.Component {
 		this.btn_change.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onChange, this);
 
 		CustomEventMgr.addEventListener("506", this.afterStartBranchStory_506, this);
+		CustomEventMgr.addEventListener("512", this.afterUnlockBranchStory_512, this);
 
 		CustomEventMgr.addEventListener("Begin Story", this.onStartStory, this);
 
@@ -90,6 +91,7 @@ class BranchStoryMainScene extends eui.Component {
 
 	private onExit() {
 		CustomEventMgr.removeEventListener("506", this.afterStartBranchStory_506, this);
+		CustomEventMgr.removeEventListener("512", this.afterUnlockBranchStory_512, this);
 		CustomEventMgr.removeEventListener("Begin Story", this.onStartStory, this);
 	}
 
@@ -207,6 +209,11 @@ class BranchStoryMainScene extends eui.Component {
 		SceneMgr.gotoBranchStoryScene(this.curBranchId, this.storyData[this.storyIndex]["index"], this.storyData[this.storyIndex]["file"]);
 	}
 
+	private afterUnlockBranchStory_512(evt: egret.Event) {
+		NetLoading.removeLoading();
+		Prompt.showPrompt(this.stage, "解锁成功");
+	}
+
 	private guide_step_5_4() {
 		CustomEventMgr.dispatchEventWith("Begin Story", false, 0);
 	}
@@ -219,29 +226,29 @@ class BranchStoryMainScene extends eui.Component {
 
 class BranchStoryItemRenderer extends eui.ItemRenderer {
 	public lab_chapter: eui.Label;
-	public lab_lock: eui.Label;
 	public end_1: eui.Label;
 	public end_2: eui.Label;
 	public btn_start: eui.Image;
-	public lab_energy: eui.Label;
-	public img_energy: eui.Image;
-	public btn_unlock: eui.Image;
-	public lab_tongguan: eui.Image;
+	public costLab: eui.Label;
+	public iconImg: eui.Image;
 
 	public constructor() {
 		super();
 
-		this.skinName = "StoryChapterCompSkin";
+		this.skinName = "BranchStoryChapterCompSkin";
 	}
 
 	protected createChildren() {
 		super.createChildren();
 
 		this.btn_start.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onStart, this);
-		this.btn_unlock.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onUnlock, this);
-		// 暂时关闭
-		this.btn_unlock.visible = false;
-		this.lab_tongguan.visible = false;
+		// CustomEventMgr.addEventListener("Update BranchStory Item View", this.updateItemView, this);
+		// this.addEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit, this);
+	}
+
+	private onExit() {
+		this.btn_start.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onStart, this);
+		CustomEventMgr.removeEventListener("Update BranchStory Item View", this.updateItemView, this);
 	}
 
 	protected dataChanged() {
@@ -272,83 +279,32 @@ class BranchStoryItemRenderer extends eui.ItemRenderer {
 			this.end_2.text = "";
 		}
 
-		//1001测试全部解锁
-		this.btn_start.source = "story_btn_start_png";
-		this.btn_start.touchEnabled = true;
+		this.btn_start.source = "branch_story_btn_start_png";
+		this.costLab.text = "9";
+		this.iconImg.source = "branch_story_tili_png";
+
+		//是否解锁
+		// if (StoryData.getBranchStoryUnlockState(parseInt(this.data["index"][0] + "000"))[this.itemIndex + ""]) {
+		// 	this.btn_start.source = "branch_story_btn_start_png";
+		// 	this.costLab.text = "9";
+		// 	this.iconImg.source = "branch_story_tili_png";
+		// } else {
+		// 	this.btn_start.source = "branch_story_btn_unlock_png";
+		// 	this.costLab.text = "10";
+		// 	this.iconImg.source = "branch_stroy_diam_png";
+		// }
 
 		//章节解锁条件，购买成功且若有前置章节需通关
 
 		//前置通关
-		if (this.itemIndex != 0) {
-			var completedStory = branchStoryCompleteData == null ? null : branchStoryCompleteData[parseInt(this.data["index"]) - 1];
-			if (completedStory == null || completedStory.indexOf("-1") == -1) {
-				//未通关
-				this.lab_lock.text = "解锁条件  通关之前章节";
-				this.lab_lock.visible = true;
-				this.lab_energy.visible = false;
-				this.img_energy.visible = false;
-				this.btn_start.source = "story_btn_start2_png";
-				this.btn_start.touchEnabled = false;
-			} else {
-				//前置章节通关
-				this.lab_lock.visible = false;
-				this.lab_energy.text = "15";
-				this.lab_energy.visible = true;
-				this.img_energy.visible = true;
-				this.btn_start.source = "story_btn_start_png";
-				this.btn_start.touchEnabled = true;
-			}
-		}
-
-		// //是否解锁
-		// if (TaskData.userData()[this.data["unlock"]] == null) {
-		// 	//未解锁
-		// 	var phaseName = "小助理";
-		// 	if (this.data["phase"] == "1") {
-		// 		phaseName = "小助理";
-		// 	} else if (this.data["phase"] == "2") {
-		// 		phaseName = "练习生";
-		// 	} else if (this.data["phase"] == "3") {
-		// 		phaseName = "小演员";
-		// 	} else if (this.data["phase"] == "4") {
-		// 		phaseName = "小花旦";
-		// 	} else if (this.data["phase"] == "5") {
-		// 		phaseName = "大明星";
-		// 	}
-		// 	this.lab_lock.text = "解锁条件  " + phaseName + "任务" + this.data["unlock"];
-		// 	this.lab_lock.visible = true;
-		// 	this.lab_energy.visible = false;
-		// 	this.img_energy.visible = false;
-		// 	this.btn_start.source = "story_btn_start2_png";
-		// 	this.btn_start.touchEnabled = false;
-		// 	this.btn_unlock.visible = true;
-		// } else {
-		// 	this.btn_unlock.visible = false;
-		// 	var index = parseInt(this.data.index);
-		// 	if (index != 1) {
-		// 		var completedStory: string[] = StoryData.completedStory[(index - 1).toString()];
-		// 		if (completedStory == null || completedStory.indexOf("-1") == -1) {
-		// 			//未通关
-		// 			this.lab_lock.text = "解锁条件  通关之前章节";
-		// 			this.lab_lock.visible = true;
-		// 			this.lab_energy.visible = false;
-		// 			this.img_energy.visible = false;
-		// 			this.btn_start.source = "story_btn_start2_png";
-		// 			this.btn_start.touchEnabled = false;
-		// 		} else {
-		// 			//前置章节通关
-		// 			this.lab_lock.visible = false;
-		// 			this.lab_energy.visible = true;
-		// 			this.img_energy.visible = true;
-		// 			this.btn_start.source = "story_btn_start_png";
-		// 			this.btn_start.touchEnabled = true;
-		// 		}
+		// if (this.itemIndex != 0) {
+		// 	var completedStory = branchStoryCompleteData == null ? null : branchStoryCompleteData[parseInt(this.data["index"]) - 1];
+		// 	if (completedStory == null || completedStory.indexOf("-1") == -1) {
+		// 		//未通关
+		// 		this.btn_start.source = "branch_story_btn_start_png";
 		// 	} else {
-		// 		this.lab_lock.visible = false;
-		// 		this.lab_energy.visible = true;
-		// 		this.img_energy.visible = true;
-		// 		this.btn_start.source = "story_btn_start_png";
-		// 		this.btn_start.touchEnabled = true;
+		// 		//前置章节通关
+		// 		this.btn_start.source = "branch_story_btn_start_png";
 		// 	}
 		// }
 	}
@@ -357,38 +313,56 @@ class BranchStoryItemRenderer extends eui.ItemRenderer {
 		var self = this;
 		DisplayMgr.buttonScale(this.btn_start, function () {
 			SoundManager.instance().buttonSound();
-			// if (TaskData.userData()[self.data["unlock"]] == null) {
-			// 	//未解锁
-			// 	Prompt.showPrompt(self.stage, "亲!本次章节未解锁");
-			// 	return;
-			// }
-			// console.log(self.data.index);
-			// var index = parseInt(self.data.index);
-			// if (index != 1) {
-			// 	var completedStory: string[] = StoryData.completedStory[(index - 1).toString()];
-			// 	if (completedStory == null || completedStory.indexOf("-1") == -1) {
-			// 		//未通关
-			// 		Prompt.showPrompt(self.stage, "亲!前面章节未通关");
-			// 		return;
+
+			if (self.itemIndex != 0) {
+				var branchStoryCompleteData = StoryData.getBranchStoryById(parseInt(self.data["index"][0] + "000"));
+				var completedStory = branchStoryCompleteData == null ? null : branchStoryCompleteData[parseInt(self.data["index"]) - 1];
+				if (completedStory == null || completedStory.indexOf("-1") == -1) {
+					//未通关
+					Prompt.showPrompt(self.stage, "请先通关前置章节");
+				} else {
+					//前置章节通关
+					CustomEventMgr.dispatchEventWith("Begin Story", false, self.itemIndex);
+				}
+			} else {
+				CustomEventMgr.dispatchEventWith("Begin Story", false, self.itemIndex);
+			}
+
+			//解锁
+			// if (StoryData.getBranchStoryUnlockState(parseInt(self.data["index"][0] + "000"))[self.itemIndex + ""]) {
+			// 	//开始剧情
+			// 	if (self.itemIndex != 0) {
+			// 		var branchStoryCompleteData = StoryData.getBranchStoryById(parseInt(self.data["index"][0] + "000"));
+			// 		var completedStory = branchStoryCompleteData == null ? null : branchStoryCompleteData[parseInt(self.data["index"]) - 1];
+			// 		if (completedStory == null || completedStory.indexOf("-1") == -1) {
+			// 			//未通关
+			// 			Prompt.showPrompt(self.stage, "请先通关前置章节");
+			// 		} else {
+			// 			//前置章节通关
+			// 			CustomEventMgr.dispatchEventWith("Begin Story", false, self.itemIndex);
+			// 		}
+			// 	} else {
+			// 		CustomEventMgr.dispatchEventWith("Begin Story", false, self.itemIndex);
 			// 	}
+
+			// 	// CustomEventMgr.dispatchEventWith("Begin Story", false, self.itemIndex);
+			// } else {
+			// 	NetLoading.showLoading();
+			// 	var request = HttpProtocolMgr.unlockBranchStory_512(parseInt(self.data["index"][0] + "000"), self.itemIndex + "");
+			// 	HttpMgr.postRequest(request);
 			// }
-
-			//开始剧情
-			CustomEventMgr.dispatchEventWith("Begin Story", false, self.itemIndex);
-
-			// NetLoading.showLoading();
-			// var request: egret.URLRequest = HttpProtocolMgr.startStory_501(self.data["index"]);
-			// HttpMgr.postRequest(request);
 		});
 	}
 
-	private onUnlock() {
-		var self = this;
-		DisplayMgr.buttonScale(this.btn_unlock, function () {
-			// SceneMgr.gotoTaskScene(parseInt(self.data["phase"]), parseInt(self.data["unlock"]));
-			SoundManager.instance().buttonSound();
-			SoundManager.instance().destroyStartSound();
-			SceneMgr.gotoTaskScene(PlayerData.phase, PlayerData.mission);
-		});
+	private updateItemView() {
+		if (StoryData.getBranchStoryUnlockState(parseInt(this.data["index"][0] + "000"))[this.itemIndex + ""]) {
+			this.btn_start.source = "branch_story_btn_start_png";
+			this.costLab.text = "9";
+			this.iconImg.source = "branch_story_tili_png";
+		} else {
+			this.btn_start.source = "branch_story_btn_unlock_png";
+			this.costLab.text = "10";
+			this.iconImg.source = "branch_stroy_diam_png";
+		}
 	}
 }

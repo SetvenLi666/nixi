@@ -236,7 +236,7 @@ class BranchStoryScene extends eui.Component implements eui.UIComponent{
 	private checkExtraReward() {
 		if (this.extra_reward && this.extra_reward["pass_reward"] == 10) {
 			//奖励面板
-			var panel = new StoryRewardPanel();
+			var panel = new StoryRewardPanel(this.storyIndex);
 			DisplayMgr.set2Center(panel);
 			this.stage.addChild(panel);
 

@@ -282,6 +282,19 @@ class HttpProtocolMgr {
         return this.newRequest("508", JSON.stringify(data));
     }
 
+    static fetchBranchStoryUnlockState_510(branch_id: number) {
+        var data = {};
+        data["branch_id"] = branch_id;
+        return this.newRequest("510", JSON.stringify(data));
+    }
+
+    static unlockBranchStory_512(branch_id: number, id: string) {
+        var data = {};
+        data["branch_id"] = branch_id;
+        data["id"] = id;
+        return this.newRequest("512", JSON.stringify(data));
+    }
+
     static commitStory_503(strIndex: string, flag: string): egret.URLRequest {
         var data = {};
         data["id"] = strIndex;

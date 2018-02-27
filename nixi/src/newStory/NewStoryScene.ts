@@ -66,10 +66,10 @@ class NewStoryScene extends eui.Component {
 		this.onMove();
 
 		//敬请期待
-		if (StoryData.isShowLastTip && StoryData.completedStory["29"] && StoryData.completedStory["29"].indexOf("-1") != -1) {
-			StoryData.isShowLastTip = false;
-			Prompt.showPrompt(this.stage, "后续剧情正在制作中，敬请期待!");
-		}
+		// if (StoryData.isShowLastTip && StoryData.completedStory["29"] && StoryData.completedStory["29"].indexOf("-1") != -1) {
+		// 	StoryData.isShowLastTip = false;
+		// 	Prompt.showPrompt(this.stage, "后续剧情正在制作中，敬请期待!");
+		// }
 
 		this.scroller.addEventListener(eui.UIEvent.CHANGE_START, this.onChangeStart, this);
 		this.scroller.addEventListener(eui.UIEvent.CHANGE_END, this.onChangeEnd, this);

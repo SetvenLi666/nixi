@@ -21296,6 +21296,46 @@
 			"url": "game/story/roles/body_1085_1.png",
 			"type": "image",
 			"name": "body_1085_1"
+		},
+		{
+			"url": "game/newStory/role_introduce_1.png",
+			"type": "image",
+			"name": "role_introduce_1_png"
+		},
+		{
+			"url": "game/newStory/role_introduce_2.png",
+			"type": "image",
+			"name": "role_introduce_2_png"
+		},
+		{
+			"url": "game/newStory/role_introduce_3.png",
+			"type": "image",
+			"name": "role_introduce_3_png"
+		},
+		{
+			"url": "game/newStory/branch/branch_story_btn_start.png",
+			"type": "image",
+			"name": "branch_story_btn_start_png"
+		},
+		{
+			"url": "game/newStory/branch/branch_story_btn_unlock.png",
+			"type": "image",
+			"name": "branch_story_btn_unlock_png"
+		},
+		{
+			"url": "game/newStory/branch/branch_story_kuang.png",
+			"type": "image",
+			"name": "branch_story_kuang_png"
+		},
+		{
+			"url": "game/newStory/branch/branch_story_tili.png",
+			"type": "image",
+			"name": "branch_story_tili_png"
+		},
+		{
+			"url": "game/newStory/branch/branch_stroy_diam.png",
+			"type": "image",
+			"name": "branch_stroy_diam_png"
 		}
 	]
 }

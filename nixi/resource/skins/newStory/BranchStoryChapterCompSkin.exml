@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="BranchStoryChapterCompSkin" width="492" height="262" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="story_chapter_bg_png" x="0" y="0"/>
+	<e:Label id="lab_chapter" text="" x="80" y="12" size="24" textAlign="center" anchorOffsetX="0" width="123" height="24"/>
+	<e:Label text="结局成就" x="24" y="110" textColor="0xef327d" size="24" bold="true"/>
+	<e:Label id="end_1" text="" x="58" y="158" size="22" textColor="0x969797" bold="true"/>
+	<e:Label id="end_2" text="" x="192" y="158" size="22" textColor="0x969797" bold="true"/>
+	<e:Image id="btn_start" x="355" y="134" source="branch_story_btn_unlock_png"/>
+	<e:Image source="branch_story_kuang_png" x="356" y="180"/>
+	<e:Label id="costLab" text="55" x="382" y="182" textColor="0xab345e" size="24" width="30" height="24" textAlign="center"/>
+	<e:Image id="iconImg" source="branch_stroy_diam_png" x="412" y="181"/>
+</e:Skin>

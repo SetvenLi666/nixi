@@ -118,6 +118,8 @@ declare class StoryCompSkin extends eui.Skin{
 }
 declare class VipStoryCompSkin extends eui.Skin{
 }
+declare class BranchStoryChapterCompSkin extends eui.Skin{
+}
 declare class NewStorySceneSkin extends eui.Skin{
 }
 declare class NewStorySelectSceneSkin extends eui.Skin{
@@ -241,6 +243,8 @@ declare class PkResultPanelSkin extends eui.Skin{
 declare class ReceiveButton extends eui.Skin{
 }
 declare class ChapterPage extends eui.Skin{
+}
+declare class RoleIntroducePanelSkin extends eui.Skin{
 }
 declare class Test extends eui.Skin{
 }

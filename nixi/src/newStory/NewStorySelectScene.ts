@@ -41,6 +41,7 @@ class NewStorySelectScene extends eui.Component {
 
 		CustomEventMgr.addEventListener("600", this.afterFetchMissionData_600, this);
 		CustomEventMgr.addEventListener("502", this.afterFetchBranchStoryData_502, this);
+		// CustomEventMgr.addEventListener("510", this.afterFetchBranchStoryState_510, this);
 
 		if (PlayerData.guide == 5) {
 			var guidePanel = new NewGuidePanel();
@@ -57,6 +58,7 @@ class NewStorySelectScene extends eui.Component {
 	private onExit() {
 		CustomEventMgr.removeEventListener("600", this.afterFetchMissionData_600, this);
 		CustomEventMgr.removeEventListener("502", this.afterFetchBranchStoryData_502, this);
+		// CustomEventMgr.removeEventListener("510", this.afterFetchBranchStoryState_510, this);
 		if (PlayerData.guide == 5) {
 			CustomEventMgr.removeEventListener("Guide_Step_5_3", this.onBegin, this);
 		}
@@ -115,6 +117,13 @@ class NewStorySelectScene extends eui.Component {
 	}
 
 	private afterFetchBranchStoryData_502(evt: egret.Event) {
+		NetLoading.removeLoading();
+		SceneMgr.gotoBranchMainScene(evt.data);
+		// var request = HttpProtocolMgr.fetchBranchStoryUnlockState_510(evt.data);
+		// HttpMgr.postRequest(request);
+	}
+
+	private afterFetchBranchStoryState_510(evt: egret.Event) {
 		NetLoading.removeLoading();
 		SceneMgr.gotoBranchMainScene(evt.data);
 	}

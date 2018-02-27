@@ -48,6 +48,16 @@ class StoryData {
         }
     }
 
+    public static updateBranchStoryUnlockState(id: number, obj: {}) {
+        if (id == 1000 && obj != null) {
+            this._unlockState_branch_1 = obj;
+        } else if (id == 2000 && obj != null) {
+            this._unlockState_branch_2 = obj;
+        } else if (id == 3000 && obj != null) {
+            this._unlockState_branch_3 = obj;
+        }
+    }
+
     public static updateCompletedVipStory(obj: {}) {
         console.log("StoryData::updateCompletedVipStory()");
         if (obj !== null) {
@@ -79,6 +89,17 @@ class StoryData {
         }
     }
 
+    public static getBranchStoryUnlockState(id: number) {
+        switch (id) {
+            case 1000:
+                return this._unlockState_branch_1;
+            case 2000:
+                return this._unlockState_branch_2;
+            case 3000:
+                return this._unlockState_branch_3;
+        }
+    }
+
     public static getHanziText(num: number): string {
         var text: string = "";
         if (num <= 10) {
@@ -104,6 +125,12 @@ class StoryData {
     //     1: 1,
 
     // }
+    
+    //对应支线的解锁状态
+    private static _unlockState_branch_1: {} = null;
+    private static _unlockState_branch_2: {} = null;
+    private static _unlockState_branch_3: {} = null;
+
     private static _isShowLastTip: boolean = false;
 
     private static _selectedTag: number = null;
