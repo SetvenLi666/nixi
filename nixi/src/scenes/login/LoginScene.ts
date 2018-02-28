@@ -16,7 +16,7 @@ class LoginScene extends eui.Component {
 
 	// Event && Callback -----------------------------------
 	private whenEnter() {
-		SoundManager.instance().startBgSound("load");
+		SoundManager.instance().startBgSound("story");
 		
 		this.removeEventListener(egret.Event.ADDED_TO_STAGE, this.whenEnter, this);
 		this.group.width = Math.min(DisplayMgr.stageW, 852);
@@ -53,7 +53,7 @@ class LoginScene extends eui.Component {
 		this.login.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onLogin, this);
 		egret.Tween.removeAllTweens();
 		RES.destroyRes("login");
-		SoundManager.instance().destroyStartSound();
+		// SoundManager.instance().destroyStartSound();
 	}
 
 	private onLogin(evt: egret.TouchEvent) {

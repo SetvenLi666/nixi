@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TabItemRendererSkin" width="133" height="38" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="up,down,disabled" >
+	<e:Image source="huodong_tab_2_png" horizontalCenter="0" verticalCenter="0" source.disabled="huodong_tab_1_png" source.down="huodong_tab_1_png"/>
+	<e:Label id="title" text="{data}" horizontalCenter="0" verticalCenter="0" size="20" textAlign="center"/>
+</e:Skin>
