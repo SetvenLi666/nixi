@@ -59,7 +59,7 @@ class TaskUnlockPanel extends eui.Component {
 	private onGo() {
 		DisplayMgr.buttonScale(this.btn_go, function () {
 			SoundManager.instance().buttonSound();
-			SoundManager.instance().destroyStartSound();
+			// SoundManager.instance().destroyStartSound();
 			SceneMgr.gotoNewStoryScene();
 		});
 	}
