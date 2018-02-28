@@ -64,18 +64,26 @@
 				<e:Image source="newmain_ui_json.main_text_bg" y="71" horizontalCenter="0"/>
 				<e:Image source="newmain_ui_json.main_invite_text" y="72" scaleX="1" scaleY="1" horizontalCenter="0"/>
 			</e:Group>
-			<e:Group id="mailGroup" width="110" height="110" anchorOffsetX="55" anchorOffsetY="55" y="1084" right="7">
+			<e:Group id="mailGroup" width="110" height="110" anchorOffsetX="55" anchorOffsetY="55" y="791" right="7">
 				<e:Image scaleX="1" scaleY="1" source="newmain_ui_json.main_mail" horizontalCenter="0" verticalCenter="0"/>
 				<e:Image source="newmain_ui_json.main_text_bg" y="60" horizontalCenter="0"/>
 				<e:Image horizontalCenter="0" source="newmain_ui_json.main_mail_text" y="61"/>
 				<e:Image id="mailTip" x="83" y="33" source="newmain_ui_json.main_mail_tip" anchorOffsetX="18.5" anchorOffsetY="19" visible="false"/>
 			</e:Group>
 			<ns1:ChatBar y="140" skinName="ChatBarSkin" horizontalCenter="0"/>
-			<e:Component id="sj_comp" y="1180" skinName="ItemSJ" anchorOffsetX="53" x="186"/>
-			<e:Component id="xt_comp" y="1340" skinName="ItemXT" anchorOffsetX="53" x="256"/>
-			<e:Component id="yl_comp" y="1385" skinName="ItemYL" anchorOffsetX="53" x="426"/>
-			<e:Component id="sd_comp" y="1340" skinName="ItemSD" anchorOffsetX="53" x="596"/>
-			<e:Component id="jj_comp" y="1180" skinName="ItemJJ" anchorOffsetX="53" x="666"/>
+			<e:Group id="btnGroup" height="106" left="0" right="0" bottom="0">
+				<e:Image id="btn_shequ" source="newmain_ui_json.main_ui_shequ" x="38" y="0"/>
+				<e:Image id="btn_xingtu" source="newmain_ui_json.main_ui_xingtu" x="170" y="0"/>
+				<e:Image id="btn_tonggao" source="newmain_ui_json.main_ui_tonggao" x="326" y="0"/>
+				<e:Image id="btn_shangdian" source="newmain_ui_json.main_ui_shangdian" x="515" y="0"/>
+				<e:Group id="btn_jinji" width="106" height="106" x="659" bottom="0">
+					<e:Image source="newmain_ui_json.main_ui_jinji" scaleX="1" scaleY="1"/>
+					<e:Image id="imglock" source="shop_item_lock_png" horizontalCenter="0" verticalCenter="0"/>
+				</e:Group>
+				<e:layout>
+					<e:BasicLayout/>
+				</e:layout>
+			</e:Group>
 		</e:Group>
 	</e:Group>
 </e:Skin>

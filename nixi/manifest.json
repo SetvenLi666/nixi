@@ -114,6 +114,7 @@
 		"bin-debug/panel/LimitDiscountPanel.js",
 		"bin-debug/panel/MonthCardPanel.js",
 		"bin-debug/panel/MothCardPanel.js",
+		"bin-debug/panel/NewHuodongPanel.js",
 		"bin-debug/panel/NewSharePanel.js",
 		"bin-debug/panel/NewSignPanel.js",
 		"bin-debug/panel/OnePanel.js",
