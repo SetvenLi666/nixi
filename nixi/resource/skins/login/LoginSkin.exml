@@ -2,8 +2,7 @@
 <e:Skin class="LoginSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="852" height="1136">
 	<e:Group id="group" width="852" height="1136" horizontalCenter="0" verticalCenter="0">
 		<e:Image source="login_bg_png" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0"/>
-		<e:Image source="login_logo_png" y="940" horizontalCenter="-9.5" x="105" scaleX="1" scaleY="1"/>
-		<e:Image source="login_text_png" horizontalCenter="0" bottom="0"/>
+		<e:Image source="login_logo_png" y="925" horizontalCenter="-9.5" x="105" scaleX="1" scaleY="1"/>
 		<e:Label id="version" text="version-0116" y="1108" size="16" textColor="0x955051" horizontalCenter="324.5" x="705" scaleX="1" scaleY="1" visible="false"/>
 		<e:Group width="263" height="263" y="640" horizontalCenter="0">
 			<e:Image id="ac_star" source="login_star_png" anchorOffsetX="126" anchorOffsetY="126" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0"/>

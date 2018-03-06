@@ -37,11 +37,20 @@ class MainComp extends eui.Component {
 	public shareImg: eui.Image;
 	public shareText: eui.Image;
 
-	public sj_comp: eui.Component;
-	public xt_comp: eui.Component;
-	public yl_comp: eui.Component;
-	public sd_comp: eui.Component;
-	public jj_comp: eui.Component;
+	// public sj_comp: eui.Component;
+	// public xt_comp: eui.Component;
+	// public yl_comp: eui.Component;
+	// public sd_comp: eui.Component;
+	// public jj_comp: eui.Component;
+
+	public btnGroup: eui.Group;
+	public btn_shequ: eui.Image;
+	public btn_xingtu: eui.Image;
+	public btn_tonggao: eui.Image;
+	public btn_shangdian: eui.Image;
+	public btn_jinji: eui.Group;
+
+	public imglock: eui.Image;
 
 	public model: Model;
 
@@ -74,7 +83,8 @@ class MainComp extends eui.Component {
 		//图鉴josn生成
 		// this.checkAllClothes();
 
-		SoundManager.instance().startBgSound("main");
+		// SoundManager.instance().startBgSound("main");
+		// SoundManager.instance().startBgSound("story");
 
 		this.niudanGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnGashapon, this);
 		this.mailGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onMailTap, this);
@@ -153,7 +163,11 @@ class MainComp extends eui.Component {
 			DisplayMgr.set2Center(guidePanel);
 			this.stage.addChild(guidePanel);
 			guidePanel.currentState = "guide_step_5_100";
-			guidePanel.acGroup.x = 0;
+			// console.log((this.group.width - 30 - this.btn_shequ.width * 5) / 4 + 159);
+			// guidePanel.acGroup.horizontalCenter = (this.group.width - 30 - this.btn_shequ.width * 5) / 4 + 159;
+			// console.log(guidePanel.acGroup.horizontalCenter);
+			// guidePanel.acGroup.validateNow();
+			// guidePanel.acGroup.x = 0;
 			guidePanel.playAnimation();
 			CustomEventMgr.addEventListener("Guide_Step_5_100", this.onXtComp, this);
 		} else if (PlayerData.guide == 6) {
@@ -165,12 +179,13 @@ class MainComp extends eui.Component {
 			DisplayMgr.set2Center(pkguide);
 			this.stage.addChild(pkguide);
 			pkguide.currentState = "pkGuide_step_2";
-			pkguide.acGroup.x = this.jj_comp.x = this.group.width * 0.88;
+			// pkguide.acGroup.x = this.jj_comp.x = this.group.width * 0.88;
 			pkguide.stopAnimation();
-			this.jj_comp["imgLock"].visible = true;
+			// this.jj_comp["imgLock"].visible = true;
+			this.imglock.visible = true;
 			CustomEventMgr.addEventListener("PkGuide_Step_2", this.onJjComp, this);
 			egret.setTimeout(function () {
-				var tw_lock = egret.Tween.get(self.jj_comp["imgLock"]);
+				var tw_lock = egret.Tween.get(self.imglock);
 				tw_lock.to({ alpha: 0 }, 500)
 					.to({ alpha: 1 }, 500)
 					.to({ alpha: 0 }, 500)
@@ -337,11 +352,11 @@ class MainComp extends eui.Component {
 
 		this.touchRect.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouchRect, this);
 
-		this.sj_comp.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onSjComp, this);
-		this.xt_comp.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onXtComp, this);
-		this.yl_comp.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onYlComp, this);
-		this.sd_comp.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onSdComp, this);
-		this.jj_comp.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onJjComp, this);
+		this.btn_shequ.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onSjComp, this);
+		this.btn_xingtu.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onXtComp, this);
+		this.btn_tonggao.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onYlComp, this);
+		this.btn_shangdian.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onSdComp, this);
+		this.btn_jinji.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onJjComp, this);
 
 		if (PlayerData.pkGuide == 1) {
 			CustomEventMgr.removeEventListener("PkGuide_Step_2", this.onJjComp, this);
@@ -350,7 +365,6 @@ class MainComp extends eui.Component {
 
 	private initView() {
 		if (NewsData.mail > 0) {
-
 			this.mailTip.visible = true;
 			var tw_tip = egret.Tween.get(this.mailTip, { loop: true });
 			tw_tip.to({ scaleX: 1.05, scaleY: 1.05 }, 300)
@@ -371,11 +385,29 @@ class MainComp extends eui.Component {
 		//限时礼包========
 		this.checkoutTlDiscount();
 
-		this.sj_comp.x = this.group.width * 0.12;
-		this.xt_comp.x = this.group.width * 0.28;
-		this.yl_comp.x = this.group.width * 0.50;
-		this.sd_comp.x = this.group.width * 0.72;
-		this.jj_comp.x = this.group.width * 0.88;
+		//邀请
+		// if (ConstData.Conf.whiteList.indexOf(LoginData.sid) != -1 || window["OPEN_DATA"].openid == "aaaa") {
+		// 	this.yqGroup.visible = true;
+		// } else {
+		// 	this.yqGroup.visible = false;
+		// }
+
+		// this.sj_comp.x = this.group.width * 0.12;
+		// this.xt_comp.x = this.group.width * 0.28;
+		// this.yl_comp.x = this.group.width * 0.50;
+		// this.sd_comp.x = this.group.width * 0.72;
+		// this.jj_comp.x = this.group.width * 0.88;
+
+		// this.btn_shequ.x = this.btnGroup.width * 0.12;
+		// this.btn_xingtu.x = this.btnGroup.width * 0.28;
+		// this.btn_tonggao.x = this.btnGroup.width * 0.50;
+		// this.btn_shangdian.x = this.btnGroup.width * 0.72;
+		// this.btn_jinji.x = this.btnGroup.width * 0.88;
+		var layout = new eui.HorizontalLayout();
+		layout.horizontalAlign = "center";
+		layout.verticalAlign = "center";
+		layout.gap = (this.group.width - 30 - this.btn_shequ.width * 5) / 4; 
+		this.btnGroup.layout = layout;
 
 		//更新礼包视图
 		this.updateLibaoView();
@@ -385,23 +417,22 @@ class MainComp extends eui.Component {
 		this.updateNewShare();
 
 		this.model.dress(ClothesData.ondressCache, ClothesData.ornamentsCache);
-		// console.log(ClothesData.ondressCache);
-		// console.log(ClothesData.ornamentsCache);
-		// this.model.dress(ClothesData.ondressCache, {11: 71041, 12: 70000, 13: 70000, 14: 70000, 15: 70153, 16: 70000, 17: 70000, 18: 70000, 19: 70000, 20: 70000, 21: 70632, 22: 70000, 23: 70633});
 
 		if (PlayerData.mission <= 6) {
-			this.jj_comp["imgLock"].visible = true;
+			// this.jj_comp["imgLock"].visible = true;
+			this.imglock.visible = true;
 		} else {
-			this.jj_comp["imgLock"].visible = false;
+			// this.jj_comp["imgLock"].visible = false;
+			this.imglock.visible = false;
 		}
 
-		this.sj_comp.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onSjComp, this);
-		this.xt_comp.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onXtComp, this);
-		this.yl_comp.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onYlComp, this);
-		this.sd_comp.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onSdComp, this);
-		this.jj_comp.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onJjComp, this);
+		this.btn_shequ.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onSjComp, this);
+		this.btn_xingtu.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onXtComp, this);
+		this.btn_tonggao.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onYlComp, this);
+		this.btn_shangdian.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onSdComp, this);
+		this.btn_jinji.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onJjComp, this);
 
-		this.playCompAnimation();
+		// this.playCompAnimation();
 
 		if (PlayerData.guide == 0) {
 			var n = Math.floor(Math.random() * 3) + 4;
@@ -422,30 +453,30 @@ class MainComp extends eui.Component {
 		var tw_coin = egret.Tween.get(this.libao_ac, { loop: true });
 		tw_coin.to({ rotation: 360 }, 4500);
 
-		var tw_sj = egret.Tween.get(this.sj_comp["tween"], { loop: true });
-		tw_sj.to({ scaleX: 1.1, scaleY: 1.1 }, 600)
-			.wait(100)
-			.to({ scaleX: 1, scaleY: 1 }, 700);
+		// var tw_sj = egret.Tween.get(this.sj_comp["tween"], { loop: true });
+		// tw_sj.to({ scaleX: 1.1, scaleY: 1.1 }, 600)
+		// 	.wait(100)
+		// 	.to({ scaleX: 1, scaleY: 1 }, 700);
 
-		var tw_xt = egret.Tween.get(this.xt_comp["tween"], { loop: true });
-		tw_xt.to({ scaleX: 1.1, scaleY: 1.1 }, 600)
-			.wait(100)
-			.to({ scaleX: 1, scaleY: 1 }, 700);
+		// var tw_xt = egret.Tween.get(this.xt_comp["tween"], { loop: true });
+		// tw_xt.to({ scaleX: 1.1, scaleY: 1.1 }, 600)
+		// 	.wait(100)
+		// 	.to({ scaleX: 1, scaleY: 1 }, 700);
 
-		var tw_yl = egret.Tween.get(this.yl_comp["tween"], { loop: true });
-		tw_yl.to({ scaleX: 1.1, scaleY: 1.1 }, 600)
-			.wait(100)
-			.to({ scaleX: 1, scaleY: 1 }, 700);
+		// var tw_yl = egret.Tween.get(this.yl_comp["tween"], { loop: true });
+		// tw_yl.to({ scaleX: 1.1, scaleY: 1.1 }, 600)
+		// 	.wait(100)
+		// 	.to({ scaleX: 1, scaleY: 1 }, 700);
 
-		var tw_sd = egret.Tween.get(this.sd_comp["tween"], { loop: true });
-		tw_sd.to({ scaleX: 1.1, scaleY: 1.1 }, 600)
-			.wait(100)
-			.to({ scaleX: 1, scaleY: 1 }, 700);
+		// var tw_sd = egret.Tween.get(this.sd_comp["tween"], { loop: true });
+		// tw_sd.to({ scaleX: 1.1, scaleY: 1.1 }, 600)
+		// 	.wait(100)
+		// 	.to({ scaleX: 1, scaleY: 1 }, 700);
 
-		var tw_jj = egret.Tween.get(this.jj_comp["tween"], { loop: true });
-		tw_jj.to({ scaleX: 1.1, scaleY: 1.1 }, 600)
-			.wait(100)
-			.to({ scaleX: 1, scaleY: 1 }, 700);
+		// var tw_jj = egret.Tween.get(this.jj_comp["tween"], { loop: true });
+		// tw_jj.to({ scaleX: 1.1, scaleY: 1.1 }, 600)
+		// 	.wait(100)
+		// 	.to({ scaleX: 1, scaleY: 1 }, 700);
 	}
 
 	private createTalkComp() {
@@ -522,11 +553,11 @@ class MainComp extends eui.Component {
 	}
 
 	private playCompAnimation() {
-		egret.Tween.get(this.sj_comp).to({ y: 820 }, 750, egret.Ease.backOut);
-		egret.Tween.get(this.xt_comp).to({ y: 930 }, 900, egret.Ease.backOut);
-		egret.Tween.get(this.yl_comp).to({ y: 975 }, 600, egret.Ease.backOut);
-		egret.Tween.get(this.sd_comp).to({ y: 930 }, 900, egret.Ease.backOut);
-		egret.Tween.get(this.jj_comp).to({ y: 820 }, 750, egret.Ease.backOut);
+		// egret.Tween.get(this.sj_comp).to({ y: 820 }, 750, egret.Ease.backOut);
+		// egret.Tween.get(this.xt_comp).to({ y: 930 }, 900, egret.Ease.backOut);
+		// egret.Tween.get(this.yl_comp).to({ y: 975 }, 600, egret.Ease.backOut);
+		// egret.Tween.get(this.sd_comp).to({ y: 930 }, 900, egret.Ease.backOut);
+		// egret.Tween.get(this.jj_comp).to({ y: 820 }, 750, egret.Ease.backOut);
 	}
 
 	// private newShareAnimationFirst() {
@@ -604,6 +635,9 @@ class MainComp extends eui.Component {
 			var panel = new HuodongPanel();
 			DisplayMgr.set2Center(panel);
 			self.stage.addChild(panel);
+			// var panel = new NewHuodongPanel();
+			// DisplayMgr.set2Center(panel);
+			// self.stage.addChild(panel);
 		});
 	}
 
@@ -677,7 +711,7 @@ class MainComp extends eui.Component {
 	}
 
 	private onSjComp() {
-		DisplayMgr.buttonScale(this.sj_comp, function () {
+		DisplayMgr.buttonScale(this.btn_shequ, function () {
 			SoundManager.instance().buttonSound();
 			NetLoading.showLoading();
 			var request: egret.URLRequest = HttpProtocolMgr.social_info_800();
@@ -686,7 +720,7 @@ class MainComp extends eui.Component {
 	}
 
 	private onXtComp() {
-		DisplayMgr.buttonScale(this.xt_comp, function () {
+		DisplayMgr.buttonScale(this.btn_xingtu, function () {
 			SoundManager.instance().buttonSound();
 			NetLoading.showLoading();
 			var request: egret.URLRequest = HttpProtocolMgr.fetchStoryData_500();
@@ -695,7 +729,7 @@ class MainComp extends eui.Component {
 	}
 
 	private onYlComp() {
-		DisplayMgr.buttonScale(this.yl_comp, function () {
+		DisplayMgr.buttonScale(this.btn_tonggao, function () {
 			SoundManager.instance().buttonSound();
 			NetLoading.showLoading();
 			if (true === CofferData.hasInitTemplateData()) {
@@ -711,7 +745,7 @@ class MainComp extends eui.Component {
 
 	private onSdComp() {
 		var self = this;
-		DisplayMgr.buttonScale(this.sd_comp, function () {
+		DisplayMgr.buttonScale(this.btn_shangdian, function () {
 			SoundManager.instance().buttonSound();
 			if (ClothesData.hasFetchedUserClohtes()) {
 				self.afterFetchClothesData_400(null);
@@ -726,7 +760,7 @@ class MainComp extends eui.Component {
 
 	private onJjComp() {
 		var self = this;
-		DisplayMgr.buttonScale(this.jj_comp, function () {
+		DisplayMgr.buttonScale(this.btn_jinji, function () {
 			SoundManager.instance().buttonSound();
 			if (PlayerData.mission <= 6) {
 				Prompt.showPrompt(self.stage, "完成娱乐圈任务6之后解锁");
@@ -874,7 +908,7 @@ class MainComp extends eui.Component {
 			}
 		} else {
 			NetLoading.removeLoading();
-			SoundManager.instance().destroyStartSound();
+			// SoundManager.instance().destroyStartSound();
 			SceneMgr.gotoNewStorySelectScene();
 		}
 	}

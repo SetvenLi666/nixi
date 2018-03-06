@@ -15,7 +15,10 @@ var game_file_list = [
 	"libs/modules/launcher/launcher.js",
 	"promise/promise.js",
 	"bin-debug/AssetAdapter.js",
+<<<<<<< HEAD
 	"bin-debug/KJSDK.js",
+=======
+>>>>>>> master
 	"bin-debug/Main.js",
 	"bin-debug/Quwanwan.js",
 	"bin-debug/ThemeAdapter.js",
@@ -113,10 +116,14 @@ var game_file_list = [
 	"bin-debug/panel/HuodongPanel.js",
 	"bin-debug/panel/InviteFreeRewardPanel.js",
 <<<<<<< HEAD
+<<<<<<< HEAD
 	"bin-debug/panel/InvitePanel.js",
 =======
 	"bin-debug/Main.js",
 >>>>>>> ceshi
+=======
+	"bin-debug/panel/InvitePanel.js",
+>>>>>>> master
 	"bin-debug/panel/IosPayTipPanel.js",
 	"bin-debug/panel/LimitDiscountPanel.js",
 	"bin-debug/panel/MonthCardPanel.js",
