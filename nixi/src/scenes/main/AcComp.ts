@@ -2,7 +2,7 @@ class AcComp extends eui.Component {
 	public group: eui.Group;
 	public scroller: eui.Scroller;
 	public list: eui.List;
-	public dot: eui.Group;
+	public ptGroup: eui.Group;
 
 	private checkDistance: number = 100;
 	private pageWidth: number = 300;
@@ -11,7 +11,7 @@ class AcComp extends eui.Component {
 	private startX: number = 0;
 	private movedX: number = 0;
 
-	private dataSource: string[];
+	private dataSource: {}[];
 
 	private timer: egret.Timer;
 	private tp: number = 1;
@@ -28,10 +28,14 @@ class AcComp extends eui.Component {
 		this.removeEventListener(egret.Event.ADDED_TO_STAGE, this.addStage, this);
 
 		this.dataSource = [
-			"ac_page_cj_png",
-			"ac_page_qd_png",
-			"ac_page_tl_png",
-			"ac_page_sc_png"
+			{
+				img: "newmain_ui_json.main_ui_ac_invit",
+				isShow: true
+			},
+			{
+				img: "newmain_ui_json.main_ui_ac_mc",
+				isShow: true
+			}
 		]
 		this.pageCount = this.dataSource.length;
 		this.list.dataProvider = new eui.ArrayCollection(this.dataSource);
@@ -41,7 +45,14 @@ class AcComp extends eui.Component {
 		this.scroller.viewport = this.list;
 		this.scroller.throwSpeed = 0;
 		this.startX = this.curPageIndex * this.pageWidth;
-		this["index_img_" + this.curPageIndex].source = "newmain_ui_json.main_selected_ac";
+
+		// this["index_img_" + this.curPageIndex].source = "newmain_ui_json.main_selected_ac";
+		for(var i = 0; i < this.pageCount; i++) {
+			var ptImg = new eui.Image("newmain_ui_json.main_normal_ac");
+			this.ptGroup.addChild(ptImg);
+		}
+
+		(<eui.Image>(this.ptGroup.getChildAt(0))).source = "newmain_ui_json.main_selected_ac";
 
 		this.scroller.addEventListener(eui.UIEvent.CHANGE_START, this.onChangeStart, this);
 		this.scroller.addEventListener(eui.UIEvent.CHANGE_END, this.onChangeEnd, this);
@@ -144,11 +155,6 @@ class AcComp extends eui.Component {
 					this.curPageIndex++;
 					tp = 1;
 					this.onMove(tp);
-					// this.startX = this.curPageIndex * (this.pageWidth);
-					// egret.Tween.get(this.scroller.viewport).to({ scrollH: this.curPageIndex * this.pageWidth }, 300).call(function () {
-					// 	this["index_img_" + (this.curPageIndex - 1)].source = "main_normal_ac_png";
-					// 	this["index_img_" + this.curPageIndex].source = "main_selected_ac_png";
-					// }, this);
 				}
 			}
 			else {
@@ -156,11 +162,6 @@ class AcComp extends eui.Component {
 					this.curPageIndex--;
 					tp = -1;
 					this.onMove(tp);
-					// this.startX = this.curPageIndex * (this.pageWidth);
-					// egret.Tween.get(this.scroller.viewport).to({ scrollH: this.curPageIndex * this.pageWidth }, 300).call(function () {
-					// 	this["index_img_" + (this.curPageIndex + 1)].source = "main_normal_ac_png";
-					// 	this["index_img_" + this.curPageIndex].source = "main_selected_ac_png";
-					// }, this);
 				}
 			}
 		}
@@ -172,11 +173,14 @@ class AcComp extends eui.Component {
 	}
 
 	private onMove(tp: number) {
+		var self = this;
 		this.scroller.enabled = false;
 		this.startX = this.curPageIndex * (this.pageWidth);
 		egret.Tween.get(this.scroller.viewport).to({ scrollH: this.curPageIndex * this.pageWidth }, 300).call(function () {
-			this["index_img_" + (this.curPageIndex - tp)].source = "newmain_ui_json.main_normal_ac";
-			this["index_img_" + this.curPageIndex].source = "newmain_ui_json.main_selected_ac";
+			// this["index_img_" + (this.curPageIndex - tp)].source = "newmain_ui_json.main_normal_ac";
+			// this["index_img_" + this.curPageIndex].source = "newmain_ui_json.main_selected_ac";
+			(<eui.Image>(self.ptGroup.getChildAt(self.curPageIndex - tp))).source = "newmain_ui_json.main_normal_ac";
+			(<eui.Image>(self.ptGroup.getChildAt(self.curPageIndex))).source = "newmain_ui_json.main_selected_ac";
 			this.scroller.enabled = true;
 			this.timer.start();
 		}, this);
@@ -196,6 +200,7 @@ class AcComp extends eui.Component {
 
 class AcListItemRenderer extends eui.ItemRenderer {
 	public icon: eui.Image;
+	public flag: eui.Image;
 
 	public constructor() {
 		super();
@@ -208,6 +213,7 @@ class AcListItemRenderer extends eui.ItemRenderer {
 	}
 
 	protected dataChanged() {
-		this.icon.source = this.data;
+		this.icon.source = this.data.img;
+		this.flag.visible = this.data.isShow;
 	}
 }
