@@ -73,6 +73,12 @@ class MainComp extends eui.Component {
 		var self = this;
 
 		this.popGroup.mask = this.groupMask;
+		
+		var key = egret.setTimeout(function() {
+			this.hideLingdang();
+			egret.clearTimeout(key);
+		}, this, 800);
+		
 
 		this.updateBg();
 
@@ -198,11 +204,11 @@ class MainComp extends eui.Component {
 	private updateBg() {
 		var time = new Date();
 		var hour = time.getHours();
-		if(hour >= 5 && hour < 11) {
+		if (hour >= 5 && hour < 11) {
 			this.bg.source = "main_bg_1_png";
-		}else if(hour >= 11 && hour < 17) {
+		} else if (hour >= 11 && hour < 17) {
 			this.bg.source = "main_bg_2_png";
-		}else if(hour >= 17 || hour < 5) {
+		} else if (hour >= 17 || hour < 5) {
 			this.bg.source = "main_bg_3_png";
 		}
 	}
@@ -391,7 +397,7 @@ class MainComp extends eui.Component {
 		var layout = new eui.HorizontalLayout();
 		layout.horizontalAlign = "center";
 		layout.verticalAlign = "center";
-		layout.gap = (this.group.width - 30 - this.btn_shequ.width * 5) / 4; 
+		layout.gap = (this.group.width - 30 - this.btn_shequ.width * 5) / 4;
 		this.btnGroup.layout = layout;
 
 		//更新礼包视图
@@ -797,25 +803,35 @@ class MainComp extends eui.Component {
 
 	private onBtnLingdang(evt: egret.TouchEvent) {
 		var self = this;
-		DisplayMgr.buttonScale(this.btn_lingdang, function() {
-			if(self.isOpen) {
+		DisplayMgr.buttonScale(this.btn_lingdang, function () {
+			if (self.isOpen) {
 				//收起
 				self.isOpen = false;
 				self.btn_lingdang.touchEnabled = false;
 				var tw = egret.Tween.get(self.popGroup);
-				tw.to({y: 52 - 590}, 300).call(function() {
+				tw.to({ y: 52 - 590 }, 300).call(function () {
 					self.btn_lingdang.touchEnabled = true;
 				}, self);
-			}else {
+			} else {
 				//弹出
 				self.isOpen = true;
 				self.btn_lingdang.touchEnabled = false;
 				var tw = egret.Tween.get(self.popGroup);
-				tw.to({y: 52}, 300).call(function() {
+				tw.to({ y: 52 }, 300).call(function () {
 					self.btn_lingdang.touchEnabled = true;
 				}, self);
 			}
 		});
+	}
+
+	private hideLingdang() {
+		var self = this;
+		self.isOpen = false;
+		self.btn_lingdang.touchEnabled = false;
+		var tw = egret.Tween.get(self.popGroup);
+		tw.to({ y: 52 - 590 }, 300).call(function () {
+			self.btn_lingdang.touchEnabled = true;
+		}, self);
 	}
 
 	private afterTakePackageInfo_104() {
@@ -826,7 +842,7 @@ class MainComp extends eui.Component {
 				panel = new SixPanel();
 			} else if (WanbaData.packageData.indexOf("libao_3") == -1 && InviteData.reward10_state != 3) {
 				panel = new ThirtyPanel();
-			} 
+			}
 			// else {
 			// 	panel = new InviteFreeRewardPanel();
 			// }
@@ -837,7 +853,7 @@ class MainComp extends eui.Component {
 				panel = new SixPanel();
 			} else if (WanbaData.packageData.indexOf("libao_3") == -1 && InviteData.reward10_state != 3) {
 				panel = new ThirtyPanel();
-			} 
+			}
 			// else {
 			// 	panel = new InviteFreeRewardPanel();
 			// }
