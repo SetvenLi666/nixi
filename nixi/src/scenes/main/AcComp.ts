@@ -60,14 +60,12 @@ class AcComp extends eui.Component {
 		this.timer = new egret.Timer(3500, 0);
 		this.timer.addEventListener(egret.TimerEvent.TIMER, this.onTimerCallback, this);
 
-		CustomEventMgr.addEventListener("302", this.result_of_302, this);
 
 		this.timer.start();
 	}
 
 	private onExit() {
 		this.removeEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit, this);
-		CustomEventMgr.removeEventListener("302", this.result_of_302, this);
 
 		this.list.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this.onSelected, this);
 		this.scroller.removeEventListener(eui.UIEvent.CHANGE_START, this.onChangeStart, this);
@@ -102,41 +100,13 @@ class AcComp extends eui.Component {
 			case 0:
 				NetLoading.showLoading();
 				// var request: egret.URLRequest = HttpProtocolMgr.all_products_100();
-				var request: egret.URLRequest;
-				if (GashaponData.has_init_gashapon_template()) {
-					request = HttpProtocolMgr.gashapon_info_306(false);
-				} else {
-					request = HttpProtocolMgr.gashapon_info_306(true);
-				}
+				var request = HttpProtocolMgr.take_invite_info_165();
 				HttpMgr.postRequest(request);
 				break;
 			case 1:
-				NetLoading.showLoading();
-				var request: egret.URLRequest;
-				if (SigninData.has_init_signin7_template()) {
-					request = HttpProtocolMgr.signin7_info_302(false);
-				} else {
-					request = HttpProtocolMgr.signin7_info_302(true);
-				}
-				HttpMgr.postRequest(request);
-				break;
-			case 2:
-				// var onePanel = new OnePanel();
-				// DisplayMgr.set2Center(onePanel);
-				// egret.MainContext.instance.stage.addChild(onePanel);
-				var panel = new EnergyPanel();
+				var panel = new MonthCardPanel();
 				DisplayMgr.set2Center(panel);
-				egret.MainContext.instance.stage.addChild(panel);
-				break;
-			case 3:
-				// var sixPanel = new SixPanel();
-				// DisplayMgr.set2Center(sixPanel);
-				// egret.MainContext.instance.stage.addChild(sixPanel);
-				NetLoading.showLoading();
-				var request = HttpProtocolMgr.all_products_100();
-				HttpMgr.postRequest(request);
-				break;
-			case 4:
+				this.stage.addChild(panel);
 				break;
 		}
 	}
@@ -184,16 +154,6 @@ class AcComp extends eui.Component {
 			this.scroller.enabled = true;
 			this.timer.start();
 		}, this);
-	}
-
-	private result_of_302(evt: egret.Event) {
-		NetLoading.removeLoading();
-		var panel = new SigninPanel();
-		DisplayMgr.set2Center(panel);
-		this.stage.addChild(panel);
-	}
-
-	private result_of_306(evt: egret.Event) {
 	}
 }
 

@@ -41,6 +41,10 @@ class MainComp extends eui.Component {
 	public btn_jinji: eui.Group;
 
 	public popGroup: eui.Group;
+	public btn_lingdang: eui.Image;
+	public groupMask: eui.Rect;
+
+	private isOpen: boolean = true;
 
 	public imglock: eui.Image;
 
@@ -68,6 +72,8 @@ class MainComp extends eui.Component {
 
 		var self = this;
 
+		this.popGroup.mask = this.groupMask;
+
 		this.updateBg();
 
 		this.initView();
@@ -91,6 +97,8 @@ class MainComp extends eui.Component {
 		this.mcGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnMc, this);
 
 		this.tlGroup2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnTl, this);
+
+		this.btn_lingdang.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnLingdang, this);
 
 		// this.newShare.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onShare, this);
 
@@ -337,6 +345,7 @@ class MainComp extends eui.Component {
 		this.mcGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnMc, this);
 
 		this.tlGroup2.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnTl, this);
+		this.btn_lingdang.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onBtnLingdang, this);
 
 		this.btn_shequ.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onSjComp, this);
 		this.btn_xingtu.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onXtComp, this);
@@ -677,6 +686,7 @@ class MainComp extends eui.Component {
 				HttpMgr.postRequest(request);
 			} else if ((ShareData.isFirstPay == false) || (ShareData.isFirstPay && ShareData.firstpay_lottery_times == 0)) {
 				var panel = new FirstPayPanel();
+				InviteData.isShowInvite = false;
 				DisplayMgr.set2Center(panel);
 				self.stage.addChild(panel);
 			} else {
@@ -782,6 +792,29 @@ class MainComp extends eui.Component {
 			NetLoading.showLoading();
 			var request: egret.URLRequest = HttpProtocolMgr.competition_info_820(!CompetitionData.hasInitRankInfo());
 			HttpMgr.postRequest(request);
+		});
+	}
+
+	private onBtnLingdang(evt: egret.TouchEvent) {
+		var self = this;
+		DisplayMgr.buttonScale(this.btn_lingdang, function() {
+			if(self.isOpen) {
+				//收起
+				self.isOpen = false;
+				self.btn_lingdang.touchEnabled = false;
+				var tw = egret.Tween.get(self.popGroup);
+				tw.to({y: 52 - 590}, 300).call(function() {
+					self.btn_lingdang.touchEnabled = true;
+				}, self);
+			}else {
+				//弹出
+				self.isOpen = true;
+				self.btn_lingdang.touchEnabled = false;
+				var tw = egret.Tween.get(self.popGroup);
+				tw.to({y: 52}, 300).call(function() {
+					self.btn_lingdang.touchEnabled = true;
+				}, self);
+			}
 		});
 	}
 
