@@ -43,7 +43,7 @@ class BranchStoryMainScene extends eui.Component {
 	private addStage() {
 		this.container.width = DisplayMgr.stageW;
 		this.group.width = Math.min(DisplayMgr.stageW, 852);
-		this.baseComp = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy);
+		this.baseComp = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy, PlayerData.heart);
 		this.addChild(this.baseComp);
 
 		for (var i in StoryData.getBranchStoryById(this.curBranchId)) {

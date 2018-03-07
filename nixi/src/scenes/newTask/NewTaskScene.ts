@@ -106,7 +106,7 @@ class NewTaskScene extends eui.Component {
 		this.container.addChild(this.taskComp);
 		this.container.setChildIndex(this.taskComp, 1);
 
-		this.baseComp = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy);
+		this.baseComp = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy, PlayerData.heart);
 		this.addChild(this.baseComp);
 
 		this.updateView();

@@ -20,6 +20,7 @@ class PlayerData {
     public static get energy(): number { return this._energy; }
     public static get coin(): number { return this._coin; }
     public static get diam(): number { return this._diam; }
+    public static get heart(): number { return this._heart; }
     public static get mission(): number { return this._mission; }
     public static get phase(): number { return this._phase; }
     public static get left(): number { return this._left; }
@@ -52,6 +53,11 @@ class PlayerData {
             this._energy = obj["energy"];
             this._coin = obj["coin"];
             this._diam = obj["diam"];
+
+            if(obj["heart"]) {
+                this._heart = obj["heart"];
+            }
+
             this._mission = obj["mission"] > 200 ? 200 : obj["mission"];
             this._phase = obj["phase"] > 5 ? 5 : obj["phase"];
             this._left = obj["left"];
@@ -66,6 +72,7 @@ class PlayerData {
     private static _energy: number = 0;
     private static _coin: number = 0;
     private static _diam: number = 0;
+    private static _heart: number = 0;
     private static _mission: number = 0;
     private static _phase: number = 0;
     private static _left: number = 0;

@@ -26,7 +26,7 @@ class NewStorySelectScene extends eui.Component {
 	private addStage() {
 		this.container.width = DisplayMgr.stageW;
 		this.group.width = Math.min(DisplayMgr.stageW, 852);
-		this.baseComp = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy);
+		this.baseComp = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy, PlayerData.heart);
 		this.addChild(this.baseComp);
 
 		var index = Math.min(StoryData.getCompleteStoryArr().length, 28);

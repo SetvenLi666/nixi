@@ -24,7 +24,7 @@ class MainScene extends egret.DisplayObjectContainer {
 		var mainView = new MainComp();
 		this.addChild(mainView);
 
-		var baseView = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy);
+		var baseView = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy, PlayerData.heart);
 		this.addChild(baseView);
 
 		CustomEventMgr.addEventListener("169", this.result_of_169, this);

@@ -7,6 +7,8 @@ class BaseComp extends eui.Component {
 	public diam_lab: eui.Label;
 	public coinGroup: eui.Group;
 	public coin_lab: eui.Label;
+	public heartGroup: eui.Group;
+	public heart_lab: eui.Label;
 	public playerGroup: eui.Group;
 	public nickname_lab: eui.Label;
 	public energy_lab: eui.Label;
@@ -16,14 +18,18 @@ class BaseComp extends eui.Component {
 	private coin: number = 0;
 	private diam: number = 0;
 	private energy: number = 0;
+	private heart: number = 0;
 
-	public constructor(name: string, coin: number, diam: number, energy: number) {
+	public constructor(name: string, coin: number, diam: number, energy: number, heart: number) {
 		super();
 
 		this.nickname = name;
 		this.coin = coin;
 		this.diam = diam;
 		this.energy = energy;
+		if(heart) {
+			this.heart = heart;
+		}
 
 		this.skinName = "BaseCompSkin";
 		this.addEventListener(egret.Event.ADDED_TO_STAGE, this.addStage, this);
@@ -44,6 +50,7 @@ class BaseComp extends eui.Component {
 		this.energyGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onEnergyClicked, this);
 		this.diamGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onDiamClicked, this);
 		this.coinGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onCoinClicked, this);
+		this.heartGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onHeartClicked, this);
 		this.playerGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onPlayerGroup, this);
 
 		CustomEventMgr.addEventListener("Need Update nickname", this.needUpdateNickname, this);
@@ -56,6 +63,7 @@ class BaseComp extends eui.Component {
 		this.energyGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onEnergyClicked, this);
 		this.diamGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onDiamClicked, this);
 		this.coinGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onCoinClicked, this);
+		this.heartGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onHeartClicked, this);
 		this.playerGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onPlayerGroup, this);
 		CustomEventMgr.removeEventListener("Need Update nickname", this.needUpdateNickname, this);
 		CustomEventMgr.removeEventListener("Update Player Info", this.updatePlayerInfo, this);
@@ -100,6 +108,10 @@ class BaseComp extends eui.Component {
 			DisplayMgr.set2Center(energyPanel);
 			self.stage.addChild(energyPanel);
 		});
+	}
+
+	private onHeartClicked() {
+		
 	}
 
 	private onPlayerGroup() {
