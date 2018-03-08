@@ -172,6 +172,7 @@
     "src/panel/ShuangdanItemSkin.exml",
     "src/panel/ShuangdanSignPanelSkin.exml",
     "src/panel/StarsRewardPanelSkin.exml",
+    "src/panel/TabItemRendererSkin.exml",
     "src/panel/ThirdPanelSkin.exml",
     "src/panel/TujianItemSkin.exml",
     "src/panel/TujianPanelSkin.exml",

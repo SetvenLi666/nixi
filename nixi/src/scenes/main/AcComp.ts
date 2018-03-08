@@ -2,7 +2,7 @@ class AcComp extends eui.Component {
 	public group: eui.Group;
 	public scroller: eui.Scroller;
 	public list: eui.List;
-	public dot: eui.Group;
+	public ptGroup: eui.Group;
 
 	private checkDistance: number = 100;
 	private pageWidth: number = 300;
@@ -11,7 +11,7 @@ class AcComp extends eui.Component {
 	private startX: number = 0;
 	private movedX: number = 0;
 
-	private dataSource: string[];
+	private dataSource: {}[];
 
 	private timer: egret.Timer;
 	private tp: number = 1;
@@ -28,10 +28,14 @@ class AcComp extends eui.Component {
 		this.removeEventListener(egret.Event.ADDED_TO_STAGE, this.addStage, this);
 
 		this.dataSource = [
-			"ac_page_cj_png",
-			"ac_page_qd_png",
-			"ac_page_tl_png",
-			"ac_page_sc_png"
+			{
+				img: "newmain_ui_json.main_ui_ac_invit",
+				isShow: true
+			},
+			{
+				img: "newmain_ui_json.main_ui_ac_mc",
+				isShow: true
+			}
 		]
 		this.pageCount = this.dataSource.length;
 		this.list.dataProvider = new eui.ArrayCollection(this.dataSource);
@@ -41,7 +45,14 @@ class AcComp extends eui.Component {
 		this.scroller.viewport = this.list;
 		this.scroller.throwSpeed = 0;
 		this.startX = this.curPageIndex * this.pageWidth;
-		this["index_img_" + this.curPageIndex].source = "newmain_ui_json.main_selected_ac";
+
+		// this["index_img_" + this.curPageIndex].source = "newmain_ui_json.main_selected_ac";
+		for(var i = 0; i < this.pageCount; i++) {
+			var ptImg = new eui.Image("newmain_ui_json.main_normal_ac");
+			this.ptGroup.addChild(ptImg);
+		}
+
+		(<eui.Image>(this.ptGroup.getChildAt(0))).source = "newmain_ui_json.main_selected_ac";
 
 		this.scroller.addEventListener(eui.UIEvent.CHANGE_START, this.onChangeStart, this);
 		this.scroller.addEventListener(eui.UIEvent.CHANGE_END, this.onChangeEnd, this);
@@ -49,14 +60,12 @@ class AcComp extends eui.Component {
 		this.timer = new egret.Timer(3500, 0);
 		this.timer.addEventListener(egret.TimerEvent.TIMER, this.onTimerCallback, this);
 
-		CustomEventMgr.addEventListener("302", this.result_of_302, this);
 
 		this.timer.start();
 	}
 
 	private onExit() {
 		this.removeEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit, this);
-		CustomEventMgr.removeEventListener("302", this.result_of_302, this);
 
 		this.list.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this.onSelected, this);
 		this.scroller.removeEventListener(eui.UIEvent.CHANGE_START, this.onChangeStart, this);
@@ -91,41 +100,13 @@ class AcComp extends eui.Component {
 			case 0:
 				NetLoading.showLoading();
 				// var request: egret.URLRequest = HttpProtocolMgr.all_products_100();
-				var request: egret.URLRequest;
-				if (GashaponData.has_init_gashapon_template()) {
-					request = HttpProtocolMgr.gashapon_info_306(false);
-				} else {
-					request = HttpProtocolMgr.gashapon_info_306(true);
-				}
+				var request = HttpProtocolMgr.take_invite_info_165();
 				HttpMgr.postRequest(request);
 				break;
 			case 1:
-				NetLoading.showLoading();
-				var request: egret.URLRequest;
-				if (SigninData.has_init_signin7_template()) {
-					request = HttpProtocolMgr.signin7_info_302(false);
-				} else {
-					request = HttpProtocolMgr.signin7_info_302(true);
-				}
-				HttpMgr.postRequest(request);
-				break;
-			case 2:
-				// var onePanel = new OnePanel();
-				// DisplayMgr.set2Center(onePanel);
-				// egret.MainContext.instance.stage.addChild(onePanel);
-				var panel = new EnergyPanel();
+				var panel = new MonthCardPanel();
 				DisplayMgr.set2Center(panel);
-				egret.MainContext.instance.stage.addChild(panel);
-				break;
-			case 3:
-				// var sixPanel = new SixPanel();
-				// DisplayMgr.set2Center(sixPanel);
-				// egret.MainContext.instance.stage.addChild(sixPanel);
-				NetLoading.showLoading();
-				var request = HttpProtocolMgr.all_products_100();
-				HttpMgr.postRequest(request);
-				break;
-			case 4:
+				this.stage.addChild(panel);
 				break;
 		}
 	}
@@ -144,11 +125,6 @@ class AcComp extends eui.Component {
 					this.curPageIndex++;
 					tp = 1;
 					this.onMove(tp);
-					// this.startX = this.curPageIndex * (this.pageWidth);
-					// egret.Tween.get(this.scroller.viewport).to({ scrollH: this.curPageIndex * this.pageWidth }, 300).call(function () {
-					// 	this["index_img_" + (this.curPageIndex - 1)].source = "main_normal_ac_png";
-					// 	this["index_img_" + this.curPageIndex].source = "main_selected_ac_png";
-					// }, this);
 				}
 			}
 			else {
@@ -156,11 +132,6 @@ class AcComp extends eui.Component {
 					this.curPageIndex--;
 					tp = -1;
 					this.onMove(tp);
-					// this.startX = this.curPageIndex * (this.pageWidth);
-					// egret.Tween.get(this.scroller.viewport).to({ scrollH: this.curPageIndex * this.pageWidth }, 300).call(function () {
-					// 	this["index_img_" + (this.curPageIndex + 1)].source = "main_normal_ac_png";
-					// 	this["index_img_" + this.curPageIndex].source = "main_selected_ac_png";
-					// }, this);
 				}
 			}
 		}
@@ -172,30 +143,24 @@ class AcComp extends eui.Component {
 	}
 
 	private onMove(tp: number) {
+		var self = this;
 		this.scroller.enabled = false;
 		this.startX = this.curPageIndex * (this.pageWidth);
 		egret.Tween.get(this.scroller.viewport).to({ scrollH: this.curPageIndex * this.pageWidth }, 300).call(function () {
-			this["index_img_" + (this.curPageIndex - tp)].source = "newmain_ui_json.main_normal_ac";
-			this["index_img_" + this.curPageIndex].source = "newmain_ui_json.main_selected_ac";
+			// this["index_img_" + (this.curPageIndex - tp)].source = "newmain_ui_json.main_normal_ac";
+			// this["index_img_" + this.curPageIndex].source = "newmain_ui_json.main_selected_ac";
+			(<eui.Image>(self.ptGroup.getChildAt(self.curPageIndex - tp))).source = "newmain_ui_json.main_normal_ac";
+			(<eui.Image>(self.ptGroup.getChildAt(self.curPageIndex))).source = "newmain_ui_json.main_selected_ac";
 			this.scroller.enabled = true;
 			this.timer.start();
 		}, this);
-	}
-
-	private result_of_302(evt: egret.Event) {
-		NetLoading.removeLoading();
-		var panel = new SigninPanel();
-		DisplayMgr.set2Center(panel);
-		this.stage.addChild(panel);
-	}
-
-	private result_of_306(evt: egret.Event) {
 	}
 }
 
 
 class AcListItemRenderer extends eui.ItemRenderer {
 	public icon: eui.Image;
+	public flag: eui.Image;
 
 	public constructor() {
 		super();
@@ -208,6 +173,7 @@ class AcListItemRenderer extends eui.ItemRenderer {
 	}
 
 	protected dataChanged() {
-		this.icon.source = this.data;
+		this.icon.source = this.data.img;
+		this.flag.visible = this.data.isShow;
 	}
 }

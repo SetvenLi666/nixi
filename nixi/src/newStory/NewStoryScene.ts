@@ -104,7 +104,7 @@ class NewStoryScene extends eui.Component {
 			CustomEventMgr.addEventListener("Guide_Step_6_13", this.guide_step_6_13, this);
 		}
 
-		SoundManager.instance().startBgSound("story");
+		// SoundManager.instance().startBgSound("story");
 	}
 
 	private onExit() {
@@ -382,7 +382,7 @@ class StoryChapterCompRenderer extends eui.ItemRenderer {
 		DisplayMgr.buttonScale(this.btn_unlock, function () {
 			// SceneMgr.gotoTaskScene(parseInt(self.data["phase"]), parseInt(self.data["unlock"]));
 			SoundManager.instance().buttonSound();
-			SoundManager.instance().destroyStartSound();
+			// SoundManager.instance().destroyStartSound();
 			SceneMgr.gotoTaskScene(PlayerData.phase, PlayerData.mission);
 		});
 	}
