@@ -809,7 +809,7 @@ class MainComp extends eui.Component {
 				self.isOpen = false;
 				self.btn_lingdang.touchEnabled = false;
 				var tw = egret.Tween.get(self.popGroup);
-				tw.to({ y: 52 - 590 }, 300).call(function () {
+				tw.to({ y: 49 - 590 }, 300).call(function () {
 					self.btn_lingdang.touchEnabled = true;
 				}, self);
 			} else {
@@ -817,7 +817,7 @@ class MainComp extends eui.Component {
 				self.isOpen = true;
 				self.btn_lingdang.touchEnabled = false;
 				var tw = egret.Tween.get(self.popGroup);
-				tw.to({ y: 52 }, 300).call(function () {
+				tw.to({ y: 49 }, 300).call(function () {
 					self.btn_lingdang.touchEnabled = true;
 				}, self);
 			}
@@ -829,7 +829,7 @@ class MainComp extends eui.Component {
 		self.isOpen = false;
 		self.btn_lingdang.touchEnabled = false;
 		var tw = egret.Tween.get(self.popGroup);
-		tw.to({ y: 52 - 590 }, 300).call(function () {
+		tw.to({ y: 49 - 590 }, 300).call(function () {
 			self.btn_lingdang.touchEnabled = true;
 		}, self);
 	}
