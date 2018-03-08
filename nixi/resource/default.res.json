@@ -325,12 +325,52 @@
 			"name": "story_roles_3003"
 		},
 		{
-			"keys": "",
+			"keys": "role_101_json,role_1015_json,head_1088_2,body_1053_1,body_1016_1,body_1085_1,body_1088_1,head_1085_2,role_1003_json,head_1003_2_2",
 			"name": "story_roles_3004"
 		},
 		{
-			"keys": "",
+			"keys": "role_1015_json,role_1083_json,role_101_json,role_1021_json,role_1020_json,head_1039_4,body_1033_1,body_1039_1",
 			"name": "story_roles_3005"
+		},
+		{
+			"keys": "role_1015_json,role_1083_json,role_101_json,role_1021_json,body_1022_1,body_1039_1",
+			"name": "story_roles_3006"
+		},
+		{
+			"keys": "body_1018_1,body_1085_1,role_1083_json,role_101_json,role_1021_json,head_1085_3,body_1053_1,role_1020_json",
+			"name": "story_roles_3007"
+		},
+		{
+			"keys": "body_1088_1,head_1088_2,head_1085_3,body_1048_1,role_101_json,role_1083_json,body_1085_1,role_1003_json,head_1088_3,head_101_14_4,head_101_14_5,body_101_14,head_101_14_2,head_101_14_3",
+			"name": "story_roles_3008"
+		},
+		{
+			"keys": "role_1003_json,body_1028_1,head_1099_3,body_1085_1,role_101_json,head_101_14_5,role_1083_json,body_101_14,head_101_14_2,role_1015_json,body_1099_1,body_1018_1,body_1019_1",
+			"name": "story_roles_3009"
+		},
+		{
+			"keys": "body_1026_1,body_1016_1,head_101_14_3,body_101_14,body_1085_1,body_1019_1,role_1003_json,head_101_14_4,head_101_14_2,role_1083_json",
+			"name": "story_roles_3010"
+		},
+		{
+			"keys": "role_1003_json,head_101_14_2,head_1085_3,body_101_14,role_101_json,body_1026_1,body_1085_1,head_101_14_4,head_101_14_5,head_101_14_3",
+			"name": "story_roles_3011"
+		},
+		{
+			"keys": "role_101_json,role_1083_json,role_1015_json",
+			"name": "story_roles_3012"
+		},
+		{
+			"keys": "role_1003_json,body_1027_1,body_1023_1,role_1010_json,body_1017_1,role_101_json,body_1018_1,body_1019_1",
+			"name": "story_roles_3013"
+		},
+		{
+			"keys": "role_1010_json,body_1019_1,role_101_json,role_1003_json,body_1017_1,body_1199_1",
+			"name": "story_roles_3014"
+		},
+		{
+			"keys": "role_1003_json,role_1083_json,body_1017_1,head_1199_2,body_1199_1,role_101_json,role_1010_json,role_1015_json",
+			"name": "story_roles_3015"
 		}
 	],
 	"resources": [
