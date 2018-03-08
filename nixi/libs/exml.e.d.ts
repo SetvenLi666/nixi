@@ -314,8 +314,6 @@ declare class LimitDiscountPanelSkin extends eui.Skin{
 }
 declare class MonthCardPanelSkin extends eui.Skin{
 }
-declare class NewHuodongPanelSkin extends eui.Skin{
-}
 declare class NewSharePanelSkin extends eui.Skin{
 }
 declare class ResetNamePanelSkin extends eui.Skin{
