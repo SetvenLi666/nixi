@@ -191,10 +191,6 @@
 		{
 			"keys": "rank_title_first_png,rank_panel_bg_png,rank_jj_sel_png,rank_jj_nor_png,rank_item_bg_thd_png,rank_item_bg_sed_png,rank_item_bg_other_png,rank_item_bg_first_png,rank_flag_thd_png,rank_flag_sed_png,rank_flag_other_png,rank_flag_color_png,rank_dp_sel_png,rank_dp_nor_png,rank_btn_pk_png",
 			"name": "new_rank"
-		},
-		{
-			"name": "preload",
-			"keys": "huodong_bg_png,huodong_tab_1_png,huodong_tab_2_png"
 		}
 	],
 	"resources": [
@@ -17718,7 +17714,7 @@
 			"url": "game/main/newMain/newmain_ui.json",
 			"type": "sheet",
 			"name": "newmain_ui_json",
-			"subkeys": "main_ac_kuang,main_ball_bg,main_bg,main_chat_blue,main_chat_inputbg,main_chat_red,main_chat_send,main_chat_yellow,main_coin_1,main_coin_30,main_coin_6,main_coin_text_1,main_coin_text_30,main_coin_text_6,main_daily_icon,main_dailytarget_ac,main_dailytarget_icon,main_dailytarget_text,main_dialy_text,main_free_text,main_gashapon,main_huodong_icon,main_huodong_text,main_invite_icon,main_invite_text,main_item_di,main_jj_3,main_lab_pk,main_lab_shop,main_lab_social,main_lab_xintu,main_lab_yule,main_leiji_icon,main_leiji_text,main_libao_1,main_libao_30,main_libao_6,main_mail,main_mail_text,main_mail_tip,main_mc_icon,main_mc_text,main_niudan_box,main_niudan_pkq,main_niudan_text,main_normal_ac,main_sd_3,main_selected_ac,main_share_icon,main_share_text,main_shoucang_icon,main_shoucang_text,main_shouchong_text,main_sj_3,main_talk_bg,main_text_bg,main_tl_icon,main_tl_text,main_ui_ac_1,main_ui_ac_2,main_ui_ac_bg,main_ui_ac_kong,main_ui_cz_bg,main_ui_cz_text,main_ui_huodong_label,main_ui_jinji,main_ui_shangdian,main_ui_shequ,main_ui_text_dailytarget,main_ui_text_huodong,main_ui_text_mail,main_ui_text_share,main_ui_text_shoucang,main_ui_tonggao,main_ui_xingtu,main_xt_3,main_yule_3"
+			"subkeys": "main_ac_kuang,main_ball_bg,main_bg,main_chat_blue,main_chat_inputbg,main_chat_red,main_chat_send,main_chat_yellow,main_coin_1,main_coin_30,main_coin_6,main_coin_text_1,main_coin_text_30,main_coin_text_6,main_daily_icon,main_dailytarget_ac,main_dailytarget_icon,main_dailytarget_text,main_dialy_text,main_free_text,main_gashapon,main_huodong_icon,main_huodong_text,main_invite_icon,main_invite_text,main_item_di,main_jj_3,main_lab_pk,main_lab_shop,main_lab_social,main_lab_xintu,main_lab_yule,main_leiji_icon,main_leiji_text,main_libao_1,main_libao_30,main_libao_6,main_mail,main_mail_text,main_mail_tip,main_mc_icon,main_mc_text,main_niudan_box,main_niudan_pkq,main_niudan_text,main_normal_ac,main_sd_3,main_selected_ac,main_share_icon,main_share_text,main_shoucang_icon,main_shoucang_text,main_shouchong_text,main_sj_3,main_talk_bg,main_text_bg,main_tl_icon,main_tl_text,main_ui_ac_bg,main_ui_ac_flag,main_ui_ac_invit,main_ui_ac_kong,main_ui_ac_mc,main_ui_cz_bg,main_ui_cz_text,main_ui_jinji,main_ui_lingdang_1,main_ui_lingdang_2,main_ui_shangdian,main_ui_shequ,main_ui_text_dailytarget,main_ui_text_huodong,main_ui_text_mail,main_ui_text_share,main_ui_text_shoucang,main_ui_tonggao,main_ui_xingtu,main_xt_3,main_yule_3"
 		},
 		{
 			"url": "game/main/ac/ac_res.json",
@@ -20527,19 +20523,19 @@
 			"name": "70189_png"
 		},
 		{
-			"name": "huodong_bg_png",
+			"url": "game/panel/ac/huodong_bg.png",
 			"type": "image",
-			"url": "game/panel/ac/huodong_bg.png"
+			"name": "huodong_bg_png"
 		},
 		{
-			"name": "huodong_tab_1_png",
+			"url": "game/panel/ac/huodong_tab_1.png",
 			"type": "image",
-			"url": "game/panel/ac/huodong_tab_1.png"
+			"name": "huodong_tab_1_png"
 		},
 		{
-			"name": "huodong_tab_2_png",
+			"url": "game/panel/ac/huodong_tab_2.png",
 			"type": "image",
-			"url": "game/panel/ac/huodong_tab_2.png"
+			"name": "huodong_tab_2_png"
 		}
 	]
 }
