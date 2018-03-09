@@ -190,6 +190,7 @@ var game_file_list = [
 	"bin-debug/scenes/pk/PkResultPanel.js",
 	"bin-debug/scenes/pk/PkScene.js",
 	"bin-debug/scenes/story/ChapterPageRenderer.js",
+	"bin-debug/scenes/story/RoleIntroducePanel.js",
 	"bin-debug/scenes/story/StoryChapterPageView.js",
 	"bin-debug/scenes/story/StoryChoices.js",
 	"bin-debug/scenes/story/StoryEndings.js",

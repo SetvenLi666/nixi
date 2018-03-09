@@ -249,7 +249,7 @@ class Main extends egret.DisplayObjectContainer {
     }
 
     private checkStoryRolesRes() {
-        RES.getResAsync("3013_json", function (data, key) {
+        RES.getResAsync("2015_json", function (data, key) {
             var result: string[] = [];
             var itemArr: {}[] = data;
             var len = itemArr.length;
