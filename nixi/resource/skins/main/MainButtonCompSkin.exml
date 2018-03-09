@@ -53,7 +53,7 @@
 				</e:layout>
 			</e:Group>
 			<ns1:AcComp y="835" right="-5" skinName="AcCompSkin"/>
-			<e:Group width="110" height="1023.45" y="121.55" right="7" anchorOffsetY="0">
+			<e:Group width="110" height="707.45" y="121.55" right="7" anchorOffsetY="0">
 				<e:Rect id="groupMask" width="110" height="655" y="49.33" scaleX="1" scaleY="1" horizontalCenter="0" anchorOffsetY="0"/>
 				<e:Group id="popGroup" width="110" scaleX="1" scaleY="1" horizontalCenter="0" y="49">
 					<e:Rect scaleX="1" scaleY="1" fillColor="0xffffff" fillAlpha="0.55" height="590" left="0" right="0" top="0"/>
