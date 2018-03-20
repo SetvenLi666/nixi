@@ -212,6 +212,8 @@ class BranchStoryMainScene extends eui.Component {
 	private afterUnlockBranchStory_512(evt: egret.Event) {
 		NetLoading.removeLoading();
 		Prompt.showPrompt(this.stage, "解锁成功");
+		CustomEventMgr.dispatchEventWith("Update Player Info", false);
+		CustomEventMgr.dispatchEventWith("Update BranchStory Item View", false);
 	}
 
 	private guide_step_5_4() {
@@ -242,8 +244,8 @@ class BranchStoryItemRenderer extends eui.ItemRenderer {
 		super.createChildren();
 
 		this.btn_start.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onStart, this);
-		// CustomEventMgr.addEventListener("Update BranchStory Item View", this.updateItemView, this);
-		// this.addEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit, this);
+		CustomEventMgr.addEventListener("Update BranchStory Item View", this.updateItemView, this);
+		this.addEventListener(egret.Event.REMOVED_FROM_STAGE, this.onExit, this);
 	}
 
 	private onExit() {
@@ -279,20 +281,21 @@ class BranchStoryItemRenderer extends eui.ItemRenderer {
 			this.end_2.text = "";
 		}
 
-		this.btn_start.source = "branch_story_btn_start_png";
-		this.costLab.text = "9";
-		this.iconImg.source = "branch_story_tili_png";
+		// this.btn_start.source = "branch_story_btn_start_png";
+		// this.costLab.text = "9";
+		// this.iconImg.source = "branch_story_tili_png";
 
 		//是否解锁
-		// if (StoryData.getBranchStoryUnlockState(parseInt(this.data["index"][0] + "000"))[this.itemIndex + ""]) {
-		// 	this.btn_start.source = "branch_story_btn_start_png";
-		// 	this.costLab.text = "9";
-		// 	this.iconImg.source = "branch_story_tili_png";
-		// } else {
-		// 	this.btn_start.source = "branch_story_btn_unlock_png";
-		// 	this.costLab.text = "10";
-		// 	this.iconImg.source = "branch_stroy_diam_png";
-		// }
+		var curBranchState = StoryData.getBranchStoryUnlockState(parseInt(this.data["index"][0] + "000"));
+		if (curBranchState && curBranchState[this.itemIndex + ""]) {
+			this.btn_start.source = "branch_story_btn_start_png";
+			this.costLab.text = "9";
+			this.iconImg.source = "branch_story_tili_png";
+		} else {
+			this.btn_start.source = "branch_story_btn_unlock_png";
+			this.costLab.text = "10";
+			this.iconImg.source = "branch_story_piece_png";
+		}
 
 		//章节解锁条件，购买成功且若有前置章节需通关
 
@@ -301,7 +304,7 @@ class BranchStoryItemRenderer extends eui.ItemRenderer {
 		// 	var completedStory = branchStoryCompleteData == null ? null : branchStoryCompleteData[parseInt(this.data["index"]) - 1];
 		// 	if (completedStory == null || completedStory.indexOf("-1") == -1) {
 		// 		//未通关
-		// 		this.btn_start.source = "branch_story_btn_start_png";
+		// 		this.btn_start.source = "branch_story_btn_unlock_png";
 		// 	} else {
 		// 		//前置章节通关
 		// 		this.btn_start.source = "branch_story_btn_start_png";
@@ -314,43 +317,49 @@ class BranchStoryItemRenderer extends eui.ItemRenderer {
 		DisplayMgr.buttonScale(this.btn_start, function () {
 			SoundManager.instance().buttonSound();
 
-			if (self.itemIndex != 0) {
-				var branchStoryCompleteData = StoryData.getBranchStoryById(parseInt(self.data["index"][0] + "000"));
-				var completedStory = branchStoryCompleteData == null ? null : branchStoryCompleteData[parseInt(self.data["index"]) - 1];
-				if (completedStory == null || completedStory.indexOf("-1") == -1) {
-					//未通关
-					Prompt.showPrompt(self.stage, "请先通关前置章节");
-				} else {
-					//前置章节通关
-					CustomEventMgr.dispatchEventWith("Begin Story", false, self.itemIndex);
-				}
-			} else {
-				CustomEventMgr.dispatchEventWith("Begin Story", false, self.itemIndex);
-			}
-
-			//解锁
-			// if (StoryData.getBranchStoryUnlockState(parseInt(self.data["index"][0] + "000"))[self.itemIndex + ""]) {
-			// 	//开始剧情
-			// 	if (self.itemIndex != 0) {
-			// 		var branchStoryCompleteData = StoryData.getBranchStoryById(parseInt(self.data["index"][0] + "000"));
-			// 		var completedStory = branchStoryCompleteData == null ? null : branchStoryCompleteData[parseInt(self.data["index"]) - 1];
-			// 		if (completedStory == null || completedStory.indexOf("-1") == -1) {
-			// 			//未通关
-			// 			Prompt.showPrompt(self.stage, "请先通关前置章节");
-			// 		} else {
-			// 			//前置章节通关
-			// 			CustomEventMgr.dispatchEventWith("Begin Story", false, self.itemIndex);
-			// 		}
+			// if (self.itemIndex != 0) {
+			// 	var branchStoryCompleteData = StoryData.getBranchStoryById(parseInt(self.data["index"][0] + "000"));
+			// 	var completedStory = branchStoryCompleteData == null ? null : branchStoryCompleteData[parseInt(self.data["index"]) - 1];
+			// 	if (completedStory == null || completedStory.indexOf("-1") == -1) {
+			// 		//未通关
+			// 		Prompt.showPrompt(self.stage, "请先通关前置章节");
 			// 	} else {
+			// 		//前置章节通关
 			// 		CustomEventMgr.dispatchEventWith("Begin Story", false, self.itemIndex);
 			// 	}
-
-			// 	// CustomEventMgr.dispatchEventWith("Begin Story", false, self.itemIndex);
 			// } else {
-			// 	NetLoading.showLoading();
-			// 	var request = HttpProtocolMgr.unlockBranchStory_512(parseInt(self.data["index"][0] + "000"), self.itemIndex + "");
-			// 	HttpMgr.postRequest(request);
+			// 	CustomEventMgr.dispatchEventWith("Begin Story", false, self.itemIndex);
 			// }
+
+			//解锁
+			var curBranchState = StoryData.getBranchStoryUnlockState(parseInt(self.data["index"][0] + "000"));
+			if (curBranchState && curBranchState[self.itemIndex + ""]) {
+				//开始剧情
+				if (self.itemIndex != 0) {
+					var branchStoryCompleteData = StoryData.getBranchStoryById(parseInt(self.data["index"][0] + "000"));
+					var completedStory = branchStoryCompleteData == null ? null : branchStoryCompleteData[parseInt(self.data["index"]) - 1];
+					if (completedStory == null || completedStory.indexOf("-1") == -1) {
+						//未通关
+						Prompt.showPrompt(self.stage, "请先通关前置章节");
+					} else {
+						//前置章节通关
+						CustomEventMgr.dispatchEventWith("Begin Story", false, self.itemIndex);
+					}
+				} else {
+					CustomEventMgr.dispatchEventWith("Begin Story", false, self.itemIndex);
+				}
+
+				// CustomEventMgr.dispatchEventWith("Begin Story", false, self.itemIndex);
+			} else {
+				if(PlayerData.heart < 10) {
+					Prompt.showPrompt(self.stage, "货币余额不足");
+					return;
+				}
+
+				NetLoading.showLoading();
+				var request = HttpProtocolMgr.unlockBranchStory_512(parseInt(self.data["index"][0] + "000"), self.itemIndex + "");
+				HttpMgr.postRequest(request);
+			}
 		});
 	}
 
@@ -362,7 +371,7 @@ class BranchStoryItemRenderer extends eui.ItemRenderer {
 		} else {
 			this.btn_start.source = "branch_story_btn_unlock_png";
 			this.costLab.text = "10";
-			this.iconImg.source = "branch_stroy_diam_png";
+			this.iconImg.source = "branch_story_piece_png";
 		}
 	}
 }

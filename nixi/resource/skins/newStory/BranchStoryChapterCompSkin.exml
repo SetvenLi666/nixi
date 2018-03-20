@@ -7,6 +7,6 @@
 	<e:Label id="end_2" text="" x="192" y="158" size="22" textColor="0x969797" bold="true"/>
 	<e:Image id="btn_start" x="355" y="134" source="branch_story_btn_unlock_png"/>
 	<e:Image source="branch_story_kuang_png" x="356" y="180"/>
-	<e:Label id="costLab" text="55" x="382" y="182" textColor="0xab345e" size="24" width="30" height="24" textAlign="center"/>
-	<e:Image id="iconImg" source="branch_stroy_diam_png" x="412" y="181"/>
+	<e:Label id="costLab" text="10" x="382" y="182" textColor="0xab345e" size="24" width="30" height="24" textAlign="center"/>
+	<e:Image id="iconImg" x="412" y="181" source="branch_story_piece_png"/>
 </e:Skin>

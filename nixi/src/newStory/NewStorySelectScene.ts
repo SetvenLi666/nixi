@@ -41,7 +41,7 @@ class NewStorySelectScene extends eui.Component {
 
 		CustomEventMgr.addEventListener("600", this.afterFetchMissionData_600, this);
 		CustomEventMgr.addEventListener("502", this.afterFetchBranchStoryData_502, this);
-		// CustomEventMgr.addEventListener("510", this.afterFetchBranchStoryState_510, this);
+		CustomEventMgr.addEventListener("510", this.afterFetchBranchStoryState_510, this);
 
 		if (PlayerData.guide == 5) {
 			var guidePanel = new NewGuidePanel();
@@ -58,7 +58,7 @@ class NewStorySelectScene extends eui.Component {
 	private onExit() {
 		CustomEventMgr.removeEventListener("600", this.afterFetchMissionData_600, this);
 		CustomEventMgr.removeEventListener("502", this.afterFetchBranchStoryData_502, this);
-		// CustomEventMgr.removeEventListener("510", this.afterFetchBranchStoryState_510, this);
+		CustomEventMgr.removeEventListener("510", this.afterFetchBranchStoryState_510, this);
 		if (PlayerData.guide == 5) {
 			CustomEventMgr.removeEventListener("Guide_Step_5_3", this.onBegin, this);
 		}
@@ -82,15 +82,14 @@ class NewStorySelectScene extends eui.Component {
 					break;
 			}
 
-			// SceneMgr.gotoBranchMainScene(branch_id);
-			var request = HttpProtocolMgr.fetchBranchStoryData_502(branch_id);
-			HttpMgr.postRequest(request);
-			// if(StoryData.completedStory["29"] && StoryData.completedStory["29"].indexOf("-1") != -1) {
-			// 	//已通关星途闪耀
-			// 	SceneMgr.gotoNewStoryScene(1);
-			// }else {
-			// 	Prompt.showPrompt(egret.MainContext.instance.stage, "请先通关星途闪耀");
-			// }
+			
+			if(StoryData.completedStory["29"] && StoryData.completedStory["29"].indexOf("-1") != -1) {
+				//已通关星途闪耀
+				var request = HttpProtocolMgr.fetchBranchStoryData_502(branch_id);
+				HttpMgr.postRequest(request);
+			}else {
+				Prompt.showPrompt(egret.MainContext.instance.stage, "请先通关星途闪耀");
+			}
 		});
 	}
 
@@ -117,10 +116,10 @@ class NewStorySelectScene extends eui.Component {
 	}
 
 	private afterFetchBranchStoryData_502(evt: egret.Event) {
-		NetLoading.removeLoading();
-		SceneMgr.gotoBranchMainScene(evt.data);
-		// var request = HttpProtocolMgr.fetchBranchStoryUnlockState_510(evt.data);
-		// HttpMgr.postRequest(request);
+		// NetLoading.removeLoading();
+		// SceneMgr.gotoBranchMainScene(evt.data);
+		var request = HttpProtocolMgr.fetchBranchStoryUnlockState_510(evt.data);
+		HttpMgr.postRequest(request);
 	}
 
 	private afterFetchBranchStoryState_510(evt: egret.Event) {

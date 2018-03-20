@@ -129,6 +129,7 @@ class BaseComp extends eui.Component {
 		this.coin_lab.text = PlayerData.coin + "";
 		this.diam_lab.text = PlayerData.diam + "";
 		this.energy_lab.text = PlayerData.energy + "/80";
+		this.heart_lab.text = PlayerData.heart + "";
 		this.progressBar.value = PlayerData.energy;
 		this.playerLv.source = "base_lv" + PlayerData.phase + "_png";
 	}

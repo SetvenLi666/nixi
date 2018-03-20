@@ -54,8 +54,8 @@ class PlayerData {
             this._coin = obj["coin"];
             this._diam = obj["diam"];
 
-            if(obj["heart"]) {
-                this._heart = obj["heart"];
+            if(obj["piece"]) {
+                this._heart = obj["piece"];
             }
 
             this._mission = obj["mission"] > 200 ? 200 : obj["mission"];

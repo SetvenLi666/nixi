@@ -157,6 +157,7 @@
     "src/panel/ChatCommonPanelSkin.exml",
     "src/panel/CommonRewardPanelSkin.exml",
     "src/panel/DailyGiftPanelSkin.exml",
+    "src/panel/EmailRewardItemCompSkin.exml",
     "src/panel/DailyTargetItemRendererSkin.exml",
     "src/panel/DailyTargetPgBar.exml",
     "src/panel/DailyTargetProgressCompSkin.exml",

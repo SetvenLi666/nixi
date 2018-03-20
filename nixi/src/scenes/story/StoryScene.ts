@@ -80,8 +80,8 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 		self.addEventListener("ON_CHOOSED", self.onChoosed, self);
 		self.addEventListener("ON_HISTORY", self.onHistoryLog, self);
 		self.addEventListener("ON_STORY_FINISH", self.onStoryFinish, self);
-		self.addEventListener("Play Role Introduce", self.playRoleIntroduce, self);
 
+		CustomEventMgr.addEventListener("Play Role Introduce", self.playRoleIntroduce, self);
 		CustomEventMgr.addEventListener("Show TimeBack", self.showTimeBack, self);
 
 		self.playState = StoryPlayState.normal;
@@ -104,8 +104,8 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 		self.removeEventListener("ON_CHOOSED", self.onChoosed, self);
 		self.removeEventListener("ON_HISTORY", self.onHistoryLog, self);
 		self.removeEventListener("ON_STORY_FINISH", self.onStoryFinish, self);
-		self.removeEventListener("Play Role Introduce", self.playRoleIntroduce, self);
 
+		CustomEventMgr.removeEventListener("Play Role Introduce", self.playRoleIntroduce, self);
 		CustomEventMgr.removeEventListener("Show TimeBack", self.showTimeBack, self);
 
 		this.touchRect.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTapped, this);
@@ -261,6 +261,7 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 	}
 
 	private playRoleIntroduce(evt: egret.Event) {
+		console.log("aaaaaaa")
 		var panel = new RoleIntroducePanel();
 		DisplayMgr.set2Center(panel);
 		this.stage.addChild(panel);
