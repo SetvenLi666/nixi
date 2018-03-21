@@ -29,7 +29,7 @@ class ShopScene extends eui.UILayer{
 		var layer = new ShopLayer(this.taskid, this.tag1, this.tag2, this.tag3);
 		this.addChild(layer);
 
-		var baseView = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy);
+		var baseView = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy, PlayerData.heart);
 		this.addChild(baseView);
 
 		if(PlayerData.guide == 3) {

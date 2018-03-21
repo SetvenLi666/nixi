@@ -40,7 +40,7 @@ class NewStoryScene extends eui.Component {
 	private addStage() {
 		this.container.width = DisplayMgr.stageW;
 		this.group.width = Math.min(DisplayMgr.stageW, 852);
-		this.baseComp = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy);
+		this.baseComp = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy, PlayerData.heart);
 		this.addChild(this.baseComp);
 
 		for (var i in StoryData.completedStory) {
@@ -66,10 +66,10 @@ class NewStoryScene extends eui.Component {
 		this.onMove();
 
 		//敬请期待
-		if (StoryData.isShowLastTip && StoryData.completedStory["29"] && StoryData.completedStory["29"].indexOf("-1") != -1) {
-			StoryData.isShowLastTip = false;
-			Prompt.showPrompt(this.stage, "后续剧情正在制作中，敬请期待!");
-		}
+		// if (StoryData.isShowLastTip && StoryData.completedStory["29"] && StoryData.completedStory["29"].indexOf("-1") != -1) {
+		// 	StoryData.isShowLastTip = false;
+		// 	Prompt.showPrompt(this.stage, "后续剧情正在制作中，敬请期待!");
+		// }
 
 		this.scroller.addEventListener(eui.UIEvent.CHANGE_START, this.onChangeStart, this);
 		this.scroller.addEventListener(eui.UIEvent.CHANGE_END, this.onChangeEnd, this);
@@ -293,7 +293,6 @@ class StoryChapterCompRenderer extends eui.ItemRenderer {
 		} else {
 			this.end_2.text = "";
 		}
-
 
 		//是否解锁
 		if (TaskData.userData()[this.data["unlock"]] == null) {

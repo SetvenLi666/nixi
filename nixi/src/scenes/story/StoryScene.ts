@@ -81,6 +81,7 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 		self.addEventListener("ON_HISTORY", self.onHistoryLog, self);
 		self.addEventListener("ON_STORY_FINISH", self.onStoryFinish, self);
 
+		CustomEventMgr.addEventListener("Play Role Introduce", self.playRoleIntroduce, self);
 		CustomEventMgr.addEventListener("Show TimeBack", self.showTimeBack, self);
 
 		self.playState = StoryPlayState.normal;
@@ -104,6 +105,7 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 		self.removeEventListener("ON_HISTORY", self.onHistoryLog, self);
 		self.removeEventListener("ON_STORY_FINISH", self.onStoryFinish, self);
 
+		CustomEventMgr.removeEventListener("Play Role Introduce", self.playRoleIntroduce, self);
 		CustomEventMgr.removeEventListener("Show TimeBack", self.showTimeBack, self);
 
 		this.touchRect.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTapped, this);
@@ -258,6 +260,13 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 		}
 	}
 
+	private playRoleIntroduce(evt: egret.Event) {
+		console.log("aaaaaaa")
+		var panel = new RoleIntroducePanel();
+		DisplayMgr.set2Center(panel);
+		this.stage.addChild(panel);
+	}
+
 	private afterCommitStory_503(evt: egret.Event) {
 		this.extra_reward = evt.data;
 
@@ -278,7 +287,7 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 	private checkExtraReward() {
 		if (this.extra_reward && this.extra_reward["pass_reward"] == 10) {
 			//奖励面板
-			var panel = new StoryRewardPanel();
+			var panel = new StoryRewardPanel(this.storyIndex);
 			DisplayMgr.set2Center(panel);
 			this.stage.addChild(panel);
 
@@ -503,7 +512,6 @@ class StoryScene extends eui.Component implements eui.UIComponent {
 	private whenPlayerCompleted() {
 		console.log("StoryScene::whenPlayerCompleted()");
 		this.playPhase = StoryPlayPhase.subtitle;
-
 		if (this.playState === StoryPlayState.auto) {
 			this.subtitle.play(this.script[this.curPlotIndex]["name"], this.script[this.curPlotIndex]["said"]);
 		}

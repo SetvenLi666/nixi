@@ -172,9 +172,9 @@ class Main extends egret.DisplayObjectContainer {
             openid: "aaaa",
             openkey: "bbbbb",
             platform: 1,
-            qua: {meybeQua: "pc"}
+            qua: { meybeQua: "pc" }
         }
-
+        
         LoginData.config_UUID();
         SceneMgr.gotoLogin();
 
