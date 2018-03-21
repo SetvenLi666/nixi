@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="AcCompSkin" width="341" height="187" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Group id="group" left="0" right="0" top="0" bottom="0" touchEnabled="false">
-		<e:Image scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0" source="newmain_ui_json.main_ac_bg"/>
+		<e:Image scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0" source="newmain_ui_json.main_ui_ac_bg"/>
 		<e:Scroller id="scroller" width="300" height="131" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" y="20">
 			<e:Group anchorOffsetX="0" width="242">
 				<e:List id="list" width="300" height="131" x="0" y="0">
@@ -11,11 +11,10 @@
 				</e:List>
 			</e:Group>
 		</e:Scroller>
-		<e:Group width="131" height="22" y="162" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0">
-			<e:Image id="index_img_0" scaleX="1" scaleY="1" verticalCenter="0" horizontalCenter="-45" source="newmain_ui_json.main_normal_ac"/>
-			<e:Image id="index_img_1" scaleX="1" scaleY="1" horizontalCenter="-15" verticalCenter="0" source="newmain_ui_json.main_normal_ac"/>
-			<e:Image id="index_img_2" scaleX="1" scaleY="1" verticalCenter="0" horizontalCenter="15" source="newmain_ui_json.main_normal_ac"/>
-			<e:Image id="index_img_3" scaleX="1" scaleY="1" verticalCenter="0" horizontalCenter="45" source="newmain_ui_json.main_normal_ac" x="81" y="-72"/>
+		<e:Group id="ptGroup" width="131" height="22" y="154" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0">
+			<e:layout>
+				<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle"/>
+			</e:layout>
 		</e:Group>
 	</e:Group>
 </e:Skin>

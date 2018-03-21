@@ -3,12 +3,14 @@ class StoryRewardPanel extends eui.Component {
 	public rewardGroup: eui.Group;
 	public icon: eui.Image;
 	public count: eui.Label;
+	private curIndex: string;
 
 	private isComplete: boolean = false;//动画是否结束
 
-	public constructor() {
+	public constructor(curIndex: string) {
 		super();
 
+		this.curIndex = curIndex;
 		this.skinName = "StoryRewardPanelSkin";
 		this.addEventListener(egret.Event.ADDED_TO_STAGE, this.addStage, this);
 	}
@@ -51,6 +53,10 @@ class StoryRewardPanel extends eui.Component {
 				this.stage.addChild(guidePanel);
 				guidePanel.currentState = "guide_step_6_11";
 				guidePanel.playAnimation();
+			}
+
+			if(this.curIndex == "29") {
+				CustomEventMgr.dispatchEventWith("Play Role Introduce", false);
 			}
 			this.parent.removeChild(this);
 		}

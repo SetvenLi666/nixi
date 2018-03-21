@@ -98,19 +98,19 @@ class StoryPlayer extends eui.Component implements eui.UIComponent {
 			else {
 				// self.body2.source = "body_" + self.plot["zishi_2"];
 				// self.head2.source = "head_" + self.plot["head_2"];
-				RES.getResAsync("body_" + self.plot["zishi_2"], function(data, key) {
-					if(data) {
+				RES.getResAsync("body_" + self.plot["zishi_2"], function (data, key) {
+					if (data) {
 						self.body2.source = data;
-					}else {
+					} else {
 						self.body2.source = "";
 					}
-					
+
 				}, this);
 
-				RES.getResAsync("head_" + self.plot["head_2"], function(data, key) {
-					if(data) {
+				RES.getResAsync("head_" + self.plot["head_2"], function (data, key) {
+					if (data) {
 						self.head2.source = data;
-					}else {
+					} else {
 						self.head2.source = "";
 					}
 				}, this);
@@ -219,7 +219,11 @@ class StoryPlayer extends eui.Component implements eui.UIComponent {
 			}
 			else {
 				// 保持消失状态
-				self.playPlayer2();
+				// self.playPlayer2();    //深坑(剧情开始第一幕无人物第一句话会跳过);
+				egret.Tween.get(self.player1)
+					.call(function () {
+						self.playPlayer2();
+					});
 			}
 		}
 		else { // appear
@@ -360,7 +364,6 @@ class StoryPlayer extends eui.Component implements eui.UIComponent {
 					.call(function () {
 						self.oldBody2Data = self.plot["zishi_2"];
 						self.oldHead2Data = self.plot["head_2"];
-
 
 						self.playCompleteCallback.apply(self.playCompleteHandler, []);
 					})

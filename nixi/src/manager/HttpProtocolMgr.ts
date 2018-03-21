@@ -277,6 +277,43 @@ class HttpProtocolMgr {
         return this.newRequest("501", JSON.stringify(data));
     }
 
+    static fetchBranchStoryData_502(id: number): egret.URLRequest {
+        var data = {};
+        data["branch_id"] = id;
+        data["extra"] = CommonFunc.curTimeStamp();
+        return this.newRequest("502", JSON.stringify(data));
+    }
+
+    static startBranchStory_506(branch_id: number, strIndex: string): egret.URLRequest {
+        var data = {};
+        data["branch_id"] = branch_id;
+        data["id"] = strIndex;
+        data["extra"] = CommonFunc.curTimeStamp();
+        return this.newRequest("506", JSON.stringify(data));
+    }
+
+    static commitBranchStory_508(branch_id: number, strIndex: string, flag: string): egret.URLRequest {
+        var data = {};
+        data["branch_id"] = branch_id;
+        data["id"] = strIndex;
+        data["flag"] = flag;
+        data["extra"] = CommonFunc.curTimeStamp();
+        return this.newRequest("508", JSON.stringify(data));
+    }
+
+    static fetchBranchStoryUnlockState_510(branch_id: number) {
+        var data = {};
+        data["branch_id"] = branch_id;
+        return this.newRequest("510", JSON.stringify(data));
+    }
+
+    static unlockBranchStory_512(branch_id: number, id: string) {
+        var data = {};
+        data["branch_id"] = branch_id;
+        data["id"] = id;
+        return this.newRequest("512", JSON.stringify(data));
+    }
+
     static commitStory_503(strIndex: string, flag: string): egret.URLRequest {
         var data = {};
         data["id"] = strIndex;
