@@ -15,10 +15,7 @@ var game_file_list = [
 	"libs/modules/launcher/launcher.js",
 	"promise/promise.js",
 	"bin-debug/AssetAdapter.js",
-<<<<<<< HEAD
 	"bin-debug/KJSDK.js",
-=======
->>>>>>> master
 	"bin-debug/Main.js",
 	"bin-debug/Quwanwan.js",
 	"bin-debug/ThemeAdapter.js",
@@ -26,6 +23,8 @@ var game_file_list = [
 	"bin-debug/base/BaseComponent.js",
 	"bin-debug/base/CoinComp.js",
 	"bin-debug/base/CountDownComp.js",
+	"bin-debug/branchStory/BranchStoryMainScene.js",
+	"bin-debug/branchStory/BranchStoryScene.js",
 	"bin-debug/common/HistoryLog.js",
 	"bin-debug/common/IllegalWords.js",
 	"bin-debug/common/LoadingUI.js",
@@ -103,6 +102,7 @@ var game_file_list = [
 	"bin-debug/panel/DiscountTipPanel.js",
 	"bin-debug/panel/DressDownPanel.js",
 	"bin-debug/panel/EmailPanel.js",
+	"bin-debug/panel/EmailRewardItemComp.js",
 	"bin-debug/panel/EnergyPanel.js",
 	"bin-debug/panel/EventRewardItem.js",
 	"bin-debug/panel/ExchangeComp.js",
@@ -115,15 +115,7 @@ var game_file_list = [
 	"bin-debug/panel/GiftPanel.js",
 	"bin-debug/panel/HuodongPanel.js",
 	"bin-debug/panel/InviteFreeRewardPanel.js",
-<<<<<<< HEAD
-<<<<<<< HEAD
 	"bin-debug/panel/InvitePanel.js",
-=======
-	"bin-debug/Main.js",
->>>>>>> ceshi
-=======
-	"bin-debug/panel/InvitePanel.js",
->>>>>>> master
 	"bin-debug/panel/IosPayTipPanel.js",
 	"bin-debug/panel/LimitDiscountPanel.js",
 	"bin-debug/panel/MonthCardPanel.js",
@@ -203,6 +195,7 @@ var game_file_list = [
 	"bin-debug/scenes/pk/PkResultPanel.js",
 	"bin-debug/scenes/pk/PkScene.js",
 	"bin-debug/scenes/story/ChapterPageRenderer.js",
+	"bin-debug/scenes/story/RoleIntroducePanel.js",
 	"bin-debug/scenes/story/StoryChapterPageView.js",
 	"bin-debug/scenes/story/StoryChoices.js",
 	"bin-debug/scenes/story/StoryEndings.js",

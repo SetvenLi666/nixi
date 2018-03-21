@@ -74,7 +74,7 @@ class DressScene extends egret.DisplayObjectContainer {
 		var clothesComp = new ClothesListComp(this.taskId, this.tag1, this.tag2, this.tag3);
         this.addChild(clothesComp);
 
-		var base = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy);
+		var base = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy, PlayerData.heart);
 		this.addChild(base);
 
 		if (PlayerData.guide == 3) {

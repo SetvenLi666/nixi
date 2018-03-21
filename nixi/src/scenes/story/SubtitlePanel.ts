@@ -64,6 +64,7 @@ class SubtitlePanel extends eui.Component implements  eui.UIComponent {
 
 		this.curFullText = text;
 		this.lblSubtitle.text = text;
+		console.log(this.lblSubtitle);
 	}
 
 	public spring() {
@@ -74,6 +75,7 @@ class SubtitlePanel extends eui.Component implements  eui.UIComponent {
 		}
 
 		this.lblSubtitle.text = this.curFullText;
+		console.log(this.curFullText);
 		this.showTapFlag();
 		this.playCompleteCallback.apply(this.playCompleteHandler, []);
 	}
@@ -125,6 +127,7 @@ class SubtitlePanel extends eui.Component implements  eui.UIComponent {
 		this.timer = null;
 		this.curFullText = "";
 		this.hideTapFlag();
+		console.log("whenenter", this.curFullText);
 
 		this.cbFastPlay.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onFastPlay, this);
 		this.cbAutoPlay.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onAutoPlay, this);
@@ -174,7 +177,7 @@ class SubtitlePanel extends eui.Component implements  eui.UIComponent {
 	public btnLog: eui.Button;
 	private namePlate: eui.Group;
 	private lblName: eui.Label;
-	private lblSubtitle: eui.Label;
+	public lblSubtitle: eui.Label;
 	private tapFlag: egret.MovieClip = null;
 	private tagImg: eui.Image;
 	private timer: egret.Timer = null;

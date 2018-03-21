@@ -26,8 +26,8 @@ class NewStorySelectScene extends eui.Component {
 	private addStage() {
 		this.container.width = DisplayMgr.stageW;
 		this.group.width = Math.min(DisplayMgr.stageW, 852);
-		this.baseComp = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy);
-        this.addChild(this.baseComp);
+		this.baseComp = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy, PlayerData.heart);
+		this.addChild(this.baseComp);
 
 		var index = Math.min(StoryData.getCompleteStoryArr().length, 28);
 		this.tip_lab.text = "已攻略至第" + StoryData.getHanziText(index + 1) + "章";
@@ -40,8 +40,10 @@ class NewStorySelectScene extends eui.Component {
 		this.groupYellow.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onGroupTouch, this);
 
 		CustomEventMgr.addEventListener("600", this.afterFetchMissionData_600, this);
+		CustomEventMgr.addEventListener("502", this.afterFetchBranchStoryData_502, this);
+		CustomEventMgr.addEventListener("510", this.afterFetchBranchStoryState_510, this);
 
-		if(PlayerData.guide == 5) {
+		if (PlayerData.guide == 5) {
 			var guidePanel = new NewGuidePanel();
 			DisplayMgr.set2Center(guidePanel);
 			this.stage.addChild(guidePanel);
@@ -55,18 +57,44 @@ class NewStorySelectScene extends eui.Component {
 
 	private onExit() {
 		CustomEventMgr.removeEventListener("600", this.afterFetchMissionData_600, this);
-		if(PlayerData.guide == 5) {
+		CustomEventMgr.removeEventListener("502", this.afterFetchBranchStoryData_502, this);
+		CustomEventMgr.removeEventListener("510", this.afterFetchBranchStoryState_510, this);
+		if (PlayerData.guide == 5) {
 			CustomEventMgr.removeEventListener("Guide_Step_5_3", this.onBegin, this);
 		}
 	}
 
-	private onGroupTouch() {
-		SoundManager.instance().buttonSound();
-		Prompt.showPrompt(this.stage, "请先通关星途闪耀");
+	private onGroupTouch(evt: egret.TouchEvent) {
+		var self = this;
+		var target: eui.Group = evt.currentTarget;
+		DisplayMgr.buttonScale(target, function () {
+			SoundManager.instance().buttonSound();
+			var branch_id: number;		
+			switch (target) {
+				case self.groupYellow:
+					branch_id = 1000;
+					break;
+				case self.groupRed:
+					branch_id = 2000;
+					break;
+				case self.groupBlue:
+					branch_id = 3000;
+					break;
+			}
+
+			
+			if(StoryData.completedStory["29"] && StoryData.completedStory["29"].indexOf("-1") != -1) {
+				//已通关星途闪耀
+				var request = HttpProtocolMgr.fetchBranchStoryData_502(branch_id);
+				HttpMgr.postRequest(request);
+			}else {
+				Prompt.showPrompt(egret.MainContext.instance.stage, "请先通关星途闪耀");
+			}
+		});
 	}
 
 	private onBegin() {
-		DisplayMgr.buttonScale(this.btn_begin, function() {
+		DisplayMgr.buttonScale(this.btn_begin, function () {
 			SoundManager.instance().buttonSound();
 			NetLoading.showLoading();
 			var request: egret.URLRequest = HttpProtocolMgr.fetchMissionData_600();
@@ -75,7 +103,7 @@ class NewStorySelectScene extends eui.Component {
 	}
 
 	private onBack() {
-		DisplayMgr.buttonScale(this.btn_back, function() {
+		DisplayMgr.buttonScale(this.btn_back, function () {
 			SoundManager.instance().buttonSound();
 			// SoundManager.instance().destroyStartSound();
 			SceneMgr.gotoMainScene();
@@ -85,5 +113,17 @@ class NewStorySelectScene extends eui.Component {
 	private afterFetchMissionData_600() {
 		NetLoading.removeLoading();
 		SceneMgr.gotoNewStoryScene();
+	}
+
+	private afterFetchBranchStoryData_502(evt: egret.Event) {
+		// NetLoading.removeLoading();
+		// SceneMgr.gotoBranchMainScene(evt.data);
+		var request = HttpProtocolMgr.fetchBranchStoryUnlockState_510(evt.data);
+		HttpMgr.postRequest(request);
+	}
+
+	private afterFetchBranchStoryState_510(evt: egret.Event) {
+		NetLoading.removeLoading();
+		SceneMgr.gotoBranchMainScene(evt.data);
 	}
 }

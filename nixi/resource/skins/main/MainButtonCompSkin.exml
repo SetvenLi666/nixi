@@ -4,24 +4,13 @@
 		<e:Group id="group" width="852" height="1136" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0">
 			<e:Image id="bg" horizontalCenter="0" verticalCenter="0" source="newmain_ui_json.main_bg" locked="true"/>
 			<ns1:Model id="model" y="-160" horizontalCenter="0" skinName="ModelSkin" locked="true"/>
-			<e:Rect id="touchRect" width="590" height="965" y="171" anchorOffsetX="0" anchorOffsetY="0" fillAlpha="0" horizontalCenter="0"/>
 			<e:Group id="niudanGroup" width="143" height="141" y="174" anchorOffsetY="0" left="-4">
 				<e:Image id="niudan_ac" anchorOffsetX="71.5" anchorOffsetY="111" source="newmain_ui_json.main_niudan_pkq" x="71.5" y="111"/>
 				<e:Image y="66" horizontalCenter="0" source="newmain_ui_json.main_niudan_box"/>
 				<e:Image source="newmain_ui_json.main_text_bg" y="114.48" horizontalCenter="0.5"/>
 				<e:Image y="116" source="newmain_ui_json.main_niudan_text" horizontalCenter="0"/>
 			</e:Group>
-			<e:Group id="mcGroup" height="110" y="187" right="7" width="110">
-				<e:Image source="main_mc_icon_png" horizontalCenter="0" verticalCenter="0"/>
-				<e:Image source="newmain_ui_json.main_text_bg" y="75" horizontalCenter="0"/>
-				<e:Image source="main_mc_text_png" y="76" horizontalCenter="6"/>
-			</e:Group>
-			<e:Group id="scGroup" width="110" height="110" y="300" right="7">
-				<e:Image id="sc_icon" y="19" horizontalCenter="0" source="newmain_ui_json.main_ui_cz_bg"/>
-				<e:Image source="newmain_ui_json.main_text_bg" y="70" horizontalCenter="0"/>
-				<e:Image id="sc_text" y="71.97" horizontalCenter="0.5" source="newmain_ui_json.main_ui_cz_text"/>
-			</e:Group>
-			<e:Group id="tlGroup" width="110" height="110" y="315" left="135" visible="false">
+			<e:Group id="tlGroup" width="110" height="110" y="648" left="14" visible="false">
 				<e:Image id="tl_ac" source="main_tl_ac_png" horizontalCenter="0" verticalCenter="0" anchorOffsetX="121.5" anchorOffsetY="116" touchEnabled="false"/>
 				<e:Group id="tlGroup2" width="110" height="110" horizontalCenter="0" verticalCenter="0">
 				<e:Image source="newmain_ui_json.main_tl_icon" horizontalCenter="0" verticalCenter="0" x="16" y="9" scaleX="1" scaleY="1"/>
@@ -30,17 +19,6 @@
 				<e:Label id="tlTime" text="10:00" y="52" size="22" textColor="0xff3378" textAlign="center" horizontalCenter="1"/>
 				</e:Group>
 			</e:Group>
-			<e:Group id="leijiGroup" width="110" height="110" y="430" anchorOffsetY="0" left="11">
-				<e:Image y="10" horizontalCenter="0" source="newmain_ui_json.main_leiji_icon"/>
-				<e:Image source="newmain_ui_json.main_text_bg" y="63.75" horizontalCenter="0"/>
-				<e:Image y="65.75" horizontalCenter="0" source="newmain_ui_json.main_leiji_text"/>
-			</e:Group>
-			<e:Group id="lbGroup" width="110" height="98" y="525" anchorOffsetY="0" right="7">
-				<e:Image id="libao_icon" horizontalCenter="0" y="12" source="newmain_ui_json.main_libao_1"/>
-				<e:Image id="libao_ac" y="55" anchorOffsetX="21" anchorOffsetY="20.5" x="53.67" source="newmain_ui_json.main_coin_1"/>
-				<e:Image source="newmain_ui_json.main_text_bg" y="58" horizontalCenter="0"/>
-				<e:Image id="libao_text" y="59.32" horizontalCenter="0" source="newmain_ui_json.main_coin_text_1"/>
-			</e:Group>
 			<e:Group id="dtGroup" width="110" height="110" y="320.28" left="11">
 				<e:Image source="newmain_ui_json.main_dailytarget_icon" horizontalCenter="0" verticalCenter="0"/>
 				<e:Image id="td_ac" source="newmain_ui_json.main_dailytarget_ac" y="49.67" anchorOffsetX="25" anchorOffsetY="23.5" x="59"/>
@@ -48,7 +26,7 @@
 				<e:Image source="newmain_ui_json.main_dailytarget_text" y="72" scaleX="1" scaleY="1" horizontalCenter="0"/>
 				<e:Image id="dt_tip" source="newmain_ui_json.main_mail_tip" x="83.68" y="23.52" anchorOffsetX="18.5" anchorOffsetY="19" visible="false"/>
 			</e:Group>
-			<e:Group id="hdGroup" width="110" height="110" y="412.28" right="7">
+			<e:Group id="hdGroup" width="110" height="110" y="412.28" left="14">
 				<e:Image source="newmain_ui_json.main_huodong_icon" horizontalCenter="0" verticalCenter="0"/>
 				<e:Image source="newmain_ui_json.main_text_bg" y="71" horizontalCenter="0"/>
 				<e:Image source="newmain_ui_json.main_huodong_text" y="73.48" horizontalCenter="0.5"/>
@@ -59,30 +37,64 @@
 				<e:Image source="newmain_ui_json.main_text_bg" y="74" horizontalCenter="0"/>
 				<e:Image id="shareText" source="main_role_text_1_png" y="77" horizontalCenter="0"/>
 			</e:Group>
-			<e:Group id="yqGroup" width="110" height="110" y="636" right="7" visible="false">
-				<e:Image source="newmain_ui_json.main_invite_icon" horizontalCenter="0" verticalCenter="0"/>
-				<e:Image source="newmain_ui_json.main_text_bg" y="71" horizontalCenter="0"/>
-				<e:Image source="newmain_ui_json.main_invite_text" y="72" scaleX="1" scaleY="1" horizontalCenter="0"/>
-			</e:Group>
-			<e:Group id="mailGroup" width="110" height="110" anchorOffsetX="55" anchorOffsetY="55" y="679" right="7">
+			<e:Group id="mailGroup" width="110" height="110" anchorOffsetX="55" anchorOffsetY="55" y="935" left="14">
 				<e:Image scaleX="1" scaleY="1" source="newmain_ui_json.main_mail" horizontalCenter="0" verticalCenter="0"/>
 				<e:Image source="newmain_ui_json.main_text_bg" y="60" horizontalCenter="0"/>
 				<e:Image horizontalCenter="0" source="newmain_ui_json.main_mail_text" y="61"/>
 				<e:Image id="mailTip" x="83" y="33" source="newmain_ui_json.main_mail_tip" anchorOffsetX="18.5" anchorOffsetY="19" visible="false"/>
 			</e:Group>
 			<ns1:ChatBar y="140" skinName="ChatBarSkin" horizontalCenter="0"/>
-			<e:Group id="btnGroup" height="106" left="0" right="0" bottom="0">
+			<e:Group id="btnGroup" height="106" bottom="0" left="0" right="0">
 				<e:Image id="btn_shequ" source="newmain_ui_json.main_ui_shequ" x="38" y="0"/>
 				<e:Image id="btn_xingtu" source="newmain_ui_json.main_ui_xingtu" x="170" y="0"/>
 				<e:Image id="btn_tonggao" source="newmain_ui_json.main_ui_tonggao" x="326" y="0"/>
 				<e:Image id="btn_shangdian" source="newmain_ui_json.main_ui_shangdian" x="515" y="0"/>
-				<e:Group id="btn_jinji" width="106" height="106" x="659" bottom="0">
+				<e:Group id="btn_jinji" width="106" height="106" x="659" y="0">
 					<e:Image source="newmain_ui_json.main_ui_jinji" scaleX="1" scaleY="1"/>
 					<e:Image id="imglock" source="shop_item_lock_png" horizontalCenter="0" verticalCenter="0"/>
 				</e:Group>
 				<e:layout>
 					<e:BasicLayout/>
 				</e:layout>
+			</e:Group>
+			<e:Group width="110" height="707.45" y="121.55" right="7" anchorOffsetY="0">
+				<e:Rect id="groupMask" width="110" height="655" y="49.33" scaleX="1" scaleY="1" horizontalCenter="0" anchorOffsetY="0"/>
+				<e:Group id="popGroup" width="110" scaleX="1" scaleY="1" horizontalCenter="0" y="49">
+					<e:Rect scaleX="1" scaleY="1" fillColor="0xffffff" fillAlpha="0.55" height="590" left="0" right="0" top="0"/>
+					<e:Scroller width="110" height="590" scaleX="1" scaleY="1" horizontalCenter="0">
+					<e:Group>
+						<e:Group id="mcGroup" height="110" y="1" width="110" scaleX="1" scaleY="1" horizontalCenter="0" x="-2">
+						<e:Image source="main_mc_icon_png" horizontalCenter="0" verticalCenter="0"/>
+						<e:Image source="newmain_ui_json.main_text_bg" y="75" horizontalCenter="0"/>
+						<e:Image source="main_mc_text_png" y="76" horizontalCenter="6"/>
+						</e:Group>
+						<e:Group id="scGroup" width="110" height="110" y="114" scaleX="1" scaleY="1" horizontalCenter="0" x="-2">
+						<e:Image id="sc_icon" y="19" horizontalCenter="0" source="newmain_ui_json.main_ui_cz_bg"/>
+						<e:Image source="newmain_ui_json.main_text_bg" y="70" horizontalCenter="0"/>
+						<e:Image id="sc_text" y="71.97" horizontalCenter="0.5" source="newmain_ui_json.main_ui_cz_text"/>
+						</e:Group>
+						<e:Group id="leijiGroup" width="110" height="110" y="226" anchorOffsetY="0" scaleX="1" scaleY="1" horizontalCenter="0" x="-2">
+						<e:Image y="10" horizontalCenter="0" source="newmain_ui_json.main_leiji_icon"/>
+						<e:Image source="newmain_ui_json.main_text_bg" y="63.75" horizontalCenter="0"/>
+						<e:Image y="65.75" horizontalCenter="0" source="newmain_ui_json.main_leiji_text"/>
+						</e:Group>
+						<e:Group id="lbGroup" width="110" height="98" y="337" anchorOffsetY="0" scaleX="1" scaleY="1" horizontalCenter="0" x="-2">
+						<e:Image id="libao_icon" horizontalCenter="0" y="12" source="newmain_ui_json.main_libao_1"/>
+						<e:Image id="libao_ac" y="55" anchorOffsetX="21" anchorOffsetY="20.5" x="53.67" source="newmain_ui_json.main_coin_1"/>
+						<e:Image source="newmain_ui_json.main_text_bg" y="58" horizontalCenter="0"/>
+						<e:Image id="libao_text" y="59.32" horizontalCenter="0" source="newmain_ui_json.main_coin_text_1"/>
+						</e:Group>
+						<e:layout>
+						<e:BasicLayout/>
+						</e:layout>
+					</e:Group>
+					</e:Scroller>
+					<e:Image id="btn_lingdang" source="newmain_ui_json.main_ui_lingdang_2" y="580" scaleX="1" scaleY="1" horizontalCenter="0"/>
+					<e:layout>
+					<e:BasicLayout/>
+					</e:layout>
+				</e:Group>
+				<e:Image source="newmain_ui_json.main_ui_lingdang_1" scaleX="1" scaleY="1" horizontalCenter="0"/>
 			</e:Group>
 		</e:Group>
 	</e:Group>

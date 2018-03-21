@@ -3,6 +3,9 @@ class TLDiscountData {
 	private static _leftTime: number = 0;
 	private static _id: string = "";
 	private static _money: number = 0;
+	private static _rd_diam: number = 0;
+	private static _rd_piece: number = 0;
+	private static _rd_energy: number = 0;
 	private static _timer: egret.Timer = null;
 	private static _limitTime: number = 600;
 
@@ -11,6 +14,9 @@ class TLDiscountData {
 			this._type = obj["type"];
 			this._id = obj["id"];
 			this._money = obj["money"];
+			this._rd_diam = obj["diam"];
+			this._rd_piece = obj["piece"];
+			this._rd_energy = obj["energy"];
 			this._leftTime = this._limitTime;
 			if(!this._timer) {
 				this._timer = new egret.Timer(1000, this._leftTime);
@@ -46,6 +52,18 @@ class TLDiscountData {
 
 	public static get money(): number {
 		return this._money;
+	}
+
+	public static get rd_diam(): number {
+		return this._rd_diam;
+	}
+
+	public static get rd_piece() : number {
+		return this._rd_piece;
+	}
+
+	public static get rd_energy() : number {
+		return this._rd_energy;
 	}
 
 	public static get type(): number {

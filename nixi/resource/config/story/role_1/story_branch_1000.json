@@ -1,0 +1,215 @@
+[
+    {
+        "index": "1001",
+        "file": "1001",
+        "bg": "3070_png",
+        "role": "body_1021_1",
+        "head": "head_1021_1",
+        "phase": "1",
+        "unlock": "1",
+        "ending": [
+            {
+                "id": "1001_1_1",
+                "name": "眼见不一定为实"
+            }
+        ]
+    },
+    {
+        "index": "1002",
+        "file": "1002",
+        "bg": "3049_png",
+        "role": "body_1015_1",
+        "head": "head_1015_1",
+        "phase": "1",
+        "unlock": "4",
+        "ending": [
+            {
+                "id": "1001_2_1",
+                "name": "理想导师"
+            }
+        ]
+    },
+    {
+        "index": "1003",
+        "file": "1003",
+        "bg": "3016_png",
+        "role": "body_1088_1",
+        "head": "head_1088_1",
+        "phase": "1",
+        "unlock": "7",
+        "ending": [
+            {
+                "id": "1001_3_1",
+                "name": "不知进退"
+            }
+        ]
+    },
+    {
+        "index": "1004",
+        "file": "1004",
+        "bg": "3017_png",
+        "role": "body_1001_1",
+        "head": "head_1001_1",
+        "phase": "1",
+        "unlock": "7",
+        "ending": [
+            {
+                "id": "1001_4_1",
+                "name": "事事讲证据"
+            }
+        ]
+    },
+    {
+        "index": "1005",
+        "file": "1005",
+        "bg": "3083_png",
+        "role": "body_1083_1",
+        "head": "head_1083_1",
+        "phase": "1",
+        "unlock": "7",
+        "ending": [
+            {
+                "id": "1001_5_1",
+                "name": "木讷迟钝"
+            }
+        ]
+    },
+    {
+        "index": "1006",
+        "file": "1006",
+        "bg": "1_png",
+        "role": "body_101_14",
+        "head": "head_101_1",
+        "phase": "1",
+        "unlock": "7",
+        "ending": [
+            {
+                "id": "1001_6_1",
+                "name": "一意孤行"
+            }
+        ]
+    },
+    {
+        "index": "1007",
+        "file": "1007",
+        "bg": "3042_png",
+        "role": "body_1001_1",
+        "head": "head_1001_1",
+        "phase": "1",
+        "unlock": "14",
+        "ending": [
+            
+        ]
+    },
+    {
+        "index": "1008",
+        "file": "1008",
+        "bg": "3032_png",
+        "role": "body_1082_1",
+        "head": "head_1082_1",
+        "phase": "1",
+        "unlock": "14",
+        "ending": [
+            {
+                "id": "1001_8_1",
+                "name": "毫无眼界"
+            }
+        ]
+    },
+    {
+        "index": "1009",
+        "file": "1009",
+        "bg": "3083_png",
+        "role": "body_101_15",
+        "head": "head_101_1",
+        "phase": "1",
+        "unlock": "16",
+        "ending": [
+            {
+                "id": "1001_9_1",
+                "name": "胆小怕事"
+            }
+        ]
+    },
+    {
+        "index": "1010",
+        "file": "1010",
+        "bg": "3024_png",
+        "role": "body_1040_1",
+        "head": "head_1040_1",
+        "phase": "1",
+        "unlock": "20",
+        "ending": [
+            
+        ]
+    },
+    {
+        "index": "1011",
+        "file": "1011",
+        "bg": "3044_png",
+        "role": "body_1001_1",
+        "head": "head_1001_1",
+        "phase": "1",
+        "unlock": "20",
+        "ending": [
+            {
+                "id": "1001_11_1",
+                "name": "机不可失失不再来"
+            }
+        ]
+    },
+    {
+        "index": "1012",
+        "file": "1012",
+        "bg": "3007_png",
+        "role": "body_101_3",
+        "head": "head_101_3",
+        "phase": "2",
+        "unlock": "28",
+        "ending": [
+            
+        ]
+    },
+    {
+        "index": "1013",
+        "file": "1013",
+        "bg": "3083_png",
+        "role": "body_1001_1",
+        "head": "head_1001_5",
+        "phase": "2",
+        "unlock": "28",
+        "ending": [
+            {
+                "id": "1001_13_1",
+                "name": "好心办坏事"
+            }
+        ]
+    },
+    {
+        "index": "1014",
+        "file": "1014",
+        "bg": "3017_png",
+        "role": "body_1083_1",
+        "head": "head_1083_1",
+        "phase": "2",
+        "unlock": "28",
+        "ending": [
+            {
+                "id": "1001_14_1",
+                "name": "内心动摇误终身"
+            }
+        ]
+    },
+    {
+        "index": "1015",
+        "file": "1015",
+        "bg": "3045_png",
+        "role": "body_1082_1",
+        "head": "head_1082_1",
+        "phase": "2",
+        "unlock": "36",
+        "ending": [
+            
+        ]
+    }
+]

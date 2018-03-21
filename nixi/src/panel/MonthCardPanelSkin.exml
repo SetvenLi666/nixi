@@ -8,7 +8,7 @@
 				<e:Image source="month_time_bg_png" x="0" y="0"/>
 				<e:Label id="timeLabel" text="29" y="54" horizontalCenter="0" size="64" textAlign="center" verticalAlign="middle"/>
 			</e:Group>
-			<e:Image id="btn_buy" y="630.67" horizontalCenter="147.5" source="month_btn_buy_png"/>
+			<e:Image id="btn_buy" y="615" horizontalCenter="172.5" source="month_btn_buy_png"/>
 		</e:Group>
 	</e:Group>
 </e:Skin>
