@@ -46,7 +46,7 @@ class TaskRating extends eui.Component implements eui.UIComponent {
 		self.addChild(mask);
 		self.mask = mask;
 
-		var baseComp = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy);
+		var baseComp = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy, PlayerData.heart);
 		this.addChildAt(baseComp, 1);
 
 		if (this.isLevelUp) {

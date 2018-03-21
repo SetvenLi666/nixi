@@ -118,6 +118,8 @@ declare class StoryCompSkin extends eui.Skin{
 }
 declare class VipStoryCompSkin extends eui.Skin{
 }
+declare class BranchStoryChapterCompSkin extends eui.Skin{
+}
 declare class NewStorySceneSkin extends eui.Skin{
 }
 declare class NewStorySelectSceneSkin extends eui.Skin{
@@ -242,6 +244,8 @@ declare class ReceiveButton extends eui.Skin{
 }
 declare class ChapterPage extends eui.Skin{
 }
+declare class RoleIntroducePanelSkin extends eui.Skin{
+}
 declare class Test extends eui.Skin{
 }
 declare class StoryPlayerSkin extends eui.Skin{
@@ -274,6 +278,10 @@ declare class TouchTestBg extends eui.Skin{
 }
 declare class TouchTestUpper extends eui.Skin{
 }
+declare class BranchStoryMainSceneSkin extends eui.Skin{
+}
+declare class BranchStorySceneSkin extends eui.Skin{
+}
 declare class NewGuidePanelSkin extends eui.Skin{
 }
 declare class PkGuidePanelSkin extends eui.Skin{
@@ -295,6 +303,8 @@ declare class DailyTargetPanelSkin extends eui.Skin{
 declare class DailyTargetPgBar extends eui.Skin{
 }
 declare class DailyTargetProgressCompSkin extends eui.Skin{
+}
+declare class EmailRewardItemCompSkin extends eui.Skin{
 }
 declare class FirstPayPanelSkin extends eui.Skin{
 }

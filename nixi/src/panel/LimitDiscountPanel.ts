@@ -1,9 +1,15 @@
 class LimitDiscountPanel extends eui.Component{
 	public group: eui.Group;
 	public group2: eui.Group;
+
 	public diamNumImg: eui.Image;
 	public coinNumImg: eui.Image;
 	public energyNumImg: eui.Image;
+
+	public diamCount: eui.Label;
+	public pieceCount: eui.Label;
+	public energyCount: eui.Label;
+
 	public title: eui.Image;
 	public btnBuy: eui.Image;
 
@@ -36,15 +42,19 @@ class LimitDiscountPanel extends eui.Component{
 	private initView(type: number) {
 		if(type == 6) {
 			this.title.source = "tl_title_6_png";
-			this.diamNumImg.source = "tl_num_120_png";
-			this.coinNumImg.source = "tl_num_10000_png";
-			this.energyNumImg.source = "tl_num_100_png";
+			// this.diamNumImg.source = "tl_num_120_png";
+			// this.coinNumImg.source = "tl_num_10000_png";
+			// this.energyNumImg.source = "tl_num_100_png";
 		}else if(type == 30) {
 			this.title.source = "tl_title_30_png";
-			this.diamNumImg.source = "tl_num_600_png";
-			this.coinNumImg.source = "tl_num_30000_png";
-			this.energyNumImg.source = "tl_num_300_png";
+			// this.diamNumImg.source = "tl_num_600_png";
+			// this.coinNumImg.source = "tl_num_30000_png";
+			// this.energyNumImg.source = "tl_num_300_png";
 		}
+
+		this.diamCount.text = TLDiscountData.rd_diam + "";
+		this.pieceCount.text = TLDiscountData.rd_piece + "";
+		this.energyCount.text = TLDiscountData.rd_energy + "";
 
 		this.btnBuy.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onBuy, this);
 	}

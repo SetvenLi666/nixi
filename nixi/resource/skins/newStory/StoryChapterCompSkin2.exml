@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="StoryChapterCompSkin" width="492" height="262" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="story_chapter_bg_png" x="0" y="0"/>
+	<e:Label id="lab_chapter" text="" x="80" y="12" size="24" textAlign="center" anchorOffsetX="0" width="123" height="24"/>
+	<e:Label text="结局成就" x="24" y="110" textColor="0xef327d" size="24" bold="true"/>
+	<e:Label id="lab_lock" text="" y="80" textColor="0x505050" size="24" textAlign="left" bold="true" x="200" visible="false"/>
+	<e:Label id="end_1" text="" x="58" y="158" size="22" textColor="0x969797" bold="true"/>
+	<e:Label id="end_2" text="" x="192" y="158" size="22" textColor="0x969797" bold="true"/>
+	<e:Image id="btn_start" source="story_btn_start_png" x="355" y="134"/>
+	<e:Label id="lab_energy" text="15" x="379" y="106" size="24" textColor="0x505050" textAlign="center" height="24" width="27" bold="true"/>
+	<e:Image id="img_energy" x="413" y="96" source="story_chapter_energy_png"/>
+	<e:Image source="story_chapt_tip_png" x="313" y="185"/>
+	<e:Image id="btn_unlock" source="story_btn_unlock_png" x="357" y="216"/>
+</e:Skin>
