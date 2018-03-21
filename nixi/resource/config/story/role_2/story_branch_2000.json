@@ -1,0 +1,206 @@
+[
+    {
+        "index": "2001",
+        "file": "2001",
+        "bg": "3018_png",
+        "role": "body_1015_1",
+        "head": "head_1015_2",
+        "phase": "1",
+        "unlock": "1",
+        "ending": [
+            {
+                "id": "1002_1_1",
+                "name": "回归平凡"
+            }
+        ]
+    },
+    {
+        "index": "2002",
+        "file": "2002",
+        "bg": "3054_png",
+        "role": "body_1002_1",
+        "head": "head_1002_1",
+        "phase": "1",
+        "unlock": "4",
+        "ending": [
+            {
+                "id": "1002_2_1",
+                "name": "死要面子"
+            }
+        ]
+    },
+    {
+        "index": "2003",
+        "file": "2003",
+        "bg": "3017_png",
+        "role": "body_1025_1",
+        "head": "head_1025_1",
+        "phase": "1",
+        "unlock": "7",
+        "ending": [
+
+        ]
+    },
+    {
+        "index": "2004",
+        "file": "2004",
+        "bg": "3004_png",
+        "role": "body_1032_1",
+        "head": "head_1032_1",
+        "phase": "1",
+        "unlock": "7",
+        "ending": [
+            {
+                "id": "1002_4_1",
+                "name": "不谙世事"
+            }
+        ]
+    },
+    {
+        "index": "2005",
+        "file": "2005",
+        "bg": "3029_2_png",
+        "role": "body_1012_1",
+        "head": "head_1012_1",
+        "phase": "1",
+        "unlock": "7",
+        "ending": [
+            
+        ]
+    },
+    {
+        "index": "2006",
+        "file": "2006",
+        "bg": "3073_png",
+        "role": "body_1040_1",
+        "head": "head_1040_1",
+        "phase": "1",
+        "unlock": "7",
+        "ending": [
+            {
+                "id": "1002_6_1",
+                "name": "理想导师"
+            }
+        ]
+    },
+    {
+        "index": "2007",
+        "file": "2007",
+        "bg": "3017_png",
+        "role": "body_1088_1",
+        "head": "head_1088_1",
+        "phase": "1",
+        "unlock": "14",
+        "ending": [
+            
+        ]
+    },
+    {
+        "index": "2008",
+        "file": "2008",
+        "bg": "3010_png",
+        "role": "body_101_14",
+        "head": "head_101_14_1",
+        "phase": "1",
+        "unlock": "14",
+        "ending": [
+            {
+                "id": "1002_8_1",
+                "name": "事事讲证据"
+            }, {
+                "id": "1002_8_2",
+                "name": "木讷迟钝"
+            }
+        ]
+    },
+    {
+        "index": "2009",
+        "file": "2009",
+        "bg": "3083_png",
+        "role": "body_1021_1",
+        "head": "head_1021_1",
+        "phase": "1",
+        "unlock": "16",
+        "ending": [
+            
+        ]
+    },
+    {
+        "index": "2010",
+        "file": "2010",
+        "bg": "3051_png",
+        "role": "body_1083_1",
+        "head": "head_1083_1",
+        "phase": "1",
+        "unlock": "20",
+        "ending": [
+            {
+                "id": "1002_10_1",
+                "name": "一意孤行"
+            }
+        ]
+    },
+    {
+        "index": "2011",
+        "file": "2011",
+        "bg": "3065_png",
+        "role": "body_1002_1",
+        "head": "head_1002_1",
+        "phase": "1",
+        "unlock": "20",
+        "ending": [
+            
+        ]
+    },
+    {
+        "index": "2012",
+        "file": "2012",
+        "bg": "3075_png",
+        "role": "body_1088_1",
+        "head": "head_1088_1",
+        "phase": "2",
+        "unlock": "28",
+        "ending": [
+            
+        ]
+    },
+    {
+        "index": "2013",
+        "file": "2013",
+        "bg": "3029_png",
+        "role": "body_101_2",
+        "head": "head_101_2_1",
+        "phase": "2",
+        "unlock": "28",
+        "ending": [
+            
+        ]
+    },
+    {
+        "index": "2014",
+        "file": "2014",
+        "bg": "3009_2_png",
+        "role": "body_1002_1",
+        "head": "head_1002_1",
+        "phase": "2",
+        "unlock": "28",
+        "ending": [
+            
+        ]
+    },
+    {
+        "index": "2015",
+        "file": "2015",
+        "bg": "3016_png",
+        "role": "body_1017_1",
+        "head": "head_1017_1",
+        "phase": "2",
+        "unlock": "36",
+        "ending": [
+            {
+                "id": "1002_15_1",
+                "name": "毫无眼界"
+            }
+        ]
+    }
+]

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="BranchStoryMainSceneSkin" width="852" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+    <e:Group id="container" width="852" x="0" height="1136" y="0">
+        <e:Group id="group" width="852" horizontalCenter="0" height="1136" verticalCenter="0">
+            <e:Image source="shop_bg_png" horizontalCenter="0" verticalCenter="0" />
+            <e:Image id="bg" horizontalCenter="0" verticalCenter="0" source="1_png" />
+            <e:Image id="role" horizontalCenter="0" verticalCenter="0" source="" />
+            <e:Image id="head" horizontalCenter="0" verticalCenter="0" source="" />
+            <e:Scroller id="scroller" width="492" height="262" y="790" horizontalCenter="0">
+                <e:List id="list">
+                    <e:layout>
+                        <e:HorizontalLayout gap="0" />
+                    </e:layout>
+                </e:List>
+            </e:Scroller>
+            <e:Image id="btn_left" source="story_btn_left_png" y="935" horizontalCenter="-280" anchorOffsetX="27.5"
+                     anchorOffsetY="34" />
+            <e:Image id="btn_right" source="story_btn_right_png" y="935" anchorOffsetX="27.5" anchorOffsetY="34"
+                     horizontalCenter="280" />
+            <e:Image id="btn_back" source="common_back_png" y="1039" left="-6" />
+            <e:Image id="btn_change" source="story_btn_change_png" y="1044.34" right="0" visible="false" />
+        </e:Group>
+    </e:Group>
+</e:Skin>

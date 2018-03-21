@@ -332,6 +332,20 @@ class HttpMgr {
             PlayerData.update(content["player"]);
             EnergyCD.updateEnergyCD();
         }
+        else if(502 === cid) {
+            StoryData.updateCompleteBranchStory(content["branch_id"], content["story"]);
+            extraData = content["branch_id"];
+        }
+        else if(506 === cid) {
+            PlayerData.update(content["player"]);
+            EnergyCD.updateEnergyCD();
+        }
+        else if(508 === cid) {
+            PlayerData.update(content["player"]);
+            EnergyCD.updateEnergyCD();
+            StoryData.updateCompleteBranchStory(content["branch_id"], content["story"]);
+            extraData = content["extra"];
+        }
         else if (503 === cid) {
             PlayerData.update(content["player"]);
             EnergyCD.updateEnergyCD();
@@ -349,6 +363,15 @@ class HttpMgr {
         else if (509 === cid) {
             PlayerData.update(content["player"]);
             EnergyCD.updateEnergyCD();
+        }
+        else if(510 === cid) {
+            StoryData.updateBranchStoryUnlockState(content["branch_id"], content["unlocked_story"]);
+            extraData = content["branch_id"];
+        }
+        else if(512 === cid) {
+            PlayerData.update(content["player"]);
+            StoryData.updateBranchStoryUnlockState(content["branch_id"], content["unlocked_story"]);
+            extraData = content["branch_id"];
         }
         else if (515 === cid) {
             PlayerData.update(content["player"]);

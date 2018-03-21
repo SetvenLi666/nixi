@@ -9,6 +9,6 @@
 	<e:Image id="btn_start" source="story_btn_start_png" x="355" y="134"/>
 	<e:Label id="lab_energy" text="6" x="379" y="106" size="24" textColor="0x505050" textAlign="center" height="24" width="27" bold="true"/>
 	<e:Image id="img_energy" x="413" y="96" source="story_chapter_energy_png"/>
-	<e:Image source="story_chapt_tip_png" x="313" y="185"/>
+	<e:Image id="lab_tongguan" source="story_chapt_tip_png" x="313" y="185"/>
 	<e:Image id="btn_unlock" source="story_btn_unlock_png" x="357" y="216"/>
 </e:Skin>

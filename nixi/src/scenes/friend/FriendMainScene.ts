@@ -27,7 +27,7 @@ class FriendMainScene extends eui.UILayer{
 		DisplayMgr.setCenter(uiLayer);
 		this.addChild(uiLayer);
 
-		var baseView = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy);
+		var baseView = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy, PlayerData.heart);
 		this.addChild(baseView);
 	}
 }

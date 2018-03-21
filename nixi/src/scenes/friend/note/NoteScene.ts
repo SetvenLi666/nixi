@@ -20,7 +20,7 @@ class NoteScene extends eui.UILayer{
 		DisplayMgr.setCenter(layer);
 		this.addChild(layer);
 
-		var baseView = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy);
+		var baseView = new BaseComp(ShowData.nickname, PlayerData.coin, PlayerData.diam, PlayerData.energy, PlayerData.heart);
 		this.addChild(baseView);
 
 	}

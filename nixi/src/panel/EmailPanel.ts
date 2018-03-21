@@ -112,12 +112,7 @@ class EmailListRenderer extends eui.ItemRenderer {
 	public title: eui.Label;
 	public btn_delete: eui.Image;
 	public btn_receive: eui.Image;
-	public rwd_1_image: eui.Image;
-	public rwd_1_value: eui.Label;
-	public rwd_2_image: eui.Image;
-	public rwd_2_value: eui.Label;
-	public rwd_3_image: eui.Image;
-	public rwd_3_value: eui.Label;
+	public rewardGroup: eui.Group;
 
 
 	public constructor() {
@@ -143,47 +138,56 @@ class EmailListRenderer extends eui.ItemRenderer {
 			this.btn_delete.visible = true;
 		}
 
-		if (this.data["attachment"]["coin"] > 0) {
-			this.rwd_1_image.source = "mail_coin_png";
-			this.rwd_1_image.visible = true;
-			this.rwd_1_value.text = this.data["attachment"]["coin"];
-			this.rwd_1_value.visible = true;
-			if (this.data["attachment"]["diam"] > 0) {
-				this.rwd_2_image.source = "mail_diam_png";
-				this.rwd_2_value.text = this.data["attachment"]["diam"];
-				this.rwd_2_image.visible = true;
-				this.rwd_2_value.visible = true;
-				if (this.data["attachment"]["energy"] > 0) {
-					this.rwd_3_image.source = "mail_energy_png";
-					this.rwd_3_value.text = this.data["attachment"]["energy"];
-					this.rwd_3_image.visible = true;
-					this.rwd_3_value.visible = true;
-				}
-			} else if (this.data["attachment"]["energy"] > 0) {
-				this.rwd_2_image.source = "mail_energy_png";
-				this.rwd_2_value.text = this.data["attachment"]["energy"];
-				this.rwd_2_image.visible = true;
-				this.rwd_2_value.visible = true;
-			}
-		} else {
-			if (this.data["attachment"]["diam"] > 0) {
-				this.rwd_1_image.source = "mail_diam_png";
-				this.rwd_1_value.text = this.data["attachment"]["diam"];
-				this.rwd_1_image.visible = true;
-				this.rwd_1_value.visible = true;
-				if (this.data["attachment"]["energy"] > 0) {
-					this.rwd_2_image.source = "mail_energy_png";
-					this.rwd_2_value.text = this.data["attachment"]["energy"];
-					this.rwd_2_image.visible = true;
-					this.rwd_2_value.visible = true;
-				}
-			} else if (this.data["attachment"]["energy"] > 0) {
-				this.rwd_1_image.source = "mail_energy_png";
-				this.rwd_1_value.text = this.data["attachment"]["energy"];
-				this.rwd_1_image.visible = true;
-				this.rwd_1_value.visible = true;
-			}
+		this.rewardGroup.removeChildren();
+		var attachment: {} = this.data["attachment"];
+		for(var i in attachment) {
+			var item = new EmailRewardItemComp();
+			item.icon.source = "base_" + i + "_png";
+			item.count.text = attachment[i];
+			this.rewardGroup.addChild(item);
 		}
+
+		// if (this.data["attachment"]["coin"] > 0) {
+		// 	this.rwd_1_image.source = "mail_coin_png";
+		// 	this.rwd_1_image.visible = true;
+		// 	this.rwd_1_value.text = this.data["attachment"]["coin"];
+		// 	this.rwd_1_value.visible = true;
+		// 	if (this.data["attachment"]["diam"] > 0) {
+		// 		this.rwd_2_image.source = "mail_diam_png";
+		// 		this.rwd_2_value.text = this.data["attachment"]["diam"];
+		// 		this.rwd_2_image.visible = true;
+		// 		this.rwd_2_value.visible = true;
+		// 		if (this.data["attachment"]["energy"] > 0) {
+		// 			this.rwd_3_image.source = "mail_energy_png";
+		// 			this.rwd_3_value.text = this.data["attachment"]["energy"];
+		// 			this.rwd_3_image.visible = true;
+		// 			this.rwd_3_value.visible = true;
+		// 		}
+		// 	} else if (this.data["attachment"]["energy"] > 0) {
+		// 		this.rwd_2_image.source = "mail_energy_png";
+		// 		this.rwd_2_value.text = this.data["attachment"]["energy"];
+		// 		this.rwd_2_image.visible = true;
+		// 		this.rwd_2_value.visible = true;
+		// 	}
+		// } else {
+		// 	if (this.data["attachment"]["diam"] > 0) {
+		// 		this.rwd_1_image.source = "mail_diam_png";
+		// 		this.rwd_1_value.text = this.data["attachment"]["diam"];
+		// 		this.rwd_1_image.visible = true;
+		// 		this.rwd_1_value.visible = true;
+		// 		if (this.data["attachment"]["energy"] > 0) {
+		// 			this.rwd_2_image.source = "mail_energy_png";
+		// 			this.rwd_2_value.text = this.data["attachment"]["energy"];
+		// 			this.rwd_2_image.visible = true;
+		// 			this.rwd_2_value.visible = true;
+		// 		}
+		// 	} else if (this.data["attachment"]["energy"] > 0) {
+		// 		this.rwd_1_image.source = "mail_energy_png";
+		// 		this.rwd_1_value.text = this.data["attachment"]["energy"];
+		// 		this.rwd_1_image.visible = true;
+		// 		this.rwd_1_value.visible = true;
+		// 	}
+		// }
 	}
 
 	private onDelete() {
