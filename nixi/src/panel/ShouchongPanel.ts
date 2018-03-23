@@ -212,6 +212,7 @@ class ShouchongPanel extends eui.Component {
 
 function paySuccess() {
 	console.log("支付成功");
+	TDGA.onChargeSuccess(tdData);
 	NetLoading.showLoading();
 	var request = HttpProtocolMgr.refresh_pay_info_116(urlData);
 	HttpMgr.postRequest(request);
